@@ -45,12 +45,12 @@ The Gatsby website has a really easy to understand **[tutorial](https://www.gats
 
     Site navigation uses Reach router's Link already build in to Gatsby. Reach is an awesome tool, because it puts accessibility at the forefront. Kudos to **[Reach](https://reach.tech/router)**.
 
-    ```sh
+    ```javascript
     # make your import at the top of the js file.
     import { Link } from 'gatsby';
     ```
 
-    ```sh
+    ```javascript
     # Use as as you see fit.
     <Link to="about/">about</Link>
     ```
