@@ -1,0 +1,47 @@
+{
+  "name": "tomhendra-portfolio",
+  "private": false,
+  "description": "A portfolio website for Tom Hendra, software engineer",
+  "version": "0.1.0",
+  "author": "Tom Hendra <hola@tomhendra.dev>",
+  "keywords": [
+    "tomhendra"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomhendra/portfolio"
+  },
+  "bugs": {
+    "url": "https://github.com/tomhendra/gatsby/issues"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
+    "gatsby": "^2.13.39",
+    "gatsby-image": "^2.2.6",
+    "gatsby-plugin-emotion": "^4.1.2",
+    "gatsby-plugin-manifest": "^2.2.4",
+    "gatsby-plugin-offline": "^2.2.4",
+    "gatsby-plugin-react-helmet": "^3.1.2",
+    "gatsby-plugin-sharp": "^2.2.9",
+    "gatsby-source-filesystem": "^2.1.6",
+    "gatsby-transformer-sharp": "^2.2.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "prettier": "^1.18.2"
+  }
+}
