@@ -13,7 +13,7 @@
     "url": "https://github.com/tomhendra/portfolio"
   },
   "bugs": {
-    "url": "https://github.com/tomhendra/gatsby/issues"
+    "url": "https://github.com/tomhendra/issues"
   },
   "scripts": {
     "build": "gatsby build",
