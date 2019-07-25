@@ -46,6 +46,15 @@ const Header = ({ siteTitle }) => (
       <NavLink to="/about/" activeClassName="current-page">
         About
       </NavLink>
+      <NavLink to="/projects/" activeClassName="current-page">
+        Projects
+      </NavLink>
+      <NavLink to="/blog/" activeClassName="current-page">
+        Blog
+      </NavLink>
+      <NavLink to="/contact/" activeClassName="current-page">
+        Contact
+      </NavLink>
     </nav>
   </header>
 );

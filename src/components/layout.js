@@ -75,8 +75,11 @@ const Layout = ({ children }) => {
           padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
         `}
       >
-        &copy; {new Date().getFullYear()} Tom Hendra. Built with{` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a> &amp; 💙
+        &copy; {new Date().getFullYear()} Tom Hendra. Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        {` `}
+        &amp; 💙
       </footer>
     </>
   );
