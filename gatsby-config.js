@@ -1,6 +1,8 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
-    title: 'Tom Hendra - developer',
+    title: 'Tom Hendra',
     description: 'Portfolio site for Tom Hendra, software developer',
     author: 'Tom Hendra',
   },
@@ -11,11 +13,11 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: '${__dirname}/src/images',
+        path: path.join(__dirname, `src`, `images`),
       },
     },
-    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -28,8 +30,7 @@ module.exports = {
         icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
+    // PWA: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
   ],
 };
