@@ -3,11 +3,13 @@ import { Link } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-export default () => (
+const ProjectsPage = () => (
   <Layout>
-    <SEO title="Contact" />
+    <SEO title="Projects" />
     <h1>Projects</h1>
     <p>This is the project page</p>
     <Link to="/">&larr; back to home</Link>
   </Layout>
 );
+
+export default ProjectsPage;
