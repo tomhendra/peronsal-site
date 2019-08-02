@@ -8,8 +8,8 @@ const ContactPage = () => (
     <SEO title="Contact" />
     <h1>Contact</h1>
     <p>
-      I'm always open to new opportunities. if you'd like to chat please email
-      me at <a href={'mailto:hola@tomhendra.dev'}>hola@tomhendra.dev</a>
+      I'm always open to new opportunities. if you'd like to chat email me at{' '}
+      <a href={'mailto:hola@tomhendra.dev'}>hola@tomhendra.dev</a>
     </p>
     <Link to="/">&larr; back to home</Link>
   </Layout>
