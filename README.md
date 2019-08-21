@@ -1,22 +1,22 @@
 <div align=center>
 <img alt="Gatsby" src="https://res.cloudinary.com/tomhendra/image/upload/v1566377250/portfolio-logo/logo-outlined-rectangle-bg.svg" width="100" />
-<h1>Portfolio website</h1>
-<p>Built with Gatsby</p>
+<h1>Portfolio</h1>
+<p>My personal website built with Gatsby</p>
 </div>
 
-## Intro
+## Introduction
 
-My **[portfolio](https://tomhendra.dev)** is using a React hooks pattern learned from **[Frontend Masters](https://frontendmasters.com/courses/gatsby/)**.
+**[My portfolio](https://tomhendra.dev)** has been built using a React hooks pattern for Gatsby, which I learned from a **[Frontend Masters course](https://frontendmasters.com/courses/gatsby/)**.
 
-_This readme is mostly for me to document & retain the process, since this is my first Gatsby site!_ 🚀
+This readme is mainly for me to document & retain the process, since this is my first Gatsby site! 🚀
 
-## Getting started
+## Getting started with Gatsby
 
-The Gatsby website has a really easy to understand **[tutorial](https://www.gatsbyjs.org/tutorial/)** to get things kicked off with dependencies etc. Awesome stuff!
+The Gatsby website has a really well put together **[tutorial](https://www.gatsbyjs.org/tutorial/)** to get things kicked off with dependencies etc. Once Homebrew, Node, Git & Gatsby cli is installed, you're ready to start building a Gatsby site.
 
-## We dives into the code
+## Building a site
 
-1.  **Gatsby setup.**
+1.  **Gatsby**
 
     Bare bones are built using the Gatsby CLI to create a new site.
 
