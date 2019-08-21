@@ -1,12 +1,7 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.tomhendra.dev">
-    <img alt="Gatsby" src="https://upload.wikimedia.org/wikipedia/commons/7/73/Robot-icon.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Portfolio website
-</h1>
+<div align=center>
+<img alt="Gatsby" src="https://res.cloudinary.com/tomhendra/image/upload/v1566377250/portfolio-logo/logo-outlined-rectangle-bg.svg" width="100" />
+<h1>Portfolio website</h1>
+</div>
 
 My **[portfolio](https://tomhendra.dev)** is built with Gatsby using a React hooks pattern learned from **[Frontend Masters](https://frontendmasters.com/courses/gatsby/)**.
 
