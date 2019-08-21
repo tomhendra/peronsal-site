@@ -3,16 +3,13 @@
 <h1>Portfolio website</h1>
 </div>
 
-
 My **[portfolio](https://tomhendra.dev)** is built with Gatsby using a React hooks pattern learned from **[Frontend Masters](https://frontendmasters.com/courses/gatsby/)**.
 
 _This readme is mostly for me to document & retain the process, since this is my first Gatsby site!_ 🚀
 
-
 ## Getting started
 
 The Gatsby website has a really easy to understand **[tutorial](https://www.gatsbyjs.org/tutorial/)** to get things kicked off with dependencies etc. Awesome stuff!
-
 
 ## We dives into the code
 
