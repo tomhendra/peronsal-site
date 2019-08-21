@@ -3,13 +3,16 @@
 <h1>Portfolio website</h1>
 </div>
 
+
 My **[portfolio](https://tomhendra.dev)** is built with Gatsby using a React hooks pattern learned from **[Frontend Masters](https://frontendmasters.com/courses/gatsby/)**.
 
 _This readme is mostly for me to document & retain the process, since this is my first Gatsby site!_ 🚀
 
+
 ## Getting started
 
 The Gatsby website has a really easy to understand **[tutorial](https://www.gatsbyjs.org/tutorial/)** to get things kicked off with dependencies etc. Awesome stuff!
+
 
 ## We dives into the code
 
@@ -41,12 +44,12 @@ The Gatsby website has a really easy to understand **[tutorial](https://www.gats
     Site navigation uses Reach router's Link already build in to Gatsby. Reach is an awesome tool, because it puts accessibility at the forefront. Kudos to **[Reach](https://reach.tech/router)**.
 
     ```javascript
-    # make your import at the top of the js file.
+    // make your import at the top of the js file.
     import { Link } from 'gatsby';
     ```
 
     ```javascript
-    # Use as as you see fit.
+    // Use as as you see fit.
     <Link to="about/">about</Link>
     ```
 
