@@ -24,10 +24,10 @@ module.exports = {
         name: 'tom-hendra-portfolio',
         short_name: 'tom-hendra',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#1F2933',
+        theme_color: '#1F2933',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/tomhendra-icon.png', // This path is relative to the root of the site.
       },
     },
     // PWA: https://gatsby.dev/offline
