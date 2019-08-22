@@ -1,5 +1,5 @@
 <div align=center>
-<img alt="Gatsby" src="https://res.cloudinary.com/tomhendra/image/upload/v1566377250/portfolio-logo/logo-outlined-rectangle-bg.svg" width="100" />
+<img alt="Gatsby" src="https://res.cloudinary.com/tomhendra/image/upload/v1566505136/portfolio-logo/logo-920x920.png" width="100" />
 <h1>Portfolio</h1>
 <p>My personal website built with Gatsby</p>
 </div>
