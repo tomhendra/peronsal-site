@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Global, css } from '@emotion/core';
-import useSiteMetadata from '../hooks/use-site-metadata';
+import useSiteMetadata from '../../hooks/use-site-metadata';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
