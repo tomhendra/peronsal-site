@@ -1,28 +1,27 @@
 import { css } from '@emotion/core';
-import { colors, size, fontsize } from '../styles';
+import { colors, fontsize } from '../styles';
 
 const baseStyles = () => css`
-  * {
-    box-sizing: border-box;
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
   }
-  /* lobotomised owl selector - every sibling inherits */
-  /* * + * {
-    margin-top: ${size.small3};
-  } */
 
   html {
+    box-sizing: border-box;
     font-size: 62.5%;
   }
 
   body {
     background: ${colors.neutral.dark1};
     color: ${colors.neutral.light5};
-    /* font-family: 'IdealSans-Book', Fallback, 'Helvetica', 'Arial', sans-serif; */
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-      Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: ${fontsize.base};
-    line-height: ${fontsize.base};
-    margin: 0;
+    line-height: 1.6;
 
     /* remove margin for main div that that Gatsby mounts into */
     > div {
@@ -35,7 +34,7 @@ const baseStyles = () => css`
     h4,
     h5,
     h6 {
-      line-height: ${fontsize.small};
+      line-height: 1.6;
     }
 
     button {

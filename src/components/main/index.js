@@ -1,19 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
+import mainStyles from './main-styles';
 
 const Main = ({ mainContent }) => {
-  return (
-    <main
-      css={css`
-        margin: 2rem auto 4rem;
-        max-width: 90vw;
-        width: 550px;
-      `}
-    >
-      {mainContent}
-    </main>
-  );
+  return <main css={mainStyles}>{mainContent}</main>;
 };
 
 Main.propTypes = {
