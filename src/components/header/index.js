@@ -1,29 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
+import headerStyles from './header-styles';
 import NavLink from '../navlink';
 
 const Header = ({ siteTitle }) => (
-  <header
-    css={css`
-      background-color: #eee;
-      border-bottom: 1px solid #ddd;
-      display: flex;
-      justify-content: space-between;
-      padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
-    `}
-  >
-    <NavLink to="/" fontWeight="bold">
-      {siteTitle}
-    </NavLink>
-    <nav
-      css={css`
-        margin-top: 0;
-      `}
-    >
-      <NavLink to="/" activeClassName="current-page">
-        Home
-      </NavLink>
+  <header css={headerStyles}>
+    <NavLink to="/">{siteTitle}</NavLink>
+    <nav>
       <NavLink to="/about/" activeClassName="current-page">
         About
       </NavLink>

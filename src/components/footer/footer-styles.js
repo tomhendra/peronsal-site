@@ -1,9 +1,13 @@
-import styled from '@emotion/styled';
+import { css } from '@emotion/core';
+import { colors } from '../../assets/styles';
 
-const StyledFooter = styled.footer`
-  background-color: #eee;
-  border-top: 1px solid #ddd;
+const footerStyles = () => css`
+  background-color: ${colors.neutral.dark1};
+  border-top: 1px solid ${colors.neutral.light5};
+  color: ${colors.neutral.light5};
+  display: flex;
+  justify-content: space-between;
   padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
 `;
 
-export default StyledFooter;
+export default footerStyles;

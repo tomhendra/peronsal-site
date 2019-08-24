@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import useSiteMetadata from '../../hooks/use-site-metadata';
-import GlobalStyles from '../../assets/styles/global-styles';
+import { Global } from '@emotion/core';
+import baseStyles from '../../assets/styles/base-styles';
 import Header from '../header';
 import Main from '../main';
 import Footer from '../footer';
@@ -10,7 +11,7 @@ const Layout = ({ children }) => {
   const { title } = useSiteMetadata();
   return (
     <>
-      <GlobalStyles />
+      <Global styles={baseStyles} />
       <Header siteTitle={title} />
       <Main mainContent={children} />
       <Footer />
