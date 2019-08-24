@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@emotion/core';
 
-const Main = ({ content }) => {
+const Main = ({ mainContent }) => {
   return (
     <main
       css={css`
@@ -11,7 +11,7 @@ const Main = ({ content }) => {
         width: 550px;
       `}
     >
-      {content}
+      {mainContent}
     </main>
   );
 };

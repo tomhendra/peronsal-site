@@ -1,4 +1,4 @@
-export const colors = {
+export const color = {
   primary: {
     dark1: 'hsl(320, 100%, 19%)',
     dark2: 'hsl(322, 93%, 27%)',
@@ -76,59 +76,57 @@ export const colors = {
     light4: 'hsl(154, 75%, 87%)',
     light5: 'hsl(152, 68%, 96%)',
   },
-
-  shadow: {
-    even1: '0 1px 3px hsla(0, 0%, 0%, 0.2)',
-    even2: '0 4px 6px hsla(0, 0%, 0%, 0.2)',
-    even3: '0 5px 15px hsla(0, 0%, 0%, 0.2)',
-    even4: '0 10px 24px hsla(0, 0%, 0%, 0.2)',
-    even5: '0 15px 35px hsla(0, 0%, 0%, 0.2)',
-    offset1: '0 1px 3px hsla(0, 0%, 0%, 0.12), 0 1px 2px hsla(0, 0%, 0%, 0.24)',
-    offset2: '0 3px 6px hsla(0, 0%, 0%, 0.15), 0 2px 4px hsla(0, 0%, 0%, 0.12)',
-    offset3: '0 10px 20px hsla(0, 0%, 0%, 0.15), 0 3px 6px hsla(0, 0%, 0%, 0.1)',
-    offset4: '0 15px 25px hsla(0, 0%, 0%, 0.15), 0 5px 10px hsla(0, 0%, 0%, 0.05)',
-    offset5: '0 20px 40px hsla(0, 0%, 0%, 0.2)',
-  },
 };
 
-export const sizes = {
-  font: {
-    small: '1.2rem',
-    base: '1.4rem',
-    medium1: '1.6rem',
-    medium2: '1.8rem',
-    medium3: '2rem',
-    large1: '2.4rem',
-    large2: '3rem',
-    large3: '3.6rem',
-    huge1: '4.8rem',
-    huge2: '6rem',
-    huge3: '7.2rem',
-  },
+export const shadow = {
+  even1: '0 1px 3px hsla(0, 0%, 0%, 0.2)',
+  even2: '0 4px 6px hsla(0, 0%, 0%, 0.2)',
+  even3: '0 5px 15px hsla(0, 0%, 0%, 0.2)',
+  even4: '0 10px 24px hsla(0, 0%, 0%, 0.2)',
+  even5: '0 15px 35px hsla(0, 0%, 0%, 0.2)',
+  offset1: '0 1px 3px hsla(0, 0%, 0%, 0.12), 0 1px 2px hsla(0, 0%, 0%, 0.24)',
+  offset2: '0 3px 6px hsla(0, 0%, 0%, 0.15), 0 2px 4px hsla(0, 0%, 0%, 0.12)',
+  offset3: '0 10px 20px hsla(0, 0%, 0%, 0.15), 0 3px 6px hsla(0, 0%, 0%, 0.1)',
+  offset4: '0 15px 25px hsla(0, 0%, 0%, 0.15), 0 5px 10px hsla(0, 0%, 0%, 0.05)',
+  offset5: '0 20px 40px hsla(0, 0%, 0%, 0.2)',
+};
 
-  // For the best reading experience, make your paragraphs wide enough to fit between 45 and 75 characters per line.
-  // The easiest way to do this on the web is using em units, which are relative to the current font size.
-  // A width of 2035em will get you in the right ballpark.
-  space: {
-    small1: '0.4rem',
-    small2: '0.8rem',
-    small3: '1.2rem',
-    base: '1.6rem',
-    medium1: '2.4rem',
-    medium2: '3.2rem',
-    medium3: '4.8rem',
-    large1: '6.4rem',
-    large2: '9.6rem',
-    large3: '12.8rem',
-    huge1: '19.2rem',
-    huge2: '25.6rem',
-    huge3: '38.4rem',
-    massive1: '51.2rem',
-    massive2: '64rem',
-    massive3: '76.8rem',
-  },
+// For the best reading experience, make your paragraphs wide enough to fit between 45 and 75 characters per line.
+// The easiest way to do this on the web is using em units, which are relative to the current font size.
+// A width of 2035em will get you in the right ballpark.
+export const size = {
+  small1: '0.4rem',
+  small2: '0.8rem',
+  small3: '1.2rem',
+  base: '1.6rem',
+  medium1: '2.4rem',
+  medium2: '3.2rem',
+  medium3: '4.8rem',
+  large1: '6.4rem',
+  large2: '9.6rem',
+  large3: '12.8rem',
+  huge1: '19.2rem',
+  huge2: '25.6rem',
+  huge3: '38.4rem',
+  massive1: '51.2rem',
+  massive2: '64rem',
+  massive3: '76.8rem',
+};
 
-  breakpoint: {
-    desktop: '45rem',
-  },
+export const fontsize = {
+  small: '1.2rem',
+  base: '1.4rem',
+  medium1: '1.6rem',
+  medium2: '1.8rem',
+  medium3: '2rem',
+  large1: '2.4rem',
+  large2: '3rem',
+  large3: '3.6rem',
+  huge1: '4.8rem',
+  huge2: '6rem',
+  huge3: '7.2rem',
+};
+
+export const breakpoint = {
+  desktop: '45rem',
 };

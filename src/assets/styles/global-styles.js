@@ -1,8 +1,8 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
-import { colors, sizes } from './settings';
+import { color, size, fontsize } from './settings';
 
-const BaseStyles = () => (
+const GlobalStyles = () => (
   <Global
     styles={css`
       * {
@@ -11,7 +11,7 @@ const BaseStyles = () => (
       }
       /* lobotomised owl selector - every sibling inherits */
       * + * {
-        margin-top: ${sizes.space.small3};
+        margin-top: ${size.small3};
       }
 
       html {
@@ -19,13 +19,13 @@ const BaseStyles = () => (
       }
 
       body {
-        background: ${colors.neutral.dark1};
-        color: ${colors.neutral.light5};
+        background: ${color.neutral.dark1};
+        color: ${color.neutral.light5};
         /* font-family: 'IdealSans-Book', Fallback, 'Helvetica', 'Arial', sans-serif; */
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
           Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size: ${sizes.font.base};
-        line-height: ${sizes.font.base};
+        font-size: ${fontsize.base};
+        line-height: ${fontsize.base};
         margin: 0;
 
         /* remove margin for main div that that Gatsby mounts into */
@@ -39,7 +39,7 @@ const BaseStyles = () => (
         h4,
         h5,
         h6 {
-          line-height: ${sizes.font.small};
+          line-height: ${fontsize.small};
         }
 
         button {
@@ -54,4 +54,4 @@ const BaseStyles = () => (
   />
 );
 
-export default BaseStyles;
+export default GlobalStyles;
