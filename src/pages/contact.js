@@ -6,12 +6,12 @@ import SEO from '../components/utils/seo';
 const ContactPage = () => (
   <Layout>
     <SEO title="Contact" />
-    <h1>Contact</h1>
+    <h1>Contact me.</h1>
     <p>
-      I'm always open to new opportunities. if you'd like to chat email me at{' '}
-      <a href={'mailto:hola@tomhendra.dev'}>hola@tomhendra.dev</a>
+      I'm always open to new opportunities. if you'd like to chat please send me
+      a short message and I’ll get back to you right away. Alternatively find me
+      online @tomhendra
     </p>
-    <Link to="/">&larr; back to home</Link>
   </Layout>
 );
 
