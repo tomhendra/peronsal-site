@@ -2,36 +2,39 @@
 // The easiest way to do this on the web is using em units, which are relative to the current font size.
 // A width of 2035em will get you in the right ballpark.
 export const size = {
-  small1: '0.4rem',
-  small2: '0.8rem',
-  small3: '1.2rem',
-  base: '1.6rem',
-  medium1: '2.4rem',
-  medium2: '3.2rem',
-  medium3: '4.8rem',
-  large1: '6.4rem',
-  large2: '9.6rem',
-  large3: '12.8rem',
-  huge1: '19.2rem',
-  huge2: '25.6rem',
-  huge3: '38.4rem',
-  massive1: '51.2rem',
-  massive2: '64rem',
-  massive3: '76.8rem',
+  small1: '0.4rem', // 4px
+  small2: '0.8rem', // 8px
+  small3: '1.2rem', // 12px
+  base: '1.6rem', // 16px
+  medium1: '2.4rem', // 24px
+  medium2: '3.2rem', // 32px
+  medium3: '4.8rem', // 48px
+  large1: '6.4rem', // 64px
+  large2: '9.6rem', // 96px
+  large3: '12.8rem', // 128px
+  huge1: '19.2rem', // 192px
+  huge2: '25.6rem', // 256px
+  huge3: '38.4rem', // 384px
+  massive1: '51.2rem', // 512px
+  massive2: '64rem', // 640px
+  massive3: '76.8rem', // 768px
 };
 
 export const fontsize = {
-  small: '1.2rem',
-  base: '1.4rem',
-  medium1: '1.6rem',
-  medium2: '1.8rem',
-  medium3: '2rem',
-  large1: '2.4rem',
-  large2: '3rem',
-  large3: '3.6rem',
-  huge1: '4.8rem',
-  huge2: '6rem',
-  huge3: '7.2rem',
+  small: '1.2rem', // 12px
+  base: '1.4rem', // 14px
+  medium1: '1.6rem', // 16px
+  medium2: '1.8rem', // 18px
+  medium3: '2rem', // 20px
+  large1: '2.4rem', // 24px
+  large2: '3rem', // 30px
+  large3: '3.6rem', // 36px
+  huge1: '4.8rem', // 48px
+  huge2: '6rem', // 60px
+  huge3: '7.2rem', // 72px
+  graphic1: '8.4rem', // 84px
+  graphic2: '9.6rem', // 96px
+  graphic3: '10.8rem', // 108px
 };
 
 export const breakpoint = {
