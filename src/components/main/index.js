@@ -7,7 +7,7 @@ const Main = ({ mainContent }) => {
 };
 
 Main.propTypes = {
-  content: PropTypes.node.isRequired,
+  mainContent: PropTypes.node.isRequired,
 };
 
 export default Main;
