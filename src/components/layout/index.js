@@ -8,14 +8,12 @@ import Main from '../main';
 import Footer from '../footer';
 
 const Layout = ({ children }) => (
-  <>
+  <div css={layoutStyles}>
     <Global styles={baseStyles} />
-    <div css={layoutStyles}>
-      <Header />
-      <Main mainContent={children} />
-      <Footer />
-    </div>
-  </>
+    <Header />
+    <Main mainContent={children} />
+    <Footer />
+  </div>
 );
 
 Layout.propTypes = {
