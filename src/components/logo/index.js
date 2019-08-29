@@ -1,23 +1,28 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import useSiteMetadata from '../../hooks/use-site-metadata';
 
 const Logo = () => {
+  const { title } = useSiteMetadata();
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(
-        relativePath: { eq: "images/tomhendra-icon-no-bg.svg" }
-      ) {
+      placeholderImage: file(relativePath: { eq: "tomhendra-icon.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+          fixed(width: 125, height: 125) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `);
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
+  return (
+    <div>
+      <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+      <p>{title}</p>
+    </div>
+  );
 };
 
 export default Logo;

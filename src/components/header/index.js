@@ -1,14 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import headerStyles from './header-styles';
 import Logo from '../logo';
 import NavLink from '../navlink';
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header css={headerStyles}>
     <NavLink to="/">
-      {/* <Logo /> */}
-      {siteTitle}
+      <Logo />
     </NavLink>
     <nav>
       <NavLink to="/about/" activeClassName="current-page">
@@ -26,13 +24,5 @@ const Header = ({ siteTitle }) => (
     </nav>
   </header>
 );
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: ``,
-};
 
 export default Header;
