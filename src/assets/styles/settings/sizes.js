@@ -38,5 +38,6 @@ export const fontsize = {
 };
 
 export const breakpoint = {
+  largeDesktop: '180rem',
   desktop: '45rem',
 };
