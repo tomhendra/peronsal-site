@@ -21,11 +21,3 @@ const NavLink = styled(Link)`
 `;
 
 export default NavLink;
-
-// import React from 'react';
-// import { Link } from 'gatsby';
-// import navlinkStyles from './navlink-styles';
-
-// const NavLink = () => <Link style={navlinkStyles} />;
-
-// export default NavLink;
