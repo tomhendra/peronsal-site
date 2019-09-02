@@ -1,7 +1,7 @@
 import { css } from '@emotion/core';
 import { colors, fontsize } from '../styles';
 
-const baseStyles = () => css`
+export const baseStyles = () => css`
   *,
   *::before,
   *::after {
@@ -46,5 +46,3 @@ const baseStyles = () => css`
     }
   }
 `;
-
-export default baseStyles;

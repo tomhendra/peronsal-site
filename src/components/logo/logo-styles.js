@@ -1,7 +1,7 @@
 import { css } from '@emotion/core';
 import { fontsize } from '../../assets/styles';
 
-const logoStyles = () => css`
+export const logoStyles = () => css`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -12,5 +12,3 @@ const logoStyles = () => css`
     text-transform: uppercase;
   }
 `;
-
-export default logoStyles;
