@@ -1,9 +1,9 @@
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-import { colors, fontsize } from '../../assets/styles';
+import { color, fontsize } from '../../assets/styles';
 
 export const NavLink = styled(Link)`
-  color: ${colors.neutral.light5};
+  color: ${color.neutral.light5};
   font-size: ${fontsize.base};
   font-weight: ${props => props.fontWeight || 'normal'};
   line-height: 1;
@@ -12,7 +12,7 @@ export const NavLink = styled(Link)`
   text-decoration: none;
 
   &.current-page {
-    border-bottom: 2px solid ${colors.neutral.light5};
+    border-bottom: 2px solid ${color.neutral.light5};
   }
 
   &:last-of-type {

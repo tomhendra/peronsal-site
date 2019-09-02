@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import { colors, fontsize } from '../styles';
+import { color, fontsize } from '../styles';
 
 export const baseStyles = () => css`
   *,
@@ -16,8 +16,8 @@ export const baseStyles = () => css`
   }
 
   body {
-    background: ${colors.neutral.dark1};
-    color: ${colors.neutral.light5};
+    background: ${color.neutral.dark1};
+    color: ${color.neutral.light5};
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: ${fontsize.base};

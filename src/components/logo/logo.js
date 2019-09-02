@@ -8,7 +8,7 @@ export const Logo = () => {
   const { title } = useSiteMetadata();
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "tomhendra-logo.png" }) {
+      imageFile: file(relativePath: { eq: "tomhendra-logo.png" }) {
         childImageSharp {
           fixed(width: 48, height: 48) {
             ...GatsbyImageSharpFixed
@@ -20,7 +20,7 @@ export const Logo = () => {
 
   return (
     <div css={logoStyles}>
-      <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+      <Img fixed={data.imageFile.childImageSharp.fixed} />
       <p>{title}</p>
     </div>
   );
