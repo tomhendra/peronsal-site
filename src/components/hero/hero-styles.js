@@ -9,7 +9,7 @@ export const heroStyles = () => css`
   h1 {
     font-size: ${fontsize.graphic3};
     line-height: 1;
-    margin-top: ${size.large3};
+    margin-top: ${size.huge1};
     text-align: center;
   }
 
