@@ -1,7 +1,7 @@
 {
   "name": "tomhendra-portfolio",
   "private": false,
-  "description": "A portfolio website for Tom Hendra, software engineer",
+  "description": "A portfolio website for Tom Hendra, web developer",
   "version": "0.1.0",
   "author": "Tom Hendra <hola@tomhendra.dev>",
   "keywords": [
@@ -12,12 +12,9 @@
     "type": "git",
     "url": "https://github.com/tomhendra/portfolio"
   },
-  "bugs": {
-    "url": "https://github.com/tomhendra/issues"
-  },
   "scripts": {
     "build": "gatsby build",
-    "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop --open 'Google Chrome'",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
