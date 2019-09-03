@@ -1,11 +1,12 @@
 import { css } from '@emotion/core';
-import { color } from '../../assets/styles';
+import { color, fontsize, size } from '../../assets/styles';
 
 export const footerStyles = () => css`
-  background-color: ${color.neutral.dark1};
   border: 1px solid ${color.neutral.light5};
-  color: ${color.neutral.light5};
   display: flex;
+  font-size: ${fontsize.small};
   justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1200px - 0.5rem) / 2);
+  padding: ${size.large1};
+  padding-top: 0;
+  text-transform: uppercase;
 `;
