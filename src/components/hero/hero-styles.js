@@ -15,7 +15,7 @@ export const heroStyles = () => css`
 
   h2 {
     color: ${color.primary.light2};
-    padding-right: ${size.medium2};
+    padding-right: ${size.medium1};
     text-align: right;
   }
 `;

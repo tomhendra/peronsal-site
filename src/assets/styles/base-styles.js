@@ -18,8 +18,7 @@ export const baseStyles = () => css`
   body {
     background: ${color.neutral.dark1};
     color: ${color.neutral.light5};
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: ${fontsize.base};
     line-height: 1.6;
 
@@ -34,6 +33,7 @@ export const baseStyles = () => css`
     h4,
     h5,
     h6 {
+      font-family: 'Lato', sans-serif;
       line-height: 1.6;
     }
 
