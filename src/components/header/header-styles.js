@@ -13,7 +13,7 @@ export const headerStyles = () => css`
     flex-direction: column;
     text-transform: uppercase;
 
-    > *:not(:first-child) {
+    > *:not(:first-of-type) {
       margin-top: ${size.small3};
     }
   }

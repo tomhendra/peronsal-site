@@ -3,12 +3,15 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'Tom Hendra',
-    description: 'Portfolio site for Tom Hendra, software developer',
+    description: 'Portfolio website for Tom Hendra, web developer.',
     author: 'Tom Hendra',
   },
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -16,8 +19,13 @@ module.exports = {
         path: path.join(__dirname, `src`, `assets`, `images`),
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: path.join(__dirname, `src`, `posts`),
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
