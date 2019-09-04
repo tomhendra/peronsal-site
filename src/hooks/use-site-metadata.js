@@ -13,5 +13,5 @@ export function useSiteMetadata() {
     }
   `);
 
-  return data.site.siteMetadata;
+  return data.site;
 }

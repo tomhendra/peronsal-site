@@ -5,7 +5,7 @@ import { useSiteMetadata } from '../../hooks/use-site-metadata';
 import { logoStyles } from './logo-styles';
 
 export const Logo = () => {
-  const { title } = useSiteMetadata();
+  const { siteMetadata } = useSiteMetadata();
   const data = useStaticQuery(graphql`
     query {
       imageFile: file(relativePath: { eq: "tomhendra-logo.png" }) {
@@ -21,7 +21,7 @@ export const Logo = () => {
   return (
     <div css={logoStyles}>
       <Img fixed={data.imageFile.childImageSharp.fixed} />
-      <p>{title}</p>
+      <p>{siteMetadata.title}</p>
     </div>
   );
 };
