@@ -1,7 +1,7 @@
 import React from 'react';
 import { headerStyles } from './header-styles';
 import { Logo } from '../logo';
-import { NavLink } from '../navlink';
+import { NavLink } from '../nav-link';
 
 export const Header = () => (
   <header css={headerStyles}>

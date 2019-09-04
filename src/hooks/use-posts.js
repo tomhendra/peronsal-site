@@ -5,6 +5,7 @@ export function usePosts() {
     query {
       allMarkdownRemark {
         nodes {
+          id
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
@@ -27,6 +28,7 @@ export function usePosts() {
   `);
 
   return data.allMarkdownRemark.nodes.map(post => ({
+    id: post.id,
     title: post.frontmatter.title,
     date: post.frontmatter.date,
     author: post.frontmatter.author,
