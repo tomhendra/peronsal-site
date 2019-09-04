@@ -1,6 +1,7 @@
 const path = require('path');
 
-exports.onCreateNode = ({ node, actions }) => {
+// Generate slugs for blog posts
+module.exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === 'MarkdownRemark') {
@@ -12,4 +13,40 @@ exports.onCreateNode = ({ node, actions }) => {
       value: slug,
     });
   }
+};
+
+// Generate pages from markdown file blog posts
+module.exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions;
+  const postTemplate = path.resolve('src/templates/post.js');
+  const res = await graphql(`
+    query {
+      allMarkdownRemark {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (res.errors) {
+    reporter.panic('🚨  ERROR: Loading "createPages" query', res.errors);
+  }
+
+  const posts = res.data.allMarkdownRemark.edges;
+
+  posts.forEach(({ node }, index) => {
+    createPage({
+      component: postTemplate,
+      path: `/blog/${node.fields.slug}`,
+      context: {
+        id: node.id,
+      },
+    });
+  });
 };
