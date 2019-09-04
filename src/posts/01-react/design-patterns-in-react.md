@@ -1,6 +1,5 @@
 ---
 title: 'Design patterns in React'
-slug: design-patterns-in-react
 date: 2019-03-09
 author: Tom Hendra
 image: ./images/tomhendra-icon.png
