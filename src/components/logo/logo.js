@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import useSiteMetadata from '../../hooks/use-site-metadata';
+import { useSiteMetadata } from '../../hooks/use-site-metadata';
 import { logoStyles } from './logo-styles';
 
 export const Logo = () => {

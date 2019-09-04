@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-export const usePosts = () => {
+export function usePosts() {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -8,6 +8,7 @@ export const usePosts = () => {
           frontmatter {
             title
             slug
+            date(formatString: "MMMM DD, YYYY")
             author
             image {
               sharp: childImageSharp {
@@ -26,8 +27,9 @@ export const usePosts = () => {
   return data.allMarkdownRemark.nodes.map(post => ({
     title: post.frontmatter.title,
     slug: post.frontmatter.slug,
+    date: post.frontmatter.date,
     author: post.frontmatter.author,
     image: post.frontmatter.image,
     excerpt: post.excerpt,
   }));
-};
+}

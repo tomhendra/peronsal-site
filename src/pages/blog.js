@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePosts } from '../hooks/use-posts';
 import { Layout } from '../components/layout';
-import SEO from '../components/utils/seo';
+import { SEO } from '../components/utils/seo';
 
 const BlogPage = () => {
   const posts = usePosts();
