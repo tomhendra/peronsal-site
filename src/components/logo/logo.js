@@ -11,7 +11,7 @@ export const Logo = () => {
       imageFile: file(relativePath: { eq: "tomhendra-logo.png" }) {
         childImageSharp {
           fixed(width: 48, height: 48) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
