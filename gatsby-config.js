@@ -9,21 +9,29 @@ module.exports = {
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        plugins: [
+        extensions: [`mdx`, `md`],
+        defaultLayouts: {
+          default: require.resolve('./src/components/layout.js'),
+        },
+        gatsbyRemarkPlugins: [
+          // is gatsby-remark-relative-images required for gatsby-plugin-mdx ????
           'gatsby-remark-relative-images',
           {
-            resolve: 'gatsby-remark-images',
+            resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 750,
               linkImagesToOriginal: false,
             },
           },
         ],
+        // plugins added to resolve adding padding issue:
+        // https://github.com/gatsbyjs/gatsby/issues/15486#issuecomment-510153237
+        plugins: [`gatsby-remark-images`],
       },
     },
     {

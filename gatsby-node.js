@@ -4,7 +4,7 @@ const path = require('path');
 module.exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === 'MarkdownRemark') {
+  if (node.internal.type === 'Mdx') {
     const slug = path.basename(node.fileAbsolutePath, '.md');
 
     createNodeField({
@@ -21,7 +21,7 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
   const postTemplate = path.resolve('src/templates/post.js');
   const res = await graphql(`
     query {
-      allMarkdownRemark {
+      allMdx {
         edges {
           node {
             id
@@ -38,7 +38,7 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panic('🚨  ERROR: Loading "createPages" query', res.errors);
   }
 
-  const posts = res.data.allMarkdownRemark.edges;
+  const posts = res.data.allMdx.edges;
 
   posts.forEach(({ node }, index) => {
     createPage({
