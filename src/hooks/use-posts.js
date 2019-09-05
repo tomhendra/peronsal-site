@@ -10,7 +10,7 @@ export function usePosts() {
             title
             date(formatString: "MMMM DD, YYYY")
             author
-            image {
+            featureImage {
               sharp: childImageSharp {
                 fluid(maxWidth: 100, maxHeight: 100) {
                   ...GatsbyImageSharpFluid_withWebp
@@ -32,7 +32,7 @@ export function usePosts() {
     title: post.frontmatter.title,
     date: post.frontmatter.date,
     author: post.frontmatter.author,
-    image: post.frontmatter.image,
+    featureImage: post.frontmatter.featureImage,
     excerpt: post.excerpt,
     slug: post.fields.slug,
   }));

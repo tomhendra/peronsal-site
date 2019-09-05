@@ -2,7 +2,7 @@
 title: 'Design patterns in React'
 date: 2019-03-09
 author: Tom Hendra
-image: ./images/tomhendra-icon.png
+featureImage: ./images/tomhendra-icon.png
 ---
 
 This is a sample post about React application design patterns.

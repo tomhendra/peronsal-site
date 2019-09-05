@@ -14,7 +14,7 @@ export const PostPreview = ({ post }) => (
         width: 100px;
       `}
     >
-      <Image fluid={post.image.sharp.fluid} alt={post.title} />
+      <Image fluid={post.featureImage.sharp.fluid} alt={post.title} />
     </Link>
     <div>
       <h3>
