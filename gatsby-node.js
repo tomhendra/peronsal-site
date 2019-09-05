@@ -19,7 +19,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       // Generated value based on filepath with "blog" prefix. We
       // don't need a separating "/" before the value because
       // createFilePath returns a path with the leading "/".
-      value,
+      value: `/blog${value}`,
     });
   }
 };
@@ -51,10 +51,8 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
   posts.forEach(({ node }, index) => {
     createPage({
       component: path.resolve('./src/templates/post.js'),
-      path: `/blog/${node.fields.slug}`,
-      context: {
-        id: node.id,
-      },
+      path: node.fields.slug,
+      context: { id: node.id },
     });
   });
 };

@@ -9,7 +9,7 @@ import { postPreviewStyles } from './post-preview-styles';
 export const PostPreview = ({ post }) => (
   <article css={postPreviewStyles}>
     <Link
-      to={`/blog/${post.slug}`}
+      to={post.slug}
       css={css`
         width: 100px;
       `}
@@ -18,10 +18,10 @@ export const PostPreview = ({ post }) => (
     </Link>
     <div>
       <h3>
-        <PostLink to={`/blog/${post.slug}`}>{post.title}</PostLink>
+        <PostLink to={post.slug}>{post.title}</PostLink>
       </h3>
       <p>{post.excerpt}</p>
-      <ReadLink to={`/blog/${post.slug}`}>read this post &rarr;</ReadLink>
+      <ReadLink to={post.slug}>read this post &rarr;</ReadLink>
     </div>
   </article>
 );
