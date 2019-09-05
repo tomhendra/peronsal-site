@@ -4,7 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Layout } from '../components/layout';
 
 export const query = graphql`
-  query BlogPostQuery($id: String) {
+  query BlogPostQuery($id: String!) {
     mdx(id: { eq: $id }) {
       id
       body
