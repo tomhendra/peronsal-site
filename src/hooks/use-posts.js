@@ -19,7 +19,7 @@ export function usePosts() {
   return data.allContentfulBlogPost.edges.map(({ node }) => ({
     id: node.id,
     title: node.title,
-    slug: node.slug,
+    slug: `/blog/${node.slug}`,
     publishedDate: node.publishedDate,
   }));
 }
