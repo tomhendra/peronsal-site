@@ -21,10 +21,11 @@ const postTemplate = ({ data: { contentfulBlogPost } }) => {
       'embedded-asset-block': node => {
         const alt = node.data.target.fields.title['en-US'];
         const url = node.data.target.fields.file['en-US'].url;
-        return <img alt={alt} url={url} />;
+        return <img alt={alt} src={url} />;
       },
     },
   };
+
   return (
     <Layout>
       <h1>{contentfulBlogPost.title}</h1>
@@ -35,18 +36,3 @@ const postTemplate = ({ data: { contentfulBlogPost } }) => {
 };
 
 export default postTemplate;
-
-// OLD MDX QUERY...................................
-// export const query = graphql`
-//   query BlogPostQuery($id: String!) {
-//     mdx(id: { eq: $id }) {
-//       id
-//       body
-//       frontmatter {
-//         title
-//         author
-//         date(formatString: "MMMM DD, YYYY")
-//       }
-//     }
-//   }
-// `;

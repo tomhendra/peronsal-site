@@ -19,31 +19,6 @@ module.exports = {
         path: path.join(__dirname, `src`, `assets`, `images`),
       },
     },
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     name: 'posts',
-    //     path: path.join(__dirname, `src`, `posts`),
-    //   },
-    // },
-    // {
-    //   resolve: 'gatsby-plugin-mdx',
-    //   options: {
-    //     extensions: [`.mdx`, `.md`],
-    //     defaultLayouts: {
-    //       default: require.resolve('./src/components/layout/index.js'),
-    //     },
-    //     gatsbyRemarkPlugins: [
-    //       {
-    //         resolve: `gatsby-remark-images`,
-    //         options: {
-    //           maxWidth: 750,
-    //           linkImagesToOriginal: false,
-    //         },
-    //       },
-    //     ],
-    //   },
-    // },
     {
       resolve: 'gatsby-source-contentful',
       options: {
@@ -60,7 +35,7 @@ module.exports = {
         background_color: '#1F2933',
         theme_color: '#1F2933',
         display: 'minimal-ui',
-        icon: 'src/assets/images/tomhendra-icon.png', // This path is relative to the root of the site.
+        icon: 'src/assets/images/tomhendra-icon.png',
       },
     },
     // PWA: https://gatsby.dev/offline
