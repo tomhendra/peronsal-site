@@ -1,7 +1,7 @@
 import React from 'react';
-// import { css } from '@emotion/core';
-// import { Link } from 'gatsby';
-// import Image from 'gatsby-image';
+import { css } from '@emotion/core';
+import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 import { PostLink } from '../post-link';
 import { ReadLink } from '../read-link';
 import { postPreviewStyles } from './post-preview-styles';
@@ -14,7 +14,7 @@ export const PostPreview = ({ post }) => (
         width: 100px;
       `}
     >
-      <Image fluid={post.featureImage.sharp.fluid} alt={post.title} />
+      <Img fluid={post.featuredImage} alt={post.title} />
     </Link> */}
     <div>
       <h3>
