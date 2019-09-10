@@ -10,6 +10,14 @@ export function usePosts() {
             title
             slug
             publishedDate(formatString: "Do MMMM, YYYY")
+            featuredImage {
+              file {
+                url
+              }
+              fluid {
+                ...GatsbyContentfulFluid_withWebp
+              }
+            }
           }
         }
       }
@@ -21,5 +29,6 @@ export function usePosts() {
     title: node.title,
     slug: `/blog/${node.slug}`,
     publishedDate: node.publishedDate,
+    featuredImage: node.featuredImage.fluid,
   }));
 }

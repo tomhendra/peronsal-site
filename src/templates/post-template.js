@@ -13,7 +13,7 @@ export const query = graphql`
         file {
           url
         }
-        fluid(maxWidth: 256) {
+        fluid {
           ...GatsbyContentfulFluid_withWebp
         }
       }

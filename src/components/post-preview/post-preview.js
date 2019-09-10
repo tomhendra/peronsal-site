@@ -8,14 +8,14 @@ import { postPreviewStyles } from './post-preview-styles';
 
 export const PostPreview = ({ post }) => (
   <article css={postPreviewStyles}>
-    {/* <Link
+    <Link
       to={post.slug}
       css={css`
         width: 100px;
       `}
     >
       <Img fluid={post.featuredImage} alt={post.title} />
-    </Link> */}
+    </Link>
     <div>
       <h3>
         <PostLink to={post.slug}>{post.title}</PostLink>
