@@ -18,6 +18,7 @@ export const size = {
   massive1: '51.2rem', // 512px
   massive2: '64rem', // 640px
   massive3: '76.8rem', // 768px
+  massive4: '96rem', // 960px
 };
 
 export const fontsize = {

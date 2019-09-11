@@ -50,7 +50,6 @@ const postTemplate = ({ data: { contentfulBlogPost } }) => {
       <div
         css={css`
           font-size: ${fontsize.medium1};
-          margin: 0 auto;
           max-width: ${size.massive3};
         `}
       >
