@@ -11,4 +11,8 @@ export const logoStyles = () => css`
     margin-top: 3px;
     text-transform: uppercase;
   }
+
+  img {
+    height: 48px;
+  }
 `;
