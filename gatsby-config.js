@@ -35,7 +35,7 @@ module.exports = {
         background_color: '#1F2933',
         theme_color: '#1F2933',
         display: 'minimal-ui',
-        icon: 'src/assets/images/tomhendra-icon.png',
+        icon: 'src/assets/images/logo/tomhendra-icon.png',
       },
     },
     // PWA: https://gatsby.dev/offline

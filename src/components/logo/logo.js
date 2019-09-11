@@ -8,7 +8,7 @@ export const Logo = () => {
   const { siteMetadata } = useSiteMetadata();
   const data = useStaticQuery(graphql`
     query {
-      imageFile: file(relativePath: { eq: "tomhendra-logo.png" }) {
+      imageFile: file(relativePath: { eq: "logo/tomhendra-logo.png" }) {
         childImageSharp {
           fixed(width: 48, height: 48) {
             ...GatsbyImageSharpFixed_withWebp

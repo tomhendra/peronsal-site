@@ -6,6 +6,5 @@ export const layoutStyles = () => css`
   grid-template-columns: 1fr;
   grid-template-rows: ${size.huge1} auto ${size.large2};
   min-height: 100vh;
-  margin: 0 auto;
   max-width: ${breakpoint.largeDesktop};
 `;
