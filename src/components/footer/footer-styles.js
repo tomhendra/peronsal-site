@@ -2,6 +2,7 @@ import { css } from '@emotion/core';
 import { color, fontsize, size } from '../../assets/styles';
 
 export const footerStyles = () => css`
+  align-items: flex-end;
   border: 1px solid ${color.neutral.light5};
   display: flex;
   font-size: ${fontsize.small};
