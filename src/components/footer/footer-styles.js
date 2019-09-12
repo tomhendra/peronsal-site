@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import { color, fontsize, size } from '../../assets/styles';
+import { fontsize, size } from '../../assets/styles';
 
 export const footerStyles = () => css`
   align-items: flex-end;

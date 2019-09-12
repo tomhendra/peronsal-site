@@ -1,0 +1,10 @@
+# Skills matrix
+javascript:
+  name: JavaScript
+  image: ../assets/images/skills/javascript.png
+html:
+  name: HTML
+  image: ../assets/images/skills/html.png
+css:
+  name: CSS
+  image: ../assets/images/skills/css.png

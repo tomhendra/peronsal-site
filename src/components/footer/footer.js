@@ -1,12 +1,17 @@
 import React from 'react';
-import { css } from '@emotion/core';
+import { useSiteMetadata } from '../../hooks/use-site-metadata';
 import { Social } from '../social';
 import { footerStyles } from './footer-styles';
 
 export const Footer = () => {
+  const { siteMetadata } = useSiteMetadata();
+  const date = new Date();
+
   return (
     <footer css={footerStyles}>
-      <p>Web developer</p>
+      <p>
+        &copy; {siteMetadata.title} {date.getFullYear()}
+      </p>
       <Social />
     </footer>
   );
