@@ -17,7 +17,7 @@ const AboutPage = () => (
       subHeading={`Hola, I'm Tom.`}
       paragraph={`I am a frontend web developer from the UK, living in Spain. 
       I am passionate about crafting beautiful user experiences. I take pride in
-      continuously learning directly from the experts who shape the modern web.`}
+      continuously learning new skills directly from the experts who shape the modern web.`}
     />
     <div
       css={css`
@@ -27,11 +27,6 @@ const AboutPage = () => (
       `}
     >
       <Card
-        icon={businessSVG}
-        title={`business`}
-        text={`I was a procurement professional before a web developer, instilling transferable business acumen, commercial awareness and solid communication skills.`}
-      />
-      <Card
         icon={codeSVG}
         title={`code`}
         text={`My skillset is built upon the rich & diverse JavaScript ecosystem. My natural close attention to detail enhances my ability to write clean, maintainable code.`}
@@ -40,6 +35,11 @@ const AboutPage = () => (
         icon={designSVG}
         title={`design`}
         text={`I have a keen eye for design and know my way around industry standard tools like Sketch &  Adobe Creative Suite. I am a developer who likes to design.`}
+      />
+      <Card
+        icon={businessSVG}
+        title={`business`}
+        text={`I was a procurement professional before a web developer, instilling transferable business acumen, commercial awareness and solid communication skills.`}
       />
     </div>
   </Layout>
