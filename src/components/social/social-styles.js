@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import { color, size } from '../../assets/styles';
+import { size } from '../../assets/styles';
 
 export const socialStyles = () => css`
   display: flex;

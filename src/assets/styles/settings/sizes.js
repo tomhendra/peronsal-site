@@ -14,7 +14,8 @@ export const size = {
   large3: '12.8rem', // 128px
   huge1: '19.2rem', // 192px
   huge2: '25.6rem', // 256px
-  huge3: '38.4rem', // 384px
+  huge3: '32rem', // 320px
+  huge4: '38.4rem', // 384px
   massive1: '51.2rem', // 512px
   massive2: '64rem', // 640px
   massive3: '76.8rem', // 768px

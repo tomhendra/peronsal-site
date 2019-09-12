@@ -49,6 +49,10 @@ export const baseStyles = () => css`
       margin-bottom: ${size.small3};
     }
 
+    h3 {
+      font-size: ${fontsize.medium1};
+    }
+
     button {
       cursor: pointer;
     }
