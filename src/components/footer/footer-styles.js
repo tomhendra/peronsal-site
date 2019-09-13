@@ -5,7 +5,7 @@ export const footerStyles = () => css`
   align-items: flex-end;
   bottom: 0;
   display: flex;
-  font-size: ${fontsize.small};
+  font-size: 1rem;
   height: ${size.huge1};
   justify-content: space-between;
   padding: ${size.large1};

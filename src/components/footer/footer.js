@@ -5,12 +5,12 @@ import { footerStyles } from './footer-styles';
 
 export const Footer = () => {
   const { siteMetadata } = useSiteMetadata();
-  const date = new Date();
+  const date = new Date().getFullYear();
 
   return (
     <footer css={footerStyles}>
       <p>
-        &copy; {siteMetadata.title} {date.getFullYear()}
+        &copy; {siteMetadata.title} {date}
       </p>
       <Social />
     </footer>
