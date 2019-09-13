@@ -3,8 +3,8 @@ import { css } from '@emotion/core';
 import { Layout } from '../components/layout';
 import { SEO } from '../components/utils/seo';
 import { Container } from '../components/container';
+import { PageHeading } from '../components/page-heading';
 import { PageText } from '../components/page-text';
-import { size } from '../assets/styles';
 import { Card } from '../components/card';
 import businessSVG from '../assets/images/icons/business.svg';
 import codeSVG from '../assets/images/icons/code.svg';
@@ -14,18 +14,19 @@ const AboutPage = () => (
   <Layout>
     <SEO title="About" />
     <Container>
-      <PageText
-        mainHeading={`About me.`}
-        subHeading={`Hola, I'm Tom.`}
-        paragraph={`I am a frontend web developer from the UK, living in Spain. 
+      <PageHeading>
+        <PageText
+          mainHeading={`About me.`}
+          subHeading={`Hola, I'm Tom.`}
+          paragraph={`I am a frontend web developer from the UK, living in Spain. 
       I am passionate about crafting beautiful user experiences. I take pride in
       continuously learning new skills directly from the experts who shape the modern web.`}
-      />
+        />
+      </PageHeading>
       <div
         css={css`
           display: flex;
           justify-content: space-between;
-          margin-top: ${size.large1};
         `}
       >
         <Card

@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import { color, fontsize, size } from '../styles';
+import { color, fontsize } from '../styles';
 
 export const baseStyles = () => css`
   *,
@@ -39,14 +39,11 @@ export const baseStyles = () => css`
 
     h1 {
       font-size: ${fontsize.huge2};
-      margin-bottom: ${size.medium2};
     }
 
     h2 {
-      color: ${color.primary.light3};
       font-size: ${fontsize.large1};
       font-weight: normal;
-      margin-bottom: ${size.small3};
     }
 
     h3 {
