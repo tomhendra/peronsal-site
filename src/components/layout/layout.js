@@ -7,12 +7,14 @@ import { baseStyles } from '../../assets/styles';
 import { layoutStyles } from './layout-styles';
 
 export const Layout = ({ children }) => (
-  <div css={layoutStyles}>
+  <>
     <Global styles={baseStyles} />
-    <Header />
-    <main>{children}</main>
-    <Footer />
-  </div>
+    <div css={layoutStyles}>
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </div>
+  </>
 );
 
 Layout.propTypes = {
