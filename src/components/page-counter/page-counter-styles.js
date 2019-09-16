@@ -18,7 +18,7 @@ export const pageCounterStyles = () => css`
       color: ${color.primary.light3};
       font-size: ${fontsize.large1};
       line-height: 1.1;
-      margin-right: -2px;
+      margin-right: -1px;
     }
   }
 
