@@ -18,7 +18,7 @@ const BlogPage = () => {
           <PageText
             mainHeading={`Blog.`}
             subHeading={`Welcome to my blog.`}
-            paragraph={`A collection of thoughts from a tech-headed foodie.`}
+            paragraph={`When I'm not writing code or designing, I'm either satisfying my obsession with the amazing food in Spain, or lifting heavy things in the gym. This blog aims to be a collection of elements from all of my passions.`}
           />
         </PageHeading>
         {posts.map(post => (

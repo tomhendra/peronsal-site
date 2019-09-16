@@ -25,7 +25,7 @@ export function useSkills() {
   return data.skills.edges.map(({ node }) => ({
     id: node.id,
     title: node.title,
-    image: node.image,
+    image: node.image.childImageSharp.fixed,
     alt: node.alt,
   }));
 }
