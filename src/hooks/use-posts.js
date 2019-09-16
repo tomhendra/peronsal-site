@@ -3,7 +3,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 export function usePosts() {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
+      posts: allContentfulBlogPost(
+        sort: { fields: publishedDate, order: DESC }
+      ) {
         edges {
           node {
             id
@@ -24,7 +26,7 @@ export function usePosts() {
     }
   `);
 
-  return data.allContentfulBlogPost.edges.map(({ node }) => ({
+  return data.posts.edges.map(({ node }) => ({
     id: node.id,
     title: node.title,
     slug: `/blog/${node.slug}`,
