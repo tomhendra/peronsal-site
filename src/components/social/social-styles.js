@@ -7,7 +7,7 @@ export const socialStyles = () => css`
   min-width: ${size.large1};
 
   > * {
-    width: ${size.medium1};
+    width: 1.8rem;
   }
 
   > *:not(:first-of-type) {

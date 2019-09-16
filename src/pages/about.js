@@ -5,6 +5,7 @@ import { SEO } from '../components/utils/seo';
 import { Container } from '../components/container';
 import { PageHeading } from '../components/page-heading';
 import { PageText } from '../components/page-text';
+import { PageCounter } from '../components/page-counter';
 import { Card } from '../components/card';
 import businessSVG from '../assets/images/icons/business.svg';
 import codeSVG from '../assets/images/icons/code.svg';
@@ -18,10 +19,11 @@ const AboutPage = () => (
         <PageText
           mainHeading={`About me.`}
           subHeading={`Hola, I'm Tom.`}
-          paragraph={`I am a frontend web developer from the UK, living in Spain. 
+          paragraph={`I am a web developer from the UK, living in Spain. 
       I am passionate about crafting beautiful user experiences. I take pride in
       continuously learning new skills directly from the experts who shape the modern web.`}
         />
+        <PageCounter pageNumber={`01`} totalPages={`03`} />
       </PageHeading>
       <div
         css={css`
