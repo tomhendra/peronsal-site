@@ -48,7 +48,7 @@
   image: ../assets/images/skills/cypress.png
   alt: Cypress logo image
 - github:
-  title: GutHub
+  title: GitHub
   image: ../assets/images/skills/github.png
   alt: GitHub logo image
 - npm:
