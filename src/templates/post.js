@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import { css } from '@emotion/core';
 import { size, fontsize } from '../assets/styles';
 import { Layout } from '../components/layout';
+import { Container } from '../components/container';
 
 export const query = graphql`
   query ContentfulBlogPostQuery($id: String!) {
@@ -37,7 +38,7 @@ const postTemplate = ({ data: { contentfulBlogPost } }) => {
             src={url}
             alt={alt}
             css={css`
-              max-width: ${size.massive3};
+              max-width: ${size.massive2};
             `}
           />
         );
@@ -47,12 +48,7 @@ const postTemplate = ({ data: { contentfulBlogPost } }) => {
 
   return (
     <Layout>
-      <div
-        css={css`
-          font-size: ${fontsize.medium1};
-          max-width: ${size.massive3};
-        `}
-      >
+      <Container>
         <h1>{contentfulBlogPost.title}</h1>
         <p>Posted on {contentfulBlogPost.publishedDate}</p>
         <Img
@@ -60,7 +56,7 @@ const postTemplate = ({ data: { contentfulBlogPost } }) => {
           alt={contentfulBlogPost.title}
         />
         {documentToReactComponents(contentfulBlogPost.body.json, options)}
-      </div>
+      </Container>
     </Layout>
   );
 };
