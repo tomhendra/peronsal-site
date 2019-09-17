@@ -47,7 +47,8 @@ export const baseStyles = () => css`
     }
 
     h3 {
-      font-size: ${fontsize.medium1};
+      font-size: ${fontsize.medium3};
+      font-weight: normal;
     }
 
     button {

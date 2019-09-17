@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Img from 'gatsby-image';
 import { css } from '@emotion/core';
-import { size, fontsize } from '../assets/styles';
+import { size } from '../assets/styles';
 import { Layout } from '../components/layout';
 import { Container } from '../components/container';
 

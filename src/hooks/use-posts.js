@@ -10,6 +10,7 @@ export function usePosts() {
           node {
             id
             title
+            description
             slug
             publishedDate(formatString: "Do MMMM, YYYY")
             featuredImage {
@@ -29,6 +30,7 @@ export function usePosts() {
   return data.posts.edges.map(({ node }) => ({
     id: node.id,
     title: node.title,
+    description: node.description,
     slug: `/blog/${node.slug}`,
     publishedDate: node.publishedDate,
     featuredImage: node.featuredImage.fluid,
