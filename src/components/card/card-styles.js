@@ -5,7 +5,7 @@ export const cardStyles = () => css`
   align-items: center;
   background: ${color.neutral.dark2};
   border: 1px solid ${color.neutral.dark4};
-  border-radius: 4px;
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
   max-width: calc(${size.huge3} - ${size.medium1});

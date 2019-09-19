@@ -4,22 +4,27 @@ import Img from 'gatsby-image';
 import { PostLink } from '../post-link';
 import { ReadLink } from '../read-link';
 import { postPreviewStyles } from './post-preview-styles';
+// import { color } from '../../assets/styles';
 
 export const PostPreview = ({ post }) => (
   <article css={postPreviewStyles}>
     <div>
+      <h3>
+        <PostLink to={post.slug}>{post.title}</PostLink>
+      </h3>
       <Link to={post.slug}>
-        <Img fluid={post.featuredImage} alt={post.title} />
+        <Img
+          alt={post.title}
+          sizes={{
+            ...post.featuredImage,
+            aspectRatio: 24 / 15,
+          }}
+        />
       </Link>
     </div>
     <div>
-      <PostLink to={post.slug}>
-        <h3>{post.title}</h3>
-      </PostLink>
-
-      <p>{post.publishedDate}</p>
       <p>{post.description}</p>
-      <ReadLink to={post.slug}>Read this post</ReadLink>
+      <ReadLink to={post.slug}>Read post</ReadLink>
     </div>
   </article>
 );

@@ -5,7 +5,7 @@ export const size = {
   small1: '0.4rem', // 4px
   small2: '0.8rem', // 8px
   small3: '1.2rem', // 12px
-  base: '1.6rem', // 16px
+  small4: '1.6rem', // 16px
   medium1: '2.4rem', // 24px
   medium2: '3.2rem', // 32px
   medium3: '4.8rem', // 48px
