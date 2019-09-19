@@ -12,6 +12,7 @@ export const postPreviewStyles = () => css`
     height: 50%;
     :first-of-type {
       position: relative;
+      z-index: 88888;
     }
     :last-of-type {
       justify-content: space-between;
@@ -33,7 +34,7 @@ export const postPreviewStyles = () => css`
       filter: contrast(200%) brightness(30%) saturate(50%);
       height: 100%;
       position: absolute;
-      z-index: 88888;
+      z-index: 77777;
     }
 
     p {

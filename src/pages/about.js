@@ -8,6 +8,7 @@ import { PageText } from '../components/page-text';
 import { PageCounter } from '../components/page-counter';
 import { Card } from '../components/card';
 import { SkillGrid } from '../components/skill-grid';
+import { size } from '../assets/styles';
 import businessSVG from '../assets/images/icons/business.svg';
 import codeSVG from '../assets/images/icons/code.svg';
 import designSVG from '../assets/images/icons/design.svg';
@@ -28,14 +29,15 @@ const AboutPage = () => (
       </PageHeading>
       <div
         css={css`
-          display: flex;
-          justify-content: space-between;
+          display: grid;
+          gap: ${size.medium2};
+          grid-template-columns: repeat(3, 1fr);
         `}
       >
         <Card
           icon={codeSVG}
           title={`code`}
-          text={`My skillset is built upon the rich & diverse JavaScript ecosystem. My natural close attention to detail enhances my ability to write clean, maintainable code.`}
+          text={`My skill set is built upon the rich & diverse JavaScript ecosystem. My natural close attention to detail enhances my ability to write clean, maintainable code.`}
         />
         <Card
           icon={designSVG}

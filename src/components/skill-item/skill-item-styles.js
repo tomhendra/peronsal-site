@@ -6,7 +6,7 @@ export const skillItemStyles = () => css`
   display: flex;
   min-height: ${size.large1};
 
-  p {
-    margin-left: ${size.base};
+  & p {
+    margin-left: ${size.small4};
   }
 `;
