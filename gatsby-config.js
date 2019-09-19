@@ -8,11 +8,6 @@ module.exports = {
     author: 'Tom Hendra',
   },
   plugins: [
-    'gatsby-plugin-emotion',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-react-helmet',
-    `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -34,6 +29,11 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
+    `gatsby-transformer-yaml`,
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

@@ -8,7 +8,7 @@ export const postPreviewStyles = () => css`
   height: ${size.huge4};
   overflow: hidden;
 
-  > div {
+  & > div {
     height: 50%;
     :first-of-type {
       position: relative;
@@ -22,11 +22,18 @@ export const postPreviewStyles = () => css`
 
     h3 {
       left: 0;
-      padding: ${size.medium2};
-      padding-bottom: 0;
+      margin: ${size.medium2};
+      margin-bottom: 0;
       position: absolute;
       top: 0;
       z-index: 99999;
+    }
+
+    div {
+      filter: contrast(200%) brightness(30%) saturate(50%);
+      height: 100%;
+      position: absolute;
+      z-index: 88888;
     }
 
     p {

@@ -12,6 +12,7 @@ export const PostPreview = ({ post }) => (
       <h3>
         <PostLink to={post.slug}>{post.title}</PostLink>
       </h3>
+      <div></div>
       <Link to={post.slug}>
         <Img
           alt={post.title}
