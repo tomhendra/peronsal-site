@@ -17,7 +17,7 @@ export const PostPreview = ({ post }) => (
           alt={post.title}
           sizes={{
             ...post.featuredImage,
-            aspectRatio: 24 / 15,
+            aspectRatio: 9 / 6,
           }}
         />
       </Link>
