@@ -17,7 +17,7 @@ export function usePosts() {
               file {
                 url
               }
-              fluid {
+              fluid(maxWidth: 960) {
                 ...GatsbyContentfulFluid_withWebp
               }
             }
