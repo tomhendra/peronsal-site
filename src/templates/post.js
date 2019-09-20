@@ -16,7 +16,7 @@ export const query = graphql`
         file {
           url
         }
-        fluid {
+        fluid(maxHeight: 512) {
           ...GatsbyContentfulFluid_withWebp
         }
       }
@@ -52,7 +52,10 @@ const postTemplate = ({ data: { contentfulBlogPost } }) => {
         <h1>{contentfulBlogPost.title}</h1>
         <p>Posted on {contentfulBlogPost.publishedDate}</p>
         <Img
-          fluid={contentfulBlogPost.featuredImage.fluid}
+          sizes={{
+            ...contentfulBlogPost.featuredImage.fluid,
+            aspectRatio: 9 / 4,
+          }}
           alt={contentfulBlogPost.title}
         />
         {documentToReactComponents(contentfulBlogPost.body.json, options)}
