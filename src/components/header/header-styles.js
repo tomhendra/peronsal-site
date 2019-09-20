@@ -9,5 +9,5 @@ export const headerStyles = () => css`
   padding-bottom: 0;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
 `;

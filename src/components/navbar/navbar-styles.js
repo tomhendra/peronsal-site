@@ -7,7 +7,7 @@ export const navbarStyles = () => css`
   min-width: ${size.large1};
   text-transform: uppercase;
 
-  > *:not(:first-of-type) {
+  > * :not(:first-of-type) {
     margin-top: ${size.small3};
   }
 `;

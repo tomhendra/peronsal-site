@@ -8,9 +8,8 @@ export const socialStyles = () => css`
 
   > * {
     width: 1.8rem;
-  }
-
-  > *:not(:first-of-type) {
-    margin-top: ${size.small3};
+    :not(:first-of-type) {
+      margin-top: ${size.small3};
+    }
   }
 `;

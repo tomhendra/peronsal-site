@@ -1,6 +1,4 @@
 // For the best reading experience, make your paragraphs wide enough to fit between 45 and 75 characters per line.
-// The easiest way to do this on the web is using em units, which are relative to the current font size.
-// A width of 2035em will get you in the right ballpark.
 export const size = {
   small1: '0.4rem', // 4px
   small2: '0.8rem', // 8px
