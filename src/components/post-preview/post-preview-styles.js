@@ -11,8 +11,10 @@ export const postPreviewStyles = () => css`
   & > div {
     height: 50%;
     :first-of-type {
+      background-color: ${color.primary.dark1};
+      isolation: isolate;
+      overflow: hidden;
       position: relative;
-      z-index: 88888;
     }
     :last-of-type {
       justify-content: space-between;
@@ -27,14 +29,6 @@ export const postPreviewStyles = () => css`
       margin-bottom: 0;
       position: absolute;
       top: 0;
-      z-index: 99999;
-    }
-
-    div {
-      filter: contrast(200%) brightness(30%) saturate(50%);
-      height: 100%;
-      position: absolute;
-      z-index: 77777;
     }
 
     p {

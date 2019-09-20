@@ -4,7 +4,6 @@ import Img from 'gatsby-image';
 import { PostLink } from '../post-link';
 import { ReadLink } from '../read-link';
 import { postPreviewStyles } from './post-preview-styles';
-// import { color } from '../../assets/styles';
 
 export const PostPreview = ({ post }) => (
   <article css={postPreviewStyles}>
@@ -12,13 +11,15 @@ export const PostPreview = ({ post }) => (
       <h3>
         <PostLink to={post.slug}>{post.title}</PostLink>
       </h3>
-      <div></div>
       <Link to={post.slug}>
         <Img
           alt={post.title}
           sizes={{
             ...post.featuredImage,
             aspectRatio: 9 / 6,
+          }}
+          style={{
+            mixBlendMode: 'soft-light',
           }}
         />
       </Link>
