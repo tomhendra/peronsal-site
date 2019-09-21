@@ -5,7 +5,7 @@ export const heroStyles = () => css`
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: calc(100vh - (${size.huge1} * 2));
   justify-content: center;
   margin: 0 auto;
   max-width: ${size.massive3};
