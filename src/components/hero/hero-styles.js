@@ -5,7 +5,7 @@ export const heroStyles = () => css`
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - (${size.huge1} * 2));
+  height: 100vh;
   justify-content: center;
   margin: 0 auto;
   max-width: ${size.massive3};
@@ -19,5 +19,6 @@ export const heroStyles = () => css`
   h2 {
     align-self: flex-end;
     color: ${color.primary.light2};
+    padding-right: ${size.small4};
   }
 `;
