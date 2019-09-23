@@ -10,7 +10,7 @@ export const Footer = () => {
   return (
     <footer css={footerStyles}>
       <p>
-        &copy; {siteMetadata.title} {date}
+        &copy; {siteMetadata.author} {date}
       </p>
       <Social />
     </footer>
