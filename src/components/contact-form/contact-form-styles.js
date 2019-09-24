@@ -10,6 +10,6 @@ export const contactFormStyles = () => css`
   flex-direction: column;
   height: ${size.huge4};
   margin: 0 auto;
-  padding: ${size.large1} ${size.medium2} ${size.medium3} ${size.medium2};
+  padding: ${size.large2} ${size.medium3};
   width: ${size.massive3};
 `;
