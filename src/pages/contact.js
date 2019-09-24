@@ -4,6 +4,7 @@ import { SEO } from '../components/utils/seo';
 import { Container } from '../components/container';
 import { PageHeading } from '../components/page-heading';
 import { PageText } from '../components/page-text';
+import { ContactForm } from '../components/contact-form';
 
 const ContactPage = () => (
   <Layout>
@@ -16,6 +17,7 @@ const ContactPage = () => (
           paragraph={`I'm always open to new opportunities. if you'd like to chat please send me a short message and I’ll get back to you right away. Alternatively find me online @tomhendra`}
         />
       </PageHeading>
+      <ContactForm />
     </Container>
   </Layout>
 );
