@@ -52,7 +52,7 @@ const postTemplate = ({ data: { contentfulBlogPost } }) => {
         <h1>{contentfulBlogPost.title}</h1>
         <p>Posted on {contentfulBlogPost.publishedDate}</p>
         <Img
-          sizess={{
+          sizes={{
             ...contentfulBlogPost.featuredImage.fluid,
             aspectRatio: 9 / 4,
           }}
