@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import { color, fontsize } from '../styles';
+import { colors, fontsizes } from '../styles';
 
 export const baseStyles = () => css`
   *,
@@ -16,10 +16,10 @@ export const baseStyles = () => css`
   }
 
   body {
-    background: ${color.neutral.dark1};
-    color: ${color.neutral.light5};
+    background: ${colors.neutral.dark1};
+    color: ${colors.neutral.light5};
     font-family: 'Noto Sans', sans-serif;
-    font-size: ${fontsize.base};
+    font-size: ${fontsizes.base};
     line-height: 1.6;
 
     /* remove margin for main div that that Gatsby mounts into */
@@ -38,16 +38,16 @@ export const baseStyles = () => css`
     }
 
     h1 {
-      font-size: ${fontsize.huge2};
+      font-size: ${fontsizes.huge2};
     }
 
     h2 {
-      font-size: ${fontsize.large1};
+      font-size: ${fontsizes.large1};
       font-weight: normal;
     }
 
     h3 {
-      font-size: ${fontsize.medium3};
+      font-size: ${fontsizes.medium3};
       font-weight: normal;
     }
 

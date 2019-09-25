@@ -1,24 +1,24 @@
 import { css } from '@emotion/core';
-import { color, fontsize, size } from '../../assets/styles';
+import { colors, fontsizes, sizes } from '../../assets/styles';
 
 export const cardStyles = () => css`
   align-items: center;
-  background: ${color.neutral.dark2};
-  border: 1px solid ${color.neutral.dark4};
+  background: ${colors.neutral.dark2};
+  border: 1px solid ${colors.neutral.dark4};
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  padding: ${size.large1} ${size.medium2} ${size.medium3} ${size.medium2};
+  padding: ${sizes.large1} ${sizes.medium2} ${sizes.medium3} ${sizes.medium2};
 
   img {
-    margin-bottom: ${size.medium1};
-    width: ${size.large1};
+    margin-bottom: ${sizes.medium1};
+    width: ${sizes.large1};
   }
 
   h3 {
-    color: ${color.primary.light2};
-    font-size: ${fontsize.medium2};
-    margin-bottom: ${size.medium2};
+    color: ${colors.primary.light2};
+    font-size: ${fontsizes.medium2};
+    margin-bottom: ${sizes.medium2};
     text-transform: uppercase;
   }
 `;

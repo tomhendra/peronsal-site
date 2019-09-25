@@ -1,4 +1,4 @@
 export { baseStyles } from './base-styles';
-export { color } from './settings/colors';
-export { shadow } from './settings/shadows';
-export { size, fontsize, breakpoint } from './settings/sizes';
+export { colors } from './settings/colors';
+export { shadows } from './settings/shadows';
+export { sizes, fontsizes, breakpoints } from './settings/sizes';

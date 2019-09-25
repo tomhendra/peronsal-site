@@ -1,12 +1,12 @@
 import { css } from '@emotion/core';
-import { size } from '../../assets/styles';
+import { sizes } from '../../assets/styles';
 
 export const skillItemStyles = () => css`
   align-items: center;
   display: flex;
-  min-height: ${size.large1};
+  min-height: ${sizes.large1};
 
   & p {
-    margin-left: ${size.small4};
+    margin-left: ${sizes.small4};
   }
 `;

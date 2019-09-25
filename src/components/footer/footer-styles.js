@@ -1,14 +1,14 @@
 import { css } from '@emotion/core';
-import { size } from '../../assets/styles';
+import { sizes } from '../../assets/styles';
 
 export const footerStyles = () => css`
   align-items: flex-end;
   bottom: 0;
   display: flex;
   font-size: 1rem;
-  height: ${size.huge1};
+  height: ${sizes.huge1};
   justify-content: space-between;
-  padding: ${size.large1};
+  padding: ${sizes.large1};
   padding-top: 0;
   position: fixed;
   text-transform: uppercase;

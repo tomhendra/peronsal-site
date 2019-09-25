@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Img from 'gatsby-image';
 import { css } from '@emotion/core';
-import { size } from '../assets/styles';
+import { sizes } from '../assets/styles';
 import { Layout } from '../components/layout';
 import { Container } from '../components/container';
 
@@ -38,7 +38,7 @@ const postTemplate = ({ data: { contentfulBlogPost } }) => {
             src={url}
             alt={alt}
             css={css`
-              max-width: ${size.massive2};
+              max-width: ${sizes.massive2};
             `}
           />
         );
@@ -52,7 +52,7 @@ const postTemplate = ({ data: { contentfulBlogPost } }) => {
         <h1>{contentfulBlogPost.title}</h1>
         <p>Posted on {contentfulBlogPost.publishedDate}</p>
         <Img
-          sizes={{
+          sizess={{
             ...contentfulBlogPost.featuredImage.fluid,
             aspectRatio: 9 / 4,
           }}

@@ -8,7 +8,7 @@ import { PageText } from '../components/page-text';
 import { PageCounter } from '../components/page-counter';
 import { Card } from '../components/card';
 import { SkillGrid } from '../components/skill-grid';
-import { size } from '../assets/styles';
+import { sizes } from '../assets/styles';
 import businessSVG from '../assets/images/icons/business.svg';
 import codeSVG from '../assets/images/icons/code.svg';
 import designSVG from '../assets/images/icons/design.svg';
@@ -30,7 +30,7 @@ const AboutPage = () => (
       <div
         css={css`
           display: grid;
-          gap: ${size.medium2};
+          gap: ${sizes.medium2};
           grid-template-columns: repeat(3, 1fr);
         `}
       >

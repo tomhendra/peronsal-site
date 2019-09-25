@@ -1,15 +1,15 @@
 import { css } from '@emotion/core';
-import { color, size } from '../../assets/styles';
+import { colors, sizes } from '../../assets/styles';
 
 export const pageTextStyles = () => css`
   max-width: 50%;
 
   h1 {
-    margin-bottom: ${size.medium2};
+    margin-bottom: ${sizes.medium2};
   }
 
   h2 {
-    color: ${color.primary.light3};
-    margin-bottom: ${size.small3};
+    color: ${colors.primary.light3};
+    margin-bottom: ${sizes.small3};
   }
 `;

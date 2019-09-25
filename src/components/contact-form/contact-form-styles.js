@@ -1,15 +1,21 @@
 import { css } from '@emotion/core';
-import { color, size } from '../../assets/styles';
+import { colors, sizes } from '../../assets/styles';
 
 export const contactFormStyles = () => css`
   align-items: center;
-  background: ${color.neutral.dark2};
-  border: 1px solid ${color.neutral.dark4};
+  background: ${colors.neutral.dark2};
+  border: 1px solid ${colors.neutral.dark4};
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  height: ${size.huge4};
+  height: ${sizes.huge4};
   margin: 0 auto;
-  padding: ${size.large2} ${size.medium3};
-  width: ${size.massive3};
+  padding: ${sizes.large2} ${sizes.medium3};
+  width: ${sizes.massive3};
+
+  > input {
+    background-color: ${colors.neutral.light5};
+    border-radius: 4px;
+    border: 1px solid ${colors.neutral.light2};
+  }
 `;

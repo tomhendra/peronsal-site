@@ -1,11 +1,11 @@
 import { css } from '@emotion/core';
-import { size } from '../../assets/styles';
+import { sizes } from '../../assets/styles';
 
 export const headerStyles = () => css`
   display: flex;
-  height: ${size.huge1};
+  height: ${sizes.huge1};
   justify-content: space-between;
-  padding: ${size.large1};
+  padding: ${sizes.large1};
   padding-bottom: 0;
   position: fixed;
   top: 0;

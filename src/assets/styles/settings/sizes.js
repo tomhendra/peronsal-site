@@ -1,5 +1,5 @@
 // For the best reading experience, make your paragraphs wide enough to fit between 45 and 75 characters per line.
-export const size = {
+export const sizes = {
   small1: '0.4rem', // 4px
   small2: '0.8rem', // 8px
   small3: '1.2rem', // 12px
@@ -20,7 +20,7 @@ export const size = {
   massive4: '96rem', // 960px
 };
 
-export const fontsize = {
+export const fontsizes = {
   small: '1.2rem', // 12px
   base: '1.4rem', // 14px
   medium1: '1.6rem', // 16px
@@ -37,7 +37,7 @@ export const fontsize = {
   graphic3: '10.8rem', // 108px
 };
 
-export const breakpoint = {
+export const breakpoints = {
   largeDesktop: '180rem',
   desktop: '45rem',
 };

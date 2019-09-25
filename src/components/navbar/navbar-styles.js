@@ -1,13 +1,13 @@
 import { css } from '@emotion/core';
-import { size } from '../../assets/styles';
+import { sizes } from '../../assets/styles';
 
 export const navbarStyles = () => css`
   display: flex;
   flex-direction: column;
-  min-width: ${size.large1};
+  min-width: ${sizes.large1};
   text-transform: uppercase;
 
   > * :not(:first-of-type) {
-    margin-top: ${size.small3};
+    margin-top: ${sizes.small3};
   }
 `;

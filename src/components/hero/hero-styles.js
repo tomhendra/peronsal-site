@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import { color, fontsize, size } from '../../assets/styles';
+import { colors, fontsizes, sizes } from '../../assets/styles';
 
 export const heroStyles = () => css`
   align-items: center;
@@ -8,17 +8,17 @@ export const heroStyles = () => css`
   height: 100vh;
   justify-content: center;
   margin: 0 auto;
-  max-width: ${size.massive3};
+  max-width: ${sizes.massive3};
   text-transform: uppercase;
 
   h1 {
-    font-size: ${fontsize.graphic3};
-    margin-bottom: ${size.small2};
+    font-size: ${fontsizes.graphic3};
+    margin-bottom: ${sizes.small2};
   }
 
   h2 {
     align-self: flex-end;
-    color: ${color.primary.light2};
-    padding-right: ${size.small4};
+    color: ${colors.primary.light2};
+    padding-right: ${sizes.small4};
   }
 `;
