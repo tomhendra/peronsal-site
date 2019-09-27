@@ -25,6 +25,7 @@
     "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.17",
     "dotenv": "^8.1.0",
+    "formik": "^1.5.8",
     "framer-motion": "^1.6.7",
     "gatsby": "^2.15.28",
     "gatsby-image": "^2.2.23",
@@ -42,7 +43,8 @@
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "typeface-lato": "0.0.75",
-    "typeface-noto-sans": "0.0.72"
+    "typeface-noto-sans": "0.0.72",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "cross-env": "^6.0.0",

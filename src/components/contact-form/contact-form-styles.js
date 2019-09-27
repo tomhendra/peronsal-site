@@ -3,24 +3,29 @@ import { colors, fontsizes, sizes } from '../../assets/styles';
 
 export const contactFormStyles = () =>
   css({
-    alignItems: `center`,
     background: colors.neutral.dark2,
     border: `1px solid ${colors.neutral.dark4}`,
     borderRadius: `6px`,
-    display: `flex`,
-    flexDirection: `column`,
-    height: sizes.huge4,
+    display: `grid`,
+    gridGap: sizes.small3,
+    gridTemplateColumns: `1fr 1fr`,
+    gridTemplateRows: `repeat(4, 1fr)`,
     margin: `0 auto`,
-    padding: `${sizes.large2} ${sizes.medium3}`,
+    padding: sizes.medium3,
+    paddingTop: sizes.large1,
     width: sizes.massive3,
 
-    '& input': {
+    '& input, textarea': {
       backgroundColor: colors.neutral.light5,
       borderRadius: `4px`,
       border: `1px solid ${colors.neutral.light2}`,
+      display: `block`,
       fontSize: fontsizes.base,
-      height: sizes.medium3,
       padding: sizes.small2,
-      width: sizes.huge2,
+      width: `100%`,
+    },
+
+    '& input': {
+      height: sizes.medium3,
     },
   });

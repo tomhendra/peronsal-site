@@ -1,1 +1,1 @@
-export { ContactForm } from './contact-form';
+export { FormikContactForm } from './contact-form';
