@@ -66,7 +66,7 @@ export const buttonStyles = ({ buttonStyle, buttonSize, defaultProps }) => {
     textDecoration: `none`,
     textTransform: `uppercase`,
     cursor: `pointer`,
-    '&:hover,:focus': {
+    '&:hover,:disabled,:focus': {
       backgroundColor: styleConfig.hover,
     },
   });

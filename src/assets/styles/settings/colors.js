@@ -51,7 +51,7 @@ export const colors = {
     light5: 'hsl(360, 100%, 95%)',
   },
 
-  warning: {
+  alert: {
     dark1: 'hsl(15, 86%, 30%)',
     dark2: 'hsl(22, 82%, 39%)',
     dark3: 'hsl(29, 80%, 44%)',
