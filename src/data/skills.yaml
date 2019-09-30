@@ -19,10 +19,10 @@
   title: Gatsby
   image: ../assets/images/skills/gatsby.png
   alt: Gatsby logo image
-- webpack:
-  title: Webpack
-  image: ../assets/images/skills/webpack.png
-  alt: Webpack logo image
+- framer-motion:
+  title: Framer Motion
+  image: ../assets/images/skills/framer-motion.png
+  alt: Framer Motion logo image
 - emotion:
   title: Emotion
   image: ../assets/images/skills/emotion.png
@@ -47,10 +47,10 @@
   title: Cypress
   image: ../assets/images/skills/cypress.png
   alt: Cypress logo image
-- github:
-  title: GitHub
-  image: ../assets/images/skills/github.png
-  alt: GitHub logo image
+- webpack:
+  title: Webpack
+  image: ../assets/images/skills/webpack.png
+  alt: Webpack logo image
 - npm:
   title: NPM
   image: ../assets/images/skills/npm.png
@@ -71,3 +71,7 @@
   title: Netlify
   image: ../assets/images/skills/netlify.png
   alt: Netlify logo image
+- github:
+  title: GitHub
+  image: ../assets/images/skills/github.png
+  alt: GitHub logo image

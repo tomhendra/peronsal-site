@@ -1,5 +1,5 @@
 <div align=center>
-<img alt="Gatsby" src="https://res.cloudinary.com/tomhendra/image/upload/v1567091669/tomhendra-logo/tomhendra-logo-round-1024.png" width="100" />
+<img alt="Tom Hendra Logo" src="https://res.cloudinary.com/tomhendra/image/upload/v1567091669/tomhendra-logo/tomhendra-logo-round-1024.png" width="100" />
 <h1>Portfolio</h1>
 <p>My personal website built with Gatsby</p>
 </div>
@@ -53,7 +53,7 @@ The Gatsby website has a really well put together **[tutorial](https://www.gatsb
     <Link to="about/">about</Link>
     ```
 
-3.  **emotion css-in-js.**
+3.  **Emotion css-in-js.**
 
     Styled with the wonderful **[Emotion](https://emotion.sh/docs/introduction)** library.
 
@@ -62,8 +62,6 @@ The Gatsby website has a really well put together **[tutorial](https://www.gatsb
     npm i @emotion/core @emotion/styled gatsby-plugin-emotion
     ```
 
-4) **animations - TBC**
+4.  **Animations - TBC**
 
-5) **Testing - TBC**
-
-6) **Performance - TBC**
+5.  **Performance - TBC**

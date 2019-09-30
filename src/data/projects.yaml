@@ -1,0 +1,41 @@
+# Projects collection
+- sano-app:
+  title: SanoApp
+  description: A progressive web app to save your favourite recipes. Promotes a healthy diet by fetching nutrition information from an API.
+  stack: React, Emotion, Framer Motion, Testing Library, Webpack, Firebase
+  repo: https://github.com/tomhendra/
+  url: https://github.com/tomhendra/
+  image: ../assets/images/projects/sanoapp.png
+  alt: SanoApp project image
+- expenses-app:
+  title: Expenses App
+  description: A progressive web app to track your expenses. Categorise and filter to gain insights into your spending habits.
+  stack: React, Sass, CSS Modules, Framer Motion, Webpack, Firebase
+  repo: https://github.com/tomhendra/
+  url: https://github.com/tomhendra/
+  image: ../assets/images/projects/expenses-app.png
+  alt: Expenses App project image
+- react-boilerplate:
+  title: React Boilerplate
+  description: A React starter boilerplate with optimisations, progressive web app and login support built-in.
+  stack: React, Sass, CSS Modules, Webpack, Firebase
+  repo: https://github.com/tomhendra/
+  url: https://github.com/tomhendra/
+  image: ../assets/images/projects/react-boilerplate.png
+  alt: React Boilerplate project image
+- to-do-app:
+  title: To-Do App
+  description: A classic vanilla JavaScript to-do app with a twist. Can't decide what to do? Let this app inspire you!
+  stack: JavaScript, HTML, Sass, CSS Modules, Webpack, Firebase
+  repo: https://github.com/tomhendra/
+  url: https://github.com/tomhendra/
+  image: ../assets/images/projects/todo-app.png
+  alt: To-Do App project image
+- notes-app:
+  title: Notes App
+  description: A Note taking app built with vanilla JavaScript. A playground for experimenting with techniques using the fundamental building blocks of the web.
+  stack: JavaScript, HTML, CSS, Webpack
+  repo: https://github.com/tomhendra/
+  url: https://github.com/tomhendra/
+  image: ../assets/images/projects/notes-app.png
+  alt: Notes App project image
