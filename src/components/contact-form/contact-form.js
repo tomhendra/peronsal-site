@@ -97,6 +97,7 @@ const ContactForm = ({ errors, touched, isSubmitting }) => (
   </Form>
 );
 
+// TO TEST MORE !!!!!! RegEx needs tweaking, Perhaps country code selection? ................
 const phoneRegEx = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 export const FormikContactForm = withFormik({
@@ -124,6 +125,7 @@ export const FormikContactForm = withFormik({
       .required('Please provide a message'),
   }),
   handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
+    // Placeholder for logic required by Netlify. Look into this later.................
     setTimeout(() => {
       if (values.email === 'tester@test.com') {
         setErrors({ email: 'Email already exists' });
