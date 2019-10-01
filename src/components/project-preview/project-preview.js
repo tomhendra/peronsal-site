@@ -1,9 +1,24 @@
 import React from 'react';
 import Img from 'gatsby-image';
-import { projectPreviewStyles } from './project-preview-styles';
 
-export const ProjectPreview = ({ project }) => (
-  <div css={projectPreviewStyles}>
+/**
+ * `....................styles....................`
+ */
+
+const styles = {
+  display: 'flex',
+
+  '> *': {
+    width: '50%',
+  },
+};
+
+/**
+ * `....................component....................`
+ */
+
+const ProjectPreview = ({ project }) => (
+  <div css={styles}>
     <Img fixed={project.image} alt={project.alt} />
     <div>
       <p>{project.title}</p>
@@ -11,3 +26,5 @@ export const ProjectPreview = ({ project }) => (
     </div>
   </div>
 );
+
+export default ProjectPreview;

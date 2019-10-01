@@ -1,11 +1,33 @@
 import React from 'react';
-import { socialStyles } from './social-styles';
+
+import { sizes } from '../../assets/styles';
 import githubSVG from '../../assets/images/social/github.svg';
 import linkedinSVG from '../../assets/images/social/linkedin.svg';
 import twitterSVG from '../../assets/images/social/twitter.svg';
 
-export const Social = () => (
-  <div css={socialStyles}>
+/**
+ * `....................styles....................`
+ */
+
+const styles = {
+  display: 'flex',
+  flexDirection: 'column',
+  minWidth: sizes.large1,
+
+  '> *': {
+    width: '1.8rem',
+    ':not(:first-of-type)': {
+      marginTop: sizes.small3,
+    },
+  },
+};
+
+/**
+ * `....................component....................`
+ */
+
+const Social = () => (
+  <div css={styles}>
     <a href="https://github.com/tomhendra" target="blank">
       <img src={githubSVG} alt="GitHub logo" />
     </a>
@@ -17,3 +39,5 @@ export const Social = () => (
     </a>
   </div>
 );
+
+export default Social;

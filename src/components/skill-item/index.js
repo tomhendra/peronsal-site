@@ -1,1 +1,3 @@
-export { SkillItem } from './skill-item';
+import SkillItem from './skill-item';
+
+export default SkillItem;

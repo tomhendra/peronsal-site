@@ -1,10 +1,11 @@
 import React from 'react';
-import { Layout } from '../components/layout';
-import { SEO } from '../components/utils/seo';
-import { Container } from '../components/container';
-import { PageHeading } from '../components/page-heading';
-import { PageText } from '../components/page-text';
-import { PostGrid } from '../components/post-grid';
+
+import Layout from '../components/layout';
+import SEO from '../components/utils/seo';
+import Container from '../components/container';
+import PageHeading from '../components/page-heading';
+import PageText from '../components/page-text';
+import PostGrid from '../components/post-grid';
 
 const BlogPage = () => {
   return (

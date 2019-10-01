@@ -1,1 +1,3 @@
-export { PostGrid } from './post-grid';
+import PostGrid from './post-grid';
+
+export default PostGrid;

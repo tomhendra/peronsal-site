@@ -1,1 +1,3 @@
-export { SkillGrid } from './skill-grid';
+import SkillGrid from './skill-grid';
+
+export default SkillGrid;

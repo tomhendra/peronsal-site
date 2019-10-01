@@ -2,10 +2,10 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Img from 'gatsby-image';
-import { css } from '@emotion/core';
+
 import { sizes } from '../assets/styles';
-import { Layout } from '../components/layout';
-import { Container } from '../components/container';
+import Layout from '../components/layout';
+import Container from '../components/container';
 
 export const query = graphql`
   query ContentfulBlogPostQuery($id: String!) {
@@ -37,9 +37,9 @@ const postTemplate = ({ data: { contentfulBlogPost } }) => {
           <img
             src={url}
             alt={alt}
-            css={css`
-              max-width: ${sizes.massive2};
-            `}
+            css={{
+              maxWidth: sizes.massive2,
+            }}
           />
         );
       },

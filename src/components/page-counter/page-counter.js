@@ -1,9 +1,45 @@
 import React from 'react';
-import { pageCounterStyles } from './page-counter-styles';
+
+import { colors, fontsizes, sizes } from '../../assets/styles';
 import mouseSVG from '../../assets/images/icons/mouse.svg';
 
-export const PageCounter = ({ pageNumber, totalPages }) => (
-  <div css={pageCounterStyles}>
+/**
+ * `....................styles....................`
+ */
+
+const styles = {
+  alignItems: 'flex-end',
+  alignSelf: 'flex-end',
+  display: 'flex',
+  fontFamily: 'Lato, sans-serif',
+  flexDirection: 'column',
+  fontSize: fontsizes.medium1,
+  maxWidth: sizes.medium2,
+
+  'div > *': {
+    lineHeight: 1,
+    textAlign: 'right',
+
+    '&:first-of-type': {
+      color: colors.primary.light3,
+      fontSize: fontsizes.large1,
+      lineHeight: 1.1,
+      marginRight: -1,
+    },
+  },
+
+  img: {
+    marginTop: sizes.small2,
+    width: sizes.medium1,
+  },
+};
+
+/**
+ * `....................component....................`
+ */
+
+const PageCounter = ({ pageNumber, totalPages }) => (
+  <div css={styles}>
     <div>
       <p>{pageNumber}</p>
       <p>/ {totalPages}</p>
@@ -11,3 +47,5 @@ export const PageCounter = ({ pageNumber, totalPages }) => (
     <img src={mouseSVG} alt="Mouse icon" />
   </div>
 );
+
+export default PageCounter;

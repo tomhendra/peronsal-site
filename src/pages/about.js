@@ -1,14 +1,15 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import { Layout } from '../components/layout';
-import { SEO } from '../components/utils/seo';
-import { Container } from '../components/container';
-import { PageHeading } from '../components/page-heading';
-import { PageText } from '../components/page-text';
-import { PageCounter } from '../components/page-counter';
-import { Card } from '../components/card';
-import { SkillGrid } from '../components/skill-grid';
+
 import { sizes } from '../assets/styles';
+import SEO from '../components/utils/seo';
+import Layout from '../components/layout';
+import Container from '../components/container';
+import PageHeading from '../components/page-heading';
+import PageText from '../components/page-text';
+import PageCounter from '../components/page-counter';
+import Card from '../components/card';
+import SkillGrid from '../components/skill-grid';
 import businessSVG from '../assets/images/icons/business.svg';
 import codeSVG from '../assets/images/icons/code.svg';
 import designSVG from '../assets/images/icons/design.svg';

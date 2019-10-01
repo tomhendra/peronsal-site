@@ -1,11 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { pageHeadingStyles } from './page-heading-styles';
 
-export const PageHeading = ({ children }) => (
-  <div css={pageHeadingStyles}>{children}</div>
-);
+import { sizes } from '../../assets/styles';
+
+/**
+ * `....................styles....................`
+ */
+
+const styles = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  minHeight: sizes.huge2,
+  paddingBottom: sizes.large1,
+};
+
+/**
+ * `....................component....................`
+ */
+
+const PageHeading = ({ children }) => <div css={styles}>{children}</div>;
 
 PageHeading.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+export default PageHeading;

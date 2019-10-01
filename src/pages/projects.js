@@ -1,12 +1,13 @@
 import React from 'react';
-import { Layout } from '../components/layout';
-import { SEO } from '../components/utils/seo';
-import { Container } from '../components/container';
-import { PageHeading } from '../components/page-heading';
-import { PageText } from '../components/page-text';
-import { PageCounter } from '../components/page-counter';
-import { ProjectPreview } from '../components/project-preview';
+
 import { useProjects } from '../hooks/use-projects';
+import Layout from '../components/layout';
+import SEO from '../components/utils/seo';
+import Container from '../components/container';
+import PageHeading from '../components/page-heading';
+import PageText from '../components/page-text';
+import PageCounter from '../components/page-counter';
+import ProjectPreview from '../components/project-preview';
 
 const ProjectsPage = () => {
   const projects = useProjects();

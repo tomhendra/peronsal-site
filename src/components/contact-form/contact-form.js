@@ -1,15 +1,68 @@
 import React from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as yup from 'yup';
-import { contactFormStyles } from './contact-form-styles';
-import { Button } from '../button';
+
+import { colors, fontsizes, sizes } from '../../assets/styles';
+import Button from '../button';
 import { Tooltip } from '../tooltip';
+
+/**
+ * `....................constants....................`
+ */
+
+// TO TEST MORE !!!!!! RegEx needs tweaking, Perhaps country code selection?
+const phoneRegEx = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
+/**
+ * `....................styles....................`
+ */
+
+const styles = {
+  background: colors.neutral.dark2,
+  border: `1px solid ${colors.neutral.dark4}`,
+  borderRadius: '6px',
+  display: 'grid',
+  gridGap: sizes.medium1,
+  gridTemplateColumns: 'repeat(2, 1fr)',
+  gridTemplateRows: 'repeat(4, 1fr)',
+  margin: '0 auto',
+  padding: `${sizes.large1} ${sizes.medium3} ${sizes.medium1} ${sizes.medium3}`,
+  width: sizes.massive3,
+
+  // all immediate children selector for 2 child div elements
+  '> *': {
+    // allows for absolutely positioned Tooltips
+    position: 'relative',
+
+    'input, textarea': {
+      backgroundColor: colors.neutral.light5,
+      borderRadius: '4px',
+      border: `1px solid ${colors.neutral.light2}`,
+      // Firefox displays font as courier for textarea!
+      fontFamily: 'Lato',
+      fontSize: fontsizes.base,
+      padding: sizes.small2,
+      width: '100%',
+    },
+
+    input: {
+      height: sizes.medium3,
+    },
+
+    textarea: {
+      resize: 'none',
+    },
+  },
+};
+
+/**
+ * `....................component....................`
+ */
 
 const ContactForm = ({ errors, touched, isSubmitting }) => (
   <Form method="post" netlify-honeypot="bot-field" data-netlify="true">
     <input type="hidden" name="bot-field" />
-    <div css={contactFormStyles}>
-      {/************* name *************/}
+    <div css={styles}>
       <div
         css={{
           gridColumn: '1 / 2',
@@ -24,7 +77,6 @@ const ContactForm = ({ errors, touched, isSubmitting }) => (
           <Field type="text" name="name" placeholder="Full name" />
         </label>
       </div>
-      {/************* email *************/}
       <div
         css={{
           gridColumn: '1 / 2',
@@ -39,7 +91,6 @@ const ContactForm = ({ errors, touched, isSubmitting }) => (
           <Field type="email" name="email" placeholder="Email" />
         </label>
       </div>
-      {/************* phone number *************/}
       <div
         css={{
           gridColumn: '1 / 2',
@@ -54,7 +105,6 @@ const ContactForm = ({ errors, touched, isSubmitting }) => (
           <Field type="tel" name="phone" placeholder="Phone number" />
         </label>
       </div>
-      {/************* message *************/}
       <div
         css={{
           gridColumn: '2 / 3',
@@ -74,7 +124,6 @@ const ContactForm = ({ errors, touched, isSubmitting }) => (
           />
         </label>
       </div>
-      {/************* submit button *************/}
       <div
         css={{
           alignItems: 'flex-start',
@@ -97,10 +146,11 @@ const ContactForm = ({ errors, touched, isSubmitting }) => (
   </Form>
 );
 
-// TO TEST MORE !!!!!! RegEx needs tweaking, Perhaps country code selection? ................
-const phoneRegEx = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+/**
+ * `....................Formik....................`
+ */
 
-export const FormikContactForm = withFormik({
+const FormikContactForm = withFormik({
   mapPropsToValues({ name, email, phone, message }) {
     return {
       name: name || '',
@@ -137,3 +187,5 @@ export const FormikContactForm = withFormik({
     console.log(values);
   },
 })(ContactForm);
+
+export default FormikContactForm;

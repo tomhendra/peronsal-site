@@ -1,1 +1,3 @@
-export { ReadLink } from './read-link';
+import ReadLink from './read-link';
+
+export default ReadLink;

@@ -1,18 +1,41 @@
 import React from 'react';
-import { useSiteMetadata } from '../../hooks/use-site-metadata';
-import { Social } from '../social';
-import { footerStyles } from './footer-styles';
 
-export const Footer = () => {
+import { useSiteMetadata } from '../../hooks/use-site-metadata';
+import { sizes } from '../../assets/styles';
+import Social from '../social';
+
+/**
+ * `....................styles....................`
+ */
+
+const styles = {
+  alignItems: 'flex-end',
+  bottom: 0,
+  display: 'flex',
+  fontSize: '1rem',
+  height: sizes.huge1,
+  justifyContent: 'space-between',
+  padding: sizes.large1,
+  paddingTop: 0,
+  position: 'fixed',
+  textTransform: 'uppercase',
+  width: '100vw',
+};
+
+/**
+ * `....................component....................`
+ */
+
+const Footer = () => {
   const { siteMetadata } = useSiteMetadata();
   const date = new Date().getFullYear();
 
   return (
-    <footer css={footerStyles}>
-      <p>
-        &copy; {siteMetadata.author} {date}
-      </p>
+    <footer css={styles}>
+      &copy; {siteMetadata.author} {date}
       <Social />
     </footer>
   );
 };
+
+export default Footer;

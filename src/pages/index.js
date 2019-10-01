@@ -1,7 +1,8 @@
 import React from 'react';
-import { Layout } from '../components/layout';
-import { SEO } from '../components/utils/seo';
-import { Hero } from '../components/hero';
+
+import Layout from '../components/layout';
+import SEO from '../components/utils/seo';
+import Hero from '../components/hero';
 
 const IndexPage = () => (
   <Layout>

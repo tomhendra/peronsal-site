@@ -1,14 +1,25 @@
+import React from 'react';
 import { Link } from 'gatsby';
-import styled from '@emotion/styled';
+
 import { colors, fontsizes } from '../../assets/styles';
 
-export const NavLink = styled(Link)`
-  color: ${colors.neutral.light5};
-  font-size: ${fontsizes.small};
-  /* font-weight: ${props => props.fontWeight || 'normal'}; */
-  text-decoration: none;
+/**
+ * `....................styles....................`
+ */
 
-  &.current-page {
-    color: ${colors.primary.light3};
-  }
-`;
+const styles = {
+  color: colors.neutral.light5,
+  fontSize: fontsizes.small,
+  textDecoration: 'none',
+  '&.currentPage': {
+    color: colors.primary.light3,
+  },
+};
+
+/**
+ * `....................component....................`
+ */
+
+const NavLink = props => <Link css={styles} {...props} />;
+
+export default NavLink;

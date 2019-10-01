@@ -1,1 +1,3 @@
-export { PageText } from './page-text';
+import PageText from './page-text';
+
+export default PageText;

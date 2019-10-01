@@ -1,20 +1,42 @@
 import React from 'react';
-import { NavLink } from '../nav-link';
-import { navbarStyles } from './navbar-styles';
 
-export const Navbar = () => (
-  <nav css={navbarStyles}>
-    <NavLink to="/about/" activeClassName="current-page">
+import { sizes } from '../../assets/styles';
+import NavLink from '../nav-link';
+
+/**
+ * `....................styles....................`
+ */
+
+const styles = {
+  display: 'flex',
+  flexDirection: 'column',
+  minWidth: sizes.large1,
+  textTransform: 'uppercase',
+
+  '& :not(:first-of-type)': {
+    marginTop: sizes.small3,
+  },
+};
+
+/**
+ * `....................component....................`
+ */
+
+const Navbar = () => (
+  <nav css={styles}>
+    <NavLink to="/about/" activeClassName="currentPage">
       About
     </NavLink>
-    <NavLink to="/projects/" activeClassName="current-page">
+    <NavLink to="/projects/" activeClassName="currentPage">
       Projects
     </NavLink>
-    <NavLink to="/contact/" activeClassName="current-page">
+    <NavLink to="/contact/" activeClassName="currentPage">
       Contact
     </NavLink>
-    <NavLink to="/blog/" activeClassName="current-page">
+    <NavLink to="/blog/" activeClassName="currentPage">
       Blog
     </NavLink>
   </nav>
 );
+
+export default Navbar;
