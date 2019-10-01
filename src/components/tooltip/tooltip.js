@@ -35,7 +35,6 @@ const tooltipTypes = {
 
 const styles = type => {
   // config variable declared & assigned with type / defaultProps value
-  // values come from Tooltip component calling tooltipStyles with styleProps
   const styleConfig =
     tooltipTypes[type] || tooltipTypes[Tooltip.defaultProps.type];
 
