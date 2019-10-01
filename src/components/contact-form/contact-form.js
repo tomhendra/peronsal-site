@@ -4,7 +4,7 @@ import * as yup from 'yup';
 
 import { colors, fontsizes, sizes } from '../../assets/styles';
 import Button from '../button';
-import { Tooltip } from '../tooltip';
+import Tooltip from '../tooltip';
 
 /**
  * `....................constants....................`
