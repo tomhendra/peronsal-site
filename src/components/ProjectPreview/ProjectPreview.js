@@ -14,23 +14,8 @@ const styles = {
   border: `1px solid ${colors.neutral.dark4}`,
   borderRadius: '6px',
   display: 'flex',
-  margin: '0 auto',
-  minWidth: sizes.massive3,
-
-  '> *': {
-    width: '50%',
-    ':last-of-type': {
-      padding: sizes.medium3,
-
-      h2: {
-        marginBottom: sizes.medium1,
-      },
-
-      p: {
-        marginBottom: sizes.medium2,
-      },
-    },
-  },
+  justifyContent: 'space-between',
+  maxWidth: sizes.massive3,
 };
 
 /**
@@ -40,13 +25,31 @@ const styles = {
 const ProjectPreview = ({ project, ...props }) => (
   <div css={styles} {...props}>
     <Img fixed={project.image} alt={project.alt} />
-    <div>
-      <h2>{project.title}</h2>
-      <p>{project.description}</p>
-      <SkillGrid
-        skillsToBeDisplayed={project.stack}
+    <div
+      css={{
+        padding: `${sizes.medium3} ${sizes.medium2}`,
+        width: '60%',
+      }}
+    >
+      <h2
+        css={{
+          marginBottom: sizes.medium1,
+        }}
+      >
+        {project.title}
+      </h2>
+      <p
         css={{
           marginBottom: sizes.medium2,
+        }}
+      >
+        {project.description}
+      </p>
+      <SkillGrid
+        gridSize={'small'}
+        skillsToBeDisplayed={project.stack}
+        css={{
+          marginBottom: sizes.medium3,
         }}
       />
       <Button

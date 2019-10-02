@@ -11,7 +11,7 @@ export function useSkills() {
             alt
             image {
               childImageSharp {
-                fixed(width: 64) {
+                fixed(width: 26) {
                   ...GatsbyImageSharpFixed
                 }
               }

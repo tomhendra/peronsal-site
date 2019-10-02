@@ -62,6 +62,7 @@ const AboutPage = () => (
         <PageCounter pageNumber={`02`} totalPages={`03`} />
       </PageHeading>
       <SkillGrid
+        gridSize={'large'}
         skillsToBeDisplayed={[
           `JavaScript`,
           `CSS`,
@@ -85,6 +86,7 @@ const AboutPage = () => (
         <PageCounter pageNumber={`03`} totalPages={`03`} />
       </PageHeading>
       <SkillGrid
+        gridSize={'large'}
         skillsToBeDisplayed={[
           `Jest`,
           `Testing Library`,

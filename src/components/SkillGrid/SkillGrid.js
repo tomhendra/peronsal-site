@@ -1,18 +1,54 @@
 import React from 'react';
+import Img from 'gatsby-image';
 
 import { useSkills } from '../../hooks/useSkills';
-import { sizes } from '../../assets/styles';
-import SkillItem from '../SkillItem';
+import { fontsizes, sizes } from '../../assets/styles';
+
+/**
+ * `....................constants....................`
+ */
+
+const small = 'small';
+const large = 'large';
+
+const gridSizes = {
+  [small]: {
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    fontSize: fontsizes.small,
+    gap: sizes.medium1,
+    marginLeft: sizes.small2,
+  },
+  [large]: {
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    fontSize: fontsizes.base,
+    gap: `${sizes.medium3} ${sizes.huge1}`,
+    marginLeft: sizes.medium2,
+  },
+};
 
 /**
  * `....................styles....................`
  */
 
-const styles = {
-  display: 'grid',
-  gap: `${sizes.medium3} ${sizes.huge1}`,
-  gridTemplateColumns: 'repeat(3, 1fr)',
-  gridTemplateRows: 'auto',
+const styles = gridSize => {
+  const gridConfig =
+    gridSizes[gridSize] || gridSizes[SkillGrid.defaultProps.gridSize];
+
+  return {
+    display: 'grid',
+    gridTemplateColumns: gridConfig.gridTemplateColumns,
+    gap: gridConfig.gap,
+
+    div: {
+      alignItems: 'center',
+      display: 'flex',
+    },
+
+    p: {
+      fontSize: gridConfig.fontSize,
+      marginLeft: gridConfig.marginLeft,
+    },
+  };
 };
 
 /**
@@ -23,18 +59,26 @@ const styles = {
 // strings which must match the title specified in skills.yaml
 // exactly.
 
-const SkillGrid = ({ skillsToBeDisplayed, ...props }) => {
+const SkillGrid = ({ gridSize, skillsToBeDisplayed, ...props }) => {
   const skills = useSkills();
 
   return (
-    <div css={styles} {...props}>
+    <div css={styles(gridSize)} {...props}>
       {skills
         .filter(skill => skillsToBeDisplayed.includes(skill.title))
         .map(skill => (
-          <SkillItem key={skill.id} skill={skill} />
+          <div key={skill.id}>
+            <Img fixed={skill.image} alt={skill.alt} />
+            <p>{skill.title}</p>
+          </div>
         ))}
     </div>
   );
+};
+
+SkillGrid.defaultProps = {
+  skillsToBeDisplayed: [],
+  gridSize: 'small',
 };
 
 export default SkillGrid;
