@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useProjects } from '../hooks/use-projects';
+import { sizes } from '../assets/styles';
 import Layout from '../components/layout';
 import SEO from '../components/utils/seo';
 import Container from '../components/container';
@@ -24,7 +25,11 @@ const ProjectsPage = () => {
           <PageCounter pageNumber={`01`} totalPages={`03`} />
         </PageHeading>
         {projects.map(project => (
-          <ProjectPreview key={project.id} project={project} />
+          <ProjectPreview
+            key={project.id}
+            project={project}
+            css={{ marginBottom: sizes.large2 }}
+          />
         ))}
       </Container>
     </Layout>

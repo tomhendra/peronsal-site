@@ -24,8 +24,8 @@ const styles = {
  * `....................component....................`
  */
 
-const Header = () => (
-  <header css={styles}>
+const Header = props => (
+  <header css={styles} {...props}>
     <NavLink to="/">
       <Logo />
     </NavLink>

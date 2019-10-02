@@ -92,14 +92,14 @@ const Button = ({
   buttonSize,
   externalLink,
   internalLink,
-  ...rest
+  ...props
 }) => {
   return internalLink ? (
     // if internalLink prop is provided, return Gatsby Link styled with buttonStyles
     <Link
       to={internalLink}
       css={styles({ buttonSize, buttonStyle })}
-      {...rest}
+      {...props}
     />
   ) : externalLink ? (
     // if externalLink prop is provided, return basic anchor tag styled with buttonStyles
@@ -109,18 +109,18 @@ const Button = ({
       href={externalLink}
       target="blank"
       css={styles({ buttonSize, buttonStyle })}
-      {...rest}
+      {...props}
     />
   ) : (
     // default return button if internalLink/externalLink props are not provided,
     // based on defaultProp values being defined as null below.
-    <button css={styles({ buttonSize, buttonStyle })} {...rest} />
+    <button css={styles({ buttonSize, buttonStyle })} {...props} />
   );
 };
 
 Button.defaultProps = {
   buttonStyle: 'primary',
-  buttonSize: 'md',
+  buttonSize: 'medium',
   externalLink: null,
   internalLink: null,
 };

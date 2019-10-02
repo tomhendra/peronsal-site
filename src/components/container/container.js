@@ -17,7 +17,11 @@ const styles = {
  * `....................component....................`
  */
 
-const Container = ({ children }) => <div css={styles}>{children}</div>;
+const Container = ({ children, ...props }) => (
+  <div css={styles} {...props}>
+    {children}
+  </div>
+);
 
 Container.propTypes = {
   children: PropTypes.node.isRequired,

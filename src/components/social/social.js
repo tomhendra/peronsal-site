@@ -26,8 +26,8 @@ const styles = {
  * `....................component....................`
  */
 
-const Social = () => (
-  <div css={styles}>
+const Social = props => (
+  <div css={styles} {...props}>
     <a href="https://github.com/tomhendra" target="blank">
       <img src={githubSVG} alt="GitHub logo" />
     </a>

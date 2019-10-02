@@ -22,8 +22,8 @@ const styles = {
  * `....................component....................`
  */
 
-const Navbar = () => (
-  <nav css={styles}>
+const Navbar = props => (
+  <nav css={styles} {...props}>
     <NavLink to="/about/" activeClassName="currentPage">
       About
     </NavLink>

@@ -21,8 +21,8 @@ const styles = {
  * `....................component....................`
  */
 
-const SkillItem = ({ skill }) => (
-  <div css={styles}>
+const SkillItem = ({ skill, ...props }) => (
+  <div css={styles} {...props}>
     <Img fixed={skill.image} alt={skill.alt} />
     <p>{skill.title}</p>
   </div>

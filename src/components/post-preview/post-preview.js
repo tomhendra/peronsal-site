@@ -51,8 +51,8 @@ const styles = {
  * `....................component....................`
  */
 
-const PostPreview = ({ post }) => (
-  <article css={styles}>
+const PostPreview = ({ post, ...props }) => (
+  <article css={styles} {...props}>
     <div>
       <h3>
         <PostLink to={post.slug}>{post.title}</PostLink>

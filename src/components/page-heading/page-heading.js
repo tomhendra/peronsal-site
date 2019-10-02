@@ -18,7 +18,11 @@ const styles = {
  * `....................component....................`
  */
 
-const PageHeading = ({ children }) => <div css={styles}>{children}</div>;
+const PageHeading = ({ children, ...props }) => (
+  <div css={styles} {...props}>
+    {children}
+  </div>
+);
 
 PageHeading.propTypes = {
   children: PropTypes.node.isRequired,

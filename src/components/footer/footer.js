@@ -26,12 +26,12 @@ const styles = {
  * `....................component....................`
  */
 
-const Footer = () => {
+const Footer = props => {
   const { siteMetadata } = useSiteMetadata();
   const date = new Date().getFullYear();
 
   return (
-    <footer css={styles}>
+    <footer css={styles} {...props}>
       &copy; {siteMetadata.author} {date}
       <Social />
     </footer>

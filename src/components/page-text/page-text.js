@@ -23,8 +23,8 @@ const styles = {
  * `....................component....................`
  */
 
-const PageText = ({ mainHeading, subHeading, paragraph }) => (
-  <div css={styles}>
+const PageText = ({ mainHeading, subHeading, paragraph, ...props }) => (
+  <div css={styles} {...props}>
     <h1>{mainHeading}</h1>
     <h2>{subHeading}</h2>
     <p>{paragraph}</p>

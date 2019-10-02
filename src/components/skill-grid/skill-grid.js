@@ -12,7 +12,7 @@ const styles = {
   display: 'grid',
   gap: `${sizes.medium3} ${sizes.huge1}`,
   gridTemplateColumns: 'repeat(3, 1fr)',
-  gridTemplateRows: 'repeat(3, 1fr)',
+  gridTemplateRows: 'auto',
 };
 
 /**
@@ -23,11 +23,11 @@ const styles = {
 // strings which must match the title specified in skills.yaml
 // exactly.
 
-const SkillGrid = ({ skillsToBeDisplayed }) => {
+const SkillGrid = ({ skillsToBeDisplayed, ...props }) => {
   const skills = useSkills();
 
   return (
-    <div css={styles}>
+    <div css={styles} {...props}>
       {skills
         .filter(skill => skillsToBeDisplayed.includes(skill.title))
         .map(skill => (

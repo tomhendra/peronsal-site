@@ -17,8 +17,8 @@ const styles = {
  * `....................component....................`
  */
 
-const Logo = () => (
-  <div css={styles}>
+const Logo = props => (
+  <div css={styles} {...props}>
     <img src={logoSVG} alt="Tom Hendra logo" />
   </div>
 );

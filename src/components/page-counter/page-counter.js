@@ -38,8 +38,8 @@ const styles = {
  * `....................component....................`
  */
 
-const PageCounter = ({ pageNumber, totalPages }) => (
-  <div css={styles}>
+const PageCounter = ({ pageNumber, totalPages, ...props }) => (
+  <div css={styles} {...props}>
     <div>
       <p>{pageNumber}</p>
       <p>/ {totalPages}</p>

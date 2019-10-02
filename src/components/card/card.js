@@ -32,8 +32,8 @@ const styles = {
  * `....................component....................`
  */
 
-const Card = ({ icon, title, text }) => (
-  <div css={styles}>
+const Card = ({ icon, title, text, ...props }) => (
+  <div css={styles} {...props}>
     <img src={icon} alt={title} />
     <h3>{title}</h3>
     <p>{text}</p>

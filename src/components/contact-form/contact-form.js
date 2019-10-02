@@ -59,10 +59,10 @@ const styles = {
  * `....................component....................`
  */
 
-const ContactForm = ({ errors, touched, isSubmitting }) => (
+const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
   <Form method="post" netlify-honeypot="bot-field" data-netlify="true">
     <input type="hidden" name="bot-field" />
-    <div css={styles}>
+    <div css={styles} {...props}>
       <div
         css={{
           gridColumn: '1 / 2',

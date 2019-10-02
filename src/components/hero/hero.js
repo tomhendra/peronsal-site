@@ -32,8 +32,8 @@ const styles = {
  * `....................component....................`
  */
 
-const Hero = ({ mainHeading, subHeading }) => (
-  <div css={styles}>
+const Hero = ({ mainHeading, subHeading, ...props }) => (
+  <div css={styles} {...props}>
     <h1>{mainHeading}</h1>
     <h2>{subHeading}</h2>
   </div>

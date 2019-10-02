@@ -19,11 +19,11 @@ const styles = {
  * `....................component....................`
  */
 
-const PostGrid = () => {
+const PostGrid = props => {
   const posts = usePosts();
 
   return (
-    <div css={styles}>
+    <div css={styles} {...props}>
       {posts.map(post => (
         <PostPreview key={post.id} post={post} />
       ))}
