@@ -3,8 +3,8 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { colors, sizes } from '../../assets/styles';
-import PostLink from '../post-link';
-import ReadLink from '../read-link';
+import PostLink from '../PostLink';
+import ReadLink from '../ReadLink';
 
 /**
  * `....................styles....................`

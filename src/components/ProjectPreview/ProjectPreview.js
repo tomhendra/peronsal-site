@@ -2,7 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 
 import { colors, sizes } from '../../assets/styles';
-import SkillGrid from '../skill-grid';
+import SkillGrid from '../SkillGrid';
 import Button from '../button';
 
 /**

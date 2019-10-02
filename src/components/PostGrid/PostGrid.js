@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { usePosts } from '../../hooks/use-posts';
+import { usePosts } from '../../hooks/usePosts';
 import { sizes } from '../../assets/styles';
-import PostPreview from '../post-preview';
+import PostPreview from '../postPreview';
 
 /**
  * `....................styles....................`

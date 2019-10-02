@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { useSkills } from '../../hooks/use-skills';
+import { useSkills } from '../../hooks/useSkills';
 import { sizes } from '../../assets/styles';
-import SkillItem from '../skill-item';
+import SkillItem from '../SkillItem';
 
 /**
  * `....................styles....................`

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useSiteMetadata } from '../../hooks/use-site-metadata';
+import { useSiteMetadata } from '../../hooks/useSiteMetadata';
 import { sizes } from '../../assets/styles';
 import Social from '../social';
 

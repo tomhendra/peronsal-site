@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { sizes } from '../../assets/styles';
-import Logo from '../logo';
-import NavLink from '../nav-link';
-import Navbar from '../navbar';
+import Logo from '../Logo';
+import NavLink from '../NavLink';
+import NavBar from '../NavBar';
 
 /**
  * `....................styles....................`
@@ -29,7 +29,7 @@ const Header = props => (
     <NavLink to="/">
       <Logo />
     </NavLink>
-    <Navbar />
+    <NavBar />
   </header>
 );
 

@@ -4,8 +4,8 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from 'gatsby-image';
 
 import { sizes } from '../assets/styles';
-import Layout from '../components/layout';
-import Container from '../components/container';
+import Layout from '../components/Layout';
+import Container from '../components/Container';
 
 export const query = graphql`
   query ContentfulBlogPostQuery($id: String!) {

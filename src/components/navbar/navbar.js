@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { sizes } from '../../assets/styles';
-import NavLink from '../nav-link';
+import NavLink from '../NavLink';
 
 /**
  * `....................styles....................`
@@ -22,7 +22,7 @@ const styles = {
  * `....................component....................`
  */
 
-const Navbar = props => (
+const NavBar = props => (
   <nav css={styles} {...props}>
     <NavLink to="/about/" activeClassName="currentPage">
       About
@@ -39,4 +39,4 @@ const Navbar = props => (
   </nav>
 );
 
-export default Navbar;
+export default NavBar;

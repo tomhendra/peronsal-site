@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Layout from '../components/layout';
-import SEO from '../components/utils/seo';
-import Container from '../components/container';
-import PageHeading from '../components/page-heading';
-import PageText from '../components/page-text';
+import Layout from '../components/Layout';
+import SEO from '../components/utils/SEO';
+import Container from '../components/Container';
+import PageHeading from '../components/PageHeading';
+import PageText from '../components/PageText';
 
 export default () => (
   <Layout>
