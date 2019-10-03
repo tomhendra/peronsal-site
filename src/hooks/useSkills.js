@@ -10,8 +10,13 @@ export function useSkills() {
             title
             alt
             image {
-              childImageSharp {
+              small: childImageSharp {
                 fixed(width: 17) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+              medium: childImageSharp {
+                fixed(width: 64) {
                   ...GatsbyImageSharpFixed
                 }
               }
@@ -25,7 +30,8 @@ export function useSkills() {
   return data.skills.edges.map(({ node }) => ({
     id: node.id,
     title: node.title,
-    image: node.image.childImageSharp.fixed,
+    imageSmall: node.image.small.fixed,
+    imageMedium: node.image.medium.fixed,
     alt: node.alt,
   }));
 }

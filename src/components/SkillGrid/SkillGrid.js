@@ -57,10 +57,14 @@ const styles = gridSize => {
 
 // In order to use this component it must be passed an array of
 // strings which must match the title specified in skills.yaml
-// exactly.
+// exactly. !! could make this friendlier to typos later using RegEx ?
 
 const SkillGrid = ({ gridSize, skillsToBeDisplayed, ...props }) => {
   const skills = useSkills();
+  // verify which size image to use from useSkills() based on value of gridSize
+  // moved here for better performance over being inside map() below
+  // as to not check the value of gridSize on every iteration!
+  const imageSize = gridSize === 'small' ? 'imageSmall' : 'imageMedium';
 
   return (
     <div css={styles(gridSize)} {...props}>
@@ -68,7 +72,7 @@ const SkillGrid = ({ gridSize, skillsToBeDisplayed, ...props }) => {
         .filter(skill => skillsToBeDisplayed.includes(skill.title))
         .map(skill => (
           <div key={skill.id}>
-            <Img fixed={skill.image} alt={skill.alt} />
+            <Img fixed={skill[imageSize]} alt={skill.alt} />
             <p>{skill.title}</p>
           </div>
         ))}
