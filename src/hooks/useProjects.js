@@ -15,7 +15,7 @@ export function useProjects() {
             alt
             image {
               childImageSharp {
-                fixed(width: 320) {
+                fixed(width: 256) {
                   ...GatsbyImageSharpFixed
                 }
               }

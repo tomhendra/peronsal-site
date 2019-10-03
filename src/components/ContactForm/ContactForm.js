@@ -22,7 +22,7 @@ const styles = {
   border: `1px solid ${colors.neutral.dark4}`,
   borderRadius: '6px',
   display: 'grid',
-  gridGap: sizes.medium1,
+  gap: `${sizes.medium1} ${sizes.medium2}`,
   gridTemplateColumns: 'repeat(2, 1fr)',
   gridTemplateRows: 'repeat(4, 1fr)',
   margin: '0 auto',

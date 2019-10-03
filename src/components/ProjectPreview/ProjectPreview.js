@@ -15,7 +15,10 @@ const styles = {
   borderRadius: '6px',
   display: 'flex',
   justifyContent: 'space-between',
-  maxWidth: sizes.massive3,
+  margin: '0 auto',
+  width: sizes.massive3,
+  minHeight: sizes.huge4,
+  padding: sizes.medium3,
 };
 
 /**
@@ -27,48 +30,49 @@ const ProjectPreview = ({ project, ...props }) => (
     <Img fixed={project.image} alt={project.alt} />
     <div
       css={{
-        padding: `${sizes.medium3} ${sizes.medium2}`,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        paddingLeft: sizes.medium2,
         width: '60%',
       }}
     >
-      <h2
-        css={{
-          marginBottom: sizes.medium1,
-        }}
-      >
-        {project.title}
-      </h2>
-      <p
-        css={{
-          marginBottom: sizes.medium2,
-        }}
-      >
-        {project.description}
-      </p>
-      <SkillGrid
-        gridSize={'small'}
-        skillsToBeDisplayed={project.stack}
-        css={{
-          marginBottom: sizes.medium3,
-        }}
-      />
-      <Button
-        buttonStyle={'primary'}
-        buttonSize={'small'}
-        externalLink={project.url}
-        css={{
-          marginRight: sizes.medium1,
-        }}
-      >
-        Launch App
-      </Button>
-      <Button
-        buttonStyle={'secondary'}
-        buttonSize={'small'}
-        externalLink={project.repo}
-      >
-        View Code
-      </Button>
+      <div>
+        <h2
+          css={{
+            marginBottom: sizes.medium1,
+          }}
+        >
+          {project.title}
+        </h2>
+        <p
+          css={{
+            marginBottom: sizes.medium2,
+          }}
+        >
+          {project.description}
+        </p>
+        <SkillGrid gridSize={'small'} skillsToBeDisplayed={project.stack} />
+      </div>
+      <div>
+        <Button
+          buttonStyle={'secondary'}
+          buttonSize={'small'}
+          externalLink={project.repo}
+          css={{
+            marginRight: sizes.medium1,
+          }}
+        >
+          View Repo
+        </Button>
+        <Button
+          buttonStyle={'primary'}
+          buttonSize={'small'}
+          externalLink={project.url}
+        >
+          Launch App
+        </Button>
+      </div>
     </div>
   </div>
 );
