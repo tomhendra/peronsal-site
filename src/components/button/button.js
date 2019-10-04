@@ -93,8 +93,8 @@ const Button = ({
   externalLink,
   internalLink,
   ...props
-}) => {
-  return internalLink ? (
+}) =>
+  internalLink ? (
     // if internalLink prop is provided, return Gatsby Link styled with buttonStyles
     <Link
       to={internalLink}
@@ -116,7 +116,6 @@ const Button = ({
     // based on defaultProp values being defined as null below.
     <button css={styles({ buttonSize, buttonStyle })} {...props} />
   );
-};
 
 Button.defaultProps = {
   buttonStyle: 'primary',

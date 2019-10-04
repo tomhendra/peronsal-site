@@ -29,7 +29,7 @@ const styles = {
   padding: `${sizes.large1} ${sizes.medium3} ${sizes.medium1} ${sizes.medium3}`,
   width: sizes.massive3,
 
-  // all immediate children selector for 2 child div elements
+  // all immediate children selector for child div elements
   '> *': {
     // allows for absolutely positioned Tooltips
     position: 'relative',
