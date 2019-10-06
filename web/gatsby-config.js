@@ -29,6 +29,16 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'xm39xo8g',
+        dataset: 'production',
+        // a token with read permissions is required
+        // if you have a private dataset
+        // token: process.env.SANITY_ACCESS_TOKEN,
+      },
+    },
     'gatsby-plugin-emotion',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',

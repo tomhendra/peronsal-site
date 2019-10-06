@@ -1,18 +1,30 @@
 {
-  "name": "portfolio",
-  "private": true,
-  "version": "1.0.0",
-  "description": "",
-  "main": "package.json",
-  "author": "Tom Hendra <tom.hendra@outlook.com>",
-  "license": "UNLICENSED",
+  "name": "tomhendra-portfolio",
+  "private": false,
+  "description": "A portfolio website for Tom Hendra, web developer",
+  "version": "0.2.0",
+  "author": "Tom Hendra <hola@tomhendra.dev>",
+  "keywords": [
+    "tom hendra"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomhendra/portfolio"
+  },
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
+    "deploy": "npm run graphql-deploy && npm run sanity-deploy",
+    "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",
+    "graphql-deploy": "sanity graphql deploy --playground",
+    "sanity-deploy": "sanity deploy",
+    "lint": "eslint .",
     "start": "sanity start",
+    "build": "sanity build",
     "test": "sanity check"
   },
-  "keywords": [
-    "sanity"
-  ],
   "dependencies": {
     "@sanity/base": "^0.142.6",
     "@sanity/components": "^0.142.6",
@@ -24,5 +36,15 @@
     "react": "^16.2",
     "react-dom": "^16.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier-eslint-cli": "^5.0.0"
+  }
 }
