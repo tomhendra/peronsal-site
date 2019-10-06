@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
-    "@emotion/core": "^10.0.20",
+    "@emotion/core": "^10.0.21",
     "@emotion/styled": "^10.0.17",
     "dotenv": "^8.1.0",
     "formik": "^1.5.8",
