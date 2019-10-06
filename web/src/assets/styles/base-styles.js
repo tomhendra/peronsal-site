@@ -1,5 +1,5 @@
-import { css } from '@emotion/core';
-import { colors, fontsizes } from '../styles';
+import { css } from '@emotion/core'
+import { colors, fontsizes } from '../styles'
 
 export const baseStyles = () => css`
   *,
@@ -59,4 +59,4 @@ export const baseStyles = () => css`
       cursor: default;
     }
   }
-`;
+`

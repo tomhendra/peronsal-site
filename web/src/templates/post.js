@@ -1,11 +1,11 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Img from 'gatsby-image';
+import React from 'react'
+import { graphql } from 'gatsby'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import Img from 'gatsby-image'
 
-import { sizes } from '../assets/styles';
-import Layout from '../components/Layout';
-import Container from '../components/Container';
+import { sizes } from '../assets/styles'
+import Layout from '../components/Layout'
+import Container from '../components/Container'
 
 export const query = graphql`
   query ContentfulBlogPostQuery($id: String!) {
@@ -25,26 +25,26 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const postTemplate = ({ data: { contentfulBlogPost } }) => {
   const options = {
     renderNode: {
       'embedded-asset-block': node => {
-        const alt = node.data.target.fields.title['en-US'];
-        const url = node.data.target.fields.file['en-US'].url;
+        const alt = node.data.target.fields.title['en-US']
+        const url = node.data.target.fields.file['en-US'].url
         return (
           <img
             src={url}
             alt={alt}
             css={{
-              maxWidth: sizes.massive2,
+              maxWidth: sizes.massive2
             }}
           />
-        );
-      },
-    },
-  };
+        )
+      }
+    }
+  }
 
   return (
     <Layout>
@@ -54,14 +54,14 @@ const postTemplate = ({ data: { contentfulBlogPost } }) => {
         <Img
           sizes={{
             ...contentfulBlogPost.featuredImage.fluid,
-            aspectRatio: 9 / 4,
+            aspectRatio: 9 / 4
           }}
           alt={contentfulBlogPost.title}
         />
         {documentToReactComponents(contentfulBlogPost.body.json, options)}
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default postTemplate;
+export default postTemplate

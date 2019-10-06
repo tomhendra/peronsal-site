@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import { colors, fontsizes, sizes } from '../../assets/styles';
+import { colors, fontsizes, sizes } from '../../assets/styles'
 
 /**
  * `....................styles....................`
@@ -18,15 +18,15 @@ const styles = {
 
   h1: {
     fontSize: fontsizes.graphic3,
-    marginBottom: sizes.small2,
+    marginBottom: sizes.small2
   },
 
   h2: {
     alignSelf: 'flex-end',
     color: colors.primary.light2,
-    paddingRight: sizes.small4,
-  },
-};
+    paddingRight: sizes.small4
+  }
+}
 
 /**
  * `....................component....................`
@@ -37,6 +37,6 @@ const Hero = ({ mainHeading, subHeading, ...props }) => (
     <h1>{mainHeading}</h1>
     <h2>{subHeading}</h2>
   </div>
-);
+)
 
-export default Hero;
+export default Hero

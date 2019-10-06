@@ -1,18 +1,18 @@
-import React from 'react';
-import { css } from '@emotion/core';
+import React from 'react'
+import { css } from '@emotion/core'
 
-import { sizes } from '../assets/styles';
-import SEO from '../components/utils/SEO';
-import Layout from '../components/Layout';
-import Container from '../components/Container';
-import PageHeading from '../components/PageHeading';
-import PageText from '../components/PageText';
-import PageCounter from '../components/PageCounter';
-import Card from '../components/Card';
-import SkillGrid from '../components/SkillGrid';
-import businessSVG from '../assets/images/icons/business.svg';
-import codeSVG from '../assets/images/icons/code.svg';
-import designSVG from '../assets/images/icons/design.svg';
+import { sizes } from '../assets/styles'
+import SEO from '../components/utils/SEO'
+import Layout from '../components/Layout'
+import Container from '../components/Container'
+import PageHeading from '../components/PageHeading'
+import PageText from '../components/PageText'
+import PageCounter from '../components/PageCounter'
+import Card from '../components/Card'
+import SkillGrid from '../components/SkillGrid'
+import businessSVG from '../assets/images/icons/business.svg'
+import codeSVG from '../assets/images/icons/code.svg'
+import designSVG from '../assets/images/icons/design.svg'
 
 const AboutPage = () => (
   <Layout>
@@ -72,7 +72,7 @@ const AboutPage = () => (
           `Framer Motion`,
           `Emotion`,
           `Sass`,
-          `CSS Modules`,
+          `CSS Modules`
         ]}
       />
     </Container>
@@ -96,11 +96,11 @@ const AboutPage = () => (
           `Yarn`,
           `Firebase`,
           `GraphQL`,
-          `Netlify`,
+          `Netlify`
         ]}
       />
     </Container>
   </Layout>
-);
+)
 
-export default AboutPage;
+export default AboutPage

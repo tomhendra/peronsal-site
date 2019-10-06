@@ -1,17 +1,17 @@
-import React from 'react';
-import { withFormik, Form, Field } from 'formik';
-import * as yup from 'yup';
+import React from 'react'
+import { withFormik, Form, Field } from 'formik'
+import * as yup from 'yup'
 
-import { colors, fontsizes, sizes } from '../../assets/styles';
-import Button from '../button';
-import Tooltip from '../tooltip';
+import { colors, fontsizes, sizes } from '../../assets/styles'
+import Button from '../button'
+import Tooltip from '../tooltip'
 
 /**
  * `....................constants....................`
  */
 
 // TO TEST MORE !!!!!! RegEx needs tweaking, Perhaps country code selection?
-const phoneRegEx = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+const phoneRegEx = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
 /**
  * `....................styles....................`
@@ -42,18 +42,18 @@ const styles = {
       fontFamily: 'Lato',
       fontSize: fontsizes.base,
       padding: sizes.small2,
-      width: '100%',
+      width: '100%'
     },
 
     input: {
-      height: sizes.medium3,
+      height: sizes.medium3
     },
 
     textarea: {
-      resize: 'none',
-    },
-  },
-};
+      resize: 'none'
+    }
+  }
+}
 
 /**
  * `....................component....................`
@@ -66,12 +66,10 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
       <div
         css={{
           gridColumn: '1 / 2',
-          gridRow: '1 / 2',
+          gridRow: '1 / 2'
         }}
       >
-        {touched.name && errors.name && (
-          <Tooltip type={'alert'}>{errors.name}</Tooltip>
-        )}
+        {touched.name && errors.name && <Tooltip type={'alert'}>{errors.name}</Tooltip>}
         <label>
           Full name
           <Field type="text" name="name" placeholder="Full name" />
@@ -80,12 +78,10 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
       <div
         css={{
           gridColumn: '1 / 2',
-          gridRow: '2 / 3',
+          gridRow: '2 / 3'
         }}
       >
-        {touched.email && errors.email && (
-          <Tooltip type={'alert'}>{errors.email}</Tooltip>
-        )}
+        {touched.email && errors.email && <Tooltip type={'alert'}>{errors.email}</Tooltip>}
         <label>
           Email address
           <Field type="email" name="email" placeholder="Email" />
@@ -94,12 +90,10 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
       <div
         css={{
           gridColumn: '1 / 2',
-          gridRow: '3 / 4',
+          gridRow: '3 / 4'
         }}
       >
-        {touched.phone && errors.phone && (
-          <Tooltip type={'alert'}>{errors.phone}</Tooltip>
-        )}
+        {touched.phone && errors.phone && <Tooltip type={'alert'}>{errors.phone}</Tooltip>}
         <label>
           Phone number
           <Field type="tel" name="phone" placeholder="Phone number" />
@@ -108,20 +102,13 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
       <div
         css={{
           gridColumn: '2 / 3',
-          gridRow: '1 / 4',
+          gridRow: '1 / 4'
         }}
       >
-        {touched.message && errors.message && (
-          <Tooltip type={'alert'}>{errors.message}</Tooltip>
-        )}
+        {touched.message && errors.message && <Tooltip type={'alert'}>{errors.message}</Tooltip>}
         <label>
           Message
-          <Field
-            component="textarea"
-            rows="13"
-            name="message"
-            placeholder="Your message"
-          />
+          <Field component="textarea" rows="13" name="message" placeholder="Your message" />
         </label>
       </div>
       <div
@@ -130,21 +117,16 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
           display: 'flex',
           gridColumn: '2 / 3',
           gridRow: '4 / 5',
-          justifyContent: 'flex-end',
+          justifyContent: 'flex-end'
         }}
       >
-        <Button
-          type="submit"
-          disabled={isSubmitting}
-          buttonStyle={'primary'}
-          buttonSize={'small'}
-        >
+        <Button type="submit" disabled={isSubmitting} buttonStyle={'primary'} buttonSize={'small'}>
           Send Message
         </Button>
       </div>
     </div>
   </Form>
-);
+)
 
 /**
  * `....................Formik....................`
@@ -156,8 +138,8 @@ const FormikContactForm = withFormik({
       name: name || '',
       email: email || '',
       phone: phone || '',
-      message: message || '',
-    };
+      message: message || ''
+    }
   },
   validationSchema: yup.object().shape({
     name: yup.string().required('Please provide your name'),
@@ -172,20 +154,20 @@ const FormikContactForm = withFormik({
     message: yup
       .string()
       .max(1000, 'The maximum message length is 1000 characters long')
-      .required('Please provide a message'),
+      .required('Please provide a message')
   }),
   handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
     // Placeholder for logic required by Netlify. Look into this later.................
     setTimeout(() => {
       if (values.email === 'tester@test.com') {
-        setErrors({ email: 'Email already exists' });
+        setErrors({ email: 'Email already exists' })
       } else {
-        resetForm();
+        resetForm()
       }
-      setSubmitting(false);
-    }, 2000);
-    console.log(values);
-  },
-})(ContactForm);
+      setSubmitting(false)
+    }, 2000)
+    console.log(values)
+  }
+})(ContactForm)
 
-export default FormikContactForm;
+export default FormikContactForm

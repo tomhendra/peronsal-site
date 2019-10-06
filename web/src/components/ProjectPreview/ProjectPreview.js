@@ -1,9 +1,9 @@
-import React from 'react';
-import Img from 'gatsby-image';
+import React from 'react'
+import Img from 'gatsby-image'
 
-import { colors, sizes } from '../../assets/styles';
-import SkillGrid from '../SkillGrid';
-import Button from '../button';
+import { colors, sizes } from '../../assets/styles'
+import SkillGrid from '../SkillGrid'
+import Button from '../button'
 
 /**
  * `....................styles....................`
@@ -18,8 +18,8 @@ const styles = {
   margin: '0 auto',
   width: sizes.massive3,
   minHeight: sizes.huge4,
-  padding: sizes.medium3,
-};
+  padding: sizes.medium3
+}
 
 /**
  * `....................component....................`
@@ -34,20 +34,20 @@ const ProjectPreview = ({ project, ...props }) => (
         flexDirection: 'column',
         justifyContent: 'space-between',
         paddingLeft: sizes.medium2,
-        width: '60%',
+        width: '60%'
       }}
     >
       <div>
         <h2
           css={{
-            marginBottom: sizes.medium1,
+            marginBottom: sizes.medium1
           }}
         >
           {project.title}
         </h2>
         <p
           css={{
-            marginBottom: sizes.medium2,
+            marginBottom: sizes.medium2
           }}
         >
           {project.description}
@@ -60,21 +60,17 @@ const ProjectPreview = ({ project, ...props }) => (
           buttonSize={'small'}
           externalLink={project.repo}
           css={{
-            marginRight: sizes.medium1,
+            marginRight: sizes.medium1
           }}
         >
           View Repo
         </Button>
-        <Button
-          buttonStyle={'primary'}
-          buttonSize={'small'}
-          externalLink={project.url}
-        >
+        <Button buttonStyle={'primary'} buttonSize={'small'} externalLink={project.url}>
           Launch App
         </Button>
       </div>
     </div>
   </div>
-);
+)
 
-export default ProjectPreview;
+export default ProjectPreview

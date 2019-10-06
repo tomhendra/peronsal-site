@@ -1,11 +1,9 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby'
 
-export function usePosts() {
+export function usePosts () {
   const data = useStaticQuery(graphql`
     query {
-      posts: allContentfulBlogPost(
-        sort: { fields: publishedDate, order: DESC }
-      ) {
+      posts: allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
         edges {
           node {
             id
@@ -25,7 +23,7 @@ export function usePosts() {
         }
       }
     }
-  `);
+  `)
 
   return data.posts.edges.map(({ node }) => ({
     id: node.id,
@@ -33,6 +31,6 @@ export function usePosts() {
     description: node.description,
     slug: `/blog/${node.slug}`,
     publishedDate: node.publishedDate,
-    featuredImage: node.featuredImage.fluid,
-  }));
+    featuredImage: node.featuredImage.fluid
+  }))
 }

@@ -8,7 +8,7 @@ export default {
       title: 'Title',
       type: 'string'
     },
-     {
+    {
       name: 'logo',
       title: 'Logo',
       type: 'image'

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import { colors, fontsizes, sizes } from '../../assets/styles';
+import { colors, fontsizes, sizes } from '../../assets/styles'
 
 /**
  * `....................styles....................`
@@ -17,16 +17,16 @@ const styles = {
 
   img: {
     marginBottom: sizes.medium1,
-    width: sizes.large1,
+    width: sizes.large1
   },
 
   h3: {
     color: colors.primary.light2,
     fontSize: fontsizes.medium2,
     marginBottom: sizes.medium2,
-    textTransform: 'uppercase',
-  },
-};
+    textTransform: 'uppercase'
+  }
+}
 
 /**
  * `....................component....................`
@@ -38,6 +38,6 @@ const Card = ({ icon, title, text, ...props }) => (
     <h3>{title}</h3>
     <p>{text}</p>
   </div>
-);
+)
 
-export default Card;
+export default Card

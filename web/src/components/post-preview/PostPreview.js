@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import React from 'react'
+import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
-import { colors, sizes } from '../../assets/styles';
-import PostLink from '../PostLink';
-import ReadLink from '../ReadLink';
+import { colors, sizes } from '../../assets/styles'
+import PostLink from '../PostLink'
+import ReadLink from '../ReadLink'
 
 /**
  * `....................styles....................`
@@ -22,14 +22,14 @@ const styles = {
       background: colors.primary.dark1,
       isolation: 'isolate',
       overflow: 'hidden',
-      position: 'relative',
+      position: 'relative'
     },
     ':last-of-type': {
       background: colors.neutral.dark2,
       justifyContent: 'space-between',
       flexDirection: 'column',
       display: 'flex',
-      padding: sizes.medium2,
+      padding: sizes.medium2
     },
 
     h3: {
@@ -38,14 +38,14 @@ const styles = {
       marginBottom: 0,
       position: 'absolute',
       top: 0,
-      zIndex: 99999,
+      zIndex: 99999
     },
 
     p: {
-      marginBottom: sizes.medium1,
-    },
-  },
-};
+      marginBottom: sizes.medium1
+    }
+  }
+}
 
 /**
  * `....................component....................`
@@ -62,10 +62,10 @@ const PostPreview = ({ post, ...props }) => (
           alt={post.title}
           sizes={{
             ...post.featuredImage,
-            aspectRatio: 9 / 6,
+            aspectRatio: 9 / 6
           }}
           style={{
-            mixBlendMode: 'soft-light',
+            mixBlendMode: 'soft-light'
           }}
         />
       </Link>
@@ -75,6 +75,6 @@ const PostPreview = ({ post, ...props }) => (
       <ReadLink to={post.slug}>Read post</ReadLink>
     </div>
   </article>
-);
+)
 
-export default PostPreview;
+export default PostPreview

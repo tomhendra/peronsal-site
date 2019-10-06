@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Global } from '@emotion/core';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Global } from '@emotion/core'
 
-import Header from '../Header';
-import Footer from '../Footer';
-import { baseStyles } from '../../assets/styles';
+import Header from '../Header'
+import Footer from '../Footer'
+import { baseStyles } from '../../assets/styles'
 
 /**
  * `....................styles....................`
@@ -12,8 +12,8 @@ import { baseStyles } from '../../assets/styles';
 
 const styles = {
   position: 'relative',
-  margin: '0 auto',
-};
+  margin: '0 auto'
+}
 
 /**
  * `....................component....................`
@@ -28,10 +28,10 @@ const Layout = ({ children }) => (
       <Footer />
     </div>
   </>
-);
+)
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+  children: PropTypes.node.isRequired
+}
 
-export default Layout;
+export default Layout

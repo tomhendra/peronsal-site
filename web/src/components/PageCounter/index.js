@@ -1,3 +1,3 @@
-import PageCounter from './PageCounter';
+import PageCounter from './PageCounter'
 
-export default PageCounter;
+export default PageCounter

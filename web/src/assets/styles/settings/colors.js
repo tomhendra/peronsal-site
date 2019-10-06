@@ -9,7 +9,7 @@ export const colors = {
     light2: 'hsl(334, 86%, 67%)',
     light3: 'hsl(336, 100%, 77%)',
     light4: 'hsl(338, 100%, 86%)',
-    light5: 'hsl(341, 100%, 95%)',
+    light5: 'hsl(341, 100%, 95%)'
   },
 
   neutral: {
@@ -22,7 +22,7 @@ export const colors = {
     light2: 'hsl(211, 13%, 65%)',
     light3: 'hsl(210, 16%, 82%)',
     light4: 'hsl(214, 15%, 91%)',
-    light5: 'hsl(216, 33%, 97%)',
+    light5: 'hsl(216, 33%, 97%)'
   },
 
   accent: {
@@ -35,7 +35,7 @@ export const colors = {
     light2: 'hsl(176, 87%, 67%)',
     light3: 'hsl(174, 96%, 78%)',
     light4: 'hsl(172, 97%, 88%)',
-    light5: 'hsl(171, 82%, 94%)',
+    light5: 'hsl(171, 82%, 94%)'
   },
 
   error: {
@@ -48,7 +48,7 @@ export const colors = {
     light2: 'hsl(360, 91%, 69%)',
     light3: 'hsl(360, 100%, 80%)',
     light4: 'hsl(360, 100%, 87%)',
-    light5: 'hsl(360, 100%, 95%)',
+    light5: 'hsl(360, 100%, 95%)'
   },
 
   alert: {
@@ -61,7 +61,7 @@ export const colors = {
     light2: 'hsl(48, 94%, 68%)',
     light3: 'hsl(48, 95%, 76%)',
     light4: 'hsl(48, 100%, 88%)',
-    light5: 'hsl(49, 100%, 96%)',
+    light5: 'hsl(49, 100%, 96%)'
   },
 
   success: {
@@ -74,6 +74,6 @@ export const colors = {
     light2: 'hsl(158, 58%, 62%)',
     light3: 'hsl(156, 73%, 74%)',
     light4: 'hsl(154, 75%, 87%)',
-    light5: 'hsl(152, 68%, 96%)',
-  },
-};
+    light5: 'hsl(152, 68%, 96%)'
+  }
+}

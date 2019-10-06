@@ -1,6 +1,6 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby'
 
-export function useProjects() {
+export function useProjects () {
   const data = useStaticQuery(graphql`
     query {
       projects: allProjectsYaml {
@@ -24,7 +24,7 @@ export function useProjects() {
         }
       }
     }
-  `);
+  `)
 
   return data.projects.edges.map(({ node }) => ({
     id: node.id,
@@ -39,6 +39,6 @@ export function useProjects() {
     repo: node.repo,
     url: node.url,
     image: node.image.childImageSharp.fixed,
-    alt: node.alt,
-  }));
+    alt: node.alt
+  }))
 }

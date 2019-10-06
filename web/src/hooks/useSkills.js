@@ -1,6 +1,6 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby'
 
-export function useSkills() {
+export function useSkills () {
   const data = useStaticQuery(graphql`
     query {
       skills: allSkillsYaml {
@@ -25,13 +25,13 @@ export function useSkills() {
         }
       }
     }
-  `);
+  `)
 
   return data.skills.edges.map(({ node }) => ({
     id: node.id,
     title: node.title,
     imageSmall: node.image.small.fixed,
     imageMedium: node.image.medium.fixed,
-    alt: node.alt,
-  }));
+    alt: node.alt
+  }))
 }

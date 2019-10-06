@@ -1,20 +1,15 @@
 module.exports = {
   globals: {
-    __PATH_PREFIX__: true,
+    __PATH_PREFIX__: true
   },
-  extends: [
-    'standard',
-    'standard-react',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-  ],
+  extends: ["standard", "standard-react", "plugin:import/errors", "plugin:import/warnings"],
   rules: {
-    'react/prop-types': 0,
+    "react/prop-types": 0
   },
   settings: {
     react: {
-      pragma: 'React',
-      version: '16.10.2',
-    },
-  },
+      pragma: "React",
+      version: "16.10.2"
+    }
+  }
 };

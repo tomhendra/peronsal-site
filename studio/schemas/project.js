@@ -2,7 +2,7 @@ export default {
   name: 'project',
   title: 'Project',
   type: 'document',
-    fields: [
+  fields: [
     {
       name: 'title',
       title: 'Title',
@@ -17,11 +17,11 @@ export default {
         maxLength: 96
       }
     },
-        {
+    {
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: {type: 'author'}
+      to: { type: 'author' }
     },
     {
       name: 'image',
@@ -40,17 +40,17 @@ export default {
       name: 'techstack',
       title: 'Technology stack',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'technology'}}]
+      of: [{ type: 'reference', to: { type: 'technology' } }]
     },
     {
       name: 'repo',
       title: 'Project repo',
       type: 'url'
     },
-        {
+    {
       name: 'live',
       title: 'Project live URL',
       type: 'url'
-    },
-  ],
+    }
+  ]
 }

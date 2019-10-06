@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-import { sizes } from '../../assets/styles';
-import githubSVG from '../../assets/images/social/github.svg';
-import linkedinSVG from '../../assets/images/social/linkedin.svg';
-import twitterSVG from '../../assets/images/social/twitter.svg';
+import { sizes } from '../../assets/styles'
+import githubSVG from '../../assets/images/social/github.svg'
+import linkedinSVG from '../../assets/images/social/linkedin.svg'
+import twitterSVG from '../../assets/images/social/twitter.svg'
 
 /**
  * `....................styles....................`
@@ -17,10 +17,10 @@ const styles = {
   '> *': {
     width: '1.8rem',
     ':not(:first-of-type)': {
-      marginTop: sizes.small3,
-    },
-  },
-};
+      marginTop: sizes.small3
+    }
+  }
+}
 
 /**
  * `....................component....................`
@@ -38,6 +38,6 @@ const Social = props => (
       <img src={linkedinSVG} alt="LinkedIn logo" />
     </a>
   </div>
-);
+)
 
-export default Social;
+export default Social

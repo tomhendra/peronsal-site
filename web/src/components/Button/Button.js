@@ -1,57 +1,57 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from 'react'
+import { Link } from 'gatsby'
 
-import { colors, fontsizes, sizes } from '../../assets/styles';
+import { colors, fontsizes, sizes } from '../../assets/styles'
 
 /**
  * `....................constants....................`
  */
 
 // Set values for button variant styles here
-const primary = 'primary';
-const secondary = 'secondary';
-const tertiary = 'tertiary';
+const primary = 'primary'
+const secondary = 'secondary'
+const tertiary = 'tertiary'
 
 const buttonStyles = {
   [primary]: {
     background: colors.primary.dark5,
     border: colors.primary.dark5,
-    hover: colors.primary.dark4,
+    hover: colors.primary.dark4
   },
   [secondary]: {
     background: colors.neutral.dark3,
     border: colors.neutral.light4,
-    hover: colors.neutral.dark2,
+    hover: colors.neutral.dark2
   },
   [tertiary]: {
     background: 'inherit',
     border: 'transparent',
-    hover: colors.neutral.dark4,
-  },
-};
+    hover: colors.neutral.dark4
+  }
+}
 
 // Set values for button sizes here
-const small = 'small';
-const medium = 'medium';
-const large = 'large';
+const small = 'small'
+const medium = 'medium'
+const large = 'large'
 
 const buttonSizes = {
   [small]: {
     fontSize: fontsizes.base,
     minWidth: sizes.large1,
-    padding: `${sizes.small3} ${sizes.medium1}`,
+    padding: `${sizes.small3} ${sizes.medium1}`
   },
   [medium]: {
     fontSize: fontsizes.medium2,
     minWidth: sizes.huge1,
-    padding: `${sizes.small3} ${sizes.medium1}`,
+    padding: `${sizes.small3} ${sizes.medium1}`
   },
   [large]: {
     fontSize: fontsizes.large1,
     minWidth: sizes.huge2,
-    padding: `${sizes.medium1} ${sizes.medium2}`,
-  },
-};
+    padding: `${sizes.medium1} ${sizes.medium2}`
+  }
+}
 
 /**
  * `....................styles....................`
@@ -60,11 +60,9 @@ const buttonSizes = {
 const styles = ({ buttonStyle, buttonSize }) => {
   // config variables declared & assigned buttonStyle / buttonSize / defaultProps
   // values from Button component calling buttonStyles with styleProps
-  const styleConfig =
-    buttonStyles[buttonStyle] || buttonStyles[Button.defaultProps.buttonStyle];
+  const styleConfig = buttonStyles[buttonStyle] || buttonStyles[Button.defaultProps.buttonStyle]
 
-  const sizeConfig =
-    buttonSizes[buttonSize] || buttonSizes[Button.defaultProps.buttonSize];
+  const sizeConfig = buttonSizes[buttonSize] || buttonSizes[Button.defaultProps.buttonSize]
 
   return {
     ...sizeConfig,
@@ -78,50 +76,35 @@ const styles = ({ buttonStyle, buttonSize }) => {
     textTransform: 'uppercase',
     cursor: 'pointer',
     '&:hover,:disabled,:focus': {
-      backgroundColor: styleConfig.hover,
-    },
-  };
-};
+      backgroundColor: styleConfig.hover
+    }
+  }
+}
 
 /**
  * `....................component....................`
  */
 
-const Button = ({
-  buttonStyle,
-  buttonSize,
-  externalLink,
-  internalLink,
-  ...props
-}) =>
+const Button = ({ buttonStyle, buttonSize, externalLink, internalLink, ...props }) =>
   internalLink ? (
     // if internalLink prop is provided, return Gatsby Link styled with buttonStyles
-    <Link
-      to={internalLink}
-      css={styles({ buttonSize, buttonStyle })}
-      {...props}
-    />
+    <Link to={internalLink} css={styles({ buttonSize, buttonStyle })} {...props} />
   ) : externalLink ? (
     // if externalLink prop is provided, return basic anchor tag styled with buttonStyles
     // (eslint error is a false positive...)
     // eslint-disable-next-line jsx-a11y/anchor-has-content
-    <a
-      href={externalLink}
-      target="blank"
-      css={styles({ buttonSize, buttonStyle })}
-      {...props}
-    />
+    <a href={externalLink} target="blank" css={styles({ buttonSize, buttonStyle })} {...props} />
   ) : (
     // default return button if internalLink/externalLink props are not provided,
     // based on defaultProp values being defined as null below.
     <button css={styles({ buttonSize, buttonStyle })} {...props} />
-  );
+  )
 
 Button.defaultProps = {
   buttonStyle: 'primary',
   buttonSize: 'medium',
   externalLink: null,
-  internalLink: null,
-};
+  internalLink: null
+}
 
-export default Button;
+export default Button

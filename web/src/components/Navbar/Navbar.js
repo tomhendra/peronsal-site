@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-import { sizes } from '../../assets/styles';
-import NavLink from '../NavLink';
+import { sizes } from '../../assets/styles'
+import NavLink from '../NavLink'
 
 /**
  * `....................styles....................`
@@ -14,9 +14,9 @@ const styles = {
   textTransform: 'uppercase',
 
   '& :not(:first-of-type)': {
-    marginTop: sizes.small3,
-  },
-};
+    marginTop: sizes.small3
+  }
+}
 
 /**
  * `....................component....................`
@@ -37,6 +37,6 @@ const NavBar = props => (
       Blog
     </NavLink>
   </nav>
-);
+)
 
-export default NavBar;
+export default NavBar
