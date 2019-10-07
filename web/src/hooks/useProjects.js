@@ -3,20 +3,30 @@ import { graphql, useStaticQuery } from 'gatsby'
 export function useProjects () {
   const data = useStaticQuery(graphql`
     query {
-      projects: allProjectsYaml {
+      projects: allSanityProject {
         edges {
           node {
             id
             title
             description
-            stack
+            techstack {
+              title
+              logo {
+                asset {
+                  fixed(width: 17) {
+                    ...GatsbySanityImageFixed
+                  }
+                }
+              }
+            }
             repo
             url
-            alt
             image {
-              childImageSharp {
+              alt
+              caption
+              asset {
                 fixed(width: 256) {
-                  ...GatsbyImageSharpFixed
+                  ...GatsbySanityImageFixed
                 }
               }
             }
@@ -30,15 +40,11 @@ export function useProjects () {
     id: node.id,
     title: node.title,
     description: node.description,
-    // create array from Yaml list of stack items
-    // to be passed to skillGrid for use with
-    // ProjectPreview component. Can't seem to
-    // query array from yaml file via graphQL :(
-    // revisit later with better understanding.
-    stack: [...node.stack.split(', ')],
+    stack: node.techstack,
     repo: node.repo,
     url: node.url,
-    image: node.image.childImageSharp.fixed,
-    alt: node.alt
+    image: node.image.asset.fixed,
+    alt: node.image.alt,
+    caption: node.image.caption
   }))
 }
