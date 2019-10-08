@@ -21,7 +21,7 @@ export function useProjects () {
             }
             repo
             url
-            image {
+            mainImage {
               alt
               caption
               asset {
@@ -43,8 +43,8 @@ export function useProjects () {
     stack: node.techstack,
     repo: node.repo,
     url: node.url,
-    image: node.image.asset.fixed,
-    alt: node.image.alt,
-    caption: node.image.caption
+    image: node.mainImage.asset.fixed,
+    alt: node.mainImage.alt,
+    caption: node.mainImage.caption
   }))
 }

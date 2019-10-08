@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../components/Layout'
-import SEO from '../components/utils/SEO'
+import SEO from '../components/SEO'
 import Container from '../components/Container'
 import PageHeading from '../components/PageHeading'
 import PageText from '../components/PageText'

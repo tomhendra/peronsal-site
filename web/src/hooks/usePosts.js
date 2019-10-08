@@ -3,22 +3,25 @@ import { graphql, useStaticQuery } from 'gatsby'
 export function usePosts () {
   const data = useStaticQuery(graphql`
     query {
-      posts: allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
+      posts: allSanityPost {
         edges {
           node {
             id
             title
-            description
-            slug
-            publishedDate(formatString: "Do MMMM, YYYY")
-            featuredImage {
-              file {
+            slug {
+              current
+            }
+            publishedAt(formatString: "Do MMMM, YYYY")
+            mainImage {
+              asset {
                 url
-              }
-              fluid(maxWidth: 960) {
-                ...GatsbyContentfulFluid_withWebp
+                fluid(maxWidth: 960) {
+                  ...GatsbySanityImageFluid
+                }
               }
             }
+            _rawExcerpt(resolveReferences: { maxDepth: 5 })
+            _rawBody(resolveReferences: { maxDepth: 5 })
           }
         }
       }
@@ -28,9 +31,10 @@ export function usePosts () {
   return data.posts.edges.map(({ node }) => ({
     id: node.id,
     title: node.title,
-    description: node.description,
-    slug: `/blog/${node.slug}`,
-    publishedDate: node.publishedDate,
-    featuredImage: node.featuredImage.fluid
+    slug: `/blog/${node.slug.current}`,
+    publishedAt: node.publishedAt,
+    mainImage: node.mainImage.asset.fluid,
+    excerpt: node._rawExcerpt,
+    body: node._rawBody
   }))
 }

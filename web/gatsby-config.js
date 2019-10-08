@@ -1,5 +1,10 @@
+require('dotenv').config({
+  path: `./.env/.env.${process.env.NODE_ENV || 'development'}`
+})
+
 const path = require('path')
-require('dotenv').config({ path: './.env/.env.dev' })
+const clientConfig = require('./client-config')
+const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   siteMetadata: {
@@ -32,11 +37,10 @@ module.exports = {
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: 'xm39xo8g',
-        dataset: 'production'
-        // a token with read permissions is required
-        // if you have a private dataset
-        // token: process.env.SANITY_ACCESS_TOKEN,
+        ...clientConfig.sanity,
+        token: process.env.SANITY_READ_TOKEN,
+        watchMode: !isProd,
+        overlayDrafts: !isProd
       }
     },
     'gatsby-plugin-emotion',

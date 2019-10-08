@@ -24,12 +24,9 @@ export default {
       to: { type: 'author' }
     },
     {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true
-      }
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'datetime'
     },
     {
       name: 'categories',
@@ -38,9 +35,19 @@ export default {
       of: [{ type: 'reference', to: { type: 'category' } }]
     },
     {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime'
+      name: 'mainImage',
+      title: 'Main image',
+      type: 'figure',
+      options: {
+        hotspot: true
+      }
+    },
+    {
+      name: 'excerpt',
+      type: 'excerptPortableText',
+      title: 'Excerpt',
+      description:
+        'This ends up on summary pages, on Google, when people share your post in social media.'
     },
     {
       name: 'body',

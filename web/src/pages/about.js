@@ -2,7 +2,7 @@ import React from 'react'
 import { css } from '@emotion/core'
 
 import { sizes } from '../assets/styles'
-import SEO from '../components/utils/SEO'
+import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 import PageHeading from '../components/PageHeading'

@@ -24,7 +24,7 @@ export default {
       to: { type: 'author' }
     },
     {
-      name: 'image',
+      name: 'mainImage',
       title: 'Main image',
       type: 'figure'
     },

@@ -5,11 +5,13 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
-      allContentfulBlogPost {
+      allSanityPost {
         edges {
           node {
             id
-            slug
+            slug {
+              current
+            }
           }
         }
       }
@@ -20,12 +22,12 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panic('🚨  ERROR: Loading "createPages" query', result.errors)
   }
 
-  const posts = result.data.allContentfulBlogPost.edges
+  const posts = result.data.allSanityPost.edges
 
   posts.forEach(({ node }, index) => {
     createPage({
-      component: path.resolve('./src/templates/post.js'),
-      path: `/blog/${node.slug}`,
+      component: path.resolve('./src/templates/BlogPostTemplate.js'),
+      path: `/blog/${node.slug.current}`,
       context: {
         id: node.id
       }
