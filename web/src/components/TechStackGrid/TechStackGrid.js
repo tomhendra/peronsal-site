@@ -1,7 +1,7 @@
 import React from 'react'
 import Img from 'gatsby-image'
 
-import { useSkills } from '../../hooks/useSkills'
+import { useTechStack } from '../../hooks/useTechStack'
 import { fontsizes, sizes } from '../../assets/styles'
 
 /**
@@ -55,33 +55,33 @@ const styles = gridSize => {
  */
 
 // In order to use this component it must be passed an array of
-// strings which must match the title specified in skills.yaml
+// strings which must match the title specified in Sanity studio desk
 // exactly. !! could make this friendlier to typos later using RegEx ?
 
-const SkillGrid = ({ gridSize, skillsToBeDisplayed, ...props }) => {
-  const skills = useSkills()
-  // verify which size image to use from useSkills() based on value of gridSize
+const TechStackGrid = ({ gridSize, techStackToBeDisplayed, ...props }) => {
+  const techStack = useTechStack()
+  // verify which size image to use from useTechStack() based on value of gridSize
   // moved here for better performance over being inside map() below
   // as to not check the value of gridSize on every iteration!
-  const imageSize = gridSize === 'small' ? 'imageSmall' : 'imageMedium'
+  const logoSize = gridSize === 'small' ? 'logoSmall' : 'logoMedium'
 
   return (
     <div css={styles(gridSize)} {...props}>
-      {skills
-        .filter(skill => skillsToBeDisplayed.includes(skill.title))
-        .map(skill => (
-          <div key={skill.id}>
-            <Img fixed={skill[imageSize]} alt={skill.alt} />
-            <p>{skill.title}</p>
+      {techStack
+        .filter(techStack => techStackToBeDisplayed.includes(techStack.title))
+        .map(tech => (
+          <div key={tech.id}>
+            <Img fixed={tech[logoSize]} alt={tech.alt} />
+            <p>{tech.title}</p>
           </div>
         ))}
     </div>
   )
 }
 
-SkillGrid.defaultProps = {
-  skillsToBeDisplayed: [],
+TechStackGrid.defaultProps = {
+  techStackToBeDisplayed: [],
   gridSize: 'small'
 }
 
-export default SkillGrid
+export default TechStackGrid

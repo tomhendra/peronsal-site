@@ -14,7 +14,6 @@ export function usePosts () {
             publishedAt(formatString: "Do MMMM, YYYY")
             mainImage {
               asset {
-                url
                 fluid(maxWidth: 960) {
                   ...GatsbySanityImageFluid
                 }

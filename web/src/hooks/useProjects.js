@@ -11,13 +11,6 @@ export function useProjects () {
             description
             techstack {
               title
-              logo {
-                asset {
-                  fixed(width: 17) {
-                    ...GatsbySanityImageFixed
-                  }
-                }
-              }
             }
             repo
             url
@@ -40,7 +33,7 @@ export function useProjects () {
     id: node.id,
     title: node.title,
     description: node.description,
-    stack: node.techstack,
+    techstack: node.techstack.title,
     repo: node.repo,
     url: node.url,
     image: node.mainImage.asset.fixed,

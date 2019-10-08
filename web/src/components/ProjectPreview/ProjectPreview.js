@@ -2,7 +2,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 
 import { colors, sizes } from '../../assets/styles'
-import SkillGrid from '../SkillGrid'
+import TechStackGrid from '../TechStackGrid'
 import Button from '../button'
 
 /**
@@ -52,7 +52,8 @@ const ProjectPreview = ({ project, ...props }) => (
         >
           {project.description}
         </p>
-        <SkillGrid gridSize={'small'} skillsToBeDisplayed={project.stack} />
+        {console.log(project.techstack)}
+        <TechStackGrid gridSize={'small'} techStackToBeDisplayed={project.techstack} />
       </div>
       <div>
         <Button

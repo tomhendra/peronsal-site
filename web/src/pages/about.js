@@ -9,7 +9,7 @@ import PageHeading from '../components/PageHeading'
 import PageText from '../components/PageText'
 import PageCounter from '../components/PageCounter'
 import Card from '../components/Card'
-import SkillGrid from '../components/SkillGrid'
+import TechStackGrid from '../components/TechStackGrid'
 import businessSVG from '../assets/images/icons/business.svg'
 import codeSVG from '../assets/images/icons/code.svg'
 import designSVG from '../assets/images/icons/design.svg'
@@ -61,9 +61,9 @@ const AboutPage = () => (
         />
         <PageCounter pageNumber={`02`} totalPages={`03`} />
       </PageHeading>
-      <SkillGrid
+      <TechStackGrid
         gridSize={'large'}
-        skillsToBeDisplayed={[
+        techStackToBeDisplayed={[
           `JavaScript`,
           `CSS`,
           `HTML`,
@@ -85,9 +85,9 @@ const AboutPage = () => (
         />
         <PageCounter pageNumber={`03`} totalPages={`03`} />
       </PageHeading>
-      <SkillGrid
+      <TechStackGrid
         gridSize={'large'}
-        skillsToBeDisplayed={[
+        techStackToBeDisplayed={[
           `Jest`,
           `Testing Library`,
           `Cypress`,

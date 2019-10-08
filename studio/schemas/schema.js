@@ -13,6 +13,7 @@ import technology from './documents/technology'
 import blockContent from './objects/blockContent'
 import figure from './objects/figure'
 import excerptPortableText from './objects/excerptPortableText'
+import logo from './objects/logo'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -32,6 +33,7 @@ export default createSchema({
     // { type: 'typename' } in other document schemas
     blockContent,
     excerptPortableText,
-    figure
+    figure,
+    logo
   ])
 })

@@ -11,7 +11,7 @@ export default {
     {
       name: 'logo',
       title: 'Logo',
-      type: 'image'
+      type: 'logo'
     }
   ]
 }
