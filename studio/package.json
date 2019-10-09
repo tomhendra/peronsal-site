@@ -1,5 +1,5 @@
 {
-  "name": "tomhendra-portfolio",
+  "name": "tomhendra-portfolio-sanity-studio",
   "private": false,
   "description": "A portfolio website for Tom Hendra, web developer",
   "version": "0.2.0",
@@ -15,14 +15,26 @@
   "engines": {
     "node": "10.x"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src /**/*.js": [
+      "eslint",
+      "pretty-quick —-staged",
+      "git add"
+    ]
+  },
   "scripts": {
-    "deploy": "npm run graphql-deploy && npm run sanity-deploy",
-    "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",
-    "graphql-deploy": "sanity graphql deploy --playground",
-    "sanity-deploy": "sanity deploy",
-    "lint": "eslint .",
-    "start": "sanity start",
     "build": "sanity build",
+    "deploy": "yarn run graphql-deploy && yarn run sanity-deploy",
+    "format": "prettier --write \"**/*.js\" \"!node_modules/**\"",
+    "graphql-deploy": "sanity graphql deploy --playground --open 'Google Chrome",
+    "lint": "eslint .",
+    "sanity-deploy": "sanity deploy",
+    "start": "sanity start",
     "test": "sanity check"
   },
   "dependencies": {
@@ -32,19 +44,21 @@
     "@sanity/default-layout": "^0.142.7",
     "@sanity/default-login": "^0.142.6",
     "@sanity/desk-tool": "^0.142.7",
-    "prop-types": "^15.6",
+    "date-fns": "^2.4.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   },
   "devDependencies": {
-    "eslint": "^6.5.1",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-config-standard-react": "^9.2.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.16.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "prettier-eslint-cli": "^5.0.0"
+    "babel-eslint": "10.0.3",
+    "eslint": "6.5.1",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-prettier": "6.4.0",
+    "eslint-plugin-react": "7.16.0",
+    "eslint-plugin-import": "2.18.2",
+    "husky": "3.0.8",
+    "lint-staged": "9.4.2",
+    "prettier": "1.18.2",
+    "pretty-quick": "1.11.1",
+    "prop-types": "^15.7.2"
   }
 }

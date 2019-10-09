@@ -1,31 +1,31 @@
-import { format, distanceInWords, differenceInDays } from 'date-fns'
-import React from 'react'
-import Img from 'gatsby-image'
+import { format, distanceInWords, differenceInDays } from 'date-fns';
+import React from 'react';
+import Img from 'gatsby-image';
 
-import PortableText from '../PortableText'
+import PortableText from '../PortableText';
 
 /**
  * `....................styles....................`
  */
 
 const styles = {
-  width: '100%'
-}
+  width: '100%',
+};
 
 /**
  * `....................component....................`
  */
 
 const BlogPost = props => {
-  const { _rawBody, title, mainImage, publishedAt, categories } = props
-  console.log(publishedAt)
+  const { _rawBody, title, mainImage, publishedAt, categories } = props;
+  console.log(publishedAt);
   return (
     <article css={styles}>
       {mainImage && mainImage.asset && (
         <Img
           sizes={{
             ...mainImage.asset.fluid,
-            aspectRatio: 9 / 4
+            aspectRatio: 9 / 4,
           }}
           alt={mainImage.alt}
         />
@@ -53,7 +53,7 @@ const BlogPost = props => {
         )}
       </aside>
     </article>
-  )
-}
+  );
+};
 
-export default BlogPost
+export default BlogPost;

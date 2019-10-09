@@ -1,15 +1,27 @@
 module.exports = {
-  globals: {
-    __PATH_PREFIX__: true
+  parser: 'babel-eslint',
+  parserOptions: {
+    sourceType: 'module',
+    allowImportExportEverywhere: false,
+    codeFrame: false,
   },
-  extends: ["standard", "standard-react", "plugin:import/errors", "plugin:import/warnings"],
+  extends: ['airbnb', 'prettier'],
+  env: {
+    browser: true,
+    jest: true,
+  },
   rules: {
-    "react/prop-types": 0
+    'object-curly-spacing': ['error', 'never'],
+    'max-len': ['error', { code: 100 }],
+    'prefer-promise-reject-errors': ['off'],
+    'react/jsx-filename-extension': ['off'],
+    'react/prop-types': ['warn'],
+    'no-return-assign': ['off'],
   },
   settings: {
     react: {
-      pragma: "React",
-      version: "16.10.2"
-    }
-  }
+      pragma: 'React',
+      version: '16.10.2',
+    },
+  },
 };
