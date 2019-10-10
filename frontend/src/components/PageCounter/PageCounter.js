@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import { colors, fontsizes, sizes } from '../../assets/styles'
-import mouseSVG from '../../assets/images/icons/mouse.svg'
+import { colors, fontsizes, sizes } from '../../assets/styles';
+import mouseSVG from '../../assets/images/icons/mouse.svg';
 
 /**
  * `....................styles....................`
@@ -24,15 +24,15 @@ const styles = {
       color: colors.primary.light3,
       fontSize: fontsizes.large1,
       lineHeight: 1.1,
-      marginRight: -1
-    }
+      marginRight: -1,
+    },
   },
 
   img: {
     marginTop: sizes.small2,
-    width: sizes.medium1
-  }
-}
+    width: sizes.medium1,
+  },
+};
 
 /**
  * `....................component....................`
@@ -46,6 +46,6 @@ const PageCounter = ({ pageNumber, totalPages, ...props }) => (
     </div>
     <img src={mouseSVG} alt="Mouse icon" />
   </div>
-)
+);
 
-export default PageCounter
+export default PageCounter;

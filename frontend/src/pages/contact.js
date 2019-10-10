@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
-import Container from '../components/Container'
-import PageHeading from '../components/PageHeading'
-import PageText from '../components/PageText'
-import FormikContactForm from '../components/ContactForm'
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
+import Container from '../components/Container';
+import PageHeading from '../components/PageHeading';
+import PageText from '../components/PageText';
+import FormikContactForm from '../components/ContactForm';
 
 const ContactPage = () => (
   <Layout>
@@ -21,6 +21,6 @@ const ContactPage = () => (
       <FormikContactForm />
     </Container>
   </Layout>
-)
+);
 
-export default ContactPage
+export default ContactPage;

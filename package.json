@@ -1,8 +1,8 @@
 {
   "name": "tomhendra-portfolio",
-  "private": false,
+  "version": "0.0.0",
+  "private": true,
   "description": "A portfolio website for Tom Hendra, web developer",
-  "version": "0.1.0",
   "author": "Tom Hendra <hola@tomhendra.dev>",
   "keywords": [
     "tom hendra"
@@ -15,24 +15,29 @@
   "engines": {
     "node": "10.x"
   },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
-    "clean": "lerna clean",
-    "deploy": "lerna run deploy",
-    "empty-cache": "lerna run empty-cache",
+    "start": "lerna run empty-cache && lerna run start --parallel watch",
+    "build": "lerna run build --parallel",
+    "deploy:graphql": "lerna run deploy:graphql",
+    "deploy:sanity": "lerna run deploy:sanity",
+    "export:sanity": "cd backend && yarn export",
     "format": "lerna run format",
-    "graphql-deploy": "cd backend && lerna run graphql-deploy",
-    "init": "cd backend && sanity init && lerna run graphql-deploy",
     "lint": "lerna run lint",
-    "postinstall": "lerna bootstrap",
-    "sanity-deploy": "lerna run sanity-deploy",
-    "start": "lerna run empty-cache && lerna run start --parallel",
     "test": "echo \"Error: no test specified, write some tests!\" && exit 1",
-    "update": "lernaupdate"
+    "empty-cache": "lerna run empty-cache --scope frontend",
+    "clean": "lerna clean",
+    "update": "lernaupdate",
+    "init": "cd backend && sanity init && lerna run deploy:graphql",
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "postinstall": "lerna bootstrap --use-workspaces"
   },
   "devDependencies": {
     "lerna": "^3.16.4",
-    "lerna-update-wizard": "0.16.0",
-    "rimraf": "^3.0.0"
+    "lerna-update-wizard": "0.16.0"
   },
   "dependencies": {}
 }

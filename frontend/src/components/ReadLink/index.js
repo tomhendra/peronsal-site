@@ -1,3 +1,3 @@
-import ReadLink from './ReadLink'
+import ReadLink from './ReadLink';
 
-export default ReadLink
+export default ReadLink;

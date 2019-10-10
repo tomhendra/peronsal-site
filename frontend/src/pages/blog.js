@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
-import Container from '../components/Container'
-import PageHeading from '../components/PageHeading'
-import PageText from '../components/PageText'
-import PostGrid from '../components/PostGrid'
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
+import Container from '../components/Container';
+import PageHeading from '../components/PageHeading';
+import PageText from '../components/PageText';
+import PostGrid from '../components/PostGrid';
 
 const BlogPage = () => {
   return (
@@ -22,7 +22,7 @@ const BlogPage = () => {
         <PostGrid />
       </Container>
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPage
+export default BlogPage;

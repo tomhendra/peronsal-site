@@ -6,12 +6,12 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'logo',
       title: 'Logo',
-      type: 'logo'
-    }
-  ]
-}
+      type: 'logo',
+    },
+  ],
+};

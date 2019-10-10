@@ -1,17 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-import { useProjects } from '../hooks/useProjects'
-import { sizes } from '../assets/styles'
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
-import Container from '../components/Container'
-import PageHeading from '../components/PageHeading'
-import PageText from '../components/PageText'
-import PageCounter from '../components/PageCounter'
-import ProjectPreview from '../components/ProjectPreview'
+import { useProjects } from '../hooks/useProjects';
+import { sizes } from '../assets/styles';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
+import Container from '../components/Container';
+import PageHeading from '../components/PageHeading';
+import PageText from '../components/PageText';
+import PageCounter from '../components/PageCounter';
+import ProjectPreview from '../components/ProjectPreview';
 
 const ProjectsPage = () => {
-  const projects = useProjects()
+  const projects = useProjects();
   return (
     <Layout>
       <SEO title="Projects" />
@@ -29,6 +29,6 @@ const ProjectsPage = () => {
         ))}
       </Container>
     </Layout>
-  )
-}
-export default ProjectsPage
+  );
+};
+export default ProjectsPage;

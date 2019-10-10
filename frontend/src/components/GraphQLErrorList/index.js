@@ -1,3 +1,3 @@
-import GraphQLErrorList from './GraphQLErrorList'
+import GraphQLErrorList from './GraphQLErrorList';
 
-export default GraphQLErrorList
+export default GraphQLErrorList;

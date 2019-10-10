@@ -1,33 +1,33 @@
-import React from 'react'
+import React from 'react';
 
-import { colors, fontsizes } from '../../assets/styles'
+import { colors, fontsizes } from '../../assets/styles';
 
 /**
  * `....................constants....................`
  */
 
-const error = `error`
-const alert = `alert`
-const success = `success`
+const error = `error`;
+const alert = `alert`;
+const success = `success`;
 
 // Set values for Tooltip colours here
 const tooltipTypes = {
   [error]: {
     background: colors.error.light4,
     border: colors.error.dark1,
-    color: colors.error.dark1
+    color: colors.error.dark1,
   },
   [alert]: {
     background: colors.alert.light3,
     border: colors.alert.dark2,
-    color: colors.alert.dark1
+    color: colors.alert.dark1,
   },
   [success]: {
     background: colors.success.light4,
     border: colors.success.dark4,
-    color: colors.success.dark4
-  }
-}
+    color: colors.success.dark4,
+  },
+};
 
 /**
  * `....................styles....................`
@@ -35,7 +35,7 @@ const tooltipTypes = {
 
 const styles = type => {
   // config variable declared & assigned with type / defaultProps value
-  const styleConfig = tooltipTypes[type] || tooltipTypes[Tooltip.defaultProps.type]
+  const styleConfig = tooltipTypes[type] || tooltipTypes[Tooltip.defaultProps.type];
 
   return {
     position: 'absolute',
@@ -65,7 +65,7 @@ const styles = type => {
         height: '0',
         border: '9px solid transparent',
         borderTopColor: styleConfig.border,
-        marginLeft: '-10px'
+        marginLeft: '-10px',
       },
 
       // Tooltip arrow, inner
@@ -79,11 +79,11 @@ const styles = type => {
         height: '0',
         border: '8px solid transparent',
         borderTopColor: styleConfig.background,
-        marginLeft: '-9px'
-      }
-    }
-  }
-}
+        marginLeft: '-9px',
+      },
+    },
+  };
+};
 
 /**
  * `....................component....................`
@@ -94,11 +94,11 @@ const Tooltip = ({ type, ...rest }) => {
     <div css={styles(type)}>
       <div {...rest} />
     </div>
-  )
-}
+  );
+};
 
 Tooltip.defaultProps = {
-  type: 'alert'
-}
+  type: 'alert',
+};
 
-export default Tooltip
+export default Tooltip;

@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-import { sizes } from '../../assets/styles'
-import Logo from '../Logo'
-import NavLink from '../NavLink'
-import Navbar from '../Navbar'
+import { sizes } from '../../assets/styles';
+import Logo from '../Logo';
+import NavLink from '../NavLink';
+import Navbar from '../Navbar';
 
 /**
  * `....................styles....................`
@@ -17,8 +17,8 @@ const styles = {
   paddingBottom: 0,
   position: 'fixed',
   top: 0,
-  width: '100vw'
-}
+  width: '100vw',
+};
 
 /**
  * `....................component....................`
@@ -31,6 +31,6 @@ const Header = props => (
     </NavLink>
     <Navbar />
   </header>
-)
+);
 
-export default Header
+export default Header;

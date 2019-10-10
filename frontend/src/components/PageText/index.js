@@ -1,3 +1,3 @@
-import PageText from './PageText'
+import PageText from './PageText';
 
-export default PageText
+export default PageText;

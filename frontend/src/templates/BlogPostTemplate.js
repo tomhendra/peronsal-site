@@ -1,12 +1,12 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import Layout from '../components/Layout'
-import Container from '../components/Container'
-import SEO from '../components/SEO'
-import GraphQLErrorList from '../components/GraphQLErrorList'
-import BlogPost from '../components/BlogPost'
-import { toPlainText } from '../utils/helpers'
+import Layout from '../components/Layout';
+import Container from '../components/Container';
+import SEO from '../components/SEO';
+import GraphQLErrorList from '../components/GraphQLErrorList';
+import BlogPost from '../components/BlogPost';
+import { toPlainText } from '../utils/helpers';
 
 export const query = graphql`
   query BlogPostTemplateQuery($id: String!) {
@@ -30,11 +30,11 @@ export const query = graphql`
       _rawBody(resolveReferences: { maxDepth: 5 })
     }
   }
-`
+`;
 
 const BlogPostTemplate = props => {
-  const { data, errors } = props
-  const post = data && data.post
+  const { data, errors } = props;
+  const post = data && data.post;
 
   return (
     <Layout>
@@ -59,7 +59,7 @@ const BlogPostTemplate = props => {
         </Container>
       )}
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;

@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import { useSiteMetadata } from '../../hooks/useSiteMetadata'
-import { sizes } from '../../assets/styles'
-import Social from '../social'
+import { useSiteMetadata } from '../../hooks/useSiteMetadata';
+import { sizes } from '../../assets/styles';
+import Social from '../social';
 
 /**
  * `....................styles....................`
@@ -19,23 +19,23 @@ const styles = {
   paddingTop: 0,
   position: 'fixed',
   textTransform: 'uppercase',
-  width: '100vw'
-}
+  width: '100vw',
+};
 
 /**
  * `....................component....................`
  */
 
 const Footer = props => {
-  const { siteMetadata } = useSiteMetadata()
-  const date = new Date().getFullYear()
+  const { siteMetadata } = useSiteMetadata();
+  const date = new Date().getFullYear();
 
   return (
     <footer css={styles} {...props}>
       &copy; {siteMetadata.author} {date}
       <Social />
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

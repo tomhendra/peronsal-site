@@ -1,3 +1,3 @@
-import PostLink from './PostLink'
+import PostLink from './PostLink';
 
-export default PostLink
+export default PostLink;

@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import { usePosts } from '../../hooks/usePosts'
-import { sizes } from '../../assets/styles'
-import PostPreview from '../postPreview'
+import { usePosts } from '../../hooks/usePosts';
+import { sizes } from '../../assets/styles';
+import PostPreview from '../postPreview';
 
 /**
  * `....................styles....................`
@@ -12,15 +12,15 @@ const styles = {
   display: 'grid',
   gap: sizes.medium2,
   gridTemplateColumns: 'repeat(3, 1fr)',
-  paddingBottom: sizes.large3
-}
+  paddingBottom: sizes.large3,
+};
 
 /**
  * `....................component....................`
  */
 
 const PostGrid = props => {
-  const posts = usePosts()
+  const posts = usePosts();
 
   return (
     <div css={styles} {...props}>
@@ -28,7 +28,7 @@ const PostGrid = props => {
         <PostPreview key={post.id} post={post} />
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default PostGrid
+export default PostGrid;

@@ -1,6 +1,6 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby';
 
-export function usePosts () {
+export function usePosts() {
   const data = useStaticQuery(graphql`
     query {
       posts: allSanityPost {
@@ -25,7 +25,7 @@ export function usePosts () {
         }
       }
     }
-  `)
+  `);
 
   return data.posts.edges.map(({ node }) => ({
     id: node.id,
@@ -34,6 +34,6 @@ export function usePosts () {
     publishedAt: node.publishedAt,
     mainImage: node.mainImage.asset.fluid,
     excerpt: node._rawExcerpt,
-    body: node._rawBody
-  }))
+    body: node._rawBody,
+  }));
 }

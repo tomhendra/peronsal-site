@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
-import { colors, fontsizes } from '../../assets/styles'
+import { colors, fontsizes } from '../../assets/styles';
 
 /**
  * `....................styles....................`
@@ -12,14 +12,14 @@ const styles = {
   fontSize: fontsizes.small,
   textDecoration: 'none',
   '&.currentPage': {
-    color: colors.primary.light3
-  }
-}
+    color: colors.primary.light3,
+  },
+};
 
 /**
  * `....................component....................`
  */
 
-const NavLink = props => <Link css={styles} {...props} />
+const NavLink = props => <Link css={styles} {...props} />;
 
-export default NavLink
+export default NavLink;

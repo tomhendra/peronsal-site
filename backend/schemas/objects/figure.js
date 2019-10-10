@@ -3,7 +3,7 @@ export default {
   title: 'Image',
   type: 'image',
   options: {
-    hotspot: true
+    hotspot: true,
   },
   fields: [
     {
@@ -11,8 +11,8 @@ export default {
       name: 'caption',
       type: 'string',
       options: {
-        isHighlighted: true
-      }
+        isHighlighted: true,
+      },
     },
     {
       name: 'alt',
@@ -21,14 +21,14 @@ export default {
       validation: Rule => Rule.error('You have to fill out the alternative text.').required(),
       description: 'Important for SEO and accessibility.',
       options: {
-        isHighlighted: true
-      }
-    }
+        isHighlighted: true,
+      },
+    },
   ],
   preview: {
     select: {
       imageUrl: 'asset.url',
-      title: 'caption'
-    }
-  }
-}
+      title: 'caption',
+    },
+  },
+};

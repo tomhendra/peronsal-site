@@ -17,8 +17,8 @@ export const sizes = {
   massive1: '51.2rem', // 512px
   massive2: '64rem', // 640px
   massive3: '76.8rem', // 768px
-  massive4: '96rem' // 960px
-}
+  massive4: '96rem', // 960px
+};
 
 export const fontsizes = {
   small: '1.2rem', // 12px
@@ -34,10 +34,10 @@ export const fontsizes = {
   huge3: '7.2rem', // 72px
   graphic1: '8.4rem', // 84px
   graphic2: '9.6rem', // 96px
-  graphic3: '10.8rem' // 108px
-}
+  graphic3: '10.8rem', // 108px
+};
 
 export const breakpoints = {
   largeDesktop: '180rem',
-  desktop: '45rem'
-}
+  desktop: '45rem',
+};

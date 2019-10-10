@@ -1,3 +1,3 @@
-import TechStackGrid from './TechStackGrid'
+import TechStackGrid from './TechStackGrid';
 
-export default TechStackGrid
+export default TechStackGrid;

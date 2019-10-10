@@ -1,8 +1,8 @@
-const path = require('path')
+const path = require('path');
 
 // Generate pages from markdown file blog posts
 module.exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
   const result = await graphql(`
     query {
       allSanityPost {
@@ -16,21 +16,21 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
     }
-  `)
+  `);
 
   if (result.errors) {
-    reporter.panic('🚨  ERROR: Loading "createPages" query', result.errors)
+    reporter.panic('🚨  ERROR: Loading "createPages" query', result.errors);
   }
 
-  const posts = result.data.allSanityPost.edges
+  const posts = result.data.allSanityPost.edges;
 
   posts.forEach(({ node }, index) => {
     createPage({
       component: path.resolve('./src/templates/BlogPostTemplate.js'),
       path: `/blog/${node.slug.current}`,
       context: {
-        id: node.id
-      }
-    })
-  })
-}
+        id: node.id,
+      },
+    });
+  });
+};

@@ -1,37 +1,37 @@
-import React from 'react'
-import Img from 'gatsby-image'
+import React from 'react';
+import Img from 'gatsby-image';
 
-import { useTechStack } from '../../hooks/useTechStack'
-import { fontsizes, sizes } from '../../assets/styles'
+import { useTechStack } from '../../hooks/useTechStack';
+import { fontsizes, sizes } from '../../assets/styles';
 
 /**
  * `....................constants....................`
  */
 
-const small = 'small'
-const large = 'large'
+const small = 'small';
+const large = 'large';
 
 const gridSizes = {
   [small]: {
     gridTemplateColumns: 'repeat(3, 1fr)',
     fontSize: fontsizes.small,
     gap: sizes.medium1,
-    marginLeft: sizes.small2
+    marginLeft: sizes.small2,
   },
   [large]: {
     gridTemplateColumns: 'repeat(3, 1fr)',
     fontSize: fontsizes.base,
     gap: `${sizes.medium3} ${sizes.huge1}`,
-    marginLeft: sizes.medium2
-  }
-}
+    marginLeft: sizes.medium2,
+  },
+};
 
 /**
  * `....................styles....................`
  */
 
 const styles = gridSize => {
-  const gridConfig = gridSizes[gridSize] || gridSizes[SkillGrid.defaultProps.gridSize]
+  const gridConfig = gridSizes[gridSize] || gridSizes[SkillGrid.defaultProps.gridSize];
 
   return {
     display: 'grid',
@@ -40,15 +40,15 @@ const styles = gridSize => {
 
     div: {
       alignItems: 'center',
-      display: 'flex'
+      display: 'flex',
     },
 
     p: {
       fontSize: gridConfig.fontSize,
-      marginLeft: gridConfig.marginLeft
-    }
-  }
-}
+      marginLeft: gridConfig.marginLeft,
+    },
+  };
+};
 
 /**
  * `....................component....................`
@@ -59,11 +59,11 @@ const styles = gridSize => {
 // exactly. !! could make this friendlier to typos later using RegEx ?
 
 const TechStackGrid = ({ gridSize, techStackToBeDisplayed, ...props }) => {
-  const techStack = useTechStack()
+  const techStack = useTechStack();
   // verify which size image to use from useTechStack() based on value of gridSize
   // moved here for better performance over being inside map() below
   // as to not check the value of gridSize on every iteration!
-  const logoSize = gridSize === 'small' ? 'logoSmall' : 'logoMedium'
+  const logoSize = gridSize === 'small' ? 'logoSmall' : 'logoMedium';
 
   return (
     <div css={styles(gridSize)} {...props}>
@@ -76,12 +76,12 @@ const TechStackGrid = ({ gridSize, techStackToBeDisplayed, ...props }) => {
           </div>
         ))}
     </div>
-  )
-}
+  );
+};
 
 TechStackGrid.defaultProps = {
   techStackToBeDisplayed: [],
-  gridSize: 'small'
-}
+  gridSize: 'small',
+};
 
-export default TechStackGrid
+export default TechStackGrid;

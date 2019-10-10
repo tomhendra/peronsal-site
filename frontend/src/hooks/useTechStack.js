@@ -1,6 +1,6 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby';
 
-export function useTechStack () {
+export function useTechStack() {
   const data = useStaticQuery(graphql`
     query {
       techStack: allSanityTechnology {
@@ -23,13 +23,13 @@ export function useTechStack () {
         }
       }
     }
-  `)
+  `);
 
   return data.techStack.edges.map(({ node }) => ({
     id: node.id,
     title: node.title,
     logoSmall: node.logo.asset.small,
     logoMedium: node.logo.asset.medium,
-    alt: node.logo.alt
-  }))
+    alt: node.logo.alt,
+  }));
 }

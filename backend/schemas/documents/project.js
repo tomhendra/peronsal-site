@@ -6,7 +6,7 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'slug',
@@ -14,40 +14,40 @@ export default {
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96
-      }
+        maxLength: 96,
+      },
     },
     {
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: { type: 'author' }
+      to: { type: 'author' },
     },
     {
       name: 'mainImage',
       title: 'Main image',
-      type: 'figure'
+      type: 'figure',
     },
     {
       name: 'description',
       title: 'Description',
-      type: 'text'
+      type: 'text',
     },
     {
       name: 'techstack',
       title: 'Technology stack',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'technology' } }]
+      of: [{ type: 'reference', to: { type: 'technology' } }],
     },
     {
       name: 'repo',
       title: 'Project repo',
-      type: 'url'
+      type: 'url',
     },
     {
       name: 'url',
       title: 'Project live URL',
-      type: 'url'
-    }
-  ]
-}
+      type: 'url',
+    },
+  ],
+};

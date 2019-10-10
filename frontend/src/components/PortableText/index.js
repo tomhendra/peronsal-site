@@ -1,3 +1,3 @@
-import PotableText from './PortableText'
+import PotableText from './PortableText';
 
-export default PotableText
+export default PotableText;

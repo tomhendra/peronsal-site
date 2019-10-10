@@ -11,7 +11,6 @@ module.exports = {
     jest: true,
   },
   rules: {
-    'object-curly-spacing': ['error', 'never'],
     'max-len': ['error', { code: 100 }],
     'prefer-promise-reject-errors': ['off'],
     'react/jsx-filename-extension': ['off'],
