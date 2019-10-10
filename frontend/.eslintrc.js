@@ -11,13 +11,14 @@ module.exports = {
     jest: true,
   },
   rules: {
+    'import/prefer-default-export': ['warn'],
     'max-len': ['warn', { code: 100 }],
-    'prefer-promise-reject-errors': ['off'],
-    'react/jsx-filename-extension': ['off'],
-    'react/prop-types': ['warn'],
-    'no-underscore-dangle': ['off'],
-    'no-return-assign': ['off'],
     'no-nested-ternary': ['off'],
+    'no-return-assign': ['off'],
+    'no-underscore-dangle': ['off'],
+    'react/jsx-filename-extension': ['off'],
+    'react/jsx-props-no-spreading': ['off'],
+    'react/prop-types': ['warn'],
   },
   settings: {
     react: {

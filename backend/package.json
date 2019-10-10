@@ -14,7 +14,7 @@
     "deploy:graphql": "sanity graphql deploy --playground",
     "deploy:sanity": "sanity deploy",
     "export": "rimraf export && sanity dataset export production export/production.tar.gz",
-    "format": "prettier --write \"**/*.js\" \"!node_modules/**\"",
+    "format": "prettier --write \"**/*.js\" \"!node_modules/**\" \"!dist/**\"",
     "lint": "eslint .",
     "start": "sanity start",
     "test": "sanity check"

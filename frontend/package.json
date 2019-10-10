@@ -13,7 +13,7 @@
     "build": "run-p build:**",
     "build:app": "gatsby build",
     "clean": "gatsby clean",
-    "develop": "yarn empty-cache && gatsby develop -H $HOSTNAME --port 3000 --open 'Google Chrome'",
+    "develop": "yarn empty-cache && GATSBY_GRAPHQL_IDE=playground gatsby develop -H $HOSTNAME --port 3000 --open 'Google Chrome'",
     "empty-cache": "rimraf .cache",
     "format": "prettier --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
     "info": "gatsby info --clipboard",
