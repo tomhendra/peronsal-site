@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-export function usePosts() {
+function usePosts() {
   const data = useStaticQuery(graphql`
     query {
       posts: allSanityPost {
@@ -37,3 +37,5 @@ export function usePosts() {
     body: node._rawBody,
   }));
 }
+
+export default usePosts;

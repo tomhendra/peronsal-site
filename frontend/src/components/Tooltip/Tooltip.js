@@ -35,7 +35,7 @@ const tooltipTypes = {
 
 const styles = type => {
   // config variable declared & assigned with type / defaultProps value
-  const styleConfig = tooltipTypes[type] || tooltipTypes[Tooltip.defaultProps.type];
+  const styleConfig = tooltipTypes[type];
 
   return {
     position: 'absolute',

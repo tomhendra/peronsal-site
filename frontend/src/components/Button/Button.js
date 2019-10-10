@@ -60,9 +60,8 @@ const buttonSizes = {
 const styles = ({ buttonStyle, buttonSize }) => {
   // config variables declared & assigned buttonStyle / buttonSize / defaultProps
   // values from Button component calling buttonStyles with styleProps
-  const styleConfig = buttonStyles[buttonStyle] || buttonStyles[Button.defaultProps.buttonStyle];
-
-  const sizeConfig = buttonSizes[buttonSize] || buttonSizes[Button.defaultProps.buttonSize];
+  const styleConfig = buttonStyles[buttonStyle];
+  const sizeConfig = buttonSizes[buttonSize];
 
   return {
     ...sizeConfig,
@@ -85,7 +84,7 @@ const styles = ({ buttonStyle, buttonSize }) => {
  * `....................component....................`
  */
 
-const Button = ({ buttonStyle, buttonSize, externalLink, internalLink, ...props }) =>
+const Button = ({ buttonStyle, buttonSize, buttonType, externalLink, internalLink, ...props }) =>
   internalLink ? (
     // if internalLink prop is provided, return Gatsby Link styled with buttonStyles
     <Link to={internalLink} css={styles({ buttonSize, buttonStyle })} {...props} />
@@ -97,6 +96,7 @@ const Button = ({ buttonStyle, buttonSize, externalLink, internalLink, ...props 
   ) : (
     // default return button if internalLink/externalLink props are not provided,
     // based on defaultProp values being defined as null below.
+    // eslint-disable-next-line react/button-has-type
     <button css={styles({ buttonSize, buttonStyle })} {...props} />
   );
 

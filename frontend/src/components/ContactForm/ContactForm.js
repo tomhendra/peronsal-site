@@ -3,14 +3,15 @@ import { withFormik, Form, Field } from 'formik';
 import * as yup from 'yup';
 
 import { colors, fontsizes, sizes } from '../../assets/styles';
-import Button from '../button';
-import Tooltip from '../tooltip';
+import Button from '../Button';
+import Tooltip from '../Tooltip';
 
 /**
  * `....................constants....................`
  */
 
 // TO TEST MORE !!!!!! RegEx needs tweaking, Perhaps country code selection?
+// eslint-disable-next-line max-len
 const phoneRegEx = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 /**
@@ -69,7 +70,7 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
           gridRow: '1 / 2',
         }}
       >
-        {touched.name && errors.name && <Tooltip type={'alert'}>{errors.name}</Tooltip>}
+        {touched.name && errors.name && <Tooltip type="alert">{errors.name}</Tooltip>}
         <label>
           Full name
           <Field type="text" name="name" placeholder="Full name" />
@@ -81,7 +82,7 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
           gridRow: '2 / 3',
         }}
       >
-        {touched.email && errors.email && <Tooltip type={'alert'}>{errors.email}</Tooltip>}
+        {touched.email && errors.email && <Tooltip type="alert">{errors.email}</Tooltip>}
         <label>
           Email address
           <Field type="email" name="email" placeholder="Email" />
@@ -93,7 +94,7 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
           gridRow: '3 / 4',
         }}
       >
-        {touched.phone && errors.phone && <Tooltip type={'alert'}>{errors.phone}</Tooltip>}
+        {touched.phone && errors.phone && <Tooltip type="alert">{errors.phone}</Tooltip>}
         <label>
           Phone number
           <Field type="tel" name="phone" placeholder="Phone number" />
@@ -105,7 +106,7 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
           gridRow: '1 / 4',
         }}
       >
-        {touched.message && errors.message && <Tooltip type={'alert'}>{errors.message}</Tooltip>}
+        {touched.message && errors.message && <Tooltip type="alert">{errors.message}</Tooltip>}
         <label>
           Message
           <Field component="textarea" rows="13" name="message" placeholder="Your message" />
@@ -120,7 +121,7 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
           justifyContent: 'flex-end',
         }}
       >
-        <Button type="submit" disabled={isSubmitting} buttonStyle={'primary'} buttonSize={'small'}>
+        <Button type="submit" disabled={isSubmitting} buttonStyle="primary" buttonSize="small">
           Send Message
         </Button>
       </div>

@@ -42,7 +42,7 @@ const PageCounter = ({ pageNumber, totalPages, ...props }) => (
   <div css={styles} {...props}>
     <div>
       <p>{pageNumber}</p>
-      <p>/ {totalPages}</p>
+      <p>{totalPages}</p>
     </div>
     <img src={mouseSVG} alt="Mouse icon" />
   </div>

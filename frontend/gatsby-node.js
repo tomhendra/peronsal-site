@@ -24,7 +24,7 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const posts = result.data.allSanityPost.edges;
 
-  posts.forEach(({ node }, index) => {
+  posts.forEach(({ node }) => {
     createPage({
       component: path.resolve('./src/templates/BlogPostTemplate.js'),
       path: `/blog/${node.slug.current}`,

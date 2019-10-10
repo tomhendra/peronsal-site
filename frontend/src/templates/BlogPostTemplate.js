@@ -55,7 +55,7 @@ const BlogPostTemplate = props => {
 
       {post && (
         <Container>
-          <BlogPost {...post} />
+          <BlogPost post={post} />
         </Container>
       )}
     </Layout>

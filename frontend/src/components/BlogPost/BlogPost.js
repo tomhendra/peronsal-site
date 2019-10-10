@@ -16,9 +16,8 @@ const styles = {
  * `....................component....................`
  */
 
-const BlogPost = props => {
-  const { _rawBody, title, mainImage, publishedAt, categories } = props;
-  console.log(publishedAt);
+const BlogPost = ({ post }) => {
+  const { _rawBody, title, mainImage, publishedAt, categories } = post;
   return (
     <article css={styles}>
       {mainImage && mainImage.asset && (

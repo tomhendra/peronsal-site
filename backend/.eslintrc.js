@@ -11,11 +11,13 @@ module.exports = {
     jest: true,
   },
   rules: {
-    'max-len': ['error', { code: 100 }],
+    'max-len': ['warn', { code: 100 }],
     'prefer-promise-reject-errors': ['off'],
     'react/jsx-filename-extension': ['off'],
     'react/prop-types': ['warn'],
+    'no-underscore-dangle': ['off'],
     'no-return-assign': ['off'],
+    'no-nested-ternary': ['off'],
   },
   settings: {
     react: {

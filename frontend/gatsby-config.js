@@ -4,6 +4,7 @@ require('dotenv').config({
 
 const path = require('path');
 const clientConfig = require('./client-config');
+
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {

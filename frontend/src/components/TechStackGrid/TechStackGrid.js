@@ -1,7 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 
-import { useTechStack } from '../../hooks/useTechStack';
+import useTechStack from '../../hooks/useTechStack';
 import { fontsizes, sizes } from '../../assets/styles';
 
 /**
@@ -31,7 +31,7 @@ const gridSizes = {
  */
 
 const styles = gridSize => {
-  const gridConfig = gridSizes[gridSize] || gridSizes[SkillGrid.defaultProps.gridSize];
+  const gridConfig = gridSizes[gridSize];
 
   return {
     display: 'grid',
@@ -68,7 +68,7 @@ const TechStackGrid = ({ gridSize, techStackToBeDisplayed, ...props }) => {
   return (
     <div css={styles(gridSize)} {...props}>
       {techStack
-        .filter(techStack => techStackToBeDisplayed.includes(techStack.title))
+        .filter(tech => techStackToBeDisplayed.includes(tech.title))
         .map(tech => (
           <div key={tech.id}>
             <Img fixed={tech[logoSize]} alt={tech.alt} />

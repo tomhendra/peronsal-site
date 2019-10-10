@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { useSiteMetadata } from '../../hooks/useSiteMetadata';
+import useSiteMetadata from '../../hooks/useSiteMetadata';
 import { sizes } from '../../assets/styles';
-import Social from '../social';
+import Social from '../Social';
 
 /**
  * `....................styles....................`
@@ -32,7 +32,9 @@ const Footer = props => {
 
   return (
     <footer css={styles} {...props}>
-      &copy; {siteMetadata.author} {date}
+      &copy;
+      {siteMetadata.author}
+      {date}
       <Social />
     </footer>
   );

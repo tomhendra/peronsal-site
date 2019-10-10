@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-export function useTechStack() {
+function useTechStack() {
   const data = useStaticQuery(graphql`
     query {
       techStack: allSanityTechnology {
@@ -33,3 +33,5 @@ export function useTechStack() {
     alt: node.logo.alt,
   }));
 }
+
+export default useTechStack;

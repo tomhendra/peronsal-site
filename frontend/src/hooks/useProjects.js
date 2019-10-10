@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-export function useProjects() {
+function useProjects() {
   const data = useStaticQuery(graphql`
     query {
       projects: allSanityProject {
@@ -41,3 +41,5 @@ export function useProjects() {
     caption: node.mainImage.caption,
   }));
 }
+
+export default useProjects;

@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 
 import { colors, sizes } from '../../assets/styles';
 import TechStackGrid from '../TechStackGrid';
-import Button from '../button';
+import Button from '../Button';
 
 /**
  * `....................styles....................`
@@ -52,13 +52,12 @@ const ProjectPreview = ({ project, ...props }) => (
         >
           {project.description}
         </p>
-        {console.log(project.techstack)}
-        <TechStackGrid gridSize={'small'} techStackToBeDisplayed={project.techstack} />
+        <TechStackGrid gridSize="small" techStackToBeDisplayed={project.techstack} />
       </div>
       <div>
         <Button
-          buttonStyle={'secondary'}
-          buttonSize={'small'}
+          buttonStyle="secondary"
+          buttonSize="small"
           externalLink={project.repo}
           css={{
             marginRight: sizes.medium1,
@@ -66,7 +65,7 @@ const ProjectPreview = ({ project, ...props }) => (
         >
           View Repo
         </Button>
-        <Button buttonStyle={'primary'} buttonSize={'small'} externalLink={project.url}>
+        <Button buttonStyle="primary" buttonSize="small" externalLink={project.url}>
           Launch App
         </Button>
       </div>

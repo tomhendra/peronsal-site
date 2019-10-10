@@ -28,7 +28,7 @@
     "format": "lerna run format",
     "lint": "lerna run lint",
     "test": "echo \"Error: no test specified, write some tests!\" && exit 1",
-    "empty-cache": "lerna run empty-cache --scope frontend",
+    "empty-cache": "cd frontend && yarn empty-cache",
     "clean": "lerna clean",
     "update": "lernaupdate",
     "init": "cd backend && sanity init && lerna run deploy:graphql",
@@ -36,7 +36,7 @@
     "postinstall": "lerna bootstrap --use-workspaces"
   },
   "devDependencies": {
-    "lerna": "^3.16.4",
+    "lerna": "^3.17.0",
     "lerna-update-wizard": "0.16.0"
   },
   "dependencies": {}

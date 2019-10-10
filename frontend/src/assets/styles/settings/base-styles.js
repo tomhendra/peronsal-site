@@ -1,5 +1,6 @@
 import { css } from '@emotion/core';
-import { colors, fontsizes } from '../styles';
+import { colors } from './colors';
+import { fontsizes } from './sizes';
 
 export const baseStyles = () => css`
   *,

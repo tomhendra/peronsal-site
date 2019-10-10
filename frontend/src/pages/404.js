@@ -12,9 +12,9 @@ export default () => (
     <Container>
       <PageHeading>
         <PageText
-          mainHeading={`Page not found :-(`}
-          subHeading={`You just hit a route that doesn't exist... `}
-          paragraph={`The sadness.`}
+          mainHeading="Page not found :-("
+          subHeading="You just hit a route that doesn't exist..."
+          paragraph="The sadness."
         />
       </PageHeading>
     </Container>
