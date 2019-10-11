@@ -1,0 +1,47 @@
+{
+  "private": true,
+  "name": "backend",
+  "description": "Sanity CSM for Tom Hendra portfolio website.",
+  "license": "MIT",
+  "author": "Tom Hendra <hola@tomhendra.dev>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomhendra/portfolio"
+  },
+  "version": "0.0.1",
+  "scripts": {
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy:graphql": "sanity graphql deploy",
+    "deploy:sanity": "sanity deploy",
+    "format": "prettier --write \"**/*.js\" \"!node_modules/**\" \"!dist/**\"",
+    "lint": "eslint . --fix",
+    "test": "sanity check",
+    "init": "sanity init && yarn run deploy:graphql",
+    "export": "rimraf export && sanity dataset export production export/production.tar.gz"
+  },
+  "dependencies": {
+    "@babel/core": "^7.6.4",
+    "@emotion/core": "10.0.21",
+    "@sanity/base": "^0.142.6",
+    "@sanity/cli": "0.142.7",
+    "@sanity/components": "^0.142.6",
+    "@sanity/core": "^0.142.6",
+    "@sanity/default-layout": "^0.142.7",
+    "@sanity/default-login": "^0.142.6",
+    "@sanity/desk-tool": "^0.142.7",
+    "date-fns": "^2.4.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.0"
+  },
+  "keywords": [
+    "tom hendra"
+  ],
+  "engines": {
+    "node": "10.x"
+  }
+}

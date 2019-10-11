@@ -1,54 +1,64 @@
 {
   "name": "tomhendra-portfolio",
-  "private": false,
-  "description": "A portfolio website for Tom Hendra, web developer",
-  "version": "0.1.0",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Portfolio website for Tom Hendra, web developer",
   "author": "Tom Hendra <hola@tomhendra.dev>",
   "keywords": [
-    "tomhendra"
+    "tom hendra"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/tomhendra/portfolio"
   },
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop --open 'Google Chrome'",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "yarn run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  "engines": {
+    "node": "10.x"
   },
-  "dependencies": {
-    "@contentful/rich-text-react-renderer": "^13.4.0",
-    "@emotion/core": "^10.0.21",
-    "@emotion/styled": "^10.0.17",
-    "dotenv": "^8.1.0",
-    "formik": "^1.5.8",
-    "framer-motion": "^1.6.8",
-    "gatsby": "^2.15.29",
-    "gatsby-image": "^2.2.24",
-    "gatsby-plugin-emotion": "^4.1.9",
-    "gatsby-plugin-manifest": "^2.2.20",
-    "gatsby-plugin-offline": "^3.0.11",
-    "gatsby-plugin-react-helmet": "^3.1.10",
-    "gatsby-plugin-sharp": "^2.2.28",
-    "gatsby-source-contentful": "^2.1.45",
-    "gatsby-source-filesystem": "^2.1.29",
-    "gatsby-transformer-sharp": "^2.2.20",
-    "gatsby-transformer-yaml": "^2.2.12",
-    "prop-types": "^15.7.2",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-helmet": "^5.2.1",
-    "typeface-lato": "0.0.75",
-    "typeface-noto-sans": "0.0.72",
-    "yup": "^0.27.0"
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "start": "lerna run empty-cache && lerna run start --parallel watch",
+    "build": "lerna run build --parallel",
+    "deploy:graphql": "lerna run deploy:graphql --scope backend",
+    "deploy:sanity": "lerna run deploy:sanity --scope backend",
+    "export:sanity": "lerna run export --scope backend",
+    "format": "lerna run format --parallel",
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "empty-cache": "lerna run empty-cache --scope frontend",
+    "clean": "lerna clean",
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "postinstall": "yarn bootstrap",
+    "init": "lerna run init --scope backend"
   },
   "devDependencies": {
-    "cross-env": "^6.0.3",
-    "eslint-config-react-app": "^5.0.2",
-    "prettier": "^1.18.2"
+    "husky": "3.0.8",
+    "lerna": "^3.17.0",
+    "lint-staged": "9.4.2",
+    "babel-eslint": "10.0.3",
+    "eslint": "6.5.1",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-prettier": "6.4.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.16.0",
+    "eslint-plugin-react-hooks": "2.1.2",
+    "prettier": "1.18.2"
+  },
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{frontend,backend}/**/*.js": [
+      "yarn run format",
+      "yarn run --silent lint",
+      "git add"
+    ]
   }
 }
