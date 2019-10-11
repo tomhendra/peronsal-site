@@ -2,7 +2,29 @@
 .DS_Store
 
 # Dependency directories
-/node_modules
+node_modules/
 
-# lerna files
-/lerna-debug.log
+# Logs
+logs
+*.log
+lerna-debug.log
+yarn-debug.log*
+yarn-error.log*
+# Yarn Integrity file
+.yarn-integrity
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# caches
+.cache/
+.eslintcache
+
+# dotenv environment variables file
+.env*
+
+# gatsby output files
+public/
+
+# sanity output files
+dist/

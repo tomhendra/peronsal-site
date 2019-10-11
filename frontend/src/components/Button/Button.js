@@ -84,15 +84,31 @@ const styles = ({ buttonStyle, buttonSize }) => {
  * `....................component....................`
  */
 
-const Button = ({ buttonStyle, buttonSize, buttonType, externalLink, internalLink, ...props }) =>
+const Button = ({
+  buttonStyle,
+  buttonSize,
+  buttonType,
+  externalLink,
+  internalLink,
+  ...props
+}) =>
   internalLink ? (
     // if internalLink prop is provided, return Gatsby Link styled with buttonStyles
-    <Link to={internalLink} css={styles({ buttonSize, buttonStyle })} {...props} />
+    <Link
+      to={internalLink}
+      css={styles({ buttonSize, buttonStyle })}
+      {...props}
+    />
   ) : externalLink ? (
     // if externalLink prop is provided, return basic anchor tag styled with buttonStyles
     // (eslint error is a false positive...)
     // eslint-disable-next-line jsx-a11y/anchor-has-content
-    <a href={externalLink} target="blank" css={styles({ buttonSize, buttonStyle })} {...props} />
+    <a
+      href={externalLink}
+      target="blank"
+      css={styles({ buttonSize, buttonStyle })}
+      {...props}
+    />
   ) : (
     // default return button if internalLink/externalLink props are not provided,
     // based on defaultProp values being defined as null below.

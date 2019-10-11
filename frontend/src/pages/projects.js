@@ -27,7 +27,11 @@ const ProjectsPage = () => {
           <PageCounter pageNumber="01" totalPages="03" />
         </PageHeading>
         {projects.map(project => (
-          <ProjectPreview key={project.id} project={project} css={{ marginBottom: sizes.large2 }} />
+          <ProjectPreview
+            key={project.id}
+            project={project}
+            css={{ marginBottom: sizes.large2 }}
+          />
         ))}
       </Container>
     </Layout>

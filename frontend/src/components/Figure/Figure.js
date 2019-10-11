@@ -4,7 +4,11 @@ import { getFluidGatsbyImage } from 'gatsby-source-sanity';
 import clientConfig from '../../../client-config';
 
 const Figure = ({ node }) => {
-  const fluidProps = getFluidGatsbyImage(node.asset._id, { maxWidth: 675 }, clientConfig.sanity);
+  const fluidProps = getFluidGatsbyImage(
+    node.asset._id,
+    { maxWidth: 675 },
+    clientConfig.sanity,
+  );
   return (
     <figure>
       <Img fluid={fluidProps} alt={node.alt} />

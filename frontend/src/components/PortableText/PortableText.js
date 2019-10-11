@@ -5,7 +5,11 @@ import clientConfig from '../../../client-config';
 import serializers from '../serializers';
 
 const PortableText = ({ blocks }) => (
-  <BasePortableText blocks={blocks} serializers={serializers} {...clientConfig.sanity} />
+  <BasePortableText
+    blocks={blocks}
+    serializers={serializers}
+    {...clientConfig.sanity}
+  />
 );
 
 export default PortableText;

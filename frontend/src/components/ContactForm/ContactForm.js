@@ -70,10 +70,12 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
           gridRow: '1 / 2',
         }}
       >
-        {touched.name && errors.name && <Tooltip type="alert">{errors.name}</Tooltip>}
+        {touched.name && errors.name && (
+          <Tooltip type="alert">{errors.name}</Tooltip>
+        )}
         <label>
-          Full name
           <Field type="text" name="name" placeholder="Full name" />
+          Full name
         </label>
       </div>
       <div
@@ -82,7 +84,9 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
           gridRow: '2 / 3',
         }}
       >
-        {touched.email && errors.email && <Tooltip type="alert">{errors.email}</Tooltip>}
+        {touched.email && errors.email && (
+          <Tooltip type="alert">{errors.email}</Tooltip>
+        )}
         <label>
           Email address
           <Field type="email" name="email" placeholder="Email" />
@@ -94,7 +98,9 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
           gridRow: '3 / 4',
         }}
       >
-        {touched.phone && errors.phone && <Tooltip type="alert">{errors.phone}</Tooltip>}
+        {touched.phone && errors.phone && (
+          <Tooltip type="alert">{errors.phone}</Tooltip>
+        )}
         <label>
           Phone number
           <Field type="tel" name="phone" placeholder="Phone number" />
@@ -106,10 +112,17 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
           gridRow: '1 / 4',
         }}
       >
-        {touched.message && errors.message && <Tooltip type="alert">{errors.message}</Tooltip>}
+        {touched.message && errors.message && (
+          <Tooltip type="alert">{errors.message}</Tooltip>
+        )}
         <label>
           Message
-          <Field component="textarea" rows="13" name="message" placeholder="Your message" />
+          <Field
+            component="textarea"
+            rows="13"
+            name="message"
+            placeholder="Your message"
+          />
         </label>
       </div>
       <div
@@ -121,7 +134,12 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
           justifyContent: 'flex-end',
         }}
       >
-        <Button type="submit" disabled={isSubmitting} buttonStyle="primary" buttonSize="small">
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          buttonStyle="primary"
+          buttonSize="small"
+        >
           Send Message
         </Button>
       </div>
@@ -167,7 +185,6 @@ const FormikContactForm = withFormik({
       }
       setSubmitting(false);
     }, 2000);
-    console.log(values);
   },
 })(ContactForm);
 

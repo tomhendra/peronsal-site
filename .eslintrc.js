@@ -2,7 +2,6 @@ module.exports = {
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module',
-    allowImportExportEverywhere: false,
     codeFrame: false,
   },
   extends: ['airbnb', 'prettier'],
@@ -11,19 +10,13 @@ module.exports = {
     jest: true,
   },
   rules: {
-    'import/prefer-default-export': ['warn'],
+    'import/prefer-default-export': ['off'],
     'max-len': ['warn', { code: 100 }],
     'no-nested-ternary': ['off'],
-    'no-return-assign': ['off'],
     'no-underscore-dangle': ['off'],
     'react/jsx-filename-extension': ['off'],
     'react/jsx-props-no-spreading': ['off'],
-    'react/prop-types': ['warn'],
-  },
-  settings: {
-    react: {
-      pragma: 'React',
-      version: '16.10.2',
-    },
+    'react/prop-types': ['off'],
+    'jsx-a11y/label-has-associated-control': ['off'],
   },
 };

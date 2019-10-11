@@ -52,7 +52,10 @@ const ProjectPreview = ({ project, ...props }) => (
         >
           {project.description}
         </p>
-        <TechStackGrid gridSize="small" techStackToBeDisplayed={project.techstack} />
+        <TechStackGrid
+          gridSize="small"
+          techStackToBeDisplayed={project.techstack}
+        />
       </div>
       <div>
         <Button
@@ -65,7 +68,11 @@ const ProjectPreview = ({ project, ...props }) => (
         >
           View Repo
         </Button>
-        <Button buttonStyle="primary" buttonSize="small" externalLink={project.url}>
+        <Button
+          buttonStyle="primary"
+          buttonSize="small"
+          externalLink={project.url}
+        >
           Launch App
         </Button>
       </div>

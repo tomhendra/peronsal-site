@@ -2,7 +2,7 @@
   "name": "tomhendra-portfolio",
   "version": "0.0.0",
   "private": true,
-  "description": "A portfolio website for Tom Hendra, web developer",
+  "description": "Portfolio website for Tom Hendra, web developer",
   "author": "Tom Hendra <hola@tomhendra.dev>",
   "keywords": [
     "tom hendra"
@@ -22,22 +22,43 @@
   "scripts": {
     "start": "lerna run empty-cache && lerna run start --parallel watch",
     "build": "lerna run build --parallel",
-    "deploy:graphql": "lerna run deploy:graphql",
-    "deploy:sanity": "lerna run deploy:sanity",
-    "export:sanity": "cd backend && yarn export",
-    "format": "lerna run format",
+    "deploy:graphql": "lerna run deploy:graphql --scope backend",
+    "deploy:sanity": "lerna run deploy:sanity --scope backend",
+    "export:sanity": "lerna run export --scope backend",
+    "format": "lerna run format --parallel",
     "lint": "lerna run lint",
-    "test": "echo \"Error: no test specified, write some tests!\" && exit 1",
-    "empty-cache": "cd frontend && yarn empty-cache",
+    "test": "lerna run test",
+    "empty-cache": "lerna run empty-cache --scope frontend",
     "clean": "lerna clean",
-    "update": "lernaupdate",
-    "init": "cd backend && sanity init && lerna run deploy:graphql",
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "postinstall": "lerna bootstrap --use-workspaces"
+    "postinstall": "yarn bootstrap",
+    "init": "lerna run init --scope backend"
   },
   "devDependencies": {
+    "husky": "3.0.8",
     "lerna": "^3.17.0",
-    "lerna-update-wizard": "0.16.0"
+    "lint-staged": "9.4.2",
+    "babel-eslint": "10.0.3",
+    "eslint": "6.5.1",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-prettier": "6.4.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.16.0",
+    "eslint-plugin-react-hooks": "2.1.2",
+    "prettier": "1.18.2"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{frontend,backend}/**/*.js": [
+      "yarn run format",
+      "yarn run --silent lint",
+      "git add"
+    ]
+  }
 }

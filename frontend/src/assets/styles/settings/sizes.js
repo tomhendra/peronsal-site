@@ -1,4 +1,5 @@
-// For the best reading experience, make your paragraphs wide enough to fit between 45 and 75 characters per line.
+// For the best reading experience, make your paragraphs
+// wide enough to fit between 45 and 75 characters per line.
 export const sizes = {
   small1: '0.4rem', // 4px
   small2: '0.8rem', // 8px
