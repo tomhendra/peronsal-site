@@ -36,7 +36,7 @@
     "init": "lerna run init --scope backend"
   },
   "devDependencies": {
-    "husky": "3.0.8",
+    "husky": "3.0.9",
     "lerna": "^3.17.0",
     "lint-staged": "9.4.2",
     "babel-eslint": "10.0.3",
