@@ -1,43 +1,43 @@
 import React from 'react';
-
-import { colors, fontsizes, sizes } from '../../assets/styles';
+import { withTheme } from 'emotion-theming';
 
 /**
  * `....................styles....................`
  */
 
-const styles = {
+const styles = theme => ({
   alignItems: 'center',
-  background: colors.neutral.dark2,
-  border: `1px solid ${colors.neutral.dark4}`,
-  borderRadius: '6px',
+  background: theme.colors.n100,
+  border: `${theme.borderWidth.alpha} solid ${theme.colors.n300}`,
+  borderRadius: theme.borderRadius.charlie,
   display: 'flex',
   flexDirection: 'column',
-  padding: `${sizes.large1} ${sizes.medium2} ${sizes.medium3} ${sizes.medium2}`,
+  // eslint-disable-next-line max-len
+  padding: `${theme.spacings.hotel} ${theme.spacings.foxtrot} ${theme.spacings.golf} ${theme.spacings.echo}`,
 
   img: {
-    marginBottom: sizes.medium1,
-    width: sizes.large1,
+    marginBottom: theme.spacings.echo,
+    width: theme.spacings.hotel,
   },
 
   h3: {
-    color: colors.primary.light2,
-    fontSize: fontsizes.medium2,
-    marginBottom: sizes.medium2,
+    color: theme.colors.p600,
+    fontSize: theme.typography.headings.delta.fontSize,
+    marginBottom: theme.spacings.foxtrot,
     textTransform: 'uppercase',
   },
-};
+});
 
 /**
  * `....................component....................`
  */
 
-const Card = ({ icon, title, text, ...props }) => (
-  <div css={styles} {...props}>
+const Card = ({ icon, title, text, theme, ...props }) => (
+  <div css={styles(theme)} {...props}>
     <img src={icon} alt={title} />
     <h3>{title}</h3>
     <p>{text}</p>
   </div>
 );
 
-export default Card;
+export default withTheme(Card);

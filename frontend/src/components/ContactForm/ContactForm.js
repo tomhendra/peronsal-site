@@ -3,10 +3,6 @@ import { withTheme } from 'emotion-theming';
 import { withFormik, Form, Field } from 'formik';
 import * as yup from 'yup';
 
-<<<<<<< HEAD:frontend/src/components/ContactForm/ContactForm.js
-=======
-import { colors, fontsizes, sizes } from '../../assets/styles';
->>>>>>> 46f85bc230a9102059d37b3e6963ca895cd6a9b6:src/components/ContactForm/ContactForm.js
 import Button from '../Button';
 import Tooltip from '../Tooltip';
 
@@ -79,8 +75,8 @@ const ContactForm = ({ errors, touched, isSubmitting, theme, ...props }) => (
           <Tooltip type="alert">{errors.name}</Tooltip>
         )}
         <label>
-          <Field type="text" name="name" placeholder="Full name" />
           Full name
+          <Field type="text" name="name" placeholder="Full name" />
         </label>
       </div>
       <div
