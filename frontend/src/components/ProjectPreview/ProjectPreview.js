@@ -2,6 +2,10 @@ import React from 'react';
 import Img from 'gatsby-image';
 import { withTheme } from 'emotion-theming';
 
+<<<<<<< HEAD:frontend/src/components/ProjectPreview/ProjectPreview.js
+=======
+import { colors, sizes } from '../../assets/styles';
+>>>>>>> 46f85bc230a9102059d37b3e6963ca895cd6a9b6:src/components/ProjectPreview/ProjectPreview.js
 import TechStackGrid from '../TechStackGrid';
 import Button from '../Button';
 

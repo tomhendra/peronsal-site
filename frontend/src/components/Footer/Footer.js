@@ -2,6 +2,10 @@ import React from 'react';
 import { withTheme } from 'emotion-theming';
 
 import useSiteMetadata from '../../hooks/useSiteMetadata';
+<<<<<<< HEAD:frontend/src/components/Footer/Footer.js
+=======
+import { sizes } from '../../assets/styles';
+>>>>>>> 46f85bc230a9102059d37b3e6963ca895cd6a9b6:src/components/footer/footer.js
 import Social from '../Social';
 
 /**
