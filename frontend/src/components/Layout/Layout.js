@@ -1,33 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Global } from '@emotion/core';
+import { ThemeProvider } from 'emotion-theming';
 
+import themes from '../../assets/themes';
+import { cssReset, globalStyles } from '../../assets/styles';
 import Header from '../Header';
 import Footer from '../Footer';
-import { baseStyles } from '../../assets/styles';
 
 /**
  * `....................styles....................`
  */
 
+// TODO: use state to change on switch
+const theme = themes.delfin;
+const globals = globalStyles(theme);
+
 const styles = {
-  position: 'relative',
-  margin: '0 auto',
+  ...cssReset,
+  ...globals,
 };
+// console.log({ styles });
 
 /**
  * `....................component....................`
  */
 
 const Layout = ({ children }) => (
-  <>
-    <Global styles={baseStyles} />
-    <div css={styles}>
+  <ThemeProvider theme={theme}>
+    <Global styles={styles} />
+    <div css={{ position: 'relative', margin: '0 auto' }}>
       <Header />
       <main>{children}</main>
       <Footer />
     </div>
-  </>
+  </ThemeProvider>
 );
 
 Layout.propTypes = {

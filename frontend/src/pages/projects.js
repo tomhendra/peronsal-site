@@ -2,7 +2,6 @@
 import React from 'react';
 
 import useProjects from '../hooks/useProjects';
-import { sizes } from '../assets/styles';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
@@ -30,7 +29,7 @@ const ProjectsPage = () => {
           <ProjectPreview
             key={project.id}
             project={project}
-            css={{ marginBottom: sizes.large2 }}
+            css={theme => ({ marginBottom: theme.spacings.india })}
           />
         ))}
       </Container>

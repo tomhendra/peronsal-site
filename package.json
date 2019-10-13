@@ -30,6 +30,7 @@
     "test": "lerna run test",
     "empty-cache": "lerna run empty-cache --scope frontend",
     "clean": "lerna clean",
+    "clean:root": "rm -rf node_modules",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "postinstall": "yarn bootstrap",
     "init": "lerna run init --scope backend"
@@ -45,7 +46,7 @@
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.16.0",
-    "eslint-plugin-react-hooks": "2.1.2",
+    "eslint-plugin-react-hooks": "1.7.0",
     "prettier": "1.18.2"
   },
   "dependencies": {},

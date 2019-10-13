@@ -1,8 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { css } from '@emotion/core';
 
-import { sizes } from '../assets/styles';
 import SEO from '../components/SEO';
 import Layout from '../components/Layout';
 import Container from '../components/Container';
@@ -11,9 +9,9 @@ import PageText from '../components/PageText';
 import PageCounter from '../components/PageCounter';
 import Card from '../components/Card';
 import TechStackGrid from '../components/TechStackGrid';
-import businessSVG from '../assets/images/icons/business.svg';
-import codeSVG from '../assets/images/icons/code.svg';
-import designSVG from '../assets/images/icons/design.svg';
+import businessSVG from '../assets/icons/business.svg';
+import codeSVG from '../assets/icons/code.svg';
+import designSVG from '../assets/icons/design.svg';
 
 const AboutPage = () => (
   <Layout>
@@ -30,11 +28,11 @@ const AboutPage = () => (
         <PageCounter pageNumber="01" totalPages="03" />
       </PageHeading>
       <div
-        css={css`
-          display: grid;
-          gap: ${sizes.medium2};
-          grid-template-columns: repeat(3, 1fr);
-        `}
+        css={theme => ({
+          display: 'grid',
+          gap: theme.spacings.foxtrot,
+          gridTemplateColumns: 'repeat(3, 1fr)',
+        })}
       >
         <Card
           icon={codeSVG}

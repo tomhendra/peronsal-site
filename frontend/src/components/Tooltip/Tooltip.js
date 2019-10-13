@@ -1,39 +1,33 @@
 import React from 'react';
+import { withTheme } from 'emotion-theming';
 
-import { colors, fontsizes } from '../../assets/styles';
+import { colors } from '../../assets/styles/constants';
 
-/**
- * `....................constants....................`
- */
-
-const error = `error`;
-const alert = `alert`;
-const success = `success`;
-
-// Set values for Tooltip colours here
-const tooltipTypes = {
-  [error]: {
-    background: colors.error.light4,
-    border: colors.error.dark1,
-    color: colors.error.dark1,
-  },
-  [alert]: {
-    background: colors.alert.light3,
-    border: colors.alert.dark2,
-    color: colors.alert.dark1,
-  },
-  [success]: {
-    background: colors.success.light4,
-    border: colors.success.dark4,
-    color: colors.success.dark4,
-  },
-};
+const { DANGER, WARNING, SUCCESS } = colors;
 
 /**
  * `....................styles....................`
  */
 
-const styles = type => {
+const styles = (type, theme) => {
+  // Set values for Tooltip colours here
+  const tooltipTypes = {
+    [DANGER]: {
+      background: theme.colors.misc.danger,
+      border: theme.colors.red.r000,
+      color: theme.colors.red.r000,
+    },
+    [WARNING]: {
+      background: theme.colors.misc.warning,
+      border: theme.colors.yellow.y100,
+      color: theme.colors.yellow.y000,
+    },
+    [SUCCESS]: {
+      background: theme.colors.misc.success,
+      border: theme.colors.green.g300,
+      color: theme.colors.green.g300,
+    },
+  };
   // config variable declared & assigned with type / defaultProps value
   const styleConfig = tooltipTypes[type];
 
@@ -46,10 +40,10 @@ const styles = type => {
     div: {
       // Tooltip container
       background: styleConfig.background,
-      border: `1px solid ${styleConfig.border}`,
+      border: `${theme.borderWidth.alpha} solid ${styleConfig.border}`,
       color: styleConfig.color,
       display: 'inline-block',
-      fontSize: fontsizes.small,
+      fontSize: theme.typography.text.alpha.fontSize,
       position: 'relative',
       borderRadius: '6px',
       padding: '6px',
@@ -89,16 +83,16 @@ const styles = type => {
  * `....................component....................`
  */
 
-const Tooltip = ({ type, ...rest }) => {
+const Tooltip = ({ type, theme, ...rest }) => {
   return (
-    <div css={styles(type)}>
+    <div css={styles(type, theme)}>
       <div {...rest} />
     </div>
   );
 };
 
 Tooltip.defaultProps = {
-  type: 'alert',
+  type: WARNING,
 };
 
-export default Tooltip;
+export default withTheme(Tooltip);

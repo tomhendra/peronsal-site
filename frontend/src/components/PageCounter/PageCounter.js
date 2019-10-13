@@ -1,45 +1,45 @@
 import React from 'react';
+import { withTheme } from 'emotion-theming';
 
-import { colors, fontsizes, sizes } from '../../assets/styles';
-import mouseSVG from '../../assets/images/icons/mouse.svg';
+import mouseSVG from '../../assets/icons/mouse.svg';
 
 /**
  * `....................styles....................`
  */
 
-const styles = {
+const styles = theme => ({
   alignItems: 'flex-end',
   alignSelf: 'flex-end',
   display: 'flex',
-  fontFamily: 'Lato, sans-serif',
+  fontFamily: theme.fontStack.default,
   flexDirection: 'column',
-  fontSize: fontsizes.medium1,
-  maxWidth: sizes.medium2,
+  fontSize: theme.typography.text.bravo.fontSize,
+  maxWidth: theme.spacings.foxtrot,
 
   'div > *': {
     lineHeight: 1,
     textAlign: 'right',
 
     '&:first-of-type': {
-      color: colors.primary.light3,
-      fontSize: fontsizes.large1,
+      color: theme.colors.p700,
+      fontSize: theme.typography.headings.delta.fontSize,
       lineHeight: 1.1,
       marginRight: -1,
     },
   },
 
   img: {
-    marginTop: sizes.small2,
-    width: sizes.medium1,
+    marginTop: theme.spacings.bravo,
+    width: theme.spacings.echo,
   },
-};
+});
 
 /**
  * `....................component....................`
  */
 
-const PageCounter = ({ pageNumber, totalPages, ...props }) => (
-  <div css={styles} {...props}>
+const PageCounter = ({ pageNumber, totalPages, theme, ...props }) => (
+  <div css={styles(theme)} {...props}>
     <div>
       <p>{pageNumber}</p>
       <p>{totalPages}</p>
@@ -48,4 +48,4 @@ const PageCounter = ({ pageNumber, totalPages, ...props }) => (
   </div>
 );
 
-export default PageCounter;
+export default withTheme(PageCounter);

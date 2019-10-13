@@ -1,29 +1,29 @@
 import React from 'react';
+import { withTheme } from 'emotion-theming';
 
 import usePosts from '../../hooks/usePosts';
-import { sizes } from '../../assets/styles';
 import PostPreview from '../PostPreview';
 
 /**
  * `....................styles....................`
  */
 
-const styles = {
+const styles = theme => ({
   display: 'grid',
-  gap: sizes.medium2,
+  gap: theme.spacings.foxtrot,
   gridTemplateColumns: 'repeat(3, 1fr)',
-  paddingBottom: sizes.large3,
-};
+  paddingBottom: theme.spacings.juliett,
+});
 
 /**
  * `....................component....................`
  */
 
-const PostGrid = props => {
+const PostGrid = ({ theme, ...props }) => {
   const posts = usePosts();
 
   return (
-    <div css={styles} {...props}>
+    <div css={styles(theme)} {...props}>
       {posts.map(post => (
         <PostPreview key={post.id} post={post} />
       ))}
@@ -31,4 +31,4 @@ const PostGrid = props => {
   );
 };
 
-export default PostGrid;
+export default withTheme(PostGrid);

@@ -1,8 +1,8 @@
 import React from 'react';
+import { withTheme } from 'emotion-theming';
 import { withFormik, Form, Field } from 'formik';
 import * as yup from 'yup';
 
-import { colors, fontsizes, sizes } from '../../assets/styles';
 import Button from '../Button';
 import Tooltip from '../Tooltip';
 
@@ -18,17 +18,18 @@ const phoneRegEx = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,
  * `....................styles....................`
  */
 
-const styles = {
-  background: colors.neutral.dark2,
-  border: `1px solid ${colors.neutral.dark4}`,
-  borderRadius: '6px',
+const styles = theme => ({
+  background: theme.colors.n100,
+  border: `1px solid ${theme.colors.n300}`,
+  borderRadius: theme.borderRadius.charlie,
   display: 'grid',
-  gap: `${sizes.medium1} ${sizes.medium2}`,
+  gap: `${theme.spacings.echo} ${theme.spacings.foxtrot}`,
   gridTemplateColumns: 'repeat(2, 1fr)',
   gridTemplateRows: 'repeat(4, 1fr)',
   margin: '0 auto',
-  padding: `${sizes.large1} ${sizes.medium3} ${sizes.medium1} ${sizes.medium3}`,
-  width: sizes.massive3,
+  // eslint-disable-next-line max-len
+  padding: `${theme.spacings.hotel} ${theme.spacings.golf} ${theme.spacings.echo} ${theme.spacings.golf}`,
+  width: theme.spacings.quebec,
 
   // all immediate children selector for child div elements
   '> *': {
@@ -36,34 +37,34 @@ const styles = {
     position: 'relative',
 
     'input, textarea': {
-      backgroundColor: colors.neutral.light5,
-      borderRadius: '4px',
-      border: `1px solid ${colors.neutral.light2}`,
+      backgroundColor: theme.colors.n900,
+      borderRadius: theme.borderRadius.charlie,
+      border: `${theme.borderWidth.alpha} solid ${theme.colors.n600}`,
       // Firefox displays font as courier for textarea!
-      fontFamily: 'Lato',
-      fontSize: fontsizes.base,
-      padding: sizes.small2,
+      fontFamily: theme.fontStack.default,
+      fontSize: theme.typography.text.bravo.fontSize,
+      padding: theme.spacings.bravo,
       width: '100%',
     },
 
     input: {
-      height: sizes.medium3,
+      height: theme.spacings.golf,
     },
 
     textarea: {
       resize: 'none',
     },
   },
-};
+});
 
 /**
  * `....................component....................`
  */
 
-const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
+const ContactForm = ({ errors, touched, isSubmitting, theme, ...props }) => (
   <Form method="post" netlify-honeypot="bot-field" data-netlify="true">
     <input type="hidden" name="bot-field" />
-    <div css={styles} {...props}>
+    <div css={styles(theme)} {...props}>
       <div
         css={{
           gridColumn: '1 / 2',
@@ -74,8 +75,8 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
           <Tooltip type="alert">{errors.name}</Tooltip>
         )}
         <label>
-          <Field type="text" name="name" placeholder="Full name" />
           Full name
+          <Field type="text" name="name" placeholder="Full name" />
         </label>
       </div>
       <div
@@ -138,7 +139,7 @@ const ContactForm = ({ errors, touched, isSubmitting, ...props }) => (
           type="submit"
           disabled={isSubmitting}
           buttonStyle="primary"
-          buttonSize="small"
+          buttonSize="alpha"
         >
           Send Message
         </Button>
@@ -188,4 +189,4 @@ const FormikContactForm = withFormik({
   },
 })(ContactForm);
 
-export default FormikContactForm;
+export default withTheme(FormikContactForm);

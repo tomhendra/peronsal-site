@@ -1,25 +1,24 @@
 import React from 'react';
+import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
-
-import { sizes } from '../../assets/styles';
 
 /**
  * `....................styles....................`
  */
 
-const styles = {
+const styles = theme => ({
   display: 'flex',
   justifyContent: 'space-between',
-  minHeight: sizes.huge2,
-  paddingBottom: sizes.large1,
-};
+  minHeight: theme.spacings.lima,
+  paddingBottom: theme.spacings.hotel,
+});
 
 /**
  * `....................component....................`
  */
 
-const PageHeading = ({ children, ...props }) => (
-  <div css={styles} {...props}>
+const PageHeading = ({ children, theme, ...props }) => (
+  <div css={styles(theme)} {...props}>
     {children}
   </div>
 );
@@ -28,4 +27,4 @@ PageHeading.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default PageHeading;
+export default withTheme(PageHeading);

@@ -1,33 +1,33 @@
 import React from 'react';
+import { withTheme } from 'emotion-theming';
 
-import { sizes } from '../../assets/styles';
-import githubSVG from '../../assets/images/social/github.svg';
-import linkedinSVG from '../../assets/images/social/linkedin.svg';
-import twitterSVG from '../../assets/images/social/twitter.svg';
+import githubSVG from '../../assets/icons/github.svg';
+import linkedinSVG from '../../assets/icons/linkedin.svg';
+import twitterSVG from '../../assets/icons/twitter.svg';
 
 /**
  * `....................styles....................`
  */
 
-const styles = {
+const styles = theme => ({
   display: 'flex',
   flexDirection: 'column',
-  minWidth: sizes.large1,
+  minWidth: theme.spacings.hotel,
 
   '> *': {
     width: '1.8rem',
     ':not(:first-of-type)': {
-      marginTop: sizes.small3,
+      marginTop: theme.spacings.charlie,
     },
   },
-};
+});
 
 /**
  * `....................component....................`
  */
 
-const Social = props => (
-  <div css={styles} {...props}>
+const Social = ({ theme, ...props }) => (
+  <div css={styles(theme)} {...props}>
     <a href="https://github.com/tomhendra" target="blank">
       <img src={githubSVG} alt="GitHub logo" />
     </a>
@@ -40,4 +40,4 @@ const Social = props => (
   </div>
 );
 
-export default Social;
+export default withTheme(Social);

@@ -1,24 +1,25 @@
 import React from 'react';
 import { Link } from 'gatsby';
-
-import { colors, fontsizes } from '../../assets/styles';
+import { withTheme } from 'emotion-theming';
 
 /**
  * `....................styles....................`
  */
 
-const styles = {
-  color: colors.neutral.light4,
-  fontSize: fontsizes.large1,
+const styles = theme => ({
+  color: theme.colors.n800,
+  fontSize: theme.typography.headings.delta.fontSize,
   fontWeight: 'bold',
   lineHeight: 1.2,
   textDecoration: 'none',
-};
+});
 
 /**
  * `....................component....................`
  */
 
-const PostLink = props => <Link css={styles} {...props} />;
+const PostLink = ({ theme, ...props }) => (
+  <Link css={styles(theme)} {...props} />
+);
 
-export default PostLink;
+export default withTheme(PostLink);

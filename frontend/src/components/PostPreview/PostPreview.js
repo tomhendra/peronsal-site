@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import { withTheme } from 'emotion-theming';
 
-import { colors, sizes } from '../../assets/styles';
 import PostLink from '../PostLink';
 import ReadLink from '../ReadLink';
 
@@ -10,31 +10,31 @@ import ReadLink from '../ReadLink';
  * `....................styles....................`
  */
 
-const styles = {
-  border: `1px solid ${colors.neutral.dark4}`,
-  borderRadius: '6px',
-  height: sizes.huge4,
+const styles = theme => ({
+  border: `${theme.borderWidth.alpha} solid ${theme.colors.n300}`,
+  borderRadius: theme.borderRadius.charlie,
+  height: theme.spacings.november,
   overflow: 'hidden',
 
   '& > div': {
     height: '50%',
     ':first-of-type': {
-      background: colors.primary.dark1,
+      background: theme.colors.p000,
       isolation: 'isolate',
       overflow: 'hidden',
       position: 'relative',
     },
     ':last-of-type': {
-      background: colors.neutral.dark2,
+      background: theme.colors.n100,
       justifyContent: 'space-between',
       flexDirection: 'column',
       display: 'flex',
-      padding: sizes.medium2,
+      padding: theme.spacings.foxtrot,
     },
 
     h3: {
       left: 0,
-      margin: sizes.medium2,
+      margin: theme.spacings.foxtrot,
       marginBottom: 0,
       position: 'absolute',
       top: 0,
@@ -42,17 +42,17 @@ const styles = {
     },
 
     p: {
-      marginBottom: sizes.medium1,
+      marginBottom: theme.spacings.echo,
     },
   },
-};
+});
 
 /**
  * `....................component....................`
  */
 
-const PostPreview = ({ post, ...props }) => (
-  <article css={styles} {...props}>
+const PostPreview = ({ post, theme, ...props }) => (
+  <article css={styles(theme)} {...props}>
     <div>
       <h3>
         <PostLink to={post.slug}>{post.title}</PostLink>
@@ -77,4 +77,4 @@ const PostPreview = ({ post, ...props }) => (
   </article>
 );
 
-export default PostPreview;
+export default withTheme(PostPreview);

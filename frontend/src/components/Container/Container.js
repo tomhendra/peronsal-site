@@ -1,23 +1,22 @@
 import React from 'react';
+import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
-
-import { sizes } from '../../assets/styles';
 
 /**
  * `....................styles....................`
  */
 
-const styles = {
+const styles = theme => ({
   minHeight: '100vh',
-  padding: `0 calc((100vw - ${sizes.massive4}) / 2)`,
-  paddingTop: sizes.large3,
-};
+  padding: `0 calc((100vw - ${theme.spacings.romeo}) / 2)`,
+  paddingTop: theme.spacings.juliett,
+});
 
 /**
  * `....................component....................`
  */
 
-const Container = ({ children, ...props }) => (
+const Container = ({ children, theme, ...props }) => (
   <div css={styles} {...props}>
     {children}
   </div>
@@ -27,4 +26,4 @@ Container.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Container;
+export default withTheme(Container);

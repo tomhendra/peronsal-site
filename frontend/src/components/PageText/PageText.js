@@ -1,34 +1,33 @@
 import React from 'react';
-
-import { colors, sizes } from '../../assets/styles';
+import { withTheme } from 'emotion-theming';
 
 /**
  * `....................styles....................`
  */
 
-const styles = {
+const styles = theme => ({
   maxWidth: '50%',
 
   h1: {
-    marginBottom: sizes.medium2,
+    marginBottom: theme.spacings.foxtrot,
   },
 
   h2: {
-    color: colors.primary.light3,
-    marginBottom: sizes.small3,
+    color: theme.colors.p700,
+    marginBottom: theme.spacings.charlie,
   },
-};
+});
 
 /**
  * `....................component....................`
  */
 
-const PageText = ({ mainHeading, subHeading, paragraph, ...props }) => (
-  <div css={styles} {...props}>
+const PageText = ({ mainHeading, subHeading, paragraph, theme, ...props }) => (
+  <div css={styles(theme)} {...props}>
     <h1>{mainHeading}</h1>
     <h2>{subHeading}</h2>
     <p>{paragraph}</p>
   </div>
 );
 
-export default PageText;
+export default withTheme(PageText);

@@ -1,25 +1,26 @@
 import React from 'react';
 import { Link } from 'gatsby';
-
-import { colors, fontsizes } from '../../assets/styles';
+import { withTheme } from 'emotion-theming';
 
 /**
  * `....................styles....................`
  */
 
-const styles = {
-  color: colors.neutral.light5,
-  fontSize: fontsizes.small,
+const styles = theme => ({
+  color: theme.colors.n900,
+  fontSize: theme.typography.text.alpha.fontSize,
   textDecoration: 'none',
   '&.currentPage': {
-    color: colors.primary.light3,
+    color: theme.colors.p700,
   },
-};
+});
 
 /**
  * `....................component....................`
  */
 
-const NavLink = props => <Link css={styles} {...props} />;
+const NavLink = ({ theme, ...props }) => (
+  <Link css={styles(theme)} {...props} />
+);
 
-export default NavLink;
+export default withTheme(NavLink);

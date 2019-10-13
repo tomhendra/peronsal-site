@@ -1,37 +1,37 @@
 import React from 'react';
+import { withTheme } from 'emotion-theming';
 
 import useSiteMetadata from '../../hooks/useSiteMetadata';
-import { sizes } from '../../assets/styles';
 import Social from '../Social';
 
 /**
  * `....................styles....................`
  */
 
-const styles = {
+const styles = theme => ({
   alignItems: 'flex-end',
   bottom: 0,
   display: 'flex',
   fontSize: '1rem',
-  height: sizes.huge1,
+  height: theme.spacings.kilo,
   justifyContent: 'space-between',
-  padding: sizes.large1,
+  padding: theme.spacings.hotel,
   paddingTop: 0,
   position: 'fixed',
   textTransform: 'uppercase',
   width: '100vw',
-};
+});
 
 /**
  * `....................component....................`
  */
 
-const Footer = props => {
+const Footer = ({ theme, ...props }) => {
   const { siteMetadata } = useSiteMetadata();
   const date = new Date().getFullYear();
 
   return (
-    <footer css={styles} {...props}>
+    <footer css={styles(theme)} {...props}>
       &copy;
       {siteMetadata.author}
       {date}
@@ -40,4 +40,4 @@ const Footer = props => {
   );
 };
 
-export default Footer;
+export default withTheme(Footer);

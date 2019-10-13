@@ -1,7 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
+import { withTheme } from 'emotion-theming';
 
-import { colors, sizes } from '../../assets/styles';
 import TechStackGrid from '../TechStackGrid';
 import Button from '../Button';
 
@@ -9,45 +9,45 @@ import Button from '../Button';
  * `....................styles....................`
  */
 
-const styles = {
-  background: colors.neutral.dark2,
-  border: `1px solid ${colors.neutral.dark4}`,
+const styles = theme => ({
+  background: theme.colors.n100,
+  border: `${theme.borderWidth.alpha} solid ${theme.colors.n300}`,
   borderRadius: '6px',
   display: 'flex',
   justifyContent: 'space-between',
   margin: '0 auto',
-  width: sizes.massive3,
-  minHeight: sizes.huge4,
-  padding: sizes.medium3,
-};
+  width: theme.spacings.quebec,
+  minHeight: theme.spacings.november,
+  padding: theme.spacings.golf,
+});
 
 /**
  * `....................component....................`
  */
 
-const ProjectPreview = ({ project, ...props }) => (
-  <div css={styles} {...props}>
+const ProjectPreview = ({ project, theme, ...props }) => (
+  <div css={styles(theme)} {...props}>
     <Img fixed={project.image} alt={project.alt} />
     <div
       css={{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        paddingLeft: sizes.medium2,
+        paddingLeft: theme.spacings.foxtrot,
         width: '60%',
       }}
     >
       <div>
         <h2
           css={{
-            marginBottom: sizes.medium1,
+            marginBottom: theme.spacings.echo,
           }}
         >
           {project.title}
         </h2>
         <p
           css={{
-            marginBottom: sizes.medium2,
+            marginBottom: theme.spacings.foxtrot,
           }}
         >
           {project.description}
@@ -60,17 +60,17 @@ const ProjectPreview = ({ project, ...props }) => (
       <div>
         <Button
           buttonStyle="secondary"
-          buttonSize="small"
+          buttonSize="alpha"
           externalLink={project.repo}
           css={{
-            marginRight: sizes.medium1,
+            marginRight: theme.spacings.echo,
           }}
         >
           View Repo
         </Button>
         <Button
           buttonStyle="primary"
-          buttonSize="small"
+          buttonSize="alpha"
           externalLink={project.url}
         >
           Launch App
@@ -80,4 +80,4 @@ const ProjectPreview = ({ project, ...props }) => (
   </div>
 );
 
-export default ProjectPreview;
+export default withTheme(ProjectPreview);

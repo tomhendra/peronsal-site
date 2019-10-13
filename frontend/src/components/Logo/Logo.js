@@ -1,26 +1,26 @@
 import React from 'react';
+import { withTheme } from 'emotion-theming';
 
-import { sizes } from '../../assets/styles';
 import logoSVG from '../../assets/images/logo/tomhendra-logo-no-bg.svg';
 
 /**
  * `....................styles....................`
  */
 
-const styles = {
+const styles = theme => ({
   img: {
-    height: sizes.medium2,
+    height: theme.spacings.foxtrot,
   },
-};
+});
 
 /**
  * `....................component....................`
  */
 
-const Logo = props => (
-  <div css={styles} {...props}>
+const Logo = ({ theme, ...props }) => (
+  <div css={styles(theme)} {...props}>
     <img src={logoSVG} alt="Tom Hendra logo" />
   </div>
 );
 
-export default Logo;
+export default withTheme(Logo);

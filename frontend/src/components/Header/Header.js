@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { sizes } from '../../assets/styles';
+import { withTheme } from 'emotion-theming';
 import Logo from '../Logo';
 import NavLink from '../NavLink';
 import Navbar from '../Navbar';
@@ -9,23 +9,23 @@ import Navbar from '../Navbar';
  * `....................styles....................`
  */
 
-const styles = {
+const styles = theme => ({
   display: 'flex',
-  height: sizes.huge1,
+  height: theme.spacings.kilo,
   justifyContent: 'space-between',
-  padding: sizes.large1,
+  padding: theme.spacings.hotel,
   paddingBottom: 0,
   position: 'fixed',
   top: 0,
   width: '100vw',
-};
+});
 
 /**
  * `....................component....................`
  */
 
-const Header = props => (
-  <header css={styles} {...props}>
+const Header = ({ theme, ...props }) => (
+  <header css={styles(theme)} {...props}>
     <NavLink to="/">
       <Logo />
     </NavLink>
@@ -33,4 +33,4 @@ const Header = props => (
   </header>
 );
 
-export default Header;
+export default withTheme(Header);
