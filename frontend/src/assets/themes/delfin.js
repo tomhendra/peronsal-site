@@ -182,7 +182,7 @@ export const typography = {
     },
     lima: {
       fontSize: '10.08rem', // 108px
-      lineHeight: '1.16rem', // 116px
+      lineHeight: '10.16rem', // 116px
     },
   },
   subHeadings: {
