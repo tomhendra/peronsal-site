@@ -72,7 +72,7 @@ const ContactForm = ({ errors, touched, isSubmitting, theme, ...props }) => (
         }}
       >
         {touched.name && errors.name && (
-          <Tooltip type="alert">{errors.name}</Tooltip>
+          <Tooltip type="warning">{errors.name}</Tooltip>
         )}
         <label>
           Full name
@@ -86,7 +86,7 @@ const ContactForm = ({ errors, touched, isSubmitting, theme, ...props }) => (
         }}
       >
         {touched.email && errors.email && (
-          <Tooltip type="alert">{errors.email}</Tooltip>
+          <Tooltip type="warning">{errors.email}</Tooltip>
         )}
         <label>
           Email address
@@ -100,7 +100,7 @@ const ContactForm = ({ errors, touched, isSubmitting, theme, ...props }) => (
         }}
       >
         {touched.phone && errors.phone && (
-          <Tooltip type="alert">{errors.phone}</Tooltip>
+          <Tooltip type="warning">{errors.phone}</Tooltip>
         )}
         <label>
           Phone number
@@ -114,7 +114,7 @@ const ContactForm = ({ errors, touched, isSubmitting, theme, ...props }) => (
         }}
       >
         {touched.message && errors.message && (
-          <Tooltip type="alert">{errors.message}</Tooltip>
+          <Tooltip type="warning">{errors.message}</Tooltip>
         )}
         <label>
           Message

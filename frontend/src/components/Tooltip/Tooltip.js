@@ -13,19 +13,19 @@ const styles = (type, theme) => {
   // Set values for Tooltip colours here
   const tooltipTypes = {
     [DANGER]: {
-      background: theme.colors.misc.danger,
-      border: theme.colors.red.r000,
-      color: theme.colors.red.r000,
+      background: theme.colors.danger,
+      border: theme.colors.r000,
+      color: theme.colors.r000,
     },
     [WARNING]: {
-      background: theme.colors.misc.warning,
-      border: theme.colors.yellow.y100,
-      color: theme.colors.yellow.y000,
+      background: theme.colors.warning,
+      border: theme.colors.y100,
+      color: theme.colors.y000,
     },
     [SUCCESS]: {
-      background: theme.colors.misc.success,
-      border: theme.colors.green.g300,
-      color: theme.colors.green.g300,
+      background: theme.colors.success,
+      border: theme.colors.g300,
+      color: theme.colors.g300,
     },
   };
   // config variable declared & assigned with type / defaultProps value
