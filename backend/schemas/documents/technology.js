@@ -14,4 +14,10 @@ export default {
       type: 'logo',
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      media: 'logo',
+    },
+  },
 };

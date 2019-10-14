@@ -50,4 +50,10 @@ export default {
       type: 'url',
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      media: 'mainImage',
+    },
+  },
 };
