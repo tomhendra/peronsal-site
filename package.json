@@ -23,17 +23,17 @@
     "start": "lerna run empty-cache && lerna run start --parallel watch",
     "build": "lerna run build --parallel",
     "deploy:graphql": "lerna run deploy:graphql",
-    "deploy:sanity": "lerna run deploy:sanity --scope backend",
-    "export:sanity": "lerna run export --scope backend",
+    "deploy:sanity": "lerna run deploy:sanity",
+    "export:sanity": "lerna run export",
     "format": "lerna run format --parallel",
     "lint": "lerna run lint",
     "test": "lerna run test",
-    "empty-cache": "lerna run empty-cache --scope frontend",
-    "clean": "lerna clean",
+    "empty-cache": "lerna run empty-cache",
+    "clean:workspaces": "lerna clean",
     "clean:root": "rm -rf node_modules",
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "postinstall": "yarn bootstrap",
-    "init": "lerna run init --scope backend"
+    "postinstall": "yarn run bootstrap",
+    "init": "lerna run init"
   },
   "devDependencies": {
     "husky": "3.0.9",

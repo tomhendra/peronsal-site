@@ -8,7 +8,7 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
       allSanityPost {
         edges {
           node {
-            id
+            _id
             slug {
               current
             }
@@ -19,7 +19,7 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
   `);
 
   if (result.errors) {
-    reporter.panic('🚨  ERROR: Loading "createPages" query', result.errors);
+    reporter.panic('🚨 ERROR: Loading "createPages" query', result.errors);
   }
 
   const posts = result.data.allSanityPost.edges;
@@ -29,7 +29,7 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
       component: path.resolve('./src/templates/BlogPostTemplate.js'),
       path: `/blog/${node.slug.current}`,
       context: {
-        id: node.id,
+        id: node._id,
       },
     });
   });
