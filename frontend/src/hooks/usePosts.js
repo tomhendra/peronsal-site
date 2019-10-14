@@ -6,7 +6,7 @@ function usePosts() {
       posts: allSanityPost {
         edges {
           node {
-            id
+            _id
             title
             slug {
               current
@@ -28,7 +28,7 @@ function usePosts() {
   `);
 
   return data.posts.edges.map(({ node }) => ({
-    id: node.id,
+    id: node._id,
     title: node.title,
     slug: `/blog/${node.slug.current}`,
     publishedAt: node.publishedAt,

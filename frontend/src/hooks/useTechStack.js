@@ -6,7 +6,7 @@ function useTechStack() {
       techStack: allSanityTechnology {
         edges {
           node {
-            id
+            _id
             title
             logo {
               asset {
@@ -26,7 +26,7 @@ function useTechStack() {
   `);
 
   return data.techStack.edges.map(({ node }) => ({
-    id: node.id,
+    id: node._id,
     title: node.title,
     logoSmall: node.logo.asset.small,
     logoMedium: node.logo.asset.medium,

@@ -12,7 +12,7 @@
   "scripts": {
     "start": "sanity start",
     "build": "sanity build",
-    "deploy:graphql": "sanity graphql deploy",
+    "deploy:graphql": "sanity graphql deploy --playground",
     "deploy:sanity": "sanity deploy",
     "format": "prettier --write \"**/*.js\" \"!node_modules/**\" \"!dist/**\"",
     "lint": "eslint . --fix",

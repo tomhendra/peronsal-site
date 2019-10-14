@@ -22,7 +22,7 @@
   "scripts": {
     "start": "lerna run empty-cache && lerna run start --parallel watch",
     "build": "lerna run build --parallel",
-    "deploy:graphql": "lerna run deploy:graphql --scope backend",
+    "deploy:graphql": "lerna run deploy:graphql",
     "deploy:sanity": "lerna run deploy:sanity --scope backend",
     "export:sanity": "lerna run export --scope backend",
     "format": "lerna run format --parallel",

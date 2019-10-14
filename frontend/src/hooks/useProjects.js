@@ -6,12 +6,10 @@ function useProjects() {
       projects: allSanityProject {
         edges {
           node {
-            id
+            _id
             title
             description
-            techstack {
-              title
-            }
+            _rawTechstack(resolveReferences: { maxDepth: 5 })
             repo
             url
             mainImage {
@@ -30,10 +28,10 @@ function useProjects() {
   `);
 
   return data.projects.edges.map(({ node }) => ({
-    id: node.id,
+    id: node._id,
     title: node.title,
     description: node.description,
-    techstack: node.techstack.title,
+    techstack: node._rawTechstack,
     repo: node.repo,
     url: node.url,
     image: node.mainImage.asset.fixed,

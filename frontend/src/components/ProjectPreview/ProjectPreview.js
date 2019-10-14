@@ -54,7 +54,7 @@ const ProjectPreview = ({ project, theme, ...props }) => (
         </p>
         <TechStackGrid
           gridSize="small"
-          techStackToBeDisplayed={project.techstack}
+          techStackToBeDisplayed={project.techstack.map(tech => tech.title)}
         />
       </div>
       <div>
