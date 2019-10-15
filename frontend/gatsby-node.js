@@ -8,7 +8,7 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
       allSanityPost {
         edges {
           node {
-            _id
+            id
             slug {
               current
             }
@@ -29,7 +29,7 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
       component: path.resolve('./src/templates/BlogPostTemplate.js'),
       path: `/blog/${node.slug.current}`,
       context: {
-        id: node._id,
+        id: node.id,
       },
     });
   });
