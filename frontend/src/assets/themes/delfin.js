@@ -187,12 +187,12 @@ export const typography = {
   },
   subHeadings: {
     alpha: {
-      fontSize: '1.2rem', // 12px
+      fontSize: '1.6rem', // 16px
       lineHeight: '2rem', // 20px
     },
     bravo: {
-      fontSize: '1.4rem', // 14px
-      lineHeight: '1.8rem', // 18px
+      fontSize: '2rem', // 20px
+      lineHeight: '2.4rem', // 24px
     },
   },
   text: {
@@ -261,7 +261,8 @@ export const iconSizes = {
 export const borderRadius = {
   alpha: '1px',
   bravo: '4px',
-  charlie: '5px',
+  charlie: '6px',
+  delta: '12px',
 };
 
 export const borderWidth = {
