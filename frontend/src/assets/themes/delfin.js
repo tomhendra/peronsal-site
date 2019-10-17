@@ -18,17 +18,17 @@ const neutral = {
   n900: 'hsl(216, 33%, 97%)',
 };
 
-const pink = {
-  p000: 'hsl(320, 100%, 19%)',
-  p100: 'hsl(322, 93%, 27%)',
-  p200: 'hsl(324, 93%, 33%)',
-  p300: 'hsl(326, 90%, 39%)',
-  p400: 'hsl(328, 85%, 46%)',
-  p500: 'hsl(330, 79%, 56%)',
-  p600: 'hsl(334, 86%, 67%)',
-  p700: 'hsl(336, 100%, 77%)',
-  p800: 'hsl(338, 100%, 86%)',
-  p900: 'hsl(341, 100%, 95%)',
+const blue = {
+  b000: 'hsl(218, 100%, 17%)',
+  b100: 'hsl(216, 98%, 25%)',
+  b200: 'hsl(215, 96%, 32%)',
+  b300: 'hsl(214, 95%, 36%)',
+  b400: 'hsl(212, 92%, 43%)',
+  b500: 'hsl(210, 83%, 53%)',
+  b600: 'hsl(208, 88%, 62%)',
+  b700: 'hsl(206, 93%, 73%)',
+  b800: 'hsl(204, 100%, 86%)',
+  b900: 'hsl(202, 100%, 95%)',
 };
 
 const turquoise = {
@@ -84,16 +84,16 @@ const green = {
 };
 
 const primary = {
-  p000: pink.p000,
-  p100: pink.p100,
-  p200: pink.p200,
-  p300: pink.p300,
-  p400: pink.p400,
-  p500: pink.p500,
-  p600: pink.p600,
-  p700: pink.p700,
-  p800: pink.p800,
-  p900: pink.p900,
+  p000: blue.p000,
+  p100: blue.p100,
+  p200: blue.p200,
+  p300: blue.p300,
+  p400: blue.p400,
+  p500: blue.p500,
+  p600: blue.p600,
+  p700: blue.p700,
+  p800: blue.p800,
+  p900: blue.p900,
 };
 
 const accent = {
@@ -111,8 +111,8 @@ const accent = {
 
 const misc = {
   shadow: '#0C0F14',
-  bodyBg: neutral.n000,
-  bodyColor: neutral.n900,
+  bodyBg: white,
+  bodyColor: neutral.n200,
   danger: red.r500,
   warning: yellow.y500,
   success: green.g500,
@@ -137,76 +137,72 @@ export const colors = {
 export const typography = {
   headings: {
     alpha: {
-      fontSize: '1.7rem', // 17px
-      lineHeight: '2.4rem', // 24px
+      fontSize: '2rem', // 20px
+      lineHeight: 1.2,
     },
     bravo: {
-      fontSize: '1.9rem', // 19px
-      lineHeight: '2.4rem', // 24px
+      fontSize: '2.4rem', // 24px
+      lineHeight: 1.2,
     },
     charlie: {
-      fontSize: '2.2rem', // 22px
-      lineHeight: '2.4rem', // 24px
+      fontSize: '3rem', // 30px
+      lineHeight: 1,
     },
     delta: {
-      fontSize: '2.4rem', // 24px
-      lineHeight: '3.2rem', // 32px
+      fontSize: '3.6rem', // 36px
+      lineHeight: 1,
     },
     echo: {
-      fontSize: '2.8rem', // 28px
-      lineHeight: '3.2rem', // 32px
+      fontSize: '4.8rem', // 48px
+      lineHeight: 1,
     },
     foxtrot: {
-      fontSize: '3.6rem', // 36px
-      lineHeight: '4.4rem', // 44px
+      fontSize: '6rem', // 60px
+      lineHeight: 1,
     },
     golf: {
-      fontSize: '4.2rem', // 42px
-      lineHeight: '4.8rem', // 48px
+      fontSize: '7.2rem', // 72px
+      lineHeight: 1,
     },
     hotel: {
-      fontSize: '6rem', // 60px
-      lineHeight: '66rem', // 66px
+      fontSize: '8.4rem', // 84px
+      lineHeight: 1,
     },
     india: {
-      fontSize: '7.2rem', // 72px
-      lineHeight: '7.8rem', // 78px
+      fontSize: '9.6rem', // 96px
+      lineHeight: 1,
     },
     juliett: {
-      fontSize: '8.4rem', // 84px
-      lineHeight: '90rem', // 90px
-    },
-    kilo: {
-      fontSize: '9.6rem', // 96px
-      lineHeight: '10.02rem', // 102px
-    },
-    lima: {
       fontSize: '10.08rem', // 108px
-      lineHeight: '10.16rem', // 116px
+      lineHeight: 1,
     },
   },
   subHeadings: {
     alpha: {
       fontSize: '1.6rem', // 16px
-      lineHeight: '2rem', // 20px
+      lineHeight: 1.5,
     },
     bravo: {
       fontSize: '2rem', // 20px
-      lineHeight: '2.4rem', // 24px
+      lineHeight: 1.5,
     },
   },
   text: {
     alpha: {
-      fontSize: '1.3rem', // 13px
-      lineHeight: '2rem', // 20px
+      fontSize: '1rem', // 10px
+      lineHeight: 1.5,
     },
     bravo: {
-      fontSize: '1.6rem', // 16px
-      lineHeight: '2.4rem', // 24px
+      fontSize: '1.3rem', // 13px
+      lineHeight: 1.5,
     },
     charlie: {
+      fontSize: '1.6rem', // 16px
+      lineHeight: 1.5,
+    },
+    delta: {
       fontSize: '1.8rem', // 18px
-      lineHeight: '2.8rem', // 28px
+      lineHeight: 1.5,
     },
   },
 };
