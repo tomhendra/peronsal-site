@@ -4,4 +4,4 @@ const themes = {
   delfin: { ...delfin },
 };
 
-export default themes;
+export { themes, delfin };

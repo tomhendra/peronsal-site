@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Global } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 
-import themes from '../../assets/themes';
+import { themes } from '../../assets/themes';
 import { cssReset, globalStyles } from '../../assets/styles';
 import Header from '../Header';
 import Footer from '../Footer';
@@ -20,7 +20,6 @@ const styles = {
   ...cssReset,
   ...globals,
 };
-// console.log({ styles });
 
 /**
  * `....................component....................`

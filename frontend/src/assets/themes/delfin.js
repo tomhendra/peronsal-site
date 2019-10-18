@@ -315,21 +315,7 @@ export const grid = {
   },
 };
 
-export const breakpoints = {
-  untilBravo: '(max-width: 479px)',
-  bravo: 480,
-  bravoToCharlie: '(min-width: 480px) and (max-width: 767px)',
-  charlie: 768,
-  untilCharlie: '(max-width: 767px)',
-  charlieToDelta: '(min-width: 768px) and (max-width: 959px)',
-  delta: 960,
-  deltaToEcho: '(min-width: 960px) and (max-width: 1279px)',
-  echo: 1280,
-  afterEcho: '(min-width: 1280px)',
-};
-
-// TODO write function to handle media query creation
-// export const mq = createMediaQueries(breakpoints);
+export const breakpoints = [480, 768, 960, 1280];
 
 /**
  * `....................misc....................`

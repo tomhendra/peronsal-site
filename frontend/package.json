@@ -30,6 +30,7 @@
     "date-fns": "^2.4.1",
     "dotenv": "^8.1.0",
     "emotion-theming": "^10.0.19",
+    "facepaint": "^1.2.1",
     "formik": "^1.5.8",
     "framer-motion": "^1.6.14",
     "gatsby": "^2.16.2",
