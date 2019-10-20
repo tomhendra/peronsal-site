@@ -271,51 +271,34 @@ export const borderWidth = {
  */
 
 export const grid = {
-  default: {
-    priority: 0,
-    breakpoint: 'default',
+  alpha: {
     cols: 12,
-    maxWidth: '880px',
-    gutter: spacings.delta,
-  },
-  untilBravo: {
-    priority: 1,
-    breakpoint: 'untilBravo',
-    cols: 12,
-    maxWidth: '400px',
+    maxWidth: '48rem', // 480px
     gutter: spacings.bravo,
   },
   bravo: {
-    priority: 2,
-    breakpoint: 'bravo',
     cols: 12,
-    maxWidth: '600px',
+    maxWidth: '76.8rem', // 768px
     gutter: spacings.delta,
   },
   charlie: {
-    priority: 3,
-    breakpoint: 'charlie',
     cols: 12,
-    maxWidth: '760px',
-    gutter: spacings.echo,
+    maxWidth: '96rem', // 960px
+    gutter: spacings.delta,
   },
   delta: {
-    priority: 4,
-    breakpoint: 'delta',
     cols: 12,
-    maxWidth: '880px',
-    gutter: spacings.echo,
-  },
-  afterEcho: {
-    priority: 5,
-    breakpoint: 'foxtrot',
-    cols: 12,
-    maxWidth: '1200px',
+    maxWidth: '96rem', // 960px
     gutter: spacings.echo,
   },
 };
 
-export const breakpoints = [480, 768, 960, 1280];
+export const breakpoints = [
+  '48rem', // 480px
+  '76.8rem', // 768px
+  '96rem', // 960px
+  '120rem', // 1200px
+];
 
 /**
  * `....................misc....................`
@@ -338,8 +321,4 @@ export const zIndex = {
   backdrop: 700,
   sidebar: 800,
   modal: 1000,
-};
-
-export const palette = {
-  divider: 'rgba(0, 0, 0, 0.12)',
 };

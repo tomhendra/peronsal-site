@@ -8,13 +8,33 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
  * `....................styles....................`
  */
 
-const baseStyles = theme => {
+const baseStyles = (devMode, theme) => {
   return withMediaQueries(theme)({
     label: 'Container',
+    display: 'grid',
+    gridTemplateColumns: [
+      theme.grid.alpha.cols,
+      theme.grid.bravo.cols,
+      theme.grid.charlie.cols,
+      theme.grid.delta.cols,
+    ],
+    columnGap: [
+      theme.grid.alpha.gutter,
+      theme.grid.bravo.gutter,
+      theme.grid.charlie.gutter,
+      theme.grid.delta.gutter,
+    ],
     margin: '0 auto',
-    position: 'relative',
-    maxWidth: theme.breakpoints.map(bp => `${bp}px`),
-    // padding: theme.breakpoints.map(bp => `0 calc((100vw - ${bp}px) / 2)`),
+    maxWidth: [
+      theme.grid.alpha.maxWidth,
+      theme.grid.bravo.maxWidth,
+      theme.grid.charlie.maxWidth,
+      theme.grid.delta.maxWidth,
+    ],
+    padding: '0 4rem',
+    '& < *': {
+      border: devMode && '1px dashed hsl(307, 100%, 50%)',
+    },
   });
 };
 
@@ -22,12 +42,18 @@ const baseStyles = theme => {
  * `....................component....................`
  */
 
-const Container = ({ theme, ...props }) => {
-  return <div css={baseStyles(theme)} {...props} />;
+const Container = ({ devMode, theme, ...props }) => {
+  return <div css={baseStyles(devMode, theme)} {...props} />;
+};
+
+Container.defaultProps = {
+  devMode: false,
+  theme: null,
 };
 
 Container.propTypes = {
-  children: PropTypes.node.isRequired,
+  devMode: PropTypes.bool,
+  theme: PropTypes.objectOf(PropTypes.object),
 };
 
 export default withTheme(Container);

@@ -16,21 +16,22 @@ import Footer from '../Footer';
 const theme = themes.delfin;
 const globals = globalStyles(theme);
 
-const styles = {
-  ...cssReset,
-  ...globals,
-};
-
 /**
  * `....................component....................`
  */
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <Global styles={styles} />
-    <div css={{ position: 'relative', margin: '0 auto' }}>
+    <Global styles={{ ...cssReset, ...globals }} />
+    <div
+      css={{
+        label: 'contentContainer',
+        display: 'grid',
+        gridTemplateRows: '6rem auto 6rem',
+      }}
+    >
       <Header />
-      <main>{children}</main>
+      <main css={{ position: 'relative' }}>{children}</main>
       <Footer />
     </div>
   </ThemeProvider>

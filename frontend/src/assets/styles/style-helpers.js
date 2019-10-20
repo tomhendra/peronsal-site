@@ -20,4 +20,4 @@ const baseStyles = theme => {
 // style objects, but does not repeat declarations for each media query.
 // e.g. position: 'relative' will only be declared once.
 export const withMediaQueries = theme =>
-  facepaint(theme.breakpoints.map(bp => `@media (min-width: ${bp}px)`));
+  facepaint(theme.breakpoints.map(bp => `@media (min-width: ${bp})`));
