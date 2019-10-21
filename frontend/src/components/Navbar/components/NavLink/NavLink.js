@@ -6,7 +6,7 @@ import { withTheme } from 'emotion-theming';
  * `....................styles....................`
  */
 
-const baseStyles = theme => ({
+const styles = theme => ({
   label: 'NavLink',
   color: theme.colors.n400,
   fontSize: theme.typography.text.charlie.fontSize,
@@ -22,7 +22,7 @@ const baseStyles = theme => ({
  */
 
 const NavLink = ({ theme, ...props }) => (
-  <Link css={baseStyles(theme)} {...props} />
+  <Link css={styles(theme)} {...props} />
 );
 
 export default withTheme(NavLink);

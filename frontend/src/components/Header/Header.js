@@ -2,16 +2,19 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { withTheme } from 'emotion-theming';
 
-import { withMediaQueries } from '../../assets/styles/style-helpers';
-
 import Logo from '../Logo';
 import Navbar from '../Navbar';
+import { withMediaQueries } from '../../assets/styles/style-helpers';
+import { colors, sizes } from '../../assets/styles/constants';
+
+const { NEUTRAL } = colors;
+const { FOXTROT } = sizes;
 
 /**
  * `....................styles....................`
  */
 
-const baseStyles = theme => {
+const styles = theme => {
   return withMediaQueries(theme)({
     label: 'Header',
     alignItems: 'center',
@@ -40,14 +43,10 @@ const baseStyles = theme => {
  */
 
 const Header = ({ theme, ...props }) => (
-  <header css={baseStyles(theme)} {...props}>
+  <header css={styles(theme)} {...props}>
     <div>
       <Link to="/" css={{ fontSize: 0, lineHeight: 0 }}>
-        <Logo
-          size={theme.iconSizes.foxtrot}
-          fill={theme.colors.n300}
-          hover={theme.colors.n000}
-        />
+        <Logo size={FOXTROT} color={NEUTRAL} />
       </Link>
       <Navbar />
     </div>

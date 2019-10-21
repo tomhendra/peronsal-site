@@ -8,7 +8,7 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
  * `....................styles....................`
  */
 
-const baseStyles = (devMode, theme) => {
+const styles = (devMode, theme) => {
   return withMediaQueries(theme)({
     label: 'Container',
     display: 'grid',
@@ -45,7 +45,7 @@ const baseStyles = (devMode, theme) => {
  */
 
 const Container = ({ devMode, theme, ...props }) => {
-  return <div css={baseStyles(devMode, theme)} {...props} />;
+  return <div css={styles(devMode, theme)} {...props} />;
 };
 
 Container.defaultProps = {

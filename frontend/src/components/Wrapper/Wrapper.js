@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
  * `....................styles....................`
  */
 
-const baseStyles = {
+const styles = {
   label: 'Wrapper',
   minHeight: '100vh',
   position: 'relative',
@@ -17,7 +17,7 @@ const baseStyles = {
  * `....................component....................`
  */
 
-const Wrapper = ({ children }) => <div css={baseStyles}>{children}</div>;
+const Wrapper = ({ children }) => <div css={styles}>{children}</div>;
 
 Wrapper.propTypes = {
   children: PropTypes.node.isRequired,

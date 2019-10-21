@@ -10,7 +10,7 @@ import Social from '../Social';
  * `....................styles....................`
  */
 
-const baseStyles = theme => {
+const styles = theme => {
   return withMediaQueries(theme)({
     label: 'Footer',
     alignItems: 'center',
@@ -50,7 +50,7 @@ const Footer = ({ theme, ...props }) => {
   const date = new Date().getFullYear();
 
   return (
-    <footer css={baseStyles(theme)} {...props}>
+    <footer css={styles(theme)} {...props}>
       <div>
         {/* prettier-ignore */}
         <span>

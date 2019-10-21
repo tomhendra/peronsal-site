@@ -2,21 +2,63 @@ import React from 'react';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
-const Logo = ({ fill, size, hover }) => {
-  const styles = {
-    'svg:hover': {
-      fill: hover,
+import { colors, sizes } from '../../assets/styles/constants';
+
+const { NEUTRAL, PRIMARY } = colors;
+const {
+  ALPHA,
+  BRAVO,
+  CHARLIE,
+  DELTA,
+  ECHO,
+  FOXTROT,
+  GOLF,
+  HOTEL,
+  INDIA,
+  JULIETT,
+} = sizes;
+
+/**
+ * `....................styles....................`
+ */
+
+const styles = (color, theme) => {
+  const colorStyles = {
+    [NEUTRAL]: {
+      svg: {
+        fill: theme.colors.n300,
+        '&:hover': {
+          fill: theme.colors.n000,
+        },
+      },
+    },
+    [PRIMARY]: {
+      svg: {
+        fill: theme.colors.p500,
+        '&:hover': {
+          fill: theme.colors.p600,
+        },
+      },
     },
   };
 
+  return {
+    ...colorStyles[color],
+  };
+};
+
+/**
+ * `....................component....................`
+ */
+
+const Logo = ({ color, size, theme }) => {
   return (
-    <div css={styles}>
+    <div css={styles(color, theme)}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         aria-labelledby="Tom Hendra logo"
-        fill={fill}
         fillRule="evenodd"
-        height={size}
+        height={theme.iconSizes[size]}
         strokeLinejoin="round"
         strokeMiterlimit="2"
         clipRule="evenodd"
@@ -32,15 +74,24 @@ const Logo = ({ fill, size, hover }) => {
 };
 
 Logo.defaultProps = {
-  fill: '#000000',
-  size: '4.8rem',
-  hover: null,
+  size: DELTA,
+  color: PRIMARY,
 };
 
 Logo.propTypes = {
-  fill: PropTypes.string,
-  size: PropTypes.string,
-  hover: PropTypes.string,
+  size: PropTypes.oneOf([
+    ALPHA,
+    BRAVO,
+    CHARLIE,
+    DELTA,
+    ECHO,
+    FOXTROT,
+    GOLF,
+    HOTEL,
+    INDIA,
+    JULIETT,
+  ]),
+  color: PropTypes.oneOf([NEUTRAL, PRIMARY]),
 };
 
 export default withTheme(Logo);
