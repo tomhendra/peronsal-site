@@ -1,5 +1,6 @@
 import React from 'react';
 import { withTheme } from 'emotion-theming';
+import PropTypes from 'prop-types';
 
 const Logo = ({ fill, size, hover }) => {
   const styles = {
@@ -28,6 +29,18 @@ const Logo = ({ fill, size, hover }) => {
       </svg>
     </div>
   );
+};
+
+Logo.defaultProps = {
+  fill: '#000000',
+  size: '4.8rem',
+  hover: null,
+};
+
+Logo.propTypes = {
+  fill: PropTypes.string,
+  size: PropTypes.string,
+  hover: PropTypes.string,
 };
 
 export default withTheme(Logo);
