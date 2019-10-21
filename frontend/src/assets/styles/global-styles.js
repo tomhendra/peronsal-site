@@ -4,10 +4,12 @@ export const globalStyles = theme => ({
     color: theme.colors.bodyColor,
     fontFamily: theme.fontStack.default,
     fontSize: theme.typography.text.bravo.fontSize,
-    lineHeight: theme.typography.text.alpha.lineHeight,
+    lineHeight: theme.typography.text.bravo.lineHeight,
 
     'h1,h2,h3,h4,h5,h6': {
+      color: theme.colors.headingColor,
       fontFamily: theme.fontStack.heading,
+      fontWeight: theme.fontWeight.bold,
     },
 
     h1: {

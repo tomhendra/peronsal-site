@@ -31,6 +31,8 @@ const baseStyles = theme => {
       margin: '0 auto',
       maxWidth: [...theme.breakpoints],
       width: '100%',
+
+      // remove globals affecting svg logo wrapped with Link
     },
   });
 };
@@ -42,8 +44,8 @@ const baseStyles = theme => {
 const Header = ({ theme, ...props }) => (
   <header css={baseStyles(theme)} {...props}>
     <div>
-      <Link to="/">
-        <Logo />
+      <Link to="/" css={{ fontSize: 0, lineHeight: 0 }}>
+        <Logo height={theme.iconSizes.foxtrot} fill={theme.colors.n300} />
       </Link>
       <Navbar />
     </div>

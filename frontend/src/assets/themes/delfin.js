@@ -84,16 +84,16 @@ const green = {
 };
 
 const primary = {
-  p000: blue.p000,
-  p100: blue.p100,
-  p200: blue.p200,
-  p300: blue.p300,
-  p400: blue.p400,
-  p500: blue.p500,
-  p600: blue.p600,
-  p700: blue.p700,
-  p800: blue.p800,
-  p900: blue.p900,
+  p000: blue.b000,
+  p100: blue.b100,
+  p200: blue.b200,
+  p300: blue.b300,
+  p400: blue.b400,
+  p500: blue.b500,
+  p600: blue.b600,
+  p700: blue.b700,
+  p800: blue.b800,
+  p900: blue.b900,
 };
 
 const accent = {
@@ -113,6 +113,7 @@ const misc = {
   shadow: '#0C0F14',
   bodyBg: white,
   bodyColor: neutral.n200,
+  headingColor: neutral.n000,
   danger: red.r500,
   warning: yellow.y500,
   success: green.g500,
