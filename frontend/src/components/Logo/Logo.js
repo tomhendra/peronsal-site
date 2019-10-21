@@ -9,8 +9,9 @@ import logoSVG from '../../assets/icons/tomhendra-no-bg.svg';
 
 const styles = theme => ({
   label: 'Logo',
+  height: theme.iconSizes.foxtrot,
   img: {
-    height: theme.iconSizes.foxtrot,
+    height: '100%',
   },
 });
 

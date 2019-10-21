@@ -3,7 +3,7 @@ export const globalStyles = theme => ({
     background: theme.colors.bodyBg,
     color: theme.colors.bodyColor,
     fontFamily: theme.fontStack.default,
-    fontSize: theme.typography.text.alpha.fontSize,
+    fontSize: theme.typography.text.bravo.fontSize,
     lineHeight: theme.typography.text.alpha.lineHeight,
 
     'h1,h2,h3,h4,h5,h6': {

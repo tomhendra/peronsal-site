@@ -16,6 +16,7 @@ const baseStyles = theme => {
     alignItems: 'center',
     backgroundColor: theme.colors.white,
     borderTop: `${theme.borderWidth.alpha} solid ${theme.colors.n800}`,
+    color: theme.colors.n400,
     display: 'flex',
     height: '6rem',
     padding: '0 4rem',
@@ -29,6 +30,13 @@ const baseStyles = theme => {
       margin: '0 auto',
       maxWidth: [...theme.breakpoints],
       width: '100%',
+
+      span: {
+        minWidth: '12rem',
+        '&:last-of-type': {
+          textAlign: 'right',
+        },
+      },
     },
   });
 };
@@ -47,6 +55,7 @@ const Footer = ({ theme, ...props }) => {
         {/* prettier-ignore */}
         <span>
           &copy;
+          {' '}
           {siteMetadata.author}
           {' '}
           {date}
