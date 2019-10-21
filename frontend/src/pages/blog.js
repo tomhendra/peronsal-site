@@ -3,16 +3,16 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
-import PageHeading from '../components/PageHeading';
-import PageText from '../components/PageText';
-import PostGrid from '../components/PostGrid';
+// import Container from '../components/Container';
+// import PageHeading from '../components/PageHeading';
+// import PageText from '../components/PageText';
+// import PostGrid from '../components/PostGrid';
 
 const BlogPage = () => {
   return (
     <Layout>
       <SEO title="Blog" />
-      <Container>
+      {/* <Container>
         <PageHeading>
           <PageText
             mainHeading="Blog."
@@ -21,7 +21,7 @@ const BlogPage = () => {
           />
         </PageHeading>
         <PostGrid />
-      </Container>
+      </Container> */}
     </Layout>
   );
 };

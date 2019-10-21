@@ -1,21 +1,20 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-import useProjects from '../hooks/useProjects';
+// import useProjects from '../hooks/useProjects';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
-import PageHeading from '../components/PageHeading';
-import PageText from '../components/PageText';
-import PageCounter from '../components/PageCounter';
-import ProjectPreview from '../components/ProjectPreview';
+// import Container from '../components/Container';
+// import PageHeading from '../components/PageHeading';
+// import PageText from '../components/PageText';
+// import ProjectPreview from '../components/ProjectPreview';
 
 const ProjectsPage = () => {
-  const projects = useProjects();
+  // const projects = useProjects();
   return (
     <Layout>
       <SEO title="Projects" />
-      <Container>
+      {/* <Container>
         <PageHeading>
           <PageText
             mainHeading="My projects."
@@ -32,7 +31,7 @@ const ProjectsPage = () => {
             css={theme => ({ marginBottom: theme.spacings.india })}
           />
         ))}
-      </Container>
+      </Container> */}
     </Layout>
   );
 };

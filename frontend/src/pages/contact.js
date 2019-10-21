@@ -3,15 +3,15 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
-import PageHeading from '../components/PageHeading';
-import PageText from '../components/PageText';
-import FormikContactForm from '../components/ContactForm';
+// import Container from '../components/Container';
+// import PageHeading from '../components/PageHeading';
+// import PageText from '../components/PageText';
+// import FormikContactForm from '../components/ContactForm';
 
 const ContactPage = () => (
   <Layout>
     <SEO title="Contact" />
-    <Container>
+    {/* <Container>
       <PageHeading>
         <PageText
           mainHeading="Contact me."
@@ -20,7 +20,7 @@ const ContactPage = () => (
         />
       </PageHeading>
       <FormikContactForm />
-    </Container>
+    </Container> */}
   </Layout>
 );
 

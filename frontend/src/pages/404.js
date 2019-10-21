@@ -2,14 +2,14 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
-import PageHeading from '../components/PageHeading';
-import PageText from '../components/PageText';
+// import Container from '../components/Container';
+// import PageHeading from '../components/PageHeading';
+// import PageText from '../components/PageText';
 
 export default () => (
   <Layout>
     <SEO title="404: Not found" />
-    <Container>
+    {/* <Container>
       <PageHeading>
         <PageText
           mainHeading="Page not found :-("
@@ -17,6 +17,6 @@ export default () => (
           paragraph="The sadness."
         />
       </PageHeading>
-    </Container>
+    </Container> */}
   </Layout>
 );
