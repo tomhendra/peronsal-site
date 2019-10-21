@@ -6,12 +6,14 @@ import { withTheme } from 'emotion-theming';
  * `....................styles....................`
  */
 
-const styles = theme => ({
-  color: theme.colors.n900,
-  fontSize: theme.typography.text.alpha.fontSize,
+const baseStyles = theme => ({
+  label: 'NavLink',
+  color: theme.colors.n400,
+  fontSize: theme.typography.text.charlie.fontSize,
+  letterSpacing: 1,
   textDecoration: 'none',
-  '&.currentPage': {
-    color: theme.colors.p700,
+  '&.currentPage,:hover': {
+    color: theme.colors.n000,
   },
 });
 
@@ -20,7 +22,7 @@ const styles = theme => ({
  */
 
 const NavLink = ({ theme, ...props }) => (
-  <Link css={styles(theme)} {...props} />
+  <Link css={baseStyles(theme)} {...props} />
 );
 
 export default withTheme(NavLink);

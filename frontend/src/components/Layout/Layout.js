@@ -5,6 +5,7 @@ import { ThemeProvider } from 'emotion-theming';
 
 import { themes } from '../../assets/themes';
 import { cssReset, globalStyles } from '../../assets/styles';
+import Wrapper from '../Wrapper';
 import Header from '../Header';
 import Footer from '../Footer';
 
@@ -23,17 +24,11 @@ const globals = globalStyles(theme);
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <Global styles={{ ...cssReset, ...globals }} />
-    <div
-      css={{
-        label: 'contentContainer',
-        display: 'grid',
-        gridTemplateRows: '6rem auto 6rem',
-      }}
-    >
+    <Wrapper>
       <Header />
       <main css={{ position: 'relative' }}>{children}</main>
       <Footer />
-    </div>
+    </Wrapper>
   </ThemeProvider>
 );
 

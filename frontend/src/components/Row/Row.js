@@ -55,13 +55,12 @@ const Row = ({
 };
 
 Row.defaultProps = {
-  start: 0,
+  start: 1,
   end: 12,
   topSpacing: null,
   rightSpacing: null,
   bottomSpacing: null,
   leftSpacing: null,
-  theme: null,
 };
 
 Row.propTypes = {
@@ -72,7 +71,6 @@ Row.propTypes = {
   rightSpacing: PropTypes.string,
   bottomSpacing: PropTypes.string,
   leftSpacing: PropTypes.string,
-  theme: PropTypes.objectOf(PropTypes.object),
 };
 
 export default withTheme(Row);

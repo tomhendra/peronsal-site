@@ -3,21 +3,25 @@ import React from 'react';
 
 import SEO from '../components/SEO';
 import Layout from '../components/Layout';
+import Row from '../components/Row';
 import Container from '../components/Container';
-import PageHeading from '../components/PageHeading';
-import PageText from '../components/PageText';
-import PageCounter from '../components/PageCounter';
-import Card from '../components/Card';
-import TechStackGrid from '../components/TechStackGrid';
-import businessSVG from '../assets/icons/business.svg';
-import codeSVG from '../assets/icons/code.svg';
-import designSVG from '../assets/icons/design.svg';
+// import PageHeading from '../components/PageHeading';
+// import PageText from '../components/PageText';
+// import Card from '../components/Card';
+// import TechStackGrid from '../components/TechStackGrid';
+// import businessSVG from '../assets/icons/business.svg';
+// import codeSVG from '../assets/icons/code.svg';
+// import designSVG from '../assets/icons/design.svg';
 
 const AboutPage = () => (
   <Layout>
     <SEO title="About" />
-    <Container>
-      <PageHeading>
+    <Container devMode>
+      <Row topSpacing="india">
+        <p>TEST</p>
+      </Row>
+
+      {/* <PageHeading>
         <PageText
           mainHeading="About me."
           subHeading="Hola, I'm Tom."
@@ -25,7 +29,6 @@ const AboutPage = () => (
         I am passionate about crafting beautiful user experiences. I take pride in
         continuously learning new skills directly from the experts who shape the modern web."
         />
-        <PageCounter pageNumber="01" totalPages="03" />
       </PageHeading>
       <div
         css={theme => ({
@@ -97,7 +100,7 @@ const AboutPage = () => (
           'GraphQL',
           'Netlify',
         ]}
-      />
+      /> */}
     </Container>
   </Layout>
 );

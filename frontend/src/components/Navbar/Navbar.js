@@ -1,20 +1,19 @@
 import React from 'react';
 import { withTheme } from 'emotion-theming';
 
-import NavLink from '../NavLink';
+import NavLink from './components/NavLink';
 
 /**
  * `....................styles....................`
  */
 
-const styles = theme => ({
+const baseStyles = theme => ({
+  label: 'Navbar',
+  alignItems: 'center',
   display: 'flex',
-  flexDirection: 'column',
-  minWidth: theme.spacings.hotel,
-  textTransform: 'uppercase',
 
-  '& :not(:first-of-type)': {
-    marginTop: theme.spacings.charlie,
+  '& :not(:last-of-type)': {
+    marginRight: theme.spacings.golf,
   },
 });
 
@@ -22,8 +21,11 @@ const styles = theme => ({
  * `....................component....................`
  */
 
-const NavBar = ({ theme, ...props }) => (
-  <nav css={styles(theme)} {...props}>
+const Navbar = ({ theme, ...props }) => (
+  <nav css={baseStyles(theme)} {...props}>
+    <NavLink to="/" activeClassName="currentPage">
+      Home
+    </NavLink>
     <NavLink to="/about/" activeClassName="currentPage">
       About
     </NavLink>
@@ -39,4 +41,4 @@ const NavBar = ({ theme, ...props }) => (
   </nav>
 );
 
-export default withTheme(NavBar);
+export default withTheme(Navbar);

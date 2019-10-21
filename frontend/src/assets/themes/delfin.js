@@ -251,7 +251,8 @@ export const iconSizes = {
   charlie: '1.6rem', // 16px
   delta: '2.4rem', // 24px
   echo: '3.2rem', // 32px
-  foxtrot: '6.4rem', // 64px
+  foxtrot: '4.8rem', // 48px
+  golf: '6.4rem', // 64px
 };
 
 export const borderRadius = {

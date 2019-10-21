@@ -12,17 +12,17 @@ const baseStyles = (devMode, theme) => {
   return withMediaQueries(theme)({
     label: 'Container',
     display: 'grid',
-    gridTemplateColumns: [
-      theme.grid.alpha.cols,
-      theme.grid.bravo.cols,
-      theme.grid.charlie.cols,
-      theme.grid.delta.cols,
-    ],
     columnGap: [
       theme.grid.alpha.gutter,
       theme.grid.bravo.gutter,
       theme.grid.charlie.gutter,
       theme.grid.delta.gutter,
+    ],
+    gridTemplateColumns: [
+      `repeat ${theme.grid.alpha.cols} 1fr`,
+      `repeat ${theme.grid.bravo.cols} 1fr`,
+      `repeat ${theme.grid.charlie.cols} 1fr`,
+      `repeat ${theme.grid.delta.cols} 1fr`,
     ],
     margin: '0 auto',
     maxWidth: [
@@ -31,9 +31,11 @@ const baseStyles = (devMode, theme) => {
       theme.grid.charlie.maxWidth,
       theme.grid.delta.maxWidth,
     ],
-    padding: '0 4rem',
-    '& < *': {
-      border: devMode && '1px dashed hsl(307, 100%, 50%)',
+    // 6rem being height of fixed header...
+    minHeight: 'calc(100vh - 6rem)',
+    padding: '6rem 0 4rem 0',
+    '& div': {
+      border: devMode && '1px dashed hsl(300, 100%, 50%)',
     },
   });
 };
@@ -48,12 +50,10 @@ const Container = ({ devMode, theme, ...props }) => {
 
 Container.defaultProps = {
   devMode: false,
-  theme: null,
 };
 
 Container.propTypes = {
   devMode: PropTypes.bool,
-  theme: PropTypes.objectOf(PropTypes.object),
 };
 
 export default withTheme(Container);

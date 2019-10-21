@@ -8,8 +8,9 @@ import logoSVG from '../../assets/images/logo/tomhendra-logo-no-bg.svg';
  */
 
 const styles = theme => ({
+  label: 'Logo',
   img: {
-    height: theme.spacings.foxtrot,
+    height: theme.iconSizes.echo,
   },
 });
 
