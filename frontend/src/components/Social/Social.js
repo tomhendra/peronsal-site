@@ -11,14 +11,11 @@ import twitterSVG from '../../assets/icons/twitter.svg';
 
 const styles = theme => ({
   display: 'flex',
-  flexDirection: 'column',
-  minWidth: theme.spacings.hotel,
+  justifyContent: 'space-between',
+  minWidth: theme.spacings.india,
 
-  '> *': {
-    width: '1.8rem',
-    ':not(:first-of-type)': {
-      marginTop: theme.spacings.charlie,
-    },
+  img: {
+    width: theme.iconSizes.delta,
   },
 });
 
@@ -31,11 +28,11 @@ const Social = ({ theme, ...props }) => (
     <a href="https://github.com/tomhendra" target="blank">
       <img src={githubSVG} alt="GitHub logo" />
     </a>
-    <a href="https://twitter.com/TomHendra" target="blank">
-      <img src={twitterSVG} alt="Twitter logo" />
-    </a>
     <a href="https://www.linkedin.com/in/tom-hendra/" target="blank">
       <img src={linkedinSVG} alt="LinkedIn logo" />
+    </a>
+    <a href="https://twitter.com/TomHendra" target="blank">
+      <img src={twitterSVG} alt="Twitter logo" />
     </a>
   </div>
 );

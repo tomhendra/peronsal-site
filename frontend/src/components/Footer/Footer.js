@@ -1,6 +1,8 @@
 import React from 'react';
 import { withTheme } from 'emotion-theming';
 
+import { withMediaQueries } from '../../assets/styles/style-helpers';
+
 import useSiteMetadata from '../../hooks/useSiteMetadata';
 import Social from '../Social';
 
@@ -8,19 +10,28 @@ import Social from '../Social';
  * `....................styles....................`
  */
 
-const styles = theme => ({
-  alignItems: 'flex-end',
-  bottom: 0,
-  display: 'flex',
-  fontSize: '1rem',
-  height: theme.spacings.kilo,
-  justifyContent: 'space-between',
-  padding: theme.spacings.hotel,
-  paddingTop: 0,
-  position: 'fixed',
-  textTransform: 'uppercase',
-  width: '100vw',
-});
+const baseStyles = theme => {
+  return withMediaQueries(theme)({
+    label: 'Footer',
+    alignItems: 'center',
+    backgroundColor: theme.colors.white,
+    borderTop: `${theme.borderWidth.alpha} solid ${theme.colors.n800}`,
+    display: 'flex',
+    height: '6rem',
+    padding: '0 4rem',
+    width: '100vw',
+    zIndex: theme.zIndex.footer,
+
+    '> *': {
+      alignItems: 'center',
+      display: 'flex',
+      justifyContent: 'space-between',
+      margin: '0 auto',
+      maxWidth: [...theme.breakpoints],
+      width: '100%',
+    },
+  });
+};
 
 /**
  * `....................component....................`
@@ -31,11 +42,19 @@ const Footer = ({ theme, ...props }) => {
   const date = new Date().getFullYear();
 
   return (
-    <footer css={styles(theme)} {...props}>
-      &copy;
-      {siteMetadata.author}
-      {date}
-      <Social />
+    <footer css={baseStyles(theme)} {...props}>
+      <div>
+        {/* prettier-ignore */}
+        <span>
+          &copy;
+          {siteMetadata.author}
+          {' '}
+          {date}
+        </span>
+        <Social />
+        {/* placeholder for switch component... */}
+        <span>SWITCH</span>
+      </div>
     </footer>
   );
 };

@@ -25,7 +25,7 @@ const baseStyles = theme => {
     width: '100vw',
     zIndex: theme.zIndex.header,
 
-    '& div': {
+    '> *': {
       display: 'flex',
       justifyContent: 'space-between',
       margin: '0 auto',

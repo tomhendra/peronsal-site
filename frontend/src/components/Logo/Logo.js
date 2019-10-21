@@ -1,7 +1,7 @@
 import React from 'react';
 import { withTheme } from 'emotion-theming';
 
-import logoSVG from '../../assets/images/logo/tomhendra-logo-no-bg.svg';
+import logoSVG from '../../assets/icons/tomhendra-no-bg.svg';
 
 /**
  * `....................styles....................`
@@ -10,7 +10,7 @@ import logoSVG from '../../assets/images/logo/tomhendra-logo-no-bg.svg';
 const styles = theme => ({
   label: 'Logo',
   img: {
-    height: theme.iconSizes.echo,
+    height: theme.iconSizes.foxtrot,
   },
 });
 

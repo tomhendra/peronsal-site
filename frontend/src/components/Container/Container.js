@@ -33,7 +33,7 @@ const baseStyles = (devMode, theme) => {
     ],
     // 6rem being height of fixed header...
     minHeight: 'calc(100vh - 6rem)',
-    padding: '6rem 0 4rem 0',
+    padding: '6rem 4rem 8rem 4rem',
     '& div': {
       border: devMode && '1px dashed hsl(300, 100%, 50%)',
     },

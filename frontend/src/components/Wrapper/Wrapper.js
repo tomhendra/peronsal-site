@@ -8,9 +8,9 @@ import PropTypes from 'prop-types';
 
 const baseStyles = {
   label: 'Wrapper',
-  margin: '0 auto',
   minHeight: '100vh',
   position: 'relative',
+  width: '100vw',
 };
 
 /**
