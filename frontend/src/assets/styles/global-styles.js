@@ -3,8 +3,6 @@ export const globalStyles = theme => ({
     background: theme.colors.bodyBg,
     color: theme.colors.bodyColor,
     fontFamily: theme.fontStack.default,
-    fontSize: theme.typography.text.bravo.fontSize,
-    lineHeight: theme.typography.text.bravo.lineHeight,
   },
 });
 

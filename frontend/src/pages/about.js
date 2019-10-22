@@ -6,8 +6,8 @@ import Layout from '../components/Layout';
 import Row from '../components/Row';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
-// import PageHeading from '../components/PageHeading';
-// import PageText from '../components/PageText';
+import Text from '../components/Text';
+
 // import Card from '../components/Card';
 // import TechStackGrid from '../components/TechStackGrid';
 // import businessSVG from '../assets/icons/business.svg';
@@ -22,21 +22,18 @@ const AboutPage = () => (
   <Layout>
     <SEO title="About" />
     <Container devMode>
-      <Row topSpacing={INDIA}>
+      <Row start={1} end={7} topSpacing={INDIA}>
         <Heading as="h1" size={FOXTROT}>
           About me.
         </Heading>
+        <Text>
+          I am passionate about crafting beautiful user experiences. I take
+          pride in continuously learning new skills directly from the experts
+          who shape the modern web.
+        </Text>
       </Row>
 
-      {/* <PageHeading>
-        <PageText
-          mainHeading="About me."
-          subHeading="Hola, I'm Tom."
-          paragraph="I am a web developer from the UK, living in Spain.
-        I am passionate about crafting beautiful user experiences. I take pride in
-        continuously learning new skills directly from the experts who shape the modern web."
-        />
-      </PageHeading>
+      {/*
       <div
         css={theme => ({
           display: 'grid',

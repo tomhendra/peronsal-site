@@ -20,10 +20,10 @@ const styles = (devMode, theme) => {
       theme.grid.delta.gutter,
     ],
     gridTemplateColumns: [
-      `repeat ${theme.grid.alpha.cols} 1fr`,
-      `repeat ${theme.grid.bravo.cols} 1fr`,
-      `repeat ${theme.grid.charlie.cols} 1fr`,
-      `repeat ${theme.grid.delta.cols} 1fr`,
+      `repeat(${theme.grid.alpha.cols}, 1fr)`,
+      `repeat(${theme.grid.bravo.cols}, 1fr)`,
+      `repeat(${theme.grid.charlie.cols}, 1fr)`,
+      `repeat(${theme.grid.delta.cols}, 1fr)`,
     ],
     margin: '0 auto',
     maxWidth: [
