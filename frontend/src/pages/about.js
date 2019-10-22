@@ -31,7 +31,13 @@ const AboutPage = () => (
           pride in continuously learning new skills directly from the experts
           who shape the modern web.
         </Text>
+        <Text noMargin>
+          When I am not in the land of code, I am enjoying the wonderful Spanish
+          cuisine & culture, appreciating my charming home city of Salamanca, or
+          lifting heavy things at the gym.
+        </Text>
       </Row>
+      <Row>CARDS</Row>
 
       {/*
       <div
