@@ -4,6 +4,7 @@
 
 const white = '#FFFFFF';
 const black = '#0F131A';
+const shadow = '#0C0F14';
 
 const neutral = {
   n000: 'hsl(210, 24%, 16%)',
@@ -110,7 +111,8 @@ const accent = {
 };
 
 const misc = {
-  shadow: '#0C0F14',
+  shadowNeutral: shadow,
+  shadowPrimary: primary.n700,
   bodyBg: white,
   bodyColor: neutral.n200,
   headingColor: neutral.n000,

@@ -4,7 +4,7 @@ import { Global } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 
 import { themes } from '../../assets/themes';
-import { cssReset, globalStyles } from '../../assets/styles';
+import { cssReset } from '../../assets/styles';
 import Wrapper from '../Wrapper';
 import Header from '../Header';
 import Footer from '../Footer';
@@ -15,7 +15,14 @@ import Footer from '../Footer';
 
 // TODO: use state to change on switch
 const theme = themes.delfin;
-const globals = globalStyles(theme);
+
+const globalStyles = {
+  body: {
+    background: theme.colors.bodyBg,
+    color: theme.colors.bodyColor,
+    fontFamily: theme.fontStack.default,
+  },
+};
 
 /**
  * `....................component....................`
@@ -23,7 +30,7 @@ const globals = globalStyles(theme);
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <Global styles={{ ...cssReset, ...globals }} />
+    <Global styles={{ ...cssReset, ...globalStyles }} />
     <Wrapper>
       <Header />
       <main css={{ position: 'relative' }}>{children}</main>
