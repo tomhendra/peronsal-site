@@ -70,8 +70,8 @@ Row.defaultProps = {
 };
 
 Row.propTypes = {
-  start: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]),
-  end: PropTypes.oneOf([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+  start: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 'auto']),
+  end: PropTypes.oneOf([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'auto']),
   topSpacing: PropTypes.oneOf([...sizesArray]),
   rightSpacing: PropTypes.oneOf([...sizesArray]),
   bottomSpacing: PropTypes.oneOf([...sizesArray]),

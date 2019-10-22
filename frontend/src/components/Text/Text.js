@@ -16,7 +16,7 @@ const { ALPHA, BRAVO, CHARLIE, DELTA } = sizes;
 const styles = ({ bold, italic, strike, noMargin, size, theme }) => {
   const baseStyles = {
     label: 'text',
-    color: theme.colors.n200,
+    color: theme.colors.n400,
     fontFamily: theme.fontStack.default,
     fontWeight: theme.fontWeight.regular,
     marginBottom: !noMargin ? theme.spacings.bravo : 0,
