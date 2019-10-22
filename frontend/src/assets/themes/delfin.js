@@ -173,10 +173,6 @@ export const typography = {
       fontSize: '9.6rem', // 96px
       lineHeight: 1,
     },
-    juliett: {
-      fontSize: '10.08rem', // 108px
-      lineHeight: 1,
-    },
   },
   subHeadings: {
     alpha: {

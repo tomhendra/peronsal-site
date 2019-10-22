@@ -5,6 +5,7 @@ import SEO from '../components/SEO';
 import Layout from '../components/Layout';
 import Row from '../components/Row';
 import Container from '../components/Container';
+import Heading from '../components/Heading';
 // import PageHeading from '../components/PageHeading';
 // import PageText from '../components/PageText';
 // import Card from '../components/Card';
@@ -13,12 +14,18 @@ import Container from '../components/Container';
 // import codeSVG from '../assets/icons/code.svg';
 // import designSVG from '../assets/icons/design.svg';
 
+import { sizes } from '../assets/styles/constants';
+
+const { FOXTROT, INDIA } = sizes;
+
 const AboutPage = () => (
   <Layout>
     <SEO title="About" />
     <Container devMode>
-      <Row topSpacing="india">
-        <p>TEST</p>
+      <Row topSpacing={INDIA}>
+        <Heading as="h1" size={FOXTROT}>
+          About me.
+        </Heading>
       </Row>
 
       {/* <PageHeading>

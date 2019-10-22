@@ -5,26 +5,6 @@ export const globalStyles = theme => ({
     fontFamily: theme.fontStack.default,
     fontSize: theme.typography.text.bravo.fontSize,
     lineHeight: theme.typography.text.bravo.lineHeight,
-
-    'h1,h2,h3,h4,h5,h6': {
-      color: theme.colors.headingColor,
-      fontFamily: theme.fontStack.heading,
-      fontWeight: theme.fontWeight.bold,
-    },
-
-    h1: {
-      fontSize: theme.typography.headings.hotel.fontSize,
-    },
-
-    h2: {
-      fontSize: theme.typography.headings.delta.fontSize,
-      fontWeight: theme.fontWeight.regular,
-    },
-
-    h3: {
-      fontSize: theme.typography.headings.bravo.fontSize,
-      fontWeight: theme.fontWeight.regular,
-    },
   },
 });
 
