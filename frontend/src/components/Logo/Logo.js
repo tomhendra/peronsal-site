@@ -43,6 +43,7 @@ const styles = (color, theme) => {
   };
 
   return {
+    label: 'logo',
     ...colorStyles[color],
   };
 };
@@ -73,12 +74,8 @@ const Logo = ({ color, size, theme }) => {
   );
 };
 
-Logo.defaultProps = {
-  size: DELTA,
-  color: PRIMARY,
-};
-
 Logo.propTypes = {
+  color: PropTypes.oneOf([NEUTRAL, PRIMARY]),
   size: PropTypes.oneOf([
     ALPHA,
     BRAVO,
@@ -91,7 +88,11 @@ Logo.propTypes = {
     INDIA,
     JULIETT,
   ]),
-  color: PropTypes.oneOf([NEUTRAL, PRIMARY]),
+};
+
+Logo.defaultProps = {
+  color: PRIMARY,
+  size: DELTA,
 };
 
 export default withTheme(Logo);

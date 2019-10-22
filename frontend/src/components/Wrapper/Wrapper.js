@@ -1,6 +1,7 @@
 import React from 'react';
 import { withTheme } from 'emotion-theming';
-import PropTypes from 'prop-types';
+
+import { childrenPropType } from '../../utils/shared-prop-types';
 
 /**
  * `....................styles....................`
@@ -20,7 +21,11 @@ const styles = {
 const Wrapper = ({ children }) => <div css={styles}>{children}</div>;
 
 Wrapper.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: childrenPropType,
+};
+
+Wrapper.defaultProps = {
+  children: null,
 };
 
 export default withTheme(Wrapper);

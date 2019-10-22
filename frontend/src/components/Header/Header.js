@@ -4,6 +4,7 @@ import { withTheme } from 'emotion-theming';
 
 import Logo from '../Logo';
 import Navbar from '../Navbar';
+
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 import { colors, sizes } from '../../assets/styles/constants';
 
@@ -16,7 +17,7 @@ const { FOXTROT } = sizes;
 
 const styles = theme => {
   return withMediaQueries(theme)({
-    label: 'Header',
+    label: 'header',
     alignItems: 'center',
     backgroundColor: theme.colors.white,
     borderBottom: `${theme.borderWidth.alpha} solid ${theme.colors.n800}`,
@@ -42,8 +43,8 @@ const styles = theme => {
  * `....................component....................`
  */
 
-const Header = ({ theme, ...props }) => (
-  <header css={styles(theme)} {...props}>
+const Header = ({ theme }) => (
+  <header css={styles(theme)}>
     <div>
       <Link to="/" css={{ fontSize: 0, lineHeight: 0 }}>
         <Logo size={FOXTROT} color={NEUTRAL} />

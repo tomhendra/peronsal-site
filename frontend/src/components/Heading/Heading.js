@@ -13,33 +13,30 @@ const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF } = sizes;
  * `....................styles....................`
  */
 
-const styles = ({ noMargin, size, theme }) => {
-  return {
-    label: `Heading--${size}`,
-    color: theme.colors.n000,
-    fontFamily: theme.fontStack.heading,
-    fontSize: theme.typography.headings[size].fontSize,
-    fontWeight: theme.fontWeight.bold,
-    lineHeight: theme.typography.headings[size].lineHeight,
-    marginBottom: !noMargin ? theme.spacings.echo : 0,
-  };
-};
+const styles = ({ noMargin, size, theme }) => ({
+  label: `heading--${size}`,
+  color: theme.colors.n000,
+  fontFamily: theme.fontStack.heading,
+  fontSize: theme.typography.headings[size].fontSize,
+  fontWeight: theme.fontWeight.bold,
+  lineHeight: theme.typography.headings[size].lineHeight,
+  marginBottom: !noMargin ? theme.spacings.echo : 0,
+});
 
 /**
  * `....................component....................`
  */
 
-const HeadingElement = styled('span', {
-  // Control props forwarded along to the HTML element
-  // https://emotion.sh/docs/styled#customizing-prop-forwarding
-  shouldForwardProp: prop => isPropValid(prop) && prop !== 'size',
-})`
-  ${styles}
-`;
-
-const Heading = ({ as, ...otherProps }) => (
-  <HeadingElement as={as} {...otherProps} />
-);
+const Heading = ({ as, ...otherProps }) => {
+  const HeadingElement = styled('span', {
+    // Control props forwarded along to the HTML element
+    // https://emotion.sh/docs/styled#customizing-prop-forwarding
+    shouldForwardProp: prop => isPropValid(prop) && prop !== 'size',
+  })`
+    ${styles}
+  `;
+  return <HeadingElement as={as} {...otherProps} />;
+};
 
 Heading.propTypes = {
   children: childrenPropType,

@@ -2,6 +2,7 @@ import React from 'react';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
+import { childrenPropType } from '../../utils/shared-prop-types';
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 
 /**
@@ -10,7 +11,7 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
 
 const styles = (devMode, theme) => {
   return withMediaQueries(theme)({
-    label: 'Container',
+    label: 'container',
     display: 'grid',
     columnGap: [
       theme.grid.alpha.gutter,
@@ -44,16 +45,18 @@ const styles = (devMode, theme) => {
  * `....................component....................`
  */
 
-const Container = ({ devMode, theme, ...props }) => {
-  return <div css={styles(devMode, theme)} {...props} />;
+const Container = ({ devMode, theme, children }) => (
+  <div css={styles(devMode, theme)}>{children}</div>
+);
+
+Container.propTypes = {
+  devMode: PropTypes.bool,
+  children: childrenPropType,
 };
 
 Container.defaultProps = {
   devMode: false,
-};
-
-Container.propTypes = {
-  devMode: PropTypes.bool,
+  children: null,
 };
 
 export default withTheme(Container);

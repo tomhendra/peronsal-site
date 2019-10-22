@@ -2,6 +2,8 @@ import React from 'react';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
+import { childrenPropType } from '../../utils/shared-prop-types';
+
 import { sizes } from '../../assets/styles/constants';
 
 /**
@@ -38,23 +40,22 @@ const Row = ({
   bottomSpacing,
   leftSpacing,
   theme,
-  ...props
-}) => {
-  return (
-    <div
-      css={styles(
-        start,
-        end,
-        topSpacing,
-        rightSpacing,
-        bottomSpacing,
-        leftSpacing,
-        theme,
-      )}
-      {...props}
-    />
-  );
-};
+  children,
+}) => (
+  <div
+    css={styles(
+      start,
+      end,
+      topSpacing,
+      rightSpacing,
+      bottomSpacing,
+      leftSpacing,
+      theme,
+    )}
+  >
+    {children}
+  </div>
+);
 
 const sizesArray = Object.values(sizes);
 
@@ -65,16 +66,17 @@ Row.defaultProps = {
   rightSpacing: null,
   bottomSpacing: null,
   leftSpacing: null,
+  children: null,
 };
 
 Row.propTypes = {
-  children: PropTypes.node.isRequired,
   start: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]),
   end: PropTypes.oneOf([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
   topSpacing: PropTypes.oneOf([...sizesArray]),
   rightSpacing: PropTypes.oneOf([...sizesArray]),
   bottomSpacing: PropTypes.oneOf([...sizesArray]),
   leftSpacing: PropTypes.oneOf([...sizesArray]),
+  children: childrenPropType,
 };
 
 export default withTheme(Row);

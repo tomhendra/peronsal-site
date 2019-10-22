@@ -8,7 +8,7 @@ import NavLink from './components/NavLink';
  */
 
 const styles = theme => ({
-  label: 'Navbar',
+  label: 'navbar',
   alignItems: 'center',
   display: 'flex',
 
@@ -21,8 +21,8 @@ const styles = theme => ({
  * `....................component....................`
  */
 
-const Navbar = ({ theme, ...props }) => (
-  <nav css={styles(theme)} {...props}>
+const Navbar = ({ theme }) => (
+  <nav css={styles(theme)}>
     <NavLink to="/" activeClassName="currentPage">
       Home
     </NavLink>

@@ -21,8 +21,8 @@ const styles = theme => ({
  * `....................component....................`
  */
 
-const NavLink = ({ theme, ...props }) => (
-  <Link css={styles(theme)} {...props} />
+const NavLink = ({ theme, ...otherProps }) => (
+  <Link css={styles(theme)} {...otherProps} />
 );
 
 export default withTheme(NavLink);

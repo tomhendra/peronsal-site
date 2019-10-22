@@ -1,9 +1,9 @@
 import React from 'react';
 import { withTheme } from 'emotion-theming';
 
-import githubSVG from '../../assets/icons/github.svg';
-import linkedinSVG from '../../assets/icons/linkedin.svg';
-import twitterSVG from '../../assets/icons/twitter.svg';
+import githubSVG from './icons/github.svg';
+import linkedinSVG from './icons/linkedin.svg';
+import twitterSVG from './icons/twitter.svg';
 
 /**
  * `....................styles....................`
@@ -23,8 +23,8 @@ const styles = theme => ({
  * `....................component....................`
  */
 
-const Social = ({ theme, ...props }) => (
-  <div css={styles(theme)} {...props}>
+const Social = ({ theme }) => (
+  <div css={styles(theme)}>
     <a href="https://github.com/tomhendra" target="blank">
       <img src={githubSVG} alt="GitHub logo" />
     </a>

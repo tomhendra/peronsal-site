@@ -12,7 +12,7 @@ import Social from '../Social';
 
 const styles = theme => {
   return withMediaQueries(theme)({
-    label: 'Footer',
+    label: 'footer',
     alignItems: 'center',
     backgroundColor: theme.colors.white,
     borderTop: `${theme.borderWidth.alpha} solid ${theme.colors.n800}`,
@@ -45,12 +45,12 @@ const styles = theme => {
  * `....................component....................`
  */
 
-const Footer = ({ theme, ...props }) => {
+const Footer = ({ theme }) => {
   const { siteMetadata } = useSiteMetadata();
   const date = new Date().getFullYear();
 
   return (
-    <footer css={styles(theme)} {...props}>
+    <footer css={styles(theme)}>
       <div>
         {/* prettier-ignore */}
         <span>
