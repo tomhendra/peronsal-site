@@ -3,8 +3,9 @@ import React from 'react';
 
 import SEO from '../components/SEO';
 import Layout from '../components/Layout';
-import Row from '../components/Row';
 import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Row from '../components/Row';
 import Heading from '../components/Heading';
 import Text from '../components/Text';
 
@@ -22,22 +23,24 @@ const AboutPage = () => (
   <Layout>
     <SEO title="About" />
     <Container devMode>
-      <Row start={1} end={7} topSpacing={INDIA}>
-        <Heading as="h1" size={FOXTROT}>
-          About me.
-        </Heading>
-        <Text>
-          I am passionate about crafting beautiful user experiences. I take
-          pride in continuously learning new skills directly from the experts
-          who shape the modern web.
-        </Text>
-        <Text noMargin>
-          When I am not in the land of code, I am enjoying the wonderful Spanish
-          cuisine & culture, appreciating my charming home city of Salamanca, or
-          lifting heavy things at the gym.
-        </Text>
-      </Row>
-      <Row>CARDS</Row>
+      <Grid>
+        <Row start={1} end={7} topSpacing={INDIA}>
+          <Heading as="h1" size={FOXTROT}>
+            About me.
+          </Heading>
+          <Text>
+            I am passionate about crafting beautiful user experiences. I take
+            pride in continuously learning new skills directly from the experts
+            who shape the modern web.
+          </Text>
+          <Text noMargin>
+            When I am not in the land of code, I am enjoying the wonderful
+            Spanish cuisine & culture, appreciating my charming home city of
+            Salamanca, or lifting heavy things at the gym.
+          </Text>
+        </Row>
+        <Row>CARDS</Row>
+      </Grid>
 
       {/*
       <div

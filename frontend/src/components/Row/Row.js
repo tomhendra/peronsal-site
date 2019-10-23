@@ -19,7 +19,9 @@ const styles = (
   leftSpacing,
   theme,
 ) => ({
-  label: 'Row',
+  label: 'row',
+  display: 'flex',
+  flexDirection: 'column',
   gridColumnStart: start,
   gridColumnEnd: end,
   marginTop: theme.spacings[topSpacing],
@@ -61,7 +63,7 @@ const sizesArray = Object.values(sizes);
 
 Row.defaultProps = {
   start: 1,
-  end: 12,
+  end: 13,
   topSpacing: null,
   rightSpacing: null,
   bottomSpacing: null,
@@ -70,8 +72,8 @@ Row.defaultProps = {
 };
 
 Row.propTypes = {
-  start: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 'auto']),
-  end: PropTypes.oneOf([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'auto']),
+  start: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'auto']),
+  end: PropTypes.oneOf([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 'auto']),
   topSpacing: PropTypes.oneOf([...sizesArray]),
   rightSpacing: PropTypes.oneOf([...sizesArray]),
   bottomSpacing: PropTypes.oneOf([...sizesArray]),

@@ -8,7 +8,7 @@ import { childrenPropType } from '../../utils/shared-prop-types';
  */
 
 const styles = {
-  label: 'Wrapper',
+  label: 'wrapper',
   minHeight: '100vh',
   position: 'relative',
   width: '100vw',

@@ -22,6 +22,9 @@ const globalStyles = {
     color: theme.colors.bodyColor,
     fontFamily: theme.fontStack.default,
   },
+  main: {
+    position: 'relative',
+  },
 };
 
 /**
@@ -33,7 +36,7 @@ const Layout = ({ children }) => (
     <Global styles={{ ...cssReset, ...globalStyles }} />
     <Wrapper>
       <Header />
-      <main css={{ position: 'relative' }}>{children}</main>
+      <main>{children}</main>
       <Footer />
     </Wrapper>
   </ThemeProvider>
