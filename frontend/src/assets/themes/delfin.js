@@ -276,22 +276,22 @@ export const borderWidth = {
 export const grid = {
   alpha: {
     cols: 12,
-    maxWidth: '48rem', // 480px
+    maxWidth: '46rem', // 460px
     gutter: spacings.bravo,
   },
   bravo: {
     cols: 12,
-    maxWidth: '76.8rem', // 768px
+    maxWidth: '70.8rem', // 708px
     gutter: spacings.delta,
   },
   charlie: {
     cols: 12,
-    maxWidth: '96rem', // 960px
+    maxWidth: '88rem', // 880px
     gutter: spacings.delta,
   },
   delta: {
     cols: 12,
-    maxWidth: '96rem', // 960px
+    maxWidth: '88rem', // 880px
     gutter: spacings.echo,
   },
 };

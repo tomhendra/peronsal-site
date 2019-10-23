@@ -16,12 +16,7 @@ const styles = (devMode, theme) => {
     maxWidth: [...theme.breakpoints],
     // 6rem being height of fixed header...
     minHeight: 'calc(100vh - 6rem)',
-    padding: [
-      '6rem 1.5rem 0 1.5rem',
-      '6rem 2rem 0 2rem',
-      '6rem 4rem 0 4rem',
-      '6rem 4rem 0 4rem',
-    ],
+    paddingTop: '6rem',
     '& div': {
       border: devMode && '1px dashed hsl(300, 100%, 50%)',
     },
