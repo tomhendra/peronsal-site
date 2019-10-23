@@ -23,7 +23,7 @@ const styles = theme => {
     width: '100vw',
     zIndex: theme.zIndex.footer,
 
-    '> *': {
+    '& > div': {
       alignItems: 'center',
       display: 'flex',
       justifyContent: 'space-between',
