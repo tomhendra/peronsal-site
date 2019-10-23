@@ -300,7 +300,7 @@ export const breakpoints = [
   '48rem', // 480px
   '76.8rem', // 768px
   '96rem', // 960px
-  '120rem', // 1200px
+  '128rem', // 1280px
 ];
 
 /**

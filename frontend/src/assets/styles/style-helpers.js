@@ -29,14 +29,6 @@ export const withMediaQueries = theme =>
  * `....................shadows....................`
  */
 
-export const shadowBorder = (borderColor, borderSize = '1px') => ({
-  boxShadow: `0px 0px 0px ${borderSize} ${borderColor}`,
-});
-
-export const shadowGround = shadowColor => ({
-  boxShadow: `0 0 0 2px ${transparentize(0.97, shadowColor)}`,
-});
-
 export const shadowSingle = shadowColor => ({
   boxShadow: `0 0 0 1px ${transparentize(0.98, shadowColor)},
     0 0 1px 0 ${transparentize(0.94, shadowColor)},
@@ -53,6 +45,14 @@ export const shadowTriple = shadowColor => ({
   boxShadow: `0 0 0 1px ${transparentize(0.98, shadowColor)},
     0 4px 4px 0 ${transparentize(0.94, shadowColor)},
     0 8px 8px 0 ${transparentize(0.94, shadowColor)}`,
+});
+
+export const shadowGround = shadowColor => ({
+  boxShadow: `0 0 0 2px ${transparentize(0.97, shadowColor)}`,
+});
+
+export const shadowBorder = (borderColor, borderSize = '1px') => ({
+  boxShadow: `0px 0px 0px ${borderSize} ${borderColor}`,
 });
 
 // Deprecated values....
