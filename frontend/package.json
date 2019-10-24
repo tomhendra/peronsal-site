@@ -15,10 +15,9 @@
     "start:app": "yarn develop",
     "build": "run-p build:**",
     "build:app": "gatsby build",
-    "format": "prettier --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
+    "format": "prettier --write \"**/*.js\" \"!node_modules/**\" \"!public/**\" \"!.cache/**\"",
     "lint": "eslint . --fix",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "empty-cache": "rm -rf .cache",
     "clean": "gatsby clean",
     "serve": "gatsby serve",
     "info": "gatsby info --clipboard"

@@ -21,7 +21,7 @@ coverage
 .eslintcache
 
 # dotenv environment variables file
-.env*
+.env/
 
 # gatsby output files
 public/

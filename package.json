@@ -22,15 +22,15 @@
     "format": "lerna run format --parallel",
     "lint": "lerna run lint --parallel",
     "test": "lerna run test",
-    "deploy:graphql": "lerna run deploy:graphql",
-    "deploy:sanity": "lerna run deploy:sanity",
-    "export:sanity": "lerna run export",
-    "empty-cache": "lerna run empty-cache",
+    "deploy:graphql": "lerna run --scope backend deploy:graphql",
+    "deploy:sanity": "lerna run --scope backend deploy:sanity",
+    "export:sanity": "lerna run --scope backend export",
+    "clean:cache": "lerna run --scope frontend clean",
     "clean:workspaces": "lerna clean",
     "clean:root": "rm -rf node_modules",
+    "clean:all": "yarn run clean:cache && yarn run clean:workspaces && yarn run clean:root",
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "postinstall": "yarn run bootstrap",
-    "init": "lerna run init"
+    "postinstall": "yarn run bootstrap"
   },
   "devDependencies": {
     "babel-eslint": "10.0.3",
@@ -53,8 +53,8 @@
   },
   "lint-staged": {
     "{frontend,backend}/**/*.js": [
-      "prettier --write \"!node_modules/**\" \"!.cache/**\" \"!public/**\" \"!dist/**\"",
-      "eslint . --fix \"!node_modules/**\" \"!.cache/**\" \"!public/**\" \"!dist/**\"",
+      "prettier --write --ignore-path .gitignore",
+      "eslint --fix --quiet --ignore-path .gitignore",
       "git add"
     ]
   }
