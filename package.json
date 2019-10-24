@@ -46,16 +46,16 @@
     "lint-staged": "9.4.2",
     "prettier": "1.18.2"
   },
-  "lint-staged": {
-    "{frontend,backend}/**/*.js": [
-      "lerna run format",
-      "yarn run --silent lint",
-      "git add"
-    ]
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "{frontend,backend}/**/*.js": [
+      "prettier --write \"!node_modules/**\" \"!.cache/**\" \"!public/**\" \"!dist/**\"",
+      "eslint . --fix",
+      "git add"
+    ]
   }
 }
