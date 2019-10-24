@@ -40,6 +40,10 @@ const styles = theme => {
 
 const Grid = ({ theme, children }) => <div css={styles(theme)}>{children}</div>;
 
+/**
+ * `....................propTypes....................`
+ */
+
 Grid.propTypes = {
   children: childrenPropType,
 };
