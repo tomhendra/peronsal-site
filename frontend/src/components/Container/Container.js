@@ -31,6 +31,10 @@ const Container = ({ devMode, theme, children }) => (
   <div css={styles(devMode, theme)}>{children}</div>
 );
 
+/**
+ * `....................propTypes....................`
+ */
+
 Container.propTypes = {
   devMode: PropTypes.bool,
   children: childrenPropType,

@@ -8,10 +8,7 @@
     "tom hendra"
   ],
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tomhendra/portfolio"
-  },
+  "repository": "https://github.com/tomhendra/portfolio",
   "engines": {
     "node": "10.x"
   },
@@ -36,9 +33,6 @@
     "init": "lerna run init"
   },
   "devDependencies": {
-    "husky": "3.0.9",
-    "lerna": "^3.18.3",
-    "lint-staged": "9.4.2",
     "babel-eslint": "10.0.3",
     "eslint": "6.5.1",
     "eslint-config-airbnb": "18.0.1",
@@ -47,6 +41,9 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.16.0",
     "eslint-plugin-react-hooks": "1.7.0",
+    "husky": "3.0.9",
+    "lerna": "3.18.3",
+    "lint-staged": "9.4.2",
     "prettier": "1.18.2"
   },
   "dependencies": {},

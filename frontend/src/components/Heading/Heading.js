@@ -43,9 +43,8 @@ const Heading = ({ as, ...otherProps }) => {
     // Control props forwarded along to the HTML element
     // https://emotion.sh/docs/styled#customizing-prop-forwarding
     shouldForwardProp: prop => isPropValid(prop) && prop !== 'size',
-  })`
-    ${styles}
-  `;
+  })(styles);
+
   return <HeadingElement as={as} {...otherProps} />;
 };
 

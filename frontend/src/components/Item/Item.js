@@ -1,4 +1,5 @@
-import React from 'react';
+// import React from 'react';
+import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
@@ -10,7 +11,7 @@ import { sizes } from '../../assets/styles/constants';
  * `....................styles....................`
  */
 
-const styles = (
+const styles = ({
   gridStart,
   gridEnd,
   spacingTop,
@@ -22,60 +23,51 @@ const styles = (
   alignItems,
   alignContent,
   theme,
-) => ({
-  label: 'Item',
-  display: 'flex',
-  flexWrap: 'wrap',
-  gridColumnStart: gridStart,
-  gridColumnEnd: gridEnd,
-  marginTop: theme.spacings[spacingTop],
-  paddingRight: theme.spacings[spacingRight],
-  marginBottom: theme.spacings[spacingBottom],
-  paddingLeft: theme.spacings[spacingLeft],
-  flexDirection,
-  justifyContent,
-  alignItems,
-  alignContent,
-});
+}) => {
+  const baseStyles = {
+    label: 'Item',
+    display: 'flex',
+    flexWrap: 'wrap',
+  };
+
+  const gridStyles = {
+    gridColumnStart: gridStart,
+    gridColumnEnd: gridEnd,
+  };
+
+  const spacingStyles = {
+    marginTop: theme.spacings[spacingTop],
+    paddingRight: theme.spacings[spacingRight],
+    marginBottom: theme.spacings[spacingBottom],
+    paddingLeft: theme.spacings[spacingLeft],
+  };
+
+  const flexboxStyles = {
+    flexDirection,
+    justifyContent,
+    alignItems,
+    alignContent,
+  };
+
+  return {
+    ...baseStyles,
+    ...gridStyles,
+    ...spacingStyles,
+    ...flexboxStyles,
+  };
+};
 
 /**
  * `....................component....................`
  */
 
-const Item = ({
-  gridStart,
-  gridEnd,
-  spacingTop,
-  spacingRight,
-  spacingBottom,
-  spacingLeft,
-  flexDirection,
-  justifyContent,
-  alignItems,
-  alignContent,
-  theme,
-  children,
-}) => (
-  <div
-    css={styles(
-      gridStart,
-      gridEnd,
-      spacingTop,
-      spacingRight,
-      spacingBottom,
-      spacingLeft,
-      flexDirection,
-      justifyContent,
-      alignItems,
-      alignContent,
-      theme,
-    )}
-  >
-    {children}
-  </div>
-);
+const Item = styled.div(styles);
 
 const spacingOptions = Object.values(sizes);
+
+/**
+ * `....................propTypes....................`
+ */
 
 Item.propTypes = {
   gridStart: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'auto']),

@@ -1,4 +1,4 @@
-import React from 'react';
+import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
@@ -18,7 +18,7 @@ const { FOXTROT, GOLF, HOTEL } = sizes;
  * `....................styles....................`
  */
 
-const styles = (
+const styles = ({
   shadow,
   spacing,
   flexDirection,
@@ -26,17 +26,13 @@ const styles = (
   alignItems,
   alignContent,
   theme,
-) => {
+}) => {
   const baseStyles = {
     label: 'card',
     backgroundColor: theme.colors.bodyBg,
     borderRadius: theme.borderRadius.delta,
     display: 'flex',
     flexWrap: 'wrap',
-    flexDirection,
-    justifyContent,
-    alignItems,
-    alignContent,
   };
 
   const shadowStyles = {
@@ -57,6 +53,13 @@ const styles = (
     },
   };
 
+  const flexboxStyles = {
+    flexDirection,
+    justifyContent,
+    alignItems,
+    alignContent,
+  };
+
   const spacingConfig = spacingStyles[spacing];
   const shadowConfig = shadowStyles[shadow];
 
@@ -64,6 +67,7 @@ const styles = (
     ...baseStyles,
     ...shadowConfig,
     ...spacingConfig,
+    ...flexboxStyles,
   };
 };
 
@@ -71,30 +75,11 @@ const styles = (
  * `....................component....................`
  */
 
-const Card = ({
-  shadow,
-  spacing,
-  flexDirection,
-  justifyContent,
-  alignItems,
-  alignContent,
-  theme,
-  children,
-}) => (
-  <div
-    css={styles(
-      shadow,
-      spacing,
-      flexDirection,
-      justifyContent,
-      alignItems,
-      alignContent,
-      theme,
-    )}
-  >
-    {children}
-  </div>
-);
+const Card = styled.div(styles);
+
+/**
+ * `....................propTypes....................`
+ */
 
 Card.propTypes = {
   shadow: PropTypes.oneOf([SINGLE, DOUBLE, TRIPLE]),
@@ -129,8 +114,8 @@ Card.defaultProps = {
   shadow: TRIPLE,
   spacing: FOXTROT,
   flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'flex-start',
+  justifyContent: 'flex-start',
+  alignItems: 'center',
   alignContent: 'stretch',
   children: null,
 };
