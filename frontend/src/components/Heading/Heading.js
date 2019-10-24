@@ -48,6 +48,10 @@ const Heading = ({ as, ...otherProps }) => {
   return <HeadingElement as={as} {...otherProps} />;
 };
 
+/**
+ * `....................propTypes....................`
+ */
+
 Heading.propTypes = {
   as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
   noMargin: PropTypes.bool,
