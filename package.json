@@ -28,9 +28,9 @@
     "clean:cache": "lerna run --scope frontend clean",
     "clean:workspaces": "lerna clean",
     "clean:root": "rm -rf node_modules",
-    "clean:all": "yarn run clean:cache && yarn run clean:workspaces && yarn run clean:root",
+    "clean:all": "yarn clean:cache && yarn clean:workspaces && yarn clean:root",
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "postinstall": "yarn run bootstrap"
+    "postinstall": "yarn bootstrap"
   },
   "devDependencies": {
     "babel-eslint": "10.0.3",
