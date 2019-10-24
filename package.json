@@ -19,12 +19,12 @@
   "scripts": {
     "start": "lerna run empty-cache && lerna run start --parallel",
     "build": "lerna run build --parallel",
+    "format": "lerna run format --parallel",
+    "lint": "lerna run lint --parallel",
+    "test": "lerna run test",
     "deploy:graphql": "lerna run deploy:graphql",
     "deploy:sanity": "lerna run deploy:sanity",
     "export:sanity": "lerna run export",
-    "format": "lerna run format --parallel",
-    "lint": "lerna run lint",
-    "test": "lerna run test",
     "empty-cache": "lerna run empty-cache",
     "clean:workspaces": "lerna clean",
     "clean:root": "rm -rf node_modules",
@@ -48,7 +48,7 @@
   },
   "lint-staged": {
     "{frontend,backend}/**/*.js": [
-      "yarn run format",
+      "lerna run format",
       "yarn run --silent lint",
       "git add"
     ]
