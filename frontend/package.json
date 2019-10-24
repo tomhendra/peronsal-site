@@ -10,7 +10,7 @@
   },
   "version": "2.0.0",
   "scripts": {
-    "develop": "yarn empty-cache && GATSBY_GRAPHQL_IDE=playground gatsby develop -H $HOSTNAME --port 3000 --open 'Google Chrome'",
+    "develop": "yarn clean && GATSBY_GRAPHQL_IDE=playground gatsby develop -H $HOSTNAME --port 3000 --open 'Google Chrome'",
     "start": "run-p start:**",
     "start:app": "yarn develop",
     "build": "run-p build:**",

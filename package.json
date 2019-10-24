@@ -17,7 +17,7 @@
     "backend"
   ],
   "scripts": {
-    "start": "lerna run empty-cache && lerna run start --parallel",
+    "start": "lerna run start --parallel",
     "build": "lerna run build --parallel",
     "format": "lerna run format --parallel",
     "lint": "lerna run lint --parallel",
