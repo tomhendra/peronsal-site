@@ -47,7 +47,7 @@
     "prettier": "1.18.2"
   },
   "lint-staged": {
-    "{frontend,backend}/*.js": [
+    "{frontend,backend}/**/*.js": [
       "yarn run format",
       "yarn run --silent lint",
       "git add"
