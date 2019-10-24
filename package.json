@@ -54,7 +54,7 @@
   "lint-staged": {
     "{frontend,backend}/**/*.js": [
       "prettier --write \"!node_modules/**\" \"!.cache/**\" \"!public/**\" \"!dist/**\"",
-      "eslint . --fix",
+      "eslint . --fix \"!node_modules/**\" \"!.cache/**\" \"!public/**\" \"!dist/**\"",
       "git add"
     ]
   }

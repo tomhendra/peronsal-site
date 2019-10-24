@@ -77,10 +77,6 @@ const styles = ({
 
 const Card = styled.div(styles);
 
-/**
- * `....................propTypes....................`
- */
-
 Card.propTypes = {
   shadow: PropTypes.oneOf([SINGLE, DOUBLE, TRIPLE]),
   spacing: PropTypes.oneOf([FOXTROT, GOLF, HOTEL]),
