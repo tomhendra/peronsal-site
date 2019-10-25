@@ -1,6 +1,4 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import isPropValid from '@emotion/is-prop-valid';
 import PropTypes from 'prop-types';
 
 import { childrenPropType } from '../../utils/shared-prop-types';
@@ -38,15 +36,7 @@ const styles = ({ noMargin, size, theme }) => {
  * `....................component....................`
  */
 
-const Heading = ({ as, ...otherProps }) => {
-  const HeadingElement = styled('span', {
-    // Control props forwarded along to the HTML element
-    // https://emotion.sh/docs/styled#customizing-prop-forwarding
-    shouldForwardProp: prop => isPropValid(prop) && prop !== 'size',
-  })(styles);
-
-  return <HeadingElement as={as} {...otherProps} />;
-};
+const Heading = styled.h2(styles);
 
 /**
  * `....................propTypes....................`

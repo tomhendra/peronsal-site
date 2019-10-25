@@ -1,6 +1,4 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import isPropValid from '@emotion/is-prop-valid';
 import PropTypes from 'prop-types';
 
 import { childrenPropType } from '../../utils/shared-prop-types';
@@ -56,15 +54,7 @@ const styles = ({ bold, italic, strike, noMargin, size, theme }) => {
  * `....................component....................`
  */
 
-const Text = ({ as, ...otherProps }) => {
-  const TextElement = styled('p', {
-    // Control props forwarded along to the HTML element
-    // https://emotion.sh/docs/styled#customizing-prop-forwarding
-    shouldForwardProp: prop => isPropValid(prop) && prop !== 'size',
-  })(styles);
-
-  return <TextElement as={as} {...otherProps} />;
-};
+const Text = styled.p(styles);
 
 /**
  * `....................propTypes....................`
