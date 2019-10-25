@@ -2,7 +2,7 @@ import React from 'react';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
-import { colors, sizes } from '../../assets/styles/constants';
+import { colors, sizes } from '../../../../assets/styles/constants';
 
 const { NEUTRAL, PRIMARY } = colors;
 const {

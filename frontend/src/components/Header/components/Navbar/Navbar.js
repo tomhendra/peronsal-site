@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
-import NavLink from './components/NavLink';
+import NavLink from '../../../NavLink';
 
 /**
  * `....................styles....................`
