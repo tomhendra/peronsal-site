@@ -1,42 +1,41 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 
-import useSiteMetadata from '../../hooks/useSiteMetadata';
-import Social from '../Social';
+import Copyright from './components/Copyright';
+import Social from './components/Social';
+import Switch from './components/Switch';
 
 /**
  * `....................styles....................`
  */
 
-const styles = theme => {
+const footerStyles = ({ theme }) => ({
+  label: 'footer',
+  alignItems: 'center',
+  backgroundColor: theme.colors.bodyBg,
+  borderTop: `${theme.borderWidth.alpha} solid ${theme.colors.n800}`,
+  color: theme.colors.n400,
+  display: 'flex',
+  height: '6rem',
+  padding: '0 4rem',
+  width: '100vw',
+  zIndex: theme.zIndex.footer,
+});
+
+const containerStyles = ({ theme }) => {
   return withMediaQueries(theme)({
-    label: 'footer',
     alignItems: 'center',
-    backgroundColor: theme.colors.white,
-    borderTop: `${theme.borderWidth.alpha} solid ${theme.colors.n800}`,
-    color: theme.colors.n400,
     display: 'flex',
-    height: '6rem',
-    padding: '0 4rem',
-    width: '100vw',
-    zIndex: theme.zIndex.footer,
+    justifyContent: 'space-between',
+    margin: '0 auto',
+    maxWidth: [...theme.breakpoints],
+    width: '100%',
 
-    '& > div': {
-      alignItems: 'center',
-      display: 'flex',
-      justifyContent: 'space-between',
-      margin: '0 auto',
-      maxWidth: [...theme.breakpoints],
-      width: '100%',
-
-      span: {
-        minWidth: '12rem',
-        '&:last-of-type': {
-          textAlign: 'right',
-        },
-      },
+    '& > *': {
+      minWidth: '12rem',
     },
   });
 };
@@ -45,27 +44,17 @@ const styles = theme => {
  * `....................component....................`
  */
 
-const Footer = ({ theme }) => {
-  const { siteMetadata } = useSiteMetadata();
-  const date = new Date().getFullYear();
+const FooterElement = styled.footer(footerStyles);
+const FooterContainer = styled.div(containerStyles);
 
-  return (
-    <footer css={styles(theme)}>
-      <div>
-        {/* prettier-ignore */}
-        <span>
-          &copy;
-          {' '}
-          {siteMetadata.author}
-          {' '}
-          {date}
-        </span>
-        <Social />
-        {/* placeholder for switch component... */}
-        <span>SWITCH</span>
-      </div>
-    </footer>
-  );
-};
+const Footer = () => (
+  <FooterElement>
+    <FooterContainer>
+      <Copyright />
+      <Social />
+      <Switch />
+    </FooterContainer>
+  </FooterElement>
+);
 
 export default withTheme(Footer);
