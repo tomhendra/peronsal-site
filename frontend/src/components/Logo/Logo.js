@@ -74,6 +74,10 @@ const Logo = ({ color, size, theme }) => {
   );
 };
 
+/**
+ * `....................propTypes....................`
+ */
+
 Logo.propTypes = {
   color: PropTypes.oneOf([NEUTRAL, PRIMARY]),
   size: PropTypes.oneOf([

@@ -1,4 +1,4 @@
-import React from 'react';
+import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
@@ -9,7 +9,7 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
  * `....................styles....................`
  */
 
-const styles = (devMode, theme) => {
+const styles = ({ devMode, theme }) => {
   return withMediaQueries(theme)({
     label: 'container',
     margin: '0 auto',
@@ -27,9 +27,7 @@ const styles = (devMode, theme) => {
  * `....................component....................`
  */
 
-const Container = ({ devMode, theme, children }) => (
-  <div css={styles(devMode, theme)}>{children}</div>
-);
+const Container = styled.div(styles);
 
 /**
  * `....................propTypes....................`

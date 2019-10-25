@@ -25,14 +25,14 @@ const styles = ({
   theme,
 }) => {
   const baseStyles = {
-    label: 'Item',
+    label: 'item',
     display: 'flex',
     flexWrap: 'wrap',
   };
 
   const gridStyles = {
-    gridColumnStart: gridStart,
-    gridColumnEnd: gridEnd,
+    gridColumnStart: gridStart && gridStart,
+    gridColumnEnd: gridEnd && gridEnd,
   };
 
   const spacingStyles = {
@@ -63,11 +63,11 @@ const styles = ({
 
 const Item = styled.div(styles);
 
-const spacingOptions = Object.values(sizes);
-
 /**
  * `....................propTypes....................`
  */
+
+const spacingOptions = Object.values(sizes);
 
 Item.propTypes = {
   gridStart: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'auto']),
@@ -103,8 +103,8 @@ Item.propTypes = {
 };
 
 Item.defaultProps = {
-  gridStart: 1,
-  gridEnd: 13,
+  gridStart: null,
+  gridEnd: null,
   spacingTop: null,
   spacingRight: null,
   spacingBottom: null,

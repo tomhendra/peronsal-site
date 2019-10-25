@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
 import NavLink from './components/NavLink';
@@ -7,7 +8,7 @@ import NavLink from './components/NavLink';
  * `....................styles....................`
  */
 
-const styles = theme => ({
+const styles = ({ theme }) => ({
   label: 'navbar',
   alignItems: 'center',
   display: 'flex',
@@ -21,8 +22,10 @@ const styles = theme => ({
  * `....................component....................`
  */
 
-const Navbar = ({ theme }) => (
-  <nav css={styles(theme)}>
+const Nav = styled.nav(styles);
+
+const Navbar = () => (
+  <Nav>
     <NavLink to="/" activeClassName="currentPage">
       Home
     </NavLink>
@@ -38,7 +41,7 @@ const Navbar = ({ theme }) => (
     <NavLink to="/blog/" activeClassName="currentPage">
       Blog
     </NavLink>
-  </nav>
+  </Nav>
 );
 
 export default withTheme(Navbar);

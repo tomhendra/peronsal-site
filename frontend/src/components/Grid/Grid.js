@@ -1,4 +1,4 @@
-import React from 'react';
+import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
 import { childrenPropType } from '../../utils/shared-prop-types';
@@ -8,7 +8,7 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
  * `....................styles....................`
  */
 
-const styles = theme => {
+const styles = ({ theme }) => {
   return withMediaQueries(theme)({
     label: 'grid',
     display: 'grid',
@@ -38,7 +38,7 @@ const styles = theme => {
  * `....................component....................`
  */
 
-const Grid = ({ theme, children }) => <div css={styles(theme)}>{children}</div>;
+const Grid = styled.div(styles);
 
 /**
  * `....................propTypes....................`

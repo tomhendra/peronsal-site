@@ -1,4 +1,4 @@
-import React from 'react';
+import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
 import { childrenPropType } from '../../utils/shared-prop-types';
@@ -18,7 +18,11 @@ const styles = {
  * `....................component....................`
  */
 
-const Wrapper = ({ children }) => <div css={styles}>{children}</div>;
+const Wrapper = styled.div(styles);
+
+/**
+ * `....................propTypes....................`
+ */
 
 Wrapper.propTypes = {
   children: childrenPropType,
