@@ -10,11 +10,6 @@ import Heading from '../components/Heading';
 import Text from '../components/Text';
 import Card from '../components/Card';
 
-// import TechStackGrid from '../components/TechStackGrid';
-// import businessSVG from '../assets/icons/business.svg';
-// import codeSVG from '../assets/icons/code.svg';
-// import designSVG from '../assets/icons/design.svg';
-
 import { sizes } from '../assets/styles/constants';
 
 const { BRAVO, FOXTROT, HOTEL, INDIA } = sizes;
@@ -81,22 +76,5 @@ const AboutPage = () => (
     </section>
   </Layout>
 );
-
-/*
-<TechStackGrid
-  gridSize="large"
-  techStackToBeDisplayed={[
-    'JavaScript',
-    'CSS',
-    'HTML',
-    'React',
-    'Gatsby',
-    'Framer Motion',
-    'Emotion',
-    'Sass',
-    'CSS Modules',
-  ]}
-/>
-*/
 
 export default AboutPage;

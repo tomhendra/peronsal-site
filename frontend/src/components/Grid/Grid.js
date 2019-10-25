@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
+import PropTypes from 'prop-types';
 
 import { childrenPropType } from '../../utils/shared-prop-types';
 import { withMediaQueries } from '../../assets/styles/style-helpers';
@@ -8,7 +9,7 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
  * `....................styles....................`
  */
 
-const styles = ({ theme }) => {
+const styles = ({ devMode, theme }) => {
   return withMediaQueries(theme)({
     label: 'grid',
     display: 'grid',
@@ -31,6 +32,10 @@ const styles = ({ theme }) => {
       theme.grid.charlie.maxWidth,
       theme.grid.delta.maxWidth,
     ],
+    border: devMode && '1px dashed hsl(300, 100%, 50%)',
+    '& > *': {
+      border: devMode && '1px dashed hsl(300, 100%, 50%)',
+    },
   });
 };
 
@@ -45,10 +50,12 @@ const Grid = styled.div(styles);
  */
 
 Grid.propTypes = {
+  devMode: PropTypes.bool,
   children: childrenPropType,
 };
 
 Grid.defaultProps = {
+  devMode: false,
   children: null,
 };
 

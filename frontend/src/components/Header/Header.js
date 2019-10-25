@@ -39,19 +39,25 @@ const containerStyles = ({ theme }) => {
   });
 };
 
+const logoLinkStyles = {
+  fontSize: 0,
+  lineHeight: 0,
+};
+
 /**
  * `....................component....................`
  */
 
 const HeaderElement = styled.header(headerStyles);
 const HeaderContainer = styled.div(containerStyles);
+const LogoLink = styled(Link)(logoLinkStyles);
 
 const Header = () => (
   <HeaderElement>
     <HeaderContainer>
-      <Link to="/" css={{ fontSize: 0, lineHeight: 0 }}>
+      <LogoLink to="/">
         <Logo size={FOXTROT} color={NEUTRAL} />
-      </Link>
+      </LogoLink>
       <Navbar />
     </HeaderContainer>
   </HeaderElement>
