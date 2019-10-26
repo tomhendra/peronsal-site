@@ -255,6 +255,7 @@ export const iconSizes = {
   hotel: '3.2rem', // 32px
   india: '4.8rem', // 48px
   juliett: '6.4rem', // 64px
+  kilo: '8.4rem', // 84px
 };
 
 export const borderRadius = {
