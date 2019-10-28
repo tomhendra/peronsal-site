@@ -36,6 +36,7 @@ const styles = ({ devMode, theme }) => {
     '& > *': {
       border: devMode && '1px dashed hsl(300, 100%, 50%)',
     },
+    zIndex: theme.zIndex.default,
   });
 };
 

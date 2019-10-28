@@ -10,6 +10,7 @@ import useSiteMetadata from '../../../../hooks/useSiteMetadata';
  */
 
 const styles = ({ theme }) => ({
+  color: theme.colors.n600,
   fontSize: theme.typography.text.bravo.fontSize,
 });
 

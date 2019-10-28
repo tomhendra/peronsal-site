@@ -11,12 +11,12 @@ const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF } = sizes;
  * `....................styles....................`
  */
 
-const styles = ({ noMargin, size, theme }) => {
+const styles = ({ noMargin, size, sub, theme }) => {
   const baseStyles = {
     label: 'heading',
-    color: theme.colors.n000,
+    color: !sub ? theme.colors.n000 : theme.colors.n300,
     fontFamily: theme.fontStack.heading,
-    fontWeight: theme.fontWeight.bold,
+    fontWeight: !sub ? theme.fontWeight.bold : theme.fontWeight.regular,
     marginBottom: !noMargin ? theme.spacings.echo : 0,
   };
 
@@ -46,6 +46,7 @@ Heading.propTypes = {
   as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
   noMargin: PropTypes.bool,
   size: PropTypes.oneOf([ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF]),
+  sub: PropTypes.bool,
   children: childrenPropType,
 };
 
@@ -53,6 +54,7 @@ Heading.defaultProps = {
   as: 'h2',
   noMargin: false,
   size: BRAVO,
+  sub: false,
   children: null,
 };
 

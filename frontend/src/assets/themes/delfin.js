@@ -114,7 +114,7 @@ const misc = {
   shadowNeutral: shadow,
   shadowPrimary: primary.n700,
   bodyBg: white,
-  bodyColor: neutral.n200,
+  bodyColor: neutral.n100,
   headingColor: neutral.n000,
   danger: red.r500,
   warning: yellow.y500,
@@ -149,11 +149,11 @@ export const typography = {
     },
     charlie: {
       fontSize: '3rem', // 30px
-      lineHeight: 1,
+      lineHeight: 1.2,
     },
     delta: {
       fontSize: '3.6rem', // 36px
-      lineHeight: 1,
+      lineHeight: 1.2,
     },
     echo: {
       fontSize: '4.8rem', // 48px
@@ -315,6 +315,7 @@ export const transitions = {
 };
 
 export const zIndex = {
+  background: -1,
   default: 0,
   absolute: 1,
   drawer: 10,

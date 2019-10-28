@@ -17,6 +17,10 @@ const { GOLF } = sizes;
  * `....................component....................`
  */
 
-const Switch = () => <Icon type={TOGGLELEFT} color={NEUTRAL} size={GOLF} />;
+const Switch = () => (
+  <div css={{ display: 'flex', justifyContent: 'flex-end' }}>
+    <Icon type={TOGGLELEFT} color={NEUTRAL} size={GOLF} />
+  </div>
+);
 
 export default withTheme(Switch);
