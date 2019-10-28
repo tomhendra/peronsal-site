@@ -44,12 +44,15 @@ const styles = ({
   const spacingStyles = {
     [FOXTROT]: {
       padding: theme.spacings.foxtrot,
+      paddingTop: theme.spacings.golf,
     },
     [GOLF]: {
-      padding: `${theme.spacings.foxtrot} ${theme.spacings.golf}`,
+      padding: theme.spacings.golf,
+      paddingTop: theme.spacings.hotel,
     },
     [HOTEL]: {
-      padding: `${theme.spacings.foxtrot} ${theme.spacings.hotel}`,
+      padding: theme.spacings.hotel,
+      paddingTop: theme.spacings.india,
     },
   };
 

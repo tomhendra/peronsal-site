@@ -50,7 +50,7 @@ const AboutPage = () => (
               <Heading as="h2" size={BRAVO}>
                 Code
               </Heading>
-              <Text size={BRAVO} noMargin>
+              <Text size={BRAVO}>
                 My skill set is built upon the rich & diverse JavaScript
                 ecosystem. My natural close attention to detail enhances my
                 ability to write clean, maintainable code.
@@ -69,7 +69,7 @@ const AboutPage = () => (
               <Heading as="h2" size={BRAVO}>
                 Design
               </Heading>
-              <Text size={BRAVO} noMargin>
+              <Text size={BRAVO}>
                 I have a keen eye for design and know my way around industry
                 standard tools like Sketch & Adobe Creative Suite. I am a
                 developer who likes to design.
@@ -88,12 +88,33 @@ const AboutPage = () => (
               <Heading as="h2" size={BRAVO}>
                 Business
               </Heading>
-              <Text size={BRAVO} noMargin>
+              <Text size={BRAVO}>
                 I was a procurement professional before a web developer,
                 instilling transferable business acumen, commercial awareness
                 and solid communication skills.
               </Text>
             </Card>
+          </Item>
+        </Grid>
+      </Container>
+    </section>
+    <section>
+      <Container>
+        <Grid>
+          <Item gridStart={1} gridEnd={7} spacingTop={INDIA}>
+            <Heading as="h1" size={FOXTROT}>
+              My skills.
+            </Heading>
+            <Text>
+              I get excited about the latest technologies.I strive to build web
+              applications & websites that are accessible, performant, scalable
+              and lightning fast.
+            </Text>
+            <Text noMargin>
+              I use a modern techstack based around React, and am continuously
+              adding skills to my toolbox. A web developer never stops learning,
+              which I embrace wholeheartedly.
+            </Text>
           </Item>
         </Grid>
       </Container>
