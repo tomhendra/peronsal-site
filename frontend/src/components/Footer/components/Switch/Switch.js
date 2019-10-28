@@ -1,22 +1,22 @@
 import React from 'react';
-import styled from '@emotion/styled';
-
 import { withTheme } from 'emotion-theming';
+
+import Icon from '../../../Icon';
+
+import { colors, icons, sizes } from '../../../../assets/styles/constants';
+
+const { NEUTRAL } = colors;
+const { TOGGLELEFT } = icons;
+const { GOLF } = sizes;
 
 /**
  * `....................styles....................`
  */
 
-const styles = {
-  textAlign: 'right',
-};
-
 /**
  * `....................component....................`
  */
 
-const SwitchElement = styled.span(styles);
-
-const Switch = () => <SwitchElement>SWITCH</SwitchElement>;
+const Switch = () => <Icon type={TOGGLELEFT} color={NEUTRAL} size={GOLF} />;
 
 export default withTheme(Switch);

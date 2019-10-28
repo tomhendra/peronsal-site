@@ -10,7 +10,7 @@ import useSiteMetadata from '../../../../hooks/useSiteMetadata';
  */
 
 const styles = ({ theme }) => ({
-  fontSize: theme.typography.text.alpha.fontSize,
+  fontSize: theme.typography.text.bravo.fontSize,
 });
 
 /**
