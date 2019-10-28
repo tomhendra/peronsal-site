@@ -63,3 +63,19 @@ export const ACCENT = 'accent';
 export const PRIMARY = 'primary';
 export const SECONDARY = 'secondary';
 export const TERTIARY = 'tertiary';
+
+/**
+ * `....................icons....................`
+ */
+
+export const BRIEFCASE = 'Briefcase';
+export const CODE = 'Code';
+export const PENTOOL = 'PenTool';
+export const CODEPEN = 'Codepen';
+export const GITHUB = 'Github';
+export const LINKEDIN = 'Linkedin';
+export const TWITTER = 'Twitter';
+export const LINK = 'Link2';
+export const LOADER = 'Loader';
+export const TOGGLELEFT = 'ToggleLeft';
+export const TOGGLERIGHT = 'ToggleRight';

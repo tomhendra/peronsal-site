@@ -9,9 +9,12 @@ import Item from '../components/Item';
 import Heading from '../components/Heading';
 import Text from '../components/Text';
 import Card from '../components/Card';
+import Icon from '../components/Icon';
 
-import { sizes } from '../assets/styles/constants';
+import { colors, icons, sizes } from '../assets/styles/constants';
 
+const { PRIMARY } = colors;
+const { BRIEFCASE, CODE, PENTOOL } = icons;
 const { BRAVO, FOXTROT, HOTEL, INDIA } = sizes;
 
 const AboutPage = () => (
@@ -37,6 +40,7 @@ const AboutPage = () => (
           </Item>
           <Item gridStart={1} gridEnd={5} spacingTop={HOTEL}>
             <Card>
+              <Icon type={CODE} color={PRIMARY} size={INDIA} />
               <Heading as="h2" size={BRAVO}>
                 Code
               </Heading>
@@ -49,6 +53,7 @@ const AboutPage = () => (
           </Item>
           <Item gridStart={5} gridEnd={9} spacingTop={HOTEL}>
             <Card>
+              <Icon type={PENTOOL} color={PRIMARY} size={INDIA} />
               <Heading as="h2" size={BRAVO}>
                 Design
               </Heading>
@@ -61,6 +66,7 @@ const AboutPage = () => (
           </Item>
           <Item gridStart={9} gridEnd={13} spacingTop={HOTEL}>
             <Card>
+              <Icon type={BRIEFCASE} color={PRIMARY} size={INDIA} />
               <Heading as="h2" size={BRAVO}>
                 Business
               </Heading>
