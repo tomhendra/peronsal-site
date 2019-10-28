@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import * as featherIcons from 'react-feather';
 import PropTypes from 'prop-types';
@@ -37,6 +38,10 @@ const {
  * `....................styles....................`
  */
 
+const containerStyles = ({ spacing, theme }) => ({
+  padding: theme.spacings[spacing],
+});
+
 const colorStyles = (color, theme) => {
   const colorOptions = {
     [NEUTRAL]: theme.colors.n500,
@@ -51,12 +56,16 @@ const sizeStyles = (size, theme) => theme.iconSizes[size];
  * `....................component....................`
  */
 
-const Icon = ({ alt, color, size, type, theme }) => {
+const IconContainer = styled.div(containerStyles);
+
+const Icon = ({ alt, color, size, spacing, type, theme }) => {
   const IconElement = featherIcons[type];
   const IconColor = colorStyles(color, theme);
   const IconSize = sizeStyles(size, theme);
   return (
-    <IconElement aria-labelledby={alt} color={IconColor} size={IconSize} />
+    <IconContainer spacing={spacing}>
+      <IconElement aria-labelledby={alt} color={IconColor} size={IconSize} />
+    </IconContainer>
   );
 };
 
@@ -80,6 +89,16 @@ Icon.propTypes = {
     JULIETT,
     KILO,
   ]),
+  spacing: PropTypes.oneOf([
+    ALPHA,
+    BRAVO,
+    CHARLIE,
+    DELTA,
+    ECHO,
+    FOXTROT,
+    GOLF,
+    HOTEL,
+  ]),
   type: PropTypes.oneOf([
     BRIEFCASE,
     CODE,
@@ -99,6 +118,7 @@ Icon.defaultProps = {
   alt: '',
   color: PRIMARY,
   size: ECHO,
+  spacing: null,
   type: CODE,
 };
 

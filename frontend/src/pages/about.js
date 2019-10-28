@@ -44,6 +44,7 @@ const AboutPage = () => (
                 type={CODE}
                 color={PRIMARY}
                 size={INDIA}
+                spacing={BRAVO}
                 alt="Icon symbolising code."
               />
               <Heading as="h2" size={BRAVO}>
@@ -58,7 +59,13 @@ const AboutPage = () => (
           </Item>
           <Item gridStart={5} gridEnd={9} spacingTop={HOTEL}>
             <Card>
-              <Icon type={PENTOOL} color={PRIMARY} size={INDIA} />
+              <Icon
+                type={PENTOOL}
+                color={PRIMARY}
+                size={INDIA}
+                spacing={BRAVO}
+                alt="Icon symbolising design."
+              />
               <Heading as="h2" size={BRAVO}>
                 Design
               </Heading>
@@ -71,7 +78,13 @@ const AboutPage = () => (
           </Item>
           <Item gridStart={9} gridEnd={13} spacingTop={HOTEL}>
             <Card>
-              <Icon type={BRIEFCASE} color={PRIMARY} size={INDIA} />
+              <Icon
+                type={BRIEFCASE}
+                color={PRIMARY}
+                size={INDIA}
+                spacing={BRAVO}
+                alt="Icon symbolising business."
+              />
               <Heading as="h2" size={BRAVO}>
                 Business
               </Heading>
