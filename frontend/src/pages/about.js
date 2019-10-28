@@ -116,7 +116,7 @@ const AboutPage = () => (
             <Text noMargin>
               I use a modern techstack based around React, and am continuously
               adding skills to my toolbox. A web developer never stops learning,
-              which I embrace wholeheartedly.
+              a challenge I embrace wholeheartedly.
             </Text>
           </Item>
         </Grid>

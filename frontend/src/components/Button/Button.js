@@ -12,7 +12,6 @@ const { ALPHA, BRAVO, CHARLIE } = sizes;
  */
 
 const styles = ({ buttonStyle, buttonSize, theme }) => {
-  // Set values for button variant styles here
   const buttonStyles = {
     [PRIMARY]: {
       background: theme.colors.p400,
@@ -31,7 +30,6 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
     },
   };
 
-  // Set values for button sizes here
   const buttonSizes = {
     [ALPHA]: {
       fontSize: theme.typography.text.alpha.fontSize,
@@ -49,8 +47,7 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
       padding: `${theme.spacings.echo} ${theme.spacings.foxtrot}`,
     },
   };
-  // config variables declared & assigned buttonStyle / buttonSize / defaultProps
-  // values from Button component calling buttonStyles with styleProps
+
   const styleConfig = buttonStyles[buttonStyle];
   const sizeConfig = buttonSizes[buttonSize];
 
@@ -108,9 +105,13 @@ const Button = ({
     <button css={styles({ buttonSize, buttonStyle, theme })} {...props} />
   );
 
+/**
+ * `....................propTypes....................`
+ */
+
 Button.defaultProps = {
-  buttonStyle: 'primary',
-  buttonSize: 'bravo',
+  buttonStyle: PRIMARY,
+  buttonSize: BRAVO,
   externalLink: null,
   internalLink: null,
 };

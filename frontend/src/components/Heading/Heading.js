@@ -5,7 +5,7 @@ import { childrenPropType } from '../../utils/shared-prop-types';
 
 import { sizes } from '../../assets/styles/constants';
 
-const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF } = sizes;
+const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL } = sizes;
 
 /**
  * `....................styles....................`
@@ -45,7 +45,16 @@ const Heading = styled.h2(styles);
 Heading.propTypes = {
   as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
   noMargin: PropTypes.bool,
-  size: PropTypes.oneOf([ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF]),
+  size: PropTypes.oneOf([
+    ALPHA,
+    BRAVO,
+    CHARLIE,
+    DELTA,
+    ECHO,
+    FOXTROT,
+    GOLF,
+    HOTEL,
+  ]),
   sub: PropTypes.bool,
   children: childrenPropType,
 };

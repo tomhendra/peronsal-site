@@ -7,6 +7,7 @@ import {
   shadowSingle,
   shadowDouble,
   shadowTriple,
+  withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
 import { shadows, sizes } from '../../assets/styles/constants';
@@ -43,8 +44,18 @@ const styles = ({
 
   const spacingStyles = {
     [FOXTROT]: {
-      padding: theme.spacings.foxtrot,
-      paddingTop: theme.spacings.golf,
+      padding: [
+        theme.spacings.delta,
+        theme.spacings.delta,
+        theme.spacings.foxtrot,
+        theme.spacings.foxtrot,
+      ],
+      paddingTop: [
+        theme.spacings.echo,
+        theme.spacings.echo,
+        theme.spacings.golf,
+        theme.spacings.golf,
+      ],
     },
     [GOLF]: {
       padding: theme.spacings.golf,
@@ -66,12 +77,12 @@ const styles = ({
   const spacingConfig = spacingStyles[spacing];
   const shadowConfig = shadowStyles[shadow];
 
-  return {
+  return withMediaQueries(theme)({
     ...baseStyles,
     ...shadowConfig,
     ...spacingConfig,
     ...flexboxStyles,
-  };
+  });
 };
 
 /**

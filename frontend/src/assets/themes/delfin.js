@@ -282,7 +282,7 @@ export const grid = {
   },
   bravo: {
     cols: 12,
-    maxWidth: '70.8rem', // 708px
+    maxWidth: '72.8rem', // 728px
     gutter: spacings.delta,
   },
   charlie: {
