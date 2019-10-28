@@ -40,7 +40,12 @@ const AboutPage = () => (
           </Item>
           <Item gridStart={1} gridEnd={5} spacingTop={HOTEL}>
             <Card>
-              <Icon type={CODE} color={PRIMARY} size={INDIA} />
+              <Icon
+                type={CODE}
+                color={PRIMARY}
+                size={INDIA}
+                alt="Icon symbolising code."
+              />
               <Heading as="h2" size={BRAVO}>
                 Code
               </Heading>

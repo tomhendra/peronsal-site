@@ -39,7 +39,7 @@ const {
 
 const colorStyles = (color, theme) => {
   const colorOptions = {
-    [NEUTRAL]: theme.colors.n000,
+    [NEUTRAL]: theme.colors.n500,
     [PRIMARY]: theme.colors.p500,
   };
   return colorOptions[color];
@@ -51,11 +51,13 @@ const sizeStyles = (size, theme) => theme.iconSizes[size];
  * `....................component....................`
  */
 
-const Icon = ({ color, size, type, theme }) => {
+const Icon = ({ alt, color, size, type, theme }) => {
   const IconElement = featherIcons[type];
   const IconColor = colorStyles(color, theme);
   const IconSize = sizeStyles(size, theme);
-  return <IconElement color={IconColor} size={IconSize} />;
+  return (
+    <IconElement aria-labelledby={alt} color={IconColor} size={IconSize} />
+  );
 };
 
 /**
@@ -63,6 +65,7 @@ const Icon = ({ color, size, type, theme }) => {
  */
 
 Icon.propTypes = {
+  alt: PropTypes.string,
   color: PropTypes.oneOf([PRIMARY, NEUTRAL]),
   size: PropTypes.oneOf([
     ALPHA,
@@ -93,6 +96,7 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
+  alt: '',
   color: PRIMARY,
   size: ECHO,
   type: CODE,

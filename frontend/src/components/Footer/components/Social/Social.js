@@ -1,40 +1,49 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
-import githubSVG from './icons/github.svg';
-import linkedinSVG from './icons/linkedin.svg';
-import twitterSVG from './icons/twitter.svg';
+import Icon from '../../../Icon';
+
+import { colors, icons, sizes } from '../../../../assets/styles/constants';
+
+const { NEUTRAL } = colors;
+const { GITHUB, LINKEDIN, TWITTER } = icons;
+const { ECHO } = sizes;
 
 /**
  * `....................styles....................`
  */
 
-const styles = theme => ({
+const linkStyles = ({ theme }) => ({
+  'svg:hover': {
+    stroke: theme.colors.p500,
+  },
+});
+
+const containerStyles = () => ({
   display: 'flex',
   justifyContent: 'space-between',
-  minWidth: theme.spacings.india,
-
-  img: {
-    width: theme.iconSizes.delta,
-  },
 });
 
 /**
  * `....................component....................`
  */
 
-const Social = ({ theme }) => (
-  <div css={styles(theme)}>
-    <a href="https://github.com/tomhendra" target="blank">
-      <img src={githubSVG} alt="GitHub logo" />
-    </a>
-    <a href="https://www.linkedin.com/in/tom-hendra/" target="blank">
-      <img src={linkedinSVG} alt="LinkedIn logo" />
-    </a>
-    <a href="https://twitter.com/TomHendra" target="blank">
-      <img src={twitterSVG} alt="Twitter logo" />
-    </a>
-  </div>
+const SocialContainer = styled.div(containerStyles);
+const SocialLink = styled.a(linkStyles);
+
+const Social = () => (
+  <SocialContainer>
+    <SocialLink href="https://github.com/tomhendra">
+      <Icon type={GITHUB} color={NEUTRAL} size={ECHO} alt="GitHub logo" />
+    </SocialLink>
+    <SocialLink href="https://www.linkedin.com/in/tom-hendra/">
+      <Icon type={LINKEDIN} color={NEUTRAL} size={ECHO} alt="LinkedIn logo" />
+    </SocialLink>
+    <SocialLink href="https://twitter.com/TomHendra">
+      <Icon type={TWITTER} color={NEUTRAL} size={ECHO} alt="Twitter logo" />
+    </SocialLink>
+  </SocialContainer>
 );
 
 export default withTheme(Social);
