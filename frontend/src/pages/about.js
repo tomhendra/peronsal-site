@@ -30,14 +30,14 @@ const AboutPage = () => (
               About me.
             </Heading>
             <Text>
-              I am passionate about crafting beautiful user experiences. I take
-              pride in continuously learning new skills directly from the
+              I am passionate about crafting buttery smooth user interfaces. I
+              take pride in continuously learning new skills directly from the
               experts who shape the modern web.
             </Text>
             <Text noMargin>
-              When I am not in the land of code, I am enjoying the wonderful
-              Spanish cuisine & culture, appreciating my charming home city of
-              Salamanca, or lifting heavy things at the gym.
+              When I am not in the land of code, I am either immersing myself in
+              the wonderful culture & cuisine of Salamanca or lifting heavy
+              things at the gym.
             </Text>
           </Item>
           <Item gridStart={1} gridEnd={5} spacingTop={HOTEL}>
@@ -109,14 +109,14 @@ const AboutPage = () => (
               My skills.
             </Heading>
             <Text>
-              I get excited about the latest technologies.I strive to build web
-              applications & websites that are accessible, performant, scalable
-              and lightning fast.
+              I get excited about using the latest technologies and strive to
+              build web apps & websites that are accessible, performant,
+              scalable and lightning fast.
             </Text>
             <Text noMargin>
-              I use a modern techstack based around React, and am continuously
-              adding skills to my toolbox. A web developer never stops learning,
-              a challenge I embrace wholeheartedly.
+              I enjoy a modern techstack based around React, and am continuously
+              adding skills to my toolbox. A developer never stops learning, a
+              challenge I embrace wholeheartedly.
             </Text>
           </Item>
         </Grid>

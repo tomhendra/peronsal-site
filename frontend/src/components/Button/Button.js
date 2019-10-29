@@ -22,6 +22,12 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
     fontWeight: 'bold',
     letterSpacing: 0.8,
     textDecoration: 'none',
+
+    '&:disabled': {
+      opacity: 0.4,
+      pointerEvents: 'none',
+      userSelectable: 'none',
+    },
   };
 
   const buttonStyles = {
@@ -34,11 +40,6 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
         backgroundColor: theme.colors.p300,
         borderColor: theme.colors.p300,
       },
-      '&:disabled': {
-        opacity: 0.4,
-        pointerEvents: 'none',
-        userSelectable: 'none',
-      },
     },
     [SECONDARY]: {
       backgroundColor: theme.colors.bodyBg,
@@ -48,11 +49,6 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
       '&:hover,:focus': {
         backgroundColor: theme.colors.n700,
         color: theme.colors.n000,
-      },
-      '&:disabled': {
-        opacity: 0.4,
-        pointerEvents: 'none',
-        userSelectable: 'none',
       },
     },
     [TERTIARY]: {
@@ -65,28 +61,20 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
         borderColor: theme.colors.n800,
         color: theme.colors.n000,
       },
-      '&:disabled': {
-        opacity: 0.4,
-        pointerEvents: 'none',
-        userSelectable: 'none',
-      },
     },
   };
 
   const buttonSizes = {
     [ALPHA]: {
       fontSize: theme.typography.text.bravo.fontSize,
-      minWidth: theme.spacings.hotel,
       padding: `${theme.spacings.charlie} ${theme.spacings.echo}`,
     },
     [BRAVO]: {
       fontSize: theme.typography.text.charlie.fontSize,
-      minWidth: theme.spacings.kilo,
-      padding: `${theme.spacings.charlie} ${theme.spacings.echo}`,
+      padding: `${theme.spacings.charlie} ${theme.spacings.foxtrot}`,
     },
     [CHARLIE]: {
       fontSize: theme.typography.text.delta.fontSize,
-      minWidth: theme.spacings.lima,
       padding: `${theme.spacings.delta} ${theme.spacings.echo}`,
     },
   };
@@ -115,7 +103,7 @@ const Button = ({
   ...otherProps
 }) =>
   internalLink ? (
-    // if internalLink prop is provided, return Gatsby Link styled with buttonStyles
+    // if internalLink prop is provided, return ButtonElement wrapped with Gatsby Link
     <Link to={internalLink}>
       <ButtonElement
         buttonStyle={buttonStyle}
@@ -124,7 +112,7 @@ const Button = ({
       />
     </Link>
   ) : externalLink ? (
-    // if externalLink prop is provided, return basic anchor tag styled with buttonStyles
+    // if externalLink prop is provided, return ButtonElement wrapped with anchor tag
     <a href={externalLink} target="blank">
       <ButtonElement
         buttonStyle={buttonStyle}

@@ -7,11 +7,12 @@ import Graphic from '../components/Graphic';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
 import Heading from '../components/Heading';
+import ButtonGroup from '../components/ButtonGroup';
 import Button from '../components/Button';
 
 import { buttons, sizes } from '../assets/styles/constants';
 
-const { BRAVO, DELTA, HOTEL } = sizes;
+const { BRAVO, DELTA, GOLF, HOTEL } = sizes;
 const { PRIMARY, SECONDARY } = buttons;
 
 const IndexPage = () => (
@@ -24,24 +25,28 @@ const IndexPage = () => (
           <Heading as="h1" size={HOTEL}>
             I am Tom.
           </Heading>
-          <Heading sub as="h2" size={DELTA}>
+          <Heading sub as="h2" size={DELTA} noMargin>
             I’m a web developer from the UK living in Spain. I am passionate
-            about coding, design & good food!
+            about coding, design & food!
           </Heading>
-          <Button
-            externalLink="/projects"
-            buttonStyle={SECONDARY}
-            buttonSize={BRAVO}
-          >
-            Projects
-          </Button>
-          <Button
-            internalLink="/contact"
-            buttonStyle={PRIMARY}
-            buttonSize={BRAVO}
-          >
-            Contact
-          </Button>
+        </Item>
+        <Item gridStart={1} gridEnd={6} spacingTop={GOLF}>
+          <ButtonGroup>
+            <Button
+              externalLink="/projects"
+              buttonStyle={SECONDARY}
+              buttonSize={BRAVO}
+            >
+              Projects
+            </Button>
+            <Button
+              internalLink="/contact"
+              buttonStyle={PRIMARY}
+              buttonSize={BRAVO}
+            >
+              Contact
+            </Button>
+          </ButtonGroup>
         </Item>
       </Grid>
     </Container>

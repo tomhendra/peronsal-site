@@ -15,9 +15,10 @@ const styles = ({ noMargin, size, sub, theme }) => {
   const baseStyles = {
     label: 'heading',
     color: !sub ? theme.colors.n000 : theme.colors.n300,
-    fontFamily: theme.fontStack.heading,
+    fontFamily: !sub ? theme.fontStack.heading : theme.fontStack.default,
     fontWeight: !sub ? theme.fontWeight.bold : theme.fontWeight.regular,
-    marginBottom: !noMargin ? theme.spacings.echo : 0,
+    letterSpacing: 0.7,
+    marginBottom: !noMargin ? theme.spacings.delta : 0,
   };
 
   const sizeStyles = {

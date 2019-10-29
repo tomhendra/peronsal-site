@@ -13,6 +13,7 @@ const styles = ({ devMode, theme }) => {
   return withMediaQueries(theme)({
     label: 'grid',
     display: 'grid',
+    gridTemplateRows: 'auto',
     columnGap: [
       theme.grid.alpha.gutter,
       theme.grid.bravo.gutter,
@@ -20,10 +21,10 @@ const styles = ({ devMode, theme }) => {
       theme.grid.delta.gutter,
     ],
     gridTemplateColumns: [
-      `repeat(${theme.grid.alpha.cols}, 1fr)`,
-      `repeat(${theme.grid.bravo.cols}, 1fr)`,
-      `repeat(${theme.grid.charlie.cols}, 1fr)`,
-      `repeat(${theme.grid.delta.cols}, 1fr)`,
+      `repeat(${theme.grid.alpha.cols}, minmax(0, 1fr))`,
+      `repeat(${theme.grid.bravo.cols}, minmax(0, 1fr))`,
+      `repeat(${theme.grid.charlie.cols}, minmax(0, 1fr))`,
+      `repeat(${theme.grid.delta.cols}, minmax(0, 1fr))`,
     ],
     margin: '0 auto',
     maxWidth: [

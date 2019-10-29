@@ -153,7 +153,7 @@ export const typography = {
     },
     delta: {
       fontSize: '3.6rem', // 36px
-      lineHeight: 1.2,
+      lineHeight: 1.1,
     },
     echo: {
       fontSize: '4.8rem', // 48px
