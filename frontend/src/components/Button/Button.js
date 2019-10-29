@@ -1,6 +1,8 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { withTheme } from 'emotion-theming';
+import PropTypes from 'prop-types';
 
 import { buttons, sizes } from '../../assets/styles/constants';
 
@@ -12,21 +14,62 @@ const { ALPHA, BRAVO, CHARLIE } = sizes;
  */
 
 const styles = ({ buttonStyle, buttonSize, theme }) => {
+  const baseStyles = {
+    borderRadius: theme.borderRadius.charlie,
+    borderStyle: 'solid',
+    borderWidth: theme.borderWidth.alpha,
+    cursor: 'pointer',
+    fontWeight: 'bold',
+    textDecoration: 'none',
+  };
+
   const buttonStyles = {
     [PRIMARY]: {
-      background: theme.colors.p400,
-      border: theme.colors.p400,
-      hover: theme.colors.p300,
+      backgroundColor: theme.colors.p400,
+      borderColor: theme.colors.p400,
+      color: theme.colors.white,
+
+      '&:hover,:focus': {
+        backgroundColor: theme.colors.p300,
+        borderColor: theme.colors.p300,
+      },
+      '&:disabled': {
+        backgroundColor: theme.colors.n800,
+        borderColor: theme.colors.n800,
+        color: theme.colors.n600,
+      },
     },
     [SECONDARY]: {
-      background: theme.colors.n200,
-      border: theme.colors.n800,
-      hover: theme.colors.n100,
+      backgroundColor: theme.colors.bodyBg,
+      borderColor: theme.colors.n700,
+      color: theme.colors.n300,
+
+      '&:hover,:focus': {
+        backgroundColor: theme.colors.n600,
+        borderColor: theme.colors.p500,
+        color: theme.colors.n100,
+      },
+      '&:disabled': {
+        backgroundColor: theme.colors.n800,
+        borderColor: theme.colors.n700,
+        color: theme.colors.n600,
+      },
     },
     [TERTIARY]: {
-      background: 'inherit',
-      border: 'transparent',
-      hover: theme.colors.n300,
+      backgroundColor: 'inherit',
+      borderColor: 'transparent',
+      color: theme.colors.n100,
+
+      '&:hover,:focus': {
+        backgroundColor: theme.colors.n800,
+        borderColor: theme.colors.n800,
+        color: theme.colors.n000,
+      },
+      '&:disabled': {
+        backgroundColor: theme.colors.n800,
+        borderColor: theme.colors.n800,
+        color: theme.colors.n600,
+      },
     },
   };
 
@@ -52,19 +95,9 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
   const sizeConfig = buttonSizes[buttonSize];
 
   return {
+    ...baseStyles,
+    ...styleConfig,
     ...sizeConfig,
-    backgroundColor: styleConfig.background,
-    border: `1px solid ${styleConfig.border}`,
-    borderRadius: '4px',
-    color: theme.colors.n900,
-    fontWeight: 'bold',
-    minWidth: theme.spacings.juliett,
-    textDecoration: 'none',
-    textTransform: 'uppercase',
-    cursor: 'pointer',
-    '&:hover,:disabled,:focus': {
-      backgroundColor: styleConfig.hover,
-    },
   };
 };
 
@@ -72,42 +105,53 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
  * `....................component....................`
  */
 
+const ButtonElement = styled.button(styles);
+
 const Button = ({
-  buttonStyle,
-  buttonSize,
-  buttonType,
   externalLink,
   internalLink,
-  theme,
-  ...props
+  buttonStyle,
+  buttonSize,
+  ...otherProps
 }) =>
   internalLink ? (
     // if internalLink prop is provided, return Gatsby Link styled with buttonStyles
-    <Link
-      to={internalLink}
-      css={styles({ buttonSize, buttonStyle, theme })}
-      {...props}
-    />
+    <Link to={internalLink}>
+      <ButtonElement
+        buttonStyle={buttonStyle}
+        buttonSize={buttonSize}
+        {...otherProps}
+      />
+    </Link>
   ) : externalLink ? (
     // if externalLink prop is provided, return basic anchor tag styled with buttonStyles
-    // (eslint error is a false positive...)
-    // eslint-disable-next-line jsx-a11y/anchor-has-content
-    <a
-      href={externalLink}
-      target="blank"
-      css={styles({ buttonSize, buttonStyle, theme })}
-      {...props}
-    />
+    <a href={externalLink} target="blank">
+      <ButtonElement
+        buttonStyle={buttonStyle}
+        buttonSize={buttonSize}
+        {...otherProps}
+      />
+    </a>
   ) : (
     // default return button if internalLink/externalLink props are not provided,
-    // based on defaultProp values being defined as null below.
-    // eslint-disable-next-line react/button-has-type
-    <button css={styles({ buttonSize, buttonStyle, theme })} {...props} />
+    // based on defaultProp values being defined as null.
+    <ButtonElement
+      buttonStyle={buttonStyle}
+      buttonSize={buttonSize}
+      {...otherProps}
+    />
   );
 
 /**
  * `....................propTypes....................`
  */
+
+Button.protoTypes = {
+  buttonStyle: PropTypes.oneOf([PRIMARY, SECONDARY, TERTIARY]),
+  buttonSize: PropTypes.oneOf([ALPHA, BRAVO, CHARLIE]),
+  externalLink: PropTypes.string,
+  internalLink: PropTypes.string,
+};
 
 Button.defaultProps = {
   buttonStyle: PRIMARY,

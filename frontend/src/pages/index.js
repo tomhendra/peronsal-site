@@ -7,12 +7,12 @@ import Graphic from '../components/Graphic';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
 import Heading from '../components/Heading';
+import Button from '../components/Button';
 
-import { sizes } from '../assets/styles/constants';
+import { colors, sizes } from '../assets/styles/constants';
 
-// const { PRIMARY } = colors;
-const { DELTA, HOTEL } = sizes;
-// const { PRIMARY, SECONDARY } = colors;
+const { BRAVO, DELTA, HOTEL } = sizes;
+const { PRIMARY, SECONDARY } = colors;
 
 const IndexPage = () => (
   <Layout>
@@ -28,6 +28,20 @@ const IndexPage = () => (
             I’m a web developer from the UK living in Spain. I am passionate
             about coding, design & good food!
           </Heading>
+          <Button
+            buttonStyle={SECONDARY}
+            buttonSize={BRAVO}
+            internalLink="/projects"
+          >
+            Projects
+          </Button>
+          <Button
+            buttonStyle={PRIMARY}
+            buttonSize={BRAVO}
+            internalLink="/contact"
+          >
+            Contact
+          </Button>
         </Item>
       </Grid>
     </Container>
