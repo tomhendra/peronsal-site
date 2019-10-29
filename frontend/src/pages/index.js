@@ -9,10 +9,10 @@ import Item from '../components/Item';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
 
-import { colors, sizes } from '../assets/styles/constants';
+import { buttons, sizes } from '../assets/styles/constants';
 
 const { BRAVO, DELTA, HOTEL } = sizes;
-const { PRIMARY, SECONDARY } = colors;
+const { PRIMARY, SECONDARY } = buttons;
 
 const IndexPage = () => (
   <Layout>
@@ -29,16 +29,16 @@ const IndexPage = () => (
             about coding, design & good food!
           </Heading>
           <Button
+            externalLink="/projects"
             buttonStyle={SECONDARY}
             buttonSize={BRAVO}
-            internalLink="/projects"
           >
             Projects
           </Button>
           <Button
+            internalLink="/contact"
             buttonStyle={PRIMARY}
             buttonSize={BRAVO}
-            internalLink="/contact"
           >
             Contact
           </Button>

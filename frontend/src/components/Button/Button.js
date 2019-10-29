@@ -20,6 +20,7 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
     borderWidth: theme.borderWidth.alpha,
     cursor: 'pointer',
     fontWeight: 'bold',
+    letterSpacing: 0.8,
     textDecoration: 'none',
   };
 
@@ -34,29 +35,28 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
         borderColor: theme.colors.p300,
       },
       '&:disabled': {
-        backgroundColor: theme.colors.n800,
-        borderColor: theme.colors.n800,
-        color: theme.colors.n600,
+        opacity: 0.4,
+        pointerEvents: 'none',
+        userSelectable: 'none',
       },
     },
     [SECONDARY]: {
       backgroundColor: theme.colors.bodyBg,
       borderColor: theme.colors.n700,
-      color: theme.colors.n300,
+      color: theme.colors.n100,
 
       '&:hover,:focus': {
-        backgroundColor: theme.colors.n600,
-        borderColor: theme.colors.p500,
-        color: theme.colors.n100,
+        backgroundColor: theme.colors.n700,
+        color: theme.colors.n000,
       },
       '&:disabled': {
-        backgroundColor: theme.colors.n800,
-        borderColor: theme.colors.n700,
-        color: theme.colors.n600,
+        opacity: 0.4,
+        pointerEvents: 'none',
+        userSelectable: 'none',
       },
     },
     [TERTIARY]: {
-      backgroundColor: 'inherit',
+      backgroundColor: 'transparent',
       borderColor: 'transparent',
       color: theme.colors.n100,
 
@@ -66,28 +66,28 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
         color: theme.colors.n000,
       },
       '&:disabled': {
-        backgroundColor: theme.colors.n800,
-        borderColor: theme.colors.n800,
-        color: theme.colors.n600,
+        opacity: 0.4,
+        pointerEvents: 'none',
+        userSelectable: 'none',
       },
     },
   };
 
   const buttonSizes = {
     [ALPHA]: {
-      fontSize: theme.typography.text.alpha.fontSize,
+      fontSize: theme.typography.text.bravo.fontSize,
       minWidth: theme.spacings.hotel,
       padding: `${theme.spacings.charlie} ${theme.spacings.echo}`,
     },
     [BRAVO]: {
-      fontSize: theme.typography.text.bravo.fontSize,
+      fontSize: theme.typography.text.charlie.fontSize,
       minWidth: theme.spacings.kilo,
       padding: `${theme.spacings.charlie} ${theme.spacings.echo}`,
     },
     [CHARLIE]: {
-      fontSize: theme.typography.text.charlie.fontSize,
+      fontSize: theme.typography.text.delta.fontSize,
       minWidth: theme.spacings.lima,
-      padding: `${theme.spacings.echo} ${theme.spacings.foxtrot}`,
+      padding: `${theme.spacings.delta} ${theme.spacings.echo}`,
     },
   };
 
@@ -154,7 +154,7 @@ Button.protoTypes = {
 };
 
 Button.defaultProps = {
-  buttonStyle: PRIMARY,
+  buttonStyle: SECONDARY,
   buttonSize: BRAVO,
   externalLink: null,
   internalLink: null,
