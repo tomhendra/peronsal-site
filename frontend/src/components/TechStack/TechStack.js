@@ -2,6 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
+import PropTypes from 'prop-types';
 
 import useTechStack from '../../hooks/useTechStack';
 
@@ -48,13 +49,12 @@ const containerStyles = ({ gridSize, theme }) => {
  * `....................component....................`
  */
 
-// In order to use this component it must be passed an array of
-// strings which must match the title specified in Sanity studio desk
-// exactly. !! could make this friendlier to typos later using RegEx ?
-
 const TechStackContainer = styled.div(containerStyles);
 const LogoContainer = styled.div(logoStyles);
 
+// Component must be passed an array of strings which must match the title
+// specified in Sanity studio desk exactly !!
+// recommend to create enums if more manual use is required.
 const TechStack = ({ gridSize, techStackToDisplay }) => {
   const allTechStack = useTechStack();
   // verify which size image to use from useTechStack() based on value of gridSize
@@ -79,8 +79,13 @@ const TechStack = ({ gridSize, techStackToDisplay }) => {
  * `....................propTypes....................`
  */
 
+TechStack.propTypes = {
+  techStackToDisplay: PropTypes.arrayOf(PropTypes.string),
+  gridSize: PropTypes.oneOf([ALPHA, DELTA]),
+};
+
 TechStack.defaultProps = {
-  techStackToBeDisplayed: [],
+  techStackToDisplay: [],
   gridSize: ALPHA,
 };
 
