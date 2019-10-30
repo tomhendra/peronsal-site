@@ -10,10 +10,13 @@ function useTechStack() {
             title
             logo {
               asset {
-                medium: fixed(width: 64) {
+                small: fixed(width: 18) {
                   ...GatsbySanityImageFixed
                 }
-                small: fixed(width: 17) {
+                medium: fixed(width: 24) {
+                  ...GatsbySanityImageFixed
+                }
+                large: fixed(width: 64) {
                   ...GatsbySanityImageFixed
                 }
               }
@@ -30,6 +33,7 @@ function useTechStack() {
     title: node.title,
     logoSmall: node.logo.asset.small,
     logoMedium: node.logo.asset.medium,
+    logoLarge: node.logo.asset.large,
     alt: node.logo.alt,
   }));
 }

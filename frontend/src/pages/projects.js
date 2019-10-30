@@ -1,37 +1,63 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-// import useProjects from '../hooks/useProjects';
+import useProjects from '../hooks/useProjects';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-// import Container from '../components/Container';
-// import PageHeading from '../components/PageHeading';
-// import PageText from '../components/PageText';
-// import ProjectPreview from '../components/ProjectPreview';
+import Container from '../components/Container';
+import Graphic from '../components/Graphic';
+import Grid from '../components/Grid';
+import Item from '../components/Item';
+import Heading from '../components/Heading';
+import Text from '../components/Text';
+import ProjectPreview from '../components/ProjectPreview';
+
+import { sizes } from '../assets/styles/constants';
+
+const { FOXTROT, HOTEL, INDIA } = sizes;
 
 const ProjectsPage = () => {
-  // const projects = useProjects();
+  const projects = useProjects();
+  console.log(projects);
   return (
     <Layout>
       <SEO title="Projects" />
-      {/* <Container>
-        <PageHeading>
-          <PageText
-            mainHeading="My projects."
-            subHeading="I’ve been building stuff."
-            paragraph="I specialise in frontend development and have a bit of a thing for slick design & motion.
-            I've recently been concentrating on building web apps. These are some of the projects I have been working on"
-          />
-          <PageCounter pageNumber="01" totalPages="03" />
-        </PageHeading>
-        {projects.map(project => (
-          <ProjectPreview
-            key={project.id}
-            project={project}
-            css={theme => ({ marginBottom: theme.spacings.india })}
-          />
-        ))}
-      </Container> */}
+      <Container>
+        <Graphic>Projects</Graphic>
+        <Grid>
+          <Item
+            gridStart={1}
+            gridEnd={7}
+            spacingTop={INDIA}
+            spacingBottom={HOTEL}
+          >
+            <Heading as="h1" size={FOXTROT}>
+              My projects.
+            </Heading>
+            <Text>
+              I specialise in frontend development and have a bit of a thing for
+              slick design & motion. I&apos;ve recently been focusing on
+              building web apps with React.
+            </Text>
+            <Text noMargin>
+              I am also a huge advocate of open source software and contribute
+              where I can. With collaboration from developers all over the
+              world, we can work together to deliver great products accessible
+              to everyone.
+            </Text>
+          </Item>
+          {projects.map(project => (
+            <Item
+              gridStart={1}
+              gridEnd={11}
+              spacingBottom={INDIA}
+              key={project.id}
+            >
+              <ProjectPreview project={project} />
+            </Item>
+          ))}
+        </Grid>
+      </Container>
     </Layout>
   );
 };

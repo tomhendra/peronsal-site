@@ -1,83 +1,68 @@
 import React from 'react';
 import Img from 'gatsby-image';
+import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
-import TechStackGrid from '../TechStackGrid';
+import Card from '../Card';
+import Heading from '../Heading';
+import Text from '../Text';
+import TechStack from '../TechStack';
 import Button from '../Button';
+import ButtonGroup from '../ButtonGroup';
+
+import { buttons, sizes } from '../../assets/styles/constants';
+
+const { PRIMARY, SECONDARY } = buttons;
+const { ALPHA } = sizes;
 
 /**
  * `....................styles....................`
  */
 
-const styles = theme => ({
-  background: theme.colors.n100,
-  border: `${theme.borderWidth.alpha} solid ${theme.colors.n300}`,
-  borderRadius: '6px',
+const infoStyles = ({ theme }) => ({
   display: 'flex',
+  flexDirection: 'column',
   justifyContent: 'space-between',
-  margin: '0 auto',
-  width: theme.spacings.quebec,
-  minHeight: theme.spacings.november,
-  padding: theme.spacings.golf,
+  paddingLeft: theme.spacings.foxtrot,
+  width: '60%',
 });
 
 /**
  * `....................component....................`
  */
 
-const ProjectPreview = ({ project, theme, ...props }) => (
-  <div css={styles(theme)} {...props}>
+const ProjectInfo = styled.div(infoStyles);
+
+const ProjectPreview = ({ project }) => (
+  <Card alignItems="stretch" flexDirection="row">
     <Img fixed={project.image} alt={project.alt} />
-    <div
-      css={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        paddingLeft: theme.spacings.foxtrot,
-        width: '60%',
-      }}
-    >
+    <ProjectInfo>
       <div>
-        <h2
-          css={{
-            marginBottom: theme.spacings.echo,
-          }}
-        >
-          {project.title}
-        </h2>
-        <p
-          css={{
-            marginBottom: theme.spacings.foxtrot,
-          }}
-        >
-          {project.description}
-        </p>
-        <TechStackGrid
-          gridSize="small"
-          techStackToBeDisplayed={project.techstack.map(tech => tech.title)}
+        <Heading as="h2">{project.title}</Heading>
+        <Text>{project.description}</Text>
+        <TechStack
+          gridSize={ALPHA}
+          techStackToDisplay={project.techstack.map(tech => tech.title)}
         />
       </div>
-      <div>
+      <ButtonGroup>
         <Button
-          buttonStyle="secondary"
-          buttonSize="alpha"
+          buttonStyle={SECONDARY}
+          buttonSize={ALPHA}
           externalLink={project.repo}
-          css={{
-            marginRight: theme.spacings.echo,
-          }}
         >
           View Repo
         </Button>
         <Button
-          buttonStyle="primary"
-          buttonSize="alpha"
+          buttonStyle={PRIMARY}
+          buttonSize={ALPHA}
           externalLink={project.url}
         >
           Launch App
         </Button>
-      </div>
-    </div>
-  </div>
+      </ButtonGroup>
+    </ProjectInfo>
+  </Card>
 );
 
 export default withTheme(ProjectPreview);

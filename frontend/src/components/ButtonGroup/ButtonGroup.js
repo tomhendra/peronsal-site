@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
@@ -17,14 +16,6 @@ const styles = ({ theme }) => ({
  * `....................component....................`
  */
 
-const ButtonGroupElement = styled.div(styles);
-
-const ButtonGroup = ({ children }) => (
-  <ButtonGroupElement>{children}</ButtonGroupElement>
-);
-
-/**
- * `....................propTypes....................`
- */
+const ButtonGroup = styled.div(styles);
 
 export default withTheme(ButtonGroup);
