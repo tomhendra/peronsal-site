@@ -23,11 +23,28 @@ const imageStyles = ({ theme }) => ({
   width: '100%',
 });
 
+const listStyles = ({ theme }) => ({
+  display: 'flex',
+  listStyle: 'none',
+
+  '& > *': {
+    background: theme.colors.p800,
+    borderRadius: theme.borderRadius.bravo,
+    color: theme.colors.p300,
+    fontSize: theme.typography.text.bravo.fontSize,
+    padding: `${theme.spacings.bravo} ${theme.spacings.charlie}`,
+    ':not(:first-of-type)': {
+      marginLeft: theme.spacings.charlie,
+    },
+  },
+});
+
 /**
  * `....................component....................`
  */
 
 const PostImage = styled(Img)(imageStyles);
+const CategoryList = styled.ul(listStyles);
 
 const BlogPost = ({ post }) => {
   const { _rawBody, title, mainImage, publishedAt, categories } = post;
@@ -35,7 +52,7 @@ const BlogPost = ({ post }) => {
     <Container>
       <article>
         <Grid>
-          <Item gridStart={1} gridEnd={10} spacingTop={INDIA}>
+          <Item gridStart={1} gridEnd={11} spacingTop={INDIA}>
             <Heading as="h1" size={FOXTROT}>
               {title}
             </Heading>
@@ -51,24 +68,22 @@ const BlogPost = ({ post }) => {
             )}
             {mainImage && mainImage.asset && (
               <PostImage
+                alt={mainImage.alt}
                 sizes={{
                   ...mainImage.asset.fluid,
-                  aspectRatio: 9 / 6,
+                  aspectRatio: 9 / 5,
                 }}
-                alt={mainImage.alt}
               />
             )}
 
             {_rawBody && <PortableText blocks={_rawBody} />}
             <aside>
               {categories && (
-                <div>
-                  <ul>
-                    {categories.map(category => (
-                      <li key={category._id}>{category.title}</li>
-                    ))}
-                  </ul>
-                </div>
+                <CategoryList>
+                  {categories.map(category => (
+                    <li key={category._id}>{category.title}</li>
+                  ))}
+                </CategoryList>
               )}
             </aside>
           </Item>
