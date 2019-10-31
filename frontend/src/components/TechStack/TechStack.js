@@ -14,12 +14,6 @@ const { ALPHA, DELTA } = sizes;
  * `....................styles....................`
  */
 
-const logoStyles = {
-  alignItems: 'center',
-  display: 'flex',
-  justifyContent: 'center',
-};
-
 const containerStyles = ({ gridSize, theme }) => {
   const baseStyles = {
     display: 'grid',
@@ -50,7 +44,6 @@ const containerStyles = ({ gridSize, theme }) => {
  */
 
 const TechStackContainer = styled.div(containerStyles);
-const LogoContainer = styled.div(logoStyles);
 
 // Component must be passed an array of strings which must match the title
 // specified in Sanity studio desk exactly !!
@@ -67,9 +60,7 @@ const TechStack = ({ gridSize, techStackToDisplay }) => {
       {allTechStack
         .filter(tech => techStackToDisplay.includes(tech.title))
         .map(tech => (
-          <LogoContainer key={tech.id}>
-            <Img fixed={tech[logoSize]} alt={tech.alt} />
-          </LogoContainer>
+          <Img fixed={tech[logoSize]} alt={tech.alt} key={tech.id} />
         ))}
     </TechStackContainer>
   );
