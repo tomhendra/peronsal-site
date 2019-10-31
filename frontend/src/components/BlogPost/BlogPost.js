@@ -1,18 +1,20 @@
-import { format, formatDistance, differenceInDays } from 'date-fns';
 import React from 'react';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
+import PropTypes from 'prop-types';
 
 import Container from '../Container';
 import Grid from '../Grid';
 import Item from '../Item';
 import PortableText from '../PortableText';
 import Heading from '../Heading';
+import PostedDate from './components/PostedDate';
+import CategoryList from './components/CategoryList';
 
 import { sizes } from '../../assets/styles/constants';
 
-const { ALPHA, FOXTROT, INDIA } = sizes;
+const { FOXTROT, INDIA } = sizes;
 
 /**
  * `....................styles....................`
@@ -23,28 +25,11 @@ const imageStyles = ({ theme }) => ({
   width: '100%',
 });
 
-const listStyles = ({ theme }) => ({
-  display: 'flex',
-  listStyle: 'none',
-
-  '& > *': {
-    background: theme.colors.p800,
-    borderRadius: theme.borderRadius.bravo,
-    color: theme.colors.p300,
-    fontSize: theme.typography.text.bravo.fontSize,
-    padding: `${theme.spacings.bravo} ${theme.spacings.charlie}`,
-    ':not(:first-of-type)': {
-      marginLeft: theme.spacings.charlie,
-    },
-  },
-});
-
 /**
  * `....................component....................`
  */
 
 const PostImage = styled(Img)(imageStyles);
-const CategoryList = styled.ul(listStyles);
 
 const BlogPost = ({ post }) => {
   const { _rawBody, title, mainImage, publishedAt, categories } = post;
@@ -56,16 +41,7 @@ const BlogPost = ({ post }) => {
             <Heading as="h1" size={FOXTROT}>
               {title}
             </Heading>
-            {publishedAt && (
-              <Heading sub as="h2" size={ALPHA}>
-                Posted&nbsp;
-                {differenceInDays(new Date(), new Date(publishedAt)) > 5
-                  ? format(new Date(publishedAt), 'do MMMM, yyyy')
-                  : formatDistance(new Date(publishedAt), new Date(), {
-                      addSuffix: true,
-                    })}
-              </Heading>
-            )}
+            {publishedAt && <PostedDate date={publishedAt} />}
             {mainImage && mainImage.asset && (
               <PostImage
                 alt={mainImage.alt}
@@ -75,22 +51,29 @@ const BlogPost = ({ post }) => {
                 }}
               />
             )}
-
             {_rawBody && <PortableText blocks={_rawBody} />}
             <aside>
-              {categories && (
-                <CategoryList>
-                  {categories.map(category => (
-                    <li key={category._id}>{category.title}</li>
-                  ))}
-                </CategoryList>
-              )}
+              {categories && <CategoryList categories={categories} />}
             </aside>
           </Item>
         </Grid>
       </article>
     </Container>
   );
+};
+
+/**
+ * `....................propTypes....................`
+ */
+
+BlogPost.propTypes = {
+  post: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.array, PropTypes.object]),
+  ),
+};
+
+BlogPost.defaultProps = {
+  post: null,
 };
 
 export default withTheme(BlogPost);
