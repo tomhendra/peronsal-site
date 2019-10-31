@@ -71,7 +71,7 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
     },
     [BRAVO]: {
       fontSize: theme.typography.text.charlie.fontSize,
-      padding: `${theme.spacings.charlie} ${theme.spacings.foxtrot}`,
+      padding: `${theme.spacings.charlie} ${theme.spacings.golf}`,
     },
     [CHARLIE]: {
       fontSize: theme.typography.text.delta.fontSize,

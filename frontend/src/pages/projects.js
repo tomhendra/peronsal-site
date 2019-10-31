@@ -18,7 +18,6 @@ const { FOXTROT, HOTEL, INDIA } = sizes;
 
 const ProjectsPage = () => {
   const projects = useProjects();
-  console.log(projects);
   return (
     <Layout>
       <SEO title="Projects" />
