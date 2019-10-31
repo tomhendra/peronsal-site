@@ -1,4 +1,4 @@
-import { format, distanceInWords, differenceInDays } from 'date-fns';
+import { format, formatDistance, differenceInDays } from 'date-fns';
 import React from 'react';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
@@ -41,10 +41,12 @@ const BlogPost = ({ post }) => {
             </Heading>
             {publishedAt && (
               <Heading sub as="h2" size={ALPHA}>
-                Posted on&nbsp;
-                {differenceInDays(new Date(publishedAt), new Date()) > 3
-                  ? distanceInWords(new Date(publishedAt), new Date())
-                  : format(new Date(publishedAt), 'Do, MM, yyyy')}
+                Posted&nbsp;
+                {differenceInDays(new Date(), new Date(publishedAt)) > 5
+                  ? format(new Date(publishedAt), 'do MMMM, yyyy')
+                  : formatDistance(new Date(publishedAt), new Date(), {
+                      addSuffix: true,
+                    })}
               </Heading>
             )}
             {mainImage && mainImage.asset && (
