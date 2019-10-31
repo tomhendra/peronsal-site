@@ -13,6 +13,7 @@ import { sizes } from '../../assets/styles/constants';
 
 const styles = ({
   gridStart,
+  gridSpan,
   gridEnd,
   spacingTop,
   spacingRight,
@@ -31,6 +32,7 @@ const styles = ({
   };
 
   const gridStyles = {
+    gridArea: gridSpan && `span 1 / span ${gridSpan}`,
     gridColumnStart: gridStart && gridStart,
     gridColumnEnd: gridEnd && gridEnd,
   };
@@ -71,6 +73,7 @@ const spacingOptions = Object.values(sizes);
 
 Item.propTypes = {
   gridStart: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'auto']),
+  gridSpan: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]),
   gridEnd: PropTypes.oneOf([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 'auto']),
   spacingTop: PropTypes.oneOf([...spacingOptions]),
   spacingRight: PropTypes.oneOf([...spacingOptions]),
@@ -104,6 +107,7 @@ Item.propTypes = {
 
 Item.defaultProps = {
   gridStart: null,
+  gridSpan: null,
   gridEnd: null,
   spacingTop: null,
   spacingRight: null,

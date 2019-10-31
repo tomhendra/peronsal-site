@@ -1,80 +1,82 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
-import PostLink from '../PostLink';
-import ReadLink from '../ReadLink';
+import Heading from '../Heading';
+import Text from '../Text';
 
 /**
  * `....................styles....................`
  */
 
-const styles = theme => ({
-  border: `${theme.borderWidth.alpha} solid ${theme.colors.n300}`,
-  borderRadius: theme.borderRadius.charlie,
-  height: theme.spacings.november,
+const elementStyles = ({ theme }) => ({
+  background: `linear-gradient(180deg, ${theme.colors.p400}, ${theme.colors.p300} 100%)`,
+  borderRadius: theme.borderRadius.delta,
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
   overflow: 'hidden',
+  padding: theme.spacings.foxtrot,
+});
 
-  '& > div': {
-    height: '50%',
-    ':first-of-type': {
-      background: theme.colors.p000,
-      isolation: 'isolate',
-      overflow: 'hidden',
-      position: 'relative',
-    },
-    ':last-of-type': {
-      background: theme.colors.n100,
-      justifyContent: 'space-between',
-      flexDirection: 'column',
-      display: 'flex',
-      padding: theme.spacings.foxtrot,
-    },
-
-    h3: {
-      left: 0,
-      margin: theme.spacings.foxtrot,
-      marginBottom: 0,
-      position: 'absolute',
-      top: 0,
-      zIndex: 99999,
-    },
-
-    p: {
-      marginBottom: theme.spacings.echo,
+const linkStyles = ({ theme }) => ({
+  color: theme.colors.n000,
+  textDecoration: 'none',
+  '&:hover': {
+    // eslint-disable-next-line no-use-before-define
+    [PostText]: {
+      color: theme.colors.p700,
     },
   },
+});
+
+const imageStyles = ({ theme }) => ({
+  mixBlendMode: 'soft-light',
+  borderRadius: theme.borderRadius.delta,
+  marginBottom: theme.spacings.golf,
+});
+
+const headingStyles = ({ theme }) => ({
+  color: theme.colors.n900,
+  fontWeight: theme.fontWeight.regular,
+});
+
+const textStyles = ({ theme }) => ({
+  color: theme.colors.n600,
 });
 
 /**
  * `....................component....................`
  */
 
-const PostPreview = ({ post, theme, ...props }) => (
-  <article css={styles(theme)} {...props}>
-    <div>
-      <h3>
-        <PostLink to={post.slug}>{post.title}</PostLink>
-      </h3>
-      <Link to={post.slug}>
-        <Img
-          alt={post.title}
-          sizes={{
-            ...post.featuredImage,
-            aspectRatio: 9 / 6,
-          }}
-          style={{
-            mixBlendMode: 'soft-light',
-          }}
-        />
-      </Link>
-    </div>
-    <div>
-      <p>{post.description}</p>
-      <ReadLink to={post.slug}>Read post</ReadLink>
-    </div>
-  </article>
+const PostElement = styled.article(elementStyles);
+const PostLink = styled(Link)(linkStyles);
+const PostImage = styled(Img)(imageStyles);
+const PostHeading = styled(Heading)(headingStyles);
+const PostText = styled(Text)(textStyles);
+
+const PostPreview = ({ post }) => (
+  <PostLink to={post.slug}>
+    <PostElement>
+      <PostImage
+        alt={post.alt}
+        sizes={{
+          ...post.mainImage,
+          aspectRatio: 6 / 6,
+        }}
+      />
+      <div>
+        <PostHeading as="h3">{post.title}</PostHeading>
+        <PostText>Read post</PostText>
+      </div>
+    </PostElement>
+  </PostLink>
 );
+
+/**
+ * `....................propTypes....................`
+ */
 
 export default withTheme(PostPreview);

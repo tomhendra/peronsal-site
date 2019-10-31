@@ -20,7 +20,7 @@ const IndexPage = () => (
     <SEO title="Web Developer" />
     <Container center>
       <Graphic>Hola.</Graphic>
-      <Grid>
+      <Grid withoutBottomSpacing>
         <Item gridStart={1} gridEnd={9}>
           <Heading as="h1" size={HOTEL}>
             I am Tom.
@@ -33,7 +33,7 @@ const IndexPage = () => (
         <Item gridStart={1} gridEnd={6} spacingTop={GOLF}>
           <ButtonGroup>
             <Button
-              externalLink="/projects"
+              internalLink="/projects"
               buttonStyle={SECONDARY}
               buttonSize={BRAVO}
             >

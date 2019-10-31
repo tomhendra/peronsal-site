@@ -25,7 +25,12 @@ const AboutPage = () => (
       <Container>
         <Graphic>About</Graphic>
         <Grid>
-          <Item gridStart={1} gridEnd={7} spacingTop={INDIA}>
+          <Item
+            gridStart={1}
+            gridEnd={7}
+            spacingTop={INDIA}
+            spacingBottom={HOTEL}
+          >
             <Heading as="h1" size={FOXTROT}>
               About me.
             </Heading>
@@ -40,7 +45,7 @@ const AboutPage = () => (
               things at the gym.
             </Text>
           </Item>
-          <Item gridStart={1} gridEnd={5} spacingTop={HOTEL}>
+          <Item gridStart={1} gridEnd={5}>
             <Card>
               <Icon
                 type={CODE}
@@ -59,7 +64,7 @@ const AboutPage = () => (
               </Text>
             </Card>
           </Item>
-          <Item gridStart={5} gridEnd={9} spacingTop={HOTEL}>
+          <Item gridStart={5} gridEnd={9}>
             <Card>
               <Icon
                 type={PENTOOL}
@@ -78,7 +83,7 @@ const AboutPage = () => (
               </Text>
             </Card>
           </Item>
-          <Item gridStart={9} gridEnd={13} spacingTop={HOTEL}>
+          <Item gridStart={9} gridEnd={13}>
             <Card>
               <Icon
                 type={BRIEFCASE}

@@ -46,11 +46,11 @@ const Navbar = () => (
     <NavLink to="/projects/" activeClassName="currentPage">
       Projects
     </NavLink>
-    <NavLink to="/contact/" activeClassName="currentPage">
-      Contact
-    </NavLink>
     <NavLink to="/blog/" activeClassName="currentPage">
       Blog
+    </NavLink>
+    <NavLink to="/contact/" activeClassName="currentPage">
+      Contact
     </NavLink>
   </Nav>
 );

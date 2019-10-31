@@ -13,6 +13,7 @@ function usePosts() {
             }
             publishedAt(formatString: "Do MMMM, YYYY")
             mainImage {
+              alt
               asset {
                 fluid(maxWidth: 960) {
                   ...GatsbySanityImageFluid
@@ -33,6 +34,7 @@ function usePosts() {
     slug: `/blog/${node.slug.current}`,
     publishedAt: node.publishedAt,
     mainImage: node.mainImage.asset.fluid,
+    alt: node.mainImage.alt,
     excerpt: node._rawExcerpt,
     body: node._rawBody,
   }));
