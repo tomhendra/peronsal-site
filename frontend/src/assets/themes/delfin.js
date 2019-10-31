@@ -185,6 +185,10 @@ export const typography = {
       fontSize: '2rem', // 20px
       lineHeight: 1.5,
     },
+    delta: {
+      fontSize: '3.6rem', // 36px
+      lineHeight: 1.1,
+    },
   },
   text: {
     alpha: {
