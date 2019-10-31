@@ -23,7 +23,9 @@ const styles = ({ noMargin, size, sub, theme }) => {
 
   const sizeStyles = {
     label: `heading--${size}`,
-    fontSize: theme.typography.headings[size].fontSize,
+    fontSize: !sub
+      ? theme.typography.headings[size].fontSize
+      : theme.typography.subHeadings[size].fontSize,
     lineHeight: theme.typography.headings[size].lineHeight,
   };
 

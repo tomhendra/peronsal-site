@@ -1,12 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/Layout';
-import Container from '../components/Container';
-import SEO from '../components/SEO';
-import GraphQLErrorList from '../components/GraphQLErrorList';
-import BlogPost from '../components/BlogPost';
 import { toPlainText } from '../utils/helpers';
+
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
+import GraphQLErrors from '../components/GraphQLErrors';
+import BlogPost from '../components/BlogPost';
 
 export const query = graphql`
   query BlogPostTemplateQuery($id: String!) {
@@ -32,8 +32,7 @@ export const query = graphql`
   }
 `;
 
-const BlogPostTemplate = props => {
-  const { data, errors } = props;
+const BlogPostTemplate = ({ data, errors }) => {
   const post = data && data.post;
 
   return (
@@ -46,18 +45,8 @@ const BlogPostTemplate = props => {
           // image={post.mainImage}
         />
       )}
-
-      {errors && (
-        <Container>
-          <GraphQLErrorList errors={errors} />
-        </Container>
-      )}
-
-      {post && (
-        <Container>
-          <BlogPost post={post} />
-        </Container>
-      )}
+      {errors && <GraphQLErrors errors={errors} />}
+      {post && <BlogPost post={post} />}
     </Layout>
   );
 };
