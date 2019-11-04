@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import Container from '../Container';
 import Grid from '../Grid';
 import Item from '../Item';
-import PortableText from '../PortableText';
+import BlockContent from '../BlockContent';
 import Heading from '../Heading';
 import PostedDate from './components/PostedDate';
 import CategoryList from './components/CategoryList';
@@ -51,7 +51,7 @@ const BlogPost = ({ post }) => {
                 }}
               />
             )}
-            {_rawBody && <PortableText blocks={_rawBody} />}
+            {_rawBody && <BlockContent blocks={_rawBody} />}
             <aside>
               {categories && <CategoryList categories={categories} />}
             </aside>
