@@ -58,8 +58,9 @@ export default {
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
     {
-      type: 'image',
-      options: { hotspot: true },
+      name: 'contentImage',
+      title: 'Image',
+      type: 'figure',
     },
   ],
 };

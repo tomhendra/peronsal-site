@@ -5,7 +5,7 @@ import sanityConfig from '../../../sanity-config';
 
 import Heading from '../Heading';
 import Text from '../Text';
-// import Figure from '../Figure';
+import Figure from '../Figure';
 
 import { sizes } from '../../assets/styles/constants';
 
@@ -46,10 +46,9 @@ const serializers = {
           return <Text>{children}</Text>;
       }
     },
-    // read MUCH more into the best way to handle images with Sanity
-    // image({ node }) {
-    //   return <Figure {...node} />;
-    // },
+    contentImage({ node }) {
+      return <Figure node={node} />;
+    },
   },
 };
 
