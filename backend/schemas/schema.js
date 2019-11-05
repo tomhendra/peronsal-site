@@ -12,7 +12,7 @@ import project from './documents/project';
 import author from './documents/author';
 import category from './documents/category';
 import technology from './documents/technology';
-import blockContent from './objects/blockContent';
+import portableText from './objects/portableText';
 import figure from './objects/figure';
 import excerptPortableText from './objects/excerptPortableText';
 import logo from './objects/logo';
@@ -33,7 +33,7 @@ export default createSchema({
     author,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
-    blockContent,
+    portableText,
     excerptPortableText,
     figure,
     logo,

@@ -1,5 +1,5 @@
 import React from 'react';
-import BaseBlockContent from '@sanity/block-content-to-react';
+import BasePortableText from '@sanity/block-content-to-react';
 
 import sanityConfig from '../../../sanity-config';
 
@@ -13,6 +13,7 @@ const { CHARLIE, DELTA, ECHO } = sizes;
 
 const serializers = {
   types: {
+    // block: props => <pre>{JSON.stringify(props, null, 2)}</pre>
     block({ node, children }) {
       switch (node.style) {
         case 'h2':
@@ -50,14 +51,19 @@ const serializers = {
       return <Figure node={node} />;
     },
   },
+  listItem: ({ children }) => (
+    <Text>
+      <li css={{ marginLeft: '2rem' }}>{children}</li>
+    </Text>
+  ),
 };
 
-const BlockContent = ({ blocks }) => (
-  <BaseBlockContent
+const PortableText = ({ blocks }) => (
+  <BasePortableText
     blocks={blocks}
     serializers={serializers}
     {...sanityConfig}
   />
 );
 
-export default BlockContent;
+export default PortableText;
