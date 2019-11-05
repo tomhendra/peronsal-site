@@ -13,7 +13,6 @@ const { CHARLIE, DELTA, ECHO } = sizes;
 
 const serializers = {
   types: {
-    // block: props => <pre>{JSON.stringify(props, null, 2)}</pre>
     block({ node, children }) {
       switch (node.style) {
         case 'h2':
