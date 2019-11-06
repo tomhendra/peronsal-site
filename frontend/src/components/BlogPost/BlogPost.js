@@ -21,6 +21,7 @@ const { FOXTROT, INDIA } = sizes;
  */
 
 const imageStyles = ({ theme }) => ({
+  borderRadius: theme.borderRadius.alpha,
   margin: `${theme.spacings.golf} 0`,
   width: '100%',
 });
@@ -29,7 +30,7 @@ const imageStyles = ({ theme }) => ({
  * `....................component....................`
  */
 
-const PostImage = styled(Img)(imageStyles);
+const PostMainImage = styled(Img)(imageStyles);
 
 const BlogPost = ({ post }) => {
   const { _rawBody, title, mainImage, publishedAt, categories } = post;
@@ -43,7 +44,7 @@ const BlogPost = ({ post }) => {
             </Heading>
             {publishedAt && <PostedDate date={publishedAt} />}
             {mainImage && mainImage.asset && (
-              <PostImage
+              <PostMainImage
                 alt={mainImage.alt}
                 sizes={{
                   ...mainImage.asset.fluid,
