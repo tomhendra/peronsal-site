@@ -7,6 +7,7 @@ import sanityConfig from '../../../sanity-config';
 import Heading from '../Heading';
 import Text from '../Text';
 import Figure from '../Figure';
+import CodeBlock from '../CodeBlock';
 
 import { sizes } from '../../assets/styles/constants';
 
@@ -43,19 +44,19 @@ const serializers = {
 
         case 'blockquote':
           return (
-            <Text italic as="blockquote" size={ECHO}>
+            <Text italic as="blockquote" size={DELTA}>
               {children}
             </Text>
           );
-
-        case 'code':
-          return <code>{children}</code>;
 
         default:
           return <Text size={DELTA}>{children}</Text>;
       }
     },
     contentImage: ({ node }) => <Figure node={node} />,
+    codeBlock: ({ node }) => (
+      <CodeBlock code={node.code} language={node.language} />
+    ),
   },
   listItem: ({ children }) => (
     <Text as="li" size={DELTA}>

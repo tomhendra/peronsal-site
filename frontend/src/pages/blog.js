@@ -34,7 +34,7 @@ const BlogPage = () => {
             <Heading as="h1" size={FOXTROT}>
               Blog.
             </Heading>
-            <Text>
+            <Text noMargin>
               This blog aims to be a collection of elements from all of my
               passions.
             </Text>

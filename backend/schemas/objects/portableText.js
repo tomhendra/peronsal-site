@@ -22,7 +22,6 @@ export default {
       // use your content.
       styles: [
         { title: 'Normal', value: 'normal' },
-        { title: 'Code', value: 'code' },
         { title: 'H2', value: 'h2' },
         { title: 'H3', value: 'h3' },
         { title: 'H4', value: 'h4' },
@@ -61,6 +60,13 @@ export default {
       name: 'contentImage',
       title: 'Image',
       type: 'figure',
+    },
+    {
+      name: 'codeBlock',
+      type: 'code',
+      options: {
+        theme: ['monokai'],
+      },
     },
   ],
 };
