@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 const listStyles = ({ theme }) => ({
   display: 'flex',
   listStyle: 'none',
+  marginTop: theme.spacings.foxtrot,
 
   '& li': {
     background: theme.colors.p800,

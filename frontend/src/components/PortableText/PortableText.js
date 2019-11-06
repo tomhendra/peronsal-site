@@ -43,7 +43,7 @@ const serializers = {
           return <code>{children}</code>;
 
         default:
-          return <Text>{children}</Text>;
+          return <Text size={DELTA}>{children}</Text>;
       }
     },
     contentImage({ node }) {
@@ -51,7 +51,7 @@ const serializers = {
     },
   },
   listItem: ({ children }) => (
-    <Text>
+    <Text size={DELTA}>
       <li css={{ marginLeft: '2rem' }}>{children}</li>
     </Text>
   ),
