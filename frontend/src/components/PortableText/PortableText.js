@@ -1,5 +1,6 @@
 import React from 'react';
 import BasePortableText from '@sanity/block-content-to-react';
+import PropTypes from 'prop-types';
 
 import sanityConfig from '../../../sanity-config';
 
@@ -11,9 +12,13 @@ import { sizes } from '../../assets/styles/constants';
 
 const { CHARLIE, DELTA, ECHO } = sizes;
 
+/**
+ * `....................serializers....................`
+ */
+
 const serializers = {
   types: {
-    block({ node, children }) {
+    block: ({ node, children }) => {
       switch (node.style) {
         case 'h2':
           return (
@@ -37,7 +42,11 @@ const serializers = {
           );
 
         case 'blockquote':
-          return <blockquote>{children}</blockquote>;
+          return (
+            <Text italic as="blockquote" size={DELTA}>
+              {children}
+            </Text>
+          );
 
         case 'code':
           return <code>{children}</code>;
@@ -46,16 +55,18 @@ const serializers = {
           return <Text size={DELTA}>{children}</Text>;
       }
     },
-    contentImage({ node }) {
-      return <Figure node={node} />;
-    },
+    contentImage: ({ node }) => <Figure node={node} />,
   },
   listItem: ({ children }) => (
-    <Text size={DELTA}>
-      <li css={{ marginLeft: '2rem' }}>{children}</li>
+    <Text as="li" size={DELTA}>
+      {children}
     </Text>
   ),
 };
+
+/**
+ * `....................component....................`
+ */
 
 const PortableText = ({ blocks }) => (
   <BasePortableText
@@ -64,5 +75,17 @@ const PortableText = ({ blocks }) => (
     {...sanityConfig}
   />
 );
+
+/**
+ * `....................propTypes....................`
+ */
+
+PortableText.propTypes = {
+  blocks: PropTypes.arrayOf(PropTypes.object),
+};
+
+PortableText.defaultProps = {
+  blocks: [{}],
+};
 
 export default PortableText;

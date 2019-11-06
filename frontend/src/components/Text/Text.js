@@ -11,7 +11,7 @@ const { ALPHA, BRAVO, CHARLIE, DELTA } = sizes;
  * `....................styles....................`
  */
 
-const styles = ({ bold, italic, strike, noMargin, size, theme }) => {
+const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
   const baseStyles = {
     label: 'text',
     color: theme.colors.n400,
@@ -41,12 +41,18 @@ const styles = ({ bold, italic, strike, noMargin, size, theme }) => {
     textDecoration: strike && 'line-through',
   };
 
+  const listItemStyles = {
+    label: as === 'li' && 'text--list-item',
+    marginLeft: as === 'li' && theme.spacings.echo,
+  };
+
   return {
     ...baseStyles,
     ...sizeStyles,
     ...boldStyles,
     ...italicStyles,
     ...strikeThroughStyles,
+    ...listItemStyles,
   };
 };
 
