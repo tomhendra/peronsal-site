@@ -62,8 +62,8 @@ const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
       fontFamily: theme.fontStack.heading,
       fontSize: `calc(${theme.typography.text[size].fontSize} * 3)`,
       position: 'absolute',
-      left: '10px',
-      top: '-10px',
+      left: '1rem',
+      top: '-1rem',
     },
 
     '&::after': {
