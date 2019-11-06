@@ -17,7 +17,7 @@ const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
     color: theme.colors.n400,
     fontFamily: theme.fontStack.default,
     fontWeight: theme.fontWeight.regular,
-    marginBottom: !noMargin ? theme.spacings.bravo : 0,
+    marginBottom: !noMargin ? theme.spacings.charlie : 0,
   };
 
   const sizeStyles = {
