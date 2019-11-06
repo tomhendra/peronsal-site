@@ -43,7 +43,7 @@ const serializers = {
 
         case 'blockquote':
           return (
-            <Text italic as="blockquote" size={DELTA}>
+            <Text italic as="blockquote" size={ECHO}>
               {children}
             </Text>
           );

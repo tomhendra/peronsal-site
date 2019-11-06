@@ -207,6 +207,10 @@ export const typography = {
       fontSize: '1.8rem', // 18px
       lineHeight: 1.5,
     },
+    echo: {
+      fontSize: '2.4rem', // 25px
+      lineHeight: 1.5,
+    },
   },
 };
 
@@ -272,6 +276,8 @@ export const borderRadius = {
 export const borderWidth = {
   alpha: '1px',
   bravo: '2px',
+  charlie: '5px',
+  delta: '10px',
 };
 
 /**

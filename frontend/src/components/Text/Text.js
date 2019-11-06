@@ -5,7 +5,7 @@ import { childrenPropType } from '../../utils/shared-prop-types';
 
 import { sizes } from '../../assets/styles/constants';
 
-const { ALPHA, BRAVO, CHARLIE, DELTA } = sizes;
+const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO } = sizes;
 
 /**
  * `....................styles....................`
@@ -17,7 +17,7 @@ const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
     color: theme.colors.n400,
     fontFamily: theme.fontStack.default,
     fontWeight: theme.fontWeight.regular,
-    marginBottom: !noMargin ? theme.spacings.charlie : 0,
+    marginBottom: !noMargin ? theme.typography.text[size].fontSize : 0,
   };
 
   const sizeStyles = {
@@ -26,24 +26,48 @@ const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
     lineHeight: theme.typography.text[size].lineHeight,
   };
 
-  const boldStyles = {
-    label: bold && 'text--bold',
-    fontWeight: bold && theme.fontWeight.bold,
+  const boldStyles = bold && {
+    label: 'text--bold',
+    fontWeight: theme.fontWeight.bold,
   };
 
-  const italicStyles = {
-    label: italic && 'text--italic',
-    fontStyle: italic && 'italic',
+  const italicStyles = italic && {
+    label: 'text--italic',
+    fontStyle: 'italic',
   };
 
-  const strikeThroughStyles = {
-    label: strike && 'text--strike-through',
-    textDecoration: strike && 'line-through',
+  const strikeThroughStyles = strike && {
+    label: 'text--strike-through',
+    textDecoration: 'line-through',
   };
 
-  const listItemStyles = {
-    label: as === 'li' && 'text--list-item',
-    marginLeft: as === 'li' && theme.spacings.echo,
+  const listItemStyles = as === 'li' && {
+    label: 'text--list-item',
+    marginLeft: theme.spacings.echo,
+  };
+
+  const blockquoteStyles = as === 'blockquote' && {
+    label: 'text--blockquote',
+    background: theme.colors.n900,
+    borderLeft: `${theme.borderWidth.delta} solid ${theme.colors.p800}`,
+    margin: `${theme.spacings.golf} 0`,
+    padding: theme.spacings.echo,
+    paddingLeft: theme.spacings.golf,
+    position: 'relative',
+
+    '&::before': {
+      content: '"\\201C"',
+      color: theme.colors.p800,
+      fontFamily: theme.fontStack.heading,
+      fontSize: `calc(${theme.typography.text[size].fontSize} * 3)`,
+      position: 'absolute',
+      left: '10px',
+      top: '-10px',
+    },
+
+    '&::after': {
+      content: '""',
+    },
   };
 
   return {
@@ -53,6 +77,7 @@ const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
     ...italicStyles,
     ...strikeThroughStyles,
     ...listItemStyles,
+    ...blockquoteStyles,
   };
 };
 
@@ -69,7 +94,7 @@ const Text = styled.p(styles);
 Text.propTypes = {
   as: PropTypes.string,
   noMargin: PropTypes.bool,
-  size: PropTypes.oneOf([ALPHA, BRAVO, CHARLIE, DELTA]),
+  size: PropTypes.oneOf([ALPHA, BRAVO, CHARLIE, DELTA, ECHO]),
   bold: PropTypes.bool,
   italic: PropTypes.bool,
   strike: PropTypes.bool,

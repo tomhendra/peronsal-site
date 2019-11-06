@@ -25,6 +25,10 @@ const figcaptionStyles = ({ theme }) => ({
   marginTop: theme.spacings.charlie,
 });
 
+const imageStyles = ({ theme }) => ({
+  borderRadius: theme.borderRadius.alpha,
+});
+
 /**
  * `....................component....................`
  */
@@ -32,6 +36,7 @@ const figcaptionStyles = ({ theme }) => ({
 const FigureElement = styled.figure(figureStyles);
 const FigcaptionText = Text.withComponent('figcaption');
 const FigcaptionElement = styled(FigcaptionText)(figcaptionStyles);
+const FigureImage = styled(Img)(imageStyles);
 
 const Figure = ({ node }) => {
   const fluidProps = getFluidGatsbyImage(
@@ -42,7 +47,7 @@ const Figure = ({ node }) => {
 
   return (
     <FigureElement>
-      <Img fluid={fluidProps} alt={node.alt} />
+      <FigureImage fluid={fluidProps} alt={node.alt} />
       <FigcaptionElement italic size={BRAVO}>
         {node.caption}
       </FigcaptionElement>
