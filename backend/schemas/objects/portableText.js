@@ -63,9 +63,10 @@ export default {
     },
     {
       name: 'codeBlock',
+      description: 'Code editor',
       type: 'code',
       options: {
-        theme: ['monokai'],
+        theme: 'github',
       },
     },
   ],

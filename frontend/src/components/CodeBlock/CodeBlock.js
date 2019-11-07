@@ -10,8 +10,9 @@ import prismTheme from 'prism-react-renderer/themes/github';
 
 const PreStyles = ({ theme }) => ({
   borderRadius: theme.borderRadius.charlie,
-  margin: '1rem 0',
+  margin: `${theme.spacings.foxtrot} 0`,
   padding: theme.spacings.echo,
+  paddingBottom: theme.spacings.delta,
   textAlign: 'left',
   fontSize: theme.typography.text.charlie.fontSize,
 

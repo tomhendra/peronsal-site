@@ -14,7 +14,7 @@ const { ALPHA } = sizes;
  */
 
 const PostedDate = ({ date }) => (
-  <Heading sub as="h2" size={ALPHA}>
+  <Heading sub as="h2" size={ALPHA} noMargin>
     Posted&nbsp;
     {differenceInDays(new Date(), new Date(date)) > 5
       ? format(new Date(date), 'do MMMM, yyyy')
