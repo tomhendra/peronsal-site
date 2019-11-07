@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import prismTheme from 'prism-react-renderer/themes/github';
+import PropTypes from 'prop-types';
 
 /**
  * `....................styles....................`
@@ -30,7 +31,7 @@ const LineNoStyles = ({ theme }) => ({
 });
 
 /**
- * `....................styles....................`
+ * `....................component....................`
  */
 
 const Pre = styled.pre(PreStyles);
@@ -57,5 +58,38 @@ const CodeBlock = ({ code, language }) => (
     )}
   </Highlight>
 );
+
+/**
+ * `....................propTypes....................`
+ */
+
+CodeBlock.propTypes = {
+  code: PropTypes.string,
+  // PopTypes for language defined as what @sanity/code-input supports.
+  // If unsupported by prism-react-renderer, no syntax highlighting will be applied.
+  // eslint-disable-next-line max-len
+  // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
+  language: PropTypes.oneOf([
+    'batchfile', // not supported by prism-react-renderer
+    'css',
+    'groq', // not supported by prism-react-renderer
+    'html', // not supported by prism-react-renderer - ??? - assume renders OK as markup,
+    'javascript',
+    'json',
+    'jsx',
+    'markdown',
+    'php', // not supported by prism-react-renderer
+    'python',
+    'sass',
+    'scss',
+    'sh', // defined as 'bash' by prism-react-renderer
+    'text', // not supported by prism-react-renderer (plaintext)
+  ]),
+};
+
+CodeBlock.defaultProps = {
+  code: '<DefaultProp />',
+  language: 'jsx',
+};
 
 export default withTheme(CodeBlock);

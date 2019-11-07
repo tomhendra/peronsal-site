@@ -67,6 +67,7 @@ export default {
       type: 'code',
       options: {
         theme: 'github',
+        withFilename: true,
       },
     },
   ],
