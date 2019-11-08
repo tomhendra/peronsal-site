@@ -3,24 +3,41 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-// import Container from '../components/Container';
-// import PageHeading from '../components/PageHeading';
-// import PageText from '../components/PageText';
-// import FormikContactForm from '../components/ContactForm';
+import Container from '../components/Container';
+import Grid from '../components/Grid';
+import Item from '../components/Item';
+import Heading from '../components/Heading';
+import ContactForm from '../components/ContactForm';
+
+import { sizes } from '../assets/styles/constants';
+
+const { FOXTROT, HOTEL, INDIA } = sizes;
 
 const ContactPage = () => (
   <Layout>
     <SEO title="Contact" />
-    {/* <Container>
-      <PageHeading>
-        <PageText
-          mainHeading="Contact me."
-          subHeading="Let's work together!"
-          paragraph="I'm always open to new opportunities. if you'd like to chat please send me a short message and I’ll get back to you right away. Alternatively find me online @tomhendra"
-        />
-      </PageHeading>
-      <FormikContactForm />
-    </Container> */}
+    <Container>
+      <Grid>
+        <Item
+          gridStart={1}
+          gridEnd={7}
+          spacingTop={INDIA}
+          spacingBottom={HOTEL}
+        >
+          <Heading as="h1" size={FOXTROT}>
+            Contact.
+          </Heading>
+        </Item>
+        <Item
+          gridStart={3}
+          gridEnd={11}
+          spacingTop={INDIA}
+          spacingBottom={HOTEL}
+        >
+          <ContactForm />
+        </Item>
+      </Grid>
+    </Container>
   </Layout>
 );
 

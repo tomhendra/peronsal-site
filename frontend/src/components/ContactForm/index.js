@@ -1,3 +1,3 @@
-import FormikContactForm from './ContactForm';
+import ContactForm from './ContactForm';
 
-export default FormikContactForm;
+export default ContactForm;
