@@ -37,6 +37,12 @@ const formStyles = ({ theme }) => ({
 
 const StyledForm = styled(Form)(formStyles);
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&');
+};
+
 const ContactForm = () => (
   <Formik
     initialValues={{
@@ -64,15 +70,28 @@ const ContactForm = () => (
         .oneOf([true], 'Please accept the terms and conditions.'),
     })}
     onSubmit={(values, { setSubmitting, resetForm }) => {
-      setTimeout(() => {
-        console.log(JSON.stringify(values, null, 2));
-        setSubmitting(false);
-        resetForm();
-      }, 1000);
+      fetch('/?no-cache=1', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name': 'contact',
+          ...values,
+        }),
+      })
+        .then(() => {
+          alert('Success!');
+          setSubmitting(false);
+          resetForm();
+        })
+        .catch(error => {
+          alert('Error: Please Try Again!');
+          console.error(error);
+          setSubmitting(false);
+        });
     }}
   >
     {/* destructure helper methods from props */}
-    {({ handleSubmit, isSubmitting, handleReset }) => (
+    {({ handleSubmit, isSubmitting, handleReset, dirty }) => (
       <Card spacing={GOLF}>
         <StyledForm
           onSubmit={handleSubmit}
@@ -102,15 +121,14 @@ const ContactForm = () => (
             label="Message"
             name="message"
             rows="8"
-            placeholder="Your message..."
+            placeholder="Your message (maximum 500 characters)"
           />
           <Checkbox name="acceptedTerms">I accept the privacy policy</Checkbox>
           <ButtonGroup>
             <Button
               buttonStyle={TERTIARY}
               buttonSize={BRAVO}
-              type="reset"
-              disabled={isSubmitting}
+              disabled={isSubmitting || !dirty}
               onClick={handleReset}
             >
               Reset
@@ -119,7 +137,7 @@ const ContactForm = () => (
               buttonStyle={PRIMARY}
               buttonSize={BRAVO}
               type="submit"
-              disabled={isSubmitting}
+              disabled={isSubmitting || !dirty}
             >
               Send
             </Button>
