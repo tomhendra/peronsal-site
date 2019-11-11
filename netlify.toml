@@ -1,4 +1,4 @@
 [build]
-  base = 'frontend/'
-  command = 'build:app'
-  publish = 'public/'
+  base = '/'
+  command = 'yarn run build'
+  publish = 'frontend/public/'
