@@ -63,11 +63,12 @@ const ContactForm = () => (
         .required('Required')
         .oneOf([true], 'Please accept the terms and conditions.'),
     })}
-    onSubmit={(values, { setSubmitting }) => {
+    onSubmit={(values, { setSubmitting, resetForm }) => {
       setTimeout(() => {
         console.log(JSON.stringify(values, null, 2));
         setSubmitting(false);
-      }, 400);
+        resetForm();
+      }, 1000);
     }}
   >
     {/* destructure helper methods from props */}
@@ -76,8 +77,8 @@ const ContactForm = () => (
         <StyledForm
           onSubmit={handleSubmit}
           method="post"
-          netlify-honeypot="bot-field"
           data-netlify="true"
+          netlify-honeypot="bot-field"
         >
           <TextInput
             label="First Name"
