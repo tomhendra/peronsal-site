@@ -13,7 +13,7 @@ import ButtonGroup from '../ButtonGroup';
 import { buttons, sizes } from '../../assets/styles/constants';
 
 const { PRIMARY, SECONDARY } = buttons;
-const { ALPHA } = sizes;
+const { ALPHA, BRAVO } = sizes;
 
 /**
  * `....................styles....................`
@@ -48,14 +48,14 @@ const ProjectPreview = ({ project }) => (
       <ButtonGroup>
         <Button
           buttonStyle={SECONDARY}
-          buttonSize={ALPHA}
+          buttonSize={BRAVO}
           externalLink={project.repo}
         >
           View Repo
         </Button>
         <Button
           buttonStyle={PRIMARY}
-          buttonSize={ALPHA}
+          buttonSize={BRAVO}
           externalLink={project.url}
         >
           Launch App

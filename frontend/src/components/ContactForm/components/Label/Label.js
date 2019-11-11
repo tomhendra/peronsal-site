@@ -6,7 +6,8 @@ import { withTheme } from 'emotion-theming';
  */
 
 const labelStyles = ({ theme }) => ({
-  color: theme.colors.n300,
+  color: theme.colors.n400,
+  fontSize: theme.typography.text.bravo.fontSize,
 });
 
 /**

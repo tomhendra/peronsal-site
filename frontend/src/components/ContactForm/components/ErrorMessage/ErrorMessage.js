@@ -7,6 +7,7 @@ import { withTheme } from 'emotion-theming';
 
 const errorMessageStyles = ({ theme }) => ({
   color: theme.colors.danger,
+  fontSize: theme.typography.text.bravo.fontSize,
 });
 
 /**

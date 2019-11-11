@@ -7,6 +7,8 @@ import { withTheme } from 'emotion-theming';
 
 const styles = ({ theme }) => ({
   display: 'flex',
+  width: '100%',
+
   '& > *:not(:last-of-type)': {
     marginRight: theme.spacings.delta,
   },

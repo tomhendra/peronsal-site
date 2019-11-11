@@ -6,12 +6,11 @@ import SEO from '../components/SEO';
 import Container from '../components/Container';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
-import Heading from '../components/Heading';
 import ContactForm from '../components/ContactForm';
 
 import { sizes } from '../assets/styles/constants';
 
-const { FOXTROT, HOTEL, INDIA } = sizes;
+const { HOTEL, INDIA } = sizes;
 
 const ContactPage = () => (
   <Layout>
@@ -19,18 +18,8 @@ const ContactPage = () => (
     <Container>
       <Grid>
         <Item
-          gridStart={1}
-          gridEnd={7}
-          spacingTop={INDIA}
-          spacingBottom={HOTEL}
-        >
-          <Heading as="h1" size={FOXTROT}>
-            Contact.
-          </Heading>
-        </Item>
-        <Item
           gridStart={3}
-          gridEnd={11}
+          gridEnd={10}
           spacingTop={INDIA}
           spacingBottom={HOTEL}
         >

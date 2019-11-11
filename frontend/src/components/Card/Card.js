@@ -63,7 +63,7 @@ const styles = ({
     },
     [HOTEL]: {
       padding: theme.spacings.hotel,
-      paddingTop: theme.spacings.india,
+      paddingTop: theme.spacings.hotel,
     },
   };
 

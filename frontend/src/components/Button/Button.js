@@ -21,7 +21,9 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
     cursor: 'pointer',
     fontWeight: 'bold',
     letterSpacing: 0.8,
+    textAlign: 'center',
     textDecoration: 'none',
+    width: '100%',
 
     '&:disabled': {
       opacity: 0.4,
@@ -67,11 +69,11 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
   const buttonSizes = {
     [ALPHA]: {
       fontSize: theme.typography.text.bravo.fontSize,
-      padding: `${theme.spacings.charlie} ${theme.spacings.echo}`,
+      padding: `${theme.spacings.charlie} ${theme.spacings.foxtrot}`,
     },
     [BRAVO]: {
       fontSize: theme.typography.text.charlie.fontSize,
-      padding: `${theme.spacings.charlie} ${theme.spacings.golf}`,
+      padding: `${theme.spacings.charlie} ${theme.spacings.foxtrot}`,
     },
     [CHARLIE]: {
       fontSize: theme.typography.text.delta.fontSize,
@@ -104,7 +106,7 @@ const Button = ({
 }) =>
   internalLink ? (
     // if internalLink prop is provided, return ButtonElement wrapped with Gatsby Link
-    <Link to={internalLink}>
+    <Link to={internalLink} css={{ width: '100%' }}>
       <ButtonElement
         buttonStyle={buttonStyle}
         buttonSize={buttonSize}
@@ -113,13 +115,15 @@ const Button = ({
     </Link>
   ) : externalLink ? (
     // if externalLink prop is provided, return ButtonElement wrapped with anchor tag
-    <a href={externalLink} target="blank">
-      <ButtonElement
-        buttonStyle={buttonStyle}
-        buttonSize={buttonSize}
-        {...otherProps}
-      />
-    </a>
+
+    <ButtonElement
+      as="a"
+      target="blank"
+      href={externalLink}
+      buttonStyle={buttonStyle}
+      buttonSize={buttonSize}
+      {...otherProps}
+    />
   ) : (
     // default return button if internalLink/externalLink props are not provided,
     // based on defaultProp values being defined as null.
