@@ -1,6 +1,11 @@
 {
   "version": 2,
   "name": "tomhendra-portfolio",
+  "env": {
+    "SANITY_PROJECT_ID": "@sanity_project_id",
+    "SANITY_DATASET": "@sanity_project_dataset",
+    "SANITY_READ_TOKEN": "@sanity_read_token"
+  },
   "builds": [
     {
       "src": "web/package.json",
