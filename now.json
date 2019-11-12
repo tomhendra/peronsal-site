@@ -9,12 +9,7 @@
     },
     {
       "src": "studio/package.json",
-      "use": "@now/static-build",
-      "env": {
-        "SANITY_PROJECT_ID": "@sanity_project_id",
-        "SANITY_DATASET": "@sanity_project_dataset",
-        "SANITY_READ_TOKEN": "@sanity_read_token"
-      }
+      "use": "@now/static-build"
     }
   ],
   "routes": [
