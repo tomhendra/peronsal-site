@@ -1,16 +1,18 @@
 {
   "version": 2,
   "name": "tomhendra-portfolio",
+  "build": {
+    "env": {
+      "SANITY_PROJECT_ID": "@sanity_project_id",
+      "SANITY_DATASET": "@sanity_project_dataset",
+      "SANITY_READ_TOKEN": "@sanity_read_token"
+    }
+  },
   "builds": [
     {
       "src": "web/package.json",
       "use": "@now/static-build",
-      "config": { "distDir": "_site" },
-      "env": {
-        "SANITY_PROJECT_ID": "@sanity_project_id",
-        "SANITY_DATASET": "@sanity_project_dataset",
-        "SANITY_READ_TOKEN": "@sanity_read_token"
-      }
+      "config": { "distDir": "_site" }
     },
     {
       "src": "studio/package.json",
