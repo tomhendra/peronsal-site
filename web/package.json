@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "frontend",
+  "name": "web",
   "description": "Gatsby frontend for Tom Hendra portfolio website.",
   "license": "MIT",
   "author": "Tom Hendra <hola@tomhendra.dev>",

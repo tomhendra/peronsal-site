@@ -13,8 +13,8 @@
     "node": "10.x"
   },
   "workspaces": [
-    "frontend",
-    "backend"
+    "web",
+    "studio"
   ],
   "scripts": {
     "start": "lerna run start --parallel",
@@ -22,10 +22,10 @@
     "format": "lerna run format --parallel",
     "lint": "lerna run lint --parallel",
     "test": "lerna run test",
-    "deploy:graphql": "cd backend && yarn deploy:graphql",
-    "deploy:sanity": "cd backend && yarn deploy:sanity",
-    "export:sanity": "lerna run --scope backend export",
-    "clean:cache": "lerna run --scope frontend clean",
+    "deploy:graphql": "cd studio && yarn deploy:graphql",
+    "deploy:sanity": "cd studio && yarn deploy:sanity",
+    "export:sanity": "lerna run --scope studio export",
+    "clean:cache": "lerna run --scope web clean",
     "clean:workspaces": "lerna clean",
     "clean:root": "rm -rf node_modules",
     "clean:all": "yarn clean:cache && yarn clean:workspaces && yarn clean:root",
@@ -52,7 +52,7 @@
     }
   },
   "lint-staged": {
-    "{frontend,backend}/**/*.js": [
+    "{web,studio}/**/*.js": [
       "prettier --write --ignore-path .gitignore",
       "eslint --fix --quiet --ignore-path .gitignore",
       "git add"

@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "name": "tomhendra-portfolio",
+  "builds": [
+    {
+      "src": "web/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "_site" }
+    },
+    { "src": "studio/package.json", "use": "@now/static-build" }
+  ],
+  "routes": [
+    { "src": "^/static/favicon.ico", "dest": "/studio/static/favicon.ico" },
+    { "src": "^/studio/static/(.*)", "dest": "/studio/static/$1" },
+    { "src": "^/studio/(.*)", "dest": "/studio/index.html" },
+    { "src": "^/(.*)", "dest": "/web/$1" }
+  ]
+}

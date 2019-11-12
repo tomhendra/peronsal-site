@@ -1,7 +1,7 @@
 {
   "private": true,
-  "name": "backend",
-  "description": "Sanity CSM for Tom Hendra portfolio website.",
+  "name": "studio",
+  "description": "Sanity studio CMS for Tom Hendra portfolio website.",
   "license": "MIT",
   "author": "Tom Hendra <hola@tomhendra.dev>",
   "repository": {
