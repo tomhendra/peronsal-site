@@ -12,7 +12,7 @@
     {
       "src": "web/package.json",
       "use": "@now/static-build",
-      "config": { "distDir": "_site" }
+      "config": { "distDir": "public" }
     },
     {
       "src": "studio/package.json",
