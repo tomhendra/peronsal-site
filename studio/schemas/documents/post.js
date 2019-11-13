@@ -1,6 +1,6 @@
 export default {
   name: 'post',
-  title: 'Post',
+  title: 'Blog Post',
   type: 'document',
   initialValue: () => ({
     publishedAt: new Date().toISOString(),
@@ -58,7 +58,24 @@ export default {
       type: 'portableText',
     },
   ],
-
+  orderings: [
+    {
+      title: 'Publishing date new–>old',
+      name: 'publishingDateAsc',
+      by: [
+        { field: 'publishedAt', direction: 'asc' },
+        { field: 'title', direction: 'asc' },
+      ],
+    },
+    {
+      title: 'Publishing date old->new',
+      name: 'publishingDateDesc',
+      by: [
+        { field: 'publishedAt', direction: 'desc' },
+        { field: 'title', direction: 'asc' },
+      ],
+    },
+  ],
   preview: {
     select: {
       title: 'title',

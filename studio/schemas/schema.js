@@ -7,15 +7,15 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // We import object and document schemas
-import post from './documents/post';
-import project from './documents/project';
 import author from './documents/author';
 import category from './documents/category';
+import post from './documents/post';
+import project from './documents/project';
 import technology from './documents/technology';
-import portableText from './objects/portableText';
-import figure from './objects/figure';
 import excerptPortableText from './objects/excerptPortableText';
+import figure from './objects/figure';
 import logo from './objects/logo';
+import portableText from './objects/portableText';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -26,16 +26,16 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
+    author,
+    category,
     post,
     project,
     technology,
-    category,
-    author,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
-    portableText,
     excerptPortableText,
     figure,
     logo,
+    portableText,
   ]),
 });
