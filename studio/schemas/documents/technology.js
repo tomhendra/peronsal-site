@@ -1,17 +1,17 @@
 export default {
   name: 'technology',
-  title: 'Technology',
   type: 'document',
+  title: 'Technology',
   fields: [
     {
       name: 'title',
-      title: 'Title',
       type: 'string',
+      title: 'Title',
     },
     {
       name: 'logo',
-      title: 'Logo',
       type: 'logo',
+      title: 'Logo',
     },
   ],
   preview: {

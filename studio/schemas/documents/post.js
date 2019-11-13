@@ -1,46 +1,34 @@
 export default {
   name: 'post',
-  title: 'Blog Post',
   type: 'document',
+  title: 'Blog Post',
   initialValue: () => ({
     publishedAt: new Date().toISOString(),
   }),
   fields: [
     {
       name: 'title',
-      title: 'Title',
       type: 'string',
+      title: 'Title',
     },
     {
       name: 'slug',
-      title: 'Slug',
       type: 'slug',
+      title: 'Slug',
       options: {
         source: 'title',
         maxLength: 96,
       },
     },
     {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: { type: 'author' },
-    },
-    {
       name: 'publishedAt',
-      title: 'Published at',
       type: 'datetime',
-    },
-    {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'category' } }],
+      title: 'Published at',
     },
     {
       name: 'mainImage',
-      title: 'Main image',
       type: 'figure',
+      title: 'Main image',
       options: {
         hotspot: true,
       },
@@ -53,23 +41,35 @@ export default {
         'This ends up on summary pages, on Google, when people share your post in social media.',
     },
     {
+      name: 'author',
+      type: 'reference',
+      title: 'Author',
+      to: { type: 'author' },
+    },
+    {
+      name: 'categories',
+      type: 'array',
+      title: 'Categories',
+      of: [{ type: 'reference', to: { type: 'category' } }],
+    },
+    {
       name: 'body',
+      type: 'bodyPortableText',
       title: 'Body',
-      type: 'portableText',
     },
   ],
   orderings: [
     {
-      title: 'Publishing date new–>old',
       name: 'publishingDateAsc',
+      title: 'Publishing date new–>old',
       by: [
         { field: 'publishedAt', direction: 'asc' },
         { field: 'title', direction: 'asc' },
       ],
     },
     {
-      title: 'Publishing date old->new',
       name: 'publishingDateDesc',
+      title: 'Publishing date old->new',
       by: [
         { field: 'publishedAt', direction: 'desc' },
         { field: 'title', direction: 'asc' },
@@ -79,7 +79,8 @@ export default {
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
+      publishedAt: 'publishedAt',
+      slug: 'slug',
       media: 'mainImage',
     },
     prepare(selection) {

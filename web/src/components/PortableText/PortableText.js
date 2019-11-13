@@ -53,7 +53,7 @@ const serializers = {
           return <Text size={DELTA}>{children}</Text>;
       }
     },
-    contentImage: ({ node }) => <Figure node={node} />,
+    figure: ({ node }) => <Figure node={node} />,
     codeBlock: ({ node }) => (
       <CodeBlock code={node.code} language={node.language} />
     ),

@@ -1,17 +1,17 @@
 export default {
   name: 'project',
-  title: 'Project',
   type: 'document',
+  title: 'Project',
   fields: [
     {
       name: 'title',
-      title: 'Title',
       type: 'string',
+      title: 'Title',
     },
     {
       name: 'slug',
-      title: 'Slug',
       type: 'slug',
+      title: 'Slug',
       options: {
         source: 'title',
         maxLength: 96,
@@ -19,35 +19,35 @@ export default {
     },
     {
       name: 'author',
-      title: 'Author',
       type: 'reference',
+      title: 'Author',
       to: { type: 'author' },
     },
     {
       name: 'mainImage',
-      title: 'Main image',
       type: 'figure',
+      title: 'Main image',
     },
     {
       name: 'description',
-      title: 'Description',
       type: 'text',
+      title: 'Description',
     },
     {
       name: 'techstack',
-      title: 'Technology stack',
       type: 'array',
+      title: 'Technology stack',
       of: [{ type: 'reference', to: { type: 'technology' } }],
     },
     {
       name: 'repo',
-      title: 'Project repo',
       type: 'url',
+      title: 'Project repo',
     },
     {
       name: 'url',
-      title: 'Project live URL',
       type: 'url',
+      title: 'Project live URL',
     },
   ],
   preview: {

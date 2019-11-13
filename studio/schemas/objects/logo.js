@@ -1,7 +1,7 @@
 export default {
   name: 'logo',
-  title: 'Image',
   type: 'image',
+  title: 'Image',
   options: {
     hotspot: false,
   },

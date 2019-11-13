@@ -24,7 +24,7 @@ const infoStyles = ({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'space-between',
   paddingLeft: theme.spacings.foxtrot,
-  width: '60%',
+  width: '58%',
 });
 
 /**

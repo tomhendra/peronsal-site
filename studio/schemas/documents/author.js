@@ -5,13 +5,13 @@ export default {
   fields: [
     {
       name: 'name',
-      title: 'Name',
       type: 'string',
+      title: 'Name',
     },
     {
       name: 'slug',
-      title: 'Slug',
       type: 'slug',
+      title: 'Slug',
       options: {
         source: 'name',
         maxLength: 96,
@@ -19,20 +19,20 @@ export default {
     },
     {
       name: 'image',
+      type: 'figure',
       title: 'Image',
-      type: 'image',
       options: {
         hotspot: true,
       },
     },
     {
       name: 'bio',
-      title: 'Bio',
       type: 'array',
+      title: 'Bio',
       of: [
         {
-          title: 'Block',
           type: 'block',
+          title: 'Block',
           styles: [{ title: 'Normal', value: 'normal' }],
           lists: [],
         },

@@ -1,15 +1,15 @@
 export default {
   name: 'figure',
-  title: 'Figure',
   type: 'image',
+  title: 'Figure',
   options: {
     hotspot: true,
   },
   fields: [
     {
-      title: 'Caption',
       name: 'caption',
       type: 'string',
+      title: 'Caption',
       options: {
         isHighlighted: true,
       },
@@ -18,9 +18,9 @@ export default {
       name: 'alt',
       type: 'string',
       title: 'Alternative text',
+      description: 'Important for SEO and accessibility.',
       validation: Rule =>
         Rule.error('You have to fill out the alternative text.').required(),
-      description: 'Important for SEO and accessibility.',
       options: {
         isHighlighted: true,
       },

@@ -6,21 +6,24 @@ import createSchema from 'part:@sanity/base/schema-creator';
 // eslint-disable-next-line import/no-unresolved
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
-// We import object and document schemas
+// document schemas
 import author from './documents/author';
 import category from './documents/category';
 import post from './documents/post';
 import project from './documents/project';
 import technology from './documents/technology';
+
+// object schemas
+import bodyPortableText from './objects/bodyPortableText';
+import codeBlock from './objects/codeBlock';
 import excerptPortableText from './objects/excerptPortableText';
 import figure from './objects/figure';
 import logo from './objects/logo';
-import portableText from './objects/portableText';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
-  name: 'default',
+  name: 'portfolio',
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
@@ -33,9 +36,10 @@ export default createSchema({
     technology,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
+    bodyPortableText,
+    codeBlock,
     excerptPortableText,
     figure,
     logo,
-    portableText,
   ]),
 });

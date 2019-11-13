@@ -4,18 +4,18 @@
  * reused in other parts of the studio with:
  *  {
  *    name: 'someName',
+ *    type: 'bodyPortableText'
  *    title: 'Some title',
- *    type: 'blockContent'
  *  }
  */
 export default {
-  title: 'Portable Text',
-  name: 'portableText',
+  name: 'bodyPortableText',
   type: 'array',
+  title: 'Blog Post body',
   of: [
     {
-      title: 'Block',
       type: 'block',
+      title: 'Block',
       // Styles let you set what your user can mark up blocks with. These
       // correspond with HTML tags, but you can set any title or value
       // you want and decide how you want to deal with it where you want to
@@ -27,7 +27,10 @@ export default {
         { title: 'H4', value: 'h4' },
         { title: 'Quote', value: 'blockquote' },
       ],
-      lists: [{ title: 'Bullet', value: 'bullet' }],
+      lists: [
+        { title: 'Bullet', value: 'bullet' },
+        { title: 'Number', value: 'number' },
+      ],
       // Marks let you mark up inline text in the block editor.
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
@@ -39,9 +42,9 @@ export default {
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
-            title: 'URL',
             name: 'link',
             type: 'object',
+            title: 'URL',
             fields: [
               {
                 title: 'URL',
@@ -57,14 +60,13 @@ export default {
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
     {
-      name: 'contentImage',
-      title: 'Image',
       type: 'figure',
+      title: 'Image',
+      options: { hotspot: true },
     },
     {
-      name: 'codeBlock',
-      description: 'Code editor',
-      type: 'code',
+      type: 'codeBlock',
+      title: 'Code block',
       options: {
         theme: 'github',
         withFilename: true,

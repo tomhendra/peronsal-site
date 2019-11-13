@@ -39,6 +39,7 @@ const FigcaptionElement = styled(FigcaptionText)(figcaptionStyles);
 const FigureImage = styled(Img)(imageStyles);
 
 const Figure = ({ node }) => {
+  console.log(node);
   const fluidProps = getFluidGatsbyImage(
     node.asset._id,
     { maxWidth: 675 },
