@@ -42,14 +42,15 @@ const Textarea = ({ label, ...otherProps }) => {
   const { id, name } = otherProps;
   return (
     <TextareaContainer>
-      <Label htmlFor={id || name}>{label}</Label>
-      {/* error/touched props defined for TextareaElement to enable error styling */}
-      <TextareaElement
-        error={error}
-        touched={touched}
-        {...field}
-        {...otherProps}
-      />
+      <Label htmlFor={id || name}>
+        {label}
+        <TextareaElement
+          error={error}
+          touched={touched}
+          {...field}
+          {...otherProps}
+        />
+      </Label>
       {touched && error ? <ErrorMessage>{error}</ErrorMessage> : null}
     </TextareaContainer>
   );

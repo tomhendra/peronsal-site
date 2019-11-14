@@ -41,14 +41,16 @@ const TextInput = ({ label, ...otherProps }) => {
   const { id, name } = otherProps;
   return (
     <TextInputContainer>
-      <Label htmlFor={id || name}>{label}</Label>
-      {/* error/touched props defined for TextInputElement to enable error styling */}
-      <TextInputElement
-        error={error}
-        touched={touched}
-        {...field}
-        {...otherProps}
-      />
+      <Label htmlFor={id || name}>
+        {label}
+        {/* error/touched props defined for TextInputElement to enable error styling */}
+        <TextInputElement
+          error={error}
+          touched={touched}
+          {...field}
+          {...otherProps}
+        />
+      </Label>
       {touched && error ? <ErrorMessage>{error}</ErrorMessage> : null}
     </TextInputContainer>
   );

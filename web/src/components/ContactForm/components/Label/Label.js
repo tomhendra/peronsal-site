@@ -8,12 +8,13 @@ import { withTheme } from 'emotion-theming';
 const labelStyles = ({ theme }) => ({
   color: theme.colors.n400,
   fontSize: theme.typography.text.bravo.fontSize,
+  position: 'relative',
 });
 
 /**
  * `....................component....................`
  */
 
-const Label = styled.span(labelStyles);
+const Label = styled.label(labelStyles);
 
 export default withTheme(Label);

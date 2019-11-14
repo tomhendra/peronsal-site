@@ -3,8 +3,8 @@
   "name": "tomhendra-portfolio",
   "build": {
     "env": {
-      "SANITY_PROJECT_ID": "@sanity_project_id",
-      "SANITY_DATASET": "@sanity_project_dataset",
+      "GATSBY_SANITY_PROJECT_ID": "@sanity_project_id",
+      "GATSBY_SANITY_DATASET": "@sanity_project_dataset",
       "SANITY_READ_TOKEN": "@sanity_read_token"
     }
   },

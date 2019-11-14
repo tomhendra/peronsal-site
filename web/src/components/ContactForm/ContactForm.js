@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
@@ -34,11 +35,27 @@ const formStyles = ({ theme }) => ({
   },
 });
 
+const linkStyles = ({ theme }) => ({
+  color: theme.colors.n400,
+  fontSize: theme.typography.text.bravo.fontSize,
+  fontWeight: theme.fontWeight.bold,
+  textDecoration: 'none',
+
+  '&:visited': {
+    color: theme.colors.n400,
+  },
+
+  '&:hover': {
+    color: theme.colors.p400,
+  },
+});
+
 /**
  * `....................component....................`
  */
 
 const StyledForm = styled(Form)(formStyles);
+const FormLink = styled(Link)(linkStyles);
 
 const ContactForm = () => {
   // Server State Handling
@@ -131,7 +148,10 @@ const ContactForm = () => {
               placeholder="Your message (maximum 500 characters)"
             />
             <Checkbox name="acceptedTerms">
-              I accept the privacy policy
+              <span>
+                {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
+                I accept the <FormLink to="/">data privacy policy</FormLink>
+              </span>
             </Checkbox>
             <ButtonGroup>
               <Button
@@ -150,13 +170,13 @@ const ContactForm = () => {
               >
                 Send
               </Button>
+              {serverState &&
+                (!serverState.ok ? (
+                  <ErrorMessage>{serverState.msg}</ErrorMessage>
+                ) : (
+                  <Text>{serverState.msg}</Text>
+                ))}
             </ButtonGroup>
-            {serverState &&
-              (!serverState.ok ? (
-                <ErrorMessage>{serverState.msg}</ErrorMessage>
-              ) : (
-                <Text>{serverState.msg}</Text>
-              ))}
           </StyledForm>
         </Card>
       )}
