@@ -13,7 +13,7 @@ function useSiteMetadata() {
     }
   `);
 
-  return data.site;
+  return data && data.site;
 }
 
 export default useSiteMetadata;

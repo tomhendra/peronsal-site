@@ -27,17 +27,20 @@ function useProjects() {
     }
   `);
 
-  return data.projects.edges.map(({ node }) => ({
-    id: node._id,
-    title: node.title,
-    description: node.description,
-    techstack: node._rawTechstack,
-    repo: node.repo,
-    url: node.url,
-    image: node.mainImage.asset.fixed,
-    alt: node.mainImage.alt,
-    caption: node.mainImage.caption,
-  }));
+  return data.projects.edges.map(
+    ({ node }) =>
+      node && {
+        id: node._id,
+        title: node.title,
+        description: node.description,
+        techstack: node._rawTechstack,
+        repo: node.repo,
+        url: node.url,
+        image: node.mainImage.asset.fixed,
+        alt: node.mainImage.alt,
+        caption: node.mainImage.caption,
+      },
+  );
 }
 
 export default useProjects;

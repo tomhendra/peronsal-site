@@ -28,14 +28,17 @@ function useTechStack() {
     }
   `);
 
-  return data.techStack.edges.map(({ node }) => ({
-    id: node._id,
-    title: node.title,
-    logoSmall: node.logo.asset.small,
-    logoMedium: node.logo.asset.medium,
-    logoLarge: node.logo.asset.large,
-    alt: node.logo.alt,
-  }));
+  return data.techStack.edges.map(
+    ({ node }) =>
+      node && {
+        id: node._id,
+        title: node.title,
+        logoSmall: node.logo.asset.small,
+        logoMedium: node.logo.asset.medium,
+        logoLarge: node.logo.asset.large,
+        alt: node.logo.alt,
+      },
+  );
 }
 
 export default useTechStack;

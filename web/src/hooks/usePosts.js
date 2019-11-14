@@ -28,16 +28,19 @@ function usePosts() {
     }
   `);
 
-  return data.posts.edges.map(({ node }) => ({
-    id: node._id,
-    title: node.title,
-    slug: `/blog/${node.slug.current}`,
-    publishedAt: node.publishedAt,
-    mainImage: node.mainImage.asset.fluid,
-    alt: node.mainImage.alt,
-    excerpt: node._rawExcerpt,
-    body: node._rawBody,
-  }));
+  return data.posts.edges.map(
+    ({ node }) =>
+      node && {
+        id: node._id,
+        title: node.title,
+        slug: `/blog/${node.slug.current}`,
+        publishedAt: node.publishedAt,
+        mainImage: node.mainImage.asset.fluid,
+        alt: node.mainImage.alt,
+        excerpt: node._rawExcerpt,
+        body: node._rawBody,
+      },
+  );
 }
 
 export default usePosts;
