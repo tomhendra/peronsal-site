@@ -79,3 +79,4 @@ export const LINK = 'Link2';
 export const LOADER = 'Loader';
 export const TOGGLELEFT = 'ToggleLeft';
 export const TOGGLERIGHT = 'ToggleRight';
+export const CHECK = 'Check';

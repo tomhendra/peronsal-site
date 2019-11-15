@@ -2,9 +2,17 @@ import React from 'react';
 import { useField } from 'formik';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
+import { hideVisually } from 'polished';
 
+import Icon from '../../../Icon';
 import Label from '../Label';
 import ErrorMessage from '../ErrorMessage';
+
+import { colors, icons, sizes } from '../../../../assets/styles/constants';
+
+const { NEUTRAL } = colors;
+const { CHECK } = icons;
+const { DELTA } = sizes;
 
 /**
  * `....................styles....................`
@@ -19,38 +27,38 @@ const CheckboxGroup = styled.div({
   alignItems: 'center',
 });
 
-const CheckboxElement = styled.div(({ theme, checked, error, touched }) => ({
-  backgroundColor: checked ? theme.colors.p500 : theme.colors.n800,
-  borderColor: !(error && touched) ? theme.colors.n700 : theme.colors.danger,
-  borderRadius: theme.borderRadius.bravo,
-  borderWidth: theme.borderWidth.alpha,
-  cursor: 'pointer',
-  height: theme.iconSizes.charlie,
-  width: theme.iconSizes.charlie,
-  marginRight: theme.spacings.bravo,
-  transition: theme.transitions.slow,
-}));
+// const CheckboxElement = styled.div(({ theme, checked, error, touched }) => ({
+//   backgroundColor: checked ? theme.colors.p500 : theme.colors.n800,
+//   borderColor: !(error && touched) ? theme.colors.n700 : theme.colors.danger,
+//   borderRadius: theme.borderRadius.bravo,
+//   borderWidth: theme.borderWidth.alpha,
+//   cursor: 'pointer',
+//   height: theme.iconSizes.charlie,
+//   width: theme.iconSizes.charlie,
+//   marginRight: theme.spacings.bravo,
+//   transition: theme.transitions.slow,
+// }));
 
-const HiddenCheckboxElement = styled.input({
+const CheckboxElement = styled.input(({ theme, checked }) => ({
   // Hide checkbox visually but remain accessible to screen readers.
   // Source: https://polished.js.org/docs/#hidevisually
-  border: '0',
-  clip: 'rect(0 0 0 0)',
-  clippath: 'inset(50%)',
-  height: '1px',
-  margin: '-1px',
-  overflow: 'hidden',
-  padding: 0,
-  position: 'absolute',
-  whiteSpace: 'nowrap',
-  width: '1px',
+  ...hideVisually(),
 
-  '&:focused': {
-    [CheckboxElement]: {
-      boxShadow: '0 0 0 3px pink',
-    },
+  '&:focus + ::before': {
+    content: ' ',
+    borderWidth: '2px',
+    borderColor: theme.colors.p500,
   },
-});
+
+  'label > svg': {
+    transform: checked && 'translateY(-50%) scale(1, 1)',
+    opacity: checked && '1',
+  },
+
+  'label::before': {
+    borderColor: checked && theme.colors.p500,
+  },
+}));
 
 /**
  * `....................component....................`
@@ -66,9 +74,9 @@ const Checkbox = ({ children, ...otherProps }) => {
   const { id, name } = otherProps;
   return (
     <CheckboxContainer>
-      <Label htmlFor={id || name}>
-        <CheckboxGroup>
-          <HiddenCheckboxElement
+      <CheckboxGroup>
+        <Label htmlFor={id || name}>
+          <CheckboxElement
             type="checkbox"
             checked={checked}
             error={error}
@@ -76,10 +84,16 @@ const Checkbox = ({ children, ...otherProps }) => {
             {...field}
             {...otherProps}
           />
-          <CheckboxElement checked={checked} error={error} touched={touched} />
           {children}
-        </CheckboxGroup>
-      </Label>
+          <Icon
+            type={CHECK}
+            color={NEUTRAL}
+            size={DELTA}
+            alt="GitHub logo"
+            aria-hidden="true"
+          />
+        </Label>
+      </CheckboxGroup>
       {touched && error ? <ErrorMessage>{error}</ErrorMessage> : null}
     </CheckboxContainer>
   );

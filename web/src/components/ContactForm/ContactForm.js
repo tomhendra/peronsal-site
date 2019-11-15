@@ -111,7 +111,7 @@ const ContactForm = () => {
           .required('Required'),
         acceptedTerms: Yup.boolean()
           .required('Required')
-          .oneOf([true], 'Please accept the terms and conditions.'),
+          .oneOf([true], 'Please agree to the data privacy policy.'),
       })}
     >
       {/* destructure helper methods from props */}
@@ -150,7 +150,7 @@ const ContactForm = () => {
             <Checkbox name="acceptedTerms">
               <span>
                 {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-                I accept the <FormLink to="/">data privacy policy</FormLink>
+                I agree to the <FormLink to="/">data privacy policy</FormLink>
               </span>
             </Checkbox>
             <ButtonGroup>
