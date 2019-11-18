@@ -9,6 +9,7 @@ import { colors, icons, sizes } from '../../assets/styles/constants';
 const { NEUTRAL, PRIMARY } = colors;
 const {
   BRIEFCASE,
+  CHECK,
   CODE,
   PENTOOL,
   CODEPEN,
@@ -101,6 +102,7 @@ Icon.propTypes = {
   ]),
   type: PropTypes.oneOf([
     BRIEFCASE,
+    CHECK,
     CODE,
     PENTOOL,
     CODEPEN,

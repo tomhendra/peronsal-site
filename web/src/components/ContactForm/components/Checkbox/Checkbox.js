@@ -10,7 +10,7 @@ import ErrorMessage from '../ErrorMessage';
 
 import { colors, icons, sizes } from '../../../../assets/styles/constants';
 
-const { NEUTRAL } = colors;
+const { PRIMARY } = colors;
 const { CHECK } = icons;
 const { DELTA } = sizes;
 
@@ -22,41 +22,55 @@ const CheckboxContainer = styled.div({
   position: 'relative',
 });
 
-const CheckboxGroup = styled.div({
-  display: 'flex',
-  alignItems: 'center',
-});
-
-// const CheckboxElement = styled.div(({ theme, checked, error, touched }) => ({
-//   backgroundColor: checked ? theme.colors.p500 : theme.colors.n800,
-//   borderColor: !(error && touched) ? theme.colors.n700 : theme.colors.danger,
-//   borderRadius: theme.borderRadius.bravo,
-//   borderWidth: theme.borderWidth.alpha,
-//   cursor: 'pointer',
-//   height: theme.iconSizes.charlie,
-//   width: theme.iconSizes.charlie,
-//   marginRight: theme.spacings.bravo,
-//   transition: theme.transitions.slow,
-// }));
-
 const CheckboxElement = styled.input(({ theme, checked }) => ({
-  // Hide checkbox visually but remain accessible to screen readers.
-  // Source: https://polished.js.org/docs/#hidevisually
   ...hideVisually(),
 
-  '&:focus + ::before': {
-    content: ' ',
-    borderWidth: '2px',
+  '&:focus + label::before': {
+    borderWidth: theme.borderWidth.bravo,
     borderColor: theme.colors.p500,
   },
 
-  'label > svg': {
+  '+ label > div > svg': {
     transform: checked && 'translateY(-50%) scale(1, 1)',
-    opacity: checked && '1',
+    opacity: checked && 1,
   },
 
-  'label::before': {
+  '+ label::before': {
     borderColor: checked && theme.colors.p500,
+  },
+}));
+
+const CheckboxLabel = styled(Label)(({ theme }) => ({
+  display: 'inline-block',
+  paddingLeft: theme.spacings.echo,
+
+  '&::before': {
+    backgroundColor: theme.colors.bodyBg,
+    border: `${theme.borderWidth.alpha} solid ${theme.colors.n500}`,
+    borderRadius: theme.borderRadius.bravo,
+    content: '""',
+    cursor: 'pointer',
+    display: 'block',
+    height: theme.iconSizes.echo,
+    width: theme.iconSizes.echo,
+    position: 'absolute',
+    top: theme.spacings.charlie,
+    left: 0,
+    transform: 'translateY(-50%)',
+    transition: 'border 0.05s ease-in, background-color 0.05s ease-in',
+  },
+
+  'div > svg': {
+    display: 'block',
+    height: theme.iconSizes.bravo,
+    width: theme.iconSizes.bravo,
+    left: '3px',
+    lineHeight: 0,
+    opacity: 0,
+    position: 'absolute',
+    top: theme.spacings.charlie,
+    transform: 'translateY(-50%) scale(0, 0)',
+    transition: 'transform 0.05s ease -in, opacity 0.05s ease -in',
   },
 }));
 
@@ -74,26 +88,19 @@ const Checkbox = ({ children, ...otherProps }) => {
   const { id, name } = otherProps;
   return (
     <CheckboxContainer>
-      <CheckboxGroup>
-        <Label htmlFor={id || name}>
-          <CheckboxElement
-            type="checkbox"
-            checked={checked}
-            error={error}
-            touched={touched}
-            {...field}
-            {...otherProps}
-          />
-          {children}
-          <Icon
-            type={CHECK}
-            color={NEUTRAL}
-            size={DELTA}
-            alt="GitHub logo"
-            aria-hidden="true"
-          />
-        </Label>
-      </CheckboxGroup>
+      <CheckboxElement
+        id={id || name}
+        type="checkbox"
+        checked={checked}
+        error={error}
+        touched={touched}
+        {...field}
+        {...otherProps}
+      />
+      <CheckboxLabel htmlFor={id || name}>
+        {children}
+        <Icon type={CHECK} color={PRIMARY} size={DELTA} aria-hidden="true" />
+      </CheckboxLabel>
       {touched && error ? <ErrorMessage>{error}</ErrorMessage> : null}
     </CheckboxContainer>
   );
