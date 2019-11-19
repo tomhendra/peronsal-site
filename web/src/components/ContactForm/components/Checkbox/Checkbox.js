@@ -12,7 +12,7 @@ import { colors, icons, sizes } from '../../../../assets/styles/constants';
 
 const { WHITE } = colors;
 const { CHECK } = icons;
-const { BRAVO } = sizes;
+const { ALPHA } = sizes;
 
 /**
  * `....................styles....................`
@@ -31,8 +31,9 @@ const elementStyles = ({ theme }) => ({
 });
 
 const labelStyles = ({ theme, checked, error, touched }) => ({
-  display: 'inline-block',
-  paddingLeft: theme.spacings.echo,
+  alignItems: 'center',
+  display: 'flex',
+  position: 'relative',
 
   '&::before': {
     backgroundColor: !checked ? theme.colors.bodyBg : theme.colors.p500,
@@ -47,28 +48,23 @@ const labelStyles = ({ theme, checked, error, touched }) => ({
     borderWidth: theme.borderWidth.alpha,
     content: '""',
     cursor: 'pointer',
-    display: 'block',
-    height: theme.iconSizes.delta,
-    width: theme.iconSizes.delta,
-    left: 0,
-    position: 'absolute',
-    top: 8,
-    transform: 'translateY(-50%)',
+    display: 'inline-block',
+    height: theme.iconSizes.charlie,
+    marginRight: theme.spacings.bravo,
     transition: 'border 0.05s ease-in, background-color 0.05s ease-in',
+    width: theme.iconSizes.charlie,
   },
 
   // target Icon container div
   '& div': {
     cursor: 'pointer',
-    left: 2,
+    left: '0.2rem',
     opacity: !checked ? 0 : 1,
     position: 'absolute',
-    top: 9,
-    transform: !checked
-      ? 'translateY(-50%) scale(0, 0)'
-      : 'translateY(-50%) scale(1, 1)',
-    transition: 'transform 0.05s ease -in, opacity 0.05s ease -in',
-
+    top: '0.2rem',
+    transform: !checked ? 'scale(0, 0)' : 'scale(1, 1)',
+    transition: 'transform 0.05s ease-in, opacity 0.05s ease-in',
+    // thicken the nested svg slightly from 2 default (hackish?)
     '& svg': {
       strokeWidth: 3,
     },
@@ -93,12 +89,7 @@ const Checkbox = ({ children, ...otherProps }) => {
   const { id, name } = otherProps;
   return (
     <CheckboxContainer>
-      <CheckboxElement
-        id={id || name}
-        type="checkbox"
-        {...field}
-        {...otherProps}
-      />
+      <CheckboxElement id={id || name} type="checkbox" {...field} />
       <CheckboxLabel
         htmlFor={id || name}
         checked={checked}
@@ -106,7 +97,7 @@ const Checkbox = ({ children, ...otherProps }) => {
         touched={touched}
       >
         {children}
-        <Icon type={CHECK} color={WHITE} size={BRAVO} aria-hidden="true" />
+        <Icon type={CHECK} color={WHITE} size={ALPHA} aria-hidden="true" />
       </CheckboxLabel>
       {touched && error ? <ErrorMessage>{error}</ErrorMessage> : null}
     </CheckboxContainer>
