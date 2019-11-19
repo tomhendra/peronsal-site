@@ -78,7 +78,7 @@ const Icon = ({ alt, color, size, spacing, type, theme }) => {
 
 Icon.propTypes = {
   alt: PropTypes.string,
-  color: PropTypes.oneOf([PRIMARY, NEUTRAL]),
+  color: PropTypes.oneOf([PRIMARY, NEUTRAL, WHITE]),
   size: PropTypes.oneOf([
     ALPHA,
     BRAVO,

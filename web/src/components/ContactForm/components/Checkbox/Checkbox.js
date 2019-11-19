@@ -12,7 +12,7 @@ import { colors, icons, sizes } from '../../../../assets/styles/constants';
 
 const { WHITE } = colors;
 const { CHECK } = icons;
-const { ALPHA } = sizes;
+const { BRAVO } = sizes;
 
 /**
  * `....................styles....................`
@@ -48,8 +48,8 @@ const labelStyles = ({ theme, checked, error, touched }) => ({
     content: '""',
     cursor: 'pointer',
     display: 'block',
-    height: theme.iconSizes.charlie,
-    width: theme.iconSizes.charlie,
+    height: theme.iconSizes.delta,
+    width: theme.iconSizes.delta,
     left: 0,
     position: 'absolute',
     top: 8,
@@ -96,7 +96,6 @@ const Checkbox = ({ children, ...otherProps }) => {
       <CheckboxElement
         id={id || name}
         type="checkbox"
-        checked={checked}
         {...field}
         {...otherProps}
       />
@@ -107,7 +106,7 @@ const Checkbox = ({ children, ...otherProps }) => {
         touched={touched}
       >
         {children}
-        <Icon type={CHECK} color={WHITE} size={ALPHA} aria-hidden="true" />
+        <Icon type={CHECK} color={WHITE} size={BRAVO} aria-hidden="true" />
       </CheckboxLabel>
       {touched && error ? <ErrorMessage>{error}</ErrorMessage> : null}
     </CheckboxContainer>
