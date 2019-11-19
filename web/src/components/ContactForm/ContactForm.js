@@ -31,7 +31,7 @@ const formStyles = ({ theme }) => ({
   width: '100%',
 
   '& > *:not(:last-child)': {
-    marginBottom: theme.spacings.delta,
+    marginBottom: theme.spacings.echo,
   },
 });
 

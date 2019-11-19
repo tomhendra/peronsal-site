@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import { colors, icons, sizes } from '../../assets/styles/constants';
 
-const { NEUTRAL, PRIMARY } = colors;
+const { NEUTRAL, PRIMARY, WHITE } = colors;
 const {
   BRIEFCASE,
   CHECK,
@@ -40,6 +40,7 @@ const {
  */
 
 const containerStyles = ({ spacing, theme }) => ({
+  height: '100%',
   padding: theme.spacings[spacing],
 });
 
@@ -47,6 +48,7 @@ const colorStyles = (color, theme) => {
   const colorOptions = {
     [NEUTRAL]: theme.colors.n600,
     [PRIMARY]: theme.colors.p500,
+    [WHITE]: theme.colors.white,
   };
   return colorOptions[color];
 };

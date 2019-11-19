@@ -10,73 +10,78 @@ import ErrorMessage from '../ErrorMessage';
 
 import { colors, icons, sizes } from '../../../../assets/styles/constants';
 
-const { PRIMARY } = colors;
+const { WHITE } = colors;
 const { CHECK } = icons;
-const { DELTA } = sizes;
+const { ALPHA } = sizes;
 
 /**
  * `....................styles....................`
  */
 
-const CheckboxContainer = styled.div({
+const containerStyles = {
   position: 'relative',
-});
+};
 
-const CheckboxElement = styled.input(({ theme, checked }) => ({
+const elementStyles = ({ theme }) => ({
   ...hideVisually(),
-
   '&:focus + label::before': {
     borderWidth: theme.borderWidth.bravo,
     borderColor: theme.colors.p500,
   },
+});
 
-  '+ label > div > svg': {
-    transform: checked && 'translateY(-50%) scale(1, 1)',
-    opacity: checked && 1,
-  },
-
-  '+ label::before': {
-    borderColor: checked && theme.colors.p500,
-  },
-}));
-
-const CheckboxLabel = styled(Label)(({ theme }) => ({
+const labelStyles = ({ theme, checked, error, touched }) => ({
   display: 'inline-block',
   paddingLeft: theme.spacings.echo,
 
   '&::before': {
-    backgroundColor: theme.colors.bodyBg,
-    border: `${theme.borderWidth.alpha} solid ${theme.colors.n500}`,
+    backgroundColor: !checked ? theme.colors.bodyBg : theme.colors.p500,
+    borderColor:
+      !checked && !error && !touched
+        ? theme.colors.n700
+        : checked
+        ? theme.colors.p500
+        : error && touched && theme.colors.danger,
+    borderStyle: 'solid',
     borderRadius: theme.borderRadius.bravo,
+    borderWidth: theme.borderWidth.alpha,
     content: '""',
     cursor: 'pointer',
     display: 'block',
-    height: theme.iconSizes.echo,
-    width: theme.iconSizes.echo,
-    position: 'absolute',
-    top: theme.spacings.charlie,
+    height: theme.iconSizes.charlie,
+    width: theme.iconSizes.charlie,
     left: 0,
+    position: 'absolute',
+    top: 8,
     transform: 'translateY(-50%)',
     transition: 'border 0.05s ease-in, background-color 0.05s ease-in',
   },
 
-  'div > svg': {
-    display: 'block',
-    height: theme.iconSizes.bravo,
-    width: theme.iconSizes.bravo,
-    left: '3px',
-    lineHeight: 0,
-    opacity: 0,
+  // target Icon container div
+  '& div': {
+    cursor: 'pointer',
+    left: 2,
+    opacity: !checked ? 0 : 1,
     position: 'absolute',
-    top: theme.spacings.charlie,
-    transform: 'translateY(-50%) scale(0, 0)',
+    top: 9,
+    transform: !checked
+      ? 'translateY(-50%) scale(0, 0)'
+      : 'translateY(-50%) scale(1, 1)',
     transition: 'transform 0.05s ease -in, opacity 0.05s ease -in',
+
+    '& svg': {
+      strokeWidth: 3,
+    },
   },
-}));
+});
 
 /**
  * `....................component....................`
  */
+
+const CheckboxContainer = styled.div(containerStyles);
+const CheckboxLabel = styled(Label)(labelStyles);
+const CheckboxElement = styled.input(elementStyles);
 
 const Checkbox = ({ children, ...otherProps }) => {
   // We need to tell useField what type of input this is
@@ -92,14 +97,17 @@ const Checkbox = ({ children, ...otherProps }) => {
         id={id || name}
         type="checkbox"
         checked={checked}
-        error={error}
-        touched={touched}
         {...field}
         {...otherProps}
       />
-      <CheckboxLabel htmlFor={id || name}>
+      <CheckboxLabel
+        htmlFor={id || name}
+        checked={checked}
+        error={error}
+        touched={touched}
+      >
         {children}
-        <Icon type={CHECK} color={PRIMARY} size={DELTA} aria-hidden="true" />
+        <Icon type={CHECK} color={WHITE} size={ALPHA} aria-hidden="true" />
       </CheckboxLabel>
       {touched && error ? <ErrorMessage>{error}</ErrorMessage> : null}
     </CheckboxContainer>
