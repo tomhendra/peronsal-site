@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
 import { colors } from '../../assets/styles/constants';
@@ -9,7 +10,7 @@ const { DANGER, WARNING, SUCCESS } = colors;
  * `....................styles....................`
  */
 
-const styles = (type, theme) => {
+const elementStyles = ({ type, theme }) => {
   // Set values for Tooltip colours here
   const tooltipTypes = {
     [DANGER]: {
@@ -83,13 +84,15 @@ const styles = (type, theme) => {
  * `....................component....................`
  */
 
-const Tooltip = ({ type, theme, ...rest }) => {
-  return (
-    <div css={styles(type, theme)}>
-      <div {...rest} />
-    </div>
-  );
-};
+const TooltipElement = styled.div(elementStyles);
+
+const Tooltip = ({ type, ...otherProps }) => (
+  <TooltipElement type={type} {...otherProps} />
+);
+
+/**
+ * `....................propTypes....................`
+ */
 
 Tooltip.defaultProps = {
   type: WARNING,

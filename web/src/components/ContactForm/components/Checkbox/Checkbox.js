@@ -50,7 +50,7 @@ const labelStyles = ({ theme, checked, error, touched }) => ({
     cursor: 'pointer',
     display: 'inline-block',
     height: theme.iconSizes.charlie,
-    marginRight: theme.spacings.bravo,
+    marginRight: '0.6rem',
     transition: 'border 0.05s ease-in, background-color 0.05s ease-in',
     width: theme.iconSizes.charlie,
   },
