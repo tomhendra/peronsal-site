@@ -29,13 +29,13 @@ const elementStyles = ({ variant, position, theme }) => {
   const baseStyles = {
     borderRadius: theme.borderRadius.bravo,
     fontSize: theme.typography.text.bravo.fontSize,
+    maxWidth: theme.spacings.lima,
     padding: theme.spacings.bravo,
     position: 'absolute',
     zIndex: theme.zIndex.tooltip,
     // Tooltip arrow
     '&::after': {
-      borderStyle: 'solid',
-      borderWidth: theme.borderWidth.charlie,
+      border: `${theme.borderWidth.charlie} solid transparent`,
       content: '""',
       position: 'absolute',
     },
@@ -66,8 +66,9 @@ const elementStyles = ({ variant, position, theme }) => {
     [TOP_START]: {
       bottom: `calc(100% + ${theme.spacings.bravo})`,
       left: 0,
+
       '::after': {
-        borderColor: `${variantConfig.backgroundColor} transparent transparent transparent`,
+        borderTopColor: variantConfig.backgroundColor,
         marginLeft: `-${theme.borderWidth.charlie}`,
         top: '100%', // arrow at bottom
         left: theme.spacings.delta, // arrow left side
@@ -75,9 +76,11 @@ const elementStyles = ({ variant, position, theme }) => {
     },
     [TOP]: {
       bottom: `calc(100% + ${theme.spacings.bravo})`,
-      left: '40%',
+      left: '50%',
+      transform: 'translateX(-50%)',
+
       '::after': {
-        borderColor: `${variantConfig.backgroundColor} transparent transparent transparent`,
+        borderTopColor: variantConfig.backgroundColor,
         marginLeft: `-${theme.borderWidth.charlie}`,
         top: '100%', // arrow at bottom
         left: '50%', // arrow centred
@@ -86,8 +89,9 @@ const elementStyles = ({ variant, position, theme }) => {
     [TOP_END]: {
       bottom: `calc(100% + ${theme.spacings.bravo})`,
       right: 0,
+      // arrow styles
       '::after': {
-        borderColor: `${variantConfig.backgroundColor} transparent transparent transparent`,
+        borderTopColor: variantConfig.backgroundColor,
         marginLeft: `-${theme.borderWidth.charlie}`,
         top: '100%', // arrow at bottom
         right: theme.spacings.delta, // arrow right side
@@ -96,8 +100,9 @@ const elementStyles = ({ variant, position, theme }) => {
     [RIGHT_START]: {
       left: `calc(100% + ${theme.spacings.bravo})`,
       top: 0,
+      // arrow styles
       '::after': {
-        borderColor: `transparent ${variantConfig.backgroundColor} transparent transparent`,
+        borderRightColor: variantConfig.backgroundColor,
         right: '100%', // arrow at left
         top: theme.spacings.delta, // arrow at top
         marginTop: `-${theme.borderWidth.charlie}`,
@@ -105,9 +110,11 @@ const elementStyles = ({ variant, position, theme }) => {
     },
     [RIGHT]: {
       left: `calc(100% + ${theme.spacings.bravo})`,
-      top: '40%',
+      top: '50%',
+      transform: 'translateY(-50%)',
+      // arrow styles
       '::after': {
-        borderColor: `transparent ${variantConfig.backgroundColor} transparent transparent`,
+        borderRightColor: variantConfig.backgroundColor,
         right: '100%', // arrow at left
         top: '50%', // arrow centred
         marginTop: `-${theme.borderWidth.charlie}`,
@@ -116,8 +123,9 @@ const elementStyles = ({ variant, position, theme }) => {
     [RIGHT_END]: {
       left: `calc(100% + ${theme.spacings.bravo})`,
       bottom: 0,
+      // arrow styles
       '::after': {
-        borderColor: `transparent ${variantConfig.backgroundColor} transparent transparent`,
+        borderRightColor: variantConfig.backgroundColor,
         right: '100%', // arrow at left
         bottom: theme.spacings.delta, // arrow at bottom
         marginBottom: `-${theme.borderWidth.charlie}`,
@@ -126,8 +134,9 @@ const elementStyles = ({ variant, position, theme }) => {
     [BOTTOM_START]: {
       top: `calc(100% + ${theme.spacings.bravo})`,
       left: 0,
+      // arrow styles
       '::after': {
-        borderColor: `transparent transparent ${variantConfig.backgroundColor} transparent`,
+        borderBottomColor: variantConfig.backgroundColor,
         bottom: '100%', // arrow at top
         left: theme.spacings.delta, // arrow left side
         marginLeft: `-${theme.borderWidth.charlie}`,
@@ -135,9 +144,10 @@ const elementStyles = ({ variant, position, theme }) => {
     },
     [BOTTOM]: {
       top: `calc(100% + ${theme.spacings.bravo})`,
-      left: '40%',
+      left: '50%',
+      transform: 'translateX(-50%)',
       '::after': {
-        borderColor: `transparent transparent ${variantConfig.backgroundColor} transparent`,
+        borderBottomColor: variantConfig.backgroundColor,
         bottom: '100%', // arrow at top
         left: '50%', // arrow centred
         marginLeft: `-${theme.borderWidth.charlie}`,
@@ -146,8 +156,9 @@ const elementStyles = ({ variant, position, theme }) => {
     [BOTTOM_END]: {
       top: `calc(100% + ${theme.spacings.bravo})`,
       right: 0,
+      // arrow styles
       '::after': {
-        borderColor: `transparent transparent ${variantConfig.backgroundColor} transparent`,
+        borderBottomColor: variantConfig.backgroundColor,
         bottom: '100%', // arrow at top
         right: theme.spacings.delta, // arrow right side
         marginLeft: `-${theme.borderWidth.charlie}`,
@@ -156,8 +167,9 @@ const elementStyles = ({ variant, position, theme }) => {
     [LEFT_START]: {
       right: `calc(100% + ${theme.spacings.bravo})`,
       top: 0,
+      // arrow styles
       '::after': {
-        borderColor: `transparent transparent transparent ${variantConfig.backgroundColor}`,
+        borderLeftColor: variantConfig.backgroundColor,
         left: '100%', // arrow at right
         top: theme.spacings.delta, // arrow at top
         marginTop: `-${theme.borderWidth.charlie}`,
@@ -165,9 +177,11 @@ const elementStyles = ({ variant, position, theme }) => {
     },
     [LEFT]: {
       right: `calc(100% + ${theme.spacings.bravo})`,
-      top: '40%',
+      top: '50%',
+      transform: 'translateY(-50%)',
+      // arrow styles
       '::after': {
-        borderColor: `transparent transparent transparent ${variantConfig.backgroundColor}`,
+        borderLeftColor: variantConfig.backgroundColor,
         left: '100%', // arrow at right
         top: '50%', // arrow centred
         marginTop: `-${theme.borderWidth.charlie}`,
@@ -176,8 +190,9 @@ const elementStyles = ({ variant, position, theme }) => {
     [LEFT_END]: {
       right: `calc(100% + ${theme.spacings.bravo})`,
       bottom: 0,
+      // arrow styles
       '::after': {
-        borderColor: `transparent transparent transparent ${variantConfig.backgroundColor}`,
+        borderLeftColor: variantConfig.backgroundColor,
         left: '100%', // arrow at right
         bottom: theme.spacings.delta, // arrow at bottom
         marginBottom: `-${theme.borderWidth.charlie}`,
