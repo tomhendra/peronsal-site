@@ -7,17 +7,17 @@ import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
 import Card from '../Card';
+import Tooltip from '../Tooltip';
 import TextInput from './components/TextInput';
 import Textarea from './components/Textarea';
 import Checkbox from './components/Checkbox';
-import ErrorMessage from './components/ErrorMessage';
 import ButtonGroup from '../ButtonGroup';
 import Button from '../Button';
-import Text from '../Text';
 
-import { buttons, sizes } from '../../assets/styles/constants';
+import { buttons, colors, sizes } from '../../assets/styles/constants';
 
 const { PRIMARY, TERTIARY } = buttons;
+const { DANGER, SUCCESS } = colors;
 const { BRAVO, GOLF } = sizes;
 
 /**
@@ -29,9 +29,10 @@ const formStyles = ({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'flex-start',
   width: '100%',
+  zIndex: theme.zIndex.form,
 
   '& > *:not(:last-child)': {
-    marginBottom: theme.spacings.echo,
+    marginBottom: theme.spacings.foxtrot,
   },
 });
 
@@ -148,10 +149,8 @@ const ContactForm = () => {
               placeholder="Your message (maximum 500 characters)"
             />
             <Checkbox name="acceptedTerms">
-              <span>
-                {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-                I agree to the <FormLink to="/">data privacy policy</FormLink>
-              </span>
+              I agree to the&nbsp;
+              <FormLink to="/">privacy policy</FormLink>
             </Checkbox>
             <ButtonGroup>
               <Button
@@ -172,9 +171,9 @@ const ContactForm = () => {
               </Button>
               {serverState &&
                 (!serverState.ok ? (
-                  <ErrorMessage>{serverState.msg}</ErrorMessage>
+                  <Tooltip variant={DANGER}>{serverState.msg}</Tooltip>
                 ) : (
-                  <Text>{serverState.msg}</Text>
+                  <Tooltip variant={SUCCESS}>{serverState.msg}</Tooltip>
                 ))}
             </ButtonGroup>
           </StyledForm>

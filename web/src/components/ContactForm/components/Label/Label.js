@@ -8,7 +8,7 @@ import { withTheme } from 'emotion-theming';
 const labelStyles = ({ theme }) => ({
   color: theme.colors.n400,
   fontSize: theme.typography.text.bravo.fontSize,
-  position: 'relative',
+  zIndex: theme.zIndex.input,
 });
 
 /**

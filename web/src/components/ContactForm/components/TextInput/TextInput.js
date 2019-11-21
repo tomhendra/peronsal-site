@@ -4,15 +4,21 @@ import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
 import Label from '../Label';
-import ErrorMessage from '../ErrorMessage';
+import Tooltip from '../../../Tooltip';
+
+import { colors, positions } from '../../../../assets/styles/constants';
+
+const { DANGER } = colors;
+const { TOP_START } = positions;
 
 /**
  * `....................styles....................`
  */
 
-const containerStyles = {
+const containerStyles = ({ theme }) => ({
   position: 'relative',
-};
+  zIndex: theme.zIndex.input,
+});
 
 const elementStyles = ({ theme, error, touched }) => ({
   borderColor: !(error && touched) ? theme.colors.n700 : theme.colors.danger,
@@ -21,7 +27,7 @@ const elementStyles = ({ theme, error, touched }) => ({
   borderWidth: theme.borderWidth.alpha,
   color: theme.colors.bodyColor,
   fontSize: theme.typography.text.charlie.fontSize,
-  margin: `${theme.spacings.alpha} 0`,
+  marginTop: theme.spacings.alpha,
   padding: theme.spacings.charlie,
   width: '100%',
 });
@@ -43,7 +49,6 @@ const TextInput = ({ label, ...otherProps }) => {
     <TextInputContainer>
       <Label htmlFor={id || name}>
         {label}
-        {/* error/touched props defined for TextInputElement to enable error styling */}
         <TextInputElement
           error={error}
           touched={touched}
@@ -51,7 +56,11 @@ const TextInput = ({ label, ...otherProps }) => {
           {...otherProps}
         />
       </Label>
-      {touched && error ? <ErrorMessage>{error}</ErrorMessage> : null}
+      {touched && error ? (
+        <Tooltip variant={DANGER} position={TOP_START}>
+          {error}
+        </Tooltip>
+      ) : null}
     </TextInputContainer>
   );
 };

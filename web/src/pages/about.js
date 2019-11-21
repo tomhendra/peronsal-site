@@ -15,7 +15,7 @@ import Icon from '../components/Icon';
 import { colors, icons, sizes } from '../assets/styles/constants';
 
 const { PRIMARY } = colors;
-const { BRIEFCASE, CODE, PENTOOL } = icons;
+const { BRIEFCASE, CODE, PEN_TOOL } = icons;
 const { BRAVO, FOXTROT, HOTEL, INDIA } = sizes;
 
 const AboutPage = () => (
@@ -67,7 +67,7 @@ const AboutPage = () => (
           <Item gridStart={5} gridEnd={9}>
             <Card>
               <Icon
-                type={PENTOOL}
+                type={PEN_TOOL}
                 color={PRIMARY}
                 size={INDIA}
                 spacing={BRAVO}

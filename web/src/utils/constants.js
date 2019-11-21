@@ -2,13 +2,21 @@
  * `....................positions....................`
  */
 
+export const TOP_START = 'top-start';
 export const TOP = 'top';
+export const TOP_END = 'top-end';
+export const RIGHT_START = 'right-start';
 export const RIGHT = 'right';
+export const RIGHT_END = 'right-end';
+export const BOTTOM_START = 'bottom-start';
 export const BOTTOM = 'bottom';
+export const BOTTOM_END = 'bottom-end';
+export const LEFT_START = 'left-start';
 export const LEFT = 'left';
-export const START = 'start';
+export const LEFT_END = 'left-end';
+export const CENTER_START = 'center-start';
 export const CENTER = 'center';
-export const END = 'end';
+export const CENTER_END = 'center-end';
 
 /**
  * `....................sizes....................`
@@ -71,13 +79,13 @@ export const WHITE = 'white';
 
 export const BRIEFCASE = 'Briefcase';
 export const CODE = 'Code';
-export const PENTOOL = 'PenTool';
+export const PEN_TOOL = 'PenTool';
 export const CODEPEN = 'Codepen';
 export const GITHUB = 'GitHub';
 export const LINKEDIN = 'Linkedin';
 export const TWITTER = 'Twitter';
 export const LINK = 'Link2';
 export const LOADER = 'Loader';
-export const TOGGLELEFT = 'ToggleLeft';
-export const TOGGLERIGHT = 'ToggleRight';
+export const TOGGLE_LEFT = 'ToggleLeft';
+export const TOGGLE_RIGHT = 'ToggleRight';
 export const CHECK = 'Check';

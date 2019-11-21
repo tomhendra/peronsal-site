@@ -34,6 +34,7 @@ const styles = ({
     borderRadius: theme.borderRadius.delta,
     display: 'flex',
     flexWrap: 'wrap',
+    zIndex: theme.zIndex.card,
   };
 
   const shadowStyles = {

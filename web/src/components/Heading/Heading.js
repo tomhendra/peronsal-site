@@ -26,7 +26,9 @@ const styles = ({ noMargin, size, sub, theme }) => {
     fontSize: !sub
       ? theme.typography.headings[size].fontSize
       : theme.typography.subHeadings[size].fontSize,
-    lineHeight: theme.typography.headings[size].lineHeight,
+    lineHeight: !sub
+      ? theme.typography.headings[size].lineHeight
+      : theme.typography.subHeadings[size].lineHeight,
   };
 
   return {

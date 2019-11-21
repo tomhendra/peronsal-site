@@ -187,7 +187,7 @@ export const typography = {
     },
     delta: {
       fontSize: '3.6rem', // 36px
-      lineHeight: 1.1,
+      lineHeight: 1.3,
     },
   },
   text: {
@@ -328,8 +328,9 @@ export const zIndex = {
   background: -1,
   default: 0,
   absolute: 1,
-  drawer: 10,
-  select: 20,
+  card: 10,
+  form: 15,
+  input: 20,
   popover: 30,
   tooltip: 31,
   footer: 500,

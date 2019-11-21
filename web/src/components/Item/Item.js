@@ -29,6 +29,7 @@ const styles = ({
     label: 'item',
     display: 'flex',
     flexWrap: 'wrap',
+    zIndex: theme.zIndex.default,
   };
 
   const gridStyles = {

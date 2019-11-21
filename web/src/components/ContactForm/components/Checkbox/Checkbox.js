@@ -5,22 +5,30 @@ import { withTheme } from 'emotion-theming';
 import { hideVisually } from 'polished';
 
 import Icon from '../../../Icon';
+import Tooltip from '../../../Tooltip';
 import Label from '../Label';
-import ErrorMessage from '../ErrorMessage';
 
-import { colors, icons, sizes } from '../../../../assets/styles/constants';
+import {
+  colors,
+  icons,
+  sizes,
+  positions,
+} from '../../../../assets/styles/constants';
 
-const { WHITE } = colors;
+const { DANGER, WHITE } = colors;
 const { CHECK } = icons;
 const { ALPHA } = sizes;
+const { TOP_START } = positions;
 
 /**
  * `....................styles....................`
  */
 
-const containerStyles = {
+const containerStyles = ({ theme }) => ({
+  padding: `${theme.spacings.bravo} 0`,
   position: 'relative',
-};
+  zIndex: theme.zIndex.input,
+});
 
 const elementStyles = ({ theme }) => ({
   ...hideVisually(),
@@ -99,7 +107,11 @@ const Checkbox = ({ children, ...otherProps }) => {
         {children}
         <Icon type={CHECK} color={WHITE} size={ALPHA} aria-hidden="true" />
       </CheckboxLabel>
-      {touched && error ? <ErrorMessage>{error}</ErrorMessage> : null}
+      {touched && error ? (
+        <Tooltip variant={DANGER} position={TOP_START}>
+          {error}
+        </Tooltip>
+      ) : null}
     </CheckboxContainer>
   );
 };
