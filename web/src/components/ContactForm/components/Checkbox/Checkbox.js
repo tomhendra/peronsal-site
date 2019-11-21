@@ -18,7 +18,7 @@ import {
 const { DANGER, WHITE } = colors;
 const { CHECK } = icons;
 const { ALPHA } = sizes;
-const { LEFT } = positions;
+const { TOP_START } = positions;
 
 /**
  * `....................styles....................`
@@ -108,7 +108,7 @@ const Checkbox = ({ children, ...otherProps }) => {
         <Icon type={CHECK} color={WHITE} size={ALPHA} aria-hidden="true" />
       </CheckboxLabel>
       {touched && error ? (
-        <Tooltip variant={DANGER} position={LEFT}>
+        <Tooltip variant={DANGER} position={TOP_START}>
           {error}
         </Tooltip>
       ) : null}
