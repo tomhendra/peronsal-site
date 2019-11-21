@@ -30,7 +30,8 @@ const elementStyles = ({ variant, position, theme }) => {
     borderRadius: theme.borderRadius.bravo,
     fontSize: theme.typography.text.bravo.fontSize,
     maxWidth: theme.spacings.lima,
-    padding: theme.spacings.bravo,
+    minWidth: theme.spacings.india,
+    padding: `${theme.spacings.bravo} ${theme.spacings.charlie}`,
     position: 'absolute',
     zIndex: theme.zIndex.tooltip,
     // Tooltip arrow
@@ -66,24 +67,24 @@ const elementStyles = ({ variant, position, theme }) => {
     [TOP_START]: {
       bottom: `calc(100% + ${theme.spacings.bravo})`,
       left: 0,
-
+      // arrow styles
       '::after': {
         borderTopColor: variantConfig.backgroundColor,
-        marginLeft: `-${theme.borderWidth.charlie}`,
         top: '100%', // arrow at bottom
-        left: theme.spacings.delta, // arrow left side
+        left: 0, // arrow left side
+        transform: 'translateX(100%)', // arrow moved away from left (start)
       },
     },
     [TOP]: {
       bottom: `calc(100% + ${theme.spacings.bravo})`,
       left: '50%',
-      transform: 'translateX(-50%)',
-
+      transform: 'translateX(-50%)', // centre self
+      // arrow styles
       '::after': {
         borderTopColor: variantConfig.backgroundColor,
-        marginLeft: `-${theme.borderWidth.charlie}`,
         top: '100%', // arrow at bottom
-        left: '50%', // arrow centred
+        left: '50%', // arrow at centre
+        transform: 'translateX(-50%)', // arrow centred
       },
     },
     [TOP_END]: {
@@ -92,9 +93,9 @@ const elementStyles = ({ variant, position, theme }) => {
       // arrow styles
       '::after': {
         borderTopColor: variantConfig.backgroundColor,
-        marginLeft: `-${theme.borderWidth.charlie}`,
         top: '100%', // arrow at bottom
-        right: theme.spacings.delta, // arrow right side
+        right: 0, // arrow at right
+        transform: 'translateX(-100%)', // arrow moved away from right (end)
       },
     },
     [RIGHT_START]: {
@@ -104,8 +105,8 @@ const elementStyles = ({ variant, position, theme }) => {
       '::after': {
         borderRightColor: variantConfig.backgroundColor,
         right: '100%', // arrow at left
-        top: theme.spacings.delta, // arrow at top
-        marginTop: `-${theme.borderWidth.charlie}`,
+        top: 0, // arrow at top
+        transform: 'translateY(100%)', // arrow moved away from top (start)
       },
     },
     [RIGHT]: {
@@ -117,7 +118,7 @@ const elementStyles = ({ variant, position, theme }) => {
         borderRightColor: variantConfig.backgroundColor,
         right: '100%', // arrow at left
         top: '50%', // arrow centred
-        marginTop: `-${theme.borderWidth.charlie}`,
+        transform: 'translateY(-50%)', // arrow centred
       },
     },
     [RIGHT_END]: {
@@ -127,8 +128,8 @@ const elementStyles = ({ variant, position, theme }) => {
       '::after': {
         borderRightColor: variantConfig.backgroundColor,
         right: '100%', // arrow at left
-        bottom: theme.spacings.delta, // arrow at bottom
-        marginBottom: `-${theme.borderWidth.charlie}`,
+        bottom: 0, // arrow at bottom
+        transform: 'translateY(-100%)', // arrow moved away from bottom (end)
       },
     },
     [BOTTOM_START]: {
@@ -138,8 +139,8 @@ const elementStyles = ({ variant, position, theme }) => {
       '::after': {
         borderBottomColor: variantConfig.backgroundColor,
         bottom: '100%', // arrow at top
-        left: theme.spacings.delta, // arrow left side
-        marginLeft: `-${theme.borderWidth.charlie}`,
+        left: 0, // arrow left side
+        transform: 'translateX(100%)', // arrow moved away from left (start)
       },
     },
     [BOTTOM]: {
@@ -149,8 +150,8 @@ const elementStyles = ({ variant, position, theme }) => {
       '::after': {
         borderBottomColor: variantConfig.backgroundColor,
         bottom: '100%', // arrow at top
-        left: '50%', // arrow centred
-        marginLeft: `-${theme.borderWidth.charlie}`,
+        left: '50%', // arrow at centre
+        transform: 'translateX(-50%)', // arrow centred
       },
     },
     [BOTTOM_END]: {
@@ -160,8 +161,8 @@ const elementStyles = ({ variant, position, theme }) => {
       '::after': {
         borderBottomColor: variantConfig.backgroundColor,
         bottom: '100%', // arrow at top
-        right: theme.spacings.delta, // arrow right side
-        marginLeft: `-${theme.borderWidth.charlie}`,
+        right: 0, // arrow at right
+        transform: 'translateX(-100%)', // arrow moved away from right (end)
       },
     },
     [LEFT_START]: {
@@ -171,8 +172,8 @@ const elementStyles = ({ variant, position, theme }) => {
       '::after': {
         borderLeftColor: variantConfig.backgroundColor,
         left: '100%', // arrow at right
-        top: theme.spacings.delta, // arrow at top
-        marginTop: `-${theme.borderWidth.charlie}`,
+        top: 0, // arrow at top
+        transform: 'translateY(100%)', // arrow moved away from top (start)
       },
     },
     [LEFT]: {
@@ -184,7 +185,7 @@ const elementStyles = ({ variant, position, theme }) => {
         borderLeftColor: variantConfig.backgroundColor,
         left: '100%', // arrow at right
         top: '50%', // arrow centred
-        marginTop: `-${theme.borderWidth.charlie}`,
+        transform: 'translateY(-50%)', // arrow centred
       },
     },
     [LEFT_END]: {
@@ -194,8 +195,8 @@ const elementStyles = ({ variant, position, theme }) => {
       '::after': {
         borderLeftColor: variantConfig.backgroundColor,
         left: '100%', // arrow at right
-        bottom: theme.spacings.delta, // arrow at bottom
-        marginBottom: `-${theme.borderWidth.charlie}`,
+        bottom: 0, // arrow at bottom
+        transform: 'translateY(-100%)', // arrow moved away from bottom (end)
       },
     },
   };
