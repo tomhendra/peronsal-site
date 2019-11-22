@@ -6,10 +6,10 @@ import { withTheme } from 'emotion-theming';
 import Label from '../Label';
 import Tooltip from '../../../Tooltip';
 
-import { colors, positions } from '../../../../assets/styles/constants';
+import { colors } from '../../../../assets/styles/constants';
 
 const { DANGER } = colors;
-const { TOP_START } = positions;
+// const { TOP } = positions;
 
 /**
  * `....................styles....................`
@@ -56,11 +56,7 @@ const TextInput = ({ label, ...otherProps }) => {
           {...otherProps}
         />
       </Label>
-      {touched && error ? (
-        <Tooltip variant={DANGER} position={TOP_START}>
-          {error}
-        </Tooltip>
-      ) : null}
+      {touched && error ? <Tooltip variant={DANGER}>{error}</Tooltip> : null}
     </TextInputContainer>
   );
 };
