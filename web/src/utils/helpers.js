@@ -17,3 +17,8 @@ export function toPlainText(blocks = []) {
       .join('\n\n')
   );
 }
+
+// Capitalize first letter of string
+export function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
