@@ -6,7 +6,7 @@ import Icon from '../../../Icon';
 import { colors, icons, sizes } from '../../../../assets/styles/constants';
 
 const { NEUTRAL } = colors;
-const { TOGGLELEFT } = icons;
+const { TOGGLE_LEFT } = icons;
 const { GOLF } = sizes;
 
 /**
@@ -19,7 +19,7 @@ const { GOLF } = sizes;
 
 const Switch = () => (
   <div css={{ display: 'flex', justifyContent: 'flex-end' }}>
-    <Icon type={TOGGLELEFT} color={NEUTRAL} size={GOLF} />
+    <Icon type={TOGGLE_LEFT} color={NEUTRAL} size={GOLF} />
   </div>
 );
 
