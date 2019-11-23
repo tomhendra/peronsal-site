@@ -45,16 +45,20 @@ const ProjectsPage = () => {
               to everyone.
             </Text>
           </Item>
-          {projects.map(project => (
-            <Item
-              gridStart={1}
-              gridEnd={11}
-              spacingBottom={INDIA}
-              key={project.id}
-            >
-              <ProjectPreview project={project} />
-            </Item>
-          ))}
+          {projects ? (
+            projects.map(project => (
+              <Item
+                gridStart={1}
+                gridEnd={11}
+                spacingBottom={INDIA}
+                key={project.id}
+              >
+                <ProjectPreview project={project} />
+              </Item>
+            ))
+          ) : (
+            <Heading sub>No projects to display</Heading>
+          )}
         </Grid>
       </Container>
     </Layout>

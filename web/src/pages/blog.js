@@ -41,11 +41,15 @@ const BlogPage = () => {
           </Item>
         </Grid>
         <Grid withRowGaps>
-          {posts.map(post => (
-            <Item gridSpan={4} key={post.id}>
-              <PostPreview post={post} />
-            </Item>
-          ))}
+          {posts ? (
+            posts.map(post => (
+              <Item gridSpan={4} key={post.id}>
+                <PostPreview post={post} />
+              </Item>
+            ))
+          ) : (
+            <Heading sub>No posts to display.</Heading>
+          )}
         </Grid>
       </Container>
     </Layout>
