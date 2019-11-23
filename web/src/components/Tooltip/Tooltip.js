@@ -14,24 +14,24 @@ const { TOP, RIGHT, BOTTOM, LEFT, START, CENTER, END } = positions;
  * `....................styles....................`
  */
 
-const elementStyles = ({ variant, position, align, theme }) => {
-  const baseStyles = {
-    borderRadius: theme.borderRadius.bravo,
-    fontSize: theme.typography.text.bravo.fontSize,
-    maxWidth: theme.spacings.lima,
-    minWidth: theme.spacings.india,
-    padding: `${theme.spacings.bravo} ${theme.spacings.charlie}`,
+const getBaseStyles = theme => ({
+  borderRadius: theme.borderRadius.bravo,
+  fontSize: theme.typography.text.bravo.fontSize,
+  maxWidth: theme.spacings.lima,
+  minWidth: theme.spacings.india,
+  padding: `${theme.spacings.bravo} ${theme.spacings.charlie}`,
+  position: 'absolute',
+  zIndex: theme.zIndex.tooltip,
+  // Tooltip arrow
+  '&::after': {
+    border: `${theme.borderWidth.charlie} solid transparent`,
+    content: '""',
     position: 'absolute',
-    zIndex: theme.zIndex.tooltip,
-    // Tooltip arrow
-    '&::after': {
-      border: `${theme.borderWidth.charlie} solid transparent`,
-      content: '""',
-      position: 'absolute',
-    },
-  };
+  },
+});
 
-  const variantStyles = {
+const getVariantStyles = (variant, theme) => {
+  const variantOptions = {
     [NEUTRAL]: {
       backgroundColor: theme.colors.n000,
       color: theme.colors.n900,
@@ -49,10 +49,11 @@ const elementStyles = ({ variant, position, align, theme }) => {
       color: theme.colors.g000,
     },
   };
+  return variantOptions[variant];
+};
 
-  const variantConfig = variantStyles[variant];
-
-  /*
+/*
+    12 possible positions are available.
     Highly professional diagram for visualization...
     TODO: work on ASCII diagrams :S
 
@@ -67,75 +68,62 @@ CENTER  | LEFT                 RIGHT |  CENTER
         START        CENTER        END
 */
 
+const getPositionStyles = (position, align, variant, theme) => {
   const isPositionHorizontal = position === TOP || position === BOTTOM;
-  const translateDirection = isPositionHorizontal ? 'translateX' : 'translateY';
 
-  // Positioning of Tooltip top / right / bottom / left of container
-  const getElementPositionStyles = () => {
-    const positionMap = {
-      [TOP]: 'bottom',
-      [BOTTOM]: 'top',
-      [RIGHT]: 'left',
-      [LEFT]: 'right',
-    };
-
-    const absolutePosition = positionMap[position];
-
-    return {
-      [absolutePosition]: `calc(100% + ${theme.spacings.bravo})`,
-    };
+  const positionMap = {
+    [TOP]: 'bottom',
+    [BOTTOM]: 'top',
+    [RIGHT]: 'left',
+    [LEFT]: 'right',
   };
 
-  // alignment of Tooltip start / center / end of edge on which it is positioned
   const alignmentMap = {
     [START]: isPositionHorizontal ? 'left' : 'top',
     [CENTER]: isPositionHorizontal ? 'left' : 'top',
     [END]: isPositionHorizontal ? 'right' : 'bottom',
   };
+
+  const arrowTranslateMap = {
+    [START]: '100%',
+    [CENTER]: '-50%',
+    [END]: '-100%',
+  };
+
+  const absolutePosition = positionMap[position];
   const absoluteAlignment = alignmentMap[align];
-
-  const getElementAlignmentStyles = () => {
-    return {
-      // if align === CENTER, position element 50% from edge.
-      // if align === START or END, position element 0 from edge
-      [absoluteAlignment]: align === CENTER ? '50%' : 0,
-      // if align === CENTER, element moved by half its own width
-      // if align === START or END, no transform is required.
-      transform: align === CENTER && `${translateDirection}(-50%)`,
-    };
-  };
-
-  // arrow positioning based on where Tooltip is portioned & aligned
-  const getArrowStyles = () => {
-    // capitalize first letter of position to use in CamelCase attribute
-    const borderConfig = `border${capitalize(position)}Color`;
-
-    const arrowTranslateMap = {
-      [START]: '100%',
-      [CENTER]: '-50%',
-      [END]: '-100%',
-    };
-    const translateValue = arrowTranslateMap[align];
-
-    return {
-      '::after': {
-        // position arrow 100% from top / right / bottom / left
-        [absoluteAlignment]: align === CENTER ? '50%' : 0,
-        [borderConfig]: variantConfig.backgroundColor,
-        [position]: '100%',
-        transform: `${translateDirection}(${translateValue})`,
-      },
-    };
-  };
+  const translateValue = arrowTranslateMap[align];
+  const translateDirection = isPositionHorizontal ? 'translateX' : 'translateY';
+  // capitalize first letter of position to use in CamelCase attribute
+  const borderConfig = `border${capitalize(position)}Color`;
+  // call to variant config to get border color for arrow
+  const variantConfig = getVariantStyles(variant, theme);
 
   return {
-    ...baseStyles,
-    ...variantConfig,
-    ...getElementPositionStyles(),
-    ...getElementAlignmentStyles(),
-    ...getArrowStyles(),
+    // Positioning of Tooltip top / right / bottom / left of container
+    [absolutePosition]: `calc(100% + ${theme.spacings.bravo})`,
+    // alignment of Tooltip start / center / end of edge on which it is positioned
+    // if align === CENTER, position element 50% from edge.
+    // if align === START or END, position element 0 from edge
+    [absoluteAlignment]: align === CENTER ? '50%' : 0,
+    // if align === CENTER, element moved by half its own width to center itself
+    transform: align === CENTER && `${translateDirection}(-50%)`,
+    // arrow positioning based on where Tooltip is portioned & aligned
+    '::after': {
+      // position arrow 100% from top / right / bottom / left
+      [absoluteAlignment]: align === CENTER ? '50%' : 0,
+      [borderConfig]: variantConfig.backgroundColor,
+      [position]: '100%',
+      transform: `${translateDirection}(${translateValue})`,
+    },
   };
 };
+
+const elementStyles = ({ variant, position, align, theme }) => ({
+  ...getBaseStyles(theme),
+  ...getVariantStyles(variant, theme),
+  ...getPositionStyles(position, align, variant, theme),
+});
 
 /**
  * `....................component....................`
