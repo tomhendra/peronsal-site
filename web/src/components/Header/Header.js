@@ -29,15 +29,14 @@ const headerStyles = ({ theme }) => ({
   zIndex: theme.zIndex.header,
 });
 
-const containerStyles = ({ theme }) => {
-  return withMediaQueries(theme)({
+const containerStyles = ({ theme }) =>
+  withMediaQueries(theme)({
     display: 'flex',
     justifyContent: 'space-between',
     margin: '0 auto',
     maxWidth: [...theme.breakpoints],
     width: '100%',
   });
-};
 
 const logoLinkStyles = {
   fontSize: 0,

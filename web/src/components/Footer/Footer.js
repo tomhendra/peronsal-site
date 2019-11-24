@@ -25,8 +25,8 @@ const footerStyles = ({ theme }) => ({
   zIndex: theme.zIndex.footer,
 });
 
-const containerStyles = ({ theme }) => {
-  return withMediaQueries(theme)({
+const containerStyles = ({ theme }) =>
+  withMediaQueries(theme)({
     alignItems: 'center',
     display: 'flex',
     justifyContent: 'space-between',
@@ -38,7 +38,6 @@ const containerStyles = ({ theme }) => {
       minWidth: '12rem',
     },
   });
-};
 
 /**
  * `....................component....................`

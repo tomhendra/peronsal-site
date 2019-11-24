@@ -9,8 +9,8 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
  * `....................styles....................`
  */
 
-const styles = ({ devMode, withoutBottomSpacing, withRowGaps, theme }) => {
-  return withMediaQueries(theme)({
+const styles = ({ devMode, withoutBottomSpacing, withRowGaps, theme }) =>
+  withMediaQueries(theme)({
     label: 'grid',
     display: 'grid',
     gridTemplateRows: 'auto',
@@ -47,7 +47,6 @@ const styles = ({ devMode, withoutBottomSpacing, withRowGaps, theme }) => {
       border: devMode && '1px dashed hsl(300, 100%, 50%)',
     },
   });
-};
 
 /**
  * `....................component....................`

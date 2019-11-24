@@ -10,8 +10,8 @@ import { childrenPropType } from '../../utils/shared-prop-types';
  * `....................styles....................`
  */
 
-const styles = ({ noMargin, theme }) => {
-  return withMediaQueries(theme)({
+const styles = ({ noMargin, theme }) =>
+  withMediaQueries(theme)({
     color: theme.colors.n900,
     fontFamily: theme.fontStack.heading,
     fontSize: ['39.5rem', '39.5rem', '57rem', '57rem'],
@@ -29,7 +29,6 @@ const styles = ({ noMargin, theme }) => {
     top: 0,
     zIndex: theme.zIndex.background,
   });
-};
 
 /**
  * `....................component....................`

@@ -9,8 +9,8 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
  * `....................styles....................`
  */
 
-const styles = ({ center, devMode, theme }) => {
-  return withMediaQueries(theme)({
+const styles = ({ center, devMode, theme }) =>
+  withMediaQueries(theme)({
     label: 'container',
     display: 'flex',
     flexDirection: 'column',
@@ -26,7 +26,6 @@ const styles = ({ center, devMode, theme }) => {
     },
     position: 'relative',
   });
-};
 
 /**
  * `....................component....................`
