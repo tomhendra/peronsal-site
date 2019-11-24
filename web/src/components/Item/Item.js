@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 
 import { childrenPropType } from '../../utils/shared-prop-types';
 
+import { withMediaQueries } from '../../assets/styles/style-helpers';
+
 import { sizes } from '../../assets/styles/constants';
 
 /**
@@ -52,12 +54,12 @@ const styles = ({
     alignContent,
   };
 
-  return {
+  return withMediaQueries(theme)({
     ...baseStyles,
     ...gridStyles,
     ...spacingStyles,
     ...flexboxStyles,
-  };
+  });
 };
 
 /**
@@ -71,15 +73,18 @@ const Item = styled.div(styles);
  */
 
 const spacingOptions = Object.values(sizes);
+const gridStartOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'auto'];
+const gridEndOptions = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 'auto'];
+const gridSpanOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
 Item.propTypes = {
-  gridStart: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'auto']),
-  gridSpan: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]),
-  gridEnd: PropTypes.oneOf([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 'auto']),
-  spacingTop: PropTypes.oneOf([...spacingOptions]),
-  spacingRight: PropTypes.oneOf([...spacingOptions]),
-  spacingBottom: PropTypes.oneOf([...spacingOptions]),
-  spacingLeft: PropTypes.oneOf([...spacingOptions]),
+  gridStart: PropTypes.arrayOf(PropTypes.oneOf(gridStartOptions)),
+  gridEnd: PropTypes.arrayOf(PropTypes.oneOf(gridEndOptions)),
+  gridSpan: PropTypes.oneOf(gridSpanOptions),
+  spacingTop: PropTypes.oneOf(spacingOptions),
+  spacingRight: PropTypes.oneOf(spacingOptions),
+  spacingBottom: PropTypes.oneOf(spacingOptions),
+  spacingLeft: PropTypes.oneOf(spacingOptions),
   flexDirection: PropTypes.oneOf(['column', 'row']),
   justifyContent: PropTypes.oneOf([
     'flex-start', // default

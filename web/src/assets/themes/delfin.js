@@ -286,14 +286,14 @@ export const borderWidth = {
 
 export const grid = {
   alpha: {
-    cols: 12,
+    cols: 6,
     maxWidth: '46rem', // 460px
     gutter: spacings.bravo,
   },
   bravo: {
-    cols: 12,
-    maxWidth: '72.8rem', // 728px
-    gutter: spacings.delta,
+    cols: 8,
+    maxWidth: '67.2rem', // 672px
+    gutter: spacings.charlie,
   },
   charlie: {
     cols: 12,
