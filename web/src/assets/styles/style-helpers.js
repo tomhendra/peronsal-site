@@ -2,14 +2,15 @@ import facepaint from 'facepaint';
 import { transparentize } from 'polished';
 
 /**
- * `....................media queries....................`
+ * ....................media queries....................
+ * withMediaQueries function generates media queries
+ * by currying facepaint (https://github.com/emotion-js/facepaint).
+ * first argument passed is theme,
+ * second argument is styles object with arrays of values
+ * to be used at each incremental breakpoint.
  */
-// withMediaQueries function generates media queries
-// by currying facepaint (https://github.com/emotion-js/facepaint).
-// first argument passed is theme,
-// second argument is styles object with arrays of values
-// to be used at each incremental breakpoint.
-/*  example usage:
+
+/** example usage:
 const styles = theme => {
   return withMediaQueries(theme)({
     label: 'container',
@@ -19,14 +20,34 @@ const styles = theme => {
 };
 */
 export const withMediaQueries = theme =>
-  facepaint(theme.breakpoints.map(bp => `@media (min-width: ${bp})`));
-// note facepaint does not appear to allow for spreading of multiple
-// style objects, but does not repeat declarations for each media query.
-// e.g. position: 'margin: '0 auto',' will only be declared once, not
-// repeated for each media query generated.
+  facepaint(
+    theme.breakpoints.map(bp => `@media (min-width: ${bp})`),
+    { overlap: true },
+  );
+/** note facepaint does not appear to allow for spreading of multiple
+ * style objects, but does not repeat declarations for each media query.
+ * e.g. position: 'margin: '0 auto',' will only be declared once, not
+ * repeated for each media query generated.
+ */
 
 /**
- * `....................shadows....................`
+ * ....................handle arrays of props....................
+ * withMediaQueries() needs an array of props for facepaint.
+ * Problem is threefold:
+ *   1) values need to be derived from theme. e.g. passing [ALPHA, BRAVO] when array
+ *      is required i.e. [[theme.spacings[ALPHA], theme.spacings[BRAVO]]
+ *   2) values need to be derived from template strings e.g. passing [1, 2]
+ *      for gridArea: `span 1 / span ${gridSpan}` when array is required
+ *      i.e. ['span 1 / span 1', 'span 1 / span 2']
+ *   3) Props are not always an array if no variations are required between breakpoints.
+ * Solution: Check if supplied prop is NOT an array. Either return theme[prop] or
+ * array of theme[props] for later passing into withMediaQueries().
+ */
+export const mapPropsToThemeValues = (props, themePath) =>
+  !Array.isArray(props) ? themePath[props] : props.map(prop => themePath[prop]);
+
+/**
+ * ....................shadows....................
  */
 
 export const shadowSingle = shadowColor => ({

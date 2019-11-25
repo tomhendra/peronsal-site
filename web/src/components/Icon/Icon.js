@@ -40,7 +40,6 @@ const {
  */
 
 const containerStyles = ({ spacing, theme }) => ({
-  height: '100%',
   padding: theme.spacings[spacing],
 });
 

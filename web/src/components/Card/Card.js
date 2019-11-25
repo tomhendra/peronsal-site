@@ -2,18 +2,27 @@ import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
-import { childrenPropType } from '../../utils/shared-prop-types';
+import {
+  childrenPropType,
+  flexDirectionPropType,
+  justifyContentPropType,
+  alignItemsPropType,
+  alignContentPropType,
+  spacingPropType,
+} from '../../utils/shared-prop-types';
+
 import {
   shadowSingle,
   shadowDouble,
   shadowTriple,
+  mapPropsToThemeValues,
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
 import { shadows, sizes } from '../../assets/styles/constants';
 
 const { SINGLE, DOUBLE, TRIPLE } = shadows;
-const { FOXTROT, GOLF, HOTEL } = sizes;
+const { FOXTROT } = sizes;
 
 /**
  * `....................styles....................`
@@ -21,7 +30,11 @@ const { FOXTROT, GOLF, HOTEL } = sizes;
 
 const styles = ({
   shadow,
-  spacing,
+  padding,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
   flexDirection,
   justifyContent,
   alignItems,
@@ -37,35 +50,15 @@ const styles = ({
     zIndex: theme.zIndex.card,
   };
 
-  const shadowStyles = {
-    [SINGLE]: shadowSingle(theme.colors.shadowNeutral),
-    [DOUBLE]: shadowDouble(theme.colors.shadowNeutral),
-    [TRIPLE]: shadowTriple(theme.colors.shadowNeutral),
-  };
+  const getPaddingValues = paddingProp =>
+    mapPropsToThemeValues(paddingProp, theme.spacings);
 
-  const spacingStyles = {
-    [FOXTROT]: {
-      padding: [
-        theme.spacings.delta,
-        theme.spacings.delta,
-        theme.spacings.foxtrot,
-        theme.spacings.foxtrot,
-      ],
-      paddingTop: [
-        theme.spacings.echo,
-        theme.spacings.echo,
-        theme.spacings.golf,
-        theme.spacings.golf,
-      ],
-    },
-    [GOLF]: {
-      padding: theme.spacings.golf,
-      paddingTop: theme.spacings.hotel,
-    },
-    [HOTEL]: {
-      padding: theme.spacings.hotel,
-      paddingTop: theme.spacings.hotel,
-    },
+  const paddingStyles = {
+    padding: padding && getPaddingValues(padding),
+    paddingTop: paddingTop && getPaddingValues(paddingTop),
+    paddingRight: paddingRight && getPaddingValues(paddingRight),
+    paddingBottom: paddingBottom && getPaddingValues(paddingBottom),
+    paddingLeft: paddingBottom && getPaddingValues(paddingLeft),
   };
 
   const flexboxStyles = {
@@ -75,14 +68,19 @@ const styles = ({
     alignContent,
   };
 
-  const spacingConfig = spacingStyles[spacing];
+  const shadowStyles = {
+    [SINGLE]: shadowSingle(theme.colors.shadowNeutral),
+    [DOUBLE]: shadowDouble(theme.colors.shadowNeutral),
+    [TRIPLE]: shadowTriple(theme.colors.shadowNeutral),
+  };
+
   const shadowConfig = shadowStyles[shadow];
 
   return withMediaQueries(theme)({
     ...baseStyles,
-    ...shadowConfig,
-    ...spacingConfig,
     ...flexboxStyles,
+    ...shadowConfig,
+    ...paddingStyles,
   });
 };
 
@@ -98,36 +96,25 @@ const Card = styled.div(styles);
 
 Card.propTypes = {
   shadow: PropTypes.oneOf([SINGLE, DOUBLE, TRIPLE]),
-  spacing: PropTypes.oneOf([FOXTROT, GOLF, HOTEL]),
-  flexDirection: PropTypes.oneOf(['column', 'row']),
-  justifyContent: PropTypes.oneOf([
-    'flex-start', // default
-    'flex-end',
-    'center',
-    'space-around',
-    'space-between',
-  ]),
-  alignItems: PropTypes.oneOf([
-    'flex-start',
-    'flex-end',
-    'center',
-    'stretch', // default
-    'baseline',
-  ]),
-  alignContent: PropTypes.oneOf([
-    'flex-start',
-    'flex-end',
-    'center',
-    'stretch', // default
-    'space-around',
-    'space-between',
-  ]),
+  padding: spacingPropType,
+  paddingTop: spacingPropType,
+  paddingRight: spacingPropType,
+  paddingBottom: spacingPropType,
+  paddingLeft: spacingPropType,
+  flexDirection: flexDirectionPropType,
+  justifyContent: justifyContentPropType,
+  alignItems: alignItemsPropType,
+  alignContent: alignContentPropType,
   children: childrenPropType,
 };
 
 Card.defaultProps = {
   shadow: TRIPLE,
-  spacing: FOXTROT,
+  padding: FOXTROT,
+  paddingTop: null,
+  paddingRight: null,
+  paddingBottom: null,
+  paddingLeft: null,
   flexDirection: 'column',
   justifyContent: 'flex-start',
   alignItems: 'center',

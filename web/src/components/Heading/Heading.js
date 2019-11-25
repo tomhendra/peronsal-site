@@ -11,14 +11,14 @@ const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL } = sizes;
  * `....................styles....................`
  */
 
-const styles = ({ noMargin, size, sub, theme }) => {
+const styles = ({ noMargin, size, spacingBottom, sub, theme }) => {
   const baseStyles = {
     label: 'heading',
     color: !sub ? theme.colors.n000 : theme.colors.n300,
     fontFamily: !sub ? theme.fontStack.heading : theme.fontStack.default,
     fontWeight: !sub ? theme.fontWeight.bold : theme.fontWeight.regular,
     letterSpacing: 0.7,
-    marginBottom: !noMargin ? theme.spacings.delta : 0,
+    marginBottom: !noMargin ? theme.spacings[spacingBottom] : 0,
   };
 
   const sizeStyles = {
@@ -60,6 +60,16 @@ Heading.propTypes = {
     GOLF,
     HOTEL,
   ]),
+  spacingBottom: PropTypes.oneOf([
+    ALPHA,
+    BRAVO,
+    CHARLIE,
+    DELTA,
+    ECHO,
+    FOXTROT,
+    GOLF,
+    HOTEL,
+  ]),
   sub: PropTypes.bool,
   children: childrenPropType,
 };
@@ -68,6 +78,7 @@ Heading.defaultProps = {
   as: 'h2',
   noMargin: false,
   size: BRAVO,
+  spacingBottom: DELTA,
   sub: false,
   children: null,
 };

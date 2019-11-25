@@ -293,7 +293,7 @@ export const grid = {
   bravo: {
     cols: 8,
     maxWidth: '67.2rem', // 672px
-    gutter: spacings.charlie,
+    gutter: spacings.echo,
   },
   charlie: {
     cols: 12,
@@ -303,7 +303,7 @@ export const grid = {
   delta: {
     cols: 12,
     maxWidth: '88rem', // 880px
-    gutter: spacings.echo,
+    gutter: spacings.delta,
   },
 };
 

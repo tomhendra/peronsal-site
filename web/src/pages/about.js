@@ -16,7 +16,7 @@ import { colors, icons, sizes } from '../assets/styles/constants';
 
 const { PRIMARY } = colors;
 const { BRIEFCASE, CODE, PEN_TOOL } = icons;
-const { BRAVO, FOXTROT, HOTEL, INDIA } = sizes;
+const { BRAVO, ECHO, FOXTROT, GOLF, HOTEL, INDIA } = sizes;
 
 const AboutPage = () => (
   <Layout>
@@ -26,8 +26,8 @@ const AboutPage = () => (
         <Graphic>About</Graphic>
         <Grid>
           <Item
-            gridStart={1}
-            gridEnd={7}
+            gridStart={[1, 1, 1, 1]}
+            gridEnd={[6, 6, 7, 7]}
             spacingTop={INDIA}
             spacingBottom={HOTEL}
           >
@@ -35,8 +35,8 @@ const AboutPage = () => (
               About me.
             </Heading>
             <Text>
-              I am passionate about crafting buttery smooth user interfaces. I
-              take pride in continuously learning new skills directly from the
+              I am at my happiest when crafting buttery smooth user interfaces.
+              I take pride in continuously learning new skills directly from the
               experts who shape the modern web.
             </Text>
             <Text noMargin>
@@ -45,8 +45,11 @@ const AboutPage = () => (
               things at the gym.
             </Text>
           </Item>
-          <Item gridStart={1} gridEnd={5}>
-            <Card>
+          <Item gridStart={[3, 3, 1, 1]} gridEnd={[7, 7, 5, 5]}>
+            <Card
+              padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
+              paddingTop={[GOLF, GOLF, HOTEL, HOTEL]}
+            >
               <Icon
                 type={CODE}
                 color={PRIMARY}
@@ -54,18 +57,21 @@ const AboutPage = () => (
                 spacing={BRAVO}
                 alt="Icon symbolising code."
               />
-              <Heading as="h2" size={BRAVO}>
+              <Heading as="h2" size={BRAVO} spacingBottom={ECHO}>
                 Code
               </Heading>
-              <Text size={BRAVO}>
+              <Text noMargin size={BRAVO}>
                 My skill set is built upon the rich & diverse JavaScript
                 ecosystem. My natural close attention to detail enhances my
                 ability to write clean, maintainable code.
               </Text>
             </Card>
           </Item>
-          <Item gridStart={5} gridEnd={9}>
-            <Card>
+          <Item gridStart={[3, 3, 5, 5]} gridEnd={[7, 7, 9, 9]}>
+            <Card
+              padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
+              paddingTop={[GOLF, GOLF, HOTEL, HOTEL]}
+            >
               <Icon
                 type={PEN_TOOL}
                 color={PRIMARY}
@@ -73,18 +79,21 @@ const AboutPage = () => (
                 spacing={BRAVO}
                 alt="Icon symbolising design."
               />
-              <Heading as="h2" size={BRAVO}>
+              <Heading as="h2" size={BRAVO} spacingBottom={ECHO}>
                 Design
               </Heading>
-              <Text size={BRAVO}>
+              <Text noMargin size={BRAVO}>
                 I have a keen eye for design and know my way around industry
                 standard tools like Sketch & Adobe Creative Suite. I am a
                 developer who likes to design.
               </Text>
             </Card>
           </Item>
-          <Item gridStart={9} gridEnd={13}>
-            <Card>
+          <Item gridStart={[3, 3, 9, 9]} gridEnd={[7, 7, 13, 13]}>
+            <Card
+              padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
+              paddingTop={[GOLF, GOLF, HOTEL, HOTEL]}
+            >
               <Icon
                 type={BRIEFCASE}
                 color={PRIMARY}
@@ -92,20 +101,20 @@ const AboutPage = () => (
                 spacing={BRAVO}
                 alt="Icon symbolising business."
               />
-              <Heading as="h2" size={BRAVO}>
+              <Heading as="h2" size={BRAVO} spacingBottom={ECHO}>
                 Business
               </Heading>
-              <Text size={BRAVO}>
+              <Text noMargin size={BRAVO}>
                 I was a procurement professional before a web developer,
                 instilling transferable business acumen, commercial awareness
-                and solid communication skills.
+                and communication skills.
               </Text>
             </Card>
           </Item>
         </Grid>
       </Container>
     </section>
-    <section>
+    {/* <section>
       <Container>
         <Graphic>Skills</Graphic>
         <Grid>
@@ -126,7 +135,7 @@ const AboutPage = () => (
           </Item>
         </Grid>
       </Container>
-    </section>
+    </section> */}
   </Layout>
 );
 
