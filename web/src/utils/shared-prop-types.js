@@ -18,8 +18,8 @@ export const gridPropType = PropTypes.oneOfType([
 // spacing propType
 const spacingOptions = Object.values(sizes);
 export const spacingPropType = PropTypes.oneOfType([
-  PropTypes.oneOf(spacingOptions),
-  PropTypes.arrayOf(PropTypes.oneOf(spacingOptions)),
+  PropTypes.oneOf([...spacingOptions, 0]),
+  PropTypes.arrayOf(PropTypes.oneOf([...spacingOptions, 0])),
 ]);
 
 // flexbox propTypes

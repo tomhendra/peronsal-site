@@ -24,9 +24,9 @@ const AboutPage = () => (
     <section>
       <Container>
         <Graphic>About</Graphic>
-        <Grid>
+        <Grid withoutBottomSpacing>
           <Item
-            gridStart={[1, 1, 1, 1]}
+            gridStart={1}
             gridEnd={[6, 6, 7, 7]}
             spacingTop={INDIA}
             spacingBottom={HOTEL}
@@ -45,7 +45,11 @@ const AboutPage = () => (
               things at the gym.
             </Text>
           </Item>
-          <Item gridStart={[3, 3, 1, 1]} gridEnd={[7, 7, 5, 5]}>
+          <Item
+            gridStart={[2, 3, 1, 1]}
+            gridEnd={[6, 7, 5, 5]}
+            spacingBottom={[HOTEL, HOTEL, 0, 0]}
+          >
             <Card
               padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
               paddingTop={[GOLF, GOLF, HOTEL, HOTEL]}
@@ -67,7 +71,11 @@ const AboutPage = () => (
               </Text>
             </Card>
           </Item>
-          <Item gridStart={[3, 3, 5, 5]} gridEnd={[7, 7, 9, 9]}>
+          <Item
+            gridStart={[2, 3, 5, 5]}
+            gridEnd={[6, 7, 9, 9]}
+            spacingBottom={[HOTEL, HOTEL, 0, 0]}
+          >
             <Card
               padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
               paddingTop={[GOLF, GOLF, HOTEL, HOTEL]}
@@ -89,7 +97,7 @@ const AboutPage = () => (
               </Text>
             </Card>
           </Item>
-          <Item gridStart={[3, 3, 9, 9]} gridEnd={[7, 7, 13, 13]}>
+          <Item gridStart={[2, 3, 9, 9]} gridEnd={[6, 7, 13, 13]}>
             <Card
               padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
               paddingTop={[GOLF, GOLF, HOTEL, HOTEL]}
@@ -107,18 +115,18 @@ const AboutPage = () => (
               <Text noMargin size={BRAVO}>
                 I was a procurement professional before a web developer,
                 instilling transferable business acumen, commercial awareness
-                and communication skills.
+                and solid communication skills.
               </Text>
             </Card>
           </Item>
         </Grid>
       </Container>
     </section>
-    {/* <section>
+    <section>
       <Container>
         <Graphic>Skills</Graphic>
         <Grid>
-          <Item gridStart={1} gridEnd={7} spacingTop={INDIA}>
+          <Item gridStart={1} gridEnd={[6, 6, 7, 7]} spacingTop={INDIA}>
             <Heading as="h1" size={FOXTROT}>
               My skills.
             </Heading>
@@ -135,7 +143,7 @@ const AboutPage = () => (
           </Item>
         </Grid>
       </Container>
-    </section> */}
+    </section>
   </Layout>
 );
 

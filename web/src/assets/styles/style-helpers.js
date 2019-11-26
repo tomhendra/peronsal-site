@@ -1,16 +1,14 @@
 import facepaint from 'facepaint';
 import { transparentize } from 'polished';
 
-/**
- * ....................media queries....................
- * withMediaQueries function generates media queries
- * by currying facepaint (https://github.com/emotion-js/facepaint).
- * first argument passed is theme,
- * second argument is styles object with arrays of values
- * to be used at each incremental breakpoint.
- */
+/*
+....................media queries....................
 
-/** example usage:
+withMediaQueries function generates media queries
+by currying facepaint (https://github.com/emotion-js/facepaint).
+first argument passed is theme,
+second argument is styles object with arrays of values
+to be used at each incremental breakpoint. example usage:
 const styles = theme => {
   return withMediaQueries(theme)({
     label: 'container',
@@ -20,35 +18,55 @@ const styles = theme => {
 };
 */
 export const withMediaQueries = theme =>
-  facepaint(
-    theme.breakpoints.map(bp => `@media (min-width: ${bp})`),
-    { overlap: true },
-  );
-/** note facepaint does not appear to allow for spreading of multiple
- * style objects, but does not repeat declarations for each media query.
- * e.g. position: 'margin: '0 auto',' will only be declared once, not
- * repeated for each media query generated.
- */
+  facepaint(theme.breakpoints.map(bp => `@media (min-width: ${bp})`));
 
-/**
- * ....................handle arrays of props....................
- * withMediaQueries() needs an array of props for facepaint.
- * Problem is threefold:
- *   1) values need to be derived from theme. e.g. passing [ALPHA, BRAVO] when array
- *      is required i.e. [[theme.spacings[ALPHA], theme.spacings[BRAVO]]
- *   2) values need to be derived from template strings e.g. passing [1, 2]
- *      for gridArea: `span 1 / span ${gridSpan}` when array is required
- *      i.e. ['span 1 / span 1', 'span 1 / span 2']
- *   3) Props are not always an array if no variations are required between breakpoints.
- * Solution: Check if supplied prop is NOT an array. Either return theme[prop] or
- * array of theme[props] for later passing into withMediaQueries().
- */
-export const mapPropsToThemeValues = (props, themePath) =>
-  !Array.isArray(props) ? themePath[props] : props.map(prop => themePath[prop]);
+// ....................handle arrays of propValues....................
 
-/**
- * ....................shadows....................
- */
+/*
+withMediaQueries() needs an array of values for facepaint.
+Problem is threefold:
+  1) Values are not always an array if variations are not required between breakpoints.
+  2) values need to be derived from theme dot notation. e.g. passing [ALPHA, BRAVO]
+     to component when ['0.8rem, '1.2rem] is required by facepaint, derived from
+     theme.spacings[ALPHA], theme.spacings[BRAVO].
+  3) values need to be derived from template strings e.g. passing [1, 2]
+     for gridArea: `span 1 / span ${gridSpan}` when ['span 1 / span 1', 'span 1 / span 2']
+     is required by facepaint.
+Solution: the following addresses 1) & 2).
+*/
+const mapPropsToThemeValues = (propValue, themePath, themeBreakpoints) => {
+  if (Array.isArray(propValue)) {
+    return propValue.map(value =>
+      // handles arrays with mix of strings & numbers e.g. [ALPHA, BRAVO, 0, 0]
+      typeof value === 'string' ? themePath[value] : value,
+    );
+  }
+  /*
+  bug with facepaint (?):
+  Problem: When passing an array of values for padding, & only a
+  single padding value for paddingTop, the paddingTop value
+  is only applied to the first breakpoint, and is ignored
+  for other breakpoints.
+  Array for paddingTop / singular for padding works as expected.
+  Perhaps related to https://github.com/emotion-js/facepaint/issues/9
+  Solution: need to pass values for all breakpoints. use Array.fill to 'fix'.
+  */
+  if (typeof propValue === 'string') {
+    return Array(themeBreakpoints.length).fill(themePath[propValue]);
+  }
+  // return number (i.e. 0) as only other prop value permitted. (see utils/shared-prop-types.js)
+  return propValue;
+};
+
+/*
+use mapPropsToThemeValues for spacing
+*/
+export const getThemeSpacingValues = (spacingProp, theme) => {
+  const { spacings, breakpoints } = theme;
+  return mapPropsToThemeValues(spacingProp, spacings, breakpoints);
+};
+
+// ....................shadows....................
 
 export const shadowSingle = shadowColor => ({
   boxShadow: `0 0 0 1px ${transparentize(0.98, shadowColor)},

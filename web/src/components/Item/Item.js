@@ -13,7 +13,7 @@ import {
 } from '../../utils/shared-prop-types';
 
 import {
-  mapPropsToThemeValues,
+  getThemeSpacingValues,
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
@@ -48,14 +48,11 @@ const styles = ({
     gridColumnEnd: gridEnd && gridEnd,
   };
 
-  const getSpacingValues = spacingProp =>
-    mapPropsToThemeValues(spacingProp, theme.spacings);
-
   const spacingStyles = {
-    marginTop: spacingTop && getSpacingValues(spacingTop),
-    paddingRight: spacingTop && getSpacingValues(spacingRight),
-    marginBottom: spacingTop && getSpacingValues(spacingBottom),
-    paddingLeft: spacingTop && getSpacingValues(spacingLeft),
+    marginTop: spacingTop && getThemeSpacingValues(spacingTop, theme),
+    paddingRight: spacingRight && getThemeSpacingValues(spacingRight, theme),
+    marginBottom: spacingBottom && getThemeSpacingValues(spacingBottom, theme),
+    paddingLeft: spacingLeft && getThemeSpacingValues(spacingLeft, theme),
   };
 
   const flexboxStyles = {
