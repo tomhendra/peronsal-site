@@ -31,6 +31,10 @@ const elementStyles = ({ theme, error, touched }) => ({
   padding: theme.spacings.charlie,
   resize: 'none',
   width: '100%',
+
+  '::placeholder': {
+    fontFamily: theme.fontStack.default,
+  },
 });
 
 /**
