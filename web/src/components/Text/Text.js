@@ -99,7 +99,10 @@ const Text = styled.p(styles);
 Text.propTypes = {
   as: PropTypes.string,
   noMargin: PropTypes.bool,
-  size: PropTypes.oneOf([ALPHA, BRAVO, CHARLIE, DELTA, ECHO]),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf([ALPHA, BRAVO, CHARLIE, DELTA, ECHO]),
+    PropTypes.arrayOf(PropTypes.oneOf([ALPHA, BRAVO, CHARLIE, DELTA, ECHO])),
+  ]),
   bold: PropTypes.bool,
   italic: PropTypes.bool,
   strike: PropTypes.bool,
