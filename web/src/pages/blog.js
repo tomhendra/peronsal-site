@@ -27,7 +27,7 @@ const BlogPage = () => {
         <Grid withoutBottomSpacing>
           <Item
             gridStart={1}
-            gridEnd={7}
+            gridEnd={[6, 6, 7, 7]}
             spacingTop={INDIA}
             spacingBottom={HOTEL}
           >
@@ -43,7 +43,7 @@ const BlogPage = () => {
         <Grid withRowGaps>
           {posts ? (
             posts.map(post => (
-              <Item gridSpan={4} key={post.id}>
+              <Item gridSpan={[6, 4, 4, 4]} key={post.id}>
                 <PostPreview post={post} />
               </Item>
             ))

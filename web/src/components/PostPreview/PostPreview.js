@@ -16,6 +16,7 @@ const elementStyles = ({ theme }) => ({
   borderRadius: theme.borderRadius.delta,
   display: 'flex',
   flexDirection: 'column',
+  minHeight: '48rem',
   justifyContent: 'space-between',
   overflow: 'hidden',
   padding: theme.spacings.foxtrot,
@@ -33,7 +34,7 @@ const linkStyles = ({ theme }) => ({
 });
 
 const imageStyles = ({ theme }) => ({
-  mixBlendMode: 'soft-light',
+  mixBlendMode: 'luminosity',
   borderRadius: theme.borderRadius.delta,
   marginBottom: theme.spacings.golf,
 });
@@ -45,6 +46,7 @@ const headingStyles = ({ theme }) => ({
 
 const textStyles = ({ theme }) => ({
   color: theme.colors.n600,
+  transition: `color ${theme.transitions.default}`,
 });
 
 /**
@@ -60,17 +62,18 @@ const PostText = styled(Text)(textStyles);
 const PostPreview = ({ post }) => (
   <PostLink to={post.slug}>
     <PostElement>
-      <PostImage
-        alt={post.alt}
-        sizes={{
-          ...post.mainImage,
-          aspectRatio: 6 / 6,
-        }}
-      />
       <div>
+        <PostImage
+          alt={post.alt}
+          sizes={{
+            ...post.mainImage,
+            aspectRatio: 6 / 6,
+          }}
+        />
+
         <PostHeading as="h3">{post.title}</PostHeading>
-        <PostText>Read post</PostText>
       </div>
+      <PostText noMargin>Read post</PostText>
     </PostElement>
   </PostLink>
 );

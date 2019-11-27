@@ -43,10 +43,15 @@ const styles = ({
   };
 
   const gridStyles = {
-    gridArea: gridSpan && `span 1 / span ${gridSpan}`,
+    gridArea:
+      gridSpan && Array.isArray(gridSpan)
+        ? gridSpan.map(val => `span 1 / span ${val}`)
+        : `span 1 / span ${gridSpan}`,
     gridColumnStart: gridStart && gridStart,
     gridColumnEnd: gridEnd && gridEnd,
   };
+
+  console.log(gridStyles);
 
   const spacingStyles = {
     marginTop: spacingTop && getSpacingValues(spacingTop, theme),
