@@ -13,7 +13,7 @@ import {
 } from '../../utils/shared-prop-types';
 
 import {
-  getThemeSpacingValues,
+  getSpacingValues,
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
@@ -49,10 +49,10 @@ const styles = ({
   };
 
   const spacingStyles = {
-    marginTop: spacingTop && getThemeSpacingValues(spacingTop, theme),
-    paddingRight: spacingRight && getThemeSpacingValues(spacingRight, theme),
-    marginBottom: spacingBottom && getThemeSpacingValues(spacingBottom, theme),
-    paddingLeft: spacingLeft && getThemeSpacingValues(spacingLeft, theme),
+    marginTop: spacingTop && getSpacingValues(spacingTop, theme),
+    paddingRight: spacingRight && getSpacingValues(spacingRight, theme),
+    marginBottom: spacingBottom && getSpacingValues(spacingBottom, theme),
+    paddingLeft: spacingLeft && getSpacingValues(spacingLeft, theme),
   };
 
   const flexboxStyles = {

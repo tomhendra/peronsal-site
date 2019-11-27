@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 
 import { childrenPropType } from '../../utils/shared-prop-types';
 
+import {
+  getSpacingValues,
+  getTextDeclarations,
+  withMediaQueries,
+} from '../../assets/styles/style-helpers';
+
 import { sizes } from '../../assets/styles/constants';
 
 const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO } = sizes;
@@ -17,13 +23,11 @@ const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
     color: theme.colors.n400,
     fontFamily: theme.fontStack.default,
     fontWeight: theme.fontWeight.regular,
-    marginBottom: !noMargin ? theme.typography.text[size].fontSize : 0,
+    marginBottom: !noMargin ? getSpacingValues(size, theme) : 0,
   };
 
   const sizeStyles = {
-    label: `text--${size}`,
-    fontSize: theme.typography.text[size].fontSize,
-    lineHeight: theme.typography.text[size].lineHeight,
+    ...getTextDeclarations(size, theme),
   };
 
   const boldStyles = bold && {
@@ -60,7 +64,7 @@ const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
       content: '"\\201C"',
       color: theme.colors.p800,
       fontFamily: theme.fontStack.heading,
-      fontSize: `calc(${theme.typography.text[size].fontSize} * 3)`,
+      fontSize: theme.iconSizes.foxtrot,
       position: 'absolute',
       left: '1rem',
       top: '-1rem',
@@ -71,7 +75,7 @@ const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
     },
   };
 
-  return {
+  return withMediaQueries(theme)({
     ...baseStyles,
     ...sizeStyles,
     ...boldStyles,
@@ -79,7 +83,7 @@ const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
     ...strikeThroughStyles,
     ...listItemStyles,
     ...blockquoteStyles,
-  };
+  });
 };
 
 /**

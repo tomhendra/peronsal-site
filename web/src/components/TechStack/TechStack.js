@@ -17,7 +17,7 @@ const { ALPHA, DELTA } = sizes;
 const containerStyles = ({ gridSize, theme }) => {
   const baseStyles = {
     display: 'grid',
-    paddingTop: theme.spacings.charlie,
+    paddingBottom: theme.spacings.charlie,
   };
 
   const gridStyles = {

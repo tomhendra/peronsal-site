@@ -26,7 +26,7 @@ const ProjectsPage = () => {
         <Grid>
           <Item
             gridStart={1}
-            gridEnd={7}
+            gridEnd={[6, 6, 7, 7]}
             spacingTop={INDIA}
             spacingBottom={HOTEL}
           >
@@ -49,7 +49,7 @@ const ProjectsPage = () => {
             projects.map(project => (
               <Item
                 gridStart={1}
-                gridEnd={11}
+                gridEnd={[7, 9, 11, 11]}
                 spacingBottom={INDIA}
                 key={project.id}
               >

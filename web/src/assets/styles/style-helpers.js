@@ -1,9 +1,9 @@
 import facepaint from 'facepaint';
 import { transparentize } from 'polished';
 
-/*
-....................media queries....................
+// ....................media queries....................
 
+/*
 withMediaQueries function generates media queries
 by currying facepaint (https://github.com/emotion-js/facepaint).
 first argument passed is theme,
@@ -20,7 +20,7 @@ const styles = theme => {
 export const withMediaQueries = theme =>
   facepaint(theme.breakpoints.map(bp => `@media (min-width: ${bp})`));
 
-// ....................handle arrays of propValues....................
+// ....................spacings....................
 
 /*
 withMediaQueries() needs an array of values for facepaint.
@@ -34,15 +34,17 @@ Problem is threefold:
      is required by facepaint.
 Solution: the following addresses 1) & 2).
 */
-const mapPropsToThemeValues = (propValue, themePath, themeBreakpoints) => {
-  if (Array.isArray(propValue)) {
-    return propValue.map(value =>
+export const getSpacingValues = (size, theme) => {
+  const { spacings, breakpoints } = theme;
+
+  if (Array.isArray(size)) {
+    return size.map(value =>
       // handles arrays with mix of strings & numbers e.g. [ALPHA, BRAVO, 0, 0]
-      typeof value === 'string' ? themePath[value] : value,
+      typeof value === 'string' ? spacings[value] : value,
     );
   }
   /*
-  bug with facepaint (?):
+  bug with facepaint:
   Problem: When passing an array of values for padding, & only a
   single padding value for paddingTop, the paddingTop value
   is only applied to the first breakpoint, and is ignored
@@ -51,20 +53,40 @@ const mapPropsToThemeValues = (propValue, themePath, themeBreakpoints) => {
   Perhaps related to https://github.com/emotion-js/facepaint/issues/9
   Solution: need to pass values for all breakpoints. use Array.fill to 'fix'.
   */
-  if (typeof propValue === 'string') {
-    return Array(themeBreakpoints.length).fill(themePath[propValue]);
+  if (typeof size === 'string') {
+    return Array(breakpoints.length).fill(spacings[size]);
   }
   // return number (i.e. 0) as only other prop value permitted. (see utils/shared-prop-types.js)
-  return propValue;
+  return size;
 };
 
-/*
-use mapPropsToThemeValues for spacing
-*/
-export const getThemeSpacingValues = (spacingProp, theme) => {
-  const { spacings, breakpoints } = theme;
-  return mapPropsToThemeValues(spacingProp, spacings, breakpoints);
+// ....................typography....................
+
+const typographyHelper = (type, size, theme) => {
+  const { typography, breakpoints } = theme;
+  const typographyType = typography[type];
+
+  const generateValues = property => {
+    return Array.isArray(size)
+      ? size.map(val => typographyType[val][property])
+      : // generates arrays for single values passed to avoid facepaint bug :/
+        Array(breakpoints.length).fill(typographyType[size][property]);
+  };
+
+  return {
+    fontSize: generateValues('fontSize'),
+    lineHeight: generateValues('lineHeight'),
+  };
 };
+
+export const getTextDeclarations = (size, theme) =>
+  typographyHelper('text', size, theme);
+
+export const getHeadingDeclarations = (size, theme) =>
+  typographyHelper('headings', size, theme);
+
+export const getSubheadingDeclarations = (size, theme) =>
+  typographyHelper('subHeadings', size, theme);
 
 // ....................shadows....................
 

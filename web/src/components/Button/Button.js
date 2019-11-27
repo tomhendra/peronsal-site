@@ -69,15 +69,15 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
   const buttonSizes = {
     [ALPHA]: {
       fontSize: theme.typography.text.bravo.fontSize,
-      padding: `${theme.spacings.charlie} ${theme.spacings.foxtrot}`,
+      padding: `${theme.spacings.charlie} ${theme.spacings.delta}`,
     },
     [BRAVO]: {
       fontSize: theme.typography.text.charlie.fontSize,
-      padding: `${theme.spacings.charlie} ${theme.spacings.foxtrot}`,
+      padding: `${theme.spacings.charlie} ${theme.spacings.delta}`,
     },
     [CHARLIE]: {
       fontSize: theme.typography.text.delta.fontSize,
-      padding: `${theme.spacings.delta} ${theme.spacings.echo}`,
+      padding: `${theme.spacings.delta} ${theme.spacings.foxtrot}`,
     },
   };
 

@@ -10,22 +10,25 @@ import TechStack from '../TechStack';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 
+import { withMediaQueries } from '../../assets/styles/style-helpers';
+
 import { buttons, sizes } from '../../assets/styles/constants';
 
 const { PRIMARY, SECONDARY } = buttons;
-const { ALPHA, BRAVO } = sizes;
+const { ALPHA, BRAVO, CHARLIE } = sizes;
 
 /**
  * `....................styles....................`
  */
 
-const infoStyles = ({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-between',
-  paddingLeft: theme.spacings.foxtrot,
-  width: '58%',
-});
+const infoStyles = ({ theme }) =>
+  withMediaQueries(theme)({
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    paddingLeft: theme.spacings.foxtrot,
+    width: ['100%', '57%', '60%', '60%'],
+  });
 
 /**
  * `....................component....................`
@@ -34,17 +37,19 @@ const infoStyles = ({ theme }) => ({
 const ProjectInfo = styled.div(infoStyles);
 
 const ProjectPreview = ({ project }) => (
-  <Card alignItems="stretch" flexDirection="row">
+  <Card alignItems="stretch" justifyContent="space-between" flexDirection="row">
     <Img fixed={project.image} alt={project.alt} />
     <ProjectInfo>
       <div>
         <Heading as="h2">{project.title}</Heading>
-        <Text>{project.description}</Text>
-        <TechStack
-          gridSize={ALPHA}
-          techStackToDisplay={project.techstack.map(tech => tech.title)}
-        />
+        <Text noMargin size={[BRAVO, BRAVO, CHARLIE, CHARLIE]}>
+          {project.description}
+        </Text>
       </div>
+      <TechStack
+        gridSize={ALPHA}
+        techStackToDisplay={project.techstack.map(tech => tech.title)}
+      />
       <ButtonGroup>
         <Button
           buttonStyle={SECONDARY}

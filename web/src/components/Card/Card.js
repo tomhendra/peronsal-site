@@ -15,7 +15,7 @@ import {
   shadowSingle,
   shadowDouble,
   shadowTriple,
-  getThemeSpacingValues,
+  getSpacingValues,
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
@@ -51,11 +51,11 @@ const styles = ({
   };
 
   const paddingStyles = {
-    padding: getThemeSpacingValues(padding, theme),
-    paddingTop: paddingTop && getThemeSpacingValues(paddingTop, theme),
-    paddingRight: paddingRight && getThemeSpacingValues(paddingRight, theme),
-    paddingBottom: paddingBottom && getThemeSpacingValues(paddingBottom, theme),
-    paddingLeft: paddingBottom && getThemeSpacingValues(paddingLeft, theme),
+    padding: getSpacingValues(padding, theme),
+    paddingTop: paddingTop && getSpacingValues(paddingTop, theme),
+    paddingRight: paddingRight && getSpacingValues(paddingRight, theme),
+    paddingBottom: paddingBottom && getSpacingValues(paddingBottom, theme),
+    paddingLeft: paddingBottom && getSpacingValues(paddingLeft, theme),
   };
 
   const flexboxStyles = {
