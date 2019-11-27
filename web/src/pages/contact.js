@@ -18,8 +18,8 @@ const ContactPage = () => (
     <Container>
       <Grid>
         <Item
-          gridStart={3}
-          gridEnd={10}
+          gridStart={[1, 2, 3, 3]}
+          gridEnd={[7, 8, 10, 10]}
           spacingTop={INDIA}
           spacingBottom={HOTEL}
         >
