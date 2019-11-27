@@ -24,15 +24,22 @@ export const withMediaQueries = theme =>
 
 /*
 withMediaQueries() needs an array of values for facepaint.
-Problem is threefold:
-  1) Values are not always an array if variations are not required between breakpoints.
-  2) values need to be derived from theme dot notation. e.g. passing [ALPHA, BRAVO]
-     to component when ['0.8rem, '1.2rem] is required by facepaint, derived from
-     theme.spacings[ALPHA], theme.spacings[BRAVO].
-  3) values need to be derived from template strings e.g. passing [1, 2]
-     for gridArea: `span 1 / span ${gridSpan}` when ['span 1 / span 1', 'span 1 / span 2']
-     is required by facepaint.
-Solution: the following addresses 1) & 2).
+Problem:
+    Values sometimes need to be derived from theme dot notation. e.g. passing [ALPHA, BRAVO]
+    to component when ['0.8rem, '1.2rem] is required by facepaint, derived from
+    theme.spacings[ALPHA], theme.spacings[BRAVO]. Values do not always need to be an array if
+    variations are not required between breakpoints. Facepaint should ignore values which
+    are not arrays and process as normal, however there appears to be a bug...
+
+    When passing an array of values for padding, & only a
+    single padding value for paddingTop, the paddingTop value
+    is only applied to the first breakpoint, and is ignored
+    for other breakpoints.
+    Array for paddingTop / singular for padding works as expected.
+    Perhaps related to https://github.com/emotion-js/facepaint/issues/9
+
+    Solution: Since facepaint repo hasn't been touched for a year,
+    workaround is to pass values for all breakpoints using Array.fill.
 */
 export const getSpacingValues = (size, theme) => {
   const { spacings, breakpoints } = theme;
@@ -43,16 +50,6 @@ export const getSpacingValues = (size, theme) => {
       typeof value === 'string' ? spacings[value] : value,
     );
   }
-  /*
-  bug with facepaint:
-  Problem: When passing an array of values for padding, & only a
-  single padding value for paddingTop, the paddingTop value
-  is only applied to the first breakpoint, and is ignored
-  for other breakpoints.
-  Array for paddingTop / singular for padding works as expected.
-  Perhaps related to https://github.com/emotion-js/facepaint/issues/9
-  Solution: need to pass values for all breakpoints. use Array.fill to 'fix'.
-  */
   if (typeof size === 'string') {
     return Array(breakpoints.length).fill(spacings[size]);
   }
