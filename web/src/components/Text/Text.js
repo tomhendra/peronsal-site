@@ -64,7 +64,7 @@ const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
       content: '"\\201C"',
       color: theme.colors.p800,
       fontFamily: theme.fontStack.heading,
-      fontSize: theme.iconSizes.foxtrot,
+      fontSize: theme.iconSizes.juliett,
       position: 'absolute',
       left: '1rem',
       top: '-1rem',

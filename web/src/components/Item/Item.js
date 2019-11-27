@@ -51,8 +51,6 @@ const styles = ({
     gridColumnEnd: gridEnd && gridEnd,
   };
 
-  console.log(gridStyles);
-
   const spacingStyles = {
     marginTop: spacingTop && getSpacingValues(spacingTop, theme),
     paddingRight: spacingRight && getSpacingValues(spacingRight, theme),

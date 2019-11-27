@@ -38,7 +38,7 @@ const BlogPost = ({ post }) => {
     <Container>
       <article>
         <Grid>
-          <Item gridStart={1} gridEnd={11} spacingTop={INDIA}>
+          <Item gridStart={1} gridEnd={[7, 9, 11, 11]} spacingTop={INDIA}>
             <Heading as="h1" size={FOXTROT}>
               {title}
             </Heading>
