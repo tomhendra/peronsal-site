@@ -185,6 +185,10 @@ export const typography = {
       fontSize: '2rem', // 20px
       lineHeight: 1.5,
     },
+    charlie: {
+      fontSize: '2.8rem', // 28px
+      lineHeight: 1.4,
+    },
     delta: {
       fontSize: '3.6rem', // 36px
       lineHeight: 1.3,
@@ -286,24 +290,24 @@ export const borderWidth = {
 
 export const grid = {
   alpha: {
-    cols: 6,
+    cols: 8,
     maxWidth: '35.5rem', // 355px
-    gutter: spacings.bravo,
+    gutter: spacings.charlie,
   },
   bravo: {
     cols: 8,
     maxWidth: '67.2rem', // 672px
-    gutter: spacings.echo,
+    gutter: spacings.delta,
   },
   charlie: {
     cols: 12,
     maxWidth: '88rem', // 880px
-    gutter: spacings.delta,
+    gutter: spacings.echo,
   },
   delta: {
     cols: 12,
     maxWidth: '88rem', // 880px
-    gutter: spacings.delta,
+    gutter: spacings.echo,
   },
 };
 
