@@ -16,7 +16,7 @@ const styles = ({ noMargin, theme }) =>
     fontFamily: theme.fontStack.heading,
     fontSize: ['18.5rem', '39.5rem', '57rem', '57rem'],
     fontWeight: theme.fontWeight.bold,
-    lineHeight: 1,
+    lineHeight: [0.75, 0.95],
     marginTop: !noMargin
       ? [
           theme.spacings.india,

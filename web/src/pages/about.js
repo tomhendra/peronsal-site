@@ -27,9 +27,9 @@ const AboutPage = () => (
         <Grid withoutBottomSpacing>
           <Item
             gridStart={1}
-            gridEnd={[6, 6, 7, 7]}
-            spacingTop={INDIA}
-            spacingBottom={HOTEL}
+            gridEnd={[8, 6, 7, 7]}
+            spacingTop={[GOLF, INDIA]}
+            spacingBottom={[GOLF, HOTEL]}
           >
             <Heading as="h1" size={FOXTROT}>
               About me.
@@ -47,12 +47,12 @@ const AboutPage = () => (
           </Item>
           <Item
             gridStart={[2, 3, 1, 1]}
-            gridEnd={[6, 7, 5, 5]}
+            gridEnd={[8, 7, 5, 5]}
             spacingBottom={[HOTEL, HOTEL, 0, 0]}
           >
             <Card
-              padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
-              paddingTop={[GOLF, GOLF, HOTEL, HOTEL]}
+              padding={[ECHO, GOLF, FOXTROT, FOXTROT]}
+              paddingTop={[FOXTROT, GOLF, HOTEL, HOTEL]}
             >
               <Icon
                 type={CODE}
@@ -73,12 +73,12 @@ const AboutPage = () => (
           </Item>
           <Item
             gridStart={[2, 3, 5, 5]}
-            gridEnd={[6, 7, 9, 9]}
+            gridEnd={[8, 7, 9, 9]}
             spacingBottom={[HOTEL, HOTEL, 0, 0]}
           >
             <Card
-              padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
-              paddingTop={[GOLF, GOLF, HOTEL, HOTEL]}
+              padding={[ECHO, GOLF, FOXTROT, FOXTROT]}
+              paddingTop={[FOXTROT, GOLF, HOTEL, HOTEL]}
             >
               <Icon
                 type={PEN_TOOL}
@@ -97,10 +97,10 @@ const AboutPage = () => (
               </Text>
             </Card>
           </Item>
-          <Item gridStart={[2, 3, 9, 9]} gridEnd={[6, 7, 13, 13]}>
+          <Item gridStart={[2, 3, 9, 9]} gridEnd={[8, 7, 13, 13]}>
             <Card
-              padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
-              paddingTop={[GOLF, GOLF, HOTEL, HOTEL]}
+              padding={[ECHO, GOLF, FOXTROT, FOXTROT]}
+              paddingTop={[FOXTROT, GOLF, HOTEL, HOTEL]}
             >
               <Icon
                 type={BRIEFCASE}
@@ -126,7 +126,7 @@ const AboutPage = () => (
       <Container>
         <Graphic>Skills</Graphic>
         <Grid>
-          <Item gridStart={1} gridEnd={[6, 6, 7, 7]} spacingTop={INDIA}>
+          <Item gridStart={1} gridEnd={[8, 6, 7, 7]} spacingTop={INDIA}>
             <Heading as="h1" size={FOXTROT}>
               My skills.
             </Heading>

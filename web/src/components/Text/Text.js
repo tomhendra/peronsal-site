@@ -26,8 +26,18 @@ const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
     marginBottom: !noMargin ? getSpacingValues(size, theme) : 0,
   };
 
+  const mobileSizeMap = {
+    [ALPHA]: ALPHA,
+    [BRAVO]: BRAVO,
+    [CHARLIE]: BRAVO,
+    [DELTA]: CHARLIE,
+    [ECHO]: DELTA,
+  };
+  // array for facepaint
+  const sizeConfig = [mobileSizeMap[size], size];
+
   const sizeStyles = {
-    ...getTextDeclarations(size, theme),
+    ...getTextDeclarations(sizeConfig, theme),
   };
 
   const boldStyles = bold && {
