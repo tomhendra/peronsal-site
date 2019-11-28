@@ -21,7 +21,7 @@ const IndexPage = () => (
     <Container center>
       <Graphic>Hola.</Graphic>
       <Grid withoutBottomSpacing>
-        <Item gridStart={[1, 2, 3, 2]} gridEnd={[7, 9, 11, 10]}>
+        <Item gridStart={[1, 2, 3, 2]} gridEnd={[9, 9, 11, 10]}>
           <Heading as="h1" size={HOTEL}>
             I am Tom.
           </Heading>
@@ -30,7 +30,7 @@ const IndexPage = () => (
             about coding, design & food!
           </Heading>
         </Item>
-        <Item gridStart={[1, 2, 3, 2]} gridEnd={[7, 6, 8, 7]} spacingTop={GOLF}>
+        <Item gridStart={[1, 2, 3, 2]} gridEnd={[9, 6, 8, 7]} spacingTop={GOLF}>
           <ButtonGroup>
             <Button
               internalLink="/projects"

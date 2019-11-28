@@ -178,7 +178,7 @@ export const typography = {
   },
   subHeadings: {
     alpha: {
-      fontSize: '1.6rem', // 16px
+      fontSize: '1.7rem', // 17px
       lineHeight: 1.5,
     },
     bravo: {
@@ -186,11 +186,11 @@ export const typography = {
       lineHeight: 1.5,
     },
     charlie: {
-      fontSize: '2.8rem', // 28px
+      fontSize: '2.3rem', // 23px
       lineHeight: 1.4,
     },
     delta: {
-      fontSize: '3.6rem', // 36px
+      fontSize: '3.4rem', // 34px
       lineHeight: 1.3,
     },
   },
@@ -291,7 +291,7 @@ export const borderWidth = {
 export const grid = {
   alpha: {
     cols: 8,
-    maxWidth: '35.5rem', // 355px
+    maxWidth: '35.1rem', // 351px
     gutter: spacings.charlie,
   },
   bravo: {

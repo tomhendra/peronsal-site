@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 
 import { childrenPropType } from '../../utils/shared-prop-types';
 
+import {
+  getSpacingValues,
+  getHeadingDeclarations,
+  getSubheadingDeclarations,
+  withMediaQueries,
+} from '../../assets/styles/style-helpers';
+
 import { sizes } from '../../assets/styles/constants';
 
 const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL } = sizes;
@@ -13,28 +20,37 @@ const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL } = sizes;
 
 const styles = ({ noMargin, size, spacingBottom, sub, theme }) => {
   const baseStyles = {
-    label: 'heading',
     color: !sub ? theme.colors.n000 : theme.colors.n300,
-    fontFamily: !sub ? theme.fontStack.heading : theme.fontStack.default,
+    fontFamily: theme.fontStack.heading,
     fontWeight: !sub ? theme.fontWeight.bold : theme.fontWeight.regular,
     letterSpacing: 0.7,
-    marginBottom: !noMargin ? theme.spacings[spacingBottom] : 0,
+    marginBottom: !noMargin ? getSpacingValues(spacingBottom, theme) : 0,
   };
+
+  const mobileSizeMap = {
+    [ALPHA]: ALPHA,
+    [BRAVO]: ALPHA,
+    [CHARLIE]: BRAVO,
+    [DELTA]: CHARLIE,
+    [ECHO]: DELTA,
+    [FOXTROT]: ECHO,
+    [GOLF]: FOXTROT,
+    [HOTEL]: GOLF,
+  };
+  // array for facepaint
+  const sizeConfig = [mobileSizeMap[size], size];
+  const sizeDeclarations = !sub
+    ? getHeadingDeclarations(sizeConfig, theme)
+    : getSubheadingDeclarations(sizeConfig, theme);
 
   const sizeStyles = {
-    label: `heading--${size}`,
-    fontSize: !sub
-      ? theme.typography.headings[size].fontSize
-      : theme.typography.subHeadings[size].fontSize,
-    lineHeight: !sub
-      ? theme.typography.headings[size].lineHeight
-      : theme.typography.subHeadings[size].lineHeight,
+    ...sizeDeclarations,
   };
 
-  return {
+  return withMediaQueries(theme)({
     ...baseStyles,
     ...sizeStyles,
-  };
+  });
 };
 
 /**
@@ -78,7 +94,7 @@ Heading.defaultProps = {
   as: 'h2',
   noMargin: false,
   size: BRAVO,
-  spacingBottom: DELTA,
+  spacingBottom: [CHARLIE, DELTA],
   sub: false,
   children: null,
 };
