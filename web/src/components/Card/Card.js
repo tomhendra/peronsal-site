@@ -46,7 +46,7 @@ const styles = ({
     backgroundColor: theme.colors.bodyBg,
     borderRadius: theme.borderRadius.delta,
     display: 'flex',
-    flexWrap: 'wrap',
+    flexWrap: 'no-wrap',
     zIndex: theme.zIndex.card,
   };
 

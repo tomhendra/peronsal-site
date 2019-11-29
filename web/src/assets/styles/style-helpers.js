@@ -61,14 +61,13 @@ export const getSpacingValues = (size, theme) => {
 // ....................typography....................
 
 const typographyHelper = (type, size, theme) => {
-  const { typography, breakpoints } = theme;
+  const { typography } = theme;
   const typographyType = typography[type];
 
   const generateValues = property => {
     return Array.isArray(size)
       ? size.map(val => typographyType[val][property])
-      : // generates arrays for single values passed to avoid facepaint bug :/
-        Array(breakpoints.length).fill(typographyType[size][property]);
+      : typographyType[size][property];
   };
 
   return {

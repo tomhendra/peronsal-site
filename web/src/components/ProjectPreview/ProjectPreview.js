@@ -15,7 +15,7 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
 import { buttons, sizes } from '../../assets/styles/constants';
 
 const { PRIMARY, SECONDARY } = buttons;
-const { ALPHA, BRAVO, CHARLIE } = sizes;
+const { ALPHA, CHARLIE } = sizes;
 
 /**
  * `....................styles....................`
@@ -25,9 +25,11 @@ const infoStyles = ({ theme }) =>
   withMediaQueries(theme)({
     display: 'flex',
     flexDirection: 'column',
+    minHeight: theme.spacings.lima,
     justifyContent: 'space-between',
-    paddingLeft: theme.spacings.foxtrot,
+    paddingLeft: [0, theme.spacings.foxtrot],
     width: ['100%', '57%', '60%', '60%'],
+    paddingTop: [theme.spacings.foxtrot, 0],
   });
 
 /**
@@ -37,14 +39,16 @@ const infoStyles = ({ theme }) =>
 const ProjectInfo = styled.div(infoStyles);
 
 const ProjectPreview = ({ project }) => (
-  <Card alignItems="stretch" justifyContent="space-between" flexDirection="row">
+  <Card
+    alignItems={['center', 'stretch']}
+    justifyContent="space-between"
+    flexDirection={['column', 'row']}
+  >
     <Img fixed={project.image} alt={project.alt} />
     <ProjectInfo>
       <div>
         <Heading as="h2">{project.title}</Heading>
-        <Text noMargin size={[BRAVO, BRAVO, CHARLIE, CHARLIE]}>
-          {project.description}
-        </Text>
+        <Text size={CHARLIE}>{project.description}</Text>
       </div>
       <TechStack
         gridSize={ALPHA}
@@ -53,14 +57,14 @@ const ProjectPreview = ({ project }) => (
       <ButtonGroup>
         <Button
           buttonStyle={SECONDARY}
-          buttonSize={BRAVO}
+          buttonSize={ALPHA}
           externalLink={project.repo}
         >
           View Repo
         </Button>
         <Button
           buttonStyle={PRIMARY}
-          buttonSize={BRAVO}
+          buttonSize={ALPHA}
           externalLink={project.url}
         >
           Launch App

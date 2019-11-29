@@ -14,7 +14,7 @@ import ProjectPreview from '../components/ProjectPreview';
 
 import { sizes } from '../assets/styles/constants';
 
-const { FOXTROT, HOTEL, INDIA } = sizes;
+const { FOXTROT, GOLF, HOTEL, INDIA } = sizes;
 
 const ProjectsPage = () => {
   const projects = useProjects();
@@ -26,9 +26,9 @@ const ProjectsPage = () => {
         <Grid>
           <Item
             gridStart={1}
-            gridEnd={[6, 6, 7, 7]}
-            spacingTop={INDIA}
-            spacingBottom={HOTEL}
+            gridEnd={[8, 6, 7, 7]}
+            spacingTop={[GOLF, INDIA]}
+            spacingBottom={[GOLF, HOTEL]}
           >
             <Heading as="h1" size={FOXTROT}>
               My projects.
@@ -49,8 +49,8 @@ const ProjectsPage = () => {
             projects.map(project => (
               <Item
                 gridStart={1}
-                gridEnd={[7, 9, 11, 11]}
-                spacingBottom={INDIA}
+                gridEnd={[9, 9, 11, 11]}
+                spacingBottom={[HOTEL, INDIA]}
                 key={project.id}
               >
                 <ProjectPreview project={project} />

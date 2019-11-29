@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import useTechStack from '../../hooks/useTechStack';
 
 import { sizes } from '../../assets/styles/constants';
+import { withMediaQueries } from '../../assets/styles/style-helpers';
 
 const { ALPHA, DELTA } = sizes;
 
@@ -17,7 +18,7 @@ const { ALPHA, DELTA } = sizes;
 const containerStyles = ({ gridSize, theme }) => {
   const baseStyles = {
     display: 'grid',
-    paddingBottom: theme.spacings.charlie,
+    marginBottom: [theme.spacings.foxtrot, theme.spacings.charlie],
   };
 
   const gridStyles = {
@@ -33,10 +34,10 @@ const containerStyles = ({ gridSize, theme }) => {
 
   const gridConfig = gridStyles[gridSize];
 
-  return {
+  return withMediaQueries(theme)({
     ...baseStyles,
     ...gridConfig,
-  };
+  });
 };
 
 /**

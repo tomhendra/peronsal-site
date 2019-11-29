@@ -93,7 +93,7 @@ const AboutPage = () => (
               <Text noMargin size={BRAVO}>
                 I have a keen eye for design and know my way around industry
                 standard tools like Sketch & Adobe Creative Suite. I am a
-                developer who likes to design.
+                developer who appreciates design.
               </Text>
             </Card>
           </Item>
@@ -126,7 +126,7 @@ const AboutPage = () => (
       <Container>
         <Graphic>Skills</Graphic>
         <Grid>
-          <Item gridStart={1} gridEnd={[8, 6, 7, 7]} spacingTop={INDIA}>
+          <Item gridStart={1} gridEnd={[8, 6, 7, 7]} spacingTop={[GOLF, INDIA]}>
             <Heading as="h1" size={FOXTROT}>
               My skills.
             </Heading>

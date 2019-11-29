@@ -13,7 +13,7 @@ function useTechStack() {
                 small: fixed(width: 18) {
                   ...GatsbySanityImageFixed
                 }
-                medium: fixed(width: 26) {
+                medium: fixed(width: 24) {
                   ...GatsbySanityImageFixed
                 }
                 large: fixed(width: 64) {
