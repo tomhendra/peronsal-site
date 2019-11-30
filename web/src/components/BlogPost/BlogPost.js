@@ -14,7 +14,7 @@ import CategoryList from './components/CategoryList';
 
 import { sizes } from '../../assets/styles/constants';
 
-const { FOXTROT, INDIA } = sizes;
+const { FOXTROT, GOLF, INDIA } = sizes;
 
 /**
  * `....................styles....................`
@@ -38,7 +38,11 @@ const BlogPost = ({ post }) => {
     <Container>
       <article>
         <Grid>
-          <Item gridStart={1} gridEnd={[7, 9, 11, 11]} spacingTop={INDIA}>
+          <Item
+            gridStart={1}
+            gridEnd={[9, 9, 11, 11]}
+            spacingTop={[GOLF, INDIA]}
+          >
             <Heading as="h1" size={FOXTROT}>
               {title}
             </Heading>
