@@ -10,18 +10,18 @@ import ContactForm from '../components/ContactForm';
 
 import { sizes } from '../assets/styles/constants';
 
-const { HOTEL, INDIA } = sizes;
+const { GOLF, HOTEL, INDIA } = sizes;
 
 const ContactPage = () => (
   <Layout>
     <SEO title="Contact" />
     <Container>
-      <Grid>
+      <Grid withoutBottomSpacing>
         <Item
           gridStart={[1, 2, 3, 3]}
-          gridEnd={[7, 8, 10, 10]}
-          spacingTop={INDIA}
-          spacingBottom={HOTEL}
+          gridEnd={[9, 8, 10, 10]}
+          spacingTop={[GOLF, INDIA]}
+          spacingBottom={[GOLF, HOTEL]}
         >
           <ContactForm />
         </Item>

@@ -18,7 +18,7 @@ import { buttons, colors, sizes } from '../../assets/styles/constants';
 
 const { PRIMARY, TERTIARY } = buttons;
 const { DANGER, SUCCESS } = colors;
-const { BRAVO, GOLF } = sizes;
+const { BRAVO, ECHO, GOLF } = sizes;
 
 /**
  * `....................styles....................`
@@ -117,7 +117,7 @@ const ContactForm = () => {
     >
       {/* destructure helper methods from props */}
       {({ isSubmitting, handleReset }) => (
-        <Card spacing={GOLF}>
+        <Card padding={[ECHO, GOLF]}>
           <StyledForm id="fs-frm" noValidate>
             <input
               type="hidden"
