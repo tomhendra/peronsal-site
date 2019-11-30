@@ -15,7 +15,7 @@ import usePosts from '../hooks/usePosts';
 
 import { sizes } from '../assets/styles/constants';
 
-const { FOXTROT, HOTEL, INDIA } = sizes;
+const { FOXTROT, GOLF, HOTEL, INDIA } = sizes;
 
 const BlogPage = () => {
   const posts = usePosts();
@@ -27,9 +27,9 @@ const BlogPage = () => {
         <Grid withoutBottomSpacing>
           <Item
             gridStart={1}
-            gridEnd={[6, 6, 7, 7]}
-            spacingTop={INDIA}
-            spacingBottom={HOTEL}
+            gridEnd={[8, 6, 7, 7]}
+            spacingTop={[GOLF, INDIA]}
+            spacingBottom={[GOLF, HOTEL]}
           >
             <Heading as="h1" size={FOXTROT}>
               Blog.
@@ -43,7 +43,7 @@ const BlogPage = () => {
         <Grid withRowGaps>
           {posts ? (
             posts.map(post => (
-              <Item gridSpan={[6, 4, 4, 4]} key={post.id}>
+              <Item gridSpan={[8, 4, 4, 4]} key={post.id}>
                 <PostPreview post={post} />
               </Item>
             ))

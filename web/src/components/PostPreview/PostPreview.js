@@ -4,6 +4,8 @@ import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
+import { withMediaQueries } from '../../assets/styles/style-helpers';
+
 import Heading from '../Heading';
 import Text from '../Text';
 
@@ -11,16 +13,17 @@ import Text from '../Text';
  * `....................styles....................`
  */
 
-const elementStyles = ({ theme }) => ({
-  background: `linear-gradient(180deg, ${theme.colors.p400}, ${theme.colors.p300} 100%)`,
-  borderRadius: theme.borderRadius.delta,
-  display: 'flex',
-  flexDirection: 'column',
-  minHeight: '48rem',
-  justifyContent: 'space-between',
-  overflow: 'hidden',
-  padding: theme.spacings.foxtrot,
-});
+const elementStyles = ({ theme }) =>
+  withMediaQueries(theme)({
+    background: `linear-gradient(180deg, ${theme.colors.p400}, ${theme.colors.p300} 100%)`,
+    borderRadius: theme.borderRadius.delta,
+    display: 'flex',
+    flexDirection: ['row', 'column'],
+    justifyContent: 'space-between',
+    minHeight: ['18rem', '46rem'],
+    overflow: 'hidden',
+    padding: [theme.spacings.echo, theme.spacings.foxtrot],
+  });
 
 const linkStyles = ({ theme }) => ({
   color: theme.colors.n000,
@@ -33,11 +36,23 @@ const linkStyles = ({ theme }) => ({
   },
 });
 
-const imageStyles = ({ theme }) => ({
-  mixBlendMode: 'luminosity',
-  borderRadius: theme.borderRadius.delta,
-  marginBottom: theme.spacings.golf,
-});
+const imageStyles = ({ theme }) =>
+  withMediaQueries(theme)({
+    height: ['100%', '50%'],
+    width: ['50%', '100%'],
+    mixBlendMode: 'luminosity',
+    borderRadius: theme.borderRadius.delta,
+    marginBottom: [0, theme.spacings.golf],
+  });
+
+const previewContentStyles = ({ theme }) =>
+  withMediaQueries(theme)({
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    paddingLeft: [theme.spacings.echo, 0],
+    width: ['60%', '100%'],
+  });
 
 const headingStyles = ({ theme }) => ({
   color: theme.colors.n900,
@@ -56,24 +71,24 @@ const textStyles = ({ theme }) => ({
 const PostElement = styled.article(elementStyles);
 const PostLink = styled(Link)(linkStyles);
 const PostImage = styled(Img)(imageStyles);
+const PostPreviewContent = styled.div(previewContentStyles);
 const PostHeading = styled(Heading)(headingStyles);
 const PostText = styled(Text)(textStyles);
 
 const PostPreview = ({ post }) => (
   <PostLink to={post.slug}>
     <PostElement>
-      <div>
-        <PostImage
-          alt={post.alt}
-          sizes={{
-            ...post.mainImage,
-            aspectRatio: 6 / 6,
-          }}
-        />
-
+      <PostImage
+        alt={post.alt}
+        sizes={{
+          ...post.mainImage,
+          aspectRatio: 6 / 6,
+        }}
+      />
+      <PostPreviewContent>
         <PostHeading as="h3">{post.title}</PostHeading>
-      </div>
-      <PostText noMargin>Read post</PostText>
+        <PostText noMargin>Read post</PostText>
+      </PostPreviewContent>
     </PostElement>
   </PostLink>
 );
