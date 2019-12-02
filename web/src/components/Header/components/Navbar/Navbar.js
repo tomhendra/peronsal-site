@@ -3,19 +3,20 @@ import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
-/**
- * `....................styles....................`
- */
+import { withMediaQueries } from '../../../../assets/styles/style-helpers';
 
-const navStyles = ({ theme }) => ({
-  label: 'navbar',
-  alignItems: 'center',
-  display: 'flex',
+// ....................styles....................
 
-  '& :not(:last-of-type)': {
-    marginRight: theme.spacings.golf,
-  },
-});
+const navStyles = ({ theme }) =>
+  withMediaQueries(theme)({
+    label: 'navbar',
+    alignItems: 'center',
+    display: ['none', 'flex'],
+
+    '& > :not(:last-of-type)': {
+      marginRight: theme.spacings.golf,
+    },
+  });
 
 const navLinkStyles = ({ theme }) => ({
   label: 'NavLink',
@@ -28,9 +29,7 @@ const navLinkStyles = ({ theme }) => ({
   },
 });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const Nav = styled.nav(navStyles);
 const NavLink = styled(Link)(navLinkStyles);
