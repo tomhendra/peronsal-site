@@ -2,21 +2,24 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 // ....................styles....................
 
-const navStyles = ({ theme }) => ({
+const navStyles = ({ theme, open }) => ({
   display: 'flex',
   flexDirection: 'column',
   background: theme.colors.bodyBg,
   height: '100vh',
-  left: '0',
   paddingLeft: theme.spacings.india,
   paddingTop: theme.spacings.juliett,
-  position: 'absolute',
-  top: '0',
-  transition: 'transform 0.3s ease-in-out',
-  width: '100%',
+  position: 'fixed',
+  left: 0,
+  top: 0,
+  transform: open ? 'translateX(0)' : 'translateX(100%)',
+  transition: theme.transitions.slow,
+  width: '100vw',
+  zIndex: theme.zIndex.drawer,
 
   '& > :not(:last-of-type)': {
     marginBottom: theme.spacings.echo,
@@ -41,8 +44,8 @@ const navLinkStyles = ({ theme }) => ({
 const Nav = styled.nav(navStyles);
 const NavLink = styled(Link)(navLinkStyles);
 
-const NavMenu = () => (
-  <Nav>
+const NavMenu = ({ open }) => (
+  <Nav open={open}>
     <NavLink to="/" activeClassName="currentPage">
       Home
     </NavLink>
@@ -60,5 +63,15 @@ const NavMenu = () => (
     </NavLink>
   </Nav>
 );
+
+// ....................propTypes....................
+
+NavMenu.propTypes = {
+  open: PropTypes.bool.isRequired,
+};
+
+PropTypes.defaultProps = {
+  open: null,
+};
 
 export default withTheme(NavMenu);

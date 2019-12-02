@@ -340,6 +340,7 @@ export const zIndex = {
   footer: 500,
   header: 600,
   backdrop: 700,
-  sidebar: 800,
+  drawer: 800,
+  burger: 900,
   modal: 1000,
 };

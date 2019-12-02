@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
@@ -9,19 +9,25 @@ import NavMenu from './components/NavMenu';
 
 // ....................styles....................
 
-const navStyles = ({ theme }) =>
+const containerStyles = ({ theme }) =>
   withMediaQueries(theme)({
     display: ['flex', 'none'],
     alignItems: 'center',
+    position: 'relative',
   });
 
-const NavContainer = styled.div(navStyles);
+// ....................component....................
 
-const MobileNav = () => (
-  <NavContainer>
-    <Burger />
-    <NavMenu />
-  </NavContainer>
-);
+const NavContainer = styled.div(containerStyles);
+
+const MobileNav = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <NavContainer>
+      <Burger open={open} setOpen={setOpen} />
+      <NavMenu open={open} setOpen={setOpen} />
+    </NavContainer>
+  );
+};
 
 export default withTheme(MobileNav);
