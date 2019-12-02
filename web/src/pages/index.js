@@ -12,16 +12,20 @@ import Button from '../components/Button';
 
 import { buttons, sizes } from '../assets/styles/constants';
 
-const { BRAVO, DELTA, GOLF, HOTEL } = sizes;
+const { BRAVO, DELTA, GOLF, HOTEL, KILO, JULIETT } = sizes;
 const { PRIMARY, SECONDARY } = buttons;
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Web Developer" />
-    <Container center>
+    <Container>
       <Graphic>Hola.</Graphic>
       <Grid withoutBottomSpacing>
-        <Item gridStart={[1, 2, 3, 2]} gridEnd={[9, 9, 11, 10]}>
+        <Item
+          gridStart={[1, 2, 3, 2]}
+          gridEnd={[9, 9, 11, 10]}
+          spacingTop={[JULIETT, KILO]}
+        >
           <Heading as="h1" size={HOTEL}>
             I am Tom.
           </Heading>

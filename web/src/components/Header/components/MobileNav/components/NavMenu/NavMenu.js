@@ -22,7 +22,7 @@ const navStyles = ({ theme, open }) => ({
   zIndex: theme.zIndex.drawer,
 
   '& > :not(:last-of-type)': {
-    marginBottom: theme.spacings.echo,
+    marginBottom: theme.spacings.foxtrot,
   },
 });
 
@@ -30,12 +30,26 @@ const navLinkStyles = ({ theme }) => ({
   color: theme.colors.n400,
   fontSize: theme.typography.headings.delta.fontSize,
   letterSpacing: 1,
+  lineHeight: 0.85,
   textAlign: 'left',
   textDecoration: 'none',
   transition: 'color 0.3s linear',
+  position: 'relative',
 
   '&.currentPage,:hover': {
     color: theme.colors.n000,
+  },
+
+  '&.currentPage': {
+    '&::before': {
+      backgroundColor: theme.colors.p600,
+      borderRadius: theme.borderRadius.alpha,
+      content: '""',
+      position: 'absolute',
+      left: '-1.5rem',
+      height: '100%',
+      width: '0.5rem',
+    },
   },
 });
 
