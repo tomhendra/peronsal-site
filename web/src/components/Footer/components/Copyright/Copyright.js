@@ -4,15 +4,18 @@ import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
 import useSiteMetadata from '../../../../hooks/useSiteMetadata';
+import { withMediaQueries } from '../../../../assets/styles/style-helpers';
 
 /**
  * `....................styles....................`
  */
 
-const styles = ({ theme }) => ({
-  color: theme.colors.n600,
-  fontSize: theme.typography.text.bravo.fontSize,
-});
+const styles = ({ theme }) =>
+  withMediaQueries(theme)({
+    color: theme.colors.n600,
+    display: ['none', 'inline-block'],
+    fontSize: theme.typography.text.bravo.fontSize,
+  });
 
 /**
  * `....................component....................`

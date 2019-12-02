@@ -16,9 +16,9 @@ const styles = ({ center, devMode, theme }) =>
     flexDirection: 'column',
     margin: '0 auto',
     maxWidth: [...theme.breakpoints],
-    // 6rem being height of fixed header...
-    minHeight: 'calc(100vh - 6rem)',
-    paddingTop: '6rem',
+    // 5rem & 6rem being height of header for mobile & > mobile...
+    minHeight: ['calc(100vh - 5rem)', 'calc(100vh - 6rem)'],
+    paddingTop: ['5rem', '6rem'],
     justifyContent: center && 'center',
     border: devMode && '1px dashed hsl(300, 100%, 50%)',
     '& > *': {
