@@ -35,7 +35,7 @@ const ProjectsPage = () => {
             </Heading>
             <Text>
               I specialise in frontend development and have a bit of a thing for
-              slick design & motion. I&apos;ve recently been focusing on
+              clean design & motion. I&apos;ve recently been focusing on
               building web apps with React.
             </Text>
             <Text noMargin>

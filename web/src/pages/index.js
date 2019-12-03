@@ -12,7 +12,7 @@ import Button from '../components/Button';
 
 import { buttons, sizes } from '../assets/styles/constants';
 
-const { BRAVO, DELTA, GOLF, HOTEL, KILO, JULIETT } = sizes;
+const { BRAVO, DELTA, GOLF, HOTEL, JULIETT, LIMA } = sizes;
 const { PRIMARY, SECONDARY } = buttons;
 
 const IndexPage = () => (
@@ -24,7 +24,7 @@ const IndexPage = () => (
         <Item
           gridStart={[1, 2, 3, 2]}
           gridEnd={[9, 9, 11, 10]}
-          spacingTop={[JULIETT, KILO]}
+          spacingTop={[JULIETT, LIMA]}
         >
           <Heading as="h1" size={HOTEL}>
             I am Tom.
