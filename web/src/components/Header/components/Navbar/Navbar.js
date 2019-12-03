@@ -24,8 +24,23 @@ const navLinkStyles = ({ theme }) => ({
   fontSize: theme.typography.text.charlie.fontSize,
   letterSpacing: 1,
   textDecoration: 'none',
+  position: 'relative',
+
   '&.currentPage,:hover': {
     color: theme.colors.n000,
+  },
+
+  '&.currentPage': {
+    '&::after': {
+      backgroundColor: theme.colors.p500,
+      borderRadius: theme.borderRadius.alpha,
+      top: '3.75rem',
+      content: '""',
+      transform: 'translateX(-100%)',
+      position: 'absolute',
+      height: '0.25rem',
+      width: '100%',
+    },
   },
 });
 
