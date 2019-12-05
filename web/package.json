@@ -10,7 +10,7 @@
   },
   "version": "2.0.0",
   "scripts": {
-    "develop": "yarn clean && GATSBY_GRAPHQL_IDE=playground gatsby develop --open 'Google Chrome'",
+    "develop": "yarn clean && GATSBY_GRAPHQL_IDE=playground gatsby develop --open",
     "start": "run-p start:**",
     "start:app": "yarn develop",
     "build": "run-p build:**",

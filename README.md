@@ -65,3 +65,6 @@ The Gatsby website has a really well put together **[tutorial](https://www.gatsb
 4.  **Animations - TBC**
 
 5.  **Performance - TBC**
+
+6.  **Sanity**
+    `http://localhost:3333/studio`
