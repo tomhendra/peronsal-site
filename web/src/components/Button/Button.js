@@ -115,7 +115,6 @@ const Button = ({
     </Link>
   ) : externalLink ? (
     // if externalLink prop is provided, return ButtonElement wrapped with anchor tag
-
     <ButtonElement
       as="a"
       target="blank"

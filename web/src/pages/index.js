@@ -37,14 +37,14 @@ const IndexPage = () => (
         <Item gridStart={[1, 2, 3, 2]} gridEnd={[9, 6, 8, 7]} spacingTop={GOLF}>
           <ButtonGroup>
             <Button
-              internalLink="/projects"
+              internalLink="/projects/"
               buttonStyle={SECONDARY}
               buttonSize={BRAVO}
             >
               Projects
             </Button>
             <Button
-              internalLink="/contact"
+              internalLink="/contact/"
               buttonStyle={PRIMARY}
               buttonSize={BRAVO}
             >
