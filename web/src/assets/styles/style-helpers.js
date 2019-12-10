@@ -38,8 +38,9 @@ Problem:
     Array for paddingTop / singular for padding works as expected.
     Perhaps related to https://github.com/emotion-js/facepaint/issues/9
 
-    Solution: Since facepaint repo hasn't been touched for a year,
-    workaround is to pass values for all breakpoints using Array.fill.
+Solution:
+    Since facepaint repo hasn't been touched for a year,
+    workaround is to generate values for all breakpoints using Array.fill.
 */
 export const getSpacingValues = (size, theme) => {
   const { spacings, breakpoints } = theme;
