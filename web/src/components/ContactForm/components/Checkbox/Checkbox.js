@@ -3,6 +3,7 @@ import { useField } from 'formik';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import { hideVisually } from 'polished';
+import { childrenPropType } from '../../../../utils/shared-prop-types';
 
 import Icon from '../../../Icon';
 import Tooltip from '../../../Tooltip';
@@ -13,11 +14,8 @@ import { colors, icons, sizes } from '../../../../assets/styles/constants';
 const { DANGER, WHITE } = colors;
 const { CHECK } = icons;
 const { ALPHA } = sizes;
-// const { TOP } = positions;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const containerStyles = ({ theme }) => ({
   padding: `${theme.spacings.bravo} 0`,
@@ -74,9 +72,7 @@ const labelStyles = ({ theme, checked, error, touched }) => ({
   },
 });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const CheckboxContainer = styled.div(containerStyles);
 const CheckboxLabel = styled(Label)(labelStyles);
@@ -105,6 +101,16 @@ const Checkbox = ({ children, ...otherProps }) => {
       {touched && error ? <Tooltip variant={DANGER}>{error}</Tooltip> : null}
     </CheckboxContainer>
   );
+};
+
+// ...................propTypes....................
+
+Checkbox.propTypes = {
+  children: childrenPropType,
+};
+
+Checkbox.defaultProps = {
+  children: null,
 };
 
 export default withTheme(Checkbox);
