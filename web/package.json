@@ -33,7 +33,7 @@
     "dotenv": "^8.2.0",
     "emotion-theming": "^10.0.19",
     "facepaint": "^1.2.1",
-    "formik": "^2.0.7",
+    "formik": "^2.0.8",
     "framer-motion": "^1.7.0",
     "gatsby": "^2.18.11",
     "gatsby-image": "^2.2.36",
