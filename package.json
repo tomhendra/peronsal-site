@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": "https://github.com/tomhendra/portfolio",
   "engines": {
-    "node": "10.x"
+    "node": "12.x"
   },
   "workspaces": [
     "web",
