@@ -39,11 +39,11 @@ const labelStyles = ({ theme, checked, error, touched }) => ({
   '&::before': {
     backgroundColor: !checked ? theme.colors.bodyBg : theme.colors.p500,
     borderColor:
-      !checked && !error && !touched
+      !checked && !touched
         ? theme.colors.n700
         : checked
         ? theme.colors.p500
-        : error && touched && theme.colors.danger,
+        : error && theme.colors.danger,
     borderStyle: 'solid',
     borderRadius: theme.borderRadius.bravo,
     borderWidth: theme.borderWidth.alpha,

@@ -26,15 +26,12 @@ const elementStyles = ({ theme, error, touched }) => ({
   borderRadius: theme.borderRadius.bravo,
   borderWidth: theme.borderWidth.alpha,
   color: theme.colors.bodyColor,
+  fontFamily: theme.fontStack.default,
   fontSize: theme.typography.text.charlie.fontSize,
   marginTop: theme.spacings.alpha,
   padding: theme.spacings.charlie,
   resize: 'none',
   width: '100%',
-
-  '::placeholder': {
-    fontFamily: theme.fontStack.default,
-  },
 });
 
 /**
