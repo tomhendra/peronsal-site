@@ -54,9 +54,6 @@ const Navbar = () => (
     <NavLink to="/" activeClassName="currentPage">
       Home
     </NavLink>
-    <NavLink to="/about/" activeClassName="currentPage">
-      About
-    </NavLink>
     <NavLink to="/projects/" activeClassName="currentPage">
       Projects
     </NavLink>
