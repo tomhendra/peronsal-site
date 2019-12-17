@@ -12,7 +12,7 @@ const navStyles = ({ theme, open }) => ({
   background: theme.colors.bodyBg,
   height: '100vh',
   paddingLeft: theme.spacings.india,
-  paddingTop: theme.spacings.juliett,
+  paddingTop: theme.spacings.kilo,
   position: 'fixed',
   left: 0,
   top: 0,
