@@ -117,7 +117,7 @@ const misc = {
   bodyColor: neutral.n100,
   headingColor: neutral.n000,
   danger: red.r500,
-  warning: yellow.y500,
+  warning: yellow.y400,
   success: green.g500,
 };
 

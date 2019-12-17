@@ -59,12 +59,18 @@ const StyledForm = styled(Form)(formStyles);
 const FormLink = styled(Link)(linkStyles);
 
 const ContactForm = () => {
+  // define character max lengths
+  const firstNameMaxLength = 20;
+  const lastNameMaxLength = 20;
+  const messageMaxLength = 500;
+
   // Server State Handling
   const [serverState, setServerState] = useState();
   const handleServerResponse = (ok, msg) => {
     setServerState({ ok, msg });
   };
 
+  // submit handling
   const handleOnSubmit = async (values, actions) => {
     await axios({
       method: 'POST',
@@ -99,16 +105,25 @@ const ContactForm = () => {
       onSubmit={handleOnSubmit}
       validationSchema={Yup.object({
         firstName: Yup.string()
-          .max(20, 'Must be 20 characters or less')
+          .max(
+            firstNameMaxLength,
+            `Must be ${firstNameMaxLength} characters or less`,
+          )
           .required('Required'),
         lastName: Yup.string()
-          .max(20, 'Must be 30 characters or less')
+          .max(
+            lastNameMaxLength,
+            `Must be ${lastNameMaxLength} characters or less`,
+          )
           .required('Required'),
         email: Yup.string()
           .email('Invalid email address')
           .required('Required'),
         message: Yup.string()
-          .max(500, 'Must be 500 characters or less')
+          .max(
+            messageMaxLength,
+            `Must be ${messageMaxLength} characters or less`,
+          )
           .required('Required'),
         acceptedTerms: Yup.boolean()
           .required('Required')
@@ -147,6 +162,7 @@ const ContactForm = () => {
               name="message"
               rows="8"
               placeholder="Your message (maximum 500 characters)"
+              messageMaxLength={messageMaxLength}
             />
             <Checkbox name="acceptedTerms">
               I agree to the&nbsp;

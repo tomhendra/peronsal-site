@@ -5,15 +5,13 @@ import { withTheme } from 'emotion-theming';
 
 import Label from '../Label';
 import Tooltip from '../../../Tooltip';
+import Counter from '../Counter';
 
 import { colors } from '../../../../assets/styles/constants';
 
 const { DANGER } = colors;
-// const { TOP } = positions;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const containerStyles = ({ theme }) => ({
   position: 'relative',
@@ -34,17 +32,16 @@ const elementStyles = ({ theme, error, touched }) => ({
   width: '100%',
 });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const TextareaContainer = styled.div(containerStyles);
 const TextareaElement = styled.textarea(elementStyles);
 
-const Textarea = ({ label, ...otherProps }) => {
+const Textarea = ({ label, messageMaxLength, ...otherProps }) => {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
   // which we can spread on <TextareaElement>.
   const [field, meta] = useField(otherProps);
+  const { value } = field;
   const { error, touched } = meta;
   const { id, name } = otherProps;
   return (
@@ -58,13 +55,16 @@ const Textarea = ({ label, ...otherProps }) => {
           {...otherProps}
         />
       </Label>
+      {/* props supplied for counter to calculate how many chars remaining & provider feedback */}
+      <Counter
+        messageMaxLength={messageMaxLength}
+        charsEntered={value.length}
+      />
       {touched && error ? <Tooltip variant={DANGER}>{error}</Tooltip> : null}
     </TextareaContainer>
   );
 };
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 export default withTheme(Textarea);
