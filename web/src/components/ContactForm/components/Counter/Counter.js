@@ -50,6 +50,7 @@ const colouredRingStyles = ({ theme, messageMaxLength, charsRemaining }) => {
         ? theme.colors.warning
         : theme.colors.danger,
     strokeDasharray: `${coloured} ${grey}`,
+    strokeDashoffset: ringLength / 4,
   };
 };
 
