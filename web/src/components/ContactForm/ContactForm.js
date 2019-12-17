@@ -32,7 +32,7 @@ const formStyles = ({ theme }) => ({
   zIndex: theme.zIndex.form,
 
   '& > *:not(:last-child)': {
-    marginBottom: theme.spacings.foxtrot,
+    marginBottom: theme.spacings.echo,
   },
 });
 
