@@ -12,11 +12,11 @@ import {
 } from '../../utils/shared-prop-types';
 
 import {
-  shadowEvenAlpha,
-  shadowEvenBravo,
-  shadowEvenCharlie,
-  shadowEvenDelta,
-  shadowEvenEcho,
+  shadowStandardAlpha,
+  shadowStandardBravo,
+  shadowStandardCharlie,
+  shadowStandardDelta,
+  shadowStandardEcho,
   shadowOffsetAlpha,
   shadowOffsetBravo,
   shadowOffsetCharlie,
@@ -29,11 +29,11 @@ import {
 import { shadows, sizes } from '../../assets/styles/constants';
 
 const {
-  EVEN_ALPHA,
-  EVEN_BRAVO,
-  EVEN_CHARLIE,
-  EVEN_DELTA,
-  EVEN_ECHO,
+  STANDARD_ALPHA,
+  STANDARD_BRAVO,
+  STANDARD_CHARLIE,
+  STANDARD_DELTA,
+  STANDARD_ECHO,
   OFFSET_ALPHA,
   OFFSET_BRAVO,
   OFFSET_CHARLIE,
@@ -84,11 +84,11 @@ const styles = ({
   };
 
   const shadowStyles = {
-    [EVEN_ALPHA]: shadowEvenAlpha(theme.colors.shadowNeutral),
-    [EVEN_BRAVO]: shadowEvenBravo(theme.colors.shadowNeutral),
-    [EVEN_CHARLIE]: shadowEvenCharlie(theme.colors.shadowNeutral),
-    [EVEN_DELTA]: shadowEvenDelta(theme.colors.shadowNeutral),
-    [EVEN_ECHO]: shadowEvenEcho(theme.colors.shadowNeutral),
+    [STANDARD_ALPHA]: shadowStandardAlpha(theme.colors.shadowNeutral),
+    [STANDARD_BRAVO]: shadowStandardBravo(theme.colors.shadowNeutral),
+    [STANDARD_CHARLIE]: shadowStandardCharlie(theme.colors.shadowNeutral),
+    [STANDARD_DELTA]: shadowStandardDelta(theme.colors.shadowNeutral),
+    [STANDARD_ECHO]: shadowStandardEcho(theme.colors.shadowNeutral),
     [OFFSET_ALPHA]: shadowOffsetAlpha(theme.colors.shadowNeutral),
     [OFFSET_BRAVO]: shadowOffsetBravo(theme.colors.shadowNeutral),
     [OFFSET_CHARLIE]: shadowOffsetCharlie(theme.colors.shadowNeutral),
@@ -118,11 +118,11 @@ const Card = styled.div(styles);
 
 Card.propTypes = {
   shadow: PropTypes.oneOf([
-    EVEN_ALPHA,
-    EVEN_BRAVO,
-    EVEN_CHARLIE,
-    EVEN_DELTA,
-    EVEN_ECHO,
+    STANDARD_ALPHA,
+    STANDARD_BRAVO,
+    STANDARD_CHARLIE,
+    STANDARD_DELTA,
+    STANDARD_ECHO,
     OFFSET_ALPHA,
     OFFSET_BRAVO,
     OFFSET_CHARLIE,
@@ -142,7 +142,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  shadow: EVEN_CHARLIE,
+  shadow: STANDARD_CHARLIE,
   padding: FOXTROT,
   paddingTop: null,
   paddingRight: null,

@@ -27,7 +27,7 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
 
     '&:disabled': {
       opacity: 0.4,
-      pointerEvents: 'none',
+      pointerStandardts: 'none',
       userSelectable: 'none',
     },
   };

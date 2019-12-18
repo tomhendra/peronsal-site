@@ -45,11 +45,11 @@ export const ROMEO = 'romeo';
  * `....................shadows....................`
  */
 
-export const EVEN_ALPHA = 'evenAlpha';
-export const EVEN_BRAVO = 'evenBravo';
-export const EVEN_CHARLIE = 'evenCharlie';
-export const EVEN_DELTA = 'evenDelta';
-export const EVEN_ECHO = 'evenEcho';
+export const STANDARD_ALPHA = 'StandardAlpha';
+export const STANDARD_BRAVO = 'StandardBravo';
+export const STANDARD_CHARLIE = 'StandardCharlie';
+export const STANDARD_DELTA = 'StandardDelta';
+export const STANDARD_ECHO = 'StandardEcho';
 export const OFFSET_ALPHA = 'offsetAlpha';
 export const OFFSET_BRAVO = 'offsetBravo';
 export const OFFSET_CHARLIE = 'offsetCharlie';

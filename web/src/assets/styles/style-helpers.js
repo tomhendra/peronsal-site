@@ -96,23 +96,23 @@ export const getSubheadingDeclarations = (size, theme) =>
 //   boxShadow: `0px 0px 0px ${borderSize} ${borderColor}`,
 // });
 
-export const shadowEvenAlpha = shadowColor => ({
+export const shadowStandardAlpha = shadowColor => ({
   boxShadow: `0 1px 3px ${transparentize(0.8, shadowColor)}`,
 });
 
-export const shadowEvenBravo = shadowColor => ({
+export const shadowStandardBravo = shadowColor => ({
   boxShadow: `0 4px 6px ${transparentize(0.8, shadowColor)}`,
 });
 
-export const shadowEvenCharlie = shadowColor => ({
+export const shadowStandardCharlie = shadowColor => ({
   boxShadow: `0 5px 15px ${transparentize(0.8, shadowColor)}`,
 });
 
-export const shadowEvenDelta = shadowColor => ({
+export const shadowStandardDelta = shadowColor => ({
   boxShadow: `0 10px 24px ${transparentize(0.8, shadowColor)}`,
 });
 
-export const shadowEvenEcho = shadowColor => ({
+export const shadowStandardEcho = shadowColor => ({
   boxShadow: `0 15px 35px ${transparentize(0.8, shadowColor)}`,
 });
 
