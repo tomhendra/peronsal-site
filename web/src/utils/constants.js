@@ -45,11 +45,16 @@ export const ROMEO = 'romeo';
  * `....................shadows....................`
  */
 
-export const SINGLE = 'single';
-export const DOUBLE = 'double';
-export const TRIPLE = 'triple';
-export const BORDER = 'border';
-export const GROUND = 'ground';
+export const EVEN_ALPHA = 'evenAlpha';
+export const EVEN_BRAVO = 'evenBravo';
+export const EVEN_CHARLIE = 'evenCharlie';
+export const EVEN_DELTA = 'evenDelta';
+export const EVEN_ECHO = 'evenEcho';
+export const OFFSET_ALPHA = 'offsetAlpha';
+export const OFFSET_BRAVO = 'offsetBravo';
+export const OFFSET_CHARLIE = 'offsetCharlie';
+export const OFFSET_DELTA = 'offsetDelta';
+export const OFFSET_ECHO = 'offsetEcho';
 
 /**
  * `....................colours/types....................`

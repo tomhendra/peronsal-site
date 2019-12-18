@@ -12,16 +12,34 @@ import {
 } from '../../utils/shared-prop-types';
 
 import {
-  shadowSingle,
-  shadowDouble,
-  shadowTriple,
+  shadowEvenAlpha,
+  shadowEvenBravo,
+  shadowEvenCharlie,
+  shadowEvenDelta,
+  shadowEvenEcho,
+  shadowOffsetAlpha,
+  shadowOffsetBravo,
+  shadowOffsetCharlie,
+  shadowOffsetDelta,
+  shadowOffsetEcho,
   getSpacingValues,
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
 import { shadows, sizes } from '../../assets/styles/constants';
 
-const { SINGLE, DOUBLE, TRIPLE } = shadows;
+const {
+  EVEN_ALPHA,
+  EVEN_BRAVO,
+  EVEN_CHARLIE,
+  EVEN_DELTA,
+  EVEN_ECHO,
+  OFFSET_ALPHA,
+  OFFSET_BRAVO,
+  OFFSET_CHARLIE,
+  OFFSET_DELTA,
+  OFFSET_ECHO,
+} = shadows;
 const { FOXTROT } = sizes;
 
 /**
@@ -66,9 +84,16 @@ const styles = ({
   };
 
   const shadowStyles = {
-    [SINGLE]: shadowSingle(theme.colors.shadowNeutral),
-    [DOUBLE]: shadowDouble(theme.colors.shadowNeutral),
-    [TRIPLE]: shadowTriple(theme.colors.shadowNeutral),
+    [EVEN_ALPHA]: shadowEvenAlpha(theme.colors.shadowNeutral),
+    [EVEN_BRAVO]: shadowEvenBravo(theme.colors.shadowNeutral),
+    [EVEN_CHARLIE]: shadowEvenCharlie(theme.colors.shadowNeutral),
+    [EVEN_DELTA]: shadowEvenDelta(theme.colors.shadowNeutral),
+    [EVEN_ECHO]: shadowEvenEcho(theme.colors.shadowNeutral),
+    [OFFSET_ALPHA]: shadowOffsetAlpha(theme.colors.shadowNeutral),
+    [OFFSET_BRAVO]: shadowOffsetBravo(theme.colors.shadowNeutral),
+    [OFFSET_CHARLIE]: shadowOffsetCharlie(theme.colors.shadowNeutral),
+    [OFFSET_DELTA]: shadowOffsetDelta(theme.colors.shadowNeutral),
+    [OFFSET_ECHO]: shadowOffsetEcho(theme.colors.shadowNeutral),
   };
 
   const shadowConfig = shadowStyles[shadow];
@@ -92,7 +117,18 @@ const Card = styled.div(styles);
  */
 
 Card.propTypes = {
-  shadow: PropTypes.oneOf([SINGLE, DOUBLE, TRIPLE]),
+  shadow: PropTypes.oneOf([
+    EVEN_ALPHA,
+    EVEN_BRAVO,
+    EVEN_CHARLIE,
+    EVEN_DELTA,
+    EVEN_ECHO,
+    OFFSET_ALPHA,
+    OFFSET_BRAVO,
+    OFFSET_CHARLIE,
+    OFFSET_DELTA,
+    OFFSET_ECHO,
+  ]),
   padding: spacingPropType,
   paddingTop: spacingPropType,
   paddingRight: spacingPropType,
@@ -106,7 +142,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  shadow: TRIPLE,
+  shadow: EVEN_CHARLIE,
   padding: FOXTROT,
   paddingTop: null,
   paddingRight: null,

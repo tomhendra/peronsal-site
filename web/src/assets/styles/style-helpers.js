@@ -88,40 +88,54 @@ export const getSubheadingDeclarations = (size, theme) =>
 
 // ....................shadows....................
 
-export const shadowSingle = shadowColor => ({
-  boxShadow: `0 0 0 1px ${transparentize(0.98, shadowColor)},
-    0 0 1px 0 ${transparentize(0.94, shadowColor)},
-    0 2px 2px 0 ${transparentize(0.94, shadowColor)}`,
+// export const shadowGround = shadowColor => ({
+//   boxShadow: `0 0 0 2px ${transparentize(0.97, shadowColor)}`,
+// });
+
+// export const shadowBorder = (borderColor, borderSize = '1px') => ({
+//   boxShadow: `0px 0px 0px ${borderSize} ${borderColor}`,
+// });
+
+export const shadowEvenAlpha = shadowColor => ({
+  boxShadow: `0 1px 3px ${transparentize(0.8, shadowColor)}`,
 });
 
-export const shadowDouble = shadowColor => ({
-  boxShadow: `0 0 0 1px ${transparentize(0.98, shadowColor)},
-    0 2px 2px 0 ${transparentize(0.94, shadowColor)},
-    0 4px 4px 0 ${transparentize(0.94, shadowColor)}`,
+export const shadowEvenBravo = shadowColor => ({
+  boxShadow: `0 4px 6px ${transparentize(0.8, shadowColor)}`,
 });
 
-export const shadowTriple = shadowColor => ({
-  boxShadow: `0 0 0 1px ${transparentize(0.98, shadowColor)},
-    0 4px 4px 0 ${transparentize(0.94, shadowColor)},
-    0 8px 8px 0 ${transparentize(0.94, shadowColor)}`,
+export const shadowEvenCharlie = shadowColor => ({
+  boxShadow: `0 5px 15px ${transparentize(0.8, shadowColor)}`,
 });
 
-export const shadowGround = shadowColor => ({
-  boxShadow: `0 0 0 2px ${transparentize(0.97, shadowColor)}`,
+export const shadowEvenDelta = shadowColor => ({
+  boxShadow: `0 10px 24px ${transparentize(0.8, shadowColor)}`,
 });
 
-export const shadowBorder = (borderColor, borderSize = '1px') => ({
-  boxShadow: `0px 0px 0px ${borderSize} ${borderColor}`,
+export const shadowEvenEcho = shadowColor => ({
+  boxShadow: `0 15px 35px ${transparentize(0.8, shadowColor)}`,
 });
 
-// Deprecated values....
-// even1: '0 1px 3px hsla(0, 0%, 0%, 0.2)',
-// even2: '0 4px 6px hsla(0, 0%, 0%, 0.2)',
-// even3: '0 5px 15px hsla(0, 0%, 0%, 0.2)',
-// even4: '0 10px 24px hsla(0, 0%, 0%, 0.2)',
-// even5: '0 15px 35px hsla(0, 0%, 0%, 0.2)',
-// offset1: '0 1px 3px hsla(0, 0%, 0%, 0.12), 0 1px 2px hsla(0, 0%, 0%, 0.24)',
-// offset2: '0 3px 6px hsla(0, 0%, 0%, 0.15), 0 2px 4px hsla(0, 0%, 0%, 0.12)',
-// offset3: '0 10px 20px hsla(0, 0%, 0%, 0.15), 0 3px 6px hsla(0, 0%, 0%, 0.1)',
-// offset4: '0 15px 25px hsla(0, 0%, 0%, 0.15), 0 5px 10px hsla(0, 0%, 0%, 0.05)',
-// offset5: '0 20px 40px hsla(0, 0%, 0%, 0.2)',
+export const shadowOffsetAlpha = shadowColor => ({
+  boxShadow: `0 1px 3px ${transparentize(0.88, shadowColor)},
+         0 1px 2px ${transparentize(0.76, shadowColor)}`,
+});
+
+export const shadowOffsetBravo = shadowColor => ({
+  boxShadow: `0 3px 6px ${transparentize(0.85, shadowColor)},
+         0 2px 4px ${transparentize(0.88, shadowColor)}`,
+});
+
+export const shadowOffsetCharlie = shadowColor => ({
+  boxShadow: `0 10px 20px ${transparentize(0.85, shadowColor)},
+         0 3px 6px ${transparentize(0.9, shadowColor)}`,
+});
+
+export const shadowOffsetDelta = shadowColor => ({
+  boxShadow: `0 15px 25px ${transparentize(0.85, shadowColor)},
+         0 5px 10px ${transparentize(0.95, shadowColor)}`,
+});
+
+export const shadowOffsetEcho = shadowColor => ({
+  boxShadow: `0 20px 40px ${transparentize(0.8, shadowColor)}`,
+});

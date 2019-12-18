@@ -40,7 +40,7 @@ const colouredRingStyles = ({ theme, messageMaxLength, charsRemaining }) => {
   const ringLength = 2 * Math.PI * r;
   const grey = (ringLength * charsRemaining) / messageMaxLength;
   const coloured = ringLength - grey > 0 ? ringLength - grey : 0;
-  const warningThreshold = messageMaxLength * 0.15;
+  const warningThreshold = messageMaxLength * 0.25;
 
   return {
     stroke:
