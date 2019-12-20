@@ -68,7 +68,6 @@ export default {
       type: 'codeBlock',
       title: 'Code block',
       options: {
-        theme: 'github',
         withFilename: true,
       },
     },

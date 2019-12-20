@@ -3,7 +3,6 @@
  */
 
 const white = '#FFFFFF';
-// const offwhite = '#FAFAFA';
 const black = '#0F131A';
 
 const neutral = {
@@ -223,7 +222,7 @@ export const fontStack = {
     // eslint-disable-next-line max-len
     'Noto Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   heading: 'Lato, sans-serif',
-  mono: 'Consolas, monaco, monospace',
+  mono: 'Fira Code, Consolas, monaco, monospace',
 };
 
 export const fontWeight = {

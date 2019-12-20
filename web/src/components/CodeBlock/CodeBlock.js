@@ -2,19 +2,21 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import prismTheme from 'prism-react-renderer/themes/github';
+// import nightOwlLight from 'prism-react-renderer/themes/nightOwlLight';
 import PropTypes from 'prop-types';
+import nord from './themes/nord';
 
 /**
  * `....................styles....................`
  */
 
 const PreStyles = ({ theme }) => ({
-  borderRadius: theme.borderRadius.charlie,
+  borderRadius: theme.borderRadius.delta,
   margin: `${theme.spacings.foxtrot} 0`,
   padding: theme.spacings.echo,
   paddingBottom: theme.spacings.delta,
   textAlign: 'left',
+  fontFamily: theme.fontStack.mono,
   fontSize: theme.typography.text.charlie.fontSize,
 
   '& .token-line': {
@@ -38,12 +40,7 @@ const Pre = styled.pre(PreStyles);
 const LineNo = styled.span(LineNoStyles);
 
 const CodeBlock = ({ code, language }) => (
-  <Highlight
-    {...defaultProps}
-    theme={prismTheme}
-    code={code}
-    language={language}
-  >
+  <Highlight {...defaultProps} theme={nord} code={code} language={language}>
     {({ className, style, tokens, getLineProps, getTokenProps }) => (
       <Pre className={className} style={style}>
         {tokens.map((line, i) => (
