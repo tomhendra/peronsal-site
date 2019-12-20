@@ -3,6 +3,7 @@
  */
 
 const white = '#FFFFFF';
+// const offwhite = '#FAFAFA';
 const black = '#0F131A';
 
 const neutral = {
