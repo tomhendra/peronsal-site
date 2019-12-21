@@ -23,7 +23,7 @@ const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL } = sizes;
 
 const styles = ({ noMargin, size, spacingBottom, sub, theme }) => {
   const baseStyles = {
-    color: !sub ? theme.colors.n000 : theme.colors.n300,
+    color: !sub ? theme.colors.headingColor : theme.colors.subheadingColor,
     fontFamily: theme.fontStack.heading,
     fontWeight: !sub ? theme.fontWeight.bold : theme.fontWeight.regular,
     letterSpacing: 0.7,

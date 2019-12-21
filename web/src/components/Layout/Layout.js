@@ -14,7 +14,7 @@ import Footer from '../Footer';
  */
 
 // TODO: use state to change on switch
-const theme = themes.delfin;
+const theme = themes.nord;
 
 const globalStyles = {
   body: {
