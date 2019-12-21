@@ -12,7 +12,7 @@ import { childrenPropType } from '../../utils/shared-prop-types';
 
 const styles = ({ noMargin, theme }) =>
   withMediaQueries(theme)({
-    color: theme.colors.n900,
+    color: theme.colors.n800,
     fontFamily: theme.fontStack.heading,
     fontSize: ['18.5rem', '39.5rem', '57rem', '57rem'],
     fontWeight: theme.fontWeight.bold,

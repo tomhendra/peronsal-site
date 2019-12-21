@@ -15,7 +15,7 @@ import Text from '../Text';
 
 const elementStyles = ({ theme }) =>
   withMediaQueries(theme)({
-    background: `linear-gradient(180deg, ${theme.colors.p400}, ${theme.colors.p300} 100%)`,
+    background: `linear-gradient(180deg, ${theme.colors.b500}, ${theme.colors.b400} 100%)`,
     borderRadius: theme.borderRadius.delta,
     display: 'flex',
     flexDirection: ['row', 'column'],

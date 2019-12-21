@@ -36,7 +36,7 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
     [PRIMARY]: {
       backgroundColor: theme.colors.p400,
       borderColor: theme.colors.p400,
-      color: theme.colors.white,
+      color: theme.colors.n000,
 
       '&:hover,:focus': {
         backgroundColor: theme.colors.p300,
@@ -45,23 +45,23 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
     },
     [SECONDARY]: {
       backgroundColor: theme.colors.bodyBg,
-      borderColor: theme.colors.n700,
-      color: theme.colors.n100,
+      borderColor: theme.colors.n500,
+      color: theme.colors.n200,
 
       '&:hover,:focus': {
-        backgroundColor: theme.colors.n700,
-        color: theme.colors.n000,
+        backgroundColor: theme.colors.n500,
+        color: theme.colors.n100,
       },
     },
     [TERTIARY]: {
       backgroundColor: 'transparent',
       borderColor: 'transparent',
-      color: theme.colors.n100,
+      color: theme.colors.n200,
 
       '&:hover,:focus': {
-        backgroundColor: theme.colors.n800,
-        borderColor: theme.colors.n800,
-        color: theme.colors.n000,
+        backgroundColor: theme.colors.n500,
+        borderColor: theme.colors.n500,
+        color: theme.colors.n100,
       },
     },
   };

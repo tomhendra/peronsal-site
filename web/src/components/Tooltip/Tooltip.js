@@ -33,19 +33,19 @@ const getBaseStyles = theme => ({
 const getVariantStyles = (variant, theme) => {
   const variantOptions = {
     [NEUTRAL]: {
-      backgroundColor: theme.colors.n000,
+      backgroundColor: theme.colors.n200,
       color: theme.colors.n900,
     },
     [DANGER]: {
-      backgroundColor: theme.colors.r300,
-      color: theme.colors.r900,
+      backgroundColor: theme.colors.r700,
+      color: theme.colors.r000,
     },
     [WARNING]: {
-      backgroundColor: theme.colors.y500,
+      backgroundColor: theme.colors.warning,
       color: theme.colors.y000,
     },
     [SUCCESS]: {
-      backgroundColor: theme.colors.g600,
+      backgroundColor: theme.colors.success,
       color: theme.colors.g000,
     },
   };
