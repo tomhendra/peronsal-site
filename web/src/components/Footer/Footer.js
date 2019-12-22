@@ -17,7 +17,7 @@ const footerStyles = ({ theme }) =>
     label: 'footer',
     alignItems: 'center',
     backgroundColor: theme.colors.bodyBg,
-    borderTop: `${theme.borderWidth.alpha} solid ${theme.colors.n800}`,
+    borderTop: `${theme.borderWidth.alpha} solid ${theme.colors.n600}`,
     color: theme.colors.n400,
     display: 'flex',
     height: ['5rem', '6rem'],

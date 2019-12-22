@@ -45,7 +45,7 @@ const containerStyles = ({ spacing, theme }) => ({
 
 const colorStyles = (color, theme) => {
   const colorOptions = {
-    [NEUTRAL]: theme.colors.n500,
+    [NEUTRAL]: theme.colors.n400,
     [PRIMARY]: theme.colors.p400,
     [WHITE]: theme.colors.white,
   };

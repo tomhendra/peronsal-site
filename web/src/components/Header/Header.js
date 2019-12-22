@@ -7,7 +7,10 @@ import Logo from './components/Logo';
 import Navbar from './components/Navbar';
 import MobileNav from './components/MobileNav';
 
-import { withMediaQueries } from '../../assets/styles/style-helpers';
+import {
+  withMediaQueries,
+  shadowStandardBravo,
+} from '../../assets/styles/style-helpers';
 import { colors, sizes } from '../../assets/styles/constants';
 
 const { NEUTRAL } = colors;
@@ -21,7 +24,8 @@ const elementStyles = ({ theme }) =>
   withMediaQueries(theme)({
     alignItems: 'center',
     backgroundColor: theme.colors.bodyBg,
-    borderBottom: `${theme.borderWidth.alpha} solid ${theme.colors.n800}`,
+    // borderBottom: `${theme.borderWidth.alpha} solid ${theme.colors.n800}`,
+    ...shadowStandardBravo(theme.colors.n500),
     display: 'flex',
     height: ['5rem', '6rem'],
     padding: ['0 2rem', '0 4rem'],

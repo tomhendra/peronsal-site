@@ -12,7 +12,7 @@ import { withMediaQueries } from '../../../../assets/styles/style-helpers';
 
 const styles = ({ theme }) =>
   withMediaQueries(theme)({
-    color: theme.colors.n600,
+    color: theme.colors.n400,
     display: ['none', 'inline-block'],
     fontSize: theme.typography.text.bravo.fontSize,
   });
