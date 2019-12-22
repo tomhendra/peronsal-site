@@ -42,7 +42,7 @@ const navLinkStyles = ({ theme }) => ({
 
   '&.currentPage': {
     '&::before': {
-      backgroundColor: theme.colors.p600,
+      backgroundColor: theme.colors.p400,
       borderRadius: theme.borderRadius.alpha,
       content: '""',
       position: 'absolute',

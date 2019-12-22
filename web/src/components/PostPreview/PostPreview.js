@@ -15,7 +15,7 @@ import Text from '../Text';
 
 const elementStyles = ({ theme }) =>
   withMediaQueries(theme)({
-    background: `linear-gradient(180deg, ${theme.colors.b500}, ${theme.colors.b400} 100%)`,
+    background: `linear-gradient(180deg, ${theme.colors.n400}, ${theme.colors.n300} 100%)`,
     borderRadius: theme.borderRadius.delta,
     display: 'flex',
     flexDirection: ['row', 'column'],
@@ -31,7 +31,7 @@ const linkStyles = ({ theme }) => ({
   '&:hover': {
     // eslint-disable-next-line no-use-before-define
     [PostText]: {
-      color: theme.colors.p700,
+      color: theme.colors.p400,
     },
   },
 });
@@ -60,7 +60,7 @@ const headingStyles = ({ theme }) => ({
 });
 
 const textStyles = ({ theme }) => ({
-  color: theme.colors.n600,
+  color: theme.colors.n800,
   transition: `color ${theme.transitions.default}`,
 });
 

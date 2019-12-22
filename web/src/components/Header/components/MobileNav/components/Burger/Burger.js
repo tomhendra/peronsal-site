@@ -24,7 +24,7 @@ const elementStyles = ({ open, theme }) => ({
   '& > span': {
     width: '2rem',
     height: '0.2rem',
-    background: theme.colors.n500,
+    background: theme.colors.n400,
     borderRadius: theme.borderRadius.delta,
     transition: 'all 0.3s linear',
     position: 'relative',
