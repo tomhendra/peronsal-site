@@ -123,7 +123,7 @@ const primary = {
 };
 
 const misc = {
-  shadowNeutral: neutral.n000,
+  shadowNeutral: neutral.n100,
   shadowPrimary: primary.p400,
   bodyBg: neutral.n900,
   bodyColor: neutral.n100,

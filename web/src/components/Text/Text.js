@@ -62,8 +62,8 @@ const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
 
   const blockquoteStyles = as === 'blockquote' && {
     label: 'text--blockquote',
-    background: theme.colors.n900,
-    borderLeft: `${theme.borderWidth.delta} solid ${theme.colors.p800}`,
+    background: theme.colors.n800,
+    borderLeft: `${theme.borderWidth.delta} solid ${theme.colors.p400}`,
     borderRadius: theme.borderRadius.alpha,
     margin: `${theme.spacings.golf} 0`,
     padding: theme.spacings.echo,

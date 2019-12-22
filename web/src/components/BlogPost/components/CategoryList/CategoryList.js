@@ -13,9 +13,9 @@ const listStyles = ({ theme }) => ({
   marginTop: theme.spacings.foxtrot,
 
   '& li': {
-    background: theme.colors.p800,
+    background: theme.colors.n700,
     borderRadius: theme.borderRadius.bravo,
-    color: theme.colors.p300,
+    color: theme.colors.n400,
     fontSize: theme.typography.text.bravo.fontSize,
     padding: `${theme.spacings.bravo} ${theme.spacings.charlie}`,
     ':not(:first-of-type)': {
