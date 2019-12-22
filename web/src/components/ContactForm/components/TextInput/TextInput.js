@@ -21,7 +21,8 @@ const containerStyles = ({ theme }) => ({
 });
 
 const elementStyles = ({ theme, error, touched }) => ({
-  borderColor: !(error && touched) ? theme.colors.n700 : theme.colors.danger,
+  backgroundColor: theme.colors.bodyBg,
+  borderColor: !(error && touched) ? theme.colors.n500 : theme.colors.danger,
   borderStyle: 'solid',
   borderRadius: theme.borderRadius.bravo,
   borderWidth: theme.borderWidth.alpha,

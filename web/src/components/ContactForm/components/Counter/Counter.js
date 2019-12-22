@@ -32,7 +32,7 @@ const svgStyles = ({ theme }) => ({
 });
 
 const greyRingStyles = ({ theme }) => ({
-  stroke: theme.colors.n700,
+  stroke: theme.colors.n500,
 });
 
 const colouredRingStyles = ({ theme, messageMaxLength, charsRemaining }) => {
@@ -45,7 +45,7 @@ const colouredRingStyles = ({ theme, messageMaxLength, charsRemaining }) => {
   return {
     stroke:
       charsRemaining >= warningThreshold
-        ? theme.colors.p500
+        ? theme.colors.p400
         : charsRemaining < warningThreshold && charsRemaining >= 0
         ? theme.colors.warning
         : theme.colors.danger,

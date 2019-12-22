@@ -27,7 +27,7 @@ const elementStyles = ({ theme }) => ({
   ...hideVisually(),
   '&:focus + label::before': {
     borderWidth: theme.borderWidth.bravo,
-    borderColor: theme.colors.p500,
+    borderColor: theme.colors.p400,
   },
 });
 
@@ -37,12 +37,12 @@ const labelStyles = ({ theme, checked, error, touched }) => ({
   position: 'relative',
 
   '&::before': {
-    backgroundColor: !checked ? theme.colors.bodyBg : theme.colors.p500,
+    backgroundColor: !checked ? theme.colors.bodyBg : theme.colors.p400,
     borderColor:
       !checked && !touched
-        ? theme.colors.n700
+        ? theme.colors.n400
         : checked
-        ? theme.colors.p500
+        ? theme.colors.p400
         : error && theme.colors.danger,
     borderStyle: 'solid',
     borderRadius: theme.borderRadius.bravo,

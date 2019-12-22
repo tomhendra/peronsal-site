@@ -29,7 +29,7 @@ const infoStyles = ({ theme }) =>
     justifyContent: 'space-between',
     paddingLeft: [0, theme.spacings.foxtrot],
     width: ['100%', '57%', '60%', '60%'],
-    paddingTop: [theme.spacings.foxtrot, 0],
+    paddingTop: [theme.spacings.foxtrot, theme.spacings.alpha],
   });
 
 /**
@@ -41,8 +41,8 @@ const ProjectInfo = styled.div(infoStyles);
 const ProjectPreview = ({ project }) => (
   <Card
     alignItems={['center', 'stretch']}
-    justifyContent="space-between"
     flexDirection={['column', 'row']}
+    justifyContent="space-between"
   >
     <Img fixed={project.image} alt={project.alt} />
     <ProjectInfo>
