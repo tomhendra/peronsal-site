@@ -22,10 +22,9 @@ const { FOXTROT } = sizes;
 
 const elementStyles = ({ theme }) =>
   withMediaQueries(theme)({
+    ...shadowStandardBravo(theme.colors.n500),
     alignItems: 'center',
     backgroundColor: theme.colors.bodyBg,
-    // borderBottom: `${theme.borderWidth.alpha} solid ${theme.colors.n800}`,
-    ...shadowStandardBravo(theme.colors.n500),
     display: 'flex',
     height: ['5rem', '6rem'],
     padding: ['0 2rem', '0 4rem'],

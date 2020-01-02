@@ -123,13 +123,13 @@ const primary = {
 };
 
 const misc = {
-  shadowNeutral: neutral.n100,
-  shadowPrimary: primary.p400,
   bodyBg: neutral.n900,
   bodyColor: neutral.n100,
-  subheadingColor: neutral.n200,
-  headingColor: neutral.n300,
   brandColor: primary.p400,
+  headingColor: neutral.n300,
+  subheadingColor: neutral.n200,
+  shadowNeutral: neutral.n100,
+  shadowPrimary: primary.p400,
   danger: red.r500,
   warning: yellow.y500,
   success: green.g500,
