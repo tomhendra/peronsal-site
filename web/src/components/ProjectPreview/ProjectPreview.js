@@ -28,8 +28,8 @@ const infoStyles = ({ theme }) =>
     minHeight: theme.spacings.lima,
     justifyContent: 'space-between',
     paddingLeft: [0, theme.spacings.foxtrot],
-    width: ['100%', '57%', '60%', '60%'],
     paddingTop: [theme.spacings.foxtrot, theme.spacings.alpha],
+    width: ['100%', '57%', '60%', '60%'],
   });
 
 /**

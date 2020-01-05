@@ -9,7 +9,7 @@ import Grid from '../components/Grid';
 import Item from '../components/Item';
 import Heading from '../components/Heading';
 import Text from '../components/Text';
-import PostPreview from '../components/PostPreview';
+import BlogPostPreview from '../components/BlogPostPreview';
 
 import usePosts from '../hooks/usePosts';
 
@@ -44,7 +44,7 @@ const BlogPage = () => {
           {posts ? (
             posts.map(post => (
               <Item gridSpan={[8, 4, 4, 4]} key={post.id}>
-                <PostPreview post={post} />
+                <BlogPostPreview post={post} />
               </Item>
             ))
           ) : (
