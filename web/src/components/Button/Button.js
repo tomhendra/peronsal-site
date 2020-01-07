@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
+import { motion } from 'framer-motion';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
+
+import { childrenPropType } from '../../utils/shared-prop-types';
 
 import { buttons, sizes } from '../../assets/styles/constants';
 
@@ -13,7 +16,7 @@ const { ALPHA, BRAVO, CHARLIE } = sizes;
  * `....................styles....................`
  */
 
-const styles = ({ buttonStyle, buttonSize, theme }) => {
+const buttonStyles = ({ buttonStyle, buttonSize, theme }) => {
   const baseStyles = {
     borderRadius: theme.borderRadius.charlie,
     borderStyle: 'solid',
@@ -32,7 +35,7 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
     },
   };
 
-  const buttonStyles = {
+  const colorVariants = {
     [PRIMARY]: {
       backgroundColor: theme.colors.p400,
       borderColor: theme.colors.p400,
@@ -66,7 +69,7 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
     },
   };
 
-  const buttonSizes = {
+  const sizeVariants = {
     [ALPHA]: {
       fontSize: theme.typography.text.bravo.fontSize,
       padding: `${theme.spacings.charlie} ${theme.spacings.delta}`,
@@ -81,57 +84,91 @@ const styles = ({ buttonStyle, buttonSize, theme }) => {
     },
   };
 
-  const styleConfig = buttonStyles[buttonStyle];
-  const sizeConfig = buttonSizes[buttonSize];
+  const colorConfig = colorVariants[buttonStyle];
+  const sizeConfig = sizeVariants[buttonSize];
 
   return {
     ...baseStyles,
-    ...styleConfig,
+    ...colorConfig,
     ...sizeConfig,
   };
 };
 
-/**
- * `....................component....................`
- */
+const linkStyles = {
+  color: 'inherit',
+  textDecoration: 'none',
 
-const ButtonElement = styled.button(styles);
+  '&:visited,&:hover': {
+    color: 'inherit',
+  },
+};
+
+// ....................animations....................
+
+const animationVariants = {
+  rest: { scale: 1 },
+  hover: { scale: 1.05 },
+  pressed: { scale: 0.95 },
+};
+
+// ....................component....................
+
+const ButtonElement = styled(motion.button)(buttonStyles);
+const InternalLinkElement = styled(Link)(linkStyles);
 
 const Button = ({
   externalLink,
   internalLink,
   buttonStyle,
   buttonSize,
-  ...otherProps
-}) =>
-  internalLink ? (
-    // if internalLink prop is provided, return ButtonElement wrapped with Gatsby Link
-    <Link to={internalLink} css={{ width: '100%' }}>
-      <ButtonElement
-        buttonStyle={buttonStyle}
-        buttonSize={buttonSize}
-        {...otherProps}
-      />
-    </Link>
+  children,
+  ...rest
+}) => {
+  return internalLink ? (
+    // if internalLink prop is provided, return Gatsby Link wrapped with ButtonElement
+    <ButtonElement
+      buttonStyle={buttonStyle}
+      buttonSize={buttonSize}
+      variants={animationVariants}
+      initial="rest"
+      whileHover="hover"
+      whileTap="pressed"
+      {...rest}
+    >
+      <InternalLinkElement to={internalLink}>{children}</InternalLinkElement>
+    </ButtonElement>
   ) : externalLink ? (
-    // if externalLink prop is provided, return ButtonElement wrapped with anchor tag
+    // if externalLink prop is provided, return ButtonElement 'as' anchor tag
     <ButtonElement
       as="a"
       target="blank"
       href={externalLink}
       buttonStyle={buttonStyle}
       buttonSize={buttonSize}
-      {...otherProps}
-    />
+      variants={animationVariants}
+      initial="rest"
+      whileHover="hover"
+      whileTap="pressed"
+      {...rest}
+    >
+      {children}
+    </ButtonElement>
   ) : (
     // default return button if internalLink/externalLink props are not provided,
     // based on defaultProp values being defined as null.
     <ButtonElement
       buttonStyle={buttonStyle}
       buttonSize={buttonSize}
-      {...otherProps}
-    />
+      variants={animationVariants}
+      initial="rest"
+      whileHover="hover"
+      whileTap="pressed"
+      {...rest}
+    >
+      {children}
+    </ButtonElement>
   );
+};
 
 /**
  * `....................propTypes....................`
@@ -142,6 +179,7 @@ Button.protoTypes = {
   buttonSize: PropTypes.oneOf([ALPHA, BRAVO, CHARLIE]),
   externalLink: PropTypes.string,
   internalLink: PropTypes.string,
+  children: childrenPropType,
 };
 
 Button.defaultProps = {
@@ -149,6 +187,7 @@ Button.defaultProps = {
   buttonSize: BRAVO,
   externalLink: null,
   internalLink: null,
+  children: null,
 };
 
 export default withTheme(Button);
