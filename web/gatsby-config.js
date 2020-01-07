@@ -44,6 +44,6 @@ module.exports = {
       },
     },
     // PWA: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
   ],
 };
