@@ -26,10 +26,10 @@ export default () => (
           </Heading>
           <Heading sub as="h2" size={DELTA} noMargin>
             The page you requested could not be found. But do not fear, there is
-            a way back.
+            a way back...
           </Heading>
         </Item>
-        <Item gridStart={[1, 2, 3, 1]} gridEnd={[6, 4, 6, 6]} spacingTop={GOLF}>
+        <Item gridStart={[1, 2, 3, 1]} gridEnd={[6, 4, 4, 4]} spacingTop={GOLF}>
           <Button internalLink="/" buttonStyle={PRIMARY} buttonSize={BRAVO}>
             Home
           </Button>

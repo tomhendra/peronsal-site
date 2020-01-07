@@ -41,14 +41,24 @@ const BlogPage = () => {
           </Item>
         </Grid>
         <Grid withRowGaps>
-          {posts ? (
+          {posts.length ? (
             posts.map(post => (
               <Item gridSpan={[8, 4, 4, 4]} key={post.id}>
                 <BlogPostPreview post={post} />
               </Item>
             ))
           ) : (
-            <Heading sub>No posts to display.</Heading>
+            <Item
+              gridStart={1}
+              gridEnd={8}
+              spacingTop={GOLF}
+              spacingBottom={GOLF}
+            >
+              <Heading sub>
+                There are currently no posts to display. Please check back soon
+                once I have upped my blogging game!
+              </Heading>
+            </Item>
           )}
         </Grid>
       </Container>

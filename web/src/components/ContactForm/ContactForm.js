@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
@@ -10,7 +10,7 @@ import Card from '../Card';
 import Tooltip from '../Tooltip';
 import TextInput from './components/TextInput';
 import Textarea from './components/Textarea';
-import Checkbox from './components/Checkbox';
+// import Checkbox from './components/Checkbox';
 import ButtonGroup from '../ButtonGroup';
 import Button from '../Button';
 
@@ -36,27 +36,27 @@ const formStyles = ({ theme }) => ({
   },
 });
 
-const linkStyles = ({ theme }) => ({
-  color: theme.colors.n400,
-  fontSize: theme.typography.text.bravo.fontSize,
-  fontWeight: theme.fontWeight.bold,
-  textDecoration: 'none',
+// const linkStyles = ({ theme }) => ({
+//   color: theme.colors.n400,
+//   fontSize: theme.typography.text.bravo.fontSize,
+//   fontWeight: theme.fontWeight.bold,
+//   textDecoration: 'none',
 
-  '&:visited': {
-    color: theme.colors.n400,
-  },
+//   '&:visited': {
+//     color: theme.colors.n400,
+//   },
 
-  '&:hover': {
-    color: theme.colors.p400,
-  },
-});
+//   '&:hover': {
+//     color: theme.colors.p400,
+//   },
+// });
 
 /**
  * `....................component....................`
  */
 
 const StyledForm = styled(Form)(formStyles);
-const FormLink = styled(Link)(linkStyles);
+// const FormLink = styled(Link)(linkStyles);
 
 const ContactForm = () => {
   // define character max lengths
@@ -98,7 +98,7 @@ const ContactForm = () => {
         lastName: '',
         email: '',
         message: '',
-        acceptedTerms: false,
+        // acceptedTerms: false,
       }}
       // override onSubmit using custom function as advised by Formspree
       // https://formspree.io/blog/react-forms-3/
@@ -125,9 +125,9 @@ const ContactForm = () => {
             `Must be ${messageMaxLength} characters or less`,
           )
           .required('Required'),
-        acceptedTerms: Yup.boolean()
-          .required('Required')
-          .oneOf([true], 'Please agree to the data privacy policy.'),
+        // acceptedTerms: Yup.boolean()
+        //   .required('Required')
+        //   .oneOf([true], 'Please agree to the data privacy policy.'),
       })}
     >
       {/* destructure helper methods from props */}
@@ -164,10 +164,10 @@ const ContactForm = () => {
               placeholder="Your message (maximum 500 characters)"
               messageMaxLength={messageMaxLength}
             />
-            <Checkbox name="acceptedTerms">
+            {/* <Checkbox name="acceptedTerms">
               I agree to the&nbsp;
               <FormLink to="/">privacy policy</FormLink>
-            </Checkbox>
+            </Checkbox> */}
             <ButtonGroup>
               <Button
                 buttonStyle={TERTIARY}

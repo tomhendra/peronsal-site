@@ -45,7 +45,7 @@ const ProjectsPage = () => {
               to everyone.
             </Text>
           </Item>
-          {projects ? (
+          {projects.length ? (
             projects.map(project => (
               <Item
                 gridStart={1}
@@ -57,11 +57,21 @@ const ProjectsPage = () => {
               </Item>
             ))
           ) : (
-            <Heading sub>No projects to display</Heading>
+            <Item
+              gridStart={1}
+              gridEnd={8}
+              spacingTop={GOLF}
+              spacingBottom={GOLF}
+            >
+              <Heading sub>
+                Projects are yet to be added. Please check back soon!
+              </Heading>
+            </Item>
           )}
         </Grid>
       </Container>
     </Layout>
   );
 };
+
 export default ProjectsPage;
