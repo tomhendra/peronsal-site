@@ -1,10 +1,10 @@
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
+import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import PropTypes from 'prop-types';
 
 import { withMediaQueries } from '../../assets/styles/style-helpers';
-
-import { childrenPropType } from '../../utils/shared-prop-types';
 
 /**
  * `....................styles....................`
@@ -26,7 +26,7 @@ const styles = ({ noMargin, theme }) =>
         ]
       : 0,
     position: 'absolute',
-    top: 0,
+    // top: 0,
     zIndex: theme.zIndex.background,
   });
 
@@ -34,20 +34,45 @@ const styles = ({ noMargin, theme }) =>
  * `....................component....................`
  */
 
-const Heading = styled.span(styles);
+const GraphicElement = styled(motion.span)(styles);
+
+const Graphic = ({ noMargin, children, ...rest }) => {
+  const { scrollY } = useViewportScroll();
+  const ref = useRef(null);
+  const [elementTop, setElementTop] = useState(0);
+
+  const y = useTransform(scrollY, [elementTop, elementTop + 6], [0, -1], {
+    clamp: false,
+  });
+
+  useLayoutEffect(() => {
+    const element = ref.current;
+    setElementTop(element.offsetTop);
+  }, [ref]);
+
+  return (
+    <GraphicElement
+      noMargin={noMargin}
+      ref={ref}
+      style={{ y }}
+      initial={{ y: 0 }}
+      {...rest}
+    >
+      {children}
+    </GraphicElement>
+  );
+};
 
 /**
  * `....................propTypes....................`
  */
 
-Heading.propTypes = {
-  children: childrenPropType,
+Graphic.propTypes = {
   noMargin: PropTypes.bool,
 };
 
-Heading.defaultProps = {
-  children: null,
+Graphic.defaultProps = {
   noMargin: false,
 };
 
-export default withTheme(Heading);
+export default withTheme(Graphic);
