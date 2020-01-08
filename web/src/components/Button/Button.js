@@ -5,8 +5,6 @@ import { motion } from 'framer-motion';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
-import { childrenPropType } from '../../utils/shared-prop-types';
-
 import { buttons, sizes } from '../../assets/styles/constants';
 
 const { PRIMARY, SECONDARY, TERTIARY } = buttons;
@@ -94,13 +92,8 @@ const buttonStyles = ({ buttonStyle, buttonSize, theme }) => {
   };
 };
 
-const linkStyles = {
-  color: 'inherit',
-  textDecoration: 'none',
-
-  '&:visited,&:hover': {
-    color: 'inherit',
-  },
+const linkWrapperStyles = {
+  width: '100%',
 };
 
 // ....................animations....................
@@ -113,32 +106,42 @@ const animationVariants = {
 
 // ....................component....................
 
-const ButtonElement = styled(motion.div)(buttonStyles);
-const InternalLinkElement = styled(Link)(linkStyles);
+const ButtonElement = styled(motion.button)(buttonStyles);
+const ExternalLink = styled(motion.a)(buttonStyles);
+const InternalLinkWrapper = styled(motion.div)(linkWrapperStyles);
 
 const Button = ({
   externalLink,
   internalLink,
   buttonStyle,
   buttonSize,
-  children,
+  ...rest
 }) => {
   return internalLink ? (
-    // if internalLink prop is provided, return Gatsby Link wrapped with ButtonElement
-    <ButtonElement
-      buttonStyle={buttonStyle}
-      buttonSize={buttonSize}
+    // if internalLink prop is provided, return ButtonElement wrapped with Gatsby Link, wrapped
+    // with a wrapper for Framer Motion!
+    // wrapper here "fixes" animation judder which seems to be caused by Framer Motion
+    // props not being passed to the outermost element.
+    // There SHOULD be a way to do something like...
+    // const InternalLink = styled(motion(Link))(linkStyles), but this doesn't work.
+    // Gatsby Link (Reach Router) doesn't like custom props so I am stuck for clean a solution.
+    <InternalLinkWrapper
       variants={animationVariants}
       initial="rest"
       whileHover="hover"
       whileTap="pressed"
     >
-      <InternalLinkElement to={internalLink}>{children}</InternalLinkElement>
-    </ButtonElement>
+      <Link to={internalLink}>
+        <ButtonElement
+          buttonStyle={buttonStyle}
+          buttonSize={buttonSize}
+          {...rest}
+        />
+      </Link>
+    </InternalLinkWrapper>
   ) : externalLink ? (
     // if externalLink prop is provided, return ButtonElement 'as' anchor tag
-    <ButtonElement
-      as="a"
+    <ExternalLink
       target="blank"
       href={externalLink}
       buttonStyle={buttonStyle}
@@ -147,23 +150,20 @@ const Button = ({
       initial="rest"
       whileHover="hover"
       whileTap="pressed"
-    >
-      {children}
-    </ButtonElement>
+      {...rest}
+    />
   ) : (
-    // default return return ButtonElement 'as' button internalLink/externalLink props not provided,
+    // default return ButtonElement if internalLink/externalLink props not provided,
     // based on defaultProp values being defined as null.
     <ButtonElement
-      as="button"
       buttonStyle={buttonStyle}
       buttonSize={buttonSize}
       variants={animationVariants}
       initial="rest"
       whileHover="hover"
       whileTap="pressed"
-    >
-      {children}
-    </ButtonElement>
+      {...rest}
+    />
   );
 };
 
@@ -176,7 +176,6 @@ Button.protoTypes = {
   buttonSize: PropTypes.oneOf([ALPHA, BRAVO, CHARLIE]),
   externalLink: PropTypes.string,
   internalLink: PropTypes.string,
-  children: childrenPropType,
 };
 
 Button.defaultProps = {
@@ -184,7 +183,6 @@ Button.defaultProps = {
   buttonSize: BRAVO,
   externalLink: null,
   internalLink: null,
-  children: null,
 };
 
 export default withTheme(Button);
