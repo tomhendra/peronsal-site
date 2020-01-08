@@ -92,7 +92,7 @@ const buttonStyles = ({ buttonStyle, buttonSize, theme }) => {
   };
 };
 
-const linkWrapperStyles = {
+const wrapperStyles = {
   width: '100%',
 };
 
@@ -106,9 +106,10 @@ const animationVariants = {
 
 // ....................component....................
 
+const InternalLinkWrapper = styled(motion.div)(wrapperStyles);
+const InternalLinkElement = styled.button(buttonStyles);
 const ButtonElement = styled(motion.button)(buttonStyles);
-const ExternalLink = styled(motion.a)(buttonStyles);
-const InternalLinkWrapper = styled(motion.div)(linkWrapperStyles);
+const ExternalLinkElement = styled(motion.a)(buttonStyles);
 
 const Button = ({
   externalLink,
@@ -120,11 +121,10 @@ const Button = ({
   return internalLink ? (
     // if internalLink prop is provided, return ButtonElement wrapped with Gatsby Link, wrapped
     // with a wrapper for Framer Motion!
-    // wrapper here "fixes" animation judder which seems to be caused by Framer Motion
-    // props not being passed to the outermost element.
-    // There SHOULD be a way to do something like...
+    // wrapper "fixes" animation judder in FireFox which seems to be caused by Framer Motion
+    // element not being the outermost. There SHOULD be a way to do something like...
     // const InternalLink = styled(motion(Link))(linkStyles), but this doesn't work.
-    // Gatsby Link (Reach Router) doesn't like custom props so I am stuck for clean a solution.
+    // Gatsby Link (Reach) doesn't accept custom props so I'm stuck without a cleaner solution.
     <InternalLinkWrapper
       variants={animationVariants}
       initial="rest"
@@ -132,7 +132,7 @@ const Button = ({
       whileTap="pressed"
     >
       <Link to={internalLink}>
-        <ButtonElement
+        <InternalLinkElement
           buttonStyle={buttonStyle}
           buttonSize={buttonSize}
           {...rest}
@@ -141,7 +141,7 @@ const Button = ({
     </InternalLinkWrapper>
   ) : externalLink ? (
     // if externalLink prop is provided, return ButtonElement 'as' anchor tag
-    <ExternalLink
+    <ExternalLinkElement
       target="blank"
       href={externalLink}
       buttonStyle={buttonStyle}
