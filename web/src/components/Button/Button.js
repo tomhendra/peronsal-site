@@ -113,7 +113,7 @@ const animationVariants = {
 
 // ....................component....................
 
-const ButtonElement = styled(motion.button)(buttonStyles);
+const ButtonElement = styled(motion.div)(buttonStyles);
 const InternalLinkElement = styled(Link)(linkStyles);
 
 const Button = ({
@@ -122,7 +122,6 @@ const Button = ({
   buttonStyle,
   buttonSize,
   children,
-  ...rest
 }) => {
   return internalLink ? (
     // if internalLink prop is provided, return Gatsby Link wrapped with ButtonElement
@@ -133,7 +132,6 @@ const Button = ({
       initial="rest"
       whileHover="hover"
       whileTap="pressed"
-      {...rest}
     >
       <InternalLinkElement to={internalLink}>{children}</InternalLinkElement>
     </ButtonElement>
@@ -149,21 +147,20 @@ const Button = ({
       initial="rest"
       whileHover="hover"
       whileTap="pressed"
-      {...rest}
     >
       {children}
     </ButtonElement>
   ) : (
-    // default return button if internalLink/externalLink props are not provided,
+    // default return return ButtonElement 'as' button internalLink/externalLink props not provided,
     // based on defaultProp values being defined as null.
     <ButtonElement
+      as="button"
       buttonStyle={buttonStyle}
       buttonSize={buttonSize}
       variants={animationVariants}
       initial="rest"
       whileHover="hover"
       whileTap="pressed"
-      {...rest}
     >
       {children}
     </ButtonElement>
