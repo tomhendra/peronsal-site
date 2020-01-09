@@ -80,7 +80,7 @@ const IndexPage = () => (
     <section>
       <Container>
         <Parallax>
-          <Graphic>About</Graphic>
+          <Graphic noMargin>About</Graphic>
         </Parallax>
         <Grid withoutBottomSpacing>
           <Item
@@ -183,7 +183,7 @@ const IndexPage = () => (
     <section>
       <Container>
         <Parallax>
-          <Graphic>Skills</Graphic>
+          <Graphic noMargin>Skills</Graphic>
         </Parallax>
         <Grid>
           <Item gridStart={1} gridEnd={[8, 6, 7, 7]} spacingTop={[GOLF, INDIA]}>

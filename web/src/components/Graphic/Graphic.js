@@ -23,8 +23,7 @@ const styles = ({ noMargin, theme }) =>
           theme.spacings.hotel,
         ]
       : 0,
-    position: 'absolute',
-    top: 0,
+    position: 'relative',
     zIndex: theme.zIndex.background,
   });
 

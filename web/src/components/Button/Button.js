@@ -99,7 +99,7 @@ const wrapperStyles = {
 // ....................animations....................
 
 const animationVariants = {
-  rest: { scale: 1 },
+  initial: { scale: 1 },
   hover: { scale: 1.05 },
   pressed: { scale: 0.95 },
 };
@@ -127,7 +127,7 @@ const Button = ({
     // Gatsby Link (Reach) doesn't accept custom props so I'm stuck without a cleaner solution.
     <InternalLinkWrapper
       variants={animationVariants}
-      initial="rest"
+      initial="initial"
       whileHover="hover"
       whileTap="pressed"
     >
@@ -147,7 +147,7 @@ const Button = ({
       buttonStyle={buttonStyle}
       buttonSize={buttonSize}
       variants={animationVariants}
-      initial="rest"
+      initial="initial"
       whileHover="hover"
       whileTap="pressed"
       {...rest}
@@ -159,7 +159,7 @@ const Button = ({
       buttonStyle={buttonStyle}
       buttonSize={buttonSize}
       variants={animationVariants}
-      initial="rest"
+      initial="initial"
       whileHover="hover"
       whileTap="pressed"
       {...rest}

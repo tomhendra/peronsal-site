@@ -1,26 +1,36 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import styled from '@emotion/styled';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import {
+  motion,
+  useViewportScroll,
+  useSpring,
+  useTransform,
+} from 'framer-motion';
 import { withTheme } from 'emotion-theming';
+
+// ....................styles....................
 
 const styles = ({ theme }) => ({
   position: 'absolute',
-  top: 0,
   zIndex: theme.zIndex.background,
 });
 
+// ....................component....................
+
 const ParallaxElement = styled(motion.div)(styles);
 
-const Parallax = ({ children, ...rest }) => {
+function Parallax({ children, ...rest }) {
   const [elementTop, setElementTop] = useState(0);
   const ref = useRef(null);
   const { scrollY } = useViewportScroll();
 
-  const y = useTransform(scrollY, [elementTop, elementTop + 1], [0, -1], {
-    clamp: false,
-  });
-
-  useEffect(() => {
+  const y = useSpring(
+    useTransform(scrollY, [elementTop, elementTop + 1], [0, -0.075], {
+      clamp: false,
+    }),
+  );
+  // https://kentcdodds.com/blog/useeffect-vs-uselayouteffect
+  useLayoutEffect(() => {
     const element = ref.current;
     setElementTop(element.offsetTop);
   }, [ref]);
@@ -30,6 +40,6 @@ const Parallax = ({ children, ...rest }) => {
       {children}
     </ParallaxElement>
   );
-};
+}
 
 export default withTheme(Parallax);
