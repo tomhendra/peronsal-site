@@ -12,6 +12,7 @@ import Button from '../components/Button';
 import Text from '../components/Text';
 import Card from '../components/Card';
 import Icon from '../components/Icon';
+import Parallax from '../components/Parallax';
 
 import { buttons, icons, sizes } from '../assets/styles/constants';
 
@@ -34,7 +35,9 @@ const IndexPage = () => (
     <SEO title="Web Developer" />
     <section>
       <Container>
-        <Graphic>Hola.</Graphic>
+        <Parallax>
+          <Graphic>Hola.</Graphic>
+        </Parallax>
         <Grid withoutBottomSpacing>
           <Item
             gridStart={[1, 2, 3, 2]}
@@ -76,7 +79,9 @@ const IndexPage = () => (
     </section>
     <section>
       <Container>
-        <Graphic>About</Graphic>
+        <Parallax>
+          <Graphic>About</Graphic>
+        </Parallax>
         <Grid withoutBottomSpacing>
           <Item
             gridStart={1}
@@ -177,7 +182,9 @@ const IndexPage = () => (
     </section>
     <section>
       <Container>
-        <Graphic>Skills</Graphic>
+        <Parallax>
+          <Graphic>Skills</Graphic>
+        </Parallax>
         <Grid>
           <Item gridStart={1} gridEnd={[8, 6, 7, 7]} spacingTop={[GOLF, INDIA]}>
             <Heading as="h1" size={FOXTROT}>
