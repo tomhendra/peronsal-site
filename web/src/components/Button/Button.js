@@ -10,9 +10,7 @@ import { buttons, sizes } from '../../assets/styles/constants';
 const { PRIMARY, SECONDARY, TERTIARY } = buttons;
 const { ALPHA, BRAVO, CHARLIE } = sizes;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const buttonStyles = ({ buttonStyle, buttonSize, theme }) => {
   const baseStyles = {
@@ -111,13 +109,13 @@ const InternalLinkElement = styled.button(buttonStyles);
 const ButtonElement = styled(motion.button)(buttonStyles);
 const ExternalLinkElement = styled(motion.a)(buttonStyles);
 
-const Button = ({
+function Button({
   externalLink,
   internalLink,
   buttonStyle,
   buttonSize,
   ...rest
-}) => {
+}) {
   return internalLink ? (
     // if internalLink prop is provided, return ButtonElement wrapped with Gatsby Link, wrapped
     // with a wrapper for Framer Motion!
@@ -165,11 +163,9 @@ const Button = ({
       {...rest}
     />
   );
-};
+}
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 Button.protoTypes = {
   buttonStyle: PropTypes.oneOf([PRIMARY, SECONDARY, TERTIARY]),
