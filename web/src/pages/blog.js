@@ -4,6 +4,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
+import Parallax from '../components/Parallax';
 import Graphic from '../components/Graphic';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
@@ -23,7 +24,9 @@ const BlogPage = () => {
     <Layout>
       <SEO title="Blog" />
       <Container>
-        <Graphic>Blog</Graphic>
+        <Parallax>
+          <Graphic>Blog</Graphic>
+        </Parallax>
         <Grid withoutBottomSpacing>
           <Item
             gridStart={1}

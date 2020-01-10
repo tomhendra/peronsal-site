@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
+import Parallax from '../components/Parallax';
 import Graphic from '../components/Graphic';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
@@ -12,7 +13,6 @@ import Button from '../components/Button';
 import Text from '../components/Text';
 import Card from '../components/Card';
 import Icon from '../components/Icon';
-import Parallax from '../components/Parallax';
 
 import { buttons, icons, sizes } from '../assets/styles/constants';
 
