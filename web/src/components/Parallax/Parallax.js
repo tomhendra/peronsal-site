@@ -8,10 +8,13 @@ import {
 } from 'framer-motion';
 import { withTheme } from 'emotion-theming';
 
+import { childrenPropType } from '../../utils/shared-prop-types';
+
 // ....................styles....................
 
 const styles = ({ theme }) => ({
   position: 'absolute',
+  userSelectable: 'none',
   zIndex: theme.zIndex.background,
 });
 
@@ -22,8 +25,8 @@ const ParallaxElement = styled(motion.div)(styles);
 function Parallax({ children, ...rest }) {
   const [elementTop, setElementTop] = useState(0);
   const ref = useRef(null);
-  const { scrollY } = useViewportScroll();
 
+  const { scrollY } = useViewportScroll();
   const y = useSpring(
     useTransform(scrollY, [elementTop, elementTop + 1], [0, -0.075], {
       clamp: false,
@@ -41,5 +44,15 @@ function Parallax({ children, ...rest }) {
     </ParallaxElement>
   );
 }
+
+// ....................propTypes....................
+
+Parallax.propTypes = {
+  children: childrenPropType,
+};
+
+Parallax.defaultProps = {
+  children: null,
+};
 
 export default withTheme(Parallax);
