@@ -17,12 +17,12 @@ const styles = ({ center, devMode, theme }) =>
     margin: '0 auto',
     maxWidth: [...theme.breakpoints],
     // 5rem & 6rem being height of header for mobile & > mobile...
-    minHeight: ['calc(100vh - 5rem)', 'calc(100vh - 6rem)'],
+    minHeight: '100vh',
     paddingTop: ['5rem', '6rem'],
     justifyContent: center && 'center',
     border: devMode && '1px dashed hsl(300, 100%, 50%)',
     '& > *': {
-      border: devMode && '1px dashed hsl(300, 100%, 50%)',
+      border: devMode && '1px dashed hsl(200, 100%, 50%)',
     },
     position: 'relative',
   });

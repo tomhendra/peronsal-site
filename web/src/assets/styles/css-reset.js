@@ -11,6 +11,8 @@ export const cssReset = {
   },
 
   body: {
+    height: '100%',
+    width: '100%',
     /* remove margin for main div that that Gatsby mounts into */
     '> div': {
       marginTop: 0,

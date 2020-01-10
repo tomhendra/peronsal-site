@@ -27,10 +27,18 @@ function Parallax({ children, ...rest }) {
   const ref = useRef(null);
 
   const { scrollY } = useViewportScroll();
+  const scrollRange = [elementTop, elementTop + 1];
+  const outputRange = [0, -0.05];
+  const options = {
+    clamp: false,
+  };
+  const springConfig = {
+    damping: 100,
+    stiffness: 75,
+  };
   const y = useSpring(
-    useTransform(scrollY, [elementTop, elementTop + 1], [0, -0.075], {
-      clamp: false,
-    }),
+    useTransform(scrollY, scrollRange, outputRange, options),
+    springConfig,
   );
   // https://kentcdodds.com/blog/useeffect-vs-uselayouteffect
   useLayoutEffect(() => {
