@@ -24,6 +24,7 @@ const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
     fontFamily: theme.fontStack.default,
     fontWeight: theme.fontWeight.regular,
     marginBottom: !noMargin ? getSpacingValues(size, theme) : 0,
+    wordWrap: 'break-word',
   };
 
   const mobileSizeMap = {
