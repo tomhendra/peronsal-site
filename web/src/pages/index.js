@@ -197,9 +197,9 @@ const IndexPage = () => (
               scalable and lightning fast.
             </Text>
             <Text noMargin>
-              I enjoy a modern techstack based around React, and am continuously
-              adding skills to my toolbox. A developer never stops learning, a
-              challenge I embrace wholeheartedly.
+              I enjoy a modern techstack based around React JS, and am
+              continuously adding skills to my toolbox. A developer never stops
+              learning, a challenge I embrace wholeheartedly.
             </Text>
           </Item>
           <Item gridStart={1} gridEnd={[8, 6, 7, 7]} spacingTop={[GOLF, INDIA]}>

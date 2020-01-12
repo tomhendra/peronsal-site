@@ -4,11 +4,12 @@ import { transparentize } from 'polished';
 // ....................media queries....................
 
 /*
-withMediaQueries function generates media queries
-by currying facepaint (https://github.com/emotion-js/facepaint).
-first argument passed is theme,
-second argument is styles object with arrays of values
-to be used at each incremental breakpoint. example usage:
+withMediaQueries HOF generates media queries
+by returning facepaint (https://github.com/emotion-js/facepaint).
+To use, curry the function with first argument as theme,
+and second argument as styles object with arrays of values
+to be used at each incremental breakpoint.
+example usage:
 const styles = theme => {
   return withMediaQueries(theme)({
     label: 'container',
@@ -17,8 +18,9 @@ const styles = theme => {
   });
 };
 */
-export const withMediaQueries = theme =>
-  facepaint(theme.breakpoints.map(bp => `@media (min-width: ${bp})`));
+export function withMediaQueries(theme) {
+  return facepaint(theme.breakpoints.map(bp => `@media (min-width: ${bp})`));
+}
 
 // ....................spacings....................
 
@@ -42,7 +44,7 @@ Solution:
     Since facepaint repo hasn't been touched for a year,
     workaround is to generate values for all breakpoints using Array.fill.
 */
-export const getSpacingValues = (size, theme) => {
+export function getSpacingValues(size, theme) {
   const { spacings, breakpoints } = theme;
 
   if (Array.isArray(size)) {
@@ -57,11 +59,11 @@ export const getSpacingValues = (size, theme) => {
   }
   // return number (i.e. 0) as only other prop value permitted. (see ./utils/shared-prop-types.js)
   return size;
-};
+}
 
 // ....................typography....................
 
-const typographyHelper = (type, size, theme) => {
+function typographyHelper(type, size, theme) {
   const { typography } = theme;
   const typographyType = typography[type];
 
@@ -75,7 +77,7 @@ const typographyHelper = (type, size, theme) => {
     fontSize: generateValues('fontSize'),
     lineHeight: generateValues('lineHeight'),
   };
-};
+}
 
 export const getTextDeclarations = (size, theme) =>
   typographyHelper('text', size, theme);
