@@ -52,7 +52,7 @@ const ProjectPreview = ({ project }) => (
       </div>
       <TechStack
         gridSize={ALPHA}
-        techStackToDisplay={project.techstack.map(tech => tech.title)}
+        stack={project.techstack.map(tech => tech.title)}
       />
       <ButtonGroup>
         <Button

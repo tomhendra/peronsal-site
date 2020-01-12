@@ -13,6 +13,7 @@ import Button from '../components/Button';
 import Text from '../components/Text';
 import Card from '../components/Card';
 import Icon from '../components/Icon';
+import TechStack from '../components/TechStack';
 
 import { buttons, icons, sizes } from '../assets/styles/constants';
 
@@ -200,6 +201,9 @@ const IndexPage = () => (
               adding skills to my toolbox. A developer never stops learning, a
               challenge I embrace wholeheartedly.
             </Text>
+          </Item>
+          <Item gridStart={1} gridEnd={[8, 6, 7, 7]} spacingTop={[GOLF, INDIA]}>
+            <TechStack gridSize={DELTA} />
           </Item>
         </Grid>
       </Container>

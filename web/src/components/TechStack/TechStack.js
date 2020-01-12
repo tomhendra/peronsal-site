@@ -11,9 +11,7 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
 
 const { ALPHA, DELTA } = sizes;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const containerStyles = ({ gridSize, theme }) => {
   const baseStyles = {
@@ -27,8 +25,8 @@ const containerStyles = ({ gridSize, theme }) => {
       gap: theme.spacings.charlie,
     },
     [DELTA]: {
-      gridTemplateColumns: 'repeat(3, 1fr)',
-      gap: `${theme.spacings.foxtrot} ${theme.spacings.kilo}`,
+      gridTemplateColumns: 'repeat(5, 1fr)',
+      gap: `${theme.spacings.foxtrot} ${theme.spacings.juliett}`,
     },
   };
 
@@ -40,17 +38,19 @@ const containerStyles = ({ gridSize, theme }) => {
   });
 };
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const TechStackContainer = styled.div(containerStyles);
-
 // Component must be passed an array of strings which must match the title
 // specified in Sanity studio desk exactly !!
 // recommend to create enums if more manual use is required.
-const TechStack = ({ gridSize, techStackToDisplay }) => {
+function TechStack({ gridSize, stack }) {
   const allTechStack = useTechStack();
+  // if array is supplied to stack prop, perform filter.
+  const filteredTechStack =
+    stack && allTechStack.filter(tech => stack.includes(tech.title));
+  // verify whether complete stack or filtered stack should be displayed
+  const stackToDisplay = !stack ? allTechStack : filteredTechStack;
   // verify which size image to use from useTechStack() based on value of gridSize
   // moved here for better performance over being inside map() below
   // as to not check the value of gridSize on every iteration!
@@ -58,26 +58,22 @@ const TechStack = ({ gridSize, techStackToDisplay }) => {
 
   return (
     <TechStackContainer gridSize={gridSize}>
-      {allTechStack
-        .filter(tech => techStackToDisplay.includes(tech.title))
-        .map(tech => (
-          <Img fixed={tech[logoSize]} alt={tech.alt} key={tech.id} />
-        ))}
+      {stackToDisplay.map(tech => (
+        <Img fixed={tech[logoSize]} alt={tech.alt} key={tech.id} />
+      ))}
     </TechStackContainer>
   );
-};
+}
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 TechStack.propTypes = {
-  techStackToDisplay: PropTypes.arrayOf(PropTypes.string),
+  stack: PropTypes.arrayOf(PropTypes.string),
   gridSize: PropTypes.oneOf([ALPHA, DELTA]),
 };
 
 TechStack.defaultProps = {
-  techStackToDisplay: [],
+  stack: null,
   gridSize: ALPHA,
 };
 
