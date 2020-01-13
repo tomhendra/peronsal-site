@@ -45,12 +45,12 @@ const TechStackContainer = styled.div(containerStyles);
 // specified in Sanity studio desk exactly !!
 // recommend to create enums if more manual use is required.
 function TechStack({ gridSize, stack }) {
-  const allTechStack = useTechStack();
+  const allStack = useTechStack();
   // if array is supplied to stack prop, perform filter.
-  const filteredTechStack =
-    stack && allTechStack.filter(tech => stack.includes(tech.title));
+  const filteredStack =
+    stack && allStack.filter(tech => stack.includes(tech.title));
   // verify whether complete stack or filtered stack should be displayed
-  const stackToDisplay = !stack ? allTechStack : filteredTechStack;
+  const stackToDisplay = !stack ? allStack : filteredStack;
   // verify which size image to use from useTechStack() based on value of gridSize
   // moved here for better performance over being inside map() below
   // as to not check the value of gridSize on every iteration!

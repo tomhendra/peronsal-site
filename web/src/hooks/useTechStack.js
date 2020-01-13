@@ -10,6 +10,7 @@ function useTechStack() {
             title
             logo {
               asset {
+                logoUrl: url
                 small: fixed(width: 18) {
                   ...GatsbySanityImageFixed
                 }
@@ -36,6 +37,7 @@ function useTechStack() {
         logoSmall: node.logo.asset.small,
         logoMedium: node.logo.asset.medium,
         logoLarge: node.logo.asset.large,
+        logoUrl: node.logo.asset.url,
         alt: node.logo.alt,
       },
   );

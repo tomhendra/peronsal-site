@@ -1,12 +1,8 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import styled from '@emotion/styled';
-import {
-  motion,
-  useViewportScroll,
-  useSpring,
-  useTransform,
-} from 'framer-motion';
+import { motion } from 'framer-motion';
 import { withTheme } from 'emotion-theming';
+import { useInView } from 'react-intersection-observer';
 
 import { childrenPropType } from '../../utils/shared-prop-types';
 
@@ -22,35 +18,18 @@ const styles = ({ theme }) => ({
 
 const ParallaxElement = styled(motion.div)(styles);
 
-function Parallax({ children, ...rest }) {
-  const [elementTop, setElementTop] = useState(0);
-  const ref = useRef(null);
+function Parallax({ children }) {
+  const [ref, inView, entry] = useInView({
+    rootMargin: '-50px 0px',
+  });
 
-  const { scrollY } = useViewportScroll();
-  const scrollRange = [elementTop, elementTop + 1];
-  const outputRange = [0, -0.05];
-  const options = {
-    clamp: false,
-  };
-  const springConfig = {
-    damping: 100,
-    stiffness: 75,
-  };
-  const y = useSpring(
-    useTransform(scrollY, scrollRange, outputRange, options),
-    springConfig,
-  );
-  // https://kentcdodds.com/blog/useeffect-vs-uselayouteffect
-  useLayoutEffect(() => {
-    const element = ref.current;
-    setElementTop(element.offsetTop);
-  }, [ref]);
+  useEffect(() => {
+    console.log('ref: ', ref);
+    console.log('inView: ', inView);
+    console.log('entry: ', entry);
+  });
 
-  return (
-    <ParallaxElement ref={ref} style={{ y }} {...rest}>
-      {children}
-    </ParallaxElement>
-  );
+  return <ParallaxElement ref={ref}>{children}</ParallaxElement>;
 }
 
 // ....................propTypes....................
