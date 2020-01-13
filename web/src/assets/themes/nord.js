@@ -274,17 +274,17 @@ export const spacings = {
 };
 
 export const iconSizes = {
-  alpha: '1.2rem', // 12px
-  bravo: '1.4rem', // 14px
-  charlie: '1.6rem', // 16px
-  delta: '1.8rem', // 18px
-  echo: '2rem', // 20px
-  foxtrot: '2.4rem', // 24px
-  golf: '2.8rem', // 28px
-  hotel: '3.2rem', // 32px
-  india: '4.8rem', // 48px
-  juliett: '6.4rem', // 64px
-  kilo: '8.4rem', // 84px
+  alpha: 12, // 12px
+  bravo: 14, // 14px
+  charlie: 16, // 16px
+  delta: 18, // 18px
+  echo: 20, // 20px
+  foxtrot: 24, // 24px
+  golf: 28, // 28px
+  hotel: 32, // 32px
+  india: 48, // 48px
+  juliett: 64, // 64px
+  kilo: 84, // 84px
 };
 
 export const borderRadius = {

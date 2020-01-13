@@ -20,7 +20,7 @@ const ParallaxElement = styled(motion.div)(styles);
 
 function Parallax({ children }) {
   const [ref, inView, entry] = useInView({
-    rootMargin: '-50px 0px',
+    rootMargin: '60px 60px',
   });
 
   useEffect(() => {
@@ -29,7 +29,13 @@ function Parallax({ children }) {
     console.log('entry: ', entry);
   });
 
-  return <ParallaxElement ref={ref}>{children}</ParallaxElement>;
+  console.log('RENDERING...');
+  return (
+    <ParallaxElement ref={ref}>
+      {`${inView}`}
+      {children}
+    </ParallaxElement>
+  );
 }
 
 // ....................propTypes....................
