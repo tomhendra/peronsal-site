@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import { motion } from 'framer-motion';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
@@ -22,7 +21,16 @@ const buttonStyles = ({ buttonStyle, buttonSize, theme }) => {
     letterSpacing: 0.8,
     textAlign: 'center',
     textDecoration: 'none',
+    transition: 'transform .15s ease-in-out',
     width: '100%',
+
+    '&:hover': {
+      transform: 'scale(1.05)',
+    },
+
+    '&:active': {
+      transform: 'scale(0.95)',
+    },
 
     '&:disabled': {
       opacity: 0.4,
@@ -90,24 +98,17 @@ const buttonStyles = ({ buttonStyle, buttonSize, theme }) => {
   };
 };
 
-const wrapperStyles = {
+const linkStyles = {
+  textDecoration: 'none',
   width: '100%',
-};
-
-// ....................animations....................
-
-const animationVariants = {
-  initial: { scale: 1 },
-  hover: { scale: 1.05 },
-  pressed: { scale: 0.95 },
 };
 
 // ....................component....................
 
-const InternalLinkWrapper = styled(motion.div)(wrapperStyles);
-const InternalLinkElement = styled.button(buttonStyles);
-const ButtonElement = styled(motion.button)(buttonStyles);
-const ExternalLinkElement = styled(motion.a)(buttonStyles);
+const InternalLink = styled(Link)(linkStyles);
+const InternalLinkElement = styled.div(buttonStyles);
+const ExternalLinkElement = styled.a(buttonStyles);
+const ButtonElement = styled.button(buttonStyles);
 
 function Button({
   externalLink,
@@ -117,50 +118,30 @@ function Button({
   ...rest
 }) {
   return internalLink ? (
-    // if internalLink prop is provided, return ButtonElement wrapped with Gatsby Link, wrapped
-    // with a wrapper for Framer Motion!
-    // wrapper "fixes" animation judder in FireFox which seems to be caused by Framer Motion
-    // element not being the outermost. There SHOULD be a way to do something like...
-    // const InternalLink = styled(motion(Link))(linkStyles), but this doesn't work.
-    // Gatsby Link (Reach) doesn't accept custom props so I'm stuck without a cleaner solution.
-    <InternalLinkWrapper
-      variants={animationVariants}
-      initial="initial"
-      whileHover="hover"
-      whileTap="pressed"
-    >
-      <Link to={internalLink}>
-        <InternalLinkElement
-          buttonStyle={buttonStyle}
-          buttonSize={buttonSize}
-          {...rest}
-        />
-      </Link>
-    </InternalLinkWrapper>
+    // if internalLink prop is provided, return ButtonElement wrapped with Gatsby Link.
+    <InternalLink to={internalLink}>
+      <InternalLinkElement
+        {...rest}
+        buttonStyle={buttonStyle}
+        buttonSize={buttonSize}
+      />
+    </InternalLink>
   ) : externalLink ? (
-    // if externalLink prop is provided, return ButtonElement 'as' anchor tag
+    // if externalLink prop is provided, return anchor tag
     <ExternalLinkElement
+      {...rest}
       target="blank"
       href={externalLink}
       buttonStyle={buttonStyle}
       buttonSize={buttonSize}
-      variants={animationVariants}
-      initial="initial"
-      whileHover="hover"
-      whileTap="pressed"
-      {...rest}
     />
   ) : (
     // default return ButtonElement if internalLink/externalLink props not provided,
     // based on defaultProp values being defined as null.
     <ButtonElement
+      {...rest}
       buttonStyle={buttonStyle}
       buttonSize={buttonSize}
-      variants={animationVariants}
-      initial="initial"
-      whileHover="hover"
-      whileTap="pressed"
-      {...rest}
     />
   );
 }
