@@ -5,7 +5,6 @@ import useProjects from '../hooks/useProjects';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
-import Parallax from '../components/Parallax';
 import Graphic from '../components/Graphic';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
@@ -23,9 +22,7 @@ const ProjectsPage = () => {
     <Layout>
       <SEO title="Projects" />
       <Container>
-        <Parallax>
-          <Graphic>Projects</Graphic>
-        </Parallax>
+        <Graphic>Projects</Graphic>
         <Grid>
           <Item
             gridStart={1}
