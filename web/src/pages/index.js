@@ -3,7 +3,6 @@ import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
-import Parallax from '../components/Parallax';
 import Graphic from '../components/Graphic';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
@@ -36,9 +35,7 @@ const IndexPage = () => (
     <SEO title="Web Developer" />
     <section>
       <Container>
-        <Parallax>
-          <Graphic>Hola.</Graphic>
-        </Parallax>
+        <Graphic>Hola.</Graphic>
         <Grid withoutBottomSpacing>
           <Item
             gridStart={[1, 2, 3, 2]}
@@ -80,9 +77,7 @@ const IndexPage = () => (
     </section>
     <section>
       <Container>
-        <Parallax>
-          <Graphic noMargin>About</Graphic>
-        </Parallax>
+        <Graphic noMargin>About</Graphic>
         <Grid withoutBottomSpacing>
           <Item
             gridStart={1}
@@ -183,9 +178,7 @@ const IndexPage = () => (
     </section>
     <section>
       <Container>
-        <Parallax>
-          <Graphic noMargin>Skills</Graphic>
-        </Parallax>
+        <Graphic noMargin>Skills</Graphic>
         <Grid>
           <Item gridStart={1} gridEnd={[8, 6, 7, 7]} spacingTop={[GOLF, INDIA]}>
             <Heading as="h1" size={FOXTROT}>

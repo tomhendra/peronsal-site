@@ -1,3 +1,5 @@
+/*
+
 import React, { useEffect } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
@@ -29,7 +31,7 @@ function Parallax({ children }) {
     console.log('entry: ', entry);
   });
 
-  console.log('RENDERING...');
+  console.log('RENDERING....');
   return (
     <ParallaxElement ref={ref}>
       {`${inView}`}
@@ -49,3 +51,5 @@ Parallax.defaultProps = {
 };
 
 export default withTheme(Parallax);
+
+*/
