@@ -1,3 +1,1 @@
-import PostedDate from './PostedDate';
-
-export default PostedDate;
+export { default } from './PostedDate';

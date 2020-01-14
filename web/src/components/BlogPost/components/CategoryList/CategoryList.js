@@ -3,9 +3,7 @@ import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const listStyles = ({ theme }) => ({
   display: 'flex',
@@ -24,23 +22,21 @@ const listStyles = ({ theme }) => ({
   },
 });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const CategoryListElement = styled.ul(listStyles);
 
-const CategoryList = ({ categories }) => (
-  <CategoryListElement>
-    {categories.map(category => (
-      <li key={category._id}>{category.title}</li>
-    ))}
-  </CategoryListElement>
-);
+function CategoryList({ categories }) {
+  return (
+    <CategoryListElement>
+      {categories.map(category => (
+        <li key={category._id}>{category.title}</li>
+      ))}
+    </CategoryListElement>
+  );
+}
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 CategoryList.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.object),
