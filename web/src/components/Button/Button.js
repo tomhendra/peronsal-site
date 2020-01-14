@@ -118,7 +118,7 @@ function Button({
   ...rest
 }) {
   return internalLink ? (
-    // if internalLink prop is provided, return ButtonElement wrapped with Gatsby Link.
+    // if internalLink prop is provided, wrap with Gatsby Link.
     <InternalLink to={internalLink}>
       <InternalLinkElement
         {...rest}
@@ -127,7 +127,7 @@ function Button({
       />
     </InternalLink>
   ) : externalLink ? (
-    // if externalLink prop is provided, return anchor tag
+    // if externalLink prop is provided, return anchor tag.
     <ExternalLinkElement
       {...rest}
       target="blank"
@@ -136,7 +136,7 @@ function Button({
       buttonSize={buttonSize}
     />
   ) : (
-    // default return ButtonElement if internalLink/externalLink props not provided,
+    // default return button if internalLink/externalLink props not provided,
     // based on defaultProp values being defined as null.
     <ButtonElement
       {...rest}

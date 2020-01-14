@@ -16,9 +16,7 @@ import { sizes } from '../../assets/styles/constants';
 
 const { FOXTROT, GOLF, INDIA } = sizes;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const imageStyles = ({ theme }) => ({
   borderRadius: theme.borderRadius.alpha,
@@ -26,13 +24,11 @@ const imageStyles = ({ theme }) => ({
   width: '100%',
 });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const PostMainImage = styled(Img)(imageStyles);
 
-const BlogPost = ({ post }) => {
+function BlogPost({ post }) {
   const { _rawBody, title, mainImage, publishedAt, categories } = post;
   return (
     <Container>
@@ -65,11 +61,9 @@ const BlogPost = ({ post }) => {
       </article>
     </Container>
   );
-};
+}
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 BlogPost.propTypes = {
   post: PropTypes.objectOf(

@@ -1,9 +1,10 @@
+import React from 'react';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
-/**
- * `....................styles....................`
- */
+import { childrenPropType } from '../../utils/shared-prop-types';
+
+// ....................styles....................
 
 const styles = ({ theme }) => ({
   display: 'flex',
@@ -14,10 +15,22 @@ const styles = ({ theme }) => ({
   },
 });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
-const ButtonGroup = styled.div(styles);
+const ButtonGroupElement = styled.div(styles);
+
+function ButtonGroup({ children }) {
+  return <ButtonGroupElement>{children}</ButtonGroupElement>;
+}
+
+// ....................propTypes....................
+
+ButtonGroup.propTypes = {
+  children: childrenPropType,
+};
+
+ButtonGroup.defaultProps = {
+  children: null,
+};
 
 export default withTheme(ButtonGroup);

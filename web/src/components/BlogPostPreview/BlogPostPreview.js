@@ -9,9 +9,7 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
 import Heading from '../Heading';
 import Text from '../Text';
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const elementStyles = ({ theme }) =>
   withMediaQueries(theme)({
@@ -63,37 +61,35 @@ const textStyles = ({ theme }) => ({
   transition: `color ${theme.transitions.default}`,
 });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const PostElement = styled.article(elementStyles);
 const PostLink = styled(Link)(linkStyles);
 const PostImage = styled(Img)(imageStyles);
-const BlogPostPreviewContent = styled.div(previewContentStyles);
+const PostPreviewContent = styled.div(previewContentStyles);
 const PostHeading = styled(Heading)(headingStyles);
 const PostText = styled(Text)(textStyles);
 
-const BlogPostPreview = ({ post }) => (
-  <PostLink to={post.slug}>
-    <PostElement>
-      <PostImage
-        alt={post.alt}
-        sizes={{
-          ...post.mainImage,
-          aspectRatio: 6 / 6,
-        }}
-      />
-      <BlogPostPreviewContent>
-        <PostHeading as="h3">{post.title}</PostHeading>
-        <PostText noMargin>Read post</PostText>
-      </BlogPostPreviewContent>
-    </PostElement>
-  </PostLink>
-);
+function BlogPostPreview({ post }) {
+  return (
+    <PostLink to={post.slug}>
+      <PostElement>
+        <PostImage
+          alt={post.alt}
+          sizes={{
+            ...post.mainImage,
+            aspectRatio: 6 / 6,
+          }}
+        />
+        <PostPreviewContent>
+          <PostHeading as="h3">{post.title}</PostHeading>
+          <PostText noMargin>Read post</PostText>
+        </PostPreviewContent>
+      </PostElement>
+    </PostLink>
+  );
+}
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 export default withTheme(BlogPostPreview);
