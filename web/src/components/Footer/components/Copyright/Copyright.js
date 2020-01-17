@@ -6,9 +6,7 @@ import { withTheme } from 'emotion-theming';
 import useSiteMetadata from '../../../../hooks/useSiteMetadata';
 import { withMediaQueries } from '../../../../assets/styles/style-helpers';
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const styles = ({ theme }) =>
   withMediaQueries(theme)({
@@ -17,13 +15,11 @@ const styles = ({ theme }) =>
     fontSize: theme.typography.text.bravo.fontSize,
   });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const CopyrightElement = styled.span(styles);
 
-const Copyright = () => {
+function Copyright() {
   const { siteMetadata } = useSiteMetadata();
   const date = new Date().getFullYear();
 
@@ -37,6 +33,6 @@ const Copyright = () => {
       {date}
     </CopyrightElement>
   );
-};
+}
 
 export default withTheme(Copyright);

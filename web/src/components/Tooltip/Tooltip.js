@@ -10,9 +10,7 @@ import { colors, positions } from '../../assets/styles/constants';
 const { NEUTRAL, DANGER, WARNING, SUCCESS } = colors;
 const { TOP, RIGHT, BOTTOM, LEFT, START, CENTER, END } = positions;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const getBaseStyles = theme => ({
   borderRadius: theme.borderRadius.bravo,
@@ -30,7 +28,7 @@ const getBaseStyles = theme => ({
   },
 });
 
-const getVariantStyles = (variant, theme) => {
+function getVariantStyles(variant, theme) {
   const variantOptions = {
     [NEUTRAL]: {
       backgroundColor: theme.colors.n200,
@@ -50,7 +48,7 @@ const getVariantStyles = (variant, theme) => {
     },
   };
   return variantOptions[variant];
-};
+}
 
 /*
     12 possible positions are available.
@@ -68,7 +66,7 @@ CENTER  | LEFT                 RIGHT |  CENTER
         START        CENTER        END
 */
 
-const getPositionStyles = (align, position, variant, theme) => {
+function getPositionStyles(align, position, variant, theme) {
   const isPositionHorizontal = position === TOP || position === BOTTOM;
 
   const alignmentMap = {
@@ -117,7 +115,7 @@ const getPositionStyles = (align, position, variant, theme) => {
       transform: `${translateDirection}(${translateValue})`,
     },
   };
-};
+}
 
 const elementStyles = ({ align, position, variant, theme }) => ({
   ...getBaseStyles(theme),
@@ -125,24 +123,22 @@ const elementStyles = ({ align, position, variant, theme }) => ({
   ...getPositionStyles(align, position, variant, theme),
 });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const TooltipElement = styled.div(elementStyles);
 
-const Tooltip = ({ variant, position, align, ...otherProps }) => (
-  <TooltipElement
-    variant={variant}
-    position={position}
-    align={align}
-    {...otherProps}
-  />
-);
+function Tooltip({ variant, position, align, ...otherProps }) {
+  return (
+    <TooltipElement
+      variant={variant}
+      position={position}
+      align={align}
+      {...otherProps}
+    />
+  );
+}
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 Tooltip.propTypes = {
   variant: PropTypes.oneOf([NEUTRAL, DANGER, WARNING, SUCCESS]),

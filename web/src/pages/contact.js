@@ -12,22 +12,23 @@ import { sizes } from '../assets/styles/constants';
 
 const { GOLF, HOTEL, INDIA } = sizes;
 
-const ContactPage = () => (
-  <Layout>
-    <SEO title="Contact" />
-    <Container>
-      <Grid withoutBottomSpacing>
-        <Item
-          gridStart={[1, 2, 3, 3]}
-          gridEnd={[9, 8, 10, 10]}
-          spacingTop={[GOLF, INDIA, HOTEL]}
-          spacingBottom={[GOLF, HOTEL]}
-        >
-          <ContactForm />
-        </Item>
-      </Grid>
-    </Container>
-  </Layout>
-);
-
+function ContactPage() {
+  return (
+    <Layout>
+      <SEO title="Contact" />
+      <Container>
+        <Grid withoutBottomSpacing>
+          <Item
+            gridStart={[1, 2, 3, 3]}
+            gridEnd={[9, 8, 10, 10]}
+            spacingTop={[GOLF, INDIA, HOTEL]}
+            spacingBottom={[GOLF, HOTEL]}
+          >
+            <ContactForm />
+          </Item>
+        </Grid>
+      </Container>
+    </Layout>
+  );
+}
 export default ContactPage;

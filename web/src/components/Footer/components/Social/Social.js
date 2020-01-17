@@ -10,9 +10,7 @@ const { NEUTRAL } = colors;
 const { GITHUB, LINKEDIN, TWITTER } = icons;
 const { ECHO } = sizes;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const linkStyles = ({ theme }) => ({
   'svg:hover': {
@@ -25,25 +23,25 @@ const containerStyles = () => ({
   justifyContent: 'space-between',
 });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const SocialContainer = styled.div(containerStyles);
 const SocialLink = styled.a(linkStyles);
 
-const Social = () => (
-  <SocialContainer>
-    <SocialLink href="https://github.com/tomhendra">
-      <Icon type={GITHUB} color={NEUTRAL} size={ECHO} alt="GitHub logo" />
-    </SocialLink>
-    <SocialLink href="https://www.linkedin.com/in/tom-hendra/">
-      <Icon type={LINKEDIN} color={NEUTRAL} size={ECHO} alt="LinkedIn logo" />
-    </SocialLink>
-    <SocialLink href="https://twitter.com/TomHendra">
-      <Icon type={TWITTER} color={NEUTRAL} size={ECHO} alt="Twitter logo" />
-    </SocialLink>
-  </SocialContainer>
-);
+function Social() {
+  return (
+    <SocialContainer>
+      <SocialLink href="https://github.com/tomhendra">
+        <Icon type={GITHUB} color={NEUTRAL} size={ECHO} alt="GitHub logo" />
+      </SocialLink>
+      <SocialLink href="https://www.linkedin.com/in/tom-hendra/">
+        <Icon type={LINKEDIN} color={NEUTRAL} size={ECHO} alt="LinkedIn logo" />
+      </SocialLink>
+      <SocialLink href="https://twitter.com/TomHendra">
+        <Icon type={TWITTER} color={NEUTRAL} size={ECHO} alt="Twitter logo" />
+      </SocialLink>
+    </SocialContainer>
+  );
+}
 
 export default withTheme(Social);

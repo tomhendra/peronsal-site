@@ -17,9 +17,7 @@ import { buttons, sizes } from '../../assets/styles/constants';
 const { PRIMARY, SECONDARY } = buttons;
 const { ALPHA, CHARLIE } = sizes;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const infoStyles = ({ theme }) =>
   withMediaQueries(theme)({
@@ -32,46 +30,46 @@ const infoStyles = ({ theme }) =>
     width: ['100%', '57%', '60%', '60%'],
   });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const ProjectInfo = styled.div(infoStyles);
 
-const ProjectPreview = ({ project }) => (
-  <Card
-    alignItems={['center', 'stretch']}
-    flexDirection={['column', 'row']}
-    justifyContent="space-between"
-  >
-    <Img fixed={project.image} alt={project.alt} />
-    <ProjectInfo>
-      <div>
-        <Heading as="h2">{project.title}</Heading>
-        <Text size={CHARLIE}>{project.description}</Text>
-      </div>
-      <TechStack
-        gridSize={ALPHA}
-        stack={project.techstack.map(tech => tech.title)}
-      />
-      <ButtonGroup>
-        <Button
-          buttonStyle={SECONDARY}
-          buttonSize={ALPHA}
-          externalLink={project.repo}
-        >
-          View Repo
-        </Button>
-        <Button
-          buttonStyle={PRIMARY}
-          buttonSize={ALPHA}
-          externalLink={project.url}
-        >
-          Launch App
-        </Button>
-      </ButtonGroup>
-    </ProjectInfo>
-  </Card>
-);
+function ProjectPreview({ project }) {
+  return (
+    <Card
+      alignItems={['center', 'stretch']}
+      flexDirection={['column', 'row']}
+      justifyContent="space-between"
+    >
+      <Img fixed={project.image} alt={project.alt} />
+      <ProjectInfo>
+        <div>
+          <Heading as="h2">{project.title}</Heading>
+          <Text size={CHARLIE}>{project.description}</Text>
+        </div>
+        <TechStack
+          gridSize={ALPHA}
+          stack={project.techstack.map(tech => tech.title)}
+        />
+        <ButtonGroup>
+          <Button
+            buttonStyle={SECONDARY}
+            buttonSize={ALPHA}
+            externalLink={project.repo}
+          >
+            View Repo
+          </Button>
+          <Button
+            buttonStyle={PRIMARY}
+            buttonSize={ALPHA}
+            externalLink={project.url}
+          >
+            Launch App
+          </Button>
+        </ButtonGroup>
+      </ProjectInfo>
+    </Card>
+  );
+}
 
 export default withTheme(ProjectPreview);

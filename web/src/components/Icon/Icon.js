@@ -35,32 +35,28 @@ const {
   KILO,
 } = sizes;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const containerStyles = ({ spacing, theme }) => ({
   padding: theme.spacings[spacing],
 });
 
-const colorStyles = (color, theme) => {
+function colorStyles(color, theme) {
   const colorOptions = {
     [NEUTRAL]: theme.colors.n400,
     [PRIMARY]: theme.colors.p400,
     [WHITE]: theme.colors.white,
   };
   return colorOptions[color];
-};
+}
 
 const sizeStyles = (size, theme) => theme.iconSizes[size];
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const IconContainer = styled.div(containerStyles);
 
-const Icon = ({ alt, color, size, spacing, type, theme }) => {
+function Icon({ alt, color, size, spacing, type, theme }) {
   const IconElement = featherIcons[type];
   const IconColor = colorStyles(color, theme);
   const IconSize = sizeStyles(size, theme);
@@ -69,11 +65,9 @@ const Icon = ({ alt, color, size, spacing, type, theme }) => {
       <IconElement aria-labelledby={alt} color={IconColor} size={IconSize} />
     </IconContainer>
   );
-};
+}
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 Icon.propTypes = {
   alt: PropTypes.string,

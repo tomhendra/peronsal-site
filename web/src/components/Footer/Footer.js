@@ -8,9 +8,7 @@ import Copyright from './components/Copyright';
 import Social from './components/Social';
 import Switch from './components/Switch';
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const footerStyles = ({ theme }) =>
   withMediaQueries(theme)({
@@ -40,21 +38,21 @@ const containerStyles = ({ theme }) =>
     },
   });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const FooterElement = styled.footer(footerStyles);
 const FooterContainer = styled.div(containerStyles);
 
-const Footer = () => (
-  <FooterElement>
-    <FooterContainer>
-      <Copyright />
-      <Social />
-      <Switch />
-    </FooterContainer>
-  </FooterElement>
-);
+function Footer() {
+  return (
+    <FooterElement>
+      <FooterContainer>
+        <Copyright />
+        <Social />
+        <Switch />
+      </FooterContainer>
+    </FooterElement>
+  );
+}
 
 export default withTheme(Footer);

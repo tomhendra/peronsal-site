@@ -13,11 +13,9 @@ import { sizes } from '../../assets/styles/constants';
 
 const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO } = sizes;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
-const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
+function styles({ as, bold, italic, strike, noMargin, size, theme }) {
   const baseStyles = {
     label: 'text',
     color: theme.colors.n400,
@@ -95,17 +93,13 @@ const styles = ({ as, bold, italic, strike, noMargin, size, theme }) => {
     ...listItemStyles,
     ...blockquoteStyles,
   });
-};
+}
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const Text = styled.p(styles);
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 Text.propTypes = {
   as: PropTypes.string,

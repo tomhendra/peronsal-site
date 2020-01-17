@@ -20,7 +20,7 @@ const containerStyles = ({ theme }) =>
 
 const NavContainer = styled.div(containerStyles);
 
-const MobileNav = () => {
+function MobileNav() {
   const [open, setOpen] = useState(false);
   return (
     <NavContainer>
@@ -28,6 +28,6 @@ const MobileNav = () => {
       <NavMenu open={open} setOpen={setOpen} />
     </NavContainer>
   );
-};
+}
 
 export default withTheme(MobileNav);

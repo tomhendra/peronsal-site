@@ -38,7 +38,7 @@ const elementStyles = ({ theme, error, touched }) => ({
 const TextareaContainer = styled.div(containerStyles);
 const TextareaElement = styled.textarea(elementStyles);
 
-const Textarea = ({ label, messageMaxLength, ...otherProps }) => {
+function Textarea({ label, messageMaxLength, ...otherProps }) {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
   // which we can spread on <TextareaElement>.
   const [field, meta] = useField(otherProps);
@@ -64,7 +64,7 @@ const Textarea = ({ label, messageMaxLength, ...otherProps }) => {
       {touched && error ? <Tooltip variant={DANGER}>{error}</Tooltip> : null}
     </TextareaContainer>
   );
-};
+}
 
 // ....................propTypes....................
 

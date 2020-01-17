@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import useSiteMetadata from '../../hooks/useSiteMetadata';
 
-const SEO = ({ description, lang, meta, title }) => {
+function SEO({ description, lang, meta, title }) {
   const { siteMetadata } = useSiteMetadata();
   const metaDescription = description || siteMetadata.description;
-
   return (
     <Helmet
       htmlAttributes={{
@@ -50,7 +49,7 @@ const SEO = ({ description, lang, meta, title }) => {
       ].concat(meta)}
     />
   );
-};
+}
 
 SEO.defaultProps = {
   lang: `en`,

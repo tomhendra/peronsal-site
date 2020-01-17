@@ -3,9 +3,7 @@ import { withTheme } from 'emotion-theming';
 
 import { childrenPropType } from '../../utils/shared-prop-types';
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const styles = {
   label: 'wrapper',
@@ -15,15 +13,11 @@ const styles = {
   width: '100vw',
 };
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const Wrapper = styled.div(styles);
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 Wrapper.propTypes = {
   children: childrenPropType,

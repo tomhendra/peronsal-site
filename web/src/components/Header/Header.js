@@ -16,9 +16,7 @@ import { colors, sizes } from '../../assets/styles/constants';
 const { NEUTRAL } = colors;
 const { FOXTROT } = sizes;
 
-/**
- * `....................styles....................`
- */
+// ....................styles...................
 
 const elementStyles = ({ theme }) =>
   withMediaQueries(theme)({
@@ -48,24 +46,24 @@ const logoLinkStyles = {
   lineHeight: 0,
 };
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const HeaderElement = styled.header(elementStyles);
 const HeaderContainer = styled.div(containerStyles);
 const LogoLink = styled(Link)(logoLinkStyles);
 
-const Header = () => (
-  <HeaderElement>
-    <HeaderContainer>
-      <LogoLink to="/">
-        <Logo size={FOXTROT} color={NEUTRAL} />
-      </LogoLink>
-      <MobileNav />
-      <Navbar />
-    </HeaderContainer>
-  </HeaderElement>
-);
+function Header() {
+  return (
+    <HeaderElement>
+      <HeaderContainer>
+        <LogoLink to="/">
+          <Logo size={FOXTROT} color={NEUTRAL} />
+        </LogoLink>
+        <MobileNav />
+        <Navbar />
+      </HeaderContainer>
+    </HeaderElement>
+  );
+}
 
 export default withTheme(Header);

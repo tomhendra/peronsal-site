@@ -13,9 +13,7 @@ import { sizes } from '../../assets/styles/constants';
 
 const { CHARLIE, DELTA, ECHO } = sizes;
 
-/**
- * `....................serializers....................`
- */
+// ....................serializers....................
 
 const serializers = {
   types: {
@@ -65,21 +63,19 @@ const serializers = {
   ),
 };
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
-const PortableText = ({ blocks }) => (
-  <BasePortableText
-    blocks={blocks}
-    serializers={serializers}
-    {...sanityConfig}
-  />
-);
+function PortableText({ blocks }) {
+  return (
+    <BasePortableText
+      blocks={blocks}
+      serializers={serializers}
+      {...sanityConfig}
+    />
+  );
+}
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 PortableText.propTypes = {
   blocks: PropTypes.arrayOf(PropTypes.object),

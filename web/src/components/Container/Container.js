@@ -5,9 +5,7 @@ import PropTypes from 'prop-types';
 import { childrenPropType } from '../../utils/shared-prop-types';
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const styles = ({ center, devMode, theme }) =>
   withMediaQueries(theme)({
@@ -16,8 +14,8 @@ const styles = ({ center, devMode, theme }) =>
     flexDirection: 'column',
     margin: '0 auto',
     maxWidth: [...theme.breakpoints],
-    // 5rem & 6rem being height of header for mobile & > mobile...
     minHeight: '100vh',
+    // 5rem & 6rem being height of header for mobile & > mobile...
     paddingTop: ['5rem', '6rem'],
     justifyContent: center && 'center',
     border: devMode && '1px dashed hsl(300, 100%, 50%)',
@@ -27,15 +25,11 @@ const styles = ({ center, devMode, theme }) =>
     position: 'relative',
   });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const Container = styled.div(styles);
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 Container.propTypes = {
   center: PropTypes.bool,

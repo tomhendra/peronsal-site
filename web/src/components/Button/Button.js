@@ -11,7 +11,7 @@ const { ALPHA, BRAVO, CHARLIE } = sizes;
 
 // ....................styles....................
 
-const buttonStyles = ({ buttonStyle, buttonSize, theme }) => {
+function buttonStyles({ buttonStyle, buttonSize, theme }) {
   const baseStyles = {
     borderRadius: theme.borderRadius.charlie,
     borderStyle: 'solid',
@@ -96,7 +96,7 @@ const buttonStyles = ({ buttonStyle, buttonSize, theme }) => {
     ...colorConfig,
     ...sizeConfig,
   };
-};
+}
 
 const linkStyles = {
   textDecoration: 'none',

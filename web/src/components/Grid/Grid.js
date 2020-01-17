@@ -5,9 +5,7 @@ import PropTypes from 'prop-types';
 import { childrenPropType } from '../../utils/shared-prop-types';
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const styles = ({ devMode, withoutBottomSpacing, withRowGaps, theme }) =>
   withMediaQueries(theme)({
@@ -48,15 +46,11 @@ const styles = ({ devMode, withoutBottomSpacing, withRowGaps, theme }) =>
     },
   });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const Grid = styled.div(styles);
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 Grid.propTypes = {
   devMode: PropTypes.bool,

@@ -9,11 +9,8 @@ import Tooltip from '../../../Tooltip';
 import { colors } from '../../../../assets/styles/constants';
 
 const { DANGER } = colors;
-// const { TOP } = positions;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const containerStyles = ({ theme }) => ({
   position: 'relative',
@@ -33,14 +30,12 @@ const elementStyles = ({ theme, error, touched }) => ({
   width: '100%',
 });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const TextInputContainer = styled.div(containerStyles);
 const TextInputElement = styled.input(elementStyles);
 
-const TextInput = ({ label, ...otherProps }) => {
+function TextInput({ label, ...otherProps }) {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
   // which we can spread on <TextInputElement>.
   const [field, meta] = useField(otherProps);
@@ -60,10 +55,8 @@ const TextInput = ({ label, ...otherProps }) => {
       {touched && error ? <Tooltip variant={DANGER}>{error}</Tooltip> : null}
     </TextInputContainer>
   );
-};
+}
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 export default withTheme(TextInput);

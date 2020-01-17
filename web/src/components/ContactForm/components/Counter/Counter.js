@@ -35,7 +35,7 @@ const greyRingStyles = ({ theme }) => ({
   stroke: theme.colors.n500,
 });
 
-const colouredRingStyles = ({ theme, messageMaxLength, charsRemaining }) => {
+function colouredRingStyles({ theme, messageMaxLength, charsRemaining }) {
   const r = 10;
   const ringLength = 2 * Math.PI * r;
   const grey = (ringLength * charsRemaining) / messageMaxLength;
@@ -52,7 +52,7 @@ const colouredRingStyles = ({ theme, messageMaxLength, charsRemaining }) => {
     strokeDasharray: `${coloured} ${grey}`,
     strokeDashoffset: ringLength / 4,
   };
-};
+}
 
 // ....................component....................
 
@@ -62,7 +62,7 @@ const CounterSvg = styled.svg(svgStyles);
 const GreyRing = styled.circle(greyRingStyles);
 const ColouredRing = styled.circle(colouredRingStyles);
 
-const Counter = ({ messageMaxLength, charsEntered }) => {
+function Counter({ messageMaxLength, charsEntered }) {
   const charsRemaining = messageMaxLength - charsEntered;
   return (
     <CounterContainer>
@@ -81,6 +81,6 @@ const Counter = ({ messageMaxLength, charsEntered }) => {
       </CounterSvg>
     </CounterContainer>
   );
-};
+}
 
 export default withTheme(Counter);

@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const styles = ({ noMargin, theme }) =>
   withMediaQueries(theme)({
@@ -27,15 +25,11 @@ const styles = ({ noMargin, theme }) =>
     zIndex: theme.zIndex.background,
   });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const Graphic = styled.span(styles);
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 Graphic.propTypes = {
   noMargin: PropTypes.bool,

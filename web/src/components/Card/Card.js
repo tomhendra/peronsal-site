@@ -42,11 +42,9 @@ const {
 } = shadows;
 const { FOXTROT } = sizes;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
-const styles = ({
+function styles({
   shadow,
   padding,
   paddingTop,
@@ -58,9 +56,8 @@ const styles = ({
   alignItems,
   alignContent,
   theme,
-}) => {
+}) {
   const baseStyles = {
-    label: 'card',
     backgroundColor: theme.colors.bodyBg,
     borderRadius: theme.borderRadius.delta,
     display: 'flex',
@@ -104,17 +101,13 @@ const styles = ({
     ...flexboxStyles,
     ...shadowConfig,
   });
-};
+}
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const Card = styled.div(styles);
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 Card.propTypes = {
   shadow: PropTypes.oneOf([
@@ -154,5 +147,7 @@ Card.defaultProps = {
   alignContent: 'stretch',
   children: null,
 };
+
+// ....................component....................
 
 export default withTheme(Card);

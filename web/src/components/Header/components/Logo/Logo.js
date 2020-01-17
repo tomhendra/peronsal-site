@@ -19,11 +19,9 @@ const {
   KILO,
 } = sizes;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
-const styles = (color, theme) => {
+function styles(color, theme) {
   const colorStyles = {
     [NEUTRAL]: {
       svg: {
@@ -46,13 +44,11 @@ const styles = (color, theme) => {
   return {
     ...colorStyles[color],
   };
-};
+}
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
-const Logo = ({ color, size, theme }) => {
+function Logo({ color, size, theme }) {
   return (
     <div css={styles(color, theme)}>
       <svg
@@ -72,11 +68,9 @@ const Logo = ({ color, size, theme }) => {
       </svg>
     </div>
   );
-};
+}
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 Logo.propTypes = {
   color: PropTypes.oneOf([NEUTRAL, PRIMARY]),

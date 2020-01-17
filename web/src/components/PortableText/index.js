@@ -1,3 +1,1 @@
-import PortableText from './PortableText';
-
-export default PortableText;
+export { default } from './PortableText';

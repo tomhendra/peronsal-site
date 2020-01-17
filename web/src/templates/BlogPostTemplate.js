@@ -32,9 +32,8 @@ export const query = graphql`
   }
 `;
 
-const BlogPostTemplate = ({ data, errors }) => {
+function BlogPostTemplate({ data, errors }) {
   const post = data && data.post;
-
   return (
     <Layout>
       {errors && <SEO title="GraphQL Error" />}
@@ -49,6 +48,6 @@ const BlogPostTemplate = ({ data, errors }) => {
       {post && <BlogPost post={post} />}
     </Layout>
   );
-};
+}
 
 export default BlogPostTemplate;

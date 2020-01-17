@@ -1,3 +1,1 @@
-import Graphic from './Graphic';
-
-export default Graphic;
+export { default } from './Graphic';

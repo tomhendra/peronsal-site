@@ -48,13 +48,15 @@ const elementStyles = ({ open, theme }) => ({
 
 const BurgerElement = styled.button(elementStyles);
 
-const Burger = ({ open, setOpen }) => (
-  <BurgerElement open={open} onClick={() => setOpen(!open)}>
-    <span />
-    <span />
-    <span />
-  </BurgerElement>
-);
+function Burger({ open, setOpen }) {
+  return (
+    <BurgerElement open={open} onClick={() => setOpen(!open)}>
+      <span />
+      <span />
+      <span />
+    </BurgerElement>
+  );
+}
 
 // ....................propTypes....................
 

@@ -1,9 +1,7 @@
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const labelStyles = ({ theme }) => ({
   color: theme.colors.n400,
@@ -11,9 +9,7 @@ const labelStyles = ({ theme }) => ({
   zIndex: theme.zIndex.input,
 });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const Label = styled.label(labelStyles);
 

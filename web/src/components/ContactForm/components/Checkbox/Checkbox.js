@@ -78,7 +78,7 @@ const CheckboxContainer = styled.div(containerStyles);
 const CheckboxLabel = styled(Label)(labelStyles);
 const CheckboxElement = styled.input(elementStyles);
 
-const Checkbox = ({ children, ...otherProps }) => {
+function Checkbox({ children, ...otherProps }) {
   // We need to tell useField what type of input this is
   // since React treats radios and checkboxes differently
   // than inputs/select/textarea.
@@ -101,7 +101,7 @@ const Checkbox = ({ children, ...otherProps }) => {
       {touched && error ? <Tooltip variant={DANGER}>{error}</Tooltip> : null}
     </CheckboxContainer>
   );
-};
+}
 
 // ...................propTypes....................
 

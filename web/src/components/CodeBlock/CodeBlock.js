@@ -2,13 +2,10 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-// import nightOwlLight from 'prism-react-renderer/themes/nightOwlLight';
 import PropTypes from 'prop-types';
 import nord from './themes/nord';
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const PreStyles = ({ theme }) => ({
   borderRadius: theme.borderRadius.delta,
@@ -32,33 +29,31 @@ const LineNoStyles = ({ theme }) => ({
   opacity: '0.3',
 });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const Pre = styled.pre(PreStyles);
 const LineNo = styled.span(LineNoStyles);
 
-const CodeBlock = ({ code, language }) => (
-  <Highlight {...defaultProps} theme={nord} code={code} language={language}>
-    {({ className, style, tokens, getLineProps, getTokenProps }) => (
-      <Pre className={className} style={style}>
-        {tokens.map((line, i) => (
-          <div {...getLineProps({ line, key: i })}>
-            <LineNo>{i + 1}</LineNo>
-            {line.map((token, key) => (
-              <span {...getTokenProps({ token, key })} />
-            ))}
-          </div>
-        ))}
-      </Pre>
-    )}
-  </Highlight>
-);
+function CodeBlock({ code, language }) {
+  return (
+    <Highlight {...defaultProps} theme={nord} code={code} language={language}>
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <Pre className={className} style={style}>
+          {tokens.map((line, i) => (
+            <div {...getLineProps({ line, key: i })}>
+              <LineNo>{i + 1}</LineNo>
+              {line.map((token, key) => (
+                <span {...getTokenProps({ token, key })} />
+              ))}
+            </div>
+          ))}
+        </Pre>
+      )}
+    </Highlight>
+  );
+}
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 CodeBlock.propTypes = {
   code: PropTypes.string,

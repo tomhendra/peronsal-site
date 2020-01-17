@@ -49,21 +49,23 @@ const navLinkStyles = ({ theme }) => ({
 const Nav = styled.nav(navStyles);
 const NavLink = styled(Link)(navLinkStyles);
 
-const Navbar = () => (
-  <Nav>
-    <NavLink to="/" activeClassName="currentPage">
-      Home
-    </NavLink>
-    <NavLink to="/projects/" activeClassName="currentPage">
-      Projects
-    </NavLink>
-    <NavLink to="/blog/" activeClassName="currentPage">
-      Blog
-    </NavLink>
-    <NavLink to="/contact/" activeClassName="currentPage">
-      Contact
-    </NavLink>
-  </Nav>
-);
+function Navbar() {
+  return (
+    <Nav>
+      <NavLink to="/" activeClassName="currentPage">
+        Home
+      </NavLink>
+      <NavLink to="/projects/" activeClassName="currentPage">
+        Projects
+      </NavLink>
+      <NavLink to="/blog/" activeClassName="currentPage">
+        Blog
+      </NavLink>
+      <NavLink to="/contact/" activeClassName="currentPage">
+        Contact
+      </NavLink>
+    </Nav>
+  );
+}
 
 export default withTheme(Navbar);

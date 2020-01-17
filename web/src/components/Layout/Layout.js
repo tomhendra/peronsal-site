@@ -9,9 +9,7 @@ import Wrapper from '../Wrapper';
 import Header from '../Header';
 import Footer from '../Footer';
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 // TODO: use state to change on switch
 const theme = themes.nord;
@@ -27,20 +25,20 @@ const globalStyles = {
   },
 };
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
-const Layout = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <Global styles={{ ...cssReset, ...globalStyles }} />
-    <Wrapper>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </Wrapper>
-  </ThemeProvider>
-);
+function Layout({ children }) {
+  return (
+    <ThemeProvider theme={theme}>
+      <Global styles={{ ...cssReset, ...globalStyles }} />
+      <Wrapper>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

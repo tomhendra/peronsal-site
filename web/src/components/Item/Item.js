@@ -17,11 +17,9 @@ import {
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
-const styles = ({
+function styles({
   gridStart,
   gridSpan,
   gridEnd,
@@ -34,7 +32,7 @@ const styles = ({
   alignItems,
   alignContent,
   theme,
-}) => {
+}) {
   const baseStyles = {
     label: 'item',
     display: 'flex',
@@ -71,17 +69,13 @@ const styles = ({
     ...spacingStyles,
     ...flexboxStyles,
   });
-};
+}
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const Item = styled.div(styles);
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 Item.propTypes = {
   gridStart: gridPropType,

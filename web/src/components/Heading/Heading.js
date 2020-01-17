@@ -17,11 +17,9 @@ import { sizes } from '../../assets/styles/constants';
 
 const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL } = sizes;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
-const styles = ({ noMargin, size, spacingBottom, sub, theme }) => {
+function styles({ noMargin, size, spacingBottom, sub, theme }) {
   const baseStyles = {
     color: !sub ? theme.colors.headingColor : theme.colors.subheadingColor,
     fontFamily: theme.fontStack.heading,
@@ -54,17 +52,13 @@ const styles = ({ noMargin, size, spacingBottom, sub, theme }) => {
     ...baseStyles,
     ...sizeStyles,
   });
-};
+}
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const Heading = styled.h2(styles);
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 Heading.propTypes = {
   as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),

@@ -58,22 +58,24 @@ const navLinkStyles = ({ theme }) => ({
 const Nav = styled.nav(navStyles);
 const NavLink = styled(Link)(navLinkStyles);
 
-const NavMenu = ({ open }) => (
-  <Nav open={open}>
-    <NavLink to="/" activeClassName="currentPage">
-      Home
-    </NavLink>
-    <NavLink to="/projects/" activeClassName="currentPage">
-      Projects
-    </NavLink>
-    <NavLink to="/blog/" activeClassName="currentPage">
-      Blog
-    </NavLink>
-    <NavLink to="/contact/" activeClassName="currentPage">
-      Contact
-    </NavLink>
-  </Nav>
-);
+function NavMenu({ open }) {
+  return (
+    <Nav open={open}>
+      <NavLink to="/" activeClassName="currentPage">
+        Home
+      </NavLink>
+      <NavLink to="/projects/" activeClassName="currentPage">
+        Projects
+      </NavLink>
+      <NavLink to="/blog/" activeClassName="currentPage">
+        Blog
+      </NavLink>
+      <NavLink to="/contact/" activeClassName="currentPage">
+        Contact
+      </NavLink>
+    </Nav>
+  );
+}
 
 // ....................propTypes....................
 

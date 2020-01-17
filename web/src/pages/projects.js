@@ -16,7 +16,7 @@ import { sizes } from '../assets/styles/constants';
 
 const { FOXTROT, GOLF, HOTEL, INDIA } = sizes;
 
-const ProjectsPage = () => {
+function ProjectsPage() {
   const projects = useProjects();
   return (
     <Layout>
@@ -72,6 +72,6 @@ const ProjectsPage = () => {
       </Container>
     </Layout>
   );
-};
+}
 
 export default ProjectsPage;

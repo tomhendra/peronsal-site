@@ -17,7 +17,7 @@ import { sizes } from '../assets/styles/constants';
 
 const { FOXTROT, GOLF, HOTEL, INDIA } = sizes;
 
-const BlogPage = () => {
+function BlogPage() {
   const posts = usePosts();
   return (
     <Layout>
@@ -64,6 +64,6 @@ const BlogPage = () => {
       </Container>
     </Layout>
   );
-};
+}
 
 export default BlogPage;

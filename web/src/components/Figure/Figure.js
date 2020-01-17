@@ -13,9 +13,7 @@ import { sizes } from '../../assets/styles/constants';
 
 const { BRAVO } = sizes;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
 const figureStyles = ({ theme }) => ({
   margin: `${theme.spacings.golf} 0`,
@@ -29,17 +27,14 @@ const imageStyles = ({ theme }) => ({
   borderRadius: theme.borderRadius.alpha,
 });
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
 const FigureElement = styled.figure(figureStyles);
 const FigcaptionText = Text.withComponent('figcaption');
 const FigcaptionElement = styled(FigcaptionText)(figcaptionStyles);
 const FigureImage = styled(Img)(imageStyles);
 
-const Figure = ({ node }) => {
-  console.log(node);
+function Figure({ node }) {
   const fluidProps = getFluidGatsbyImage(
     node.asset._id,
     { maxWidth: 675 },
@@ -54,11 +49,9 @@ const Figure = ({ node }) => {
       </FigcaptionElement>
     </FigureElement>
   );
-};
+}
 
-/**
- * `....................propTypes....................`
- */
+// ....................propTypes....................
 
 Figure.propTypes = {
   node: PropTypes.objectOf(

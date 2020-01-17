@@ -11,23 +11,21 @@ const { NEUTRAL } = colors;
 const { TOGGLE_LEFT } = icons;
 const { GOLF } = sizes;
 
-/**
- * `....................styles....................`
- */
+// ....................styles....................
 
-/**
- * `....................component....................`
- */
+// ....................component....................
 
-const Switch = ({ theme }) => (
-  <div
-    css={withMediaQueries(theme)({
-      display: ['none', 'flex'],
-      justifyContent: 'flex-end',
-    })}
-  >
-    <Icon type={TOGGLE_LEFT} color={NEUTRAL} size={GOLF} />
-  </div>
-);
+function Switch({ theme }) {
+  return (
+    <div
+      css={withMediaQueries(theme)({
+        display: ['none', 'flex'],
+        justifyContent: 'flex-end',
+      })}
+    >
+      <Icon type={TOGGLE_LEFT} color={NEUTRAL} size={GOLF} />
+    </div>
+  );
+}
 
 export default withTheme(Switch);

@@ -1,8 +1,5 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
-
-import { childrenPropType } from '../../utils/shared-prop-types';
 
 // ....................styles....................
 
@@ -17,20 +14,6 @@ const styles = ({ theme }) => ({
 
 // ....................component....................
 
-const ButtonGroupElement = styled.div(styles);
-
-function ButtonGroup({ children }) {
-  return <ButtonGroupElement>{children}</ButtonGroupElement>;
-}
-
-// ....................propTypes....................
-
-ButtonGroup.propTypes = {
-  children: childrenPropType,
-};
-
-ButtonGroup.defaultProps = {
-  children: null,
-};
+const ButtonGroup = styled.div(styles);
 
 export default withTheme(ButtonGroup);

@@ -1,6 +1,4 @@
-/**
- * `....................colours....................`
- */
+// ....................colours....................
 
 const white = '#FFFFFF';
 const black = '#0F131A';
@@ -150,9 +148,7 @@ export const colors = {
   ...misc,
 };
 
-/**
- * `....................typography....................`
- */
+// ....................typography....................
 
 export const typography = {
   headings: {
@@ -248,9 +244,7 @@ export const fontWeight = {
   bold: '700',
 };
 
-/**
- * `....................sizes....................`
- */
+// ....................sizes....................
 
 export const spacings = {
   alpha: '0.4rem', // 4px
@@ -301,9 +295,7 @@ export const borderWidth = {
   delta: '10px',
 };
 
-/**
- * `....................layout....................`
- */
+// ....................layout....................
 
 export const grid = {
   alpha: {
@@ -335,9 +327,7 @@ export const breakpoints = [
   '128rem', // 1280px
 ];
 
-/**
- * `....................misc....................`
- */
+// ....................misc....................
 
 export const transitions = {
   fast: '100ms ease-in-out',
