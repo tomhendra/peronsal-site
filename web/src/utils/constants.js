@@ -1,6 +1,4 @@
-/**
- * `....................positions....................`
- */
+// ....................positions....................
 
 export const TOP = 'top';
 export const RIGHT = 'right';
@@ -10,9 +8,7 @@ export const START = 'start';
 export const CENTER = 'center';
 export const END = 'end';
 
-/**
- * `....................sizes....................`
- */
+// ....................sizes....................
 
 export const ALPHA = 'alpha';
 export const BRAVO = 'bravo';
@@ -41,9 +37,7 @@ export const ROMEO = 'romeo';
 // export const YANKEE = 'yankee'
 // export const ZULU = 'zulu'
 
-/**
- * `....................shadows....................`
- */
+// ....................shadows....................
 
 export const STANDARD_ALPHA = 'StandardAlpha';
 export const STANDARD_BRAVO = 'StandardBravo';
@@ -56,9 +50,7 @@ export const OFFSET_CHARLIE = 'offsetCharlie';
 export const OFFSET_DELTA = 'offsetDelta';
 export const OFFSET_ECHO = 'offsetEcho';
 
-/**
- * `....................colours/types....................`
- */
+// ....................colours/types....................
 
 export const SUCCESS = 'success';
 export const DANGER = 'danger';
@@ -70,9 +62,7 @@ export const SECONDARY = 'secondary';
 export const TERTIARY = 'tertiary';
 export const WHITE = 'white';
 
-/**
- * `....................icons....................`
- */
+// ....................icons....................
 
 export const BRIEFCASE = 'Briefcase';
 export const CODE = 'Code';

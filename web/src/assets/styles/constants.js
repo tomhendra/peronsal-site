@@ -11,9 +11,7 @@ import {
   LINK, LOADER, TOGGLE_LEFT, TOGGLE_RIGHT, CHECK,
 } from '../../utils/constants'
 
-/**
- * `....................positions....................`
- */
+// ....................positions....................
 
 export const positions = {
   TOP,
@@ -25,9 +23,7 @@ export const positions = {
   END,
 };
 
-/**
- * `....................sizes....................`
- */
+// ....................sizes....................
 
 export const sizes = {
   ALPHA,
@@ -50,9 +46,7 @@ export const sizes = {
   ROMEO,
 };
 
-/**
- * `....................shadows....................`
- */
+// ....................shadows....................
 
 export const shadows = {
   STANDARD_ALPHA,
@@ -67,9 +61,7 @@ export const shadows = {
   OFFSET_ECHO,
 };
 
-/**
- * `....................colors....................`
- */
+// ....................colors....................
 
 export const colors = {
   SUCCESS,
@@ -81,9 +73,7 @@ export const colors = {
   WHITE,
 };
 
-/**
- * `....................buttons....................`
- */
+// ....................buttons....................
 
 export const buttons = {
   PRIMARY,
@@ -91,9 +81,7 @@ export const buttons = {
   TERTIARY,
 };
 
-/**
- * `....................icons....................`
- */
+// ....................icons....................
 
 export const icons = {
   BRIEFCASE,
