@@ -51,8 +51,7 @@ function TechStack({ gridSize, stack }) {
     stack && allStack.filter(tech => stack.includes(tech.title));
   // verify whether complete stack or filtered stack should be displayed
   const stackToDisplay = !stack ? allStack : filteredStack;
-
-  // specify categories of technology to display grouped together
+  // specify order of categories MANUALLY(!!) to display techstack grouped by category
   const orderToDisplay = [
     'Languages',
     'Libraries',
