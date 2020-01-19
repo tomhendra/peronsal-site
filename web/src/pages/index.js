@@ -41,8 +41,8 @@ function IndexPage() {
               </Heading>
             </Item>
             <Item
-              gridStart={[2, 2, 3, 2]}
-              gridEnd={[8, 7, 8, 7]}
+              gridStart={[1, 2, 3, 2]}
+              gridEnd={[9, 7, 8, 7]}
               spacingTop={[HOTEL, GOLF]}
             >
               <ButtonGroup>
