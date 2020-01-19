@@ -15,17 +15,7 @@ import TechStack from '../components/TechStack';
 
 import { buttons, icons, sizes } from '../assets/styles/constants';
 
-const {
-  BRAVO,
-  DELTA,
-  ECHO,
-  FOXTROT,
-  GOLF,
-  HOTEL,
-  JULIETT,
-  INDIA,
-  LIMA,
-} = sizes;
+const { BRAVO, DELTA, ECHO, FOXTROT, GOLF, HOTEL, INDIA, LIMA } = sizes;
 const { PRIMARY, SECONDARY } = buttons;
 const { BRIEFCASE, CODE, PEN_TOOL } = icons;
 
@@ -40,7 +30,7 @@ function IndexPage() {
             <Item
               gridStart={[1, 2, 3, 2]}
               gridEnd={[9, 9, 11, 10]}
-              spacingTop={[JULIETT, LIMA]}
+              spacingTop={[INDIA, LIMA]}
             >
               <Heading as="h1" size={HOTEL}>
                 I am Tom.
@@ -51,9 +41,9 @@ function IndexPage() {
               </Heading>
             </Item>
             <Item
-              gridStart={[1, 2, 3, 2]}
-              gridEnd={[9, 6, 8, 7]}
-              spacingTop={GOLF}
+              gridStart={[2, 2, 3, 2]}
+              gridEnd={[8, 7, 8, 7]}
+              spacingTop={[HOTEL, GOLF]}
             >
               <ButtonGroup>
                 <Button
@@ -152,7 +142,11 @@ function IndexPage() {
                 </Text>
               </Card>
             </Item>
-            <Item gridStart={[2, 3, 9, 9]} gridEnd={[8, 7, 13, 13]}>
+            <Item
+              gridStart={[2, 3, 9, 9]}
+              gridEnd={[8, 7, 13, 13]}
+              spacingBottom={[HOTEL, HOTEL, 0, 0]}
+            >
               <Card
                 padding={[ECHO, GOLF, FOXTROT, FOXTROT]}
                 paddingTop={[FOXTROT, GOLF, HOTEL, HOTEL]}

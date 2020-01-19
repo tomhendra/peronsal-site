@@ -16,8 +16,8 @@ const navStyles = ({ theme, open }) => ({
   position: 'fixed',
   left: 0,
   top: 0,
-  transform: open ? 'translateX(0)' : 'translateX(100%)',
-  transition: theme.transitions.slow,
+  transform: !open ? 'translateX(100%)' : 'translateX(0)',
+  transition: `transform ${theme.transitions.slow}`,
   width: '100vw',
   zIndex: theme.zIndex.drawer,
 
@@ -33,7 +33,7 @@ const navLinkStyles = ({ theme }) => ({
   lineHeight: 0.85,
   textAlign: 'left',
   textDecoration: 'none',
-  transition: 'color 0.3s linear',
+  transition: `all ${theme.transitions.default}`,
   position: 'relative',
 
   '&.currentPage,:hover': {

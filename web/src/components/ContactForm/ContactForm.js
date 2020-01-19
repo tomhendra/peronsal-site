@@ -15,7 +15,7 @@ import Button from '../Button';
 
 import { buttons, colors, sizes } from '../../assets/styles/constants';
 
-const { PRIMARY, TERTIARY } = buttons;
+const { PRIMARY, SECONDARY } = buttons;
 const { DANGER, SUCCESS } = colors;
 const { BRAVO, ECHO, GOLF } = sizes;
 
@@ -167,7 +167,7 @@ function ContactForm() {
             </Checkbox>
             <ButtonGroup>
               <Button
-                buttonStyle={TERTIARY}
+                buttonStyle={SECONDARY}
                 buttonSize={BRAVO}
                 disabled={isSubmitting}
                 onClick={handleReset}

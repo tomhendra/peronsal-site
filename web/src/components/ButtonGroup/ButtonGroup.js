@@ -1,16 +1,21 @@
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
+import { withMediaQueries } from '../../assets/styles/style-helpers';
+
 // ....................styles....................
 
-const styles = ({ theme }) => ({
-  display: 'flex',
-  width: '100%',
+const styles = ({ theme }) =>
+  withMediaQueries(theme)({
+    display: 'flex',
+    flexDirection: ['column', 'row'],
+    width: '100%',
 
-  '& > *:not(:last-of-type)': {
-    marginRight: theme.spacings.delta,
-  },
-});
+    '& > *:not(:last-of-type)': {
+      marginRight: [0, theme.spacings.delta],
+      marginBottom: [theme.spacings.echo, 0],
+    },
+  });
 
 // ....................component....................
 

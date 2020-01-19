@@ -15,7 +15,7 @@ const styles = ({ noMargin, theme }) =>
     lineHeight: [0.75, 0.95],
     marginTop: !noMargin
       ? [
-          theme.spacings.india,
+          theme.spacings.charlie,
           theme.spacings.india,
           theme.spacings.hotel,
           theme.spacings.hotel,

@@ -28,7 +28,7 @@ function styles({ as, bold, italic, strike, noMargin, size, theme }) {
   const mobileSizeMap = {
     [ALPHA]: ALPHA,
     [BRAVO]: BRAVO,
-    [CHARLIE]: BRAVO,
+    [CHARLIE]: CHARLIE,
     [DELTA]: CHARLIE,
     [ECHO]: DELTA,
   };

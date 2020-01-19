@@ -12,8 +12,8 @@ const elementStyles = ({ open, theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-around',
-  height: '2rem',
-  width: '2rem',
+  height: '2.5rem',
+  width: '2.5rem',
   padding: '0',
   zIndex: theme.zIndex.burger,
 
@@ -22,11 +22,11 @@ const elementStyles = ({ open, theme }) => ({
   },
 
   '& > span': {
-    width: '2rem',
-    height: '0.2rem',
+    width: '2.5rem',
+    height: '0.25rem',
     background: theme.colors.n400,
     borderRadius: theme.borderRadius.delta,
-    transition: 'all 0.3s linear',
+    transition: `all ${theme.transitions.fast}`,
     position: 'relative',
     transformOrigin: '1px',
 
