@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
@@ -52,7 +51,7 @@ const linkStyles = ({ theme }) => ({
 // ....................component....................
 
 const StyledForm = styled(Form)(formStyles);
-const FormLink = styled(Link)(linkStyles);
+const FormLink = styled.a(linkStyles);
 
 function ContactForm() {
   // define character max lengths
@@ -162,7 +161,9 @@ function ContactForm() {
             />
             <Checkbox name="acceptedTerms">
               I agree to the&nbsp;
-              <FormLink to="/">privacy policy</FormLink>
+              <FormLink href="/privacy-policy/" target="blank">
+                privacy policy
+              </FormLink>
             </Checkbox>
             <ButtonGroup>
               <Button

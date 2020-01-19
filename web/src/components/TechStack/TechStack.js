@@ -17,6 +17,8 @@ const containerStyles = ({ gridSize, theme }) => {
   const baseStyles = {
     display: 'grid',
     marginBottom: [theme.spacings.foxtrot, theme.spacings.charlie],
+    justifyItems: 'center',
+    width: '100%',
   };
 
   const gridStyles = {
@@ -25,7 +27,12 @@ const containerStyles = ({ gridSize, theme }) => {
       gap: theme.spacings.charlie,
     },
     [DELTA]: {
-      gridTemplateColumns: 'repeat(5, 1fr)',
+      gridTemplateColumns: [
+        'repeat(2, 1fr)',
+        'repeat(3, 1fr)',
+        'repeat(5, 1fr)',
+        'repeat(5, 1fr)',
+      ],
       gap: `${theme.spacings.foxtrot} ${theme.spacings.juliett}`,
     },
   };

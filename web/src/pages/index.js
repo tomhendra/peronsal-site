@@ -201,8 +201,8 @@ function IndexPage() {
               </Text>
             </Item>
             <Item
-              gridStart={1}
-              gridEnd={[8, 6, 7, 7]}
+              gridStart={[2, 1, 1, 1]}
+              gridEnd={[8, 9, 13, 13]}
               spacingTop={[GOLF, INDIA]}
             >
               <TechStack gridSize={DELTA} />
