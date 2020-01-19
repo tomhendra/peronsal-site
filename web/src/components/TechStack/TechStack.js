@@ -51,6 +51,25 @@ function TechStack({ gridSize, stack }) {
     stack && allStack.filter(tech => stack.includes(tech.title));
   // verify whether complete stack or filtered stack should be displayed
   const stackToDisplay = !stack ? allStack : filteredStack;
+
+  // specify categories of technology to display grouped together
+  const orderToDisplay = [
+    'Languages',
+    'Libraries',
+    'Frameworks',
+    'Testing',
+    'Tools',
+    'CMS',
+    'Databases',
+    'Deployment',
+  ];
+  // sort stack based on category
+  const stackGroupedByCategory = stackToDisplay.sort((a, b) => {
+    const orderToDisplayA = orderToDisplay.indexOf(a.category);
+    const orderToDisplayB = orderToDisplay.indexOf(b.category);
+
+    return orderToDisplayA - orderToDisplayB;
+  });
   // verify which size image to use from useTechStack() based on value of gridSize
   // moved here for better performance over being inside map() below
   // as to not check the value of gridSize on every iteration!
@@ -58,7 +77,7 @@ function TechStack({ gridSize, stack }) {
 
   return (
     <TechStackContainer gridSize={gridSize}>
-      {stackToDisplay.map(tech => (
+      {stackGroupedByCategory.map(tech => (
         <Img fixed={tech[logoSize]} alt={tech.alt} key={tech.id} />
       ))}
     </TechStackContainer>

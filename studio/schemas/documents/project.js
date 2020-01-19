@@ -24,6 +24,11 @@ export default {
       to: { type: 'author' },
     },
     {
+      name: 'publishedAt',
+      type: 'datetime',
+      title: 'Published at',
+    },
+    {
       name: 'mainImage',
       type: 'figure',
       title: 'Main image',
@@ -48,6 +53,14 @@ export default {
       name: 'url',
       type: 'url',
       title: 'Project live URL',
+    },
+  ],
+  // ordering for display in Sanity studio
+  orderings: [
+    {
+      name: 'publishedAtDesc',
+      title: 'Date, Descending',
+      by: [{ field: 'publishedAt', direction: 'desc' }],
     },
   ],
   preview: {

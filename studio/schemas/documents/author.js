@@ -39,6 +39,14 @@ export default {
       ],
     },
   ],
+  // ordering for display in Sanity studio
+  orderings: [
+    {
+      name: 'titleAsc',
+      title: 'Title, Ascending',
+      by: [{ field: 'name', direction: 'asc' }],
+    },
+  ],
   preview: {
     select: {
       title: 'name',

@@ -61,7 +61,7 @@ export default {
   orderings: [
     {
       name: 'publishingDateAsc',
-      title: 'Publishing date new–>old',
+      title: 'Publishing date new –> old',
       by: [
         { field: 'publishedAt', direction: 'asc' },
         { field: 'title', direction: 'asc' },
@@ -69,7 +69,7 @@ export default {
     },
     {
       name: 'publishingDateDesc',
-      title: 'Publishing date old->new',
+      title: 'Publishing date old -> new',
       by: [
         { field: 'publishedAt', direction: 'desc' },
         { field: 'title', direction: 'asc' },

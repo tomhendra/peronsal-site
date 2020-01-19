@@ -3,11 +3,14 @@ import { graphql, useStaticQuery } from 'gatsby';
 function useTechStack() {
   const data = useStaticQuery(graphql`
     query {
-      techStack: allSanityTechnology {
+      techStack: allSanityTechnology(sort: { fields: title, order: ASC }) {
         edges {
           node {
             _id
             title
+            category {
+              title
+            }
             logo {
               asset {
                 logoUrl: url
@@ -34,6 +37,7 @@ function useTechStack() {
       node && {
         id: node._id,
         title: node.title,
+        category: node.category.title,
         logoSmall: node.logo.asset.small,
         logoMedium: node.logo.asset.medium,
         logoLarge: node.logo.asset.large,

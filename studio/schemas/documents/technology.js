@@ -13,6 +13,20 @@ export default {
       type: 'logo',
       title: 'Logo',
     },
+    {
+      name: 'category',
+      type: 'reference',
+      title: 'Category',
+      to: { type: 'category' },
+    },
+  ],
+  // ordering for display in Sanity studio
+  orderings: [
+    {
+      name: 'titleAsc',
+      title: 'Title, Ascending',
+      by: [{ field: 'title', direction: 'asc' }],
+    },
   ],
   preview: {
     select: {

@@ -3,11 +3,12 @@ import { graphql, useStaticQuery } from 'gatsby';
 function useProjects() {
   const data = useStaticQuery(graphql`
     query {
-      projects: allSanityProject {
+      projects: allSanityProject(sort: { fields: publishedAt, order: DESC }) {
         edges {
           node {
             _id
             title
+            publishedAt
             description
             _rawTechstack(resolveReferences: { maxDepth: 5 })
             repo
@@ -31,6 +32,7 @@ function useProjects() {
     ({ node }) =>
       node && {
         id: node._id,
+        date: node.publishedAt,
         title: node.title,
         description: node.description,
         techstack: node._rawTechstack,

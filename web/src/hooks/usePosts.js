@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 function usePosts() {
   const data = useStaticQuery(graphql`
     query {
-      posts: allSanityPost {
+      posts: allSanityPost(sort: { fields: publishedAt, order: DESC }) {
         edges {
           node {
             _id
