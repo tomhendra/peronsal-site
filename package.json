@@ -43,7 +43,7 @@
     "eslint-plugin-react-hooks": "1.7.0",
     "husky": "4.0.10",
     "lerna": "3.20.2",
-    "lint-staged": "9.5.0",
+    "lint-staged": "10.0.0",
     "prettier": "1.19.1"
   },
   "husky": {
@@ -54,8 +54,7 @@
   "lint-staged": {
     "{web,studio}/**/*.js": [
       "prettier --write --ignore-path .gitignore",
-      "eslint --fix --quiet --ignore-path .gitignore",
-      "git add"
+      "eslint --fix --quiet --ignore-path .gitignore"
     ]
   }
 }
