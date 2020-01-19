@@ -60,6 +60,7 @@ function IndexPage() {
                   internalLink="/projects/"
                   buttonStyle={SECONDARY}
                   buttonSize={BRAVO}
+                  bodyBg
                 >
                   Projects
                 </Button>

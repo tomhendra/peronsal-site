@@ -11,7 +11,7 @@ const { ALPHA, BRAVO, CHARLIE } = sizes;
 
 // ....................styles....................
 
-function buttonStyles({ buttonStyle, buttonSize, theme }) {
+function buttonStyles({ buttonStyle, buttonSize, bodyBg, theme }) {
   const baseStyles = {
     borderRadius: theme.borderRadius.charlie,
     borderStyle: 'solid',
@@ -51,7 +51,7 @@ function buttonStyles({ buttonStyle, buttonSize, theme }) {
       },
     },
     [SECONDARY]: {
-      backgroundColor: theme.colors.white,
+      backgroundColor: !bodyBg ? 'inherit' : theme.colors.bodyBg,
       borderColor: theme.colors.n500,
       color: theme.colors.n200,
 
@@ -61,7 +61,7 @@ function buttonStyles({ buttonStyle, buttonSize, theme }) {
       },
     },
     [TERTIARY]: {
-      backgroundColor: 'transparent',
+      backgroundColor: !bodyBg ? 'inherit' : theme.colors.bodyBg,
       borderColor: 'transparent',
       color: theme.colors.n200,
 
@@ -115,6 +115,7 @@ function Button({
   internalLink,
   buttonStyle,
   buttonSize,
+  bodyBg,
   ...rest
 }) {
   return internalLink ? (
@@ -124,6 +125,7 @@ function Button({
         {...rest}
         buttonStyle={buttonStyle}
         buttonSize={buttonSize}
+        bodyBg={bodyBg}
       />
     </InternalLink>
   ) : externalLink ? (
@@ -134,6 +136,7 @@ function Button({
       href={externalLink}
       buttonStyle={buttonStyle}
       buttonSize={buttonSize}
+      bodyBg={bodyBg}
     />
   ) : (
     // default return button if internalLink/externalLink props not provided,
@@ -142,6 +145,7 @@ function Button({
       {...rest}
       buttonStyle={buttonStyle}
       buttonSize={buttonSize}
+      bodyBg={bodyBg}
     />
   );
 }
@@ -153,6 +157,7 @@ Button.protoTypes = {
   buttonSize: PropTypes.oneOf([ALPHA, BRAVO, CHARLIE]),
   externalLink: PropTypes.string,
   internalLink: PropTypes.string,
+  bodyBg: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -160,6 +165,7 @@ Button.defaultProps = {
   buttonSize: BRAVO,
   externalLink: null,
   internalLink: null,
+  bodyBg: false,
 };
 
 export default withTheme(Button);
