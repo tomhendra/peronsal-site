@@ -9,7 +9,7 @@ import MobileNav from './components/MobileNav';
 
 import {
   withMediaQueries,
-  shadowStandardBravo,
+  shadowStandardCharlie,
 } from '../../assets/styles/style-helpers';
 import { colors, sizes } from '../../assets/styles/constants';
 
@@ -20,7 +20,7 @@ const { FOXTROT } = sizes;
 
 const elementStyles = ({ theme }) =>
   withMediaQueries(theme)({
-    ...shadowStandardBravo(theme.colors.n500),
+    ...shadowStandardCharlie(theme.colors.shadowNeutral),
     alignItems: 'center',
     backgroundColor: theme.colors.bodyBg,
     display: 'flex',

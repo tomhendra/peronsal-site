@@ -18,7 +18,7 @@ const containerStyles = ({ theme }) => ({
 });
 
 const elementStyles = ({ theme, error, touched }) => ({
-  backgroundColor: theme.colors.bodyBg,
+  backgroundColor: 'inherit',
   borderColor: !(error && touched) ? theme.colors.n500 : theme.colors.danger,
   borderStyle: 'solid',
   borderRadius: theme.borderRadius.bravo,

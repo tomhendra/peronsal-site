@@ -37,7 +37,7 @@ const labelStyles = ({ theme, checked, error, touched }) => ({
   position: 'relative',
 
   '&::before': {
-    backgroundColor: !checked ? theme.colors.bodyBg : theme.colors.p400,
+    backgroundColor: !checked ? 'inherit' : theme.colors.p400,
     borderColor:
       !checked && !touched
         ? theme.colors.n400

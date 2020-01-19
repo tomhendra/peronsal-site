@@ -58,7 +58,7 @@ function styles({
   theme,
 }) {
   const baseStyles = {
-    backgroundColor: theme.colors.bodyBg,
+    backgroundColor: theme.colors.white,
     borderRadius: theme.borderRadius.delta,
     display: 'flex',
     flexWrap: 'no-wrap',
@@ -135,7 +135,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  shadow: STANDARD_CHARLIE,
+  shadow: STANDARD_DELTA,
   padding: FOXTROT,
   paddingTop: null,
   paddingRight: null,

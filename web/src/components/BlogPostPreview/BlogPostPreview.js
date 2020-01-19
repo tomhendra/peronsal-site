@@ -4,7 +4,10 @@ import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
-import { withMediaQueries } from '../../assets/styles/style-helpers';
+import {
+  withMediaQueries,
+  shadowStandardCharlie,
+} from '../../assets/styles/style-helpers';
 
 import Heading from '../Heading';
 import Text from '../Text';
@@ -21,14 +24,20 @@ const elementStyles = ({ theme }) =>
     minHeight: ['18rem', '46rem'],
     overflow: 'hidden',
     padding: [theme.spacings.echo, theme.spacings.foxtrot],
+    ...shadowStandardCharlie(theme.colors.shadowNeutral),
   });
 
 const linkStyles = ({ theme }) => ({
   textDecoration: 'none',
   '&:hover': {
     // eslint-disable-next-line no-use-before-define
+    [PostHeading]: {
+      transform: 'translateY(-4px)',
+    },
+    // eslint-disable-next-line no-use-before-define
     [PostText]: {
       color: theme.colors.p900,
+      transform: 'translateY(-4px)',
     },
   },
 });
@@ -54,11 +63,12 @@ const previewContentStyles = ({ theme }) =>
 const headingStyles = ({ theme }) => ({
   color: theme.colors.n900,
   fontWeight: theme.fontWeight.regular,
+  transition: `transform ${theme.transitions.slow}`,
 });
 
 const textStyles = ({ theme }) => ({
   color: theme.colors.n800,
-  transition: `color ${theme.transitions.default}`,
+  transition: `all ${theme.transitions.slow}`,
 });
 
 // ....................component....................

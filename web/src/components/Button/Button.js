@@ -21,7 +21,7 @@ function buttonStyles({ buttonStyle, buttonSize, theme }) {
     letterSpacing: 0.8,
     textAlign: 'center',
     textDecoration: 'none',
-    transition: 'transform .15s ease-in-out',
+    transition: `transform ${theme.transitions.default}`,
     width: '100%',
 
     '&:hover': {
@@ -51,7 +51,7 @@ function buttonStyles({ buttonStyle, buttonSize, theme }) {
       },
     },
     [SECONDARY]: {
-      backgroundColor: theme.colors.bodyBg,
+      backgroundColor: theme.colors.white,
       borderColor: theme.colors.n500,
       color: theme.colors.n200,
 

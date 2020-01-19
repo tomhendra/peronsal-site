@@ -126,7 +126,7 @@ const misc = {
   brandColor: primary.p400,
   headingColor: neutral.n300,
   subheadingColor: neutral.n200,
-  shadowNeutral: neutral.n100,
+  shadowNeutral: neutral.n500,
   shadowPrimary: primary.p400,
   danger: red.r500,
   warning: yellow.y500,
@@ -331,7 +331,7 @@ export const breakpoints = [
 
 export const transitions = {
   fast: '100ms ease-in-out',
-  default: '200ms ease-in-out',
+  default: '150ms ease-in-out',
   slow: '300ms ease-in-out',
 };
 
