@@ -30,15 +30,15 @@ const elementStyles = ({ open, theme }) => ({
     position: 'relative',
     transformOrigin: '1px',
 
-    ':first-of-type': {
+    '&:first-of-type': {
       transform: open ? 'rotate(45deg)' : 'rotate(0)',
     },
 
-    ':nth-of-type(2)': {
+    '&:nth-of-type(2)': {
       opacity: open ? 0 : 1,
     },
 
-    ':nth-of-type(3)': {
+    '&:nth-of-type(3)': {
       transform: open ? 'rotate(-45deg)' : 'rotate(0)',
     },
   },
