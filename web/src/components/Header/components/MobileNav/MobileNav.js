@@ -11,7 +11,7 @@ import NavMenu from './components/NavMenu';
 
 const containerStyles = ({ theme }) =>
   withMediaQueries(theme)({
-    display: ['flex', 'none'],
+    display: ['flex', 'none', 'none', 'none'],
     alignItems: 'center',
     position: 'relative',
   });

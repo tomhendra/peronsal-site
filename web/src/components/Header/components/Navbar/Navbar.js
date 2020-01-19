@@ -11,7 +11,7 @@ const navStyles = ({ theme }) =>
   withMediaQueries(theme)({
     label: 'navbar',
     alignItems: 'center',
-    display: ['none', 'flex'],
+    display: ['none', 'flex', 'flex', 'flex'],
 
     '& > :not(:last-of-type)': {
       marginRight: theme.spacings.golf,
