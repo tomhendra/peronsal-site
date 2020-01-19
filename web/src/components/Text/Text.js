@@ -26,10 +26,10 @@ function styles({ as, bold, italic, strike, noMargin, size, theme }) {
   };
 
   const mobileSizeMap = {
-    [ALPHA]: ALPHA,
-    [BRAVO]: BRAVO,
+    [ALPHA]: BRAVO,
+    [BRAVO]: CHARLIE,
     [CHARLIE]: CHARLIE,
-    [DELTA]: CHARLIE,
+    [DELTA]: DELTA,
     [ECHO]: DELTA,
   };
   // array for facepaint

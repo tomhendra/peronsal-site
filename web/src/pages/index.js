@@ -41,9 +41,9 @@ function IndexPage() {
               </Heading>
             </Item>
             <Item
-              gridStart={[1, 2, 3, 2]}
-              gridEnd={[9, 7, 8, 7]}
-              spacingTop={[HOTEL, GOLF]}
+              gridStart={[2, 2, 3, 2]}
+              gridEnd={[8, 7, 8, 7]}
+              spacingTop={GOLF}
             >
               <ButtonGroup>
                 <Button
@@ -91,13 +91,13 @@ function IndexPage() {
               </Text>
             </Item>
             <Item
-              gridStart={[2, 3, 1, 1]}
-              gridEnd={[8, 7, 5, 5]}
+              gridStart={[1, 3, 1, 1]}
+              gridEnd={[9, 7, 5, 5]}
               spacingBottom={[HOTEL, HOTEL, 0, 0]}
             >
               <Card
-                padding={[ECHO, GOLF, FOXTROT, FOXTROT]}
-                paddingTop={[FOXTROT, GOLF, HOTEL, HOTEL]}
+                padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
+                paddingTop={[HOTEL, GOLF, HOTEL, HOTEL]}
               >
                 <Icon
                   type={CODE}
@@ -117,13 +117,13 @@ function IndexPage() {
               </Card>
             </Item>
             <Item
-              gridStart={[2, 3, 5, 5]}
-              gridEnd={[8, 7, 9, 9]}
+              gridStart={[1, 3, 5, 5]}
+              gridEnd={[9, 7, 9, 9]}
               spacingBottom={[HOTEL, HOTEL, 0, 0]}
             >
               <Card
-                padding={[ECHO, GOLF, FOXTROT, FOXTROT]}
-                paddingTop={[FOXTROT, GOLF, HOTEL, HOTEL]}
+                padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
+                paddingTop={[HOTEL, GOLF, HOTEL, HOTEL]}
               >
                 <Icon
                   type={PEN_TOOL}
@@ -143,13 +143,13 @@ function IndexPage() {
               </Card>
             </Item>
             <Item
-              gridStart={[2, 3, 9, 9]}
-              gridEnd={[8, 7, 13, 13]}
+              gridStart={[1, 3, 9, 9]}
+              gridEnd={[9, 7, 13, 13]}
               spacingBottom={[HOTEL, HOTEL, 0, 0]}
             >
               <Card
-                padding={[ECHO, GOLF, FOXTROT, FOXTROT]}
-                paddingTop={[FOXTROT, GOLF, HOTEL, HOTEL]}
+                padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
+                paddingTop={[HOTEL, GOLF, HOTEL, HOTEL]}
               >
                 <Icon
                   type={BRIEFCASE}

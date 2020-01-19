@@ -26,7 +26,7 @@ const elementStyles = ({ open, theme }) => ({
     height: '0.25rem',
     background: theme.colors.n400,
     borderRadius: theme.borderRadius.delta,
-    transition: `all ${theme.transitions.fast}`,
+    transition: `all ${theme.transitions.slow}`,
     position: 'relative',
     transformOrigin: '1px',
 

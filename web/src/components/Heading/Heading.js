@@ -30,7 +30,7 @@ function styles({ noMargin, size, spacingBottom, sub, theme }) {
 
   const mobileSizeMap = {
     [ALPHA]: ALPHA,
-    [BRAVO]: ALPHA,
+    [BRAVO]: BRAVO,
     [CHARLIE]: BRAVO,
     [DELTA]: CHARLIE,
     [ECHO]: DELTA,
