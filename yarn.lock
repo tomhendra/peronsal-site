@@ -8123,12 +8123,10 @@ gatsby-plugin-emotion@^4.1.21:
     "@babel/runtime" "^7.7.6"
     "@emotion/babel-preset-css-prop" "^10.0.23"
 
-gatsby-plugin-google-analytics@^2.1.33:
-  version "2.1.33"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.33.tgz#4fcc203dee67832af4b6c619117dbcf4d67ecbeb"
-  integrity sha512-KOlLAInnUVPKkaphOayfsEcFOXEo5yTu03DbLc/WtAsny7vXN2Nd5JV8JJZOF1Z46hGzkgIjKO8AZCz//LSIoQ==
-  dependencies:
-    "@babel/runtime" "^7.7.6"
+gatsby-plugin-gtag@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-gtag/-/gatsby-plugin-gtag-1.0.12.tgz#a8af141773c2962d0803eaabf33c15caef74829c"
+  integrity sha512-rAOLLlhUfwV4/xi+cX07HYSLDzfHe5oDWu251GDVd8Q2bnrKY5EqyGCTIqkfD3hUu6rBOJr1+1j/IlP5bv/NOw==
 
 gatsby-plugin-manifest@^2.2.37:
   version "2.2.37"
