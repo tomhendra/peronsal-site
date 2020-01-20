@@ -30,7 +30,7 @@ function IndexPage() {
             <Item
               gridStart={[1, 2, 3, 2]}
               gridEnd={[9, 9, 11, 10]}
-              spacingTop={[INDIA, LIMA]}
+              spacingTop={[HOTEL, LIMA]}
             >
               <Heading as="h1" size={HOTEL}>
                 I am Tom.
@@ -41,9 +41,9 @@ function IndexPage() {
               </Heading>
             </Item>
             <Item
-              gridStart={[2, 2, 3, 2]}
-              gridEnd={[8, 7, 8, 7]}
-              spacingTop={GOLF}
+              gridStart={[1, 2, 3, 2]}
+              gridEnd={[9, 7, 8, 7]}
+              spacingTop={[HOTEL, GOLF]}
             >
               <ButtonGroup>
                 <Button
