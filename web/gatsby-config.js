@@ -16,11 +16,13 @@ module.exports = {
       resolve: 'gatsby-plugin-gtag',
       options: {
         // your google analytics tracking id
-        trackingId: 'UA-156419283-1',
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
         // Puts tracking script in the head instead of the body
         head: false,
         // enable ip anonymization
         anonymize: true,
+        // respect do not track
+        respectDNT: true,
       },
     },
     {
