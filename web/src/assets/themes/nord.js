@@ -300,7 +300,7 @@ export const borderWidth = {
 export const grid = {
   alpha: {
     cols: 8,
-    maxWidth: '34.6rem', // 346px
+    maxWidth: '33.3rem', // 334px
     gutter: spacings.charlie,
   },
   bravo: {
@@ -321,7 +321,7 @@ export const grid = {
 };
 
 export const breakpoints = [
-  '37.5rem', // 375px
+  '37.4rem', // 374px
   '76.8rem', // 768px
   '96rem', // 960px
   '128rem', // 1280px

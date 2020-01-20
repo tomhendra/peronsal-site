@@ -60,6 +60,6 @@ module.exports = {
         icon: 'src/assets/images/logo/tomhendra-logo-no-bg-64.png',
       },
     },
-    'gatsby-plugin-offline',
+    // 'gatsby-plugin-offline',
   ],
 };
