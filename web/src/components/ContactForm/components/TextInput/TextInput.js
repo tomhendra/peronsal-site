@@ -18,6 +18,9 @@ const containerStyles = ({ theme }) => ({
 });
 
 const elementStyles = ({ theme, error, touched }) => ({
+  '-webkit-appearance': 'none',
+  '-moz-appearance': 'none',
+  appearance: 'none',
   backgroundColor: 'inherit',
   borderColor: !(error && touched) ? theme.colors.n500 : theme.colors.danger,
   borderStyle: 'solid',
@@ -28,6 +31,10 @@ const elementStyles = ({ theme, error, touched }) => ({
   marginTop: theme.spacings.alpha,
   padding: theme.spacings.charlie,
   width: '100%',
+
+  '&::placeholder': {
+    color: theme.colors.n300,
+  },
 });
 
 // ....................component....................
