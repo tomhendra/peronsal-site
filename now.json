@@ -25,6 +25,5 @@
     { "src": "^/studio/static/(.*)", "dest": "/studio/static/$1" },
     { "src": "^/studio/(.*)", "dest": "/studio/index.html" },
     { "src": "^/(.*)", "dest": "/web/$1" }
-  ],
-  "alias": ["tomhendra-portfolio.now.sh"]
+  ]
 }
