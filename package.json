@@ -30,7 +30,8 @@
     "clean:root": "rm -rf node_modules",
     "clean:all": "yarn clean:cache && yarn clean:workspaces && yarn clean:root",
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "postinstall": "yarn bootstrap"
+    "postinstall": "yarn bootstrap",
+    "setup": "yarn install && yarn postinstall"
   },
   "devDependencies": {
     "babel-eslint": "10.0.3",
