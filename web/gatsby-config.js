@@ -13,12 +13,12 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-gtag`,
+      resolve: 'gatsby-plugin-gtag',
       options: {
         // your google analytics tracking id
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+        trackingId: 'UA-156419283-1',
         // Puts tracking script in the head instead of the body
-        head: true,
+        head: false,
         // enable ip anonymization
         anonymize: true,
       },
@@ -48,10 +48,10 @@ module.exports = {
         name: 'tom-hendra-portfolio',
         short_name: 'tom-hendra',
         start_url: '/',
-        background_color: '#1F2933',
-        theme_color: '#1F2933',
+        background_color: '#3b4252',
+        theme_color: '#88c0d0',
         display: 'minimal-ui',
-        icon: 'src/assets/images/logo/tomhendra-logo-no-bg-64.png',
+        icon: 'src/assets/images/logo/tomhendra-logo-512.png',
       },
     },
     'gatsby-plugin-offline',
