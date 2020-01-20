@@ -12,23 +12,23 @@ module.exports = {
     author: 'Tom Hendra',
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
-        // head: true,
-        // anonymize: true,
-        // respectDNT: true,
-        // exclude: ['/studio/**'],
-        // pageTransitionDelay: 0,
-        // optimizeId: process.env.GOOGLE_OPTIMIZE_TRACKING_ID,
-        // experimentId: process.env.GOOGLE_EXPERIMENT_ID,
-        // variationId: process.env.GOOGLE_OPTIMIZE_VARIATION_ID,
-        // sampleRate: 5,
-        // siteSpeedSampleRate: 10,
-        // cookieDomain: 'tomhendra.dev',
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-google-analytics',
+    //   options: {
+    //     trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+    //     // head: true,
+    //     // anonymize: true,
+    //     // respectDNT: true,
+    //     // exclude: ['/studio/**'],
+    //     // pageTransitionDelay: 0,
+    //     // optimizeId: process.env.GOOGLE_OPTIMIZE_TRACKING_ID,
+    //     // experimentId: process.env.GOOGLE_EXPERIMENT_ID,
+    //     // variationId: process.env.GOOGLE_OPTIMIZE_VARIATION_ID,
+    //     // sampleRate: 5,
+    //     // siteSpeedSampleRate: 10,
+    //     // cookieDomain: 'tomhendra.dev',
+    //   },
+    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -60,6 +60,6 @@ module.exports = {
         icon: 'src/assets/images/logo/tomhendra-logo-no-bg-64.png',
       },
     },
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
   ],
 };
