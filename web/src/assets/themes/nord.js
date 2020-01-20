@@ -321,7 +321,7 @@ export const grid = {
 };
 
 export const breakpoints = [
-  '37.5rem', // 375px
+  '37.5rem', // 374px
   '76.8rem', // 768px
   '96rem', // 960px
   '128rem', // 1280px

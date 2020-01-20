@@ -32,6 +32,24 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
+      // https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/#gatsby-plugin-google-analytics
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        exclude: ['/studio/**'],
+        pageTransitionDelay: 0,
+        // optimizeId: process.env.GOOGLE_OPTIMIZE_TRACKING_ID,
+        // experimentId: process.env.GOOGLE_EXPERIMENT_ID,
+        // variationId: process.env.GOOGLE_OPTIMIZE_VARIATION_ID,
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: 'tomhendra.dev',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'tom-hendra-portfolio',
@@ -43,7 +61,6 @@ module.exports = {
         icon: 'src/assets/images/logo/tomhendra-logo-no-bg-64.png',
       },
     },
-    // PWA: https://gatsby.dev/offline
     'gatsby-plugin-offline',
   ],
 };
