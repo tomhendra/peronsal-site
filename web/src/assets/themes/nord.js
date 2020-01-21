@@ -1,3 +1,7 @@
+import 'typeface-noto-sans';
+import 'typeface-lato';
+import 'typeface-fira-code';
+
 // ....................colours....................
 
 const white = '#FFFFFF';
@@ -233,10 +237,9 @@ export const typography = {
 
 export const fontStack = {
   default:
-    // eslint-disable-next-line max-len
-    'Noto Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    'Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   heading: 'Lato, sans-serif',
-  mono: 'Fira Code, Consolas, monaco, monospace',
+  mono: 'Fira Code, monospace',
 };
 
 export const fontWeight = {
