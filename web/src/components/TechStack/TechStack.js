@@ -4,6 +4,8 @@ import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
+import Tooltip from '../Tooltip';
+
 import useTechStack from '../../hooks/useTechStack';
 
 import { sizes } from '../../assets/styles/constants';
@@ -11,9 +13,10 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
 
 const { ALPHA, DELTA } = sizes;
 
-// ....................styles....................
+// ....................styled components....................
 
-const containerStyles = ({ gridSize, theme }) => {
+// Techstack grid
+const TechStackGrid = styled.div(({ gridSize, theme }) => {
   const baseStyles = {
     display: 'grid',
     marginBottom: [theme.spacings.foxtrot, theme.spacings.charlie],
@@ -43,11 +46,26 @@ const containerStyles = ({ gridSize, theme }) => {
     ...baseStyles,
     ...gridConfig,
   });
-};
+});
+
+// Tooltip
+const TechSTackTooltip = styled(Tooltip)({
+  visibility: 'hidden',
+});
+
+// Wrapper for Img & Tooltip
+const TechStackItem = styled.div({
+  cursor: 'pointer',
+  position: 'relative',
+
+  '&:hover': {
+    [TechSTackTooltip]: {
+      visibility: 'visible',
+    },
+  },
+});
 
 // ....................component....................
-
-const TechStackContainer = styled.div(containerStyles);
 // Component must be passed an array of strings which must match the title
 // specified in Sanity studio desk exactly !!
 // recommend to create enums if more manual use is required.
@@ -82,11 +100,14 @@ function TechStack({ gridSize, stack }) {
   const logoSize = gridSize === ALPHA ? 'logoMedium' : 'logoLarge';
 
   return (
-    <TechStackContainer gridSize={gridSize}>
+    <TechStackGrid gridSize={gridSize}>
       {stackGroupedByCategory.map(tech => (
-        <Img fixed={tech[logoSize]} alt={tech.alt} key={tech.id} />
+        <TechStackItem key={tech.id}>
+          <TechSTackTooltip>{tech.title}</TechSTackTooltip>
+          <Img fixed={tech[logoSize]} alt={tech.alt} />
+        </TechStackItem>
       ))}
-    </TechStackContainer>
+    </TechStackGrid>
   );
 }
 

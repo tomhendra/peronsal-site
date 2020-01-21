@@ -19,6 +19,7 @@ const getBaseStyles = theme => ({
   minWidth: theme.spacings.india,
   padding: `${theme.spacings.bravo} ${theme.spacings.charlie}`,
   position: 'absolute',
+  textAlign: 'center',
   zIndex: theme.zIndex.tooltip,
   // Tooltip arrow
   '&::after': {
@@ -147,9 +148,9 @@ Tooltip.propTypes = {
 };
 
 Tooltip.defaultProps = {
-  variant: SUCCESS,
+  variant: NEUTRAL,
   position: TOP,
-  align: START,
+  align: CENTER,
 };
 
 export default withTheme(Tooltip);

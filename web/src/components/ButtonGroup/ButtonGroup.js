@@ -8,6 +8,7 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
 const styles = ({ theme }) =>
   withMediaQueries(theme)({
     display: 'flex',
+    position: 'relative',
     flexDirection: ['column', 'row'],
     width: '100%',
 

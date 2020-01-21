@@ -9,10 +9,16 @@ import Icon from '../../../Icon';
 import Tooltip from '../../../Tooltip';
 import Label from '../Label';
 
-import { colors, icons, sizes } from '../../../../assets/styles/constants';
+import {
+  colors,
+  icons,
+  positions,
+  sizes,
+} from '../../../../assets/styles/constants';
 
 const { DANGER, WHITE } = colors;
 const { CHECK } = icons;
+const { START } = positions;
 const { ALPHA } = sizes;
 
 // ....................styles....................
@@ -98,7 +104,11 @@ function Checkbox({ children, ...otherProps }) {
         {children}
         <Icon type={CHECK} color={WHITE} size={ALPHA} aria-hidden="true" />
       </CheckboxLabel>
-      {touched && error ? <Tooltip variant={DANGER}>{error}</Tooltip> : null}
+      {touched && error ? (
+        <Tooltip variant={DANGER} align={START}>
+          {error}
+        </Tooltip>
+      ) : null}
     </CheckboxContainer>
   );
 }

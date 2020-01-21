@@ -13,10 +13,16 @@ import Checkbox from './components/Checkbox';
 import ButtonGroup from '../ButtonGroup';
 import Button from '../Button';
 
-import { buttons, colors, sizes } from '../../assets/styles/constants';
+import {
+  buttons,
+  colors,
+  positions,
+  sizes,
+} from '../../assets/styles/constants';
 
 const { PRIMARY, SECONDARY } = buttons;
 const { DANGER, SUCCESS } = colors;
+const { END } = positions;
 const { BRAVO, ECHO, GOLF } = sizes;
 
 // ....................styles....................
@@ -75,10 +81,7 @@ function ContactForm() {
       .then(() => {
         actions.setSubmitting(false);
         actions.resetForm();
-        handleServerResponse(
-          true,
-          'Thank you, your message has been submitted!',
-        );
+        handleServerResponse(true, 'Message submitted. Thank you!');
       })
       .catch(error => {
         actions.setSubmitting(false);
@@ -122,7 +125,7 @@ function ContactForm() {
           .required('Required'),
         acceptedTerms: Yup.boolean()
           .required('Required')
-          .oneOf([true], 'Please agree to the data privacy policy.'),
+          .oneOf([true], 'Please agree to the privacy policy.'),
       })}
     >
       {/* destructure helper methods from props */}
@@ -184,9 +187,13 @@ function ContactForm() {
               </Button>
               {serverState &&
                 (!serverState.ok ? (
-                  <Tooltip variant={DANGER}>{serverState.msg}</Tooltip>
+                  <Tooltip variant={DANGER} align={END}>
+                    {serverState.msg}
+                  </Tooltip>
                 ) : (
-                  <Tooltip variant={SUCCESS}>{serverState.msg}</Tooltip>
+                  <Tooltip variant={SUCCESS} align={END}>
+                    {serverState.msg}
+                  </Tooltip>
                 ))}
             </ButtonGroup>
           </StyledForm>

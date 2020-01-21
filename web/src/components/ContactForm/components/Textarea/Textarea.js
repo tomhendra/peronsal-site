@@ -7,9 +7,10 @@ import Label from '../Label';
 import Tooltip from '../../../Tooltip';
 import Counter from '../Counter';
 
-import { colors } from '../../../../assets/styles/constants';
+import { colors, positions } from '../../../../assets/styles/constants';
 
 const { DANGER } = colors;
+const { START } = positions;
 
 // ....................styles....................
 
@@ -19,8 +20,8 @@ const containerStyles = ({ theme }) => ({
 });
 
 const elementStyles = ({ theme, error, touched }) => ({
-  '-webkit-appearance': 'none',
-  '-moz-appearance': 'none',
+  WebkitAppearance: 'none',
+  MozAppearance: 'none',
   appearance: 'none',
   backgroundColor: 'inherit',
   borderColor: !(error && touched) ? theme.colors.n500 : theme.colors.danger,
@@ -68,7 +69,11 @@ function Textarea({ label, messageMaxLength, ...otherProps }) {
         messageMaxLength={messageMaxLength}
         charsEntered={value.length}
       />
-      {touched && error ? <Tooltip variant={DANGER}>{error}</Tooltip> : null}
+      {touched && error ? (
+        <Tooltip variant={DANGER} align={START}>
+          {error}
+        </Tooltip>
+      ) : null}
     </TextareaContainer>
   );
 }
