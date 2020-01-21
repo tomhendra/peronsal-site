@@ -55,7 +55,6 @@ const TechSTackTooltip = styled(Tooltip)({
 
 // Wrapper for Img & Tooltip
 const TechStackItem = styled.div({
-  cursor: 'pointer',
   position: 'relative',
 
   '&:hover': {

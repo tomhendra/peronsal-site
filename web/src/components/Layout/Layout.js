@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Global } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
+import 'typeface-noto-sans';
+import 'typeface-lato';
+import 'firacode';
 
 import { themes } from '../../assets/themes';
 import { cssReset } from '../../assets/styles';
@@ -15,6 +18,7 @@ import Footer from '../Footer';
 const theme = themes.nord;
 
 const globalStyles = {
+  ...cssReset,
   body: {
     background: theme.colors.bodyBg,
     color: theme.colors.bodyColor,
@@ -30,7 +34,7 @@ const globalStyles = {
 function Layout({ children }) {
   return (
     <ThemeProvider theme={theme}>
-      <Global styles={{ ...cssReset, ...globalStyles }} />
+      <Global styles={{ ...globalStyles }} />
       <Wrapper>
         <Header />
         <main>{children}</main>

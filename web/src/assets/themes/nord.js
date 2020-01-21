@@ -1,9 +1,5 @@
 // ....................colours....................
 
-import 'typeface-noto-sans';
-import 'typeface-lato';
-import 'firacode';
-
 const white = '#FFFFFF';
 const black = '#0F131A';
 
