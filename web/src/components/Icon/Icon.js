@@ -56,13 +56,21 @@ const sizeStyles = (size, theme) => theme.iconSizes[size];
 
 const IconContainer = styled.div(containerStyles);
 
-function Icon({ alt, color, size, spacing, type, theme }) {
+function Icon({ color, size, spacing, type, theme }) {
   const IconElement = featherIcons[type];
   const IconColor = colorStyles(color, theme);
   const IconSize = sizeStyles(size, theme);
   return (
-    <IconContainer spacing={spacing}>
-      <IconElement aria-labelledby={alt} color={IconColor} size={IconSize} />
+    <IconContainer
+      spacing={spacing}
+      role="img"
+      aria-labelledby="IconTitle IconDesc"
+    >
+      <title id="IconTitle">SVG icon from the Feather Icons collection</title>
+      <desc id="IconDesc">
+        {`An icon or logo SVG image depicting ${type}.`}
+      </desc>
+      <IconElement color={IconColor} size={IconSize} />
     </IconContainer>
   );
 }
@@ -70,7 +78,6 @@ function Icon({ alt, color, size, spacing, type, theme }) {
 // ....................propTypes....................
 
 Icon.propTypes = {
-  alt: PropTypes.string,
   color: PropTypes.oneOf([PRIMARY, NEUTRAL, WHITE]),
   size: PropTypes.oneOf([
     ALPHA,
@@ -112,7 +119,6 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
-  alt: '',
   color: PRIMARY,
   size: ECHO,
   spacing: null,

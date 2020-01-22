@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
@@ -27,7 +28,19 @@ const styles = ({ noMargin, theme }) =>
 
 // ....................component....................
 
-const Graphic = styled.span(styles);
+const GraphicElement = styled.span(styles);
+
+function Graphic({ noMargin, children }) {
+  return (
+    <GraphicElement
+      noMargin={noMargin}
+      role="img"
+      aria-label={`Graphic text displaying the word ${children}`}
+    >
+      {children}
+    </GraphicElement>
+  );
+}
 
 // ....................propTypes....................
 
