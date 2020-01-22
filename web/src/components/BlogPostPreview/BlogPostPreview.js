@@ -82,7 +82,7 @@ const PostText = styled(Text)(textStyles);
 
 function BlogPostPreview({ post }) {
   return (
-    <PostLink to={post.slug}>
+    <PostLink to={post.slug} aria-label={post.title}>
       <PostElement>
         <PostImage
           alt={post.alt}
