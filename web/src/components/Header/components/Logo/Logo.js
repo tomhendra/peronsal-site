@@ -55,13 +55,9 @@ function Logo({ color, size, theme }) {
     <LogoContainer
       color={color}
       role="img"
-      aria-labelledby="tomHendraLogoTitle tomHendraLogoDesc"
+      aria-label="SVG image of a robot used as the brand logo for Tom Hendra, Web
+        Developer."
     >
-      <title id="tomHendraLogoTitle">Logo for Tom Hendra, Web Developer</title>
-      <desc id="tomHendraLogoDesc">
-        SVG image of a robot used as the brand logo for Tom Hendra, Web
-        Developer.
-      </desc>
       <svg
         viewBox="0 0 60 68"
         height={theme.iconSizes[size]}

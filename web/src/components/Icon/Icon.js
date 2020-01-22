@@ -56,7 +56,7 @@ const sizeStyles = (size, theme) => theme.iconSizes[size];
 
 const IconContainer = styled.div(containerStyles);
 
-function Icon({ color, size, spacing, type, theme }) {
+function Icon({ color, size, spacing, type, theme, ...rest }) {
   const IconElement = featherIcons[type];
   const IconColor = colorStyles(color, theme);
   const IconSize = sizeStyles(size, theme);
@@ -64,13 +64,9 @@ function Icon({ color, size, spacing, type, theme }) {
     <IconContainer
       spacing={spacing}
       role="img"
-      aria-labelledby="IconTitle IconDesc"
+      aria-label={`An icon or logo SVG image depicting ${type}.`}
     >
-      <title id="IconTitle">SVG icon from the Feather Icons collection</title>
-      <desc id="IconDesc">
-        {`An icon or logo SVG image depicting ${type}.`}
-      </desc>
-      <IconElement color={IconColor} size={IconSize} />
+      <IconElement {...rest} color={IconColor} size={IconSize} />
     </IconContainer>
   );
 }
