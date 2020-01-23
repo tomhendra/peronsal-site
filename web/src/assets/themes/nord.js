@@ -6,7 +6,7 @@ import 'typeface-fira-code';
 
 const white = '#FFFFFF';
 const black = '#0F131A';
-// a comment
+
 const neutral = {
   n000: 'hsla(220, 16%, 22%, 1)', // #2e3440 Nord Polar Night
   n100: 'hsla(222, 16%, 28%, 1)', // #3b4252 Nord Polar Night
