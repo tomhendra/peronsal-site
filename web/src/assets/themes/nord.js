@@ -1,5 +1,5 @@
-import 'typeface-noto-sans';
-import 'typeface-lato';
+import 'typeface-fira-sans-extra-condensed';
+import 'typeface-inconsolata';
 import 'typeface-fira-code';
 
 // ....................colours....................
@@ -237,8 +237,8 @@ export const typography = {
 
 export const fontStack = {
   default:
-    'Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-  heading: 'Lato, sans-serif',
+    'Inconsolata, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  heading: 'Fira Sans Extra Condensed, sans-serif',
   mono: 'Fira Code, monospace',
 };
 
@@ -288,14 +288,18 @@ export const borderRadius = {
   alpha: '1px',
   bravo: '4px',
   charlie: '6px',
-  delta: '12px',
+  delta: '8px',
+  echo: '12px',
+  foxtrot: '14px',
 };
 
 export const borderWidth = {
   alpha: '1px',
   bravo: '2px',
-  charlie: '5px',
-  delta: '10px',
+  charlie: '4px',
+  delta: '8px',
+  echo: '10px',
+  foxtrot: '12px',
 };
 
 // ....................layout....................
@@ -314,11 +318,11 @@ export const grid = {
   charlie: {
     cols: 12,
     maxWidth: '88rem', // 880px
-    gutter: spacings.echo,
+    gutter: spacings.delta,
   },
   delta: {
     cols: 12,
-    maxWidth: '88rem', // 880px
+    maxWidth: '120rem', // 1200px
     gutter: spacings.echo,
   },
 };
