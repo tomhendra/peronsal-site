@@ -229,7 +229,7 @@ export const typography = {
       lineHeight: 1.5,
     },
     echo: {
-      fontSize: '2.4rem', // 25px
+      fontSize: '2.4rem', // 24px
       lineHeight: 1.5,
     },
   },
