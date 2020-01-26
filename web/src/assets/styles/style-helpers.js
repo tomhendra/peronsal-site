@@ -12,7 +12,6 @@ to be used at each incremental breakpoint.
 example usage:
 const styles = theme => {
   return withMediaQueries(theme)({
-    label: 'container',
     margin: '0 auto',
     maxWidth: [320px, 756px, 960px, 1200px]
   });
@@ -89,14 +88,6 @@ export const getSubheadingDeclarations = (size, theme) =>
   typographyHelper('subHeadings', size, theme);
 
 // ....................shadows....................
-
-// export const shadowGround = shadowColor => ({
-//   boxShadow: `0 0 0 2px ${transparentize(0.97, shadowColor)}`,
-// });
-
-// export const shadowBorder = (borderColor, borderSize = '1px') => ({
-//   boxShadow: `0px 0px 0px ${borderSize} ${borderColor}`,
-// });
 
 export const shadowStandardAlpha = shadowColor => ({
   boxShadow: `0 1px 3px ${transparentize(0.8, shadowColor)}`,

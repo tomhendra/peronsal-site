@@ -4,7 +4,7 @@ import React from 'react';
 import useProjects from '../hooks/useProjects';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
+import Section from '../components/Section';
 import Graphic from '../components/Graphic';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
@@ -21,7 +21,7 @@ function ProjectsPage() {
   return (
     <Layout>
       <SEO title="Projects" />
-      <Container>
+      <Section>
         <Graphic>Projects</Graphic>
         <Grid>
           <Item
@@ -69,7 +69,7 @@ function ProjectsPage() {
             </Item>
           )}
         </Grid>
-      </Container>
+      </Section>
     </Layout>
   );
 }

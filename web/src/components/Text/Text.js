@@ -17,11 +17,12 @@ const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO } = sizes;
 
 function styles({ as, bold, italic, strike, noMargin, size, theme }) {
   const baseStyles = {
-    label: 'text',
-    color: theme.colors.n400,
     fontFamily: theme.fontStack.default,
-    fontWeight: theme.fontWeight.regular,
+    fontStyle: !italic ? 'normal' : 'italic',
+    fontWeight: !bold ? theme.fontWeight.regular : theme.fontWeight.bold,
     marginBottom: !noMargin ? getSpacingValues(size, theme) : 0,
+    marginLeft: as === 'li' && theme.spacings.echo,
+    textDecoration: !strike ? 'none' : 'line-through',
     wordWrap: 'break-word',
   };
 
@@ -34,33 +35,11 @@ function styles({ as, bold, italic, strike, noMargin, size, theme }) {
   };
   // array for facepaint
   const sizeConfig = [mobileSizeMap[size], size];
-
-  const sizeStyles = {
+  const sizeDeclarations = {
     ...getTextDeclarations(sizeConfig, theme),
   };
 
-  const boldStyles = bold && {
-    label: 'text--bold',
-    fontWeight: theme.fontWeight.bold,
-  };
-
-  const italicStyles = italic && {
-    label: 'text--italic',
-    fontStyle: 'italic',
-  };
-
-  const strikeThroughStyles = strike && {
-    label: 'text--strike-through',
-    textDecoration: 'line-through',
-  };
-
-  const listItemStyles = as === 'li' && {
-    label: 'text--list-item',
-    marginLeft: theme.spacings.echo,
-  };
-
   const blockquoteStyles = as === 'blockquote' && {
-    label: 'text--blockquote',
     background: theme.colors.n800,
     borderLeft: `${theme.borderWidth.delta} solid ${theme.colors.p400}`,
     borderRadius: theme.borderRadius.alpha,
@@ -86,11 +65,7 @@ function styles({ as, bold, italic, strike, noMargin, size, theme }) {
 
   return withMediaQueries(theme)({
     ...baseStyles,
-    ...sizeStyles,
-    ...boldStyles,
-    ...italicStyles,
-    ...strikeThroughStyles,
-    ...listItemStyles,
+    ...sizeDeclarations,
     ...blockquoteStyles,
   });
 }

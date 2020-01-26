@@ -128,8 +128,6 @@ const misc = {
   bodyBg: neutral.n900,
   bodyColor: neutral.n100,
   brandColor: primary.p400,
-  headingColor: neutral.n300,
-  subheadingColor: neutral.n200,
   shadowNeutral: neutral.n500,
   shadowPrimary: primary.p400,
   danger: red.r500,
@@ -236,8 +234,8 @@ export const typography = {
 };
 
 export const fontStack = {
-  default:
-    'Inconsolata, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  default: 'Inconsolata, monospace',
+  subheading: 'Inconsolata, monospace',
   heading: 'Fira Sans Extra Condensed, sans-serif',
   mono: 'Fira Code, monospace',
 };

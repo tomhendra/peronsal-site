@@ -3,7 +3,7 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
+import Section from '../components/Section';
 import Graphic from '../components/Graphic';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
@@ -22,7 +22,7 @@ function BlogPage() {
   return (
     <Layout>
       <SEO title="Blog" />
-      <Container>
+      <Section>
         <Graphic>Blog</Graphic>
         <Grid withoutBottomSpacing>
           <Item
@@ -61,7 +61,7 @@ function BlogPage() {
             </Item>
           )}
         </Grid>
-      </Container>
+      </Section>
     </Layout>
   );
 }

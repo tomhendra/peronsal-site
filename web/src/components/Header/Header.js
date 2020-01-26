@@ -22,7 +22,7 @@ const elementStyles = ({ theme }) =>
   withMediaQueries(theme)({
     ...shadowStandardCharlie(theme.colors.shadowNeutral),
     alignItems: 'center',
-    backgroundColor: theme.colors.bodyBg,
+    backgroundColor: theme.colors.white,
     display: 'flex',
     height: ['5rem', '6rem'],
     padding: ['0 2rem', '0 4rem'],
@@ -37,7 +37,12 @@ const containerStyles = ({ theme }) =>
     display: 'flex',
     justifyContent: 'space-between',
     margin: '0 auto',
-    maxWidth: [...theme.breakpoints],
+    maxWidth: [
+      theme.grid.alpha.maxWidth,
+      theme.grid.bravo.maxWidth,
+      theme.grid.charlie.maxWidth,
+      theme.grid.delta.maxWidth,
+    ],
     width: '100%',
   });
 

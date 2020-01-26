@@ -3,7 +3,7 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
+import Section from '../components/Section';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
 import ContactForm from '../components/ContactForm';
@@ -16,7 +16,7 @@ function ContactPage() {
   return (
     <Layout>
       <SEO title="Contact" />
-      <Container>
+      <Section>
         <Grid withoutBottomSpacing>
           <Item
             gridStart={[1, 2, 3, 3]}
@@ -27,7 +27,7 @@ function ContactPage() {
             <ContactForm />
           </Item>
         </Grid>
-      </Container>
+      </Section>
     </Layout>
   );
 }

@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
-import Container from '../Container';
+import Section from '../Section';
 import Grid from '../Grid';
 import Item from '../Item';
 import PortableText from '../PortableText';
@@ -31,7 +31,7 @@ const PostMainImage = styled(Img)(imageStyles);
 function BlogPost({ post }) {
   const { _rawBody, title, mainImage, publishedAt, categories } = post;
   return (
-    <Container>
+    <Section>
       <article>
         <Grid>
           <Item
@@ -59,7 +59,7 @@ function BlogPost({ post }) {
           </Item>
         </Grid>
       </article>
-    </Container>
+    </Section>
   );
 }
 

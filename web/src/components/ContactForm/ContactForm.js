@@ -14,13 +14,13 @@ import ButtonGroup from '../ButtonGroup';
 import Button from '../Button';
 
 import {
-  buttons,
+  variants,
   colors,
   positions,
   sizes,
 } from '../../assets/styles/constants';
 
-const { PRIMARY, SECONDARY } = buttons;
+const { PRIMARY, SECONDARY } = variants;
 const { DANGER, SUCCESS } = colors;
 const { END } = positions;
 const { BRAVO, ECHO, GOLF } = sizes;

@@ -9,7 +9,6 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
 
 const styles = ({ devMode, withoutBottomSpacing, withRowGaps, theme }) =>
   withMediaQueries(theme)({
-    label: 'grid',
     display: 'grid',
     gridTemplateRows: 'auto',
     columnGap: [

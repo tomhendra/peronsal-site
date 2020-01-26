@@ -2,22 +2,22 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
+import Section from '../components/Section';
 import Graphic from '../components/Graphic';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
 
-import { buttons, sizes } from '../assets/styles/constants';
+import { variants, sizes } from '../assets/styles/constants';
 
 const { BRAVO, DELTA, GOLF, HOTEL } = sizes;
-const { PRIMARY } = buttons;
+const { PRIMARY } = variants;
 
 export default () => (
   <Layout>
     <SEO title="404: Not found" />
-    <Container center>
+    <Section center>
       <Graphic>404</Graphic>
       <Grid withoutBottomSpacing>
         <Item gridStart={[1, 2, 3, 1]} gridEnd={[6, 9, 11, 9]}>
@@ -35,6 +35,6 @@ export default () => (
           </Button>
         </Item>
       </Grid>
-    </Container>
+    </Section>
   </Layout>
 );

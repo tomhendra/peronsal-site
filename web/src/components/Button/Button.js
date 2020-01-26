@@ -4,9 +4,9 @@ import { Link } from 'gatsby';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
-import { buttons, sizes } from '../../assets/styles/constants';
+import { variants, sizes } from '../../assets/styles/constants';
 
-const { PRIMARY, SECONDARY, TERTIARY } = buttons;
+const { PRIMARY, SECONDARY, TERTIARY } = variants;
 const { ALPHA, BRAVO, CHARLIE } = sizes;
 
 // ....................styles....................

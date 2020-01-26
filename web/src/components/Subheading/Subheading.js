@@ -8,7 +8,7 @@ import {
 
 import {
   getSpacingValues,
-  getHeadingDeclarations,
+  getSubheadingDeclarations,
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
@@ -20,7 +20,7 @@ const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL } = sizes;
 
 function styles({ noMargin, size, spacingBottom, theme }) {
   const baseStyles = {
-    fontFamily: theme.fontStack.heading,
+    fontFamily: theme.fontStack.subheading,
     fontWeight: theme.fontWeight.bold,
     marginBottom: !noMargin ? getSpacingValues(spacingBottom, theme) : 0,
   };
@@ -37,7 +37,7 @@ function styles({ noMargin, size, spacingBottom, theme }) {
   };
   // array for facepaint
   const sizeConfig = [mobileSizeMap[size], size];
-  const sizeDeclarations = { ...getHeadingDeclarations(sizeConfig, theme) };
+  const sizeDeclarations = { ...getSubheadingDeclarations(sizeConfig, theme) };
 
   return withMediaQueries(theme)({
     ...baseStyles,
@@ -52,7 +52,7 @@ const Heading = styled.h2(styles);
 // ....................propTypes....................
 
 Heading.propTypes = {
-  as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
+  as: PropTypes.oneOf(['h2', 'h3', 'h4', 'h5', 'h6']),
   noMargin: PropTypes.bool,
   size: PropTypes.oneOf([
     ALPHA,

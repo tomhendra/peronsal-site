@@ -12,9 +12,9 @@ import ButtonGroup from '../ButtonGroup';
 
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 
-import { buttons, sizes } from '../../assets/styles/constants';
+import { variants, sizes } from '../../assets/styles/constants';
 
-const { PRIMARY, SECONDARY } = buttons;
+const { PRIMARY, SECONDARY } = variants;
 const { ALPHA, CHARLIE } = sizes;
 
 // ....................styles....................

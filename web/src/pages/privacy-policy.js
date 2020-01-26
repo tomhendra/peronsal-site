@@ -3,7 +3,7 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import Container from '../components/Container';
+import Section from '../components/Section';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
 import Heading from '../components/Heading';
@@ -17,7 +17,7 @@ function PrivacyPolicyPage() {
   return (
     <Layout>
       <SEO title="Privacy Policy" />
-      <Container>
+      <Section>
         <Grid>
           <Item
             gridStart={1}
@@ -211,7 +211,7 @@ function PrivacyPolicyPage() {
             </Text>
           </Item>
         </Grid>
-      </Container>
+      </Section>
     </Layout>
   );
 }

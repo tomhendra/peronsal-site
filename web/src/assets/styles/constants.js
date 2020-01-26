@@ -73,9 +73,9 @@ export const colors = {
   WHITE,
 };
 
-// ....................buttons....................
+// ....................variants....................
 
-export const buttons = {
+export const variants = {
   PRIMARY,
   SECONDARY,
   TERTIARY,
