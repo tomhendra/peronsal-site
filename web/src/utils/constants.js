@@ -37,6 +37,19 @@ export const ROMEO = 'romeo';
 // export const YANKEE = 'yankee'
 // export const ZULU = 'zulu'
 
+// ....................colours....................
+
+export const BRAND = 'brand';
+export const ACCENT_ALPHA = 'accentAlpha';
+export const ACCENT_BRAVO = 'accentBravo';
+export const ACCENT_CHARLIE = 'accentCharlie';
+export const NEUTRAL = 'neutral';
+export const WHITE = 'white';
+export const BLACK = 'black';
+export const SUCCESS = 'success';
+export const WARNING = 'warning';
+export const DANGER = 'danger';
+
 // ....................shadows....................
 
 export const STANDARD_ALPHA = 'StandardAlpha';
@@ -50,17 +63,11 @@ export const OFFSET_CHARLIE = 'offsetCharlie';
 export const OFFSET_DELTA = 'offsetDelta';
 export const OFFSET_ECHO = 'offsetEcho';
 
-// ....................colours/types....................
+// ....................variants....................
 
-export const SUCCESS = 'success';
-export const DANGER = 'danger';
-export const WARNING = 'warning';
-export const NEUTRAL = 'neutral';
-export const ACCENT = 'accent';
 export const PRIMARY = 'primary';
 export const SECONDARY = 'secondary';
 export const TERTIARY = 'tertiary';
-export const WHITE = 'white';
 
 // ....................icons....................
 

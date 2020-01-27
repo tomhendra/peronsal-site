@@ -2,7 +2,10 @@ import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
-import { childrenPropType } from '../../utils/shared-prop-types';
+import {
+  childrenPropType,
+  variantPropType,
+} from '../../utils/shared-prop-types';
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 
 import Heading from '../Heading';
@@ -92,7 +95,7 @@ const Section = styled.section(styles);
 // ....................propTypes....................
 
 Section.propTypes = {
-  variant: PropTypes.oneOf([PRIMARY, SECONDARY, TERTIARY]),
+  variant: variantPropType,
   centerContentVertically: PropTypes.bool,
   fullViewportHeight: PropTypes.bool,
   devMode: PropTypes.bool,

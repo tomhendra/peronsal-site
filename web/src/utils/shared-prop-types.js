@@ -1,6 +1,55 @@
 import PropTypes from 'prop-types';
 
-import { sizes } from '../assets/styles/constants';
+import {
+  positions,
+  sizes,
+  colors,
+  shadows,
+  variants,
+  icons,
+} from '../assets/styles/constants';
+
+// positions propType
+const positionOptions = Object.values(positions);
+export const positionPropType = PropTypes.oneOfType([
+  PropTypes.oneOf([...positionOptions]),
+  PropTypes.arrayOf(PropTypes.oneOf([...positionOptions])),
+]);
+
+// size propType
+const sizeOptions = Object.values(sizes);
+export const sizePropType = PropTypes.oneOfType([
+  PropTypes.oneOf([...sizeOptions, 0]),
+  PropTypes.arrayOf(PropTypes.oneOf([...sizeOptions, 0])),
+]);
+
+// colour propType
+const colorOptions = Object.values(colors);
+export const colorPropType = PropTypes.oneOfType([
+  PropTypes.oneOf([...colorOptions]),
+  PropTypes.arrayOf(PropTypes.oneOf([...colorOptions])),
+]);
+
+// shadow propType
+const shadowOptions = Object.values(shadows);
+export const shadowPropType = PropTypes.oneOfType([
+  PropTypes.oneOf([...shadowOptions]),
+  PropTypes.arrayOf(PropTypes.oneOf([...shadowOptions])),
+]);
+
+// variant propType
+const variantOptions = Object.values(variants);
+export const variantPropType = PropTypes.oneOfType([
+  PropTypes.oneOf([...variantOptions]),
+  PropTypes.arrayOf(PropTypes.oneOf([...variantOptions])),
+]);
+
+// icon propType
+const iconOptions = Object.values(icons);
+export const iconPropType = PropTypes.oneOfType([
+  PropTypes.oneOf([...iconOptions]),
+  PropTypes.arrayOf(PropTypes.oneOf([...iconOptions])),
+]);
 
 // children propType
 export const childrenPropType = PropTypes.oneOfType([
@@ -13,13 +62,6 @@ const gridOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 'auto'];
 export const gridPropType = PropTypes.oneOfType([
   PropTypes.oneOf(gridOptions),
   PropTypes.arrayOf(PropTypes.oneOf(gridOptions)),
-]);
-
-// spacing propType
-const spacingOptions = Object.values(sizes);
-export const spacingPropType = PropTypes.oneOfType([
-  PropTypes.oneOf([...spacingOptions, 0]),
-  PropTypes.arrayOf(PropTypes.oneOf([...spacingOptions, 0])),
 ]);
 
 // flexbox propTypes

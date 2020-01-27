@@ -4,6 +4,8 @@ import { Link } from 'gatsby';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
+import { variantPropType } from '../../utils/shared-prop-types';
+
 import { variants, sizes } from '../../assets/styles/constants';
 
 const { PRIMARY, SECONDARY, TERTIARY } = variants;
@@ -153,7 +155,7 @@ function Button({
 // ....................propTypes....................
 
 Button.protoTypes = {
-  buttonStyle: PropTypes.oneOf([PRIMARY, SECONDARY, TERTIARY]),
+  buttonStyle: variantPropType,
   buttonSize: PropTypes.oneOf([ALPHA, BRAVO, CHARLIE]),
   externalLink: PropTypes.string,
   internalLink: PropTypes.string,

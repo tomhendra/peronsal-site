@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
-import PropTypes from 'prop-types';
 
 import {
   childrenPropType,
@@ -8,7 +7,8 @@ import {
   justifyContentPropType,
   alignItemsPropType,
   alignContentPropType,
-  spacingPropType,
+  sizePropType,
+  shadowPropType,
 } from '../../utils/shared-prop-types';
 
 import {
@@ -59,14 +59,17 @@ function styles({
 }) {
   const baseStyles = {
     backgroundColor: theme.colors.white,
-    borderRadius: theme.borderRadius.delta,
+    borderColor: theme.colors.b400,
+    borderRadius: theme.borderRadius.charlie,
+    borderStyle: 'solid',
+    borderWidth: theme.borderWidth.echo,
     display: 'flex',
     flexWrap: 'no-wrap',
     zIndex: theme.zIndex.card,
   };
 
   const paddingStyles = {
-    padding: getSpacingValues(padding, theme),
+    padding: padding && getSpacingValues(padding, theme),
     paddingTop: paddingTop && getSpacingValues(paddingTop, theme),
     paddingRight: paddingRight && getSpacingValues(paddingRight, theme),
     paddingBottom: paddingBottom && getSpacingValues(paddingBottom, theme),
@@ -110,23 +113,12 @@ const Card = styled.div(styles);
 // ....................propTypes....................
 
 Card.propTypes = {
-  shadow: PropTypes.oneOf([
-    STANDARD_ALPHA,
-    STANDARD_BRAVO,
-    STANDARD_CHARLIE,
-    STANDARD_DELTA,
-    STANDARD_ECHO,
-    OFFSET_ALPHA,
-    OFFSET_BRAVO,
-    OFFSET_CHARLIE,
-    OFFSET_DELTA,
-    OFFSET_ECHO,
-  ]),
-  padding: spacingPropType,
-  paddingTop: spacingPropType,
-  paddingRight: spacingPropType,
-  paddingBottom: spacingPropType,
-  paddingLeft: spacingPropType,
+  shadow: shadowPropType,
+  padding: sizePropType,
+  paddingTop: sizePropType,
+  paddingRight: sizePropType,
+  paddingBottom: sizePropType,
+  paddingLeft: sizePropType,
   flexDirection: flexDirectionPropType,
   justifyContent: justifyContentPropType,
   alignItems: alignItemsPropType,

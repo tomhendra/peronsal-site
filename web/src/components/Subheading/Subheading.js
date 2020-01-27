@@ -1,10 +1,7 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
-import {
-  childrenPropType,
-  spacingPropType,
-} from '../../utils/shared-prop-types';
+import { childrenPropType, sizePropType } from '../../utils/shared-prop-types';
 
 import {
   getSpacingValues,
@@ -64,7 +61,7 @@ Heading.propTypes = {
     GOLF,
     HOTEL,
   ]),
-  spacingBottom: spacingPropType,
+  spacingBottom: sizePropType,
   children: childrenPropType,
 };
 

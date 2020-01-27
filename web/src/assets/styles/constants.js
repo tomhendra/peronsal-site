@@ -5,7 +5,9 @@ import {
   JULIETT, KILO, LIMA, MIKE, NOVEMBER, OSCAR, PAPA, QUEBEC, ROMEO,
   STANDARD_ALPHA, STANDARD_BRAVO, STANDARD_CHARLIE, STANDARD_DELTA, STANDARD_ECHO,
   OFFSET_ALPHA, OFFSET_BRAVO, OFFSET_CHARLIE, OFFSET_DELTA, OFFSET_ECHO,
-  SUCCESS, DANGER, WARNING, ACCENT, NEUTRAL, PRIMARY, SECONDARY, TERTIARY, WHITE,
+  SUCCESS, DANGER, WARNING, BRAND, ACCENT_ALPHA, ACCENT_BRAVO, ACCENT_CHARLIE,
+  WHITE, BLACK, NEUTRAL,
+  PRIMARY, SECONDARY, TERTIARY,
   BRIEFCASE, CODE, PEN_TOOL,
   CODEPEN, GITHUB, LINKEDIN, TWITTER,
   LINK, LOADER, TOGGLE_LEFT, TOGGLE_RIGHT, CHECK,
@@ -46,6 +48,21 @@ export const sizes = {
   ROMEO,
 };
 
+// ....................colors....................
+
+export const colors = {
+  BRAND,
+  ACCENT_ALPHA,
+  ACCENT_BRAVO,
+  ACCENT_CHARLIE,
+  NEUTRAL,
+  WHITE,
+  BLACK,
+  SUCCESS,
+  WARNING,
+  DANGER,
+};
+
 // ....................shadows....................
 
 export const shadows = {
@@ -59,18 +76,6 @@ export const shadows = {
   OFFSET_CHARLIE,
   OFFSET_DELTA,
   OFFSET_ECHO,
-};
-
-// ....................colors....................
-
-export const colors = {
-  SUCCESS,
-  DANGER,
-  WARNING,
-  NEUTRAL,
-  PRIMARY,
-  ACCENT,
-  WHITE,
 };
 
 // ....................variants....................

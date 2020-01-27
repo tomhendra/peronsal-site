@@ -13,11 +13,12 @@ import Card from '../components/Card';
 import Icon from '../components/Icon';
 import TechStack from '../components/TechStack';
 
-import { variants, icons, sizes } from '../assets/styles/constants';
+import { colors, icons, sizes, variants } from '../assets/styles/constants';
 
-const { BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL, INDIA } = sizes;
-const { PRIMARY, SECONDARY, TERTIARY } = variants;
+const { ACCENT_ALPHA } = colors;
 const { BRIEFCASE, CODE, PEN_TOOL } = icons;
+const { CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL, INDIA } = sizes;
+const { PRIMARY, SECONDARY, TERTIARY } = variants;
 
 function IndexPage() {
   return (
@@ -82,23 +83,23 @@ function IndexPage() {
             spacingBottom={[HOTEL, HOTEL, 0, 0]}
           >
             <Card
-              padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
-              paddingTop={[HOTEL, GOLF, HOTEL, HOTEL]}
+              padding={[GOLF, GOLF, FOXTROT, GOLF]}
+              paddingTop={[HOTEL, GOLF, HOTEL, INDIA]}
+              paddingBottom={[HOTEL, GOLF, HOTEL, HOTEL]}
             >
               <Icon
                 type={CODE}
-                color={PRIMARY}
+                color={ACCENT_ALPHA}
                 size={INDIA}
-                spacing={BRAVO}
-                alt="Icon symbolising code."
+                spacingBottom={DELTA}
               />
-              <Heading as="h2" size={BRAVO} spacingBottom={ECHO}>
+              <Heading as="h2" size={DELTA} spacingBottom={FOXTROT}>
                 Code
               </Heading>
-              <Text noMargin size={BRAVO}>
+              <Text noMargin>
                 My skill set is built upon the rich & diverse JavaScript
                 ecosystem. My natural close attention to detail enhances my
-                ability to write clean, maintainable code.
+                ability to write clean, well organised code.
               </Text>
             </Card>
           </Item>
@@ -108,45 +109,45 @@ function IndexPage() {
             spacingBottom={[HOTEL, HOTEL, 0, 0]}
           >
             <Card
-              padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
-              paddingTop={[HOTEL, GOLF, HOTEL, HOTEL]}
+              padding={[GOLF, GOLF, FOXTROT, GOLF]}
+              paddingTop={[HOTEL, GOLF, HOTEL, INDIA]}
+              paddingBottom={[HOTEL, GOLF, HOTEL, HOTEL]}
             >
               <Icon
                 type={PEN_TOOL}
-                color={PRIMARY}
+                color={ACCENT_ALPHA}
                 size={INDIA}
-                spacing={BRAVO}
-                alt="Icon symbolising design."
+                spacingBottom={DELTA}
               />
-              <Heading as="h2" size={BRAVO} spacingBottom={ECHO}>
+              <Heading as="h2" size={DELTA} spacingBottom={FOXTROT}>
                 Design
               </Heading>
-              <Text noMargin size={BRAVO}>
+              <Text noMargin>
                 I have a keen eye for design and know my way around industry
-                standard tools like Sketch & Adobe Creative Suite. I am a
-                developer who appreciates design.
+                standard tools like Sketch & the Adobe Creative Suite. I am a
+                coder who appreciates the designer things in life.
               </Text>
             </Card>
           </Item>
           <Item gridStart={[1, 3, 9, 9]} gridEnd={[9, 7, 13, 13]}>
             <Card
-              padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
-              paddingTop={[HOTEL, GOLF, HOTEL, HOTEL]}
+              padding={[GOLF, GOLF, FOXTROT, GOLF]}
+              paddingTop={[HOTEL, GOLF, HOTEL, INDIA]}
+              paddingBottom={[HOTEL, GOLF, HOTEL, HOTEL]}
             >
               <Icon
                 type={BRIEFCASE}
-                color={PRIMARY}
+                color={ACCENT_ALPHA}
                 size={INDIA}
-                spacing={BRAVO}
-                alt="Icon symbolising business."
+                spacingBottom={DELTA}
               />
-              <Heading as="h2" size={BRAVO} spacingBottom={ECHO}>
+              <Heading as="h2" size={DELTA} spacingBottom={FOXTROT}>
                 Business
               </Heading>
-              <Text noMargin size={BRAVO}>
-                I was a procurement professional before a web developer,
-                instilling transferable business acumen, commercial awareness
-                and solid communication skills.
+              <Text noMargin>
+                I was a procurement professional before becoming a web
+                developer, instilling transferable skills like business acumen,
+                commercial awareness and project management prowess.
               </Text>
             </Card>
           </Item>
@@ -164,9 +165,9 @@ function IndexPage() {
               scalable and lightning fast.
             </Text>
             <Text noMargin>
-              I enjoy a modern techstack based around React JS, and am
-              continuously adding skills to my toolbox. A developer never stops
-              learning, a challenge I embrace wholeheartedly.
+              I enjoy a modern tech stack based around React.js, and am
+              continuously adding skills to my toolbox. A committed developer
+              never stops learning, a challenge I embrace wholeheartedly.
             </Text>
           </Item>
           <Item

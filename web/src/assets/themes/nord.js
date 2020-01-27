@@ -127,7 +127,11 @@ const primary = {
 const misc = {
   bodyBg: neutral.n900,
   bodyColor: neutral.n100,
-  brandColor: primary.p400,
+  brand: primary.p400,
+  accentAlpha: blue.b400,
+  accentBravo: lavender.l500,
+  accentCharlie: primary.p500,
+  accentNeutral: neutral.n300,
   shadowNeutral: neutral.n500,
   shadowPrimary: primary.p400,
   danger: red.r500,
@@ -298,9 +302,10 @@ export const borderWidth = {
   bravo: '2px',
   charlie: '3px',
   delta: '4px',
-  echo: '8px',
-  foxtrot: '10px',
-  golf: '12px',
+  echo: '5px',
+  foxtrot: '8px',
+  golf: '10px',
+  hotel: '12px',
 };
 
 // ....................layout....................
