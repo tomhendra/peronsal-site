@@ -242,6 +242,8 @@ export const fontStack = {
 
 export const fontWeight = {
   regular: '400',
+  medium: '500',
+  semiBold: '600',
   bold: '700',
 };
 
@@ -294,10 +296,11 @@ export const borderRadius = {
 export const borderWidth = {
   alpha: '1px',
   bravo: '2px',
-  charlie: '4px',
-  delta: '8px',
-  echo: '10px',
-  foxtrot: '12px',
+  charlie: '3px',
+  delta: '4px',
+  echo: '8px',
+  foxtrot: '10px',
+  golf: '12px',
 };
 
 // ....................layout....................

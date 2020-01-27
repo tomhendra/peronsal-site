@@ -11,16 +11,17 @@ const { ALPHA, BRAVO, CHARLIE } = sizes;
 
 // ....................styles....................
 
-function buttonStyles({ buttonStyle, buttonSize, bodyBg, theme }) {
+function buttonStyles({ buttonStyle, buttonSize, inheritBg, theme }) {
   const baseStyles = {
-    borderRadius: theme.borderRadius.charlie,
+    borderRadius: theme.borderRadius.bravo,
     borderStyle: 'solid',
-    borderWidth: theme.borderWidth.alpha,
+    borderWidth: theme.borderWidth.charlie,
     cursor: 'pointer',
-    fontWeight: 'bold',
-    letterSpacing: 0.8,
+    fontFamily: theme.fontStack.heading,
+    fontWeight: theme.fontWeight.medium,
     textAlign: 'center',
     textDecoration: 'none',
+    textTransform: 'uppercase',
     transition: `transform ${theme.transitions.default}`,
     width: '100%',
 
@@ -42,48 +43,47 @@ function buttonStyles({ buttonStyle, buttonSize, bodyBg, theme }) {
   const colorVariants = {
     [PRIMARY]: {
       backgroundColor: theme.colors.p400,
-      borderColor: theme.colors.p400,
-      color: theme.colors.n000,
+      borderColor: theme.colors.n300,
+      color: theme.colors.n100,
 
       '&:hover,:focus': {
         backgroundColor: theme.colors.p300,
-        borderColor: theme.colors.p300,
+        color: theme.colors.n000,
       },
     },
     [SECONDARY]: {
-      backgroundColor: !bodyBg ? 'inherit' : theme.colors.bodyBg,
-      borderColor: theme.colors.n500,
-      color: theme.colors.n200,
+      backgroundColor: !inheritBg ? theme.colors.white : 'inherit',
+      borderColor: theme.colors.n300,
+      color: theme.colors.n300,
 
       '&:hover,:focus': {
-        backgroundColor: theme.colors.n500,
-        color: theme.colors.n100,
+        backgroundColor: theme.colors.n600,
+        color: theme.colors.n200,
       },
     },
     [TERTIARY]: {
-      backgroundColor: !bodyBg ? 'inherit' : theme.colors.bodyBg,
-      borderColor: 'transparent',
-      color: theme.colors.n200,
+      backgroundColor: !inheritBg ? theme.colors.white : 'inherit',
+      borderColor: theme.colors.n600,
+      color: theme.colors.n400,
 
       '&:hover,:focus': {
-        backgroundColor: theme.colors.n500,
-        borderColor: theme.colors.n500,
-        color: theme.colors.n100,
+        backgroundColor: theme.colors.n800,
+        color: theme.colors.n300,
       },
     },
   };
 
   const sizeVariants = {
     [ALPHA]: {
-      fontSize: theme.typography.text.bravo.fontSize,
-      padding: `${theme.spacings.charlie} ${theme.spacings.delta}`,
+      fontSize: theme.typography.text.charlie.fontSize,
+      padding: `${theme.spacings.bravo} ${theme.spacings.delta}`,
     },
     [BRAVO]: {
-      fontSize: theme.typography.text.charlie.fontSize,
-      padding: `${theme.spacings.charlie} ${theme.spacings.delta}`,
+      fontSize: theme.typography.text.delta.fontSize,
+      padding: `${theme.spacings.charlie} ${theme.spacings.echo}`,
     },
     [CHARLIE]: {
-      fontSize: theme.typography.text.delta.fontSize,
+      fontSize: theme.typography.headings.alpha.fontSize,
       padding: `${theme.spacings.delta} ${theme.spacings.foxtrot}`,
     },
   };
@@ -115,7 +115,7 @@ function Button({
   internalLink,
   buttonStyle,
   buttonSize,
-  bodyBg,
+  inheritBg,
   ...rest
 }) {
   return internalLink ? (
@@ -125,7 +125,7 @@ function Button({
         {...rest}
         buttonStyle={buttonStyle}
         buttonSize={buttonSize}
-        bodyBg={bodyBg}
+        inheritBg={inheritBg}
       />
     </InternalLink>
   ) : externalLink ? (
@@ -136,7 +136,7 @@ function Button({
       href={externalLink}
       buttonStyle={buttonStyle}
       buttonSize={buttonSize}
-      bodyBg={bodyBg}
+      inheritBg={inheritBg}
     />
   ) : (
     // default return button if internalLink/externalLink props not provided,
@@ -145,7 +145,7 @@ function Button({
       {...rest}
       buttonStyle={buttonStyle}
       buttonSize={buttonSize}
-      bodyBg={bodyBg}
+      inheritBg={inheritBg}
     />
   );
 }
@@ -157,15 +157,15 @@ Button.protoTypes = {
   buttonSize: PropTypes.oneOf([ALPHA, BRAVO, CHARLIE]),
   externalLink: PropTypes.string,
   internalLink: PropTypes.string,
-  bodyBg: PropTypes.bool,
+  inheritBg: PropTypes.bool,
 };
 
 Button.defaultProps = {
   buttonStyle: SECONDARY,
-  buttonSize: BRAVO,
+  buttonSize: CHARLIE,
   externalLink: null,
   internalLink: null,
-  bodyBg: false,
+  inheritBg: false,
 };
 
 export default withTheme(Button);

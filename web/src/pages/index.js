@@ -43,7 +43,7 @@ function IndexPage() {
               <Button
                 internalLink="/projects/"
                 buttonStyle={SECONDARY}
-                buttonSize={BRAVO}
+                buttonSize={CHARLIE}
                 bodyBg
               >
                 Projects
@@ -51,7 +51,7 @@ function IndexPage() {
               <Button
                 internalLink="/contact/"
                 buttonStyle={PRIMARY}
-                buttonSize={BRAVO}
+                buttonSize={CHARLIE}
               >
                 Contact
               </Button>

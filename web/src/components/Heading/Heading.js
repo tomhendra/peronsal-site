@@ -21,7 +21,7 @@ const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL } = sizes;
 function styles({ noMargin, size, spacingBottom, theme }) {
   const baseStyles = {
     fontFamily: theme.fontStack.heading,
-    fontWeight: theme.fontWeight.bold,
+    fontWeight: theme.fontWeight.medium,
     marginBottom: !noMargin ? getSpacingValues(spacingBottom, theme) : 0,
   };
 
