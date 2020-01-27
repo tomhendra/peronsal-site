@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import {
   childrenPropType,
   variantPropType,
+  sizePropType,
 } from '../../utils/shared-prop-types';
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 
@@ -19,6 +20,8 @@ const { PRIMARY, SECONDARY, TERTIARY } = variants;
 // ....................styles....................
 
 function styles({
+  paddingTop,
+  paddingBottom,
   variant,
   centerContentVertically,
   fullViewportHeight,
@@ -30,8 +33,12 @@ function styles({
     flexDirection: 'column',
     justifyContent: centerContentVertically && 'center',
     minHeight: fullViewportHeight && '100vh',
-    paddingTop: !fullViewportHeight ? [theme.spacings.kilo] : 0,
-    paddingBottom: !fullViewportHeight ? [theme.spacings.kilo] : 0,
+    paddingTop: !paddingTop
+      ? [theme.spacings.kilo]
+      : theme.spacings[paddingTop],
+    paddingBottom: !paddingBottom
+      ? [theme.spacings.kilo]
+      : theme.spacings[paddingBottom],
     position: 'relative',
     width: '100vw',
     border: devMode && '1px dashed hsl(300, 100%, 50%)',
@@ -95,6 +102,8 @@ const Section = styled.section(styles);
 // ....................propTypes....................
 
 Section.propTypes = {
+  paddingTop: sizePropType,
+  paddingBottom: sizePropType,
   variant: variantPropType,
   centerContentVertically: PropTypes.bool,
   fullViewportHeight: PropTypes.bool,
@@ -103,6 +112,8 @@ Section.propTypes = {
 };
 
 Section.defaultProps = {
+  paddingTop: null,
+  paddingBottom: null,
   variant: SECONDARY,
   centerContentVertically: null,
   fullViewportHeight: null,

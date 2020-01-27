@@ -5,7 +5,6 @@ import Section from '../components/Section';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
 import Heading from '../components/Heading';
-import Subheading from '../components/Subheading';
 import ButtonGroup from '../components/ButtonGroup';
 import Button from '../components/Button';
 import Text from '../components/Text';
@@ -17,7 +16,7 @@ import { colors, icons, sizes, variants } from '../assets/styles/constants';
 
 const { ACCENT_ALPHA } = colors;
 const { BRIEFCASE, CODE, PEN_TOOL } = icons;
-const { CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL, INDIA } = sizes;
+const { CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL, INDIA, LIMA, MIKE } = sizes;
 const { PRIMARY, SECONDARY, TERTIARY } = variants;
 
 function IndexPage() {
@@ -34,10 +33,10 @@ function IndexPage() {
             <Heading as="h1" size={FOXTROT}>
               Hola, I am Tom.
             </Heading>
-            <Subheading as="h2" size={CHARLIE} noMargin>
+            <Text size={ECHO} noMargin>
               I’m a web developer from the UK living in Spain. I am passionate
               about code, design & food!
-            </Subheading>
+            </Text>
           </Item>
           <Item gridStart={[1, 2, 3, 4]} gridEnd={[9, 7, 8, 8]}>
             <ButtonGroup>
@@ -176,6 +175,48 @@ function IndexPage() {
             spacingTop={[GOLF, INDIA]}
           >
             <TechStack gridSize={DELTA} />
+          </Item>
+        </Grid>
+      </Section>
+      <Section
+        centerContentVertically
+        paddingTop={LIMA}
+        paddingBottom={MIKE}
+        variant={PRIMARY}
+      >
+        <Grid>
+          <Item
+            gridStart={[1, 2, 3, 4]}
+            gridEnd={[9, 9, 11, 9]}
+            spacingBottom={GOLF}
+          >
+            <Heading as="h2" size={ECHO}>
+              Where to go from here?
+            </Heading>
+            <Text size={ECHO} noMargin>
+              I’ve been building stuff! You can see what I have been up to on my
+              projects page. Or let’s connect if you have seen enough already
+              :-)
+            </Text>
+          </Item>
+          <Item gridStart={[1, 2, 3, 4]} gridEnd={[9, 7, 8, 8]}>
+            <ButtonGroup>
+              <Button
+                internalLink="/projects/"
+                buttonStyle={SECONDARY}
+                buttonSize={CHARLIE}
+                bodyBg
+              >
+                Projects
+              </Button>
+              <Button
+                internalLink="/contact/"
+                buttonStyle={PRIMARY}
+                buttonSize={CHARLIE}
+              >
+                Contact
+              </Button>
+            </ButtonGroup>
           </Item>
         </Grid>
       </Section>
