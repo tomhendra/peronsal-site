@@ -92,7 +92,7 @@ Text.propTypes = {
 Text.defaultProps = {
   as: 'p',
   noMargin: false,
-  size: CHARLIE,
+  size: DELTA,
   bold: false,
   italic: false,
   strike: false,

@@ -23,18 +23,18 @@ function styles({
   theme,
 }) {
   const baseStyles = {
-    border: devMode && '1px dashed hsl(300, 100%, 50%)',
-    '& > *': {
-      border: devMode && '1px dashed hsl(200, 100%, 50%)',
-    },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: centerContentVertically && 'center',
     minHeight: fullViewportHeight && '100vh',
-    paddingTop: !fullViewportHeight ? [('5rem', '6rem')] : 0,
-    paddingBottom: !fullViewportHeight ? [('5rem', '6rem')] : 0,
+    paddingTop: !fullViewportHeight ? [theme.spacings.kilo] : 0,
+    paddingBottom: !fullViewportHeight ? [theme.spacings.kilo] : 0,
     position: 'relative',
     width: '100vw',
+    border: devMode && '1px dashed hsl(300, 100%, 50%)',
+    '& > *': {
+      border: devMode && '1px dashed hsl(200, 100%, 50%)',
+    },
   };
   // Decision to move color logic here for consistency of text-based elements within
   // particular coloured section. Hoping this makes for a better DX.

@@ -193,7 +193,7 @@ export const typography = {
   },
   subHeadings: {
     alpha: {
-      fontSize: '1.7rem', // 17px
+      fontSize: '1.8rem', // 18px
       lineHeight: 1.5,
     },
     bravo: {
@@ -201,7 +201,7 @@ export const typography = {
       lineHeight: 1.5,
     },
     charlie: {
-      fontSize: '2.3rem', // 23px
+      fontSize: '2.4rem', // 24px
       lineHeight: 1.4,
     },
     delta: {
@@ -211,7 +211,7 @@ export const typography = {
   },
   text: {
     alpha: {
-      fontSize: '1rem', // 10px
+      fontSize: '1.1rem', // 11px
       lineHeight: 1.5,
     },
     bravo: {
@@ -219,15 +219,15 @@ export const typography = {
       lineHeight: 1.5,
     },
     charlie: {
-      fontSize: '1.6rem', // 16px
+      fontSize: '1.5rem', // 15px
       lineHeight: 1.5,
     },
     delta: {
-      fontSize: '1.8rem', // 18px
+      fontSize: '1.7rem', // 17px
       lineHeight: 1.5,
     },
     echo: {
-      fontSize: '2.4rem', // 24px
+      fontSize: '2.5rem', // 25px
       lineHeight: 1.5,
     },
   },

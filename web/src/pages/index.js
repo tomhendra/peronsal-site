@@ -15,7 +15,7 @@ import TechStack from '../components/TechStack';
 
 import { variants, icons, sizes } from '../assets/styles/constants';
 
-const { BRAVO, DELTA, ECHO, FOXTROT, GOLF, HOTEL, INDIA, LIMA } = sizes;
+const { BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL, INDIA } = sizes;
 const { PRIMARY, SECONDARY, TERTIARY } = variants;
 const { BRIEFCASE, CODE, PEN_TOOL } = icons;
 
@@ -23,26 +23,22 @@ function IndexPage() {
   return (
     <Layout>
       <SEO title="Web Developer" />
-      <Section variant={PRIMARY}>
-        <Grid withoutBottomSpacing>
+      <Section fullViewportHeight centerContentVertically variant={PRIMARY}>
+        <Grid>
           <Item
-            gridStart={[1, 2, 3, 2]}
-            gridEnd={[9, 9, 11, 10]}
-            spacingTop={[HOTEL, LIMA]}
+            gridStart={[1, 2, 3, 4]}
+            gridEnd={[9, 9, 11, 8]}
+            spacingBottom={GOLF}
           >
-            <Heading as="h1" size={HOTEL}>
-              I am Tom.
+            <Heading as="h1" size={FOXTROT}>
+              Hola, I am Tom.
             </Heading>
-            <Subheading as="h2" size={DELTA} noMargin>
+            <Subheading as="h2" size={CHARLIE} noMargin>
               I’m a web developer from the UK living in Spain. I am passionate
-              about coding, design & food!
+              about code, design & food!
             </Subheading>
           </Item>
-          <Item
-            gridStart={[1, 2, 3, 2]}
-            gridEnd={[9, 7, 8, 7]}
-            spacingTop={[HOTEL, GOLF]}
-          >
+          <Item gridStart={[1, 2, 3, 4]} gridEnd={[9, 7, 8, 8]}>
             <ButtonGroup>
               <Button
                 internalLink="/projects/"
@@ -64,25 +60,20 @@ function IndexPage() {
         </Grid>
       </Section>
       <Section variant={SECONDARY}>
-        <Grid withoutBottomSpacing>
-          <Item
-            gridStart={1}
-            gridEnd={[8, 6, 7, 7]}
-            spacingTop={[GOLF, INDIA]}
-            spacingBottom={[GOLF, HOTEL]}
-          >
-            <Heading as="h1" size={FOXTROT}>
-              About me.
+        <Grid>
+          <Item gridStart={1} gridEnd={[8, 6, 7, 6]} spacingBottom={HOTEL}>
+            <Heading as="h2" size={ECHO}>
+              About me
             </Heading>
             <Text>
-              I am at my happiest when crafting buttery smooth user interfaces.
-              I take pride in continuously learning new skills directly from the
-              experts who shape the modern web.
+              I am at my happiest when crafting buttery smooth web experiences.
+              I take pride in continuously learning new skills from the experts
+              who shape the modern web.
             </Text>
             <Text noMargin>
               When I am not in the land of code, I am either immersing myself in
-              the wonderful culture & cuisine of Salamanca or lifting heavy
-              things at the gym.
+              the wonderful culture & cuisine of Spain or lifting heavy things
+              at the gym.
             </Text>
           </Item>
           <Item
@@ -137,11 +128,7 @@ function IndexPage() {
               </Text>
             </Card>
           </Item>
-          <Item
-            gridStart={[1, 3, 9, 9]}
-            gridEnd={[9, 7, 13, 13]}
-            spacingBottom={[HOTEL, HOTEL, 0, 0]}
-          >
+          <Item gridStart={[1, 3, 9, 9]} gridEnd={[9, 7, 13, 13]}>
             <Card
               padding={[GOLF, GOLF, FOXTROT, FOXTROT]}
               paddingTop={[HOTEL, GOLF, HOTEL, HOTEL]}
@@ -167,7 +154,7 @@ function IndexPage() {
       </Section>
       <Section variant={TERTIARY}>
         <Grid>
-          <Item gridStart={1} gridEnd={[8, 6, 7, 7]} spacingTop={[GOLF, INDIA]}>
+          <Item gridStart={1} gridEnd={[8, 6, 7, 6]}>
             <Heading as="h1" size={FOXTROT}>
               My skills.
             </Heading>
