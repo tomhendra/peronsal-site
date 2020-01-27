@@ -3,15 +3,21 @@ import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
-import { withMediaQueries } from '../../../../assets/styles/style-helpers';
+import {
+  withMediaQueries,
+  getHeadingDeclarations,
+} from '../../../../assets/styles/style-helpers';
+
+import { sizes } from '../../../../assets/styles/constants';
+
+const { ALPHA } = sizes;
 
 // ....................styles....................
 
 const navStyles = ({ theme }) =>
   withMediaQueries(theme)({
-    label: 'navbar',
     alignItems: 'center',
-    display: ['none', 'flex', 'flex', 'flex'],
+    display: ['none', 'flex'],
 
     '& > :not(:last-of-type)': {
       marginRight: theme.spacings.golf,
@@ -19,17 +25,19 @@ const navStyles = ({ theme }) =>
   });
 
 const navLinkStyles = ({ theme }) => ({
-  label: 'NavLink',
   color: theme.colors.n400,
-  fontSize: theme.typography.text.charlie.fontSize,
-  letterSpacing: 1,
-  textDecoration: 'none',
+  fontFamily: theme.fontStack.heading,
+  fontWeight: theme.fontWeight.regular,
+  ...getHeadingDeclarations(ALPHA, theme),
   position: 'relative',
-
+  textDecoration: 'none',
+  textTransform: 'uppercase',
+  // highlight of active page by text colour
   '&.currentPage,:hover': {
-    color: theme.colors.n000,
+    color: theme.colors.n100,
   },
-
+  // highlight of active page by underline
+  /*
   '&.currentPage': {
     '&::after': {
       backgroundColor: theme.colors.p400,
@@ -42,6 +50,7 @@ const navLinkStyles = ({ theme }) => ({
       width: '100%',
     },
   },
+  */
 });
 
 // ....................component....................

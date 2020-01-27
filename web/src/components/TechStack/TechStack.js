@@ -34,9 +34,9 @@ const TechStackGrid = styled.div(({ gridSize, theme }) => {
         'repeat(2, 1fr)',
         'repeat(3, 1fr)',
         'repeat(5, 1fr)',
-        'repeat(5, 1fr)',
+        'repeat(6, 1fr)',
       ],
-      gap: `${theme.spacings.foxtrot} ${theme.spacings.juliett}`,
+      gap: `${theme.spacings.india} ${theme.spacings.juliett}`,
     },
   };
 
