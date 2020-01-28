@@ -42,11 +42,11 @@ function containerStyles({
 }) {
   return withMediaQueries(theme)({
     height: theme.iconSizes[size],
-    padding: spacing && getSpacingValues(spacing, theme),
-    paddingTop: spacingTop && getSpacingValues(spacingTop, theme),
-    paddingRight: spacingRight && getSpacingValues(spacingRight, theme),
-    paddingBottom: spacingBottom && getSpacingValues(spacingBottom, theme),
-    paddingLeft: spacingBottom && getSpacingValues(spacingLeft, theme),
+    margin: spacing && getSpacingValues(spacing, theme),
+    marginTop: spacingTop && getSpacingValues(spacingTop, theme),
+    marginRight: spacingRight && getSpacingValues(spacingRight, theme),
+    marginBottom: spacingBottom && getSpacingValues(spacingBottom, theme),
+    marginLeft: spacingBottom && getSpacingValues(spacingLeft, theme),
   });
 }
 
