@@ -10,7 +10,7 @@ import { withMediaQueries } from '../../../../assets/styles/style-helpers';
 import { colors, sizes } from '../../../../assets/styles/constants';
 
 const { NEUTRAL } = colors;
-const { BRAVO, FOXTROT } = sizes;
+const { BRAVO, ECHO } = sizes;
 
 // ....................styles....................
 
@@ -42,7 +42,7 @@ function Copyright() {
   return (
     // prettier-ignore
     <CopyrightContainer>
-      <Logo color={NEUTRAL} size={FOXTROT} spacingRight={BRAVO} />
+      <Logo color={NEUTRAL} size={ECHO} spacingRight={BRAVO} />
       <CopyrightElement>
         {siteMetadata.author}
         {' '}
