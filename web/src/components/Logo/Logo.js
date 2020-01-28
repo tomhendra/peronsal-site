@@ -1,67 +1,98 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
-import PropTypes from 'prop-types';
 
-import { colors, sizes } from '../../../../assets/styles/constants';
+import { colorPropType, sizePropType } from '../../utils/shared-prop-types';
 
-const { NEUTRAL, PRIMARY } = colors;
+import {
+  getSpacingValues,
+  withMediaQueries,
+} from '../../assets/styles/style-helpers';
+
+import { colors, sizes } from '../../assets/styles/constants';
+
 const {
-  ALPHA,
-  BRAVO,
-  CHARLIE,
-  DELTA,
-  ECHO,
-  FOXTROT,
-  GOLF,
-  HOTEL,
-  INDIA,
-  JULIETT,
-  KILO,
-} = sizes;
+  BRAND,
+  ACCENT_ALPHA,
+  ACCENT_BRAVO,
+  ACCENT_CHARLIE,
+  NEUTRAL,
+  WHITE,
+  BLACK,
+} = colors;
+
+const { DELTA } = sizes;
 
 // ....................styles....................
 
-function styles({ color, theme }) {
-  const colorStyles = {
-    [NEUTRAL]: {
-      svg: {
-        fill: theme.colors.n000,
-        '&:hover': {
-          fill: theme.colors.n300,
-        },
-      },
-    },
-    [PRIMARY]: {
-      svg: {
-        fill: theme.colors.p400,
-        '&:hover': {
-          fill: theme.colors.p500,
-        },
-      },
-    },
-  };
-
-  return {
-    ...colorStyles[color],
-  };
+function containerStyles({
+  size,
+  spacing,
+  spacingTop,
+  spacingRight,
+  spacingBottom,
+  spacingLeft,
+  theme,
+}) {
+  return withMediaQueries(theme)({
+    height: theme.iconSizes[size],
+    padding: spacing && getSpacingValues(spacing, theme),
+    paddingTop: spacingTop && getSpacingValues(spacingTop, theme),
+    paddingRight: spacingRight && getSpacingValues(spacingRight, theme),
+    paddingBottom: spacingBottom && getSpacingValues(spacingBottom, theme),
+    paddingLeft: spacingBottom && getSpacingValues(spacingLeft, theme),
+  });
 }
+
+function getLogoColor(color, theme) {
+  const colorOptions = {
+    [BRAND]: theme.colors.brand,
+    [ACCENT_ALPHA]: theme.colors.accentAlpha,
+    [ACCENT_BRAVO]: theme.colors.accentBravo,
+    [ACCENT_CHARLIE]: theme.colors.accentCharlie,
+    [NEUTRAL]: theme.colors.accentNeutral,
+    [WHITE]: theme.colors.white,
+    [BLACK]: theme.colors.black,
+  };
+  return colorOptions[color];
+}
+
+const getLogoSize = (size, theme) => theme.iconSizes[size];
 
 // ....................component....................
 
-const LogoContainer = styled.div(styles);
-function Logo({ color, size, theme }) {
+const LogoContainer = styled.div(containerStyles);
+
+function Logo({
+  color,
+  size,
+  spacing,
+  spacingTop,
+  spacingRight,
+  spacingBottom,
+  spacingLeft,
+  theme,
+}) {
+  const LogoColor = getLogoColor(color, theme);
+  const LogoSize = getLogoSize(size, theme);
+
   return (
     <LogoContainer
-      color={color}
+      size={size}
+      spacing={spacing}
+      spacingTop={spacingTop}
+      spacingRight={spacingRight}
+      spacingBottom={spacingBottom}
+      spacingLeft={spacingLeft}
       role="img"
       aria-label="SVG image of a robot used as the brand logo for Tom Hendra, Web
         Developer."
     >
       <svg
         viewBox="0 0 60 68"
-        height={theme.iconSizes[size]}
         xmlns="http://www.w3.org/2000/svg"
+        height={LogoSize}
+        fill={LogoColor}
         fillRule="evenodd"
         clipRule="evenodd"
         strokeLinejoin="round"
@@ -79,25 +110,23 @@ function Logo({ color, size, theme }) {
 // ....................propTypes....................
 
 Logo.propTypes = {
-  color: PropTypes.oneOf([NEUTRAL, PRIMARY]),
-  size: PropTypes.oneOf([
-    ALPHA,
-    BRAVO,
-    CHARLIE,
-    DELTA,
-    ECHO,
-    FOXTROT,
-    GOLF,
-    HOTEL,
-    INDIA,
-    JULIETT,
-    KILO,
-  ]),
+  color: colorPropType,
+  size: sizePropType,
+  spacing: sizePropType,
+  spacingTop: sizePropType,
+  spacingRight: sizePropType,
+  spacingBottom: sizePropType,
+  spacingLeft: sizePropType,
 };
 
 Logo.defaultProps = {
-  color: PRIMARY,
+  color: BRAND,
   size: DELTA,
+  spacing: null,
+  spacingTop: null,
+  spacingRight: null,
+  spacingBottom: null,
+  spacingLeft: null,
 };
 
 export default withTheme(Logo);

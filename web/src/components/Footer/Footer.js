@@ -6,50 +6,75 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
 
 import Copyright from './components/Copyright';
 import Social from './components/Social';
-import Switch from './components/Switch';
 
 // ....................styles....................
 
 const footerStyles = ({ theme }) =>
   withMediaQueries(theme)({
-    label: 'footer',
-    alignItems: 'center',
-    backgroundColor: theme.colors.bodyBg,
-    borderTop: `${theme.borderWidth.alpha} solid ${theme.colors.n600}`,
+    backgroundColor: theme.colors.n700,
     color: theme.colors.n400,
-    display: 'flex',
-    height: ['5rem', '6rem'],
-    padding: ['0 2rem', '0 4rem'],
+    paddingTop: theme.spacings.india,
+    paddingBottom: theme.spacings.india,
     width: '100vw',
     zIndex: theme.zIndex.footer,
   });
 
 const containerStyles = ({ theme }) =>
   withMediaQueries(theme)({
-    alignItems: 'center',
     display: 'flex',
-    justifyContent: ['center', 'space-between'],
+    flexDirection: 'column',
     margin: '0 auto',
-    maxWidth: [...theme.breakpoints],
+    maxWidth: [
+      theme.grid.alpha.maxWidth,
+      theme.grid.bravo.maxWidth,
+      theme.grid.charlie.maxWidth,
+      theme.grid.delta.maxWidth,
+    ],
     width: '100%',
-
-    '& > *': {
-      minWidth: '12rem',
-    },
   });
+
+const dividerStyles = ({ theme }) => ({
+  backgroundColor: theme.colors.n500,
+  height: theme.borderWidth.delta,
+  marginBottom: theme.spacings.echo,
+});
+
+const linkContainerStyles = {
+  display: 'flex',
+  justifyContent: 'space-between',
+};
 
 // ....................component....................
 
 const FooterElement = styled.footer(footerStyles);
 const FooterContainer = styled.div(containerStyles);
+const FooterDivider = styled.div(dividerStyles);
+const FooterLinksContainer = styled.div(linkContainerStyles);
 
 function Footer() {
   return (
     <FooterElement>
       <FooterContainer>
         <Copyright />
-        <Social />
-        <Switch />
+        <FooterDivider />
+        <FooterLinksContainer>
+          <Social />
+          {/* Footer nav goes here */}
+          <ul
+            css={{
+              display: 'flex',
+              listStyle: 'none',
+              textTransform: 'uppercase',
+              '& > :not(:last-of-type)': { marginRight: '42px' },
+            }}
+          >
+            <li>placeholder 1</li>
+            <li>placeholder 2</li>
+            <li>placeholder 3</li>
+            <li>placeholder 4</li>
+            <li>placeholder 5</li>
+          </ul>
+        </FooterLinksContainer>
       </FooterContainer>
     </FooterElement>
   );

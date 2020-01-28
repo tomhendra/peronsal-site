@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { withTheme } from 'emotion-theming';
 
-import Logo from './components/Logo';
+import Logo from '../Logo';
 import Navbar from './components/Navbar';
 import MobileNav from './components/MobileNav';
 

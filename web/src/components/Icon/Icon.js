@@ -32,6 +32,7 @@ const { CODE } = icons;
 // ....................styles....................
 
 function containerStyles({
+  size,
   spacing,
   spacingTop,
   spacingRight,
@@ -39,19 +40,17 @@ function containerStyles({
   spacingLeft,
   theme,
 }) {
-  const spacingStyles = {
+  return withMediaQueries(theme)({
+    height: theme.iconSizes[size],
     padding: spacing && getSpacingValues(spacing, theme),
     paddingTop: spacingTop && getSpacingValues(spacingTop, theme),
     paddingRight: spacingRight && getSpacingValues(spacingRight, theme),
     paddingBottom: spacingBottom && getSpacingValues(spacingBottom, theme),
     paddingLeft: spacingBottom && getSpacingValues(spacingLeft, theme),
-  };
-  return withMediaQueries(theme)({
-    ...spacingStyles,
   });
 }
 
-function colorStyles(color, theme) {
+function getIconColor(color, theme) {
   const colorOptions = {
     [BRAND]: theme.colors.brand,
     [ACCENT_ALPHA]: theme.colors.accentAlpha,
@@ -64,7 +63,7 @@ function colorStyles(color, theme) {
   return colorOptions[color];
 }
 
-const sizeStyles = (size, theme) => theme.iconSizes[size];
+const getIconSize = (size, theme) => theme.iconSizes[size];
 
 // ....................component....................
 
@@ -73,20 +72,20 @@ const IconContainer = styled.div(containerStyles);
 function Icon({
   color,
   size,
+  type,
   spacing,
   spacingTop,
   spacingRight,
   spacingBottom,
   spacingLeft,
-  type,
   theme,
-  ...rest
 }) {
   const IconElement = featherIcons[type];
-  const IconColor = colorStyles(color, theme);
-  const IconSize = sizeStyles(size, theme);
+  const IconColor = getIconColor(color, theme);
+  const IconSize = getIconSize(size, theme);
   return (
     <IconContainer
+      size={size}
       spacing={spacing}
       spacingTop={spacingTop}
       spacingRight={spacingRight}
@@ -95,7 +94,7 @@ function Icon({
       role="img"
       aria-label={`An icon or logo SVG image depicting ${type}.`}
     >
-      <IconElement {...rest} color={IconColor} size={IconSize} />
+      <IconElement color={IconColor} size={IconSize} />
     </IconContainer>
   );
 }
