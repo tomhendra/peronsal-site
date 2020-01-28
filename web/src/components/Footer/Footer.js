@@ -6,6 +6,7 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
 
 import Copyright from './components/Copyright';
 import Social from './components/Social';
+import Navbar from './components/Navbar';
 
 // ....................styles....................
 
@@ -60,20 +61,7 @@ function Footer() {
         <FooterLinksContainer>
           <Social />
           {/* Footer nav goes here */}
-          <ul
-            css={{
-              display: 'flex',
-              listStyle: 'none',
-              textTransform: 'uppercase',
-              '& > :not(:last-of-type)': { marginRight: '42px' },
-            }}
-          >
-            <li>placeholder 1</li>
-            <li>placeholder 2</li>
-            <li>placeholder 3</li>
-            <li>placeholder 4</li>
-            <li>placeholder 5</li>
-          </ul>
+          <Navbar />
         </FooterLinksContainer>
       </FooterContainer>
     </FooterElement>

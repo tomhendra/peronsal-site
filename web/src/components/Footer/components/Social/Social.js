@@ -56,7 +56,7 @@ function Social() {
         href="https://www.linkedin.com/in/tom-hendra/"
         target="_blank"
         // cheeky little override to align LinkedIn logo at baseline of text
-        css={{ alignItems: 'flex-start' }}
+        // css={{ alignItems: 'flex-start' }}
       >
         <Icon
           type={LINKEDIN}
