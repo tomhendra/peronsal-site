@@ -181,7 +181,7 @@ function IndexPage() {
             </Text>
           </Item>
           <Item
-            gridStart={[2, 1, 1, 1]}
+            gridStart={[1, 1, 1, 1]}
             gridEnd={[9, 13, 13, 13]}
             spacingTop={[GOLF, INDIA]}
           >

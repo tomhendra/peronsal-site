@@ -33,10 +33,13 @@ const TechStackGrid = styled.div(({ gridSize, theme }) => {
       gridTemplateColumns: [
         'repeat(3, 1fr)',
         'repeat(4, 1fr)',
-        'repeat(5, 1fr)',
+        'repeat(4, 1fr)',
         'repeat(6, 1fr)',
       ],
-      gap: `${theme.spacings.india} ${theme.spacings.juliett}`,
+      gap: [
+        `${theme.spacings.golf} ${theme.spacings.foxtrot}`,
+        `${theme.spacings.india} ${theme.spacings.hotel}`,
+      ],
     },
   };
 
@@ -96,7 +99,7 @@ function TechStack({ gridSize, stack }) {
   // verify which size image to use from useTechStack() based on value of gridSize
   // moved here for better performance over being inside map() below
   // as to not check the value of gridSize on every iteration!
-  const logoSize = gridSize === ALPHA ? 'logoMedium' : 'logoLarge';
+  const logoSize = gridSize === ALPHA ? 'logoSmall' : 'logoLarge';
 
   return (
     <TechStackGrid gridSize={gridSize}>
