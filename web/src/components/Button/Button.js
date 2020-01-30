@@ -22,20 +22,11 @@ function buttonStyles({ buttonStyle, buttonSize, inheritBg, theme }) {
     cursor: 'pointer',
     fontFamily: theme.fontStack.heading,
     fontWeight: theme.fontWeight.medium,
+    flexGrow: 1,
     textAlign: 'center',
     textDecoration: 'none',
     textTransform: 'uppercase',
     transition: `transform ${theme.transitions.default}`,
-    // width: '100%',
-
-    '&:not(:first-of-type)': {
-      marginLeft: [
-        theme.grid.alpha.gutter,
-        theme.grid.bravo.gutter,
-        theme.grid.charlie.gutter,
-        theme.grid.delta.gutter,
-      ],
-    },
 
     '&:hover': {
       transform: 'scale(1.05)',

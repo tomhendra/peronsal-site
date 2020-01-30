@@ -8,14 +8,14 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
 const styles = ({ theme }) =>
   withMediaQueries(theme)({
     display: 'flex',
-    justifyContent: 'space-between',
-    position: 'relative',
-    // flexDirection: ['column', 'row'],
-    width: '100%',
 
     '& > *:not(:last-of-type)': {
-      marginRight: [0, theme.spacings.delta],
-      marginBottom: [theme.spacings.echo, 0],
+      marginRight: [
+        theme.grid.alpha.gutter,
+        theme.grid.bravo.gutter,
+        theme.grid.charlie.gutter,
+        theme.grid.delta.gutter,
+      ],
     },
   });
 

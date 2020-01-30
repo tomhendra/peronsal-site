@@ -16,7 +16,18 @@ import { colors, icons, sizes, variants } from '../assets/styles/constants';
 
 const { ACCENT_ALPHA } = colors;
 const { BRIEFCASE, CODE, PEN_TOOL } = icons;
-const { CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL, INDIA, LIMA, MIKE } = sizes;
+const {
+  CHARLIE,
+  DELTA,
+  ECHO,
+  FOXTROT,
+  GOLF,
+  HOTEL,
+  INDIA,
+  JULIETT,
+  LIMA,
+  MIKE,
+} = sizes;
 const { PRIMARY, SECONDARY, TERTIARY } = variants;
 
 function IndexPage() {
@@ -180,8 +191,8 @@ function IndexPage() {
       </Section>
       <Section
         centerContentVertically
-        paddingTop={LIMA}
-        paddingBottom={MIKE}
+        paddingTop={[JULIETT, LIMA]}
+        paddingBottom={[JULIETT, LIMA, LIMA, MIKE]}
         variant={PRIMARY}
       >
         <Grid>

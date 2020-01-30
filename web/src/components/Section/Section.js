@@ -7,7 +7,10 @@ import {
   variantPropType,
   sizePropType,
 } from '../../utils/shared-prop-types';
-import { withMediaQueries } from '../../assets/styles/style-helpers';
+import {
+  getSpacingValues,
+  withMediaQueries,
+} from '../../assets/styles/style-helpers';
 
 import Heading from '../Heading';
 import Subheading from '../Subheading';
@@ -45,7 +48,7 @@ function styles({
           theme.spacings.juliett,
           theme.spacings.kilo,
         ]
-      : theme.spacings[paddingTop],
+      : getSpacingValues(paddingTop, theme),
     paddingBottom: !paddingBottom
       ? [
           theme.spacings.india,
@@ -53,7 +56,7 @@ function styles({
           theme.spacings.juliett,
           theme.spacings.kilo,
         ]
-      : theme.spacings[paddingBottom],
+      : getSpacingValues(paddingBottom, theme),
     paddingLeft: [
       theme.grid.alpha.gutter,
       theme.grid.bravo.gutter,
