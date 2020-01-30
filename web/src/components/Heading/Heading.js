@@ -24,11 +24,11 @@ function styles({ noMargin, size, spacingBottom, theme }) {
 
   const mobileSizeMap = {
     [ALPHA]: ALPHA,
-    [BRAVO]: BRAVO,
+    [BRAVO]: ALPHA,
     [CHARLIE]: BRAVO,
-    [DELTA]: CHARLIE,
-    [ECHO]: DELTA,
-    [FOXTROT]: ECHO,
+    [DELTA]: CHARLIE, // tested (card heading)
+    [ECHO]: DELTA, // tested (section heading)
+    [FOXTROT]: ECHO, // tested (hero heading)
     [GOLF]: FOXTROT,
     [HOTEL]: GOLF,
   };

@@ -65,6 +65,7 @@ function styles({
     borderWidth: theme.borderWidth.echo,
     display: 'flex',
     flexWrap: 'no-wrap',
+    height: '100%',
     zIndex: theme.zIndex.card,
   };
 

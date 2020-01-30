@@ -31,23 +31,54 @@ function styles({
   const baseStyles = {
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'center',
     justifyContent: centerContentVertically && 'center',
     minHeight: fullViewportHeight && '100vh',
+    // padding top and bottom standard values unless specified.
+    // When using child elements within sections, spacing only needs to be added
+    // to the bottom of each child element, except for the last child in each section,
+    // which should have no bottom spacing applied to it.
     paddingTop: !paddingTop
-      ? [theme.spacings.kilo]
+      ? [
+          theme.spacings.india,
+          theme.spacings.juliett,
+          theme.spacings.juliett,
+          theme.spacings.kilo,
+        ]
       : theme.spacings[paddingTop],
     paddingBottom: !paddingBottom
-      ? [theme.spacings.kilo]
+      ? [
+          theme.spacings.india,
+          theme.spacings.juliett,
+          theme.spacings.juliett,
+          theme.spacings.kilo,
+        ]
       : theme.spacings[paddingBottom],
+    paddingLeft: [
+      theme.grid.alpha.gutter,
+      theme.grid.bravo.gutter,
+      theme.grid.charlie.gutter,
+      theme.grid.delta.gutter,
+    ],
+    paddingRight: [
+      theme.grid.alpha.gutter,
+      theme.grid.bravo.gutter,
+      theme.grid.charlie.gutter,
+      theme.grid.delta.gutter,
+    ],
+    // position relative to allow for absolutely positioned background components
     position: 'relative',
     width: '100vw',
+    // in case of not using Firefox devTools we have our own "devMode" :-)
     border: devMode && '1px dashed hsl(300, 100%, 50%)',
     '& > *': {
       border: devMode && '1px dashed hsl(200, 100%, 50%)',
     },
   };
   // Decision to move color logic here for consistency of text-based elements within
-  // particular coloured section. Hoping this makes for a better DX.
+  // particular coloured section. Hoping this makes for a better DX and eliminates
+  // colour usage errors. Just use text elements within sections and forget about setting
+  // colours on them. Adjust here instead. Emotion JS is amazing! :-)
   const colorVariants = {
     [PRIMARY]: {
       backgroundColor: theme.colors.white,

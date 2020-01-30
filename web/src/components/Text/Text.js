@@ -27,11 +27,11 @@ function styles({ as, bold, italic, strike, noMargin, size, theme }) {
   };
 
   const mobileSizeMap = {
-    [ALPHA]: BRAVO,
-    [BRAVO]: CHARLIE,
-    [CHARLIE]: CHARLIE,
-    [DELTA]: DELTA,
-    [ECHO]: DELTA,
+    [ALPHA]: ALPHA,
+    [BRAVO]: ALPHA,
+    [CHARLIE]: BRAVO, // used (footer links)
+    [DELTA]: CHARLIE, // used (body text)
+    [ECHO]: DELTA, // tested (hero text)
   };
   // array for facepaint
   const sizeConfig = [mobileSizeMap[size], size];

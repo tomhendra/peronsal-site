@@ -18,7 +18,11 @@ const styles = theme => {
 };
 */
 export function withMediaQueries(theme) {
-  return facepaint(theme.breakpoints.map(bp => `@media (min-width: ${bp})`));
+  return facepaint(
+    // fontSize: '62.5%' for html in css-reset is not respected for media queries
+    // https://drafts.csswg.org/mediaqueries/#units
+    theme.breakpoints.map(bp => `@media (min-width: ${bp * 0.625}rem)`),
+  );
 }
 
 // ....................spacings....................

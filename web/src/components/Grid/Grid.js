@@ -29,7 +29,6 @@ const styles = ({ devMode, withRowGaps, theme }) =>
       `repeat(${theme.grid.charlie.cols}, minmax(0, 1fr))`,
       `repeat(${theme.grid.delta.cols}, minmax(0, 1fr))`,
     ],
-    margin: '0 auto',
     maxWidth: [
       theme.grid.alpha.maxWidth,
       theme.grid.bravo.maxWidth,

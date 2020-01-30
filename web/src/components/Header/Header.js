@@ -25,7 +25,12 @@ const elementStyles = ({ theme }) =>
     backgroundColor: theme.colors.white,
     display: 'flex',
     height: ['5rem', '6rem'],
-    padding: ['0 2rem', '0 4rem'],
+    padding: [
+      `0 ${theme.grid.alpha.gutter}`,
+      `0 ${theme.grid.bravo.gutter}`,
+      `0 ${theme.grid.charlie.gutter}`,
+      `0 ${theme.grid.delta.gutter}`,
+    ],
     position: 'fixed',
     top: 0,
     width: '100vw',

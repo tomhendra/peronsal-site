@@ -8,8 +8,9 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
 const styles = ({ theme }) =>
   withMediaQueries(theme)({
     display: 'flex',
+    justifyContent: 'space-between',
     position: 'relative',
-    flexDirection: ['column', 'row'],
+    // flexDirection: ['column', 'row'],
     width: '100%',
 
     '& > *:not(:last-of-type)': {

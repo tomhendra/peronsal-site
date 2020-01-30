@@ -14,11 +14,10 @@ const { BRAVO, ECHO } = sizes;
 
 // ....................styles....................
 
-const containerStyles = ({ theme }) => ({
+const containerStyles = {
   alignItems: 'center',
   display: 'flex',
-  marginBottom: theme.spacings.charlie,
-});
+};
 
 const elementStyles = ({ theme }) =>
   withMediaQueries(theme)({

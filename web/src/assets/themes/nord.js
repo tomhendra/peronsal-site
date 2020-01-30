@@ -275,17 +275,17 @@ export const spacings = {
 };
 
 export const iconSizes = {
-  alpha: 12, // 12px
-  bravo: 14, // 14px
-  charlie: 16, // 16px
-  delta: 18, // 18px
-  echo: 20, // 20px
-  foxtrot: 24, // 24px
-  golf: 28, // 28px
-  hotel: 32, // 32px
-  india: 48, // 48px
-  juliett: 64, // 64px
-  kilo: 84, // 84px
+  alpha: '12px',
+  bravo: '14px',
+  charlie: '16px',
+  delta: '18px',
+  echo: '20px',
+  foxtrot: '24px',
+  golf: '28px',
+  hotel: '32px',
+  india: '48px',
+  juliett: '64px',
+  kilo: '84px',
 };
 
 export const borderRadius = {
@@ -309,22 +309,22 @@ export const borderWidth = {
 };
 
 // ....................layout....................
-
+// maxWidth for grid - limited by eye for when layout looks too wide
 export const grid = {
   alpha: {
     cols: 8,
-    maxWidth: '33.6rem', // 336px
-    gutter: spacings.charlie,
+    maxWidth: '44rem', // 440px
+    gutter: spacings.delta,
   },
   bravo: {
-    cols: 8,
-    maxWidth: '67.2rem', // 672px
+    cols: 12,
+    maxWidth: '69rem', // 690px
     gutter: spacings.delta,
   },
   charlie: {
     cols: 12,
-    maxWidth: '88rem', // 880px
-    gutter: spacings.delta,
+    maxWidth: '86rem', // 860px
+    gutter: spacings.echo,
   },
   delta: {
     cols: 12,
@@ -334,10 +334,12 @@ export const grid = {
 };
 
 export const breakpoints = [
-  '37.6rem', // 376px
-  '76.8rem', // 768px
-  '96rem', // 960px
-  '128rem', // 1280px
+  // values should be in rem, but numbers only so calculations can be made by Facepaint
+  // see withMediaQueries function in assets/styles/style-helpers.js
+  '58', // 580px mobile
+  '77', // 770px up to tablet (iPad / iPad mini)
+  '108', // 1080px up to large tablet (iPad pro)
+  '120', // 1200px notebook / desktop
 ];
 
 // ....................misc....................

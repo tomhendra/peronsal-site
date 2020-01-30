@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { variantPropType } from '../../utils/shared-prop-types';
 
 import { variants, sizes } from '../../assets/styles/constants';
+import { withMediaQueries } from '../../assets/styles/style-helpers';
 
 const { PRIMARY, SECONDARY, TERTIARY } = variants;
 const { ALPHA, BRAVO, CHARLIE } = sizes;
@@ -25,7 +26,16 @@ function buttonStyles({ buttonStyle, buttonSize, inheritBg, theme }) {
     textDecoration: 'none',
     textTransform: 'uppercase',
     transition: `transform ${theme.transitions.default}`,
-    width: '100%',
+    // width: '100%',
+
+    '&:not(:first-of-type)': {
+      marginLeft: [
+        theme.grid.alpha.gutter,
+        theme.grid.bravo.gutter,
+        theme.grid.charlie.gutter,
+        theme.grid.delta.gutter,
+      ],
+    },
 
     '&:hover': {
       transform: 'scale(1.05)',
@@ -93,11 +103,11 @@ function buttonStyles({ buttonStyle, buttonSize, inheritBg, theme }) {
   const colorConfig = colorVariants[buttonStyle];
   const sizeConfig = sizeVariants[buttonSize];
 
-  return {
+  return withMediaQueries(theme)({
     ...baseStyles,
     ...colorConfig,
     ...sizeConfig,
-  };
+  });
 }
 
 const linkStyles = {

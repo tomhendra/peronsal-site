@@ -28,11 +28,12 @@ const navStyles = ({ theme, open }) => ({
 
 const navLinkStyles = ({ theme }) => ({
   color: theme.colors.n400,
+  fontFamily: theme.fontStack.heading,
   fontSize: theme.typography.headings.delta.fontSize,
-  letterSpacing: 1,
   lineHeight: 0.85,
   textAlign: 'left',
   textDecoration: 'none',
+  textTransform: 'uppercase',
   transition: `all ${theme.transitions.default}`,
   position: 'relative',
 

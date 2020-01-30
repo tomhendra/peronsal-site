@@ -31,13 +31,20 @@ const containerStyles = ({ theme }) =>
       theme.grid.charlie.maxWidth,
       theme.grid.delta.maxWidth,
     ],
-    width: '100%',
+    padding: [
+      `0 ${theme.grid.alpha.gutter}`,
+      `0 ${theme.grid.bravo.gutter}`,
+      `0 ${theme.grid.charlie.gutter}`,
+      `0 ${theme.grid.delta.gutter}`,
+    ],
+    width: '100vw',
   });
 
 const dividerStyles = ({ theme }) => ({
   backgroundColor: theme.colors.n500,
   height: theme.borderWidth.delta,
   marginBottom: theme.spacings.echo,
+  marginTop: theme.spacings.charlie,
 });
 
 const linkContainerStyles = {
@@ -60,7 +67,6 @@ function Footer() {
         <FooterDivider />
         <FooterLinksContainer>
           <Social />
-          {/* Footer nav goes here */}
           <Navbar />
         </FooterLinksContainer>
       </FooterContainer>
