@@ -100,6 +100,7 @@ function IndexPage() {
               padding={[FOXTROT, HOTEL, GOLF, GOLF]}
               paddingTop={[HOTEL, INDIA, HOTEL, INDIA]}
               paddingBottom={[FOXTROT, HOTEL, GOLF, HOTEL]}
+              accentColor={ACCENT_ALPHA}
             >
               <Icon
                 type={CODE}
@@ -126,6 +127,7 @@ function IndexPage() {
               padding={[FOXTROT, HOTEL, GOLF, GOLF]}
               paddingTop={[HOTEL, INDIA, HOTEL, INDIA]}
               paddingBottom={[FOXTROT, HOTEL, GOLF, HOTEL]}
+              accentColor={ACCENT_ALPHA}
             >
               <Icon
                 type={PEN_TOOL}
@@ -148,6 +150,7 @@ function IndexPage() {
               padding={[FOXTROT, HOTEL, GOLF, GOLF]}
               paddingTop={[HOTEL, INDIA, HOTEL, INDIA]}
               paddingBottom={[FOXTROT, HOTEL, GOLF, HOTEL]}
+              accentColor={ACCENT_ALPHA}
             >
               <Icon
                 type={BRIEFCASE}

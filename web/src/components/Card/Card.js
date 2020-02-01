@@ -9,6 +9,7 @@ import {
   alignContentPropType,
   sizePropType,
   shadowPropType,
+  colorPropType,
 } from '../../utils/shared-prop-types';
 
 import {
@@ -26,7 +27,9 @@ import {
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
-import { shadows, sizes } from '../../assets/styles/style-enums';
+import { colors, shadows, sizes } from '../../assets/styles/style-enums';
+
+const { BRAND, ACCENT_ALPHA, ACCENT_BRAVO, ACCENT_CHARLIE } = colors;
 
 const {
   STANDARD_ALPHA,
@@ -45,6 +48,7 @@ const { FOXTROT } = sizes;
 // ....................styles....................
 
 function styles({
+  accentColor,
   shadow,
   padding,
   paddingTop,
@@ -59,7 +63,6 @@ function styles({
 }) {
   const baseStyles = {
     backgroundColor: theme.colors.white,
-    borderColor: theme.colors.b400,
     borderRadius: theme.borderRadius.charlie,
     borderStyle: 'solid',
     borderWidth: theme.borderWidth.echo,
@@ -84,6 +87,23 @@ function styles({
     alignContent,
   };
 
+  const accentStyles = {
+    [BRAND]: {
+      borderColor: theme.colors.brand,
+    },
+    [ACCENT_ALPHA]: {
+      borderColor: theme.colors.accentAlpha,
+    },
+    [ACCENT_BRAVO]: {
+      borderColor: theme.colors.accentBravo,
+    },
+    [ACCENT_CHARLIE]: {
+      borderColor: theme.colors.accentCharlie,
+    },
+  };
+
+  const accentConfig = accentStyles[accentColor];
+
   const shadowStyles = {
     [STANDARD_ALPHA]: shadowStandardAlpha(theme.colors.shadowNeutral),
     [STANDARD_BRAVO]: shadowStandardBravo(theme.colors.shadowNeutral),
@@ -103,6 +123,7 @@ function styles({
     ...baseStyles,
     ...paddingStyles,
     ...flexboxStyles,
+    ...accentConfig,
     ...shadowConfig,
   });
 }
@@ -114,6 +135,7 @@ const Card = styled.div(styles);
 // ....................propTypes....................
 
 Card.propTypes = {
+  accentColor: colorPropType,
   shadow: shadowPropType,
   padding: sizePropType,
   paddingTop: sizePropType,
@@ -128,6 +150,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
+  accentColor: ACCENT_BRAVO,
   shadow: STANDARD_DELTA,
   padding: FOXTROT,
   paddingTop: null,
