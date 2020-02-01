@@ -4,7 +4,7 @@ import { withTheme } from 'emotion-theming';
 
 import Text from '../../../Text';
 
-import { sizes } from '../../../../assets/styles/constants';
+import { sizes } from '../../../../assets/styles/style-enums';
 
 const { BRAVO } = sizes;
 

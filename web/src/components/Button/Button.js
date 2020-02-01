@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import { variantPropType } from '../../utils/shared-prop-types';
 
-import { variants, sizes } from '../../assets/styles/constants';
+import { variants, sizes } from '../../assets/styles/style-enums';
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 
 const { PRIMARY, SECONDARY, TERTIARY } = variants;

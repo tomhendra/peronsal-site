@@ -66,6 +66,8 @@ export function getSpacingValues(size, theme) {
 
 // ....................typography....................
 
+// should only be used for text elements, since line height is returned.
+// i.e. not for buttons or standalone links for navigation etc.
 function typographyHelper(type, size, theme) {
   const { typography } = theme;
   const typographyType = typography[type];

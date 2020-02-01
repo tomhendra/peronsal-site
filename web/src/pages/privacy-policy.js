@@ -9,7 +9,7 @@ import Item from '../components/Item';
 import Heading from '../components/Heading';
 import Text from '../components/Text';
 
-import { sizes } from '../assets/styles/constants';
+import { sizes } from '../assets/styles/style-enums';
 
 const { FOXTROT, GOLF, INDIA } = sizes;
 
@@ -20,8 +20,8 @@ function PrivacyPolicyPage() {
       <Section>
         <Grid>
           <Item
-            gridStart={1}
-            gridEnd={[9, 9, 11, 11]}
+            gridColStart={1}
+            gridColEnd={[9, 9, 11, 11]}
             spacingTop={[GOLF, INDIA]}
             spacingBottom={GOLF}
           >
@@ -39,7 +39,11 @@ function PrivacyPolicyPage() {
               our Privacy Policy, do not hesitate to contact us.
             </Text>
           </Item>
-          <Item gridStart={1} gridEnd={[9, 9, 11, 11]} spacingBottom={GOLF}>
+          <Item
+            gridColStart={1}
+            gridColEnd={[9, 9, 11, 11]}
+            spacingBottom={GOLF}
+          >
             <Heading as="h2">General Data Protection Regulation (GDPR)</Heading>
             <Text>We are a Data Controller of your information.</Text>
             <Text>
@@ -106,7 +110,11 @@ function PrivacyPolicyPage() {
               </li>
             </ul>
           </Item>
-          <Item gridStart={1} gridEnd={[9, 9, 11, 11]} spacingBottom={GOLF}>
+          <Item
+            gridColStart={1}
+            gridColEnd={[9, 9, 11, 11]}
+            spacingBottom={GOLF}
+          >
             <Heading as="h2">Log Files</Heading>
             <Text>
               tomhendra.dev follows a standard procedure of using log files.
@@ -121,7 +129,11 @@ function PrivacyPolicyPage() {
               movement on the website, and gathering demographic information.
             </Text>
           </Item>
-          <Item gridStart={1} gridEnd={[9, 9, 11, 11]} spacingBottom={GOLF}>
+          <Item
+            gridColStart={1}
+            gridColEnd={[9, 9, 11, 11]}
+            spacingBottom={GOLF}
+          >
             <Heading as="h2">Cookies and Web Beacons</Heading>
             <Text>
               Like any other website, tomhendra.dev uses &apos;cookies&apos;.
@@ -132,7 +144,11 @@ function PrivacyPolicyPage() {
               based on visitors&apos; browser type and/or other information.
             </Text>
           </Item>
-          <Item gridStart={1} gridEnd={[9, 9, 11, 11]} spacingBottom={GOLF}>
+          <Item
+            gridColStart={1}
+            gridColEnd={[9, 9, 11, 11]}
+            spacingBottom={GOLF}
+          >
             <Heading as="h2">Privacy Policies</Heading>
             <Text>
               You may consult this list to find the Privacy Policy for each of
@@ -153,7 +169,11 @@ function PrivacyPolicyPage() {
               cookies that are used by third-party advertisers.
             </Text>
           </Item>
-          <Item gridStart={1} gridEnd={[9, 9, 11, 11]} spacingBottom={GOLF}>
+          <Item
+            gridColStart={1}
+            gridColEnd={[9, 9, 11, 11]}
+            spacingBottom={GOLF}
+          >
             <Heading as="h2">Third Party Privacy Policies</Heading>
             <Text>
               tomhendra.dev&apos;s Privacy Policy does not apply to other
@@ -171,7 +191,11 @@ function PrivacyPolicyPage() {
               respective websites. What Are Cookies?
             </Text>
           </Item>
-          <Item gridStart={1} gridEnd={[9, 9, 11, 11]} spacingBottom={GOLF}>
+          <Item
+            gridColStart={1}
+            gridColEnd={[9, 9, 11, 11]}
+            spacingBottom={GOLF}
+          >
             <Heading as="h2">Children&apos;s Information</Heading>
             <Text>
               Another part of our priority is adding protection for children
@@ -188,7 +212,11 @@ function PrivacyPolicyPage() {
               records.
             </Text>
           </Item>
-          <Item gridStart={1} gridEnd={[9, 9, 11, 11]} spacingBottom={GOLF}>
+          <Item
+            gridColStart={1}
+            gridColEnd={[9, 9, 11, 11]}
+            spacingBottom={GOLF}
+          >
             <Heading as="h2">Online Privacy Policy Only</Heading>
             <Text>
               Our Privacy Policy created at GDPRPrivacyPolicy.net) applies only
@@ -203,7 +231,11 @@ function PrivacyPolicyPage() {
               &nbsp;
             </Text>
           </Item>
-          <Item gridStart={1} gridEnd={[9, 9, 11, 11]} spacingBottom={GOLF}>
+          <Item
+            gridColStart={1}
+            gridColEnd={[9, 9, 11, 11]}
+            spacingBottom={GOLF}
+          >
             <Heading as="h2">Consent</Heading>
             <Text>
               By using our website, you hereby consent to our Privacy Policy and

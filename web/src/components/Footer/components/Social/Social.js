@@ -4,13 +4,25 @@ import { withTheme } from 'emotion-theming';
 
 import Icon from '../../../Icon';
 
-import { colors, icons, sizes } from '../../../../assets/styles/constants';
+import { withMediaQueries } from '../../../../assets/styles/style-helpers';
+
+import { colors, icons, sizes } from '../../../../assets/styles/style-enums';
 
 const { NEUTRAL } = colors;
 const { GITHUB, LINKEDIN, TWITTER } = icons;
 const { BRAVO } = sizes;
 
 // ....................styles....................
+
+const containerStyles = ({ theme }) =>
+  withMediaQueries(theme)({
+    display: 'flex',
+    justifyContent: ['space-between', 'flex-end', 'flex-end', 'flex-start'],
+
+    '& > :not(:last-of-type)': {
+      marginRight: [theme.spacings.charlie, theme.spacings.echo],
+    },
+  });
 
 const linkStyles = ({ theme }) => ({
   display: 'flex',
@@ -24,14 +36,6 @@ const linkStyles = ({ theme }) => ({
   padding: `${theme.spacings.alpha} ${theme.spacings.charlie}`,
   textDecoration: 'none',
   textTransform: 'uppercase',
-});
-
-const containerStyles = ({ theme }) => ({
-  display: 'flex',
-
-  '& > :not(:last-of-type)': {
-    marginRight: theme.spacings.echo,
-  },
 });
 
 // ....................component....................

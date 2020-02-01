@@ -8,7 +8,7 @@ import Tooltip from '../Tooltip';
 
 import useTechStack from '../../hooks/useTechStack';
 
-import { sizes } from '../../assets/styles/constants';
+import { sizes } from '../../assets/styles/style-enums';
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 
 const { ALPHA, DELTA } = sizes;

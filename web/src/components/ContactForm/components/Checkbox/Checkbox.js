@@ -14,7 +14,7 @@ import {
   icons,
   positions,
   sizes,
-} from '../../../../assets/styles/constants';
+} from '../../../../assets/styles/style-enums';
 
 const { DANGER, WHITE } = colors;
 const { CHECK } = icons;

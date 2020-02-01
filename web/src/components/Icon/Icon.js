@@ -14,7 +14,7 @@ import {
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
-import { colors, sizes, icons } from '../../assets/styles/constants';
+import { colors, sizes, icons } from '../../assets/styles/style-enums';
 
 const {
   BRAND,

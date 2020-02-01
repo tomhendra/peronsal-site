@@ -6,7 +6,7 @@ import { withTheme } from 'emotion-theming';
 import Label from '../Label';
 import Tooltip from '../../../Tooltip';
 
-import { colors, positions } from '../../../../assets/styles/constants';
+import { colors, positions } from '../../../../assets/styles/style-enums';
 
 const { DANGER } = colors;
 const { START } = positions;

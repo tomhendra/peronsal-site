@@ -13,7 +13,7 @@ import BlogPostPreview from '../components/BlogPostPreview';
 
 import usePosts from '../hooks/usePosts';
 
-import { sizes } from '../assets/styles/constants';
+import { sizes } from '../assets/styles/style-enums';
 
 const { FOXTROT, GOLF, HOTEL, INDIA } = sizes;
 
@@ -26,8 +26,8 @@ function BlogPage() {
         <Graphic>Blog</Graphic>
         <Grid withoutBottomSpacing>
           <Item
-            gridStart={1}
-            gridEnd={[8, 6, 7, 7]}
+            gridColStart={1}
+            gridColEnd={[8, 6, 7, 7]}
             spacingTop={[GOLF, INDIA]}
             spacingBottom={[GOLF, HOTEL]}
           >
@@ -43,14 +43,14 @@ function BlogPage() {
         <Grid withRowGaps>
           {posts.length ? (
             posts.map(post => (
-              <Item gridSpan={[8, 4, 4, 4]} key={post.id}>
+              <Item gridColSpan={[8, 4, 4, 4]} key={post.id}>
                 <BlogPostPreview post={post} />
               </Item>
             ))
           ) : (
             <Item
-              gridStart={1}
-              gridEnd={8}
+              gridColStart={1}
+              gridColEnd={8}
               spacingTop={GOLF}
               spacingBottom={GOLF}
             >

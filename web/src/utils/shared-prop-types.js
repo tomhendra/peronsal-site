@@ -7,7 +7,7 @@ import {
   shadows,
   variants,
   icons,
-} from '../assets/styles/constants';
+} from '../assets/styles/style-enums';
 
 // positions propType
 const positionOptions = Object.values(positions);

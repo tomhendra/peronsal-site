@@ -12,7 +12,7 @@ import Heading from '../components/Heading';
 import Text from '../components/Text';
 import ProjectPreview from '../components/ProjectPreview';
 
-import { sizes } from '../assets/styles/constants';
+import { sizes } from '../assets/styles/style-enums';
 
 const { FOXTROT, GOLF, HOTEL, INDIA } = sizes;
 
@@ -25,8 +25,8 @@ function ProjectsPage() {
         <Graphic>Projects</Graphic>
         <Grid>
           <Item
-            gridStart={1}
-            gridEnd={[8, 6, 7, 7]}
+            gridColStart={1}
+            gridColEnd={[8, 6, 7, 7]}
             spacingTop={[GOLF, INDIA]}
             spacingBottom={[GOLF, HOTEL]}
           >
@@ -48,8 +48,8 @@ function ProjectsPage() {
           {projects.length ? (
             projects.map(project => (
               <Item
-                gridStart={1}
-                gridEnd={[9, 9, 11, 11]}
+                gridColStart={1}
+                gridColEnd={[9, 9, 11, 11]}
                 spacingBottom={[HOTEL, INDIA]}
                 key={project.id}
               >
@@ -58,8 +58,8 @@ function ProjectsPage() {
             ))
           ) : (
             <Item
-              gridStart={1}
-              gridEnd={8}
+              gridColStart={1}
+              gridColEnd={8}
               spacingTop={GOLF}
               spacingBottom={GOLF}
             >

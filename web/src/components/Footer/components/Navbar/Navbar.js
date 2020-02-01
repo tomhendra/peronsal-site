@@ -3,42 +3,39 @@ import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 
-import {
-  withMediaQueries,
-  getTextDeclarations,
-} from '../../../../assets/styles/style-helpers';
-
-import { sizes } from '../../../../assets/styles/constants';
-
-const { CHARLIE } = sizes;
+import { withMediaQueries } from '../../../../assets/styles/style-helpers';
 
 // ....................styles....................
 
 const navStyles = ({ theme }) =>
   withMediaQueries(theme)({
     display: 'flex',
-    alignItems: 'center',
+    justifyContent: ['space-between', 'flex-end'],
 
     '& > :not(:last-of-type)': {
-      marginRight: theme.spacings.foxtrot,
+      marginRight: [0, theme.spacings.delta, theme.spacings.echo],
     },
   });
 
-const navLinkStyles = ({ theme }) => ({
-  ...getTextDeclarations(CHARLIE, theme),
-  color: theme.colors.n400,
-  textDecoration: 'none',
-  textTransform: 'uppercase',
-  borderWidth: theme.borderWidth.charlie,
-  borderStyle: 'solid',
-  borderColor: 'transparent',
-  borderRadius: theme.borderRadius.bravo,
-  padding: `${theme.spacings.alpha} ${theme.spacings.charlie}`,
+const navLinkStyles = ({ theme }) =>
+  withMediaQueries(theme)({
+    color: theme.colors.n400,
+    textDecoration: 'none',
+    textTransform: 'uppercase',
+    borderWidth: theme.borderWidth.charlie,
+    borderStyle: 'solid',
+    borderColor: 'transparent',
+    borderRadius: theme.borderRadius.bravo,
+    fontSize: theme.typography.text.charlie.fontSize,
+    padding: [
+      `${theme.spacings.bravo} 0`,
+      `${theme.spacings.alpha} ${theme.spacings.charlie}`,
+    ],
 
-  '&:hover': {
-    borderColor: theme.colors.n500,
-  },
-});
+    '&:hover': {
+      borderColor: ['transparent', theme.colors.n500],
+    },
+  });
 
 // ....................component....................
 

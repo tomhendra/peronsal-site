@@ -12,7 +12,7 @@ import Card from '../components/Card';
 import Icon from '../components/Icon';
 import TechStack from '../components/TechStack';
 
-import { colors, icons, sizes, variants } from '../assets/styles/constants';
+import { colors, icons, sizes, variants } from '../assets/styles/style-enums';
 
 const { ACCENT_ALPHA } = colors;
 const { BRIEFCASE, CODE, PEN_TOOL } = icons;
@@ -37,8 +37,8 @@ function IndexPage() {
       <Section fullViewportHeight centerContentVertically variant={PRIMARY}>
         <Grid>
           <Item
-            gridStart={[1, 4, 4, 4]}
-            gridEnd={[9, 11, 11, 8]}
+            gridColStart={[1, 4, 4, 4]}
+            gridColEnd={[9, 11, 11, 8]}
             spacingBottom={GOLF}
           >
             <Heading as="h1" size={FOXTROT}>
@@ -49,7 +49,7 @@ function IndexPage() {
               about code, design & food!
             </Text>
           </Item>
-          <Item gridStart={[1, 4, 4, 4]} gridEnd={[9, 10, 10, 8]}>
+          <Item gridColStart={[1, 4, 4, 4]} gridColEnd={[9, 10, 10, 8]}>
             <ButtonGroup>
               <Button
                 internalLink="/projects/"
@@ -72,7 +72,11 @@ function IndexPage() {
       </Section>
       <Section variant={SECONDARY}>
         <Grid>
-          <Item gridStart={1} gridEnd={[9, 9, 9, 6]} spacingBottom={HOTEL}>
+          <Item
+            gridColStart={1}
+            gridColEnd={[9, 9, 9, 6]}
+            spacingBottom={HOTEL}
+          >
             <Heading as="h2" size={ECHO}>
               About me
             </Heading>
@@ -88,8 +92,8 @@ function IndexPage() {
             </Text>
           </Item>
           <Item
-            gridStart={[1, 3, 4, 1]}
-            gridEnd={[9, 11, 10, 5]}
+            gridColStart={[1, 3, 4, 1]}
+            gridColEnd={[9, 11, 10, 5]}
             spacingBottom={[GOLF, HOTEL, HOTEL, 0]}
           >
             <Card
@@ -114,8 +118,8 @@ function IndexPage() {
             </Card>
           </Item>
           <Item
-            gridStart={[1, 3, 4, 5]}
-            gridEnd={[9, 11, 10, 9]}
+            gridColStart={[1, 3, 4, 5]}
+            gridColEnd={[9, 11, 10, 9]}
             spacingBottom={[GOLF, HOTEL, HOTEL, 0]}
           >
             <Card
@@ -139,7 +143,7 @@ function IndexPage() {
               </Text>
             </Card>
           </Item>
-          <Item gridStart={[1, 3, 4, 9]} gridEnd={[9, 11, 10, 13]}>
+          <Item gridColStart={[1, 3, 4, 9]} gridColEnd={[9, 11, 10, 13]}>
             <Card
               padding={[FOXTROT, HOTEL, GOLF, GOLF]}
               paddingTop={[HOTEL, INDIA, HOTEL, INDIA]}
@@ -165,7 +169,7 @@ function IndexPage() {
       </Section>
       <Section variant={TERTIARY}>
         <Grid>
-          <Item gridStart={1} gridEnd={[9, 9, 7, 6]}>
+          <Item gridColStart={1} gridColEnd={[9, 9, 7, 6]}>
             <Heading as="h1" size={FOXTROT}>
               My skills.
             </Heading>
@@ -181,8 +185,8 @@ function IndexPage() {
             </Text>
           </Item>
           <Item
-            gridStart={[1, 1, 1, 1]}
-            gridEnd={[9, 13, 13, 13]}
+            gridColStart={[1, 1, 1, 1]}
+            gridColEnd={[9, 13, 13, 13]}
             spacingTop={[GOLF, INDIA]}
           >
             <TechStack gridSize={DELTA} />
@@ -197,8 +201,8 @@ function IndexPage() {
       >
         <Grid>
           <Item
-            gridStart={[1, 3, 3, 4]}
-            gridEnd={[9, 11, 11, 9]}
+            gridColStart={[1, 3, 3, 4]}
+            gridColEnd={[9, 11, 11, 9]}
             spacingBottom={GOLF}
           >
             <Heading as="h2" size={ECHO}>
@@ -210,7 +214,7 @@ function IndexPage() {
               :-)
             </Text>
           </Item>
-          <Item gridStart={[1, 3, 3, 4]} gridEnd={[9, 9, 8, 8]}>
+          <Item gridColStart={[1, 3, 3, 4]} gridColEnd={[9, 9, 8, 8]}>
             <ButtonGroup>
               <Button
                 internalLink="/projects/"

@@ -9,7 +9,7 @@ import {
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
-import { colors, sizes } from '../../assets/styles/constants';
+import { colors, sizes } from '../../assets/styles/style-enums';
 
 const {
   BRAND,

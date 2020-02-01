@@ -18,7 +18,7 @@ import {
   colors,
   positions,
   sizes,
-} from '../../assets/styles/constants';
+} from '../../assets/styles/style-enums';
 
 const { PRIMARY, SECONDARY } = variants;
 const { DANGER, SUCCESS } = colors;

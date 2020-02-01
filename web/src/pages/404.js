@@ -9,7 +9,7 @@ import Item from '../components/Item';
 import Heading from '../components/Heading';
 import Button from '../components/Button';
 
-import { variants, sizes } from '../assets/styles/constants';
+import { variants, sizes } from '../assets/styles/style-enums';
 
 const { BRAVO, DELTA, GOLF, HOTEL } = sizes;
 const { PRIMARY } = variants;
@@ -20,7 +20,7 @@ export default () => (
     <Section center>
       <Graphic>404</Graphic>
       <Grid withoutBottomSpacing>
-        <Item gridStart={[1, 2, 3, 1]} gridEnd={[6, 9, 11, 9]}>
+        <Item gridColStart={[1, 2, 3, 1]} gridColEnd={[6, 9, 11, 9]}>
           <Heading as="h1" size={HOTEL}>
             Uh oh!
           </Heading>
@@ -29,7 +29,11 @@ export default () => (
             a way back...
           </Heading>
         </Item>
-        <Item gridStart={[1, 2, 3, 1]} gridEnd={[6, 4, 4, 4]} spacingTop={GOLF}>
+        <Item
+          gridColStart={[1, 2, 3, 1]}
+          gridColEnd={[6, 4, 4, 4]}
+          spacingTop={GOLF}
+        >
           <Button internalLink="/" buttonStyle={PRIMARY} buttonSize={BRAVO}>
             Home
           </Button>

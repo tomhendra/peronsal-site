@@ -16,7 +16,7 @@ import Heading from '../Heading';
 import Subheading from '../Subheading';
 import Text from '../Text';
 
-import { variants } from '../../assets/styles/constants';
+import { variants } from '../../assets/styles/style-enums';
 
 const { PRIMARY, SECONDARY, TERTIARY } = variants;
 

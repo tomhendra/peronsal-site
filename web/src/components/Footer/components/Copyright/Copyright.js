@@ -7,7 +7,7 @@ import Logo from '../../../Logo';
 import useSiteMetadata from '../../../../hooks/useSiteMetadata';
 import { withMediaQueries } from '../../../../assets/styles/style-helpers';
 
-import { colors, sizes } from '../../../../assets/styles/constants';
+import { colors, sizes } from '../../../../assets/styles/style-enums';
 
 const { NEUTRAL } = colors;
 const { BRAVO, ECHO } = sizes;

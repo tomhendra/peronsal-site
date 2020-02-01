@@ -12,7 +12,7 @@ import Heading from '../Heading';
 import PostedDate from './components/PostedDate';
 import CategoryList from './components/CategoryList';
 
-import { sizes } from '../../assets/styles/constants';
+import { sizes } from '../../assets/styles/style-enums';
 
 const { FOXTROT, GOLF, INDIA } = sizes;
 
@@ -35,8 +35,8 @@ function BlogPost({ post }) {
       <article>
         <Grid>
           <Item
-            gridStart={1}
-            gridEnd={[9, 9, 11, 11]}
+            gridColStart={1}
+            gridColEnd={[9, 9, 11, 11]}
             spacingTop={[GOLF, INDIA]}
           >
             <Heading as="h1" size={FOXTROT}>

@@ -8,7 +8,7 @@ import Grid from '../components/Grid';
 import Item from '../components/Item';
 import ContactForm from '../components/ContactForm';
 
-import { sizes } from '../assets/styles/constants';
+import { sizes } from '../assets/styles/style-enums';
 
 const { GOLF, HOTEL, INDIA } = sizes;
 
@@ -19,8 +19,8 @@ function ContactPage() {
       <Section>
         <Grid withoutBottomSpacing>
           <Item
-            gridStart={[1, 2, 3, 3]}
-            gridEnd={[9, 8, 10, 10]}
+            gridColStart={[1, 2, 3, 3]}
+            gridColEnd={[9, 8, 10, 10]}
             spacingTop={[GOLF, INDIA, HOTEL]}
             spacingBottom={[GOLF, HOTEL]}
           >

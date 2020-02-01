@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import Heading from '../../../Heading';
 
-import { sizes } from '../../../../assets/styles/constants';
+import { sizes } from '../../../../assets/styles/style-enums';
 
 const { ALPHA } = sizes;
 

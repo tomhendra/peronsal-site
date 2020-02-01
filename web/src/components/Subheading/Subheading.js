@@ -9,7 +9,7 @@ import {
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
-import { sizes } from '../../assets/styles/constants';
+import { sizes } from '../../assets/styles/style-enums';
 
 const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL } = sizes;
 

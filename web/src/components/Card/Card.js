@@ -26,7 +26,7 @@ import {
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
-import { shadows, sizes } from '../../assets/styles/constants';
+import { shadows, sizes } from '../../assets/styles/style-enums';
 
 const {
   STANDARD_ALPHA,
