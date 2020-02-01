@@ -12,7 +12,7 @@ import Navbar from './components/Navbar';
 
 import { sizes } from '../../assets/styles/style-enums';
 
-const { BRAVO, CHARLIE, DELTA, ECHO, FOXTROT } = sizes;
+const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT } = sizes;
 
 // ....................styles....................
 
@@ -87,7 +87,7 @@ function Footer() {
             gridColEnd={[9, 13, 13, 13]}
             gridRowStart={[3, 2, 2, 2]}
             gridRowEnd={[4, 3, 3, 3]}
-            spacingBottom={[BRAVO, BRAVO, BRAVO, ECHO]}
+            spacingBottom={[ALPHA, BRAVO, BRAVO, ECHO]}
           >
             <FooterDivider />
           </Item>
@@ -101,7 +101,7 @@ function Footer() {
             <Social />
           </Item>
           <Item
-            gridColStart={[1, 3, 3, 6]}
+            gridColStart={[1, 2, 2, 6]}
             gridColEnd={[9, 13, 13, 13]}
             gridRowStart={[4, 3, 3, 3]}
             gridRowEnd={[5, 4, 4, 4]}
