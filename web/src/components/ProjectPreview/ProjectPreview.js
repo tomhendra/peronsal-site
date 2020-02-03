@@ -9,11 +9,10 @@ import Text from '../Text';
 import Button from '../Button';
 
 import { withMediaQueries } from '../../assets/styles/style-helpers';
-
 import { variants, sizes } from '../../assets/styles/style-enums';
 
 const { TERTIARY } = variants;
-const { BRAVO, CHARLIE, DELTA, GOLF } = sizes;
+const { BRAVO, CHARLIE, DELTA, FOXTROT, GOLF } = sizes;
 
 // ....................styles....................
 
@@ -25,13 +24,25 @@ const containerStyles = ({ theme }) =>
     justifyContent: 'space-between',
   });
 
-const contentStyles = ({ theme }) => ({
-  marginBottom: theme.spacings.golf,
-});
+const contentStyles = ({ theme }) =>
+  withMediaQueries(theme)({
+    marginBottom: [
+      theme.spacings.foxtrot,
+      theme.spacings.foxtrot,
+      theme.spacings.foxtrot,
+      theme.spacings.golf,
+    ],
+  });
 
-const imageStyles = ({ theme }) => ({
-  marginBottom: theme.spacings.foxtrot,
-});
+const imageStyles = ({ theme }) =>
+  withMediaQueries(theme)({
+    marginBottom: [
+      theme.spacings.echo,
+      theme.spacings.echo,
+      theme.spacings.echo,
+      theme.spacings.foxtrot,
+    ],
+  });
 
 // ....................component....................
 
@@ -41,10 +52,13 @@ const Image = styled(Img)(imageStyles);
 
 function ProjectPreview({ project }) {
   return (
-    <Card justifyContent="space-between" padding={GOLF}>
+    <Card
+      justifyContent="space-between"
+      padding={[FOXTROT, FOXTROT, FOXTROT, GOLF]}
+    >
       <Container>
         <Content>
-          <Image fixed={project.image} alt={project.alt} />
+          <Image fluid={project.image} alt={project.alt} />
           <Heading size={CHARLIE} spacingBottom={DELTA} as="h3">
             {project.title}
           </Heading>

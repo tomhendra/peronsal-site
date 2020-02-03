@@ -37,7 +37,7 @@ function IndexPage() {
       <Section fullViewportHeight centerContentVertically variant={PRIMARY}>
         <Grid>
           <Item
-            gridColStart={[1, 4, 4, 4]}
+            gridColStart={[1, 3, 3, 4]}
             gridColEnd={[9, 11, 11, 8]}
             spacingBottom={GOLF}
           >
@@ -49,7 +49,7 @@ function IndexPage() {
               about code, design &amp; food!
             </Text>
           </Item>
-          <Item gridColStart={[1, 4, 4, 4]} gridColEnd={[9, 10, 10, 8]}>
+          <Item gridColStart={[1, 3, 3, 4]} gridColEnd={[9, 9, 9, 8]}>
             <ButtonGroup>
               <Button
                 internalLink="/projects/"

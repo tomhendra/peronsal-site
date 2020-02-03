@@ -27,8 +27,8 @@ function ProjectsPage() {
         <Grid>
           <Item
             gridColStart={1}
-            gridColEnd={[8, 6, 7, 7]}
-            spacingBottom={[GOLF, HOTEL]}
+            gridColEnd={[9, 9, 9, 6]}
+            spacingBottom={HOTEL}
           >
             <Heading as="h1" size={FOXTROT}>
               My projects.
@@ -48,7 +48,7 @@ function ProjectsPage() {
         <Grid withRowGaps>
           {projects.length ? (
             projects.map(project => (
-              <Item gridColSpan={[8, 4, 4, 4]} key={project.id}>
+              <Item gridColSpan={[8, 6, 6, 4]} key={project.id}>
                 <ProjectPreview project={project} />
               </Item>
             ))
@@ -75,7 +75,7 @@ function ProjectsPage() {
         <Grid>
           <Item
             gridColStart={[1, 3, 3, 4]}
-            gridColEnd={[9, 11, 11, 9]}
+            gridColEnd={[9, 12, 12, 9]}
             spacingBottom={GOLF}
           >
             <Heading as="h2" size={ECHO}>
