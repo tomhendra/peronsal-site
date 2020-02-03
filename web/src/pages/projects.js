@@ -5,16 +5,18 @@ import useProjects from '../hooks/useProjects';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
-import Graphic from '../components/Graphic';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
 import Heading from '../components/Heading';
 import Text from '../components/Text';
 import ProjectPreview from '../components/ProjectPreview';
+import ButtonGroup from '../components/ButtonGroup';
+import Button from '../components/Button';
 
-import { sizes } from '../assets/styles/style-enums';
+import { sizes, variants } from '../assets/styles/style-enums';
 
-const { FOXTROT, GOLF, HOTEL, INDIA } = sizes;
+const { CHARLIE, ECHO, FOXTROT, GOLF, HOTEL, JULIETT, LIMA, MIKE } = sizes;
+const { PRIMARY, SECONDARY } = variants;
 
 function ProjectsPage() {
   const projects = useProjects();
@@ -22,12 +24,10 @@ function ProjectsPage() {
     <Layout>
       <SEO title="Projects" />
       <Section>
-        <Graphic>Projects</Graphic>
         <Grid>
           <Item
             gridColStart={1}
             gridColEnd={[8, 6, 7, 7]}
-            spacingTop={[GOLF, INDIA]}
             spacingBottom={[GOLF, HOTEL]}
           >
             <Heading as="h1" size={FOXTROT}>
@@ -39,20 +39,16 @@ function ProjectsPage() {
               building web apps with React.
             </Text>
             <Text noMargin>
-              I am also a huge advocate of open source software and contribute
-              where I can. With collaboration from developers all over the
-              world, we can work together to deliver great products accessible
-              to everyone.
+              For my next journey into the unknown, I intend to explore 3D
+              animated data visualizations, so you can expect some really fancy
+              stuff to appear on this page soon.
             </Text>
           </Item>
+        </Grid>
+        <Grid withRowGaps>
           {projects.length ? (
             projects.map(project => (
-              <Item
-                gridColStart={1}
-                gridColEnd={[9, 9, 11, 11]}
-                spacingBottom={[HOTEL, INDIA]}
-                key={project.id}
-              >
+              <Item gridColSpan={[8, 4, 4, 4]} key={project.id}>
                 <ProjectPreview project={project} />
               </Item>
             ))
@@ -63,11 +59,55 @@ function ProjectsPage() {
               spacingTop={GOLF}
               spacingBottom={GOLF}
             >
-              <Heading sub>
+              <Heading>
                 Projects are yet to be added. Please check back soon!
               </Heading>
             </Item>
           )}
+        </Grid>
+      </Section>
+      <Section
+        centerContentVertically
+        paddingTop={[JULIETT, LIMA]}
+        paddingBottom={[JULIETT, LIMA, LIMA, MIKE]}
+        variant={PRIMARY}
+      >
+        <Grid>
+          <Item
+            gridColStart={[1, 3, 3, 4]}
+            gridColEnd={[9, 11, 11, 9]}
+            spacingBottom={GOLF}
+          >
+            <Heading as="h2" size={ECHO}>
+              Oh, but there’s more…
+            </Heading>
+            <Text size={ECHO}>
+              I’ve started a blog! If you’d like to read about some things I
+              find inspiring enough to write about, check it out.
+            </Text>
+            <Text size={ECHO} noMargin>
+              Or if you’d rather get straight to business, just hit that contact
+              button!
+            </Text>
+          </Item>
+          <Item gridColStart={[1, 3, 3, 4]} gridColEnd={[9, 9, 8, 8]}>
+            <ButtonGroup>
+              <Button
+                internalLink="/blog/"
+                buttonStyle={SECONDARY}
+                buttonSize={CHARLIE}
+              >
+                Blog
+              </Button>
+              <Button
+                internalLink="/contact/"
+                buttonStyle={PRIMARY}
+                buttonSize={CHARLIE}
+              >
+                Contact
+              </Button>
+            </ButtonGroup>
+          </Item>
         </Grid>
       </Section>
     </Layout>

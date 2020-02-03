@@ -35,8 +35,9 @@ function BlogPage() {
               Blog.
             </Heading>
             <Text noMargin>
-              This blog aims to be a collection of elements from all of my
-              passions.
+              Welcome to a mishmash of ramblings about all of my passions; tech,
+              food, fitness and travel. I hope you find it useful, or at least a
+              little interesting.
             </Text>
           </Item>
         </Grid>

@@ -6,68 +6,60 @@ import { withTheme } from 'emotion-theming';
 import Card from '../Card';
 import Heading from '../Heading';
 import Text from '../Text';
-import TechStack from '../TechStack';
 import Button from '../Button';
-import ButtonGroup from '../ButtonGroup';
 
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 
 import { variants, sizes } from '../../assets/styles/style-enums';
 
-const { PRIMARY, SECONDARY } = variants;
-const { ALPHA, CHARLIE } = sizes;
+const { TERTIARY } = variants;
+const { BRAVO, CHARLIE, DELTA, GOLF } = sizes;
 
 // ....................styles....................
 
-const infoStyles = ({ theme }) =>
+const containerStyles = ({ theme }) =>
   withMediaQueries(theme)({
     display: 'flex',
     flexDirection: 'column',
     minHeight: theme.spacings.lima,
     justifyContent: 'space-between',
-    paddingLeft: [0, theme.spacings.foxtrot],
-    paddingTop: [theme.spacings.foxtrot, theme.spacings.alpha],
-    width: ['100%', '57%', '60%', '60%'],
   });
+
+const contentStyles = ({ theme }) => ({
+  marginBottom: theme.spacings.golf,
+});
+
+const imageStyles = ({ theme }) => ({
+  marginBottom: theme.spacings.foxtrot,
+});
 
 // ....................component....................
 
-const ProjectInfo = styled.div(infoStyles);
+const Container = styled.div(containerStyles);
+const Content = styled.div(contentStyles);
+const Image = styled(Img)(imageStyles);
 
 function ProjectPreview({ project }) {
   return (
-    <Card
-      alignItems={['center', 'stretch']}
-      flexDirection={['column', 'row']}
-      justifyContent="space-between"
-    >
-      <Img fixed={project.image} alt={project.alt} />
-      <ProjectInfo>
-        <div>
-          <Heading as="h2">{project.title}</Heading>
-          <Text size={CHARLIE}>{project.description}</Text>
-        </div>
-        <TechStack
-          gridSize={ALPHA}
-          stack={project.techstack.map(tech => tech.title)}
-        />
-        <ButtonGroup>
-          <Button
-            buttonStyle={SECONDARY}
-            buttonSize={ALPHA}
-            externalLink={project.repo}
-          >
-            View Repo
-          </Button>
-          <Button
-            buttonStyle={PRIMARY}
-            buttonSize={ALPHA}
-            externalLink={project.url}
-          >
-            Launch App
-          </Button>
-        </ButtonGroup>
-      </ProjectInfo>
+    <Card justifyContent="space-between" padding={GOLF}>
+      <Container>
+        <Content>
+          <Image fixed={project.image} alt={project.alt} />
+          <Heading size={CHARLIE} spacingBottom={DELTA} as="h3">
+            {project.title}
+          </Heading>
+          <Text size={CHARLIE} noMargin>
+            {project.description}
+          </Text>
+        </Content>
+        <Button
+          buttonStyle={TERTIARY}
+          buttonSize={BRAVO}
+          externalLink={project.repo}
+        >
+          More Details
+        </Button>
+      </Container>
     </Card>
   );
 }

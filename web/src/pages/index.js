@@ -46,7 +46,7 @@ function IndexPage() {
             </Heading>
             <Text size={ECHO} noMargin>
               I’m a web developer from the UK living in Spain. I am passionate
-              about code, design & food!
+              about code, design &amp; food!
             </Text>
           </Item>
           <Item gridColStart={[1, 4, 4, 4]} gridColEnd={[9, 10, 10, 8]}>
@@ -78,7 +78,7 @@ function IndexPage() {
             spacingBottom={HOTEL}
           >
             <Heading as="h2" size={ECHO}>
-              About me
+              About me.
             </Heading>
             <Text>
               I am at my happiest when crafting buttery smooth web experiences.
@@ -114,7 +114,7 @@ function IndexPage() {
               <Text noMargin>
                 My skill set is built upon the rich & diverse JavaScript
                 ecosystem. My natural close attention to detail enhances my
-                ability to write clean, well organised code.
+                ability to write clean, well organized code.
               </Text>
             </Card>
           </Item>
@@ -183,8 +183,9 @@ function IndexPage() {
             </Text>
             <Text noMargin>
               I enjoy a modern tech stack based around React.js, and am
-              continuously adding skills to my toolbox. A committed developer
-              never stops learning, a challenge I embrace wholeheartedly.
+              continuously adding new skills to my toolbox. A committed
+              developer never stops learning, a challenge I embrace
+              wholeheartedly.
             </Text>
           </Item>
           <Item
@@ -212,9 +213,8 @@ function IndexPage() {
               Where to go from here?
             </Heading>
             <Text size={ECHO} noMargin>
-              I’ve been building stuff! You can see what I have been up to on my
-              projects page. Or let’s connect if you have seen enough already
-              :-)
+              I’ve been building stuff. You can see what I have been up to on my
+              projects page. Or let’s connect if you have seen enough already!
             </Text>
           </Item>
           <Item gridColStart={[1, 3, 3, 4]} gridColEnd={[9, 9, 8, 8]}>

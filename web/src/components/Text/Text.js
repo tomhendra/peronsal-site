@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
-import { childrenPropType } from '../../utils/shared-prop-types';
+import { childrenPropType, sizePropType } from '../../utils/shared-prop-types';
 
 import {
   getSpacingValues,
@@ -15,12 +15,21 @@ const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO } = sizes;
 
 // ....................styles....................
 
-function styles({ as, bold, italic, strike, noMargin, size, theme }) {
+function styles({
+  as,
+  bold,
+  italic,
+  strike,
+  noMargin,
+  spacingBottom,
+  size,
+  theme,
+}) {
   const baseStyles = {
     fontFamily: theme.fontStack.default,
     fontStyle: !italic ? 'normal' : 'italic',
     fontWeight: !bold ? theme.fontWeight.regular : theme.fontWeight.bold,
-    marginBottom: !noMargin ? getSpacingValues(size, theme) : 0,
+    marginBottom: !noMargin ? getSpacingValues(spacingBottom, theme) : 0,
     marginLeft: as === 'li' && theme.spacings.echo,
     textDecoration: !strike ? 'none' : 'line-through',
     wordWrap: 'break-word',
@@ -83,6 +92,7 @@ Text.propTypes = {
     PropTypes.oneOf([ALPHA, BRAVO, CHARLIE, DELTA, ECHO]),
     PropTypes.arrayOf(PropTypes.oneOf([ALPHA, BRAVO, CHARLIE, DELTA, ECHO])),
   ]),
+  spacingBottom: sizePropType,
   bold: PropTypes.bool,
   italic: PropTypes.bool,
   strike: PropTypes.bool,
@@ -93,6 +103,7 @@ Text.defaultProps = {
   as: 'p',
   noMargin: false,
   size: DELTA,
+  spacingBottom: [CHARLIE, DELTA],
   bold: false,
   italic: false,
   strike: false,
