@@ -21,7 +21,9 @@ export function withMediaQueries(theme) {
   return facepaint(
     // fontSize: '62.5%' for html in css-reset is not respected for media queries
     // https://drafts.csswg.org/mediaqueries/#units
-    theme.breakpoints.map(bp => `@media (min-width: ${bp * 0.625}rem)`),
+    theme.breakpoints.map(
+      bp => `@media only screen and (min-width: ${bp * 0.625}rem)`,
+    ),
   );
 }
 
