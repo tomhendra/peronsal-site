@@ -314,10 +314,11 @@ export const borderWidth = {
 
 // ....................layout....................
 // maxWidth for grid - limited by eye for when layout looks too wide
+// mobile first, alpha is default
 export const grid = {
   alpha: {
     cols: 8,
-    maxWidth: '44rem', // 440px
+    maxWidth: '50rem', // 500px
     gutter: spacings.delta,
   },
   bravo: {
@@ -340,7 +341,6 @@ export const grid = {
 export const breakpoints = [
   // values should be in rem, but numbers only so calculations can be made by Facepaint
   // see withMediaQueries function in assets/styles/style-helpers.js
-  '58', // 580px mobile
   '77', // 770px up to tablet (iPad / iPad mini)
   '108', // 1080px up to large tablet (iPad pro)
   '120', // 1200px notebook / desktop
