@@ -10,10 +10,16 @@ import { withMediaQueries } from '../../../../assets/styles/style-helpers';
 const navStyles = ({ theme }) =>
   withMediaQueries(theme)({
     display: 'flex',
+    flexWrap: 'wrap',
     justifyContent: ['space-between', 'flex-end'],
 
     '& > :not(:last-of-type)': {
-      marginRight: [0, theme.spacings.delta, theme.spacings.echo],
+      marginRight: [
+        0,
+        theme.spacings.charlie,
+        theme.spacings.charlie,
+        theme.spacings.delta,
+      ],
     },
   });
 
@@ -26,7 +32,10 @@ const navLinkStyles = ({ theme }) =>
     borderStyle: 'solid',
     borderColor: 'transparent',
     borderRadius: theme.borderRadius.bravo,
-    fontSize: theme.typography.text.charlie.fontSize,
+    fontSize: [
+      theme.typography.text.bravo.fontSize,
+      theme.typography.text.charlie.fontSize,
+    ],
     padding: [
       `${theme.spacings.bravo} 0`,
       `${theme.spacings.alpha} ${theme.spacings.charlie}`,

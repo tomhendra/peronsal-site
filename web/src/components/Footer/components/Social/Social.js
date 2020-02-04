@@ -17,26 +17,34 @@ const { BRAVO } = sizes;
 const containerStyles = ({ theme }) =>
   withMediaQueries(theme)({
     display: 'flex',
-    justifyContent: ['space-between', 'flex-end', 'flex-end', 'flex-start'],
+    // flexWrap: 'wrap',
+    justifyContent: ['flex-start', 'flex-end', 'flex-end', 'flex-start'],
 
     '& > :not(:last-of-type)': {
-      marginRight: [theme.spacings.charlie, theme.spacings.echo],
+      marginRight: [theme.spacings.bravo, theme.spacings.echo],
     },
   });
 
-const linkStyles = ({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  borderWidth: theme.borderWidth.charlie,
-  borderStyle: 'solid',
-  borderColor: theme.colors.n500,
-  borderRadius: theme.borderRadius.bravo,
-  color: theme.colors.n400,
-  fontSize: theme.typography.text.charlie.fontSize,
-  padding: `${theme.spacings.alpha} ${theme.spacings.charlie}`,
-  textDecoration: 'none',
-  textTransform: 'uppercase',
-});
+const linkStyles = ({ theme }) =>
+  withMediaQueries(theme)({
+    display: 'flex',
+    alignItems: 'center',
+    borderWidth: theme.borderWidth.charlie,
+    borderStyle: 'solid',
+    borderColor: theme.colors.n500,
+    borderRadius: theme.borderRadius.bravo,
+    color: theme.colors.n400,
+    fontSize: [
+      theme.typography.text.bravo.fontSize,
+      theme.typography.text.charlie.fontSize,
+    ],
+    padding: [
+      `${theme.spacings.alpha} ${theme.spacings.bravo}`,
+      `${theme.spacings.alpha} ${theme.spacings.charlie}`,
+    ],
+    textDecoration: 'none',
+    textTransform: 'uppercase',
+  });
 
 // ....................component....................
 

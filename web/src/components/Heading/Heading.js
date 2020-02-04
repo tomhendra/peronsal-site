@@ -25,7 +25,7 @@ function styles({ noMargin, size, spacingBottom, theme }) {
   const mobileSizeMap = {
     [ALPHA]: ALPHA,
     [BRAVO]: ALPHA,
-    [CHARLIE]: BRAVO,
+    [CHARLIE]: CHARLIE, // tested (ProjectPreview heading)
     [DELTA]: CHARLIE, // tested (card heading)
     [ECHO]: DELTA, // tested (section heading)
     [FOXTROT]: ECHO, // tested (hero heading)

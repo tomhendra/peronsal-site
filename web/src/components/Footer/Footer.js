@@ -74,7 +74,7 @@ function Footer() {
         <Grid>
           <Item
             gridColStart={[1, 1, 1, 1]}
-            gridColEnd={[5, 5, 5, 3]}
+            gridColEnd={[9, 5, 5, 3]}
             gridRowStart={[1, 1, 1, 1]}
             gridRowEnd={[2, 2, 2, 2]}
             spacingBottom={[DELTA, FOXTROT, FOXTROT, CHARLIE]}
@@ -92,7 +92,7 @@ function Footer() {
             <FooterDivider />
           </Item>
           <Item
-            gridColStart={[1, 6, 6, 1]}
+            gridColStart={[1, 5, 5, 1]}
             gridColEnd={[9, 13, 13, 5]}
             gridRowStart={[2, 1, 1, 3]}
             gridRowEnd={[3, 2, 2, 4]}
