@@ -60,7 +60,7 @@ function ProjectsPage() {
               spacingBottom={GOLF}
             >
               <Heading>
-                Projects are yet to be added. Please check back soon!
+                There are no projects to display. Please check back soon!
               </Heading>
             </Item>
           )}

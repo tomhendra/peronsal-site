@@ -16,14 +16,6 @@ const { BRAVO, CHARLIE, DELTA, FOXTROT, GOLF } = sizes;
 
 // ....................styles....................
 
-const containerStyles = ({ theme }) =>
-  withMediaQueries(theme)({
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: theme.spacings.lima,
-    justifyContent: 'space-between',
-  });
-
 const contentStyles = ({ theme }) =>
   withMediaQueries(theme)({
     marginBottom: [
@@ -46,7 +38,6 @@ const imageStyles = ({ theme }) =>
 
 // ....................component....................
 
-const Container = styled.div(containerStyles);
 const Content = styled.div(contentStyles);
 const Image = styled(Img)(imageStyles);
 
@@ -55,25 +46,24 @@ function ProjectPreview({ project }) {
     <Card
       justifyContent="space-between"
       padding={[FOXTROT, FOXTROT, FOXTROT, GOLF]}
+      alignItems="stretch"
     >
-      <Container>
-        <Content>
-          <Image fluid={project.image} alt={project.alt} />
-          <Heading size={CHARLIE} spacingBottom={DELTA} as="h3">
-            {project.title}
-          </Heading>
-          <Text size={CHARLIE} noMargin>
-            {project.description}
-          </Text>
-        </Content>
-        <Button
-          buttonStyle={TERTIARY}
-          buttonSize={BRAVO}
-          externalLink={project.repo}
-        >
-          More Details
-        </Button>
-      </Container>
+      <Content>
+        <Image fluid={project.image} alt={project.alt} />
+        <Heading size={CHARLIE} spacingBottom={DELTA} as="h3">
+          {project.title}
+        </Heading>
+        <Text size={CHARLIE} noMargin>
+          {project.description}
+        </Text>
+      </Content>
+      <Button
+        buttonStyle={TERTIARY}
+        buttonSize={BRAVO}
+        externalLink={project.repo}
+      >
+        More Details
+      </Button>
     </Card>
   );
 }

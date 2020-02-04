@@ -15,7 +15,7 @@ function usePosts() {
             mainImage {
               alt
               asset {
-                fluid(maxWidth: 960) {
+                fluid {
                   ...GatsbySanityImageFluid
                 }
               }
