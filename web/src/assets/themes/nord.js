@@ -231,6 +231,10 @@ export const typography = {
       lineHeight: 1.5,
     },
     echo: {
+      fontSize: '2rem', // 20px
+      lineHeight: 1.5,
+    },
+    foxtrot: {
       fontSize: '2.4rem', // 24px
       lineHeight: 1.5,
     },

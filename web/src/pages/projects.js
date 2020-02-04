@@ -40,8 +40,8 @@ function ProjectsPage() {
             </Text>
             <Text noMargin>
               For my next journey into the unknown, I intend to explore 3D
-              animated data visualizations, so you can expect some really fancy
-              stuff to appear on this page soon.
+              animated data visualizations, so you can expect to see some really
+              fancy stuff appear on this page soon.
             </Text>
           </Item>
         </Grid>
@@ -75,19 +75,16 @@ function ProjectsPage() {
         <Grid>
           <Item
             gridColStart={[1, 3, 3, 4]}
-            gridColEnd={[9, 12, 12, 9]}
+            gridColEnd={[9, 11, 11, 9]}
             spacingBottom={GOLF}
           >
             <Heading as="h2" size={ECHO}>
               Oh, but there’s more…
             </Heading>
-            <Text size={ECHO}>
-              I’ve started a blog! If you’d like to read about some things I
-              find inspiring enough to write about, check it out.
-            </Text>
             <Text size={ECHO} noMargin>
-              Or if you’d rather get straight to business, just hit that contact
-              button!
+              I’ve started a blog! If you’d like to read about some things I
+              find inspiring enough to write about, check it out. Or if you’d
+              rather get straight to business, just hit that contact button!
             </Text>
           </Item>
           <Item gridColStart={[1, 3, 3, 4]} gridColEnd={[9, 9, 8, 8]}>

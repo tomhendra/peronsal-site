@@ -37,19 +37,19 @@ function IndexPage() {
       <Section fullViewportHeight centerContentVertically variant={PRIMARY}>
         <Grid>
           <Item
-            gridColStart={[1, 3, 3, 4]}
+            gridColStart={[1, 4, 4, 4]}
             gridColEnd={[9, 11, 11, 8]}
             spacingBottom={GOLF}
           >
             <Heading as="h1" size={FOXTROT}>
               Hola, I am Tom.
             </Heading>
-            <Text size={ECHO} noMargin>
+            <Text size={FOXTROT} noMargin>
               I’m a web developer from the UK living in Spain. I am passionate
               about code, design &amp; food!
             </Text>
           </Item>
-          <Item gridColStart={[1, 3, 3, 4]} gridColEnd={[9, 9, 9, 8]}>
+          <Item gridColStart={[1, 4, 4, 4]} gridColEnd={[9, 10, 10, 8]}>
             <ButtonGroup>
               <Button
                 internalLink="/projects/"

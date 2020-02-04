@@ -11,7 +11,7 @@ import {
 
 import { sizes } from '../../assets/styles/style-enums';
 
-const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO } = sizes;
+const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT } = sizes;
 
 // ....................styles....................
 
@@ -38,9 +38,10 @@ function styles({
   const mobileSizeMap = {
     [ALPHA]: ALPHA,
     [BRAVO]: ALPHA,
-    [CHARLIE]: BRAVO, // used (footer links)
+    [CHARLIE]: CHARLIE, // used (card text)
     [DELTA]: CHARLIE, // used (body text)
-    [ECHO]: DELTA, // tested (hero text)
+    [ECHO]: DELTA, // tested (CTA section text)
+    [FOXTROT]: ECHO, // tested (hero text)
   };
   // array for facepaint
   const sizeConfig = [mobileSizeMap[size], size];
