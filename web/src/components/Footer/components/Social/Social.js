@@ -54,7 +54,11 @@ const SocialLink = styled.a(linkStyles);
 function Social() {
   return (
     <SocialContainer>
-      <SocialLink href="https://github.com/tomhendra" target="_blank">
+      <SocialLink
+        href="https://github.com/tomhendra"
+        target="_blank"
+        rel="noopener"
+      >
         <Icon
           type={GITHUB}
           color={NEUTRAL}
@@ -67,6 +71,7 @@ function Social() {
       <SocialLink
         href="https://www.linkedin.com/in/tom-hendra/"
         target="_blank"
+        rel="noopener"
         // cheeky little override to align LinkedIn logo at baseline of text
         // css={{ alignItems: 'flex-start' }}
       >
@@ -79,7 +84,11 @@ function Social() {
         />
         LinkedIn
       </SocialLink>
-      <SocialLink href="https://twitter.com/TomHendra" target="_blank">
+      <SocialLink
+        href="https://twitter.com/TomHendra"
+        target="_blank"
+        rel="noopener"
+      >
         <Icon
           type={TWITTER}
           color={NEUTRAL}
