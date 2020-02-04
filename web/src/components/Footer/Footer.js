@@ -26,11 +26,23 @@ const footerStyles = ({ theme }) =>
       theme.spacings.india,
       theme.spacings.juliett,
     ],
+    paddingRight: [
+      theme.grid.alpha.gutter,
+      theme.grid.bravo.gutter,
+      theme.grid.charlie.gutter,
+      theme.grid.delta.gutter,
+    ],
     paddingBottom: [
       theme.spacings.golf,
       theme.spacings.hotel,
       theme.spacings.hotel,
       theme.spacings.hotel,
+    ],
+    paddingLeft: [
+      theme.grid.alpha.gutter,
+      theme.grid.bravo.gutter,
+      theme.grid.charlie.gutter,
+      theme.grid.delta.gutter,
     ],
     width: '100vw',
     zIndex: theme.zIndex.footer,
@@ -46,12 +58,6 @@ const containerStyles = ({ theme }) =>
       theme.grid.bravo.maxWidth,
       theme.grid.charlie.maxWidth,
       theme.grid.delta.maxWidth,
-    ],
-    padding: [
-      `0 ${theme.grid.alpha.gutter}`,
-      `0 ${theme.grid.bravo.gutter}`,
-      `0 ${theme.grid.charlie.gutter}`,
-      `0 ${theme.grid.delta.gutter}`,
     ],
     width: '100vw',
   });

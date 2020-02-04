@@ -14,7 +14,7 @@ import CategoryList from './components/CategoryList';
 
 import { sizes } from '../../assets/styles/style-enums';
 
-const { FOXTROT, GOLF, INDIA } = sizes;
+const { FOXTROT } = sizes;
 
 // ....................styles....................
 
@@ -34,11 +34,7 @@ function BlogPost({ post }) {
     <Section>
       <article>
         <Grid>
-          <Item
-            gridColStart={1}
-            gridColEnd={[9, 9, 11, 11]}
-            spacingTop={[GOLF, INDIA]}
-          >
+          <Item gridColStart={[1, 1, 1, 3]} gridColEnd={[9, 12, 12, 10]}>
             <Heading as="h1" size={FOXTROT}>
               {title}
             </Heading>
@@ -52,7 +48,11 @@ function BlogPost({ post }) {
                 }}
               />
             )}
+          </Item>
+          <Item gridColStart={[1, 1, 1, 3]} gridColEnd={[9, 12, 12, 10]}>
             {_rawBody && <PortableText blocks={_rawBody} />}
+          </Item>
+          <Item gridColStart={[1, 1, 1, 3]} gridColEnd={[9, 12, 12, 13]}>
             <aside>
               {categories && <CategoryList categories={categories} />}
             </aside>
