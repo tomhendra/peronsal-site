@@ -6,7 +6,7 @@ import { withTheme } from 'emotion-theming';
 import Label from '../Label';
 import Tooltip from '../../../Tooltip';
 
-import { colors, positions } from '../../../../assets/styles/constants';
+import { colors, positions } from '../../../../assets/styles/style-enums';
 
 const { DANGER } = colors;
 const { START } = positions;
@@ -28,7 +28,8 @@ const elementStyles = ({ theme, error, touched }) => ({
   borderRadius: theme.borderRadius.bravo,
   borderWidth: theme.borderWidth.alpha,
   color: theme.colors.bodyColor,
-  fontSize: theme.typography.text.charlie.fontSize,
+  fontFamily: theme.fontStack.default,
+  fontSize: theme.typography.text.delta.fontSize,
   marginTop: theme.spacings.alpha,
   padding: theme.spacings.charlie,
   width: '100%',

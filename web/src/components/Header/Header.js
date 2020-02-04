@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { withTheme } from 'emotion-theming';
 
-import Logo from './components/Logo';
+import Logo from '../Logo';
 import Navbar from './components/Navbar';
 import MobileNav from './components/MobileNav';
 
@@ -11,7 +11,7 @@ import {
   withMediaQueries,
   shadowStandardCharlie,
 } from '../../assets/styles/style-helpers';
-import { colors, sizes } from '../../assets/styles/constants';
+import { colors, sizes } from '../../assets/styles/style-enums';
 
 const { NEUTRAL } = colors;
 const { FOXTROT } = sizes;
@@ -22,10 +22,15 @@ const elementStyles = ({ theme }) =>
   withMediaQueries(theme)({
     ...shadowStandardCharlie(theme.colors.shadowNeutral),
     alignItems: 'center',
-    backgroundColor: theme.colors.bodyBg,
+    backgroundColor: theme.colors.white,
     display: 'flex',
     height: ['5rem', '6rem'],
-    padding: ['0 2rem', '0 4rem'],
+    padding: [
+      `0 ${theme.grid.alpha.gutter}`,
+      `0 ${theme.grid.bravo.gutter}`,
+      `0 ${theme.grid.charlie.gutter}`,
+      `0 ${theme.grid.delta.gutter}`,
+    ],
     position: 'fixed',
     top: 0,
     width: '100vw',
@@ -37,7 +42,12 @@ const containerStyles = ({ theme }) =>
     display: 'flex',
     justifyContent: 'space-between',
     margin: '0 auto',
-    maxWidth: [...theme.breakpoints],
+    maxWidth: [
+      theme.grid.alpha.maxWidth,
+      theme.grid.bravo.maxWidth,
+      theme.grid.charlie.maxWidth,
+      theme.grid.delta.maxWidth,
+    ],
     width: '100%',
   });
 

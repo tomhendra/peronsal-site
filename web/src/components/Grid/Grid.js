@@ -7,9 +7,8 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
 
 // ....................styles....................
 
-const styles = ({ devMode, withoutBottomSpacing, withRowGaps, theme }) =>
+const styles = ({ devMode, withRowGaps, theme }) =>
   withMediaQueries(theme)({
-    label: 'grid',
     display: 'grid',
     gridTemplateRows: 'auto',
     columnGap: [
@@ -30,14 +29,12 @@ const styles = ({ devMode, withoutBottomSpacing, withRowGaps, theme }) =>
       `repeat(${theme.grid.charlie.cols}, minmax(0, 1fr))`,
       `repeat(${theme.grid.delta.cols}, minmax(0, 1fr))`,
     ],
-    margin: '0 auto',
     maxWidth: [
       theme.grid.alpha.maxWidth,
       theme.grid.bravo.maxWidth,
       theme.grid.charlie.maxWidth,
       theme.grid.delta.maxWidth,
     ],
-    paddingBottom: !withoutBottomSpacing && theme.spacings.india,
     width: '100%',
     zIndex: theme.zIndex.default,
     border: devMode && '1px dashed hsl(300, 100%, 50%)',
@@ -54,14 +51,12 @@ const Grid = styled.div(styles);
 
 Grid.propTypes = {
   devMode: PropTypes.bool,
-  withoutBottomSpacing: PropTypes.bool,
   withRowGaps: PropTypes.bool,
   children: childrenPropType,
 };
 
 Grid.defaultProps = {
   devMode: false,
-  withoutBottomSpacing: false,
   withRowGaps: false,
   children: null,
 };

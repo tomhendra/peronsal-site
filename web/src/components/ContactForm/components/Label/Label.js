@@ -5,7 +5,7 @@ import { withTheme } from 'emotion-theming';
 
 const labelStyles = ({ theme }) => ({
   color: theme.colors.n400,
-  fontSize: theme.typography.text.bravo.fontSize,
+  fontSize: theme.typography.text.charlie.fontSize,
   zIndex: theme.zIndex.input,
 });
 

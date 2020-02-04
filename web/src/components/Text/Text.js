@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
-import { childrenPropType } from '../../utils/shared-prop-types';
+import { childrenPropType, sizePropType } from '../../utils/shared-prop-types';
 
 import {
   getSpacingValues,
@@ -9,58 +9,47 @@ import {
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
-import { sizes } from '../../assets/styles/constants';
+import { sizes } from '../../assets/styles/style-enums';
 
-const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO } = sizes;
+const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT } = sizes;
 
 // ....................styles....................
 
-function styles({ as, bold, italic, strike, noMargin, size, theme }) {
+function styles({
+  as,
+  bold,
+  italic,
+  strike,
+  noMargin,
+  spacingBottom,
+  size,
+  theme,
+}) {
   const baseStyles = {
-    label: 'text',
-    color: theme.colors.n400,
     fontFamily: theme.fontStack.default,
-    fontWeight: theme.fontWeight.regular,
-    marginBottom: !noMargin ? getSpacingValues(size, theme) : 0,
+    fontStyle: !italic ? 'normal' : 'italic',
+    fontWeight: !bold ? theme.fontWeight.regular : theme.fontWeight.bold,
+    marginBottom: !noMargin ? getSpacingValues(spacingBottom, theme) : 0,
+    marginLeft: as === 'li' && theme.spacings.echo,
+    textDecoration: !strike ? 'none' : 'line-through',
     wordWrap: 'break-word',
   };
 
   const mobileSizeMap = {
-    [ALPHA]: BRAVO,
-    [BRAVO]: CHARLIE,
-    [CHARLIE]: CHARLIE,
-    [DELTA]: DELTA,
-    [ECHO]: DELTA,
+    [ALPHA]: ALPHA,
+    [BRAVO]: ALPHA,
+    [CHARLIE]: CHARLIE, // used (card text)
+    [DELTA]: CHARLIE, // used (body text)
+    [ECHO]: DELTA, // tested (CTA section text)
+    [FOXTROT]: ECHO, // tested (hero text)
   };
   // array for facepaint
   const sizeConfig = [mobileSizeMap[size], size];
-
-  const sizeStyles = {
+  const sizeDeclarations = {
     ...getTextDeclarations(sizeConfig, theme),
   };
 
-  const boldStyles = bold && {
-    label: 'text--bold',
-    fontWeight: theme.fontWeight.bold,
-  };
-
-  const italicStyles = italic && {
-    label: 'text--italic',
-    fontStyle: 'italic',
-  };
-
-  const strikeThroughStyles = strike && {
-    label: 'text--strike-through',
-    textDecoration: 'line-through',
-  };
-
-  const listItemStyles = as === 'li' && {
-    label: 'text--list-item',
-    marginLeft: theme.spacings.echo,
-  };
-
   const blockquoteStyles = as === 'blockquote' && {
-    label: 'text--blockquote',
     background: theme.colors.n800,
     borderLeft: `${theme.borderWidth.delta} solid ${theme.colors.p400}`,
     borderRadius: theme.borderRadius.alpha,
@@ -86,11 +75,7 @@ function styles({ as, bold, italic, strike, noMargin, size, theme }) {
 
   return withMediaQueries(theme)({
     ...baseStyles,
-    ...sizeStyles,
-    ...boldStyles,
-    ...italicStyles,
-    ...strikeThroughStyles,
-    ...listItemStyles,
+    ...sizeDeclarations,
     ...blockquoteStyles,
   });
 }
@@ -108,6 +93,7 @@ Text.propTypes = {
     PropTypes.oneOf([ALPHA, BRAVO, CHARLIE, DELTA, ECHO]),
     PropTypes.arrayOf(PropTypes.oneOf([ALPHA, BRAVO, CHARLIE, DELTA, ECHO])),
   ]),
+  spacingBottom: sizePropType,
   bold: PropTypes.bool,
   italic: PropTypes.bool,
   strike: PropTypes.bool,
@@ -117,7 +103,8 @@ Text.propTypes = {
 Text.defaultProps = {
   as: 'p',
   noMargin: false,
-  size: CHARLIE,
+  size: DELTA,
+  spacingBottom: [CHARLIE, DELTA],
   bold: false,
   italic: false,
   strike: false,

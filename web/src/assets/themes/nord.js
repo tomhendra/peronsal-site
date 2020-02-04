@@ -1,5 +1,5 @@
-import 'typeface-noto-sans';
-import 'typeface-lato';
+import 'typeface-fira-sans-extra-condensed';
+import 'typeface-inconsolata';
 import 'typeface-fira-code';
 
 // ....................colours....................
@@ -127,9 +127,11 @@ const primary = {
 const misc = {
   bodyBg: neutral.n900,
   bodyColor: neutral.n100,
-  brandColor: primary.p400,
-  headingColor: neutral.n300,
-  subheadingColor: neutral.n200,
+  brand: primary.p400,
+  accentAlpha: blue.b400,
+  accentBravo: lavender.l500,
+  accentCharlie: primary.p500,
+  accentNeutral: neutral.n300,
   shadowNeutral: neutral.n500,
   shadowPrimary: primary.p400,
   danger: red.r500,
@@ -195,7 +197,7 @@ export const typography = {
   },
   subHeadings: {
     alpha: {
-      fontSize: '1.7rem', // 17px
+      fontSize: '1.8rem', // 18px
       lineHeight: 1.5,
     },
     bravo: {
@@ -203,7 +205,7 @@ export const typography = {
       lineHeight: 1.5,
     },
     charlie: {
-      fontSize: '2.3rem', // 23px
+      fontSize: '2.4rem', // 24px
       lineHeight: 1.4,
     },
     delta: {
@@ -213,7 +215,7 @@ export const typography = {
   },
   text: {
     alpha: {
-      fontSize: '1rem', // 10px
+      fontSize: '1.1rem', // 11px
       lineHeight: 1.5,
     },
     bravo: {
@@ -221,14 +223,18 @@ export const typography = {
       lineHeight: 1.5,
     },
     charlie: {
-      fontSize: '1.6rem', // 16px
+      fontSize: '1.5rem', // 15px
       lineHeight: 1.5,
     },
     delta: {
-      fontSize: '1.8rem', // 18px
+      fontSize: '1.7rem', // 17px
       lineHeight: 1.5,
     },
     echo: {
+      fontSize: '2rem', // 20px
+      lineHeight: 1.5,
+    },
+    foxtrot: {
       fontSize: '2.4rem', // 24px
       lineHeight: 1.5,
     },
@@ -236,14 +242,16 @@ export const typography = {
 };
 
 export const fontStack = {
-  default:
-    'Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-  heading: 'Lato, sans-serif',
+  default: 'Inconsolata, monospace',
+  subheading: 'Inconsolata, monospace',
+  heading: 'Fira Sans Extra Condensed, sans-serif',
   mono: 'Fira Code, monospace',
 };
 
 export const fontWeight = {
   regular: '400',
+  medium: '500',
+  semiBold: '600',
   bold: '700',
 };
 
@@ -271,63 +279,71 @@ export const spacings = {
 };
 
 export const iconSizes = {
-  alpha: 12, // 12px
-  bravo: 14, // 14px
-  charlie: 16, // 16px
-  delta: 18, // 18px
-  echo: 20, // 20px
-  foxtrot: 24, // 24px
-  golf: 28, // 28px
-  hotel: 32, // 32px
-  india: 48, // 48px
-  juliett: 64, // 64px
-  kilo: 84, // 84px
+  alpha: '12px',
+  bravo: '14px',
+  charlie: '16px',
+  delta: '18px',
+  echo: '20px',
+  foxtrot: '24px',
+  golf: '28px',
+  hotel: '32px',
+  india: '48px',
+  juliett: '64px',
+  kilo: '84px',
 };
 
 export const borderRadius = {
   alpha: '1px',
   bravo: '4px',
   charlie: '6px',
-  delta: '12px',
+  delta: '8px',
+  echo: '12px',
+  foxtrot: '14px',
 };
 
 export const borderWidth = {
   alpha: '1px',
   bravo: '2px',
-  charlie: '5px',
-  delta: '10px',
+  charlie: '3px',
+  delta: '4px',
+  echo: '5px',
+  foxtrot: '8px',
+  golf: '10px',
+  hotel: '12px',
 };
 
 // ....................layout....................
-
+// maxWidth for grid - limited by eye for when layout looks too wide
 export const grid = {
   alpha: {
     cols: 8,
-    maxWidth: '33.6rem', // 336px
-    gutter: spacings.charlie,
+    maxWidth: '44rem', // 440px
+    gutter: spacings.delta,
   },
   bravo: {
-    cols: 8,
-    maxWidth: '67.2rem', // 672px
+    cols: 12,
+    maxWidth: '69rem', // 690px
     gutter: spacings.delta,
   },
   charlie: {
     cols: 12,
-    maxWidth: '88rem', // 880px
+    maxWidth: '86rem', // 860px
     gutter: spacings.echo,
   },
   delta: {
     cols: 12,
-    maxWidth: '88rem', // 880px
+    maxWidth: '120rem', // 1200px
     gutter: spacings.echo,
   },
 };
 
 export const breakpoints = [
-  '37.6rem', // 376px
-  '76.8rem', // 768px
-  '96rem', // 960px
-  '128rem', // 1280px
+  // values should be in rem, but numbers only so calculations can be made by Facepaint
+  // see withMediaQueries function in assets/styles/style-helpers.js
+  '58', // 580px mobile
+  '77', // 770px up to tablet (iPad / iPad mini)
+  '108', // 1080px up to large tablet (iPad pro)
+  '120', // 1200px notebook / desktop
 ];
 
 // ....................misc....................

@@ -14,10 +14,10 @@ function useTechStack() {
             logo {
               asset {
                 logoUrl: url
-                small: fixed(width: 18) {
+                small: fixed(width: 24) {
                   ...GatsbySanityImageFixed
                 }
-                medium: fixed(width: 24) {
+                medium: fixed(width: 48) {
                   ...GatsbySanityImageFixed
                 }
                 large: fixed(width: 64) {

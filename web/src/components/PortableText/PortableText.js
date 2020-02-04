@@ -9,7 +9,7 @@ import Text from '../Text';
 import Figure from '../Figure';
 import CodeBlock from '../CodeBlock';
 
-import { sizes } from '../../assets/styles/constants';
+import { sizes } from '../../assets/styles/style-enums';
 
 const { CHARLIE, DELTA, ECHO } = sizes;
 

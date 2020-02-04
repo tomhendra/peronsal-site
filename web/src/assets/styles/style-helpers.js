@@ -12,14 +12,17 @@ to be used at each incremental breakpoint.
 example usage:
 const styles = theme => {
   return withMediaQueries(theme)({
-    label: 'container',
     margin: '0 auto',
     maxWidth: [320px, 756px, 960px, 1200px]
   });
 };
 */
 export function withMediaQueries(theme) {
-  return facepaint(theme.breakpoints.map(bp => `@media (min-width: ${bp})`));
+  return facepaint(
+    // fontSize: '62.5%' for html in css-reset is not respected for media queries
+    // https://drafts.csswg.org/mediaqueries/#units
+    theme.breakpoints.map(bp => `@media (min-width: ${bp * 0.625}rem)`),
+  );
 }
 
 // ....................spacings....................
@@ -63,6 +66,8 @@ export function getSpacingValues(size, theme) {
 
 // ....................typography....................
 
+// should only be used for text elements, since line height is returned.
+// i.e. not for buttons or standalone links for navigation etc.
 function typographyHelper(type, size, theme) {
   const { typography } = theme;
   const typographyType = typography[type];
@@ -89,14 +94,6 @@ export const getSubheadingDeclarations = (size, theme) =>
   typographyHelper('subHeadings', size, theme);
 
 // ....................shadows....................
-
-// export const shadowGround = shadowColor => ({
-//   boxShadow: `0 0 0 2px ${transparentize(0.97, shadowColor)}`,
-// });
-
-// export const shadowBorder = (borderColor, borderSize = '1px') => ({
-//   boxShadow: `0px 0px 0px ${borderSize} ${borderColor}`,
-// });
 
 export const shadowStandardAlpha = shadowColor => ({
   boxShadow: `0 1px 3px ${transparentize(0.8, shadowColor)}`,

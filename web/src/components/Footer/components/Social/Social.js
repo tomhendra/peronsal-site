@@ -4,24 +4,47 @@ import { withTheme } from 'emotion-theming';
 
 import Icon from '../../../Icon';
 
-import { colors, icons, sizes } from '../../../../assets/styles/constants';
+import { withMediaQueries } from '../../../../assets/styles/style-helpers';
+
+import { colors, icons, sizes } from '../../../../assets/styles/style-enums';
 
 const { NEUTRAL } = colors;
 const { GITHUB, LINKEDIN, TWITTER } = icons;
-const { ECHO } = sizes;
+const { BRAVO } = sizes;
 
 // ....................styles....................
 
-const linkStyles = ({ theme }) => ({
-  'svg:hover': {
-    stroke: theme.colors.p500,
-  },
-});
+const containerStyles = ({ theme }) =>
+  withMediaQueries(theme)({
+    display: 'flex',
+    // flexWrap: 'wrap',
+    justifyContent: ['flex-start', 'flex-end', 'flex-end', 'flex-start'],
 
-const containerStyles = () => ({
-  display: 'flex',
-  justifyContent: 'space-between',
-});
+    '& > :not(:last-of-type)': {
+      marginRight: [theme.spacings.bravo, theme.spacings.echo],
+    },
+  });
+
+const linkStyles = ({ theme }) =>
+  withMediaQueries(theme)({
+    display: 'flex',
+    alignItems: 'center',
+    borderWidth: theme.borderWidth.charlie,
+    borderStyle: 'solid',
+    borderColor: theme.colors.n500,
+    borderRadius: theme.borderRadius.bravo,
+    color: theme.colors.n400,
+    fontSize: [
+      theme.typography.text.bravo.fontSize,
+      theme.typography.text.charlie.fontSize,
+    ],
+    padding: [
+      `${theme.spacings.alpha} ${theme.spacings.bravo}`,
+      `${theme.spacings.alpha} ${theme.spacings.charlie}`,
+    ],
+    textDecoration: 'none',
+    textTransform: 'uppercase',
+  });
 
 // ....................component....................
 
@@ -31,14 +54,40 @@ const SocialLink = styled.a(linkStyles);
 function Social() {
   return (
     <SocialContainer>
-      <SocialLink href="https://github.com/tomhendra">
-        <Icon type={GITHUB} color={NEUTRAL} size={ECHO} alt="GitHub logo" />
+      <SocialLink href="https://github.com/tomhendra" target="_blank">
+        <Icon
+          type={GITHUB}
+          color={NEUTRAL}
+          size={BRAVO}
+          alt="GitHub logo"
+          spacingRight={BRAVO}
+        />
+        GitHub
       </SocialLink>
-      <SocialLink href="https://www.linkedin.com/in/tom-hendra/">
-        <Icon type={LINKEDIN} color={NEUTRAL} size={ECHO} alt="LinkedIn logo" />
+      <SocialLink
+        href="https://www.linkedin.com/in/tom-hendra/"
+        target="_blank"
+        // cheeky little override to align LinkedIn logo at baseline of text
+        // css={{ alignItems: 'flex-start' }}
+      >
+        <Icon
+          type={LINKEDIN}
+          color={NEUTRAL}
+          size={BRAVO}
+          alt="LinkedIn logo"
+          spacingRight={BRAVO}
+        />
+        LinkedIn
       </SocialLink>
-      <SocialLink href="https://twitter.com/TomHendra">
-        <Icon type={TWITTER} color={NEUTRAL} size={ECHO} alt="Twitter logo" />
+      <SocialLink href="https://twitter.com/TomHendra" target="_blank">
+        <Icon
+          type={TWITTER}
+          color={NEUTRAL}
+          size={BRAVO}
+          alt="Twitter logo"
+          spacingRight={BRAVO}
+        />
+        Twitter
       </SocialLink>
     </SocialContainer>
   );

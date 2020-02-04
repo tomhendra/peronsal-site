@@ -21,9 +21,6 @@ const globalStyles = {
     color: theme.colors.bodyColor,
     fontFamily: theme.fontStack.default,
   },
-  main: {
-    position: 'relative',
-  },
 };
 
 // ....................component....................

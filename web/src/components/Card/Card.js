@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
-import PropTypes from 'prop-types';
 
 import {
   childrenPropType,
@@ -8,7 +7,9 @@ import {
   justifyContentPropType,
   alignItemsPropType,
   alignContentPropType,
-  spacingPropType,
+  sizePropType,
+  shadowPropType,
+  colorPropType,
 } from '../../utils/shared-prop-types';
 
 import {
@@ -26,7 +27,9 @@ import {
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
-import { shadows, sizes } from '../../assets/styles/constants';
+import { colors, shadows, sizes } from '../../assets/styles/style-enums';
+
+const { BRAND, ACCENT_ALPHA, ACCENT_BRAVO, ACCENT_CHARLIE } = colors;
 
 const {
   STANDARD_ALPHA,
@@ -45,6 +48,7 @@ const { FOXTROT } = sizes;
 // ....................styles....................
 
 function styles({
+  accentColor,
   shadow,
   padding,
   paddingTop,
@@ -59,14 +63,17 @@ function styles({
 }) {
   const baseStyles = {
     backgroundColor: theme.colors.white,
-    borderRadius: theme.borderRadius.delta,
+    borderRadius: theme.borderRadius.charlie,
+    borderStyle: 'solid',
+    borderWidth: theme.borderWidth.echo,
     display: 'flex',
     flexWrap: 'no-wrap',
+    height: '100%',
     zIndex: theme.zIndex.card,
   };
 
   const paddingStyles = {
-    padding: getSpacingValues(padding, theme),
+    padding: padding && getSpacingValues(padding, theme),
     paddingTop: paddingTop && getSpacingValues(paddingTop, theme),
     paddingRight: paddingRight && getSpacingValues(paddingRight, theme),
     paddingBottom: paddingBottom && getSpacingValues(paddingBottom, theme),
@@ -79,6 +86,23 @@ function styles({
     alignItems,
     alignContent,
   };
+
+  const accentStyles = {
+    [BRAND]: {
+      borderColor: theme.colors.brand,
+    },
+    [ACCENT_ALPHA]: {
+      borderColor: theme.colors.accentAlpha,
+    },
+    [ACCENT_BRAVO]: {
+      borderColor: theme.colors.accentBravo,
+    },
+    [ACCENT_CHARLIE]: {
+      borderColor: theme.colors.accentCharlie,
+    },
+  };
+
+  const accentConfig = accentStyles[accentColor];
 
   const shadowStyles = {
     [STANDARD_ALPHA]: shadowStandardAlpha(theme.colors.shadowNeutral),
@@ -99,6 +123,7 @@ function styles({
     ...baseStyles,
     ...paddingStyles,
     ...flexboxStyles,
+    ...accentConfig,
     ...shadowConfig,
   });
 }
@@ -110,23 +135,13 @@ const Card = styled.div(styles);
 // ....................propTypes....................
 
 Card.propTypes = {
-  shadow: PropTypes.oneOf([
-    STANDARD_ALPHA,
-    STANDARD_BRAVO,
-    STANDARD_CHARLIE,
-    STANDARD_DELTA,
-    STANDARD_ECHO,
-    OFFSET_ALPHA,
-    OFFSET_BRAVO,
-    OFFSET_CHARLIE,
-    OFFSET_DELTA,
-    OFFSET_ECHO,
-  ]),
-  padding: spacingPropType,
-  paddingTop: spacingPropType,
-  paddingRight: spacingPropType,
-  paddingBottom: spacingPropType,
-  paddingLeft: spacingPropType,
+  accentColor: colorPropType,
+  shadow: shadowPropType,
+  padding: sizePropType,
+  paddingTop: sizePropType,
+  paddingRight: sizePropType,
+  paddingBottom: sizePropType,
+  paddingLeft: sizePropType,
   flexDirection: flexDirectionPropType,
   justifyContent: justifyContentPropType,
   alignItems: alignItemsPropType,
@@ -135,6 +150,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
+  accentColor: ACCENT_BRAVO,
   shadow: STANDARD_DELTA,
   padding: FOXTROT,
   paddingTop: null,

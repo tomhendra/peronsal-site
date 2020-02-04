@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
-import Container from '../Container';
+import Section from '../Section';
 import Grid from '../Grid';
 import Item from '../Item';
 import PortableText from '../PortableText';
@@ -12,9 +12,9 @@ import Heading from '../Heading';
 import PostedDate from './components/PostedDate';
 import CategoryList from './components/CategoryList';
 
-import { sizes } from '../../assets/styles/constants';
+import { sizes } from '../../assets/styles/style-enums';
 
-const { FOXTROT, GOLF, INDIA } = sizes;
+const { FOXTROT } = sizes;
 
 // ....................styles....................
 
@@ -31,14 +31,10 @@ const PostMainImage = styled(Img)(imageStyles);
 function BlogPost({ post }) {
   const { _rawBody, title, mainImage, publishedAt, categories } = post;
   return (
-    <Container>
+    <Section>
       <article>
         <Grid>
-          <Item
-            gridStart={1}
-            gridEnd={[9, 9, 11, 11]}
-            spacingTop={[GOLF, INDIA]}
-          >
+          <Item gridColStart={[1, 1, 1, 3]} gridColEnd={[9, 12, 12, 10]}>
             <Heading as="h1" size={FOXTROT}>
               {title}
             </Heading>
@@ -52,14 +48,18 @@ function BlogPost({ post }) {
                 }}
               />
             )}
+          </Item>
+          <Item gridColStart={[1, 1, 1, 3]} gridColEnd={[9, 12, 12, 10]}>
             {_rawBody && <PortableText blocks={_rawBody} />}
+          </Item>
+          <Item gridColStart={[1, 1, 1, 3]} gridColEnd={[9, 12, 12, 13]}>
             <aside>
               {categories && <CategoryList categories={categories} />}
             </aside>
           </Item>
         </Grid>
       </article>
-    </Container>
+    </Section>
   );
 }
 

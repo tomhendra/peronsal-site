@@ -17,8 +17,8 @@ function useProjects() {
               alt
               caption
               asset {
-                fixed(width: 256) {
-                  ...GatsbySanityImageFixed
+                fluid {
+                  ...GatsbySanityImageFluid
                 }
               }
             }
@@ -38,7 +38,7 @@ function useProjects() {
         techstack: node._rawTechstack,
         repo: node.repo,
         url: node.url,
-        image: node.mainImage.asset.fixed,
+        image: node.mainImage.asset.fluid,
         alt: node.mainImage.alt,
         caption: node.mainImage.caption,
       },

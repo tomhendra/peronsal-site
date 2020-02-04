@@ -4,52 +4,117 @@ import { withTheme } from 'emotion-theming';
 
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 
+import Grid from '../Grid';
+import Item from '../Item';
 import Copyright from './components/Copyright';
 import Social from './components/Social';
-import Switch from './components/Switch';
+import Navbar from './components/Navbar';
+
+import { sizes } from '../../assets/styles/style-enums';
+
+const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT } = sizes;
 
 // ....................styles....................
 
 const footerStyles = ({ theme }) =>
   withMediaQueries(theme)({
-    label: 'footer',
-    alignItems: 'center',
-    backgroundColor: theme.colors.bodyBg,
-    borderTop: `${theme.borderWidth.alpha} solid ${theme.colors.n600}`,
+    backgroundColor: theme.colors.n700,
     color: theme.colors.n400,
-    display: 'flex',
-    height: ['5rem', '6rem'],
-    padding: ['0 2rem', '0 4rem'],
+    paddingTop: [
+      theme.spacings.hotel,
+      theme.spacings.india,
+      theme.spacings.india,
+      theme.spacings.juliett,
+    ],
+    paddingRight: [
+      theme.grid.alpha.gutter,
+      theme.grid.bravo.gutter,
+      theme.grid.charlie.gutter,
+      theme.grid.delta.gutter,
+    ],
+    paddingBottom: [
+      theme.spacings.golf,
+      theme.spacings.hotel,
+      theme.spacings.hotel,
+      theme.spacings.hotel,
+    ],
+    paddingLeft: [
+      theme.grid.alpha.gutter,
+      theme.grid.bravo.gutter,
+      theme.grid.charlie.gutter,
+      theme.grid.delta.gutter,
+    ],
     width: '100vw',
     zIndex: theme.zIndex.footer,
   });
 
 const containerStyles = ({ theme }) =>
   withMediaQueries(theme)({
-    alignItems: 'center',
     display: 'flex',
-    justifyContent: ['center', 'space-between'],
+    flexDirection: 'column',
     margin: '0 auto',
-    maxWidth: [...theme.breakpoints],
-    width: '100%',
-
-    '& > *': {
-      minWidth: '12rem',
-    },
+    maxWidth: [
+      theme.grid.alpha.maxWidth,
+      theme.grid.bravo.maxWidth,
+      theme.grid.charlie.maxWidth,
+      theme.grid.delta.maxWidth,
+    ],
+    width: '100vw',
   });
+
+const dividerStyles = ({ theme }) => ({
+  backgroundColor: theme.colors.n500,
+  height: theme.borderWidth.delta,
+});
 
 // ....................component....................
 
 const FooterElement = styled.footer(footerStyles);
 const FooterContainer = styled.div(containerStyles);
+const FooterDivider = styled.div(dividerStyles);
 
 function Footer() {
   return (
     <FooterElement>
       <FooterContainer>
-        <Copyright />
-        <Social />
-        <Switch />
+        <Grid>
+          <Item
+            gridColStart={[1, 1, 1, 1]}
+            gridColEnd={[9, 5, 5, 3]}
+            gridRowStart={[1, 1, 1, 1]}
+            gridRowEnd={[2, 2, 2, 2]}
+            spacingBottom={[DELTA, FOXTROT, FOXTROT, CHARLIE]}
+            justifyContent="center"
+          >
+            <Copyright />
+          </Item>
+          <Item
+            gridColStart={[1, 1, 1, 1]}
+            gridColEnd={[9, 13, 13, 13]}
+            gridRowStart={[3, 2, 2, 2]}
+            gridRowEnd={[4, 3, 3, 3]}
+            spacingBottom={[ALPHA, BRAVO, BRAVO, ECHO]}
+          >
+            <FooterDivider />
+          </Item>
+          <Item
+            gridColStart={[1, 5, 5, 1]}
+            gridColEnd={[9, 13, 13, 5]}
+            gridRowStart={[2, 1, 1, 3]}
+            gridRowEnd={[3, 2, 2, 4]}
+            spacingBottom={[FOXTROT, FOXTROT, FOXTROT, 0]}
+          >
+            <Social />
+          </Item>
+          <Item
+            gridColStart={[1, 2, 2, 6]}
+            gridColEnd={[9, 13, 13, 13]}
+            gridRowStart={[4, 3, 3, 3]}
+            gridRowEnd={[5, 4, 4, 4]}
+          >
+            <Navbar />
+          </Item>
+        </Grid>
       </FooterContainer>
     </FooterElement>
   );

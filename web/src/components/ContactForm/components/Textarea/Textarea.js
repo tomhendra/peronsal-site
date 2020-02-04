@@ -7,7 +7,7 @@ import Label from '../Label';
 import Tooltip from '../../../Tooltip';
 import Counter from '../Counter';
 
-import { colors, positions } from '../../../../assets/styles/constants';
+import { colors, positions } from '../../../../assets/styles/style-enums';
 
 const { DANGER } = colors;
 const { START } = positions;
@@ -30,7 +30,7 @@ const elementStyles = ({ theme, error, touched }) => ({
   borderWidth: theme.borderWidth.alpha,
   color: theme.colors.bodyColor,
   fontFamily: theme.fontStack.default,
-  fontSize: theme.typography.text.charlie.fontSize,
+  fontSize: theme.typography.text.delta.fontSize,
   marginTop: theme.spacings.alpha,
   padding: theme.spacings.charlie,
   resize: 'none',

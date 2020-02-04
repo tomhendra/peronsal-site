@@ -5,7 +5,7 @@ import { withTheme } from 'emotion-theming';
 import {
   childrenPropType,
   gridPropType,
-  spacingPropType,
+  sizePropType,
   flexDirectionPropType,
   justifyContentPropType,
   alignItemsPropType,
@@ -20,9 +20,6 @@ import {
 // ....................styles....................
 
 function styles({
-  gridStart,
-  gridSpan,
-  gridEnd,
   spacingTop,
   spacingRight,
   spacingBottom,
@@ -31,6 +28,12 @@ function styles({
   justifyContent,
   alignItems,
   alignContent,
+  gridColStart,
+  gridColEnd,
+  gridColSpan,
+  gridRowStart,
+  gridRowEnd,
+  gridRowSpan,
   theme,
 }) {
   const baseStyles = {
@@ -38,15 +41,6 @@ function styles({
     display: 'flex',
     flexWrap: 'wrap',
     zIndex: theme.zIndex.default,
-  };
-
-  const gridStyles = {
-    gridArea:
-      gridSpan && Array.isArray(gridSpan)
-        ? gridSpan.map(val => `span 1 / span ${val}`)
-        : `span 1 / span ${gridSpan}`,
-    gridColumnStart: gridStart && gridStart,
-    gridColumnEnd: gridEnd && gridEnd,
   };
 
   const spacingStyles = {
@@ -61,6 +55,23 @@ function styles({
     justifyContent,
     alignItems,
     alignContent,
+  };
+
+  function getGridSpanValues(spanValue) {
+    return Array.isArray(spanValue)
+      ? spanValue.map(val => `span ${val}`)
+      : `span ${spanValue}`;
+  }
+
+  const gridStyles = {
+    gridColumnStart: gridColStart && gridColStart,
+    gridRowStart: gridRowStart && gridRowStart,
+    gridColumnEnd:
+      (gridColEnd && gridColEnd) ||
+      (gridColSpan && getGridSpanValues(gridColSpan)),
+    gridRowEnd:
+      (gridRowEnd && gridRowEnd) ||
+      (gridRowSpan && getGridSpanValues(gridRowSpan)),
   };
 
   return withMediaQueries(theme)({
@@ -78,24 +89,24 @@ const Item = styled.div(styles);
 // ....................propTypes....................
 
 Item.propTypes = {
-  gridStart: gridPropType,
-  gridEnd: gridPropType,
-  gridSpan: gridPropType,
-  spacingTop: spacingPropType,
-  spacingRight: spacingPropType,
-  spacingBottom: spacingPropType,
-  spacingLeft: spacingPropType,
+  spacingTop: sizePropType,
+  spacingRight: sizePropType,
+  spacingBottom: sizePropType,
+  spacingLeft: sizePropType,
   flexDirection: flexDirectionPropType,
   justifyContent: justifyContentPropType,
   alignItems: alignItemsPropType,
   alignContent: alignContentPropType,
+  gridColStart: gridPropType,
+  gridColEnd: gridPropType,
+  gridColSpan: gridPropType,
+  gridRowStart: gridPropType,
+  gridRowEnd: gridPropType,
+  gridRowSpan: gridPropType,
   children: childrenPropType,
 };
 
 Item.defaultProps = {
-  gridStart: null,
-  gridSpan: null,
-  gridEnd: null,
   spacingTop: null,
   spacingRight: null,
   spacingBottom: null,
@@ -104,6 +115,12 @@ Item.defaultProps = {
   justifyContent: 'flex-start',
   alignItems: 'stretch',
   alignContent: 'stretch',
+  gridColStart: null,
+  gridColSpan: null,
+  gridColEnd: null,
+  gridRowStart: null,
+  gridRowSpan: null,
+  gridRowEnd: null,
   children: null,
 };
 
