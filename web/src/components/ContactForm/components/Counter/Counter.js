@@ -6,7 +6,7 @@ import Text from '../../../Text';
 
 import { sizes } from '../../../../assets/styles/style-enums';
 
-const { BRAVO } = sizes;
+const { CHARLIE } = sizes;
 
 // ....................styles....................
 
@@ -66,7 +66,7 @@ function Counter({ messageMaxLength, charsEntered }) {
   const charsRemaining = messageMaxLength - charsEntered;
   return (
     <CounterContainer>
-      <CounterText noMargin size={BRAVO}>
+      <CounterText noMargin size={CHARLIE}>
         {`Characters remaining: ${charsRemaining}`}
       </CounterText>
       <CounterSvg>

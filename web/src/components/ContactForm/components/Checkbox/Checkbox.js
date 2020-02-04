@@ -15,6 +15,7 @@ import {
   positions,
   sizes,
 } from '../../../../assets/styles/style-enums';
+import { withMediaQueries } from '../../../../assets/styles/style-helpers';
 
 const { DANGER, WHITE } = colors;
 const { CHECK } = icons;
@@ -37,46 +38,52 @@ const elementStyles = ({ theme }) => ({
   },
 });
 
-const labelStyles = ({ theme, checked, error, touched }) => ({
-  alignItems: 'center',
-  display: 'flex',
-  position: 'relative',
+const labelStyles = ({ theme, checked, error, touched }) =>
+  withMediaQueries(theme)({
+    alignItems: 'center',
+    display: 'flex',
+    flexWrap: 'wrap',
+    fontSize: [
+      theme.typography.text.bravo.fontSize,
+      theme.typography.text.charlie.fontSize,
+    ],
+    position: 'relative',
 
-  '&::before': {
-    backgroundColor: !checked ? 'inherit' : theme.colors.p400,
-    borderColor:
-      !checked && !touched
-        ? theme.colors.n400
-        : checked
-        ? theme.colors.p400
-        : error && theme.colors.danger,
-    borderStyle: 'solid',
-    borderRadius: theme.borderRadius.bravo,
-    borderWidth: theme.borderWidth.alpha,
-    content: '""',
-    cursor: 'pointer',
-    display: 'inline-block',
-    height: theme.iconSizes.charlie,
-    marginRight: '0.6rem',
-    transition: 'border 0.05s ease-in, background-color 0.05s ease-in',
-    width: theme.iconSizes.charlie,
-  },
-
-  // target Icon container div
-  '& div': {
-    cursor: 'pointer',
-    left: '0.2rem',
-    opacity: !checked ? 0 : 1,
-    position: 'absolute',
-    top: '0.2rem',
-    transform: !checked ? 'scale(0, 0)' : 'scale(1, 1)',
-    transition: 'transform 0.05s ease-in, opacity 0.05s ease-in',
-    // thicken the nested svg slightly from 2 default (hackish?)
-    '& svg': {
-      strokeWidth: 3,
+    '&::before': {
+      backgroundColor: !checked ? 'inherit' : theme.colors.p400,
+      borderColor:
+        !checked && !touched
+          ? theme.colors.n500
+          : checked
+          ? theme.colors.p400
+          : error && theme.colors.danger,
+      borderStyle: 'solid',
+      borderRadius: theme.borderRadius.bravo,
+      borderWidth: theme.borderWidth.bravo,
+      content: '""',
+      cursor: 'pointer',
+      display: 'inline-block',
+      height: theme.iconSizes.charlie,
+      marginRight: '0.6rem',
+      transition: 'border 0.05s ease-in, background-color 0.05s ease-in',
+      width: theme.iconSizes.charlie,
     },
-  },
-});
+
+    // target Icon container div
+    '& div': {
+      cursor: 'pointer',
+      left: '0.2rem',
+      opacity: !checked ? 0 : 1,
+      position: 'absolute',
+      top: '0.2rem',
+      transform: !checked ? 'scale(0, 0)' : 'scale(1, 1)',
+      transition: 'transform 0.05s ease-in, opacity 0.05s ease-in',
+      // thicken the nested svg slightly from 2 default (hackish?)
+      '& svg': {
+        strokeWidth: 3,
+      },
+    },
+  });
 
 // ....................component....................
 

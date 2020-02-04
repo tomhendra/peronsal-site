@@ -20,8 +20,8 @@ import {
   sizes,
 } from '../../assets/styles/style-enums';
 
-const { PRIMARY, SECONDARY } = variants;
-const { DANGER, SUCCESS } = colors;
+const { PRIMARY, TERTIARY } = variants;
+const { DANGER, SUCCESS, ACCENT_BRAVO } = colors;
 const { END } = positions;
 const { BRAVO, ECHO, GOLF } = sizes;
 
@@ -41,7 +41,6 @@ const formStyles = ({ theme }) => ({
 
 const linkStyles = ({ theme }) => ({
   color: theme.colors.n400,
-  fontSize: theme.typography.text.bravo.fontSize,
   fontWeight: theme.fontWeight.bold,
   textDecoration: 'none',
 
@@ -130,7 +129,7 @@ function ContactForm() {
     >
       {/* destructure helper methods from props */}
       {({ isSubmitting, handleReset }) => (
-        <Card padding={[ECHO, GOLF]}>
+        <Card padding={[ECHO, GOLF]} accentColor={ACCENT_BRAVO}>
           <StyledForm id="fs-frm" noValidate>
             <input
               type="hidden"
@@ -170,7 +169,7 @@ function ContactForm() {
             </Checkbox>
             <ButtonGroup>
               <Button
-                buttonStyle={SECONDARY}
+                buttonStyle={TERTIARY}
                 buttonSize={BRAVO}
                 disabled={isSubmitting}
                 onClick={handleReset}

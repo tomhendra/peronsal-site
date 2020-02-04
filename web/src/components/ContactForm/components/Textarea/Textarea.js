@@ -30,7 +30,7 @@ const elementStyles = ({ theme, error, touched }) => ({
   borderWidth: theme.borderWidth.alpha,
   color: theme.colors.bodyColor,
   fontFamily: theme.fontStack.default,
-  fontSize: theme.typography.text.charlie.fontSize,
+  fontSize: theme.typography.text.delta.fontSize,
   marginTop: theme.spacings.alpha,
   padding: theme.spacings.charlie,
   resize: 'none',

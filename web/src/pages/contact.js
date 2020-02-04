@@ -16,11 +16,11 @@ function ContactPage() {
   return (
     <Layout>
       <SEO title="Contact" />
-      <Section>
+      <Section paddingTop={INDIA}>
         <Grid withoutBottomSpacing>
           <Item
-            gridColStart={[1, 2, 3, 3]}
-            gridColEnd={[9, 8, 10, 10]}
+            gridColStart={[1, 2, 3, 4]}
+            gridColEnd={[9, 12, 11, 10]}
             spacingTop={[GOLF, INDIA, HOTEL]}
             spacingBottom={[GOLF, HOTEL]}
           >
