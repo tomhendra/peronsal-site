@@ -172,7 +172,7 @@ function IndexPage() {
       </Section>
       <Section variant={TERTIARY}>
         <Grid>
-          <Item gridColStart={1} gridColEnd={[9, 9, 7, 6]}>
+          <Item gridColStart={1} gridColEnd={[9, 9, 9, 6]}>
             <Heading as="h1" size={FOXTROT}>
               My skills.
             </Heading>
@@ -217,7 +217,7 @@ function IndexPage() {
               projects page. Or let’s connect if you have seen enough already!
             </Text>
           </Item>
-          <Item gridColStart={[1, 3, 3, 4]} gridColEnd={[9, 9, 8, 8]}>
+          <Item gridColStart={[1, 3, 3, 4]} gridColEnd={[9, 9, 9, 8]}>
             <ButtonGroup>
               <Button
                 internalLink="/projects/"

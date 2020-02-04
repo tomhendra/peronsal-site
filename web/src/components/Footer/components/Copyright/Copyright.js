@@ -23,7 +23,10 @@ const elementStyles = ({ theme }) =>
   withMediaQueries(theme)({
     color: theme.colors.n400,
     fontFamily: theme.fontStack.heading,
-    fontSize: theme.typography.text.charlie.fontSize,
+    fontSize: [
+      theme.typography.text.bravo.fontSize,
+      theme.typography.text.charlie.fontSize,
+    ],
     fontWeight: theme.fontWeight.regular,
     letterSpacing: 0.75,
     textTransform: 'uppercase',
