@@ -15,6 +15,7 @@ const styles = ({ theme }) =>
         theme.grid.bravo.gutter,
         theme.grid.charlie.gutter,
         theme.grid.delta.gutter,
+        theme.grid.echo.gutter,
       ],
     },
   });

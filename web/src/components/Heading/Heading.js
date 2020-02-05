@@ -69,7 +69,7 @@ Heading.defaultProps = {
   as: 'h2',
   noMargin: false,
   size: BRAVO,
-  spacingBottom: [CHARLIE, DELTA],
+  spacingBottom: [CHARLIE, CHARLIE, DELTA],
   children: null,
 };
 

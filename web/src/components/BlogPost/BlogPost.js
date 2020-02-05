@@ -34,7 +34,7 @@ function BlogPost({ post }) {
     <Section>
       <article>
         <Grid>
-          <Item gridColStart={[1, 1, 1, 3]} gridColEnd={[9, 12, 12, 10]}>
+          <Item gridColStart={[1, 1, 1, 3, 3]} gridColEnd={[9, 9, 12, 11, 10]}>
             <Heading as="h1" size={FOXTROT}>
               {title}
             </Heading>
@@ -49,10 +49,10 @@ function BlogPost({ post }) {
               />
             )}
           </Item>
-          <Item gridColStart={[1, 1, 1, 3]} gridColEnd={[9, 12, 12, 10]}>
+          <Item gridColStart={[1, 1, 1, 3, 3]} gridColEnd={[9, 9, 11, 11, 10]}>
             {_rawBody && <PortableText blocks={_rawBody} />}
           </Item>
-          <Item gridColStart={[1, 1, 1, 3]} gridColEnd={[9, 12, 12, 13]}>
+          <Item gridColStart={[1, 1, 1, 3, 3]} gridColEnd={[9, 9, 11, 11, 10]}>
             <aside>
               {categories && <CategoryList categories={categories} />}
             </aside>

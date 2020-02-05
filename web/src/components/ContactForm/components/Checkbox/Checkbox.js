@@ -3,7 +3,9 @@ import { useField } from 'formik';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import { hideVisually } from 'polished';
+
 import { childrenPropType } from '../../../../utils/shared-prop-types';
+import { withMediaQueries } from '../../../../assets/styles/style-helpers';
 
 import Icon from '../../../Icon';
 import Tooltip from '../../../Tooltip';
@@ -15,7 +17,6 @@ import {
   positions,
   sizes,
 } from '../../../../assets/styles/style-enums';
-import { withMediaQueries } from '../../../../assets/styles/style-helpers';
 
 const { DANGER, WHITE } = colors;
 const { CHECK } = icons;

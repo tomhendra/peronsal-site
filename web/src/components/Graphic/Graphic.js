@@ -1,3 +1,5 @@
+/*
+
 import React from 'react';
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
@@ -53,3 +55,5 @@ Graphic.defaultProps = {
 };
 
 export default withTheme(Graphic);
+
+*/

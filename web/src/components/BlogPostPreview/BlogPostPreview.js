@@ -44,6 +44,7 @@ const Image = styled(Img)(({ theme }) =>
       theme.spacings.echo,
       theme.spacings.echo,
       theme.spacings.foxtrot,
+      theme.spacings.foxtrot,
     ],
   }),
 );
@@ -56,7 +57,7 @@ function BlogPostPreview({ post }) {
       <Card
         as="article"
         accentColor={ACCENT_CHARLIE}
-        padding={[FOXTROT, FOXTROT, GOLF, GOLF]}
+        padding={[FOXTROT, FOXTROT, GOLF, GOLF, GOLF]}
         alignItems="stretch"
       >
         <Image

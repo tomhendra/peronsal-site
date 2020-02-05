@@ -104,7 +104,7 @@ Text.defaultProps = {
   as: 'p',
   noMargin: false,
   size: DELTA,
-  spacingBottom: [CHARLIE, DELTA],
+  spacingBottom: [CHARLIE, CHARLIE, DELTA],
   bold: false,
   italic: false,
   strike: false,

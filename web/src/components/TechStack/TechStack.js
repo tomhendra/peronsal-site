@@ -32,8 +32,9 @@ const TechStackGrid = styled.div(({ gridSize, theme }) => {
     [DELTA]: {
       gridTemplateColumns: [
         'repeat(3, 1fr)',
+        'repeat(3, 1fr)',
         'repeat(4, 1fr)',
-        'repeat(4, 1fr)',
+        'repeat(6, 1fr)',
         'repeat(6, 1fr)',
       ],
       gap: [

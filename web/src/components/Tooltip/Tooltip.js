@@ -23,7 +23,7 @@ const getBaseStyles = theme => ({
   zIndex: theme.zIndex.tooltip,
   // Tooltip arrow
   '&::after': {
-    border: `${theme.borderWidth.charlie} solid transparent`,
+    border: `${theme.borderWidth.foxtrot} solid transparent`,
     content: '""',
     position: 'absolute',
   },

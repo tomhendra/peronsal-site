@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 import { variantPropType } from '../../utils/shared-prop-types';
 
 import { variants, sizes } from '../../assets/styles/style-enums';
-import { withMediaQueries } from '../../assets/styles/style-helpers';
 
 const { PRIMARY, SECONDARY, TERTIARY } = variants;
 const { ALPHA, BRAVO, CHARLIE } = sizes;
@@ -94,11 +93,11 @@ function buttonStyles({ buttonStyle, buttonSize, inheritBg, theme }) {
   const colorConfig = colorVariants[buttonStyle];
   const sizeConfig = sizeVariants[buttonSize];
 
-  return withMediaQueries(theme)({
+  return {
     ...baseStyles,
     ...colorConfig,
     ...sizeConfig,
-  });
+  };
 }
 
 const linkStyles = {

@@ -23,6 +23,7 @@ const contentStyles = ({ theme }) =>
       theme.spacings.foxtrot,
       theme.spacings.foxtrot,
       theme.spacings.golf,
+      theme.spacings.golf,
     ],
   });
 
@@ -32,6 +33,7 @@ const imageStyles = ({ theme }) =>
       theme.spacings.echo,
       theme.spacings.echo,
       theme.spacings.echo,
+      theme.spacings.foxtrot,
       theme.spacings.foxtrot,
     ],
   });
