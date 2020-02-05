@@ -44,7 +44,7 @@ function IndexPage() {
             <Heading as="h1" size={FOXTROT}>
               Hola, I am Tom.
             </Heading>
-            <Text size={FOXTROT} noMargin>
+            <Text noMargin size={FOXTROT}>
               I’m a web developer from the UK living in Spain. I am passionate
               about code, design &amp; food!
             </Text>

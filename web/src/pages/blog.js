@@ -1,10 +1,8 @@
 /* eslint-disable max-len */
 import React from 'react';
-
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
-import Graphic from '../components/Graphic';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
 import Heading from '../components/Heading';
@@ -23,7 +21,6 @@ function BlogPage() {
     <Layout>
       <SEO title="Blog" />
       <Section fullViewportHeight>
-        <Graphic>Blog</Graphic>
         <Grid withoutBottomSpacing>
           <Item
             gridColStart={1}

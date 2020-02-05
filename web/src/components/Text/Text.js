@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
 import { childrenPropType, sizePropType } from '../../utils/shared-prop-types';
@@ -89,10 +90,7 @@ const Text = styled.p(styles);
 Text.propTypes = {
   as: PropTypes.string,
   noMargin: PropTypes.bool,
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf([ALPHA, BRAVO, CHARLIE, DELTA, ECHO]),
-    PropTypes.arrayOf(PropTypes.oneOf([ALPHA, BRAVO, CHARLIE, DELTA, ECHO])),
-  ]),
+  size: sizePropType,
   spacingBottom: sizePropType,
   bold: PropTypes.bool,
   italic: PropTypes.bool,
@@ -111,4 +109,4 @@ Text.defaultProps = {
   children: null,
 };
 
-export default Text;
+export default withTheme(Text);

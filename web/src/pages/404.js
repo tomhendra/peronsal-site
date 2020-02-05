@@ -3,7 +3,6 @@ import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
-import Graphic from '../components/Graphic';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
 import Heading from '../components/Heading';
@@ -19,7 +18,6 @@ export default () => (
   <Layout>
     <SEO title="404: Not found" />
     <Section center>
-      <Graphic>404</Graphic>
       <Grid withoutBottomSpacing>
         <Item
           gridColStart={[1, 2, 3, 4, 4]}
