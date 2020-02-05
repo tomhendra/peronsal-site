@@ -10,7 +10,7 @@ import ContactForm from '../components/ContactForm';
 
 import { sizes } from '../assets/styles/style-enums';
 
-const { GOLF, HOTEL, INDIA } = sizes;
+const { FOXTROT, GOLF, HOTEL, INDIA } = sizes;
 
 function ContactPage() {
   return (
@@ -19,9 +19,9 @@ function ContactPage() {
       <Section paddingTop={INDIA}>
         <Grid withoutBottomSpacing>
           <Item
-            gridColStart={[1, 2, 3, 4]}
-            gridColEnd={[9, 12, 11, 10]}
-            spacingTop={[GOLF, INDIA, HOTEL]}
+            gridColStart={[1, 1, 2, 3, 4]}
+            gridColEnd={[9, 9, 12, 11, 10]}
+            spacingTop={[FOXTROT, GOLF, INDIA, HOTEL]}
             spacingBottom={[GOLF, HOTEL]}
           >
             <ContactForm />

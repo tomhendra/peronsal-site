@@ -22,12 +22,12 @@ function BlogPage() {
   return (
     <Layout>
       <SEO title="Blog" />
-      <Section>
+      <Section fullViewportHeight>
         <Graphic>Blog</Graphic>
         <Grid withoutBottomSpacing>
           <Item
             gridColStart={1}
-            gridColEnd={[9, 9, 9, 6]}
+            gridColEnd={[9, 8, 9, 8, 6]}
             spacingBottom={HOTEL}
           >
             <Heading as="h1" size={FOXTROT}>
@@ -43,18 +43,17 @@ function BlogPage() {
         <Grid withRowGaps>
           {posts.length ? (
             posts.map(post => (
-              <Item gridColSpan={[8, 6, 6, 4]} gridRowSpan={1} key={post.id}>
+              <Item gridColSpan={[8, 4, 6, 6, 4]} gridRowSpan={1} key={post.id}>
                 <BlogPostPreview post={post} />
               </Item>
             ))
           ) : (
             <Item
               gridColStart={1}
-              gridColEnd={8}
-              spacingTop={GOLF}
+              gridColEnd={[9, 8, 10, 8, 6]}
               spacingBottom={GOLF}
             >
-              <Heading sub>
+              <Heading>
                 There are currently no posts to display. Please check back soon
                 once I have upped my blogging game!
               </Heading>

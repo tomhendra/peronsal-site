@@ -97,9 +97,9 @@ function IndexPage() {
             spacingBottom={[GOLF, GOLF, HOTEL, HOTEL, 0]}
           >
             <Card
-              padding={[FOXTROT, FOXTROT, HOTEL, GOLF, GOLF]}
+              padding={[FOXTROT, FOXTROT, GOLF, GOLF, GOLF]}
               paddingTop={[HOTEL, HOTEL, INDIA, HOTEL, INDIA]}
-              paddingBottom={[FOXTROT, FOXTROT, HOTEL, GOLF, HOTEL]}
+              paddingBottom={[FOXTROT, FOXTROT, GOLF, GOLF, HOTEL]}
               accentColor={ACCENT_ALPHA}
             >
               <Icon
@@ -124,9 +124,9 @@ function IndexPage() {
             spacingBottom={[GOLF, GOLF, HOTEL, HOTEL, 0]}
           >
             <Card
-              padding={[FOXTROT, FOXTROT, HOTEL, GOLF, GOLF]}
+              padding={[FOXTROT, FOXTROT, GOLF, GOLF, GOLF]}
               paddingTop={[HOTEL, HOTEL, INDIA, HOTEL, INDIA]}
-              paddingBottom={[FOXTROT, FOXTROT, HOTEL, GOLF, HOTEL]}
+              paddingBottom={[FOXTROT, FOXTROT, GOLF, GOLF, HOTEL]}
               accentColor={ACCENT_ALPHA}
             >
               <Icon
@@ -147,9 +147,9 @@ function IndexPage() {
           </Item>
           <Item gridColStart={[1, 2, 3, 4, 9]} gridColEnd={[9, 8, 11, 10, 13]}>
             <Card
-              padding={[FOXTROT, FOXTROT, HOTEL, GOLF, GOLF]}
+              padding={[FOXTROT, FOXTROT, GOLF, GOLF, GOLF]}
               paddingTop={[HOTEL, HOTEL, INDIA, HOTEL, INDIA]}
-              paddingBottom={[FOXTROT, FOXTROT, HOTEL, GOLF, HOTEL]}
+              paddingBottom={[FOXTROT, FOXTROT, GOLF, GOLF, HOTEL]}
               accentColor={ACCENT_ALPHA}
             >
               <Icon

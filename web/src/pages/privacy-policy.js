@@ -11,7 +11,7 @@ import Text from '../components/Text';
 
 import { sizes } from '../assets/styles/style-enums';
 
-const { FOXTROT, GOLF, INDIA } = sizes;
+const { FOXTROT, GOLF } = sizes;
 
 function PrivacyPolicyPage() {
   return (
@@ -20,9 +20,8 @@ function PrivacyPolicyPage() {
       <Section>
         <Grid>
           <Item
-            gridColStart={1}
-            gridColEnd={[9, 9, 11, 11]}
-            spacingTop={[GOLF, INDIA]}
+            gridColStart={[1, 1, 2, 3, 4]}
+            gridColEnd={[9, 9, 12, 11, 10]}
             spacingBottom={GOLF}
           >
             <Heading as="h1" size={FOXTROT}>
@@ -40,9 +39,9 @@ function PrivacyPolicyPage() {
             </Text>
           </Item>
           <Item
-            gridColStart={1}
-            gridColEnd={[9, 9, 11, 11]}
-            spacingBottom={GOLF}
+            gridColStart={[1, 1, 2, 3, 4]}
+            gridColEnd={[9, 9, 12, 11, 10]}
+            spacingBottom={FOXTROT}
           >
             <Heading as="h2">General Data Protection Regulation (GDPR)</Heading>
             <Text>We are a Data Controller of your information.</Text>
@@ -52,7 +51,7 @@ function PrivacyPolicyPage() {
               Personal Information we collect and the specific context in which
               we collect the information:
             </Text>
-            <ul>
+            <ul css={{ marginLeft: '4rem' }}>
               <li>
                 <Text>Tom Hendra needs to perform a contract with you</Text>
               </li>
@@ -86,7 +85,7 @@ function PrivacyPolicyPage() {
               In certain circumstances, you have the following data protection
               rights:
             </Text>
-            <ul>
+            <ul css={{ marginLeft: '4rem' }}>
               <li>
                 <Text>
                   The right to access, update or to delete the information we
@@ -111,9 +110,9 @@ function PrivacyPolicyPage() {
             </ul>
           </Item>
           <Item
-            gridColStart={1}
-            gridColEnd={[9, 9, 11, 11]}
-            spacingBottom={GOLF}
+            gridColStart={[1, 1, 2, 3, 4]}
+            gridColEnd={[9, 9, 12, 11, 10]}
+            spacingBottom={FOXTROT}
           >
             <Heading as="h2">Log Files</Heading>
             <Text>
@@ -130,9 +129,9 @@ function PrivacyPolicyPage() {
             </Text>
           </Item>
           <Item
-            gridColStart={1}
-            gridColEnd={[9, 9, 11, 11]}
-            spacingBottom={GOLF}
+            gridColStart={[1, 1, 2, 3, 4]}
+            gridColEnd={[9, 9, 12, 11, 10]}
+            spacingBottom={FOXTROT}
           >
             <Heading as="h2">Cookies and Web Beacons</Heading>
             <Text>
@@ -145,9 +144,9 @@ function PrivacyPolicyPage() {
             </Text>
           </Item>
           <Item
-            gridColStart={1}
-            gridColEnd={[9, 9, 11, 11]}
-            spacingBottom={GOLF}
+            gridColStart={[1, 1, 2, 3, 4]}
+            gridColEnd={[9, 9, 12, 11, 10]}
+            spacingBottom={FOXTROT}
           >
             <Heading as="h2">Privacy Policies</Heading>
             <Text>
@@ -170,9 +169,9 @@ function PrivacyPolicyPage() {
             </Text>
           </Item>
           <Item
-            gridColStart={1}
-            gridColEnd={[9, 9, 11, 11]}
-            spacingBottom={GOLF}
+            gridColStart={[1, 1, 2, 3, 4]}
+            gridColEnd={[9, 9, 12, 11, 10]}
+            spacingBottom={FOXTROT}
           >
             <Heading as="h2">Third Party Privacy Policies</Heading>
             <Text>
@@ -192,9 +191,9 @@ function PrivacyPolicyPage() {
             </Text>
           </Item>
           <Item
-            gridColStart={1}
-            gridColEnd={[9, 9, 11, 11]}
-            spacingBottom={GOLF}
+            gridColStart={[1, 1, 2, 3, 4]}
+            gridColEnd={[9, 9, 12, 11, 10]}
+            spacingBottom={FOXTROT}
           >
             <Heading as="h2">Children&apos;s Information</Heading>
             <Text>
@@ -213,13 +212,13 @@ function PrivacyPolicyPage() {
             </Text>
           </Item>
           <Item
-            gridColStart={1}
-            gridColEnd={[9, 9, 11, 11]}
-            spacingBottom={GOLF}
+            gridColStart={[1, 1, 2, 3, 4]}
+            gridColEnd={[9, 9, 12, 11, 10]}
+            spacingBottom={FOXTROT}
           >
             <Heading as="h2">Online Privacy Policy Only</Heading>
             <Text>
-              Our Privacy Policy created at GDPRPrivacyPolicy.net) applies only
+              Our Privacy Policy created at GDPRPrivacyPolicy.net applies only
               to our online activities and is valid for visitors to our website
               with regards to the information that they shared and/or collect in
               tomhendra.dev. This policy is not applicable to any information
@@ -232,9 +231,9 @@ function PrivacyPolicyPage() {
             </Text>
           </Item>
           <Item
-            gridColStart={1}
-            gridColEnd={[9, 9, 11, 11]}
-            spacingBottom={GOLF}
+            gridColStart={[1, 1, 2, 3, 4]}
+            gridColEnd={[9, 9, 12, 11, 10]}
+            spacingBottom={FOXTROT}
           >
             <Heading as="h2">Consent</Heading>
             <Text>

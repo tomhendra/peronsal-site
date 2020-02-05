@@ -7,11 +7,12 @@ import Graphic from '../components/Graphic';
 import Grid from '../components/Grid';
 import Item from '../components/Item';
 import Heading from '../components/Heading';
+import Text from '../components/Text';
 import Button from '../components/Button';
 
 import { variants, sizes } from '../assets/styles/style-enums';
 
-const { BRAVO, DELTA, GOLF, HOTEL } = sizes;
+const { BRAVO, FOXTROT, GOLF } = sizes;
 const { PRIMARY } = variants;
 
 export default () => (
@@ -20,20 +21,20 @@ export default () => (
     <Section center>
       <Graphic>404</Graphic>
       <Grid withoutBottomSpacing>
-        <Item gridColStart={[1, 2, 3, 1]} gridColEnd={[6, 9, 11, 9]}>
-          <Heading as="h1" size={HOTEL}>
-            Uh oh!
-          </Heading>
-          <Heading sub as="h2" size={DELTA} noMargin>
-            The page you requested could not be found. But do not fear, there is
-            a way back...
-          </Heading>
-        </Item>
         <Item
-          gridColStart={[1, 2, 3, 1]}
-          gridColEnd={[6, 4, 4, 4]}
-          spacingTop={GOLF}
+          gridColStart={[1, 2, 3, 4, 4]}
+          gridColEnd={[9, 8, 10, 10, 9]}
+          spacingBottom={GOLF}
         >
+          <Heading as="h1" size={FOXTROT}>
+            Uh oh, something went wrong!
+          </Heading>
+          <Text size={FOXTROT} noMargin>
+            The page you requested could not be found. Sorry about that. But do
+            not fear, there is a way back home...
+          </Text>
+        </Item>
+        <Item gridColStart={[1, 2, 3, 4, 4]} gridColEnd={[5, 5, 6, 7, 6]}>
           <Button internalLink="/" buttonStyle={PRIMARY} buttonSize={BRAVO}>
             Home
           </Button>

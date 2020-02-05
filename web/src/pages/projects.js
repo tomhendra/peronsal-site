@@ -27,7 +27,7 @@ function ProjectsPage() {
         <Grid>
           <Item
             gridColStart={1}
-            gridColEnd={[9, 9, 9, 6]}
+            gridColEnd={[9, 8, 9, 8, 6]}
             spacingBottom={HOTEL}
           >
             <Heading as="h1" size={FOXTROT}>
@@ -48,7 +48,7 @@ function ProjectsPage() {
         <Grid withRowGaps>
           {projects.length ? (
             projects.map(project => (
-              <Item gridColSpan={[8, 6, 6, 4]} key={project.id}>
+              <Item gridColSpan={[8, 8, 6, 6, 4]} key={project.id}>
                 <ProjectPreview project={project} />
               </Item>
             ))
@@ -74,8 +74,8 @@ function ProjectsPage() {
       >
         <Grid>
           <Item
-            gridColStart={[1, 3, 3, 4]}
-            gridColEnd={[9, 11, 11, 9]}
+            gridColStart={[1, 2, 3, 3, 4]}
+            gridColEnd={[9, 8, 11, 10, 9]}
             spacingBottom={GOLF}
           >
             <Heading as="h2" size={ECHO}>
@@ -87,7 +87,7 @@ function ProjectsPage() {
               rather get straight to business, just hit that contact button!
             </Text>
           </Item>
-          <Item gridColStart={[1, 3, 3, 4]} gridColEnd={[9, 9, 8, 8]}>
+          <Item gridColStart={[1, 2, 3, 3, 4]} gridColEnd={[9, 8, 9, 9, 8]}>
             <ButtonGroup>
               <Button
                 internalLink="/blog/"
