@@ -344,12 +344,10 @@ export const grid = {
 };
 
 export const breakpoints = [
-  // values should be in rem, but numbers only so calculations can be made by Facepaint
-  // see withMediaQueries function in assets/styles/style-helpers.js
-  '57.6', // Small devices (landscape phones, 576px and up)
-  '76.8', // Medium devices (tablets, 768px and up)
-  '99.2', // Large devices (desktops, 992px and up)
-  '120', // Extra large devices (large desktops, 1200px and up)
+  '576px', // Small devices (landscape phones, 576px and up)
+  '768px', // Medium devices (tablets, 768px and up)
+  '992px', // Large devices (desktops, 992px and up)
+  '1200px', // Extra large devices (large desktops, 1200px and up)
 ];
 // ....................misc....................
 
