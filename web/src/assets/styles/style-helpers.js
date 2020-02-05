@@ -26,40 +26,70 @@ export function withMediaQueries(theme) {
 // ....................spacings....................
 
 /*
-withMediaQueries() needs an array of values for facepaint.
-Problem:
-    Values sometimes need to be derived from theme dot notation. e.g. passing [ALPHA, BRAVO]
-    to component when ['0.8rem, '1.2rem] is required by facepaint, derived from
-    theme.spacings[ALPHA], theme.spacings[BRAVO]. Values do not always need to be an array if
-    variations are not required between breakpoints. Facepaint should ignore values which
-    are not arrays and process as normal, however there appears to be a bug...
+withMediaQueries() takes an array of values for use with facepaint.
 
-    When passing an array of values for padding, & only a
+Problem:
+    Values need to be derived from theme using dot notation. e.g. passing
+    [ALPHA, BRAVO] to component when ['0.8rem, '1.2rem] is required by facepaint,
+    derived from theme.spacings[ALPHA], theme.spacings[BRAVO].
+
+    Values do not always need to be an array if
+    variations are not required between breakpoints.
+    However there appears to be potential for user error...
+
+    E.g. When passing an array of values for padding, & only a
     single padding value for paddingTop, the paddingTop value
-    is only applied to the first breakpoint, and is ignored
-    for other breakpoints.
-    Array for paddingTop / singular for padding works as expected.
-    Perhaps related to https://github.com/emotion-js/facepaint/issues/9
+    is only applied to the first breakpoint, and is not applied
+    to subsequent breakpoints, therefore is overridden by padding for
+    larger breakpoints.
+
+    This is likely intended behaviour of facepaint, and could be overcome by
+    passing values manually for each breakpoint, but this could clutter markup
+    with something like [ALPHA, ALPHA, ALPHA, ALPHA, ALPHA], which hurts the eyes.
+
+    And what if we want to mix enums and numbers such as [ALPHA, 0, BRAVO, 100, ECHO] ?
 
 Solution:
-    Since facepaint repo hasn't been touched for a year,
-    workaround is to generate values for all breakpoints using Array.fill.
+    Generate values for all breakpoints using Array.fill if fewer
+    prop values are passed than what facepaint expects.
 */
+
 export function getSpacingValues(size, theme) {
   const { spacings, breakpoints } = theme;
+  const facepaintArrayLength = breakpoints.length + 1;
 
   if (Array.isArray(size)) {
-    return size.map(value =>
-      // handles arrays with mix of strings & numbers e.g. [ALPHA, BRAVO, 0, 0]
-      typeof value === 'string' ? spacings[value] : value,
-    );
+    const sizeArr = size;
+    // if length of array in size parameter is less than what facepaint expects
+    // i.e. number of breakpoints + 1, populate new array with last element in
+    // size array, and concat new array with size array.
+    if (sizeArr.length < facepaintArrayLength) {
+      return (
+        sizeArr
+          .concat(
+            Array(facepaintArrayLength - sizeArr.length).fill(
+              sizeArr[sizeArr.length - 1],
+            ),
+          )
+          // map over size array & grab values from theme.
+          // handles arrays with mix of strings & numbers e.g. [ALPHA, BRAVO, 0, 0, BRAVO]
+          .map(value => (typeof value === 'string' ? spacings[value] : value))
+      );
+    }
+    if (sizeArr.length === facepaintArrayLength) {
+      return sizeArr.map(value =>
+        typeof value === 'string' ? spacings[value] : value,
+      );
+    }
   }
-  // handle values of single enum, & populate array with same value for each breakpoint
+  // handle values of single enum, & populate new array with same value for each breakpoint
   if (typeof size === 'string') {
-    return Array(breakpoints.length + 1).fill(spacings[size]);
+    return Array(facepaintArrayLength).fill(spacings[size]);
   }
-  // return number (i.e. 0) as only other prop value permitted. (see ./utils/shared-prop-types.js)
-  return size;
+  // handle values of single numbers, as only other prop value permitted.
+  // (see ./utils/shared-prop-types.js)
+  // & populate new array with same value for each breakpoint
+  return Array(facepaintArrayLength).fill(size);
 }
 
 // ....................typography....................
