@@ -67,11 +67,8 @@ function styles({
     gridColumnStart: gridColStart && gridColStart,
     gridRowStart: gridRowStart && gridRowStart,
     gridColumnEnd:
-      (gridColEnd && gridColEnd) ||
-      (gridColSpan && getGridSpanValues(gridColSpan)),
-    gridRowEnd:
-      (gridRowEnd && gridRowEnd) ||
-      (gridRowSpan && getGridSpanValues(gridRowSpan)),
+      gridColEnd || (gridColSpan && getGridSpanValues(gridColSpan)),
+    gridRowEnd: gridRowEnd || (gridRowSpan && getGridSpanValues(gridRowSpan)),
   };
 
   return withMediaQueries(theme)({

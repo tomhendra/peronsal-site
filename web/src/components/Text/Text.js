@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
 import { childrenPropType, sizePropType } from '../../utils/shared-prop-types';
@@ -109,4 +108,4 @@ Text.defaultProps = {
   children: null,
 };
 
-export default withTheme(Text);
+export default Text;
