@@ -63,7 +63,7 @@ function BlogPostPreview({ post }) {
           alt={post.alt}
           sizes={{
             ...post.mainImage,
-            aspectRatio: 6 / 8,
+            aspectRatio: 6 / 6,
           }}
         />
         <Content>

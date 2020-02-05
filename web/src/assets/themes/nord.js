@@ -318,20 +318,25 @@ export const borderWidth = {
 export const grid = {
   alpha: {
     cols: 8,
-    maxWidth: '50rem', // 500px
+    maxWidth: '38rem', // 380px
     gutter: spacings.delta,
   },
   bravo: {
-    cols: 12,
-    maxWidth: '69rem', // 690px
+    cols: 8,
+    maxWidth: '51.2rem', // 512px
     gutter: spacings.delta,
   },
   charlie: {
     cols: 12,
-    maxWidth: '86rem', // 860px
-    gutter: spacings.echo,
+    maxWidth: '70.4rem', // 704px
+    gutter: spacings.delta,
   },
   delta: {
+    cols: 12,
+    maxWidth: '86.4rem', // 864px
+    gutter: spacings.echo,
+  },
+  echo: {
     cols: 12,
     maxWidth: '120rem', // 1200px
     gutter: spacings.echo,
@@ -341,11 +346,11 @@ export const grid = {
 export const breakpoints = [
   // values should be in rem, but numbers only so calculations can be made by Facepaint
   // see withMediaQueries function in assets/styles/style-helpers.js
-  '77', // 770px up to tablet (iPad / iPad mini)
-  '108', // 1080px up to large tablet (iPad pro)
-  '120', // 1200px notebook / desktop
+  '57.6', // Small devices (landscape phones, 576px and up)
+  '76.8', // Medium devices (tablets, 768px and up)
+  '99.2', // Large devices (desktops, 992px and up)
+  '120', // Extra large devices (large desktops, 1200px and up)
 ];
-
 // ....................misc....................
 
 export const transitions = {

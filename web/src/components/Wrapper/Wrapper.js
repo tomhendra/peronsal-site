@@ -7,6 +7,7 @@ import { childrenPropType } from '../../utils/shared-prop-types';
 
 const styles = {
   minHeight: '100vh',
+  minWidth: '100vw',
   overflow: 'hidden',
   position: 'relative',
 };

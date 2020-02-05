@@ -18,10 +18,20 @@ const containerStyles = ({ theme }) =>
   withMediaQueries(theme)({
     display: 'flex',
     // flexWrap: 'wrap',
-    justifyContent: ['flex-start', 'flex-end', 'flex-end', 'flex-start'],
+    justifyContent: [
+      'flex-start',
+      'flex-start',
+      'flex-end',
+      'flex-end',
+      'flex-start',
+    ],
 
     '& > :not(:last-of-type)': {
-      marginRight: [theme.spacings.bravo, theme.spacings.echo],
+      marginRight: [
+        theme.spacings.bravo,
+        theme.spacings.bravo,
+        theme.spacings.echo,
+      ],
     },
   });
 
@@ -36,9 +46,12 @@ const linkStyles = ({ theme }) =>
     color: theme.colors.n400,
     fontSize: [
       theme.typography.text.bravo.fontSize,
+      theme.typography.text.bravo.fontSize,
       theme.typography.text.charlie.fontSize,
     ],
     padding: [
+      `${theme.spacings.alpha} ${theme.spacings.bravo}`,
+
       `${theme.spacings.alpha} ${theme.spacings.bravo}`,
       `${theme.spacings.alpha} ${theme.spacings.charlie}`,
     ],

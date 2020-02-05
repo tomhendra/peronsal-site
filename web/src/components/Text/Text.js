@@ -44,7 +44,7 @@ function styles({
     [FOXTROT]: ECHO, // tested (hero text)
   };
   // array for facepaint
-  const sizeConfig = [mobileSizeMap[size], size];
+  const sizeConfig = [mobileSizeMap[size], mobileSizeMap[size], size];
   const sizeDeclarations = {
     ...getTextDeclarations(sizeConfig, theme),
   };

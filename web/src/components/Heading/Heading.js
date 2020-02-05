@@ -33,7 +33,7 @@ function styles({ noMargin, size, spacingBottom, theme }) {
     [HOTEL]: GOLF,
   };
   // array for facepaint
-  const sizeConfig = [mobileSizeMap[size], size];
+  const sizeConfig = [mobileSizeMap[size], mobileSizeMap[size], size];
   const sizeDeclarations = { ...getHeadingDeclarations(sizeConfig, theme) };
 
   return withMediaQueries(theme)({

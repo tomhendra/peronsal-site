@@ -17,7 +17,7 @@ const { ALPHA } = sizes;
 const navStyles = ({ theme }) =>
   withMediaQueries(theme)({
     alignItems: 'center',
-    display: ['none', 'flex'],
+    display: ['none', 'none', 'flex'],
 
     '& > :not(:last-of-type)': {
       marginRight: theme.spacings.golf,

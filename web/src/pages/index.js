@@ -37,8 +37,8 @@ function IndexPage() {
       <Section fullViewportHeight centerContentVertically variant={PRIMARY}>
         <Grid>
           <Item
-            gridColStart={[1, 4, 4, 4]}
-            gridColEnd={[9, 11, 11, 8]}
+            gridColStart={[1, 2, 4, 4, 4]}
+            gridColEnd={[9, 8, 11, 10, 8]}
             spacingBottom={GOLF}
           >
             <Heading as="h1" size={FOXTROT}>
@@ -49,7 +49,7 @@ function IndexPage() {
               about code, design &amp; food!
             </Text>
           </Item>
-          <Item gridColStart={[1, 4, 4, 4]} gridColEnd={[9, 10, 10, 8]}>
+          <Item gridColStart={[1, 2, 4, 4, 4]} gridColEnd={[9, 8, 10, 10, 8]}>
             <ButtonGroup>
               <Button
                 internalLink="/projects/"
@@ -74,7 +74,7 @@ function IndexPage() {
         <Grid>
           <Item
             gridColStart={1}
-            gridColEnd={[9, 9, 9, 6]}
+            gridColEnd={[9, 8, 9, 8, 6]}
             spacingBottom={HOTEL}
           >
             <Heading as="h2" size={ECHO}>
@@ -92,14 +92,14 @@ function IndexPage() {
             </Text>
           </Item>
           <Item
-            gridColStart={[1, 3, 4, 1]}
-            gridColEnd={[9, 11, 10, 5]}
-            spacingBottom={[GOLF, HOTEL, HOTEL, 0]}
+            gridColStart={[1, 2, 3, 4, 1]}
+            gridColEnd={[9, 8, 11, 10, 5]}
+            spacingBottom={[GOLF, GOLF, HOTEL, HOTEL, 0]}
           >
             <Card
-              padding={[FOXTROT, HOTEL, GOLF, GOLF]}
-              paddingTop={[HOTEL, INDIA, HOTEL, INDIA]}
-              paddingBottom={[FOXTROT, HOTEL, GOLF, HOTEL]}
+              padding={[FOXTROT, FOXTROT, HOTEL, GOLF, GOLF]}
+              paddingTop={[HOTEL, HOTEL, INDIA, HOTEL, INDIA]}
+              paddingBottom={[FOXTROT, FOXTROT, HOTEL, GOLF, HOTEL]}
               accentColor={ACCENT_ALPHA}
             >
               <Icon
@@ -119,14 +119,14 @@ function IndexPage() {
             </Card>
           </Item>
           <Item
-            gridColStart={[1, 3, 4, 5]}
-            gridColEnd={[9, 11, 10, 9]}
-            spacingBottom={[GOLF, HOTEL, HOTEL, 0]}
+            gridColStart={[1, 2, 3, 4, 5]}
+            gridColEnd={[9, 8, 11, 10, 9]}
+            spacingBottom={[GOLF, GOLF, HOTEL, HOTEL, 0]}
           >
             <Card
-              padding={[FOXTROT, HOTEL, GOLF, GOLF]}
-              paddingTop={[HOTEL, INDIA, HOTEL, INDIA]}
-              paddingBottom={[FOXTROT, HOTEL, GOLF, HOTEL]}
+              padding={[FOXTROT, FOXTROT, HOTEL, GOLF, GOLF]}
+              paddingTop={[HOTEL, HOTEL, INDIA, HOTEL, INDIA]}
+              paddingBottom={[FOXTROT, FOXTROT, HOTEL, GOLF, HOTEL]}
               accentColor={ACCENT_ALPHA}
             >
               <Icon
@@ -145,11 +145,11 @@ function IndexPage() {
               </Text>
             </Card>
           </Item>
-          <Item gridColStart={[1, 3, 4, 9]} gridColEnd={[9, 11, 10, 13]}>
+          <Item gridColStart={[1, 2, 3, 4, 9]} gridColEnd={[9, 8, 11, 10, 13]}>
             <Card
-              padding={[FOXTROT, HOTEL, GOLF, GOLF]}
-              paddingTop={[HOTEL, INDIA, HOTEL, INDIA]}
-              paddingBottom={[FOXTROT, HOTEL, GOLF, HOTEL]}
+              padding={[FOXTROT, FOXTROT, HOTEL, GOLF, GOLF]}
+              paddingTop={[HOTEL, HOTEL, INDIA, HOTEL, INDIA]}
+              paddingBottom={[FOXTROT, FOXTROT, HOTEL, GOLF, HOTEL]}
               accentColor={ACCENT_ALPHA}
             >
               <Icon
@@ -172,7 +172,7 @@ function IndexPage() {
       </Section>
       <Section variant={TERTIARY}>
         <Grid>
-          <Item gridColStart={1} gridColEnd={[9, 9, 9, 6]}>
+          <Item gridColStart={1} gridColEnd={[9, 8, 9, 8, 6]}>
             <Heading as="h1" size={FOXTROT}>
               My skills.
             </Heading>
@@ -189,9 +189,9 @@ function IndexPage() {
             </Text>
           </Item>
           <Item
-            gridColStart={[1, 1, 1, 1]}
-            gridColEnd={[9, 13, 13, 13]}
-            spacingTop={[GOLF, INDIA]}
+            gridColStart={[1, 1, 1, 1, 1]}
+            gridColEnd={[9, 9, 13, 13, 13]}
+            spacingTop={[GOLF, GOLF, INDIA, INDIA, INDIA]}
           >
             <TechStack gridSize={DELTA} />
           </Item>
@@ -199,14 +199,14 @@ function IndexPage() {
       </Section>
       <Section
         centerContentVertically
-        paddingTop={[JULIETT, LIMA]}
-        paddingBottom={[JULIETT, LIMA, LIMA, MIKE]}
+        paddingTop={[JULIETT, JULIETT, LIMA, LIMA, LIMA]}
+        paddingBottom={[JULIETT, JULIETT, LIMA, LIMA, MIKE]}
         variant={PRIMARY}
       >
         <Grid>
           <Item
-            gridColStart={[1, 3, 3, 4]}
-            gridColEnd={[9, 11, 11, 9]}
+            gridColStart={[1, 2, 3, 3, 4]}
+            gridColEnd={[9, 8, 11, 10, 9]}
             spacingBottom={GOLF}
           >
             <Heading as="h2" size={ECHO}>
@@ -217,7 +217,7 @@ function IndexPage() {
               projects page. Or let’s connect if you have seen enough already!
             </Text>
           </Item>
-          <Item gridColStart={[1, 3, 3, 4]} gridColEnd={[9, 9, 9, 8]}>
+          <Item gridColStart={[1, 2, 3, 3, 4]} gridColEnd={[9, 8, 9, 9, 8]}>
             <ButtonGroup>
               <Button
                 internalLink="/projects/"

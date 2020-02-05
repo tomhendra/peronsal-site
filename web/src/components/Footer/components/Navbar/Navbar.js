@@ -11,10 +11,11 @@ const navStyles = ({ theme }) =>
   withMediaQueries(theme)({
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: ['space-between', 'flex-end'],
+    justifyContent: ['space-between', 'space-between', 'flex-end'],
 
     '& > :not(:last-of-type)': {
       marginRight: [
+        0,
         0,
         theme.spacings.charlie,
         theme.spacings.charlie,
@@ -34,15 +35,17 @@ const navLinkStyles = ({ theme }) =>
     borderRadius: theme.borderRadius.bravo,
     fontSize: [
       theme.typography.text.bravo.fontSize,
+      theme.typography.text.bravo.fontSize,
       theme.typography.text.charlie.fontSize,
     ],
     padding: [
+      `${theme.spacings.bravo} 0`,
       `${theme.spacings.bravo} 0`,
       `${theme.spacings.alpha} ${theme.spacings.charlie}`,
     ],
 
     '&:hover': {
-      borderColor: ['transparent', theme.colors.n500],
+      borderColor: ['transparent', 'transparent', theme.colors.n500],
     },
   });
 

@@ -44,6 +44,7 @@ function styles({
     paddingTop: !paddingTop
       ? [
           theme.spacings.india,
+          theme.spacings.india,
           theme.spacings.juliett,
           theme.spacings.juliett,
           theme.spacings.kilo,
@@ -51,6 +52,7 @@ function styles({
       : getSpacingValues(paddingTop, theme),
     paddingBottom: !paddingBottom
       ? [
+          theme.spacings.india,
           theme.spacings.india,
           theme.spacings.juliett,
           theme.spacings.juliett,
@@ -62,12 +64,14 @@ function styles({
       theme.grid.bravo.gutter,
       theme.grid.charlie.gutter,
       theme.grid.delta.gutter,
+      theme.grid.echo.gutter,
     ],
     paddingRight: [
       theme.grid.alpha.gutter,
       theme.grid.bravo.gutter,
       theme.grid.charlie.gutter,
       theme.grid.delta.gutter,
+      theme.grid.echo.gutter,
     ],
     // position relative to allow for absolutely positioned background components
     position: 'relative',
