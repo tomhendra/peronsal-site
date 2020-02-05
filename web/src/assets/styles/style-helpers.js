@@ -60,7 +60,7 @@ export function getSpacingValues(size, theme) {
   }
   // handle values of single enum, & populate array with same value for each breakpoint
   if (typeof size === 'string') {
-    return Array(breakpoints.length).fill(spacings[size]);
+    return Array(breakpoints.length + 1).fill(spacings[size]);
   }
   // return number (i.e. 0) as only other prop value permitted. (see ./utils/shared-prop-types.js)
   return size;
