@@ -5,38 +5,33 @@ import styled from '@emotion/styled';
 
 import Card from '../Card';
 import Heading from '../Heading';
-import Button from '../Button';
 
 import { withMediaQueries } from '../../assets/styles/style-helpers';
-import { colors, variants, sizes } from '../../assets/styles/style-enums';
+import { colors, sizes } from '../../assets/styles/style-enums';
 
 const { ACCENT_CHARLIE } = colors;
-const { TERTIARY } = variants;
-const { BRAVO, FOXTROT, GOLF } = sizes;
+const { FOXTROT, GOLF } = sizes;
 
 // ....................styles....................
 
-const PostLink = styled(Link)({
-  overflow: 'hidden',
-  height: '100%',
-  textDecoration: 'none',
-});
-
-const Content = styled.div(({ theme }) =>
-  withMediaQueries(theme)({
-    marginBottom: [
-      theme.spacings.foxtrot,
-      theme.spacings.foxtrot,
-      theme.spacings.foxtrot,
-      theme.spacings.golf,
+function linkStyles({ theme }) {
+  return withMediaQueries(theme)({
+    overflow: 'hidden',
+    height: '100%',
+    minHeight: [
+      theme.spacings.november,
+      theme.spacings.mike,
+      theme.spacings.november,
+      theme.spacings.november,
+      theme.spacings.oscar,
     ],
-  }),
-);
+    textDecoration: 'none',
+  });
+}
 
-const Image = styled(Img)(({ theme }) =>
-  withMediaQueries(theme)({
+function imageStyles({ theme }) {
+  return withMediaQueries(theme)({
     borderRadius: theme.borderRadius.charlie,
-    display: 'block',
     mixBlendMode: 'luminosity',
     marginBottom: [
       theme.spacings.echo,
@@ -45,18 +40,22 @@ const Image = styled(Img)(({ theme }) =>
       theme.spacings.foxtrot,
       theme.spacings.foxtrot,
     ],
-  }),
-);
+  });
+}
 
 // ....................component....................
 
+const Image = styled(Img)(imageStyles);
+const StyledLink = styled(Link)(linkStyles);
+
 function BlogPostPreview({ post }) {
   return (
-    <PostLink to={post.slug} aria-label={post.title}>
+    <StyledLink to={post.slug} aria-label={post.title}>
       <Card
         as="article"
         accentColor={ACCENT_CHARLIE}
         padding={[FOXTROT, FOXTROT, GOLF, GOLF, GOLF]}
+        justifyContent="space-between"
         alignItems="stretch"
       >
         <Image
@@ -66,14 +65,12 @@ function BlogPostPreview({ post }) {
             aspectRatio: 6 / 6,
           }}
         />
-        <Content>
-          <Heading as="h3">{post.title}</Heading>
-        </Content>
-        <Button buttonStyle={TERTIARY} buttonSize={BRAVO} to={post.slug}>
-          Read Post
-        </Button>
+
+        <Heading noMargin as="h3">
+          {post.title}
+        </Heading>
       </Card>
-    </PostLink>
+    </StyledLink>
   );
 }
 

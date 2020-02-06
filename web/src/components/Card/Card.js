@@ -159,7 +159,7 @@ Card.defaultProps = {
   flexDirection: 'column',
   justifyContent: 'flex-start',
   alignItems: 'center',
-  alignContent: 'stretch',
+  alignContent: null,
   children: null,
 };
 
