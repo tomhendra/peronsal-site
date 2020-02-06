@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 
 import { withMediaQueries } from '../../../../assets/styles/style-helpers';
 
@@ -30,4 +29,4 @@ function MobileNav() {
   );
 }
 
-export default withTheme(MobileNav);
+export default MobileNav;

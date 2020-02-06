@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 
 import Text from '../../../Text';
 
@@ -83,4 +82,4 @@ function Counter({ messageMaxLength, charsEntered }) {
   );
 }
 
-export default withTheme(Counter);
+export default Counter;

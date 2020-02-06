@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 
 import { childrenPropType } from '../../utils/shared-prop-types';
 
@@ -26,4 +25,4 @@ Wrapper.defaultProps = {
   children: null,
 };
 
-export default withTheme(Wrapper);
+export default Wrapper;

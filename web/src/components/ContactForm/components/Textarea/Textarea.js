@@ -1,7 +1,6 @@
 import React from 'react';
 import { useField } from 'formik';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 
 import Label from '../Label';
 import Tooltip from '../../../Tooltip';
@@ -80,4 +79,4 @@ function Textarea({ label, messageMaxLength, ...otherProps }) {
 
 // ....................propTypes....................
 
-export default withTheme(Textarea);
+export default Textarea;

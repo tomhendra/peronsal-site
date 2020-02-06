@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
+import { useTheme } from 'emotion-theming';
 import * as featherIcons from 'react-feather';
 
 import {
@@ -78,8 +78,8 @@ function Icon({
   spacingRight,
   spacingBottom,
   spacingLeft,
-  theme,
 }) {
+  const theme = useTheme();
   const IconElement = featherIcons[type];
   const IconColor = getIconColor(color, theme);
   const IconSize = getIconSize(size, theme);
@@ -123,4 +123,4 @@ Icon.defaultProps = {
   type: CODE,
 };
 
-export default withTheme(Icon);
+export default Icon;

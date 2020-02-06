@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 
 import Logo from '../../../Logo';
 
@@ -56,4 +55,4 @@ function Copyright() {
   );
 }
 
-export default withTheme(Copyright);
+export default Copyright;

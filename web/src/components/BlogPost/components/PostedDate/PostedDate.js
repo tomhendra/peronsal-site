@@ -1,6 +1,5 @@
 import { format, formatDistance, differenceInDays } from 'date-fns';
 import React from 'react';
-import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
 import Heading from '../../../Heading';
@@ -34,4 +33,4 @@ PostedDate.defaultProps = {
   date: '',
 };
 
-export default withTheme(PostedDate);
+export default PostedDate;

@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 
 import Card from '../Card';
 import Tooltip from '../Tooltip';
@@ -202,4 +201,4 @@ function ContactForm() {
   );
 }
 
-export default withTheme(ContactForm);
+export default ContactForm;

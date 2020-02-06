@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 
@@ -24,4 +23,4 @@ const styles = ({ theme }) =>
 
 const ButtonGroup = styled.div(styles);
 
-export default withTheme(ButtonGroup);
+export default ButtonGroup;

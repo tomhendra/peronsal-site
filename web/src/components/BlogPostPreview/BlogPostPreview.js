@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 
 import Card from '../Card';
 import Heading from '../Heading';
@@ -78,6 +77,4 @@ function BlogPostPreview({ post }) {
   );
 }
 
-// ....................propTypes....................
-
-export default withTheme(BlogPostPreview);
+export default BlogPostPreview;

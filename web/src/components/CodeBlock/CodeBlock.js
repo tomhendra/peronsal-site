@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import PropTypes from 'prop-types';
 import nord from './themes/nord';
@@ -84,4 +83,4 @@ CodeBlock.defaultProps = {
   language: 'jsx',
 };
 
-export default withTheme(CodeBlock);
+export default CodeBlock;

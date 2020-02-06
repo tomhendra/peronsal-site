@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 import Img from 'gatsby-image';
 import { getFluidGatsbyImage } from 'gatsby-source-sanity';
 import PropTypes from 'prop-types';
@@ -63,4 +62,4 @@ Figure.defaultProps = {
   node: {},
 };
 
-export default withTheme(Figure);
+export default Figure;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useField } from 'formik';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 
 import Label from '../Label';
 import Tooltip from '../../../Tooltip';
@@ -72,4 +71,4 @@ function TextInput({ label, ...otherProps }) {
 
 // ....................propTypes....................
 
-export default withTheme(TextInput);
+export default TextInput;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 
 import { withMediaQueries } from '../../../../assets/styles/style-helpers';
 
@@ -76,4 +75,4 @@ function Navbar() {
   );
 }
 
-export default withTheme(Navbar);
+export default Navbar;

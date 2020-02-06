@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
 import { capitalize } from '../../utils/helpers';
@@ -153,4 +152,4 @@ Tooltip.defaultProps = {
   align: CENTER,
 };
 
-export default withTheme(Tooltip);
+export default Tooltip;

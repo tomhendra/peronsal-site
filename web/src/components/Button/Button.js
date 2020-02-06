@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
 import { variantPropType } from '../../utils/shared-prop-types';
@@ -170,4 +169,4 @@ Button.defaultProps = {
   inheritBg: false,
 };
 
-export default withTheme(Button);
+export default Button;

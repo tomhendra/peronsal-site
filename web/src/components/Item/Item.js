@@ -1,6 +1,5 @@
 // import React from 'react';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 
 import {
   childrenPropType,
@@ -121,4 +120,4 @@ Item.defaultProps = {
   children: null,
 };
 
-export default withTheme(Item);
+export default Item;

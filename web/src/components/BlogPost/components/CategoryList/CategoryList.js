@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
 // ....................styles....................
@@ -46,4 +45,4 @@ CategoryList.defaultProps = {
   categories: [{}],
 };
 
-export default withTheme(CategoryList);
+export default CategoryList;

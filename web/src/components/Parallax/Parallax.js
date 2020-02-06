@@ -3,8 +3,7 @@
 import React, { useEffect } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { withTheme } from 'emotion-theming';
-import { useInView } from 'react-intersection-observer';
+ import { useInView } from 'react-intersection-observer';
 
 import { childrenPropType } from '../../utils/shared-prop-types';
 
@@ -50,6 +49,6 @@ Parallax.defaultProps = {
   children: null,
 };
 
-export default withTheme(Parallax);
+export default  Parallax);
 
 */

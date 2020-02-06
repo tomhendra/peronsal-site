@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
 import { childrenPropType } from '../../utils/shared-prop-types';
@@ -65,4 +64,4 @@ Grid.defaultProps = {
   children: null,
 };
 
-export default withTheme(Grid);
+export default Grid;

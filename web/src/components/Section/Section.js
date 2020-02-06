@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
 import {
@@ -159,4 +158,4 @@ Section.defaultProps = {
   children: null,
 };
 
-export default withTheme(Section);
+export default Section;

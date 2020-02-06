@@ -1,7 +1,6 @@
 import React from 'react';
 import { useField } from 'formik';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 import { hideVisually } from 'polished';
 
 import { childrenPropType } from '../../../../utils/shared-prop-types';
@@ -131,4 +130,4 @@ Checkbox.defaultProps = {
   children: null,
 };
 
-export default withTheme(Checkbox);
+export default Checkbox;

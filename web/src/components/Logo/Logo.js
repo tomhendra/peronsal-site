@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
+import { useTheme } from 'emotion-theming';
 
 import { colorPropType, sizePropType } from '../../utils/shared-prop-types';
 
@@ -71,8 +71,8 @@ function Logo({
   spacingRight,
   spacingBottom,
   spacingLeft,
-  theme,
 }) {
+  const theme = useTheme();
   const LogoColor = getLogoColor(color, theme);
   const LogoSize = getLogoSize(size, theme);
 
@@ -129,4 +129,4 @@ Logo.defaultProps = {
   spacingLeft: null,
 };
 
-export default withTheme(Logo);
+export default Logo;

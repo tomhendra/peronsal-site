@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 
 import {
   childrenPropType,
@@ -166,4 +165,4 @@ Card.defaultProps = {
 
 // ....................component....................
 
-export default withTheme(Card);
+export default Card;

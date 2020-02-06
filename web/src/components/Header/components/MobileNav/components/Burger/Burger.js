@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
 // ....................styles....................
@@ -70,4 +69,4 @@ PropTypes.defaultProps = {
   setOpen: null,
 };
 
-export default withTheme(Burger);
+export default Burger;

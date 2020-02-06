@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import { withTheme } from 'emotion-theming';
 
 import Logo from '../Logo';
 import Navbar from './components/Navbar';
@@ -78,4 +77,4 @@ function Header() {
   );
 }
 
-export default withTheme(Header);
+export default Header;

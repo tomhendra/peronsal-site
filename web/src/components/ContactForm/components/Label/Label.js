@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 
 // ....................styles....................
 
@@ -13,4 +12,4 @@ const labelStyles = ({ theme }) => ({
 
 const Label = styled.label(labelStyles);
 
-export default withTheme(Label);
+export default Label;

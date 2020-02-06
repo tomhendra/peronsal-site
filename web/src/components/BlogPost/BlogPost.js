@@ -1,7 +1,6 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 import PropTypes from 'prop-types';
 
 import Section from '../Section';
@@ -75,4 +74,4 @@ BlogPost.defaultProps = {
   post: null,
 };
 
-export default withTheme(BlogPost);
+export default BlogPost;

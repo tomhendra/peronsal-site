@@ -1,7 +1,6 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 
 import Card from '../Card';
 import Heading from '../Heading';
@@ -70,4 +69,4 @@ function ProjectPreview({ project }) {
   );
 }
 
-export default withTheme(ProjectPreview);
+export default ProjectPreview;

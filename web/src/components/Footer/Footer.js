@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 
@@ -125,4 +124,4 @@ function Footer() {
   );
 }
 
-export default withTheme(Footer);
+export default Footer;

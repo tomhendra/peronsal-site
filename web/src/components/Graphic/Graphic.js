@@ -2,8 +2,7 @@
 
 import React from 'react';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
-import PropTypes from 'prop-types';
+ import PropTypes from 'prop-types';
 
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 
@@ -54,6 +53,6 @@ Graphic.defaultProps = {
   noMargin: false,
 };
 
-export default withTheme(Graphic);
+export default  Graphic);
 
 */

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { withTheme } from 'emotion-theming';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
@@ -88,4 +87,4 @@ PropTypes.defaultProps = {
   open: null,
 };
 
-export default withTheme(NavMenu);
+export default NavMenu;
