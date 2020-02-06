@@ -54,8 +54,8 @@ function BlogPostPreview({ post }) {
       <Card
         as="article"
         accentColor={ACCENT_CHARLIE}
-        padding={[FOXTROT, FOXTROT, GOLF, GOLF, GOLF]}
-        justifyContent="space-between"
+        padding={[GOLF, FOXTROT, GOLF, FOXTROT, GOLF]}
+        // justifyContent="space-between"
         alignItems="stretch"
       >
         <Image
