@@ -14,8 +14,35 @@ const { FOXTROT, GOLF } = sizes;
 
 // ....................styles....................
 
-function linkStyles({ theme }) {
-  return withMediaQueries(theme)({
+const Image = styled(Img)(({ theme }) =>
+  withMediaQueries(theme)({
+    borderRadius: theme.borderRadius.charlie,
+    marginBottom: [
+      theme.spacings.echo,
+      theme.spacings.echo,
+      theme.spacings.echo,
+      theme.spacings.foxtrot,
+      theme.spacings.foxtrot,
+    ],
+    position: 'relative',
+
+    '&::after': {
+      backgroundColor: theme.colors.white,
+      content: '""',
+      opacity: '1',
+      position: 'absolute',
+      top: '0',
+      left: '0',
+      bottom: '0',
+      right: '0',
+      mixBlendMode: 'hue',
+      transition: `opacity ${theme.transitions.slow}`,
+    },
+  }),
+);
+
+const StyledLink = styled(Link)(({ theme }) =>
+  withMediaQueries(theme)({
     overflow: 'hidden',
     height: '100%',
     minHeight: [
@@ -26,27 +53,18 @@ function linkStyles({ theme }) {
       theme.spacings.papa,
     ],
     textDecoration: 'none',
-  });
-}
 
-function imageStyles({ theme }) {
-  return withMediaQueries(theme)({
-    borderRadius: theme.borderRadius.charlie,
-    mixBlendMode: 'luminosity',
-    marginBottom: [
-      theme.spacings.echo,
-      theme.spacings.echo,
-      theme.spacings.echo,
-      theme.spacings.foxtrot,
-      theme.spacings.foxtrot,
-    ],
-  });
-}
+    '&:hover': {
+      [Image]: {
+        '&::after': {
+          opacity: 0,
+        },
+      },
+    },
+  }),
+);
 
 // ....................component....................
-
-const Image = styled(Img)(imageStyles);
-const StyledLink = styled(Link)(linkStyles);
 
 function BlogPostPreview({ post }) {
   return (
