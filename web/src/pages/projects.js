@@ -55,8 +55,7 @@ function ProjectsPage() {
           ) : (
             <Item
               gridColStart={1}
-              gridColEnd={8}
-              spacingTop={GOLF}
+              gridColEnd={[9, 8, 10, 8, 6]}
               spacingBottom={GOLF}
             >
               <Heading>
