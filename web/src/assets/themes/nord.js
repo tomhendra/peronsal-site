@@ -272,10 +272,15 @@ export const spacings = {
   lima: '25.6rem', // 256px
   mike: '32rem', // 320px
   november: '38.4rem', // 384px
-  oscar: '51.2rem', // 512px
-  papa: '64rem', // 640px
-  quebec: '76.8rem', // 768px
-  romeo: '96rem', // 960px
+  oscar: '44.8rem', // 448px
+  papa: '51.2rem', // 512px
+  quebec: '57.6rem', // 576px
+  romeo: '64rem', // 640px
+  sierra: '70.4rem', // 704px
+  tango: '76.8rem', // 768px
+  uniform: '83.2rem', // 832px
+  victor: '89.6rem', // 896px
+  whiskey: '96rem', // 960px
 };
 
 export const iconSizes = {

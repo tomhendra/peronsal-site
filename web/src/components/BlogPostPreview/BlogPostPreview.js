@@ -21,9 +21,9 @@ function linkStyles({ theme }) {
     minHeight: [
       theme.spacings.november,
       theme.spacings.mike,
-      theme.spacings.november,
-      theme.spacings.november,
       theme.spacings.oscar,
+      theme.spacings.november,
+      theme.spacings.papa,
     ],
     textDecoration: 'none',
   });
@@ -54,7 +54,7 @@ function BlogPostPreview({ post }) {
       <Card
         as="article"
         accentColor={ACCENT_CHARLIE}
-        padding={[GOLF, FOXTROT, GOLF, FOXTROT, GOLF]}
+        padding={[FOXTROT, FOXTROT, GOLF, FOXTROT, GOLF]}
         // justifyContent="space-between"
         alignItems="stretch"
       >
