@@ -52,9 +52,10 @@ const TechStackGrid = styled.div(({ gridSize, theme }) => {
 });
 
 // Tooltip
-const TechSTackTooltip = styled(Tooltip)({
+const TechSTackTooltip = styled(Tooltip)(({ theme }) => ({
+  marginBottom: theme.spacings.delta,
   visibility: 'hidden',
-});
+}));
 
 // Wrapper for Img & Tooltip
 const TechStackItem = styled.div({
