@@ -40,7 +40,7 @@ function BlogPage() {
         <Grid withRowGaps>
           {posts.length ? (
             posts.map(post => (
-              <Item gridColSpan={[8, 4, 6, 4, 4]} gridRowSpan={1} key={post.id}>
+              <Item gridColSpan={[8, 4, 6, 4, 4]} key={post.id}>
                 <BlogPostPreview post={post} />
               </Item>
             ))
