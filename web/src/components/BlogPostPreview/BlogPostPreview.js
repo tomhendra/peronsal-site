@@ -28,6 +28,7 @@ const Image = styled(Img)(({ theme }) =>
 
     '&::after': {
       backgroundColor: theme.colors.white,
+      borderRadius: theme.borderRadius.charlie,
       content: '""',
       opacity: '1',
       position: 'absolute',
