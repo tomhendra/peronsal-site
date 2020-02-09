@@ -17,6 +17,7 @@ const { FOXTROT, GOLF } = sizes;
 const Image = styled(Img)(({ theme }) =>
   withMediaQueries(theme)({
     borderRadius: theme.borderRadius.charlie,
+    filter: 'grayscale(100%)',
     marginBottom: [
       theme.spacings.echo,
       theme.spacings.echo,
@@ -24,21 +25,7 @@ const Image = styled(Img)(({ theme }) =>
       theme.spacings.foxtrot,
       theme.spacings.foxtrot,
     ],
-    position: 'relative',
-
-    '&::after': {
-      backgroundColor: theme.colors.white,
-      borderRadius: theme.borderRadius.charlie,
-      content: '""',
-      opacity: '1',
-      position: 'absolute',
-      top: '0',
-      left: '0',
-      bottom: '0',
-      right: '0',
-      mixBlendMode: 'hue',
-      transition: `opacity ${theme.transitions.slow}`,
-    },
+    transition: `filter ${theme.transitions.slow}`,
   }),
 );
 
@@ -57,9 +44,7 @@ const StyledLink = styled(Link)(({ theme }) =>
 
     '&:hover': {
       [Image]: {
-        '&::after': {
-          opacity: 0,
-        },
+        filter: 'none',
       },
     },
   }),

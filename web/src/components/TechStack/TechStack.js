@@ -15,7 +15,7 @@ const { ALPHA, DELTA } = sizes;
 // ....................styled components....................
 
 // Techstack grid
-const TechStackGrid = styled.div(({ gridSize, theme }) => {
+const Grid = styled.div(({ gridSize, theme }) => {
   const baseStyles = {
     display: 'grid',
     marginBottom: [theme.spacings.foxtrot, theme.spacings.charlie],
@@ -52,21 +52,30 @@ const TechStackGrid = styled.div(({ gridSize, theme }) => {
 });
 
 // Tooltip
-const TechSTackTooltip = styled(Tooltip)(({ theme }) => ({
+const StyledTooltip = styled(Tooltip)(({ theme }) => ({
   marginBottom: theme.spacings.delta,
   visibility: 'hidden',
 }));
 
 // Wrapper for Img & Tooltip
-const TechStackItem = styled.div({
+const Item = styled.div({
   position: 'relative',
 
   '&:hover': {
-    [TechSTackTooltip]: {
+    [StyledTooltip]: {
       visibility: 'visible',
     },
   },
 });
+
+const Image = styled(Img)(({ theme }) => ({
+  opacity: 0.85,
+  transition: `opacity ${theme.transitions.slow}`,
+
+  '&:hover': {
+    opacity: 1,
+  },
+}));
 
 // ....................component....................
 // Component must be passed an array of strings which must match the title
@@ -103,14 +112,14 @@ function TechStack({ gridSize, stack }) {
   const logoSize = gridSize === ALPHA ? 'logoSmall' : 'logoLarge';
 
   return (
-    <TechStackGrid gridSize={gridSize}>
+    <Grid gridSize={gridSize}>
       {stackGroupedByCategory.map(tech => (
-        <TechStackItem key={tech.id}>
-          <TechSTackTooltip>{tech.title}</TechSTackTooltip>
-          <Img fixed={tech[logoSize]} alt={tech.alt} />
-        </TechStackItem>
+        <Item key={tech.id}>
+          <StyledTooltip>{tech.title}</StyledTooltip>
+          <Image fixed={tech[logoSize]} alt={tech.alt} />
+        </Item>
       ))}
-    </TechStackGrid>
+    </Grid>
   );
 }
 
