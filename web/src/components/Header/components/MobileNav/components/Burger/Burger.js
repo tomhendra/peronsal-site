@@ -49,7 +49,11 @@ const BurgerElement = styled.button(elementStyles);
 
 function Burger({ open, setOpen }) {
   return (
-    <BurgerElement open={open} onClick={() => setOpen(!open)}>
+    <BurgerElement
+      open={open}
+      onClick={() => setOpen(!open)}
+      aria-label="Burger icon button to open navigation menu"
+    >
       <span />
       <span />
       <span />
