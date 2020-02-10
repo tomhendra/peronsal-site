@@ -26,7 +26,7 @@ const elementStyles = ({ theme, error, touched }) => ({
   borderColor: !(error && touched) ? theme.colors.n500 : theme.colors.danger,
   borderStyle: 'solid',
   borderRadius: theme.borderRadius.bravo,
-  borderWidth: theme.borderWidth.alpha,
+  borderWidth: theme.borderWidth.bravo,
   color: theme.colors.bodyColor,
   fontFamily: theme.fontStack.default,
   fontSize: theme.typography.text.delta.fontSize,
