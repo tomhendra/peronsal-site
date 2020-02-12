@@ -8,20 +8,27 @@ function useProjects() {
           node {
             _id
             title
-            publishedAt
-            description
-            _rawTechstack(resolveReferences: { maxDepth: 5 })
-            repo
-            url
+            slug {
+              current
+            }
+            publishedAt(formatString: "Do MMMM, YYYY")
             mainImage {
               alt
-              caption
               asset {
                 fluid {
                   ...GatsbySanityImageFluid
                 }
               }
             }
+            introduction
+            purpose
+            objective
+            approach
+            _rawTechstack(resolveReferences: { maxDepth: 5 })
+            role
+            credits
+            repo
+            url
           }
         }
       }
@@ -34,13 +41,20 @@ function useProjects() {
         id: node._id,
         date: node.publishedAt,
         title: node.title,
-        description: node.description,
-        techstack: node._rawTechstack,
-        repo: node.repo,
-        url: node.url,
+        slug: `/projects/${node.slug.current}`,
+        publishedAt: node.publishedAt,
         image: node.mainImage.asset.fluid,
         alt: node.mainImage.alt,
         caption: node.mainImage.caption,
+        introduction: node.introduction,
+        purpose: node.purpose,
+        objective: node.objective,
+        approach: node.approach,
+        techstack: node._rawTechstack,
+        role: node.role,
+        credits: node.credits,
+        repo: node.repo,
+        url: node.url,
       },
   );
 }

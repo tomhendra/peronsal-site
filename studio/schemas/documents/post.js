@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 export default {
   name: 'post',
   type: 'document',
@@ -26,6 +27,12 @@ export default {
       title: 'Published at',
     },
     {
+      name: 'author',
+      type: 'reference',
+      title: 'Author',
+      to: { type: 'author' },
+    },
+    {
       name: 'mainImage',
       type: 'figure',
       title: 'Main image',
@@ -39,12 +46,6 @@ export default {
       title: 'Excerpt',
       description:
         'This ends up on summary pages, on Google, when people share your post in social media.',
-    },
-    {
-      name: 'author',
-      type: 'reference',
-      title: 'Author',
-      to: { type: 'author' },
     },
     {
       name: 'categories',

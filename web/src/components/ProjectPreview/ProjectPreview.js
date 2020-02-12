@@ -55,7 +55,7 @@ function ProjectPreview({ project }) {
           {project.title}
         </Heading>
         <Text size={CHARLIE} noMargin>
-          {project.description}
+          {project.introduction}
         </Text>
       </Content>
       <Button
