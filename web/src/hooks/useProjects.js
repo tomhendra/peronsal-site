@@ -20,7 +20,7 @@ function useProjects() {
                 }
               }
             }
-            introduction
+            description
             purpose
             objective
             approach
@@ -43,10 +43,10 @@ function useProjects() {
         title: node.title,
         slug: `/projects/${node.slug.current}`,
         publishedAt: node.publishedAt,
-        image: node.mainImage.asset.fluid,
+        mainImage: node.mainImage.asset.fluid,
         alt: node.mainImage.alt,
         caption: node.mainImage.caption,
-        introduction: node.introduction,
+        description: node.description,
         purpose: node.purpose,
         objective: node.objective,
         approach: node.approach,

@@ -9,13 +9,7 @@ const styles = ({ theme }) =>
     display: 'flex',
 
     '& > *:not(:last-of-type)': {
-      marginRight: [
-        theme.grid.alpha.gutter,
-        theme.grid.bravo.gutter,
-        theme.grid.charlie.gutter,
-        theme.grid.delta.gutter,
-        theme.grid.echo.gutter,
-      ],
+      marginRight: theme.grid.charlie.gutter,
     },
   });
 

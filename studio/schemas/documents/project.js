@@ -41,9 +41,9 @@ export default {
       },
     },
     {
-      name: 'introduction',
+      name: 'description',
       type: 'text',
-      title: 'Introduction',
+      title: 'Description',
       description:
         'This ends up on summary pages, on Google, when people share your project in social media and for the project preview on the projects page.',
     },
@@ -51,31 +51,31 @@ export default {
       name: 'purpose',
       type: 'text',
       title: 'Purpose',
-      description: 'Purpose of the project: Why did you start the project?',
+      description: 'Purpose of the project: Why the project was started.',
     },
     {
       name: 'objective',
       type: 'text',
       title: 'Objective',
-      description: 'Objective: What you accomplished.',
+      description: 'Objective: What was accomplished during the project.',
     },
     {
       name: 'approach',
       type: 'text',
       title: 'Approach',
-      description: 'Approach: How you accomplished it',
+      description: 'Approach: How the project was accomplished.',
     },
     {
       name: 'techstack',
       type: 'array',
-      title: 'Technology stack',
+      title: 'Technology stack used for the project.',
       of: [{ type: 'reference', to: { type: 'technology' } }],
     },
     {
       name: 'role',
       type: 'text',
       title: 'Role',
-      description: 'Your role: How you contributed to the team or project.',
+      description: 'Your role: How you contributed to the project.',
     },
     {
       name: 'credits',
@@ -88,7 +88,7 @@ export default {
       name: 'repo',
       type: 'url',
       title: 'Project repo',
-      description: 'Link to the repo on GitHub.',
+      description: 'Link to the repo on GitHub or equivalent.',
     },
     {
       name: 'url',

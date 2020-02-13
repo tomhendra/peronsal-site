@@ -13,7 +13,7 @@ import CategoryList from './components/CategoryList';
 
 import { sizes } from '../../assets/styles/style-enums';
 
-const { FOXTROT } = sizes;
+const { ECHO } = sizes;
 
 // ....................styles....................
 
@@ -34,7 +34,7 @@ function BlogPost({ post }) {
       <article>
         <Grid>
           <Item gridColStart={[1, 1, 1, 3, 3]} gridColEnd={[9, 9, 12, 11, 10]}>
-            <Heading as="h1" size={FOXTROT}>
+            <Heading as="h1" size={ECHO}>
               {title}
             </Heading>
             {publishedAt && <PostedDate date={publishedAt} />}

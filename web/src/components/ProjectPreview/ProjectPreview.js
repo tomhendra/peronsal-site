@@ -50,18 +50,18 @@ function ProjectPreview({ project }) {
       alignItems="stretch"
     >
       <Content>
-        <Image fluid={project.image} alt={project.alt} />
+        <Image fluid={project.mainImage} alt={project.alt} />
         <Heading size={CHARLIE} spacingBottom={DELTA} as="h3">
           {project.title}
         </Heading>
         <Text size={CHARLIE} noMargin>
-          {project.introduction}
+          {project.description}
         </Text>
       </Content>
       <Button
         buttonStyle={TERTIARY}
         buttonSize={BRAVO}
-        externalLink={project.repo}
+        internalLink={project.slug}
       >
         More Details
       </Button>
