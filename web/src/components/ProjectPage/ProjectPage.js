@@ -14,7 +14,7 @@ import TechStack from '../TechStack';
 
 import { sizes, variants } from '../../assets/styles/style-enums';
 
-const { ALPHA, BRAVO, CHARLIE, DELTA, FOXTROT, GOLF } = sizes;
+const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF, INDIA } = sizes;
 const { PRIMARY, SECONDARY, TERTIARY } = variants;
 
 // ....................styles....................
@@ -45,16 +45,21 @@ function ProjectPage({ project }) {
     <Section variant={PRIMARY}>
       <article>
         <Grid>
-          <Item gridColStart={[1]} gridColEnd={[6]} spacingBottom={GOLF}>
+          <Item
+            gridColStart={[1, 1, 2, 1, 1]}
+            gridColEnd={[9, 9, 12, 7, 6]}
+            spacingBottom={[ECHO, GOLF]}
+          >
             <Heading noMargin as="h1" size={FOXTROT}>
               {title}
             </Heading>
           </Item>
           <Item
-            gridColStart={[7]}
-            gridColEnd={[11]}
-            gridRowStart={[1]}
-            gridRowSpan={[3]}
+            gridColStart={[1, 1, 2, 8, 7]}
+            gridColEnd={[9, 8, 10, 13, 11]}
+            gridRowStart={[2, 2, 2, 1, 1]}
+            gridRowSpan={[1, 1, 1, 3, 3]}
+            spacingBottom={[GOLF, GOLF, GOLF, 0, 0]}
           >
             {mainImage && mainImage.asset && (
               <ProjectMainImage
@@ -63,29 +68,41 @@ function ProjectPage({ project }) {
               />
             )}
           </Item>
-          <Item gridColStart={[1]} gridColEnd={[6]} spacingBottom={FOXTROT}>
+          <Item
+            gridColStart={[1, 1, 2, 1, 1]}
+            gridColEnd={[9, 8, 10, 7, 6]}
+            spacingBottom={FOXTROT}
+          >
             <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
               Purpose.
             </Heading>
             <Text noMargin>{purpose}</Text>
           </Item>
-          <Item gridColStart={[1]} gridColEnd={[6]} spacingBottom={FOXTROT}>
+          <Item
+            gridColStart={[1, 1, 2, 1, 1]}
+            gridColEnd={[9, 8, 10, 7, 6]}
+            spacingBottom={FOXTROT}
+          >
             <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
               Objective.
             </Heading>
             <Text noMargin>{objective}</Text>
           </Item>
-          <Item gridColStart={[1]} gridColEnd={[6]} spacingBottom={FOXTROT}>
+          <Item
+            gridColStart={[1, 1, 2, 1, 1]}
+            gridColEnd={[9, 8, 10, 7, 6]}
+            spacingBottom={[FOXTROT, FOXTROT, FOXTROT, INDIA, FOXTROT]}
+          >
             <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
               Approach.
             </Heading>
             <Text noMargin>{approach}</Text>
           </Item>
           <Item
-            gridColStart={[7]}
-            gridColEnd={[12]}
+            gridColStart={[1, 1, 2, 8, 7]}
+            gridColEnd={[9, 8, 10, 13, 12]}
             spacingBottom={FOXTROT}
-            spacingTop={GOLF}
+            spacingTop={[0, 0, 0, 0, GOLF]}
           >
             <Heading as="h2" size={DELTA}>
               Tech stack.
@@ -103,7 +120,7 @@ function ProjectPage({ project }) {
             </Heading>
             <Text>{credits}</Text>
           </Item>
-          <Item gridColStart={[1]} gridColEnd={[6]}>
+          <Item gridColStart={[1, 1, 2, 1, 1]} gridColEnd={[9, 9, 10, 8, 6]}>
             <ButtonGroup>
               <Button
                 buttonStyle={TERTIARY}

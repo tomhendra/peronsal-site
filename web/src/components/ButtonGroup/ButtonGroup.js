@@ -9,7 +9,7 @@ const styles = ({ theme }) =>
     display: 'flex',
 
     '& > *:not(:last-of-type)': {
-      marginRight: theme.grid.charlie.gutter,
+      marginRight: theme.spacings.bravo,
     },
   });
 
