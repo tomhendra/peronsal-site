@@ -15,10 +15,10 @@ const { ALPHA, DELTA } = sizes;
 // ....................styled components....................
 
 // Techstack grid
-const Grid = styled.div(({ gridSize, theme }) => {
+const Grid = styled.div(({ gridSize, theme, noMargin }) => {
   const baseStyles = {
     display: 'grid',
-    marginBottom: [theme.spacings.foxtrot, theme.spacings.charlie],
+    marginBottom: !noMargin ? theme.spacings.foxtrot : 0,
     justifyItems: 'center',
     width: '100%',
   };
@@ -81,7 +81,7 @@ const Image = styled(Img)(({ theme }) => ({
 // Component must be passed an array of strings which must match the title
 // specified in Sanity studio desk exactly !!
 // recommend to create enums if more manual use is required.
-function TechStack({ gridSize, stack }) {
+function TechStack({ gridSize, stack, noMargin }) {
   const allStack = useTechStack();
   // if array is supplied to stack prop, perform filter.
   const filteredStack =
@@ -109,10 +109,10 @@ function TechStack({ gridSize, stack }) {
   // verify which size image to use from useTechStack() based on value of gridSize
   // moved here for better performance over being inside map() below
   // as to not check the value of gridSize on every iteration!
-  const logoSize = gridSize === ALPHA ? 'logoSmall' : 'logoLarge';
+  const logoSize = gridSize === ALPHA ? 'logoMedium' : 'logoLarge';
 
   return (
-    <Grid gridSize={gridSize}>
+    <Grid gridSize={gridSize} noMargin={noMargin}>
       {stackGroupedByCategory.map(tech => (
         <Item key={tech.id}>
           <StyledTooltip>{tech.title}</StyledTooltip>
@@ -128,11 +128,13 @@ function TechStack({ gridSize, stack }) {
 TechStack.propTypes = {
   stack: PropTypes.arrayOf(PropTypes.string),
   gridSize: PropTypes.oneOf([ALPHA, DELTA]),
+  noMargin: PropTypes.bool,
 };
 
 TechStack.defaultProps = {
   stack: null,
   gridSize: ALPHA,
+  noMargin: false,
 };
 
 export default TechStack;

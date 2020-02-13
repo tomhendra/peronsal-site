@@ -14,7 +14,7 @@ import TechStack from '../TechStack';
 
 import { sizes, variants } from '../../assets/styles/style-enums';
 
-const { ALPHA, BRAVO, DELTA, ECHO } = sizes;
+const { ALPHA, BRAVO, CHARLIE, DELTA, FOXTROT, GOLF } = sizes;
 const { PRIMARY, SECONDARY, TERTIARY } = variants;
 
 // ....................styles....................
@@ -42,25 +42,66 @@ function ProjectPage({ project }) {
     url,
   } = project;
   return (
-    <Section>
+    <Section variant={PRIMARY}>
       <article>
         <Grid>
-          <Item gridColStart={[1]} gridColEnd={[6]}>
-            <Heading as="h1" size={ECHO}>
+          <Item gridColStart={[1]} gridColEnd={[6]} spacingBottom={GOLF}>
+            <Heading noMargin as="h1" size={FOXTROT}>
               {title}
             </Heading>
-            <Heading as="h2" size={DELTA}>
+          </Item>
+          <Item
+            gridColStart={[7]}
+            gridColEnd={[11]}
+            gridRowStart={[1]}
+            gridRowSpan={[3]}
+          >
+            {mainImage && mainImage.asset && (
+              <ProjectMainImage
+                alt={mainImage.alt}
+                fluid={mainImage.asset.fluid}
+              />
+            )}
+          </Item>
+          <Item gridColStart={[1]} gridColEnd={[6]} spacingBottom={FOXTROT}>
+            <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
               Purpose.
             </Heading>
-            <Text>{purpose}</Text>
-            <Heading as="h2" size={DELTA}>
+            <Text noMargin>{purpose}</Text>
+          </Item>
+          <Item gridColStart={[1]} gridColEnd={[6]} spacingBottom={FOXTROT}>
+            <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
               Objective.
             </Heading>
-            <Text>{objective}</Text>
-            <Heading as="h2" size={DELTA}>
+            <Text noMargin>{objective}</Text>
+          </Item>
+          <Item gridColStart={[1]} gridColEnd={[6]} spacingBottom={FOXTROT}>
+            <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
               Approach.
             </Heading>
-            <Text>{approach}</Text>
+            <Text noMargin>{approach}</Text>
+          </Item>
+          <Item
+            gridColStart={[7]}
+            gridColEnd={[12]}
+            spacingBottom={FOXTROT}
+            spacingTop={GOLF}
+          >
+            <Heading as="h2" size={DELTA}>
+              Tech stack.
+            </Heading>
+            <TechStack
+              gridSize={ALPHA}
+              stack={_rawTechstack.map(item => item.title)}
+            />
+            <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
+              Role.
+            </Heading>
+            <Text spacingBottom={FOXTROT}>{role}</Text>
+            <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
+              Credits.
+            </Heading>
+            <Text>{credits}</Text>
           </Item>
           <Item gridColStart={[1]} gridColEnd={[6]}>
             <ButtonGroup>
@@ -86,29 +127,6 @@ function ProjectPage({ project }) {
                 Launch App
               </Button>
             </ButtonGroup>
-          </Item>
-          <Item gridColStart={[7]} gridColEnd={[12]} gridRowStart={[1]}>
-            {mainImage && mainImage.asset && (
-              <ProjectMainImage
-                alt={mainImage.alt}
-                fluid={mainImage.asset.fluid}
-              />
-            )}
-            <Heading as="h2" size={DELTA}>
-              Tech stack.
-            </Heading>
-            <TechStack
-              gridSize={ALPHA}
-              stack={_rawTechstack.map(item => item.title)}
-            />
-            <Heading as="h2" size={DELTA}>
-              Role.
-            </Heading>
-            <Text>{role}</Text>
-            <Heading as="h2" size={DELTA}>
-              Credits.
-            </Heading>
-            <Text>{credits}</Text>
           </Item>
         </Grid>
       </article>

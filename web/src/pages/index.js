@@ -33,20 +33,20 @@ const { PRIMARY, SECONDARY, TERTIARY } = variants;
 function IndexPage() {
   return (
     <Layout>
-      <SEO title="Web Developer" />
+      <SEO title="Software Developer" />
       <Section fullViewportHeight centerContentVertically variant={PRIMARY}>
         <Grid>
           <Item
             gridColStart={[1, 2, 4, 4, 4]}
-            gridColEnd={[9, 8, 11, 10, 8]}
+            gridColEnd={[9, 8, 11, 10, 9]}
             spacingBottom={GOLF}
           >
             <Heading as="h1" size={FOXTROT}>
               Hola, I am Tom.
             </Heading>
             <Text noMargin size={FOXTROT}>
-              I’m a web developer from the UK living in Spain. I am passionate
-              about code, design &amp; food!
+              I’m a software developer from the UK living in Spain. I am
+              passionate about code, design &amp; food!
             </Text>
           </Item>
           <Item gridColStart={[1, 2, 4, 4, 4]} gridColEnd={[9, 8, 10, 10, 8]}>
@@ -178,8 +178,8 @@ function IndexPage() {
             </Heading>
             <Text>
               I get excited about using the latest technologies and strive to
-              build web apps & websites that are accessible, performant,
-              scalable and lightning fast.
+              build websites & apps that are accessible, performant, scalable
+              and lightning fast.
             </Text>
             <Text noMargin>
               I enjoy a modern tech stack based around React.js, and am
@@ -193,7 +193,7 @@ function IndexPage() {
             gridColEnd={[9, 9, 13, 13, 13]}
             spacingTop={[GOLF, GOLF, INDIA, INDIA, INDIA]}
           >
-            <TechStack gridSize={DELTA} />
+            <TechStack gridSize={DELTA} noMargin />
           </Item>
         </Grid>
       </Section>
