@@ -163,6 +163,4 @@ Card.defaultProps = {
   children: null,
 };
 
-// ....................component....................
-
 export default Card;

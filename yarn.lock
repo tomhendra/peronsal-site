@@ -7409,9 +7409,9 @@ gatsby-plugin-emotion@^4.1.22:
     "@babel/runtime" "^7.7.6"
     "@emotion/babel-preset-css-prop" "^10.0.23"
 
-gatsby-plugin-gtag@^1.0.12:
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-gtag/-/gatsby-plugin-gtag-1.0.12.tgz#a8af141773c2962d0803eaabf33c15caef74829c"
+gatsby-plugin-gtag@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.npmjs.org/gatsby-plugin-gtag/-/gatsby-plugin-gtag-1.0.13.tgz#ffa08a728ba1cfe33090e52764d014a025a5d35a"
 
 gatsby-plugin-manifest@^2.2.41:
   version "2.2.41"
@@ -12914,11 +12914,11 @@ react-ink@^6.1.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/react-ink/-/react-ink-6.4.0.tgz#fa1573104237d3c08bcbf06108f3197b16762f76"
 
-react-intersection-observer@^8.25.2:
-  version "8.25.2"
-  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.25.2.tgz#be165f4827dc8f1927ab68ecb837efe913d94909"
+react-intersection-observer@^8.25.3:
+  version "8.25.3"
+  resolved "https://registry.npmjs.org/react-intersection-observer/-/react-intersection-observer-8.25.3.tgz#f26a8b031d372b5b9e6e7f7ec11de696a304ccd2"
   dependencies:
-    tiny-invariant "^1.0.6"
+    tiny-invariant "^1.1.0"
 
 react-intl@^2.2.2:
   version "2.9.0"
@@ -14929,9 +14929,13 @@ timsort@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
 
-tiny-invariant@^1.0.1, tiny-invariant@^1.0.2, tiny-invariant@^1.0.6:
+tiny-invariant@^1.0.1, tiny-invariant@^1.0.2:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.0.6.tgz#b3f9b38835e36a41c843a3b0907a5a7b3755de73"
+
+tiny-invariant@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/tiny-invariant/-/tiny-invariant-1.1.0.tgz#634c5f8efdc27714b7f386c35e6760991d230875"
 
 tiny-warning@^0.0.3:
   version "0.0.3"

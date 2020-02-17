@@ -81,9 +81,9 @@ function ProjectsPage() {
               Oh, but there’s more…
             </Heading>
             <Text size={ECHO} noMargin>
-              I’ve started a blog! If you’d like to read about some things I
-              find inspiring enough to write about, check it out. Or if you’d
-              rather get straight to business, just hit that contact button!
+              I’ve started a blog! If you’d like to read about things I feel
+              inspired enough to write about, check it out. Or if you’d rather
+              get straight to business, just hit that contact button!
             </Text>
           </Item>
           <Item gridColStart={[1, 2, 3, 3, 4]} gridColEnd={[9, 8, 9, 9, 8]}>
