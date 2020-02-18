@@ -120,7 +120,7 @@ function ProjectPage({ project }) {
             </Heading>
             <Text>{credits}</Text>
           </Item>
-          <Item gridColStart={[1, 1, 2, 1, 1]} gridColEnd={[9, 10, 11, 8, 6]}>
+          <Item gridColStart={[2, 1, 2, 1, 1]} gridColEnd={[8, 10, 11, 8, 6]}>
             <ButtonGroup>
               <Button
                 buttonStyle={TERTIARY}

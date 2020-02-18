@@ -86,7 +86,7 @@ function ProjectsPage() {
               get straight to business, just hit that contact button!
             </Text>
           </Item>
-          <Item gridColStart={[1, 2, 3, 3, 4]} gridColEnd={[9, 8, 9, 9, 8]}>
+          <Item gridColStart={[2, 2, 3, 3, 4]} gridColEnd={[8, 8, 9, 9, 8]}>
             <ButtonGroup>
               <Button
                 internalLink="/blog/"

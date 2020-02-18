@@ -39,7 +39,7 @@ function IndexPage() {
           <Item
             gridColStart={[1, 2, 4, 4, 4]}
             gridColEnd={[9, 8, 11, 10, 9]}
-            spacingBottom={GOLF}
+            spacingBottom={[INDIA, GOLF]}
           >
             <Heading as="h1" size={FOXTROT}>
               Hola, I am Tom.
@@ -49,7 +49,7 @@ function IndexPage() {
               passionate about code, design &amp; food!
             </Text>
           </Item>
-          <Item gridColStart={[1, 2, 4, 4, 4]} gridColEnd={[9, 8, 10, 10, 8]}>
+          <Item gridColStart={[2, 2, 4, 4, 4]} gridColEnd={[8, 8, 10, 10, 8]}>
             <ButtonGroup>
               <Button
                 internalLink="/projects/"
@@ -217,7 +217,7 @@ function IndexPage() {
               projects page. Or let’s connect if you have seen enough already!
             </Text>
           </Item>
-          <Item gridColStart={[1, 2, 3, 3, 4]} gridColEnd={[9, 8, 9, 9, 8]}>
+          <Item gridColStart={[2, 2, 3, 3, 4]} gridColEnd={[8, 8, 9, 9, 8]}>
             <ButtonGroup>
               <Button
                 internalLink="/projects/"
