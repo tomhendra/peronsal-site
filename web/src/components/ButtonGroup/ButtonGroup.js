@@ -1,7 +1,14 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
-import { withMediaQueries } from '../../assets/styles/style-helpers';
+import {
+  withMediaQueries,
+  getSpacingValues,
+} from '../../assets/styles/style-helpers';
+
+import { sizes } from '../../assets/styles/style-enums';
+
+const { BRAVO, CHARLIE } = sizes;
 
 // ....................styles....................
 
@@ -20,52 +27,27 @@ function styles({ direction, theme }) {
     [COLUMN]: {
       childNoMargin: 'last',
       childMarginDirection: 'marginBottom',
-      childMarginValues: [
-        theme.spacings.bravo,
-        theme.spacings.charlie,
-        theme.spacings.charlie,
-        theme.spacings.charlie,
-        theme.spacings.charlie,
-      ],
+      childMarginValues: getSpacingValues([BRAVO, CHARLIE], theme),
     },
 
     [ROW]: {
       childNoMargin: 'last',
       childMarginDirection: 'marginRight',
-      childMarginValues: [
-        theme.spacings.bravo,
-        theme.spacings.charlie,
-        theme.spacings.charlie,
-        theme.spacings.charlie,
-        theme.spacings.charlie,
-      ],
+      childMarginValues: getSpacingValues([BRAVO, CHARLIE], theme),
     },
 
     [COLUMN_REVERSE]: {
       childNoMargin: 'first',
       childMarginDirection: 'marginBottom',
-      childMarginValues: [
-        theme.spacings.bravo,
-        theme.spacings.charlie,
-        theme.spacings.charlie,
-        theme.spacings.charlie,
-        theme.spacings.charlie,
-      ],
+      childMarginValues: getSpacingValues([BRAVO, CHARLIE], theme),
     },
 
     [ROW_REVERSE]: {
       childNoMargin: 'first',
       childMarginDirection: 'marginRight',
-      childMarginValues: [
-        theme.spacings.bravo,
-        theme.spacings.charlie,
-        theme.spacings.charlie,
-        theme.spacings.charlie,
-        theme.spacings.charlie,
-      ],
+      childMarginValues: getSpacingValues([BRAVO, CHARLIE], theme),
     },
   };
-
   const {
     childNoMargin,
     childMarginDirection,
@@ -80,27 +62,6 @@ function styles({ direction, theme }) {
     },
   };
 
-  /*
-  if (direction === column || row)
-  '& > *:not(:last-of-type)': {
-    marginBottom: [] // if direction === column
-    marginRight: [] // if direction === row
-  }
-
-  if (direction === column-reverse || row-reverse)
-  '& > *:not(:first-of-type)': {
-    marginBottom: [] // if direction === column reverse
-    marginRight: [] // if direction === row reverse
-  }
-
-// check if direction is an array
-// - IF array, map over and generate object
-
-// - if object key already exists, object entry becomes array and
-//   - if direction match, another spacing value added
-//   - else 0 added to array
-
-*/
   return withMediaQueries(theme)({
     ...baseStyles,
     ...marginStyles,
