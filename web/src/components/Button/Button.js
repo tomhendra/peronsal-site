@@ -20,7 +20,6 @@ function buttonStyles({ buttonStyle, buttonSize, inheritBg, theme }) {
     cursor: 'pointer',
     fontFamily: theme.fontStack.heading,
     fontWeight: theme.fontWeight.medium,
-    flexGrow: 1,
     minWidth: theme.spacings.juliett,
     textAlign: 'center',
     textDecoration: 'none',
@@ -102,7 +101,6 @@ function buttonStyles({ buttonStyle, buttonSize, inheritBg, theme }) {
 
 const linkStyles = {
   textDecoration: 'none',
-  // width: '100%',
 };
 
 // ....................component....................

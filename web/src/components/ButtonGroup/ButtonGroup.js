@@ -18,66 +18,94 @@ function styles({ direction, theme }) {
 
   const directionMap = {
     [COLUMN]: {
-      childMargin: 'marginBottom',
       childNoMargin: 'last',
+      childMarginDirection: 'marginBottom',
+      childMarginValues: [
+        theme.spacings.bravo,
+        theme.spacings.charlie,
+        theme.spacings.charlie,
+        theme.spacings.charlie,
+        theme.spacings.charlie,
+      ],
     },
 
     [ROW]: {
-      childMargin: 'marginRight',
       childNoMargin: 'last',
+      childMarginDirection: 'marginRight',
+      childMarginValues: [
+        theme.spacings.bravo,
+        theme.spacings.charlie,
+        theme.spacings.charlie,
+        theme.spacings.charlie,
+        theme.spacings.charlie,
+      ],
     },
 
     [COLUMN_REVERSE]: {
-      childMargin: 'marginBottom',
       childNoMargin: 'first',
+      childMarginDirection: 'marginBottom',
+      childMarginValues: [
+        theme.spacings.bravo,
+        theme.spacings.charlie,
+        theme.spacings.charlie,
+        theme.spacings.charlie,
+        theme.spacings.charlie,
+      ],
     },
 
     [ROW_REVERSE]: {
-      childMargin: 'marginRight',
       childNoMargin: 'first',
+      childMarginDirection: 'marginRight',
+      childMarginValues: [
+        theme.spacings.bravo,
+        theme.spacings.charlie,
+        theme.spacings.charlie,
+        theme.spacings.charlie,
+        theme.spacings.charlie,
+      ],
     },
   };
 
-  const { childMargin, childNoMargin } = directionMap[direction];
+  const {
+    childNoMargin,
+    childMarginDirection,
+    childMarginValues,
+  } = directionMap[direction];
+
   const noMarginSelector = `& > *:not(:${childNoMargin}-of-type)`;
 
   const marginStyles = {
     [noMarginSelector]: {
-      [childMargin]: theme.spacings.charlie,
+      [childMarginDirection]: childMarginValues,
     },
   };
 
+  /*
+  if (direction === column || row)
+  '& > *:not(:last-of-type)': {
+    marginBottom: [] // if direction === column
+    marginRight: [] // if direction === row
+  }
+
+  if (direction === column-reverse || row-reverse)
+  '& > *:not(:first-of-type)': {
+    marginBottom: [] // if direction === column reverse
+    marginRight: [] // if direction === row reverse
+  }
+
+// check if direction is an array
+// - IF array, map over and generate object
+
+// - if object key already exists, object entry becomes array and
+//   - if direction match, another spacing value added
+//   - else 0 added to array
+
+*/
   return withMediaQueries(theme)({
     ...baseStyles,
     ...marginStyles,
   });
 }
-
-// const directionVariants = {
-//   column: {
-//     '& > *:not(:last-of-type)': {
-//       marginBottom: theme.spacings.charlie,
-//     },
-//   },
-
-//   row: {
-//     '& > *:not(:last-of-type)': {
-//       marginRight: theme.spacings.charlie,
-//     },
-//   },
-
-//   'column-reverse': {
-//     '& > *:not(:first-of-type)': {
-//       marginBottom: theme.spacings.charlie,
-//     },
-//   },
-
-//   'row-reverse': {
-//     '& > *:not(:first-of-type)': {
-//       marginRight: theme.spacings.charlie,
-//     },
-//   },
-// };
 
 // ....................component....................
 
