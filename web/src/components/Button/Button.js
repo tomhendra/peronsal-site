@@ -110,7 +110,7 @@ const linkStyles = {
   display: 'flex',
   textDecoration: 'none',
 
-  '& :first-child': {
+  '& :first-of-type': {
     flexGrow: 1,
   },
 };
@@ -148,6 +148,7 @@ function Button({
     <ExternalLinkElement
       {...rest}
       target="blank"
+      rel="noopener"
       href={externalLink}
       buttonStyle={buttonStyle}
       buttonSize={buttonSize}

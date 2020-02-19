@@ -357,13 +357,14 @@ export const breakpoints = [
 // ....................misc....................
 
 export const transitions = {
-  fast: '100ms ease-in-out',
-  default: '150ms ease-in-out',
-  slow: '300ms ease-in-out',
+  fast: '100ms cubic-bezier(0.165, -0.235, 0.58, 1.18)',
+  default: '200ms cubic-bezier(0.165, -0.235, 0.58, 1.18)',
+  slow: '300ms cubic-bezier(0.165, -0.235, 0.58, 1.18)',
 };
 
 export const zIndex = {
-  background: -1,
+  background: -2,
+  behind: -1,
   default: 0,
   absolute: 1,
   card: 10,

@@ -8,6 +8,7 @@ import Heading from '../Heading';
 import Text from '../Text';
 import Figure from '../Figure';
 import CodeBlock from '../CodeBlock';
+import InlineLink from '../InlineLink';
 
 import { sizes } from '../../assets/styles/style-enums';
 
@@ -61,6 +62,12 @@ const serializers = {
       {children}
     </Text>
   ),
+  marks: {
+    link: ({ mark, children }) => {
+      const { href } = mark;
+      return <InlineLink externalLink={href}>{children}</InlineLink>;
+    },
+  },
 };
 
 // ....................component....................
