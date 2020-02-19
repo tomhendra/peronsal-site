@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import Text from '../Text';
 
@@ -12,16 +14,17 @@ function styles({ theme }) {
     textDecoration: 'none',
 
     '&::before': {
-      position: 'absolute',
-      bottom: -2,
-      left: 0,
       backgroundColor: theme.colors.l900,
+      borderRadius: theme.borderRadius.alpha,
+      bottom: 1,
       content: '""',
-      width: '100%',
-      height: 12,
-      zIndex: theme.zIndex.behind,
+      height: 8,
+      left: 0,
+      position: 'absolute',
       transition: `transform ${theme.transitions.default}`,
+      width: '100%',
       willChange: 'transform',
+      zIndex: theme.zIndex.behind,
     },
 
     '&:hover': {
@@ -42,11 +45,14 @@ function styles({ theme }) {
 
 // ....................component....................
 
-const InlineLinkElement = styled(Text)(styles);
+const InternalLinkElement = styled(Link)(styles);
+const ExternalLinkElement = styled(Text)(styles);
 
-function InlineLink({ externalLink, ...rest }) {
-  return (
-    <InlineLinkElement
+function InlineLink({ internalLink, externalLink, ...rest }) {
+  return internalLink ? (
+    <InternalLinkElement {...rest} to={internalLink} />
+  ) : (
+    <ExternalLinkElement
       {...rest}
       as="a"
       target="blank"
@@ -57,5 +63,15 @@ function InlineLink({ externalLink, ...rest }) {
 }
 
 // ....................propTypes....................
+
+InlineLink.propTypes = {
+  externalLink: PropTypes.string,
+  internalLink: PropTypes.string,
+};
+
+InlineLink.defaultProps = {
+  externalLink: null,
+  internalLink: null,
+};
 
 export default InlineLink;

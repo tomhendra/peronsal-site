@@ -298,7 +298,7 @@ export const iconSizes = {
 };
 
 export const borderRadius = {
-  alpha: '1px',
+  alpha: '2px',
   bravo: '4px',
   charlie: '6px',
   delta: '8px',

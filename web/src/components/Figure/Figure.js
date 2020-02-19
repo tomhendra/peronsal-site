@@ -29,8 +29,7 @@ const imageStyles = ({ theme }) => ({
 // ....................component....................
 
 const FigureElement = styled.figure(figureStyles);
-const FigcaptionText = Text.withComponent('figcaption');
-const FigcaptionElement = styled(FigcaptionText)(figcaptionStyles);
+const FigcaptionElement = styled(Text)(figcaptionStyles);
 const FigureImage = styled(Img)(imageStyles);
 
 function Figure({ node }) {
@@ -43,7 +42,7 @@ function Figure({ node }) {
   return (
     <FigureElement>
       <FigureImage fluid={fluidProps} alt={node.alt} />
-      <FigcaptionElement italic size={BRAVO}>
+      <FigcaptionElement italic size={BRAVO} as="figcaption">
         {node.caption}
       </FigcaptionElement>
     </FigureElement>

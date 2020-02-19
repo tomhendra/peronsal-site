@@ -8,6 +8,7 @@ import Heading from '../components/Heading';
 import ButtonGroup from '../components/ButtonGroup';
 import Button from '../components/Button';
 import Text from '../components/Text';
+import InlineLink from '../components/InlineLink';
 import Card from '../components/Card';
 import Icon from '../components/Icon';
 import TechStack from '../components/TechStack';
@@ -214,7 +215,11 @@ function IndexPage() {
             </Heading>
             <Text size={ECHO} noMargin>
               I’ve been building stuff. You can see what I have been up to on my
-              projects page. Or let’s connect if you have seen enough already!
+              &nbsp;
+              <InlineLink internalLink="/projects/">projects page</InlineLink>
+              &nbsp;Or&nbsp;
+              <InlineLink internalLink="/contact/">let’s connect</InlineLink>
+              &nbsp;if you have seen enough already!
             </Text>
           </Item>
           <Item gridColStart={[2, 2, 3, 3, 4]} gridColEnd={[8, 8, 9, 9, 8]}>

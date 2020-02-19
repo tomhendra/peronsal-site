@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
@@ -82,12 +83,33 @@ function styles({
 
 // ....................component....................
 
-const Text = styled.p(styles);
+const TextElement = styled.p(styles);
+function Text({
+  noMargin,
+  size,
+  spacingBottom,
+  bold,
+  italic,
+  strike,
+  children,
+}) {
+  return (
+    <TextElement
+      noMargin={noMargin}
+      size={size}
+      spacingBottom={spacingBottom}
+      bold={bold}
+      italic={italic}
+      strike={strike}
+    >
+      {children}
+    </TextElement>
+  );
+}
 
 // ....................propTypes....................
 
 Text.propTypes = {
-  as: PropTypes.string,
   noMargin: PropTypes.bool,
   size: sizePropType,
   spacingBottom: sizePropType,
@@ -98,7 +120,6 @@ Text.propTypes = {
 };
 
 Text.defaultProps = {
-  as: 'p',
   noMargin: false,
   size: DELTA,
   spacingBottom: [CHARLIE, CHARLIE, DELTA],
