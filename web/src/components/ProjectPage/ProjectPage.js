@@ -91,6 +91,7 @@ function ProjectPage({ project }) {
           <Item
             gridColStart={[1, 1, 2, 1, 1]}
             gridColEnd={[9, 8, 10, 7, 6]}
+            gridRowSpan={4}
             spacingBottom={[FOXTROT, FOXTROT, FOXTROT, INDIA, FOXTROT]}
           >
             <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
@@ -102,7 +103,6 @@ function ProjectPage({ project }) {
             gridColStart={[1, 1, 2, 8, 7]}
             gridColEnd={[9, 8, 10, 13, 12]}
             spacingBottom={FOXTROT}
-            spacingTop={[0, 0, 0, 0, GOLF]}
           >
             <Heading as="h2" size={DELTA}>
               Tech stack.
@@ -111,10 +111,22 @@ function ProjectPage({ project }) {
               gridSize={ALPHA}
               stack={_rawTechstack.map(item => item.title)}
             />
+          </Item>
+          <Item
+            gridColStart={[1, 1, 2, 8, 7]}
+            gridColEnd={[9, 8, 10, 13, 12]}
+            spacingBottom={FOXTROT}
+          >
             <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
               Role.
             </Heading>
             {_rawRole && <PortableText blocks={_rawRole} />}
+          </Item>
+          <Item
+            gridColStart={[1, 1, 2, 8, 7]}
+            gridColEnd={[9, 8, 10, 13, 12]}
+            spacingBottom={FOXTROT}
+          >
             <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
               Credits.
             </Heading>
