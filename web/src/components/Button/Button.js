@@ -68,7 +68,7 @@ function buttonStyles({ buttonStyle, buttonSize, inheritBg, theme }) {
     },
     [TERTIARY]: {
       backgroundColor: !inheritBg ? theme.colors.white : 'inherit',
-      borderColor: theme.colors.n600,
+      borderColor: theme.colors.n500,
       color: theme.colors.n400,
 
       '&:hover,:focus': {
@@ -81,7 +81,7 @@ function buttonStyles({ buttonStyle, buttonSize, inheritBg, theme }) {
   const sizeVariants = {
     [ALPHA]: {
       height: '4.8rem',
-      fontSize: theme.typography.text.charlie.fontSize,
+      fontSize: theme.typography.text.delta.fontSize,
       padding: `0 ${theme.spacings.delta}`,
     },
     [BRAVO]: {
@@ -91,7 +91,7 @@ function buttonStyles({ buttonStyle, buttonSize, inheritBg, theme }) {
     },
     [CHARLIE]: {
       height: '7.2rem',
-      fontSize: theme.typography.text.echo.fontSize,
+      fontSize: theme.typography.text.foxtrot.fontSize,
       padding: `0 ${theme.spacings.foxtrot}`,
     },
   };
@@ -163,7 +163,7 @@ Button.protoTypes = {
 
 Button.defaultProps = {
   buttonStyle: SECONDARY,
-  buttonSize: CHARLIE,
+  buttonSize: BRAVO,
   externalLink: null,
   internalLink: null,
   inheritBg: false,

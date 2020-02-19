@@ -11,7 +11,7 @@ import { withMediaQueries } from '../../assets/styles/style-helpers';
 import { variants, sizes } from '../../assets/styles/style-enums';
 
 const { TERTIARY } = variants;
-const { BRAVO, CHARLIE, DELTA, FOXTROT, GOLF } = sizes;
+const { ALPHA, CHARLIE, DELTA, FOXTROT, GOLF } = sizes;
 
 // ....................styles....................
 
@@ -60,7 +60,7 @@ function ProjectPreview({ project }) {
       </Content>
       <Button
         buttonStyle={TERTIARY}
-        buttonSize={BRAVO}
+        buttonSize={ALPHA}
         internalLink={project.slug}
       >
         More Details

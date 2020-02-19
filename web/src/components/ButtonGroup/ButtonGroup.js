@@ -7,7 +7,7 @@ import {
 
 import { sizes } from '../../assets/styles/style-enums';
 
-const { CHARLIE } = sizes;
+const { DELTA } = sizes;
 
 // ....................styles....................
 
@@ -21,8 +21,8 @@ function styles({ theme }) {
     },
 
     '& > *:not(:last-of-type)': {
-      marginRight: getSpacingValues([0, CHARLIE], theme),
-      marginBottom: getSpacingValues([CHARLIE, 0], theme),
+      marginRight: getSpacingValues([0, DELTA], theme),
+      marginBottom: getSpacingValues([DELTA, 0], theme),
     },
   });
 }

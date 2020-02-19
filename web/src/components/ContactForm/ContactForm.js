@@ -22,7 +22,7 @@ import {
 const { PRIMARY, TERTIARY } = variants;
 const { DANGER, SUCCESS, ACCENT_BRAVO } = colors;
 const { END } = positions;
-const { BRAVO, ECHO, GOLF } = sizes;
+const { ALPHA, ECHO, GOLF } = sizes;
 
 // ....................styles....................
 
@@ -169,7 +169,7 @@ function ContactForm() {
             <ButtonGroup>
               <Button
                 buttonStyle={TERTIARY}
-                buttonSize={BRAVO}
+                buttonSize={ALPHA}
                 disabled={isSubmitting}
                 onClick={handleReset}
               >
@@ -177,7 +177,7 @@ function ContactForm() {
               </Button>
               <Button
                 buttonStyle={PRIMARY}
-                buttonSize={BRAVO}
+                buttonSize={ALPHA}
                 type="submit"
                 disabled={isSubmitting}
               >
