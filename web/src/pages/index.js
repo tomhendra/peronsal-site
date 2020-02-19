@@ -17,7 +17,7 @@ import { colors, icons, sizes, variants } from '../assets/styles/style-enums';
 const { ACCENT_ALPHA } = colors;
 const { BRIEFCASE, CODE, PEN_TOOL } = icons;
 const {
-  CHARLIE,
+  BRAVO,
   DELTA,
   ECHO,
   FOXTROT,
@@ -54,7 +54,7 @@ function IndexPage() {
               <Button
                 internalLink="/projects/"
                 buttonStyle={SECONDARY}
-                buttonSize={CHARLIE}
+                buttonSize={BRAVO}
                 bodyBg
               >
                 Projects
@@ -62,7 +62,7 @@ function IndexPage() {
               <Button
                 internalLink="/contact/"
                 buttonStyle={PRIMARY}
-                buttonSize={CHARLIE}
+                buttonSize={BRAVO}
               >
                 Contact
               </Button>
@@ -222,7 +222,7 @@ function IndexPage() {
               <Button
                 internalLink="/projects/"
                 buttonStyle={SECONDARY}
-                buttonSize={CHARLIE}
+                buttonSize={BRAVO}
                 bodyBg
               >
                 Projects
@@ -230,7 +230,7 @@ function IndexPage() {
               <Button
                 internalLink="/contact/"
                 buttonStyle={PRIMARY}
-                buttonSize={CHARLIE}
+                buttonSize={BRAVO}
               >
                 Contact
               </Button>

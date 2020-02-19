@@ -14,12 +14,16 @@ const { ALPHA, BRAVO, CHARLIE } = sizes;
 
 function buttonStyles({ buttonStyle, buttonSize, inheritBg, theme }) {
   const baseStyles = {
+    alignItems: 'center',
     borderRadius: theme.borderRadius.bravo,
     borderStyle: 'solid',
     borderWidth: theme.borderWidth.charlie,
     cursor: 'pointer',
+    display: 'flex',
     fontFamily: theme.fontStack.heading,
     fontWeight: theme.fontWeight.medium,
+    justifyContent: 'center',
+    lineHeight: 1,
     minWidth: theme.spacings.juliett,
     textAlign: 'center',
     textDecoration: 'none',
@@ -76,16 +80,19 @@ function buttonStyles({ buttonStyle, buttonSize, inheritBg, theme }) {
 
   const sizeVariants = {
     [ALPHA]: {
+      height: '4.8rem',
       fontSize: theme.typography.text.charlie.fontSize,
-      padding: `${theme.spacings.bravo} ${theme.spacings.delta}`,
+      padding: `0 ${theme.spacings.delta}`,
     },
     [BRAVO]: {
-      fontSize: theme.typography.text.delta.fontSize,
-      padding: `${theme.spacings.charlie} ${theme.spacings.echo}`,
+      height: '6rem',
+      fontSize: theme.typography.text.echo.fontSize,
+      padding: `0 ${theme.spacings.echo}`,
     },
     [CHARLIE]: {
-      fontSize: theme.typography.headings.alpha.fontSize,
-      padding: `${theme.spacings.delta} ${theme.spacings.foxtrot}`,
+      height: '7.2rem',
+      fontSize: theme.typography.text.echo.fontSize,
+      padding: `0 ${theme.spacings.foxtrot}`,
     },
   };
 
@@ -99,14 +106,9 @@ function buttonStyles({ buttonStyle, buttonSize, inheritBg, theme }) {
   };
 }
 
-const linkStyles = {
-  textDecoration: 'none',
-};
-
 // ....................component....................
 
-const InternalLink = styled(Link)(linkStyles);
-const InternalLinkElement = styled.div(buttonStyles);
+const InternalLink = styled(Link)(buttonStyles);
 const ExternalLinkElement = styled.a(buttonStyles);
 const ButtonElement = styled.button(buttonStyles);
 
@@ -119,15 +121,14 @@ function Button({
   ...rest
 }) {
   return internalLink ? (
-    // if internalLink prop is provided, wrap with Gatsby Link.
-    <InternalLink to={internalLink}>
-      <InternalLinkElement
-        {...rest}
-        buttonStyle={buttonStyle}
-        buttonSize={buttonSize}
-        inheritBg={inheritBg}
-      />
-    </InternalLink>
+    // if internalLink prop is provided, return Gatsby Link.
+    <InternalLink
+      {...rest}
+      to={internalLink}
+      buttonStyle={buttonStyle}
+      buttonSize={buttonSize}
+      inheritBg={inheritBg}
+    />
   ) : externalLink ? (
     // if externalLink prop is provided, return anchor tag.
     <ExternalLinkElement

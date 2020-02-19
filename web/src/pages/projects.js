@@ -15,7 +15,7 @@ import Button from '../components/Button';
 
 import { sizes, variants } from '../assets/styles/style-enums';
 
-const { CHARLIE, ECHO, FOXTROT, GOLF, HOTEL, JULIETT, LIMA, MIKE } = sizes;
+const { BRAVO, ECHO, FOXTROT, GOLF, HOTEL, JULIETT, LIMA, MIKE } = sizes;
 const { PRIMARY, SECONDARY } = variants;
 
 function ProjectsPage() {
@@ -91,14 +91,14 @@ function ProjectsPage() {
               <Button
                 internalLink="/blog/"
                 buttonStyle={SECONDARY}
-                buttonSize={CHARLIE}
+                buttonSize={BRAVO}
               >
                 Blog
               </Button>
               <Button
                 internalLink="/contact/"
                 buttonStyle={PRIMARY}
-                buttonSize={CHARLIE}
+                buttonSize={BRAVO}
               >
                 Contact
               </Button>

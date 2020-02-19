@@ -16,6 +16,10 @@ function styles({ theme }) {
     display: 'flex',
     flexDirection: ['column', 'row'],
 
+    '& > *': {
+      flexGrow: 1,
+    },
+
     '& > *:not(:last-of-type)': {
       marginRight: getSpacingValues([0, CHARLIE], theme),
       marginBottom: getSpacingValues([CHARLIE, 0], theme),

@@ -14,7 +14,7 @@ import TechStack from '../TechStack';
 
 import { sizes, variants } from '../../assets/styles/style-enums';
 
-const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF, INDIA } = sizes;
+const { ALPHA, CHARLIE, DELTA, ECHO, FOXTROT, GOLF, INDIA } = sizes;
 const { PRIMARY, SECONDARY, TERTIARY } = variants;
 
 // ....................styles....................
@@ -124,21 +124,21 @@ function ProjectPage({ project }) {
             <ButtonGroup>
               <Button
                 buttonStyle={TERTIARY}
-                buttonSize={BRAVO}
+                buttonSize={ALPHA}
                 internalLink="/projects/"
               >
                 Back to Projects
               </Button>
               <Button
                 buttonStyle={SECONDARY}
-                buttonSize={BRAVO}
+                buttonSize={ALPHA}
                 externalLink={repo}
               >
                 View Source
               </Button>
               <Button
                 buttonStyle={PRIMARY}
-                buttonSize={BRAVO}
+                buttonSize={ALPHA}
                 externalLink={url}
               >
                 Launch App
