@@ -7,7 +7,7 @@ import Section from '../Section';
 import Grid from '../Grid';
 import Item from '../Item';
 import Heading from '../Heading';
-import Text from '../Text';
+import PortableText from '../PortableText';
 import ButtonGroup from '../ButtonGroup';
 import Button from '../Button';
 import TechStack from '../TechStack';
@@ -32,12 +32,12 @@ function ProjectPage({ project }) {
   const {
     title,
     mainImage,
-    purpose,
-    objective,
-    approach,
+    _rawPurpose,
+    _rawObjective,
+    _rawApproach,
     _rawTechstack,
-    role,
-    credits,
+    _rawRole,
+    _rawCredits,
     repo,
     url,
   } = project;
@@ -76,7 +76,7 @@ function ProjectPage({ project }) {
             <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
               Purpose.
             </Heading>
-            <Text noMargin>{purpose}</Text>
+            {_rawPurpose && <PortableText blocks={_rawPurpose} />}
           </Item>
           <Item
             gridColStart={[1, 1, 2, 1, 1]}
@@ -86,7 +86,7 @@ function ProjectPage({ project }) {
             <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
               Objective.
             </Heading>
-            <Text noMargin>{objective}</Text>
+            {_rawObjective && <PortableText blocks={_rawObjective} />}
           </Item>
           <Item
             gridColStart={[1, 1, 2, 1, 1]}
@@ -96,7 +96,7 @@ function ProjectPage({ project }) {
             <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
               Approach.
             </Heading>
-            <Text noMargin>{approach}</Text>
+            {_rawApproach && <PortableText blocks={_rawApproach} />}
           </Item>
           <Item
             gridColStart={[1, 1, 2, 8, 7]}
@@ -114,11 +114,11 @@ function ProjectPage({ project }) {
             <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
               Role.
             </Heading>
-            <Text spacingBottom={FOXTROT}>{role}</Text>
+            {_rawRole && <PortableText blocks={_rawRole} />}
             <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
               Credits.
             </Heading>
-            <Text>{credits}</Text>
+            {_rawCredits && <PortableText blocks={_rawCredits} />}
           </Item>
           <Item gridColStart={[2, 1, 2, 1, 1]} gridColEnd={[8, 10, 11, 8, 6]}>
             <ButtonGroup>

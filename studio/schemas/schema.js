@@ -17,6 +17,7 @@ import technology from './documents/technology';
 import bodyPortableText from './objects/bodyPortableText';
 import codeBlock from './objects/codeBlock';
 import excerptPortableText from './objects/excerptPortableText';
+import projectPortableText from './objects/projectPortableText';
 import figure from './objects/figure';
 import logo from './objects/logo';
 
@@ -39,6 +40,7 @@ export default createSchema({
     bodyPortableText,
     codeBlock,
     excerptPortableText,
+    projectPortableText,
     figure,
     logo,
   ]),

@@ -42,26 +42,26 @@ export default {
     },
     {
       name: 'description',
-      type: 'text',
+      type: 'excerptPortableText',
       title: 'Description',
       description:
         'This ends up on summary pages, on Google, when people share your project in social media and for the project preview on the projects page.',
     },
     {
       name: 'purpose',
-      type: 'text',
+      type: 'projectPortableText',
       title: 'Purpose',
       description: 'Purpose of the project: Why the project was started.',
     },
     {
       name: 'objective',
-      type: 'text',
+      type: 'projectPortableText',
       title: 'Objective',
       description: 'Objective: What was accomplished during the project.',
     },
     {
       name: 'approach',
-      type: 'text',
+      type: 'projectPortableText',
       title: 'Approach',
       description: 'Approach: How the project was accomplished.',
     },
@@ -73,13 +73,13 @@ export default {
     },
     {
       name: 'role',
-      type: 'text',
+      type: 'projectPortableText',
       title: 'Role',
       description: 'Your role: How you contributed to the project.',
     },
     {
       name: 'credits',
-      type: 'text',
+      type: 'projectPortableText',
       title: 'Credits',
       description:
         'Credits: Who you should thank for resources or contributions.',

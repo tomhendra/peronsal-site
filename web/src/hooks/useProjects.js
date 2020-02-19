@@ -20,13 +20,7 @@ function useProjects() {
                 }
               }
             }
-            description
-            purpose
-            objective
-            approach
-            _rawTechstack(resolveReferences: { maxDepth: 5 })
-            role
-            credits
+            _rawDescription(resolveReferences: { maxDepth: 5 })
             repo
             url
           }
@@ -39,22 +33,12 @@ function useProjects() {
     ({ node }) =>
       node && {
         id: node._id,
-        date: node.publishedAt,
         title: node.title,
         slug: `/projects/${node.slug.current}`,
         publishedAt: node.publishedAt,
         mainImage: node.mainImage.asset.fluid,
         alt: node.mainImage.alt,
-        caption: node.mainImage.caption,
-        description: node.description,
-        purpose: node.purpose,
-        objective: node.objective,
-        approach: node.approach,
-        techstack: node._rawTechstack,
-        role: node.role,
-        credits: node.credits,
-        repo: node.repo,
-        url: node.url,
+        description: node._rawDescription,
       },
   );
 }

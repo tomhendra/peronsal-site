@@ -57,7 +57,7 @@ const serializers = {
     ),
   },
   listItem: ({ children }) => (
-    <Text as="li" size={DELTA}>
+    <Text noMargin as="li" size={DELTA}>
       {children}
     </Text>
   ),

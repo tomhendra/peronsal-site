@@ -7,6 +7,7 @@ import Heading from '../Heading';
 import Text from '../Text';
 import Button from '../Button';
 
+import { toPlainText } from '../../utils/helpers';
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 import { variants, sizes } from '../../assets/styles/style-enums';
 
@@ -55,7 +56,7 @@ function ProjectPreview({ project }) {
           {project.title}
         </Heading>
         <Text size={CHARLIE} noMargin>
-          {project.description}
+          {toPlainText(project.description)}
         </Text>
       </Content>
       <Button

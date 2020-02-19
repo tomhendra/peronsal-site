@@ -20,8 +20,6 @@ function usePosts() {
                 }
               }
             }
-            _rawExcerpt(resolveReferences: { maxDepth: 5 })
-            _rawBody(resolveReferences: { maxDepth: 5 })
           }
         }
       }
@@ -37,8 +35,6 @@ function usePosts() {
         publishedAt: node.publishedAt,
         mainImage: node.mainImage.asset.fluid,
         alt: node.mainImage.alt,
-        excerpt: node._rawExcerpt,
-        body: node._rawBody,
       },
   );
 }
