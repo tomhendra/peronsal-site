@@ -50,7 +50,7 @@ function ProjectPage({ project }) {
             gridColEnd={[9, 9, 12, 7, 6]}
             spacingBottom={[ECHO, GOLF]}
           >
-            <Heading noMargin as="h1" size={FOXTROT}>
+            <Heading noMargin as="h1" size={FOXTROT} variant={PRIMARY}>
               {title}
             </Heading>
           </Item>
@@ -73,7 +73,12 @@ function ProjectPage({ project }) {
             gridColEnd={[9, 8, 10, 7, 6]}
             spacingBottom={FOXTROT}
           >
-            <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
+            <Heading
+              as="h2"
+              size={DELTA}
+              spacingBottom={CHARLIE}
+              variant={PRIMARY}
+            >
               Purpose.
             </Heading>
             {_rawPurpose && <PortableText blocks={_rawPurpose} />}
@@ -83,7 +88,12 @@ function ProjectPage({ project }) {
             gridColEnd={[9, 8, 10, 7, 6]}
             spacingBottom={FOXTROT}
           >
-            <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
+            <Heading
+              as="h2"
+              size={DELTA}
+              spacingBottom={CHARLIE}
+              variant={PRIMARY}
+            >
               Objective.
             </Heading>
             {_rawObjective && <PortableText blocks={_rawObjective} />}
@@ -94,7 +104,12 @@ function ProjectPage({ project }) {
             gridRowSpan={4}
             spacingBottom={[FOXTROT, FOXTROT, FOXTROT, INDIA, FOXTROT]}
           >
-            <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
+            <Heading
+              as="h2"
+              size={DELTA}
+              spacingBottom={CHARLIE}
+              variant={PRIMARY}
+            >
               Approach.
             </Heading>
             {_rawApproach && <PortableText blocks={_rawApproach} />}
@@ -104,7 +119,7 @@ function ProjectPage({ project }) {
             gridColEnd={[9, 8, 10, 13, 12]}
             spacingBottom={FOXTROT}
           >
-            <Heading as="h2" size={DELTA}>
+            <Heading as="h2" size={DELTA} variant={PRIMARY}>
               Tech stack.
             </Heading>
             <TechStack
@@ -117,7 +132,12 @@ function ProjectPage({ project }) {
             gridColEnd={[9, 8, 10, 13, 12]}
             spacingBottom={FOXTROT}
           >
-            <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
+            <Heading
+              as="h2"
+              size={DELTA}
+              spacingBottom={CHARLIE}
+              variant={PRIMARY}
+            >
               Role.
             </Heading>
             {_rawRole && <PortableText blocks={_rawRole} />}
@@ -127,32 +147,25 @@ function ProjectPage({ project }) {
             gridColEnd={[9, 8, 10, 13, 12]}
             spacingBottom={FOXTROT}
           >
-            <Heading as="h2" size={DELTA} spacingBottom={CHARLIE}>
+            <Heading
+              as="h2"
+              size={DELTA}
+              spacingBottom={CHARLIE}
+              variant={PRIMARY}
+            >
               Credits.
             </Heading>
             {_rawCredits && <PortableText blocks={_rawCredits} />}
           </Item>
           <Item gridColStart={[2, 1, 2, 1, 1]} gridColEnd={[8, 10, 11, 8, 6]}>
             <ButtonGroup>
-              <Button
-                buttonStyle={TERTIARY}
-                buttonSize={ALPHA}
-                internalLink="/projects/"
-              >
+              <Button variant={TERTIARY} size={ALPHA} internalLink="/projects/">
                 Back to Projects
               </Button>
-              <Button
-                buttonStyle={SECONDARY}
-                buttonSize={ALPHA}
-                externalLink={repo}
-              >
+              <Button variant={SECONDARY} size={ALPHA} externalLink={repo}>
                 View Source
               </Button>
-              <Button
-                buttonStyle={PRIMARY}
-                buttonSize={ALPHA}
-                externalLink={url}
-              >
+              <Button variant={PRIMARY} size={ALPHA} externalLink={url}>
                 Launch App
               </Button>
             </ButtonGroup>

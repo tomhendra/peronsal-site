@@ -42,10 +42,10 @@ function IndexPage() {
             gridColEnd={[9, 8, 11, 10, 9]}
             spacingBottom={[INDIA, GOLF]}
           >
-            <Heading as="h1" size={FOXTROT}>
+            <Heading as="h1" size={FOXTROT} variant={PRIMARY}>
               Hola, I am Tom.
             </Heading>
-            <Text noMargin size={FOXTROT}>
+            <Text noMargin size={FOXTROT} variant={PRIMARY}>
               I’m a software developer from the UK living in Spain. I am
               passionate about code, design &amp; food!
             </Text>
@@ -54,17 +54,13 @@ function IndexPage() {
             <ButtonGroup>
               <Button
                 internalLink="/projects/"
-                buttonStyle={SECONDARY}
-                buttonSize={BRAVO}
+                variant={SECONDARY}
+                size={BRAVO}
                 bodyBg
               >
                 Projects
               </Button>
-              <Button
-                internalLink="/contact/"
-                buttonStyle={PRIMARY}
-                buttonSize={BRAVO}
-              >
+              <Button internalLink="/contact/" variant={PRIMARY} size={BRAVO}>
                 Contact
               </Button>
             </ButtonGroup>
@@ -78,15 +74,15 @@ function IndexPage() {
             gridColEnd={[9, 8, 9, 8, 6]}
             spacingBottom={HOTEL}
           >
-            <Heading as="h2" size={ECHO}>
+            <Heading as="h2" size={ECHO} variant={SECONDARY}>
               About me.
             </Heading>
-            <Text>
+            <Text variant={SECONDARY}>
               I am at my happiest when crafting buttery smooth web experiences.
               I take pride in continuously learning new skills from the experts
               who shape the modern web.
             </Text>
-            <Text noMargin>
+            <Text noMargin variant={SECONDARY}>
               When I am not in the land of code, I am either immersing myself in
               the wonderful culture & cuisine of Spain or lifting heavy things
               at the gym.
@@ -98,10 +94,11 @@ function IndexPage() {
             spacingBottom={[GOLF, GOLF, HOTEL, HOTEL, 0]}
           >
             <Card
+              variant={PRIMARY}
+              accent={ACCENT_ALPHA}
               padding={[FOXTROT, FOXTROT, GOLF, GOLF, GOLF]}
               paddingTop={[HOTEL, HOTEL, INDIA, HOTEL, INDIA]}
               paddingBottom={[FOXTROT, FOXTROT, GOLF, GOLF, HOTEL]}
-              accentColor={ACCENT_ALPHA}
             >
               <Icon
                 type={CODE}
@@ -109,10 +106,15 @@ function IndexPage() {
                 size={INDIA}
                 spacingBottom={DELTA}
               />
-              <Heading as="h2" size={DELTA} spacingBottom={FOXTROT}>
+              <Heading
+                as="h2"
+                size={DELTA}
+                spacingBottom={FOXTROT}
+                variant={PRIMARY}
+              >
                 Code
               </Heading>
-              <Text noMargin>
+              <Text noMargin variant={PRIMARY}>
                 My skill set is built upon the rich & diverse JavaScript
                 ecosystem. My natural close attention to detail enhances my
                 ability to write clean, well organized code.
@@ -125,10 +127,11 @@ function IndexPage() {
             spacingBottom={[GOLF, GOLF, HOTEL, HOTEL, 0]}
           >
             <Card
+              variant={PRIMARY}
+              accent={ACCENT_ALPHA}
               padding={[FOXTROT, FOXTROT, GOLF, GOLF, GOLF]}
               paddingTop={[HOTEL, HOTEL, INDIA, HOTEL, INDIA]}
               paddingBottom={[FOXTROT, FOXTROT, GOLF, GOLF, HOTEL]}
-              accentColor={ACCENT_ALPHA}
             >
               <Icon
                 type={PEN_TOOL}
@@ -136,10 +139,15 @@ function IndexPage() {
                 size={INDIA}
                 spacingBottom={DELTA}
               />
-              <Heading as="h2" size={DELTA} spacingBottom={FOXTROT}>
+              <Heading
+                as="h2"
+                size={DELTA}
+                spacingBottom={FOXTROT}
+                variant={PRIMARY}
+              >
                 Design
               </Heading>
-              <Text noMargin>
+              <Text noMargin variant={PRIMARY}>
                 I have a keen eye for design and know my way around industry
                 standard tools like Sketch & the Adobe Creative Suite. I am a
                 coder who appreciates the designer things in life.
@@ -148,10 +156,11 @@ function IndexPage() {
           </Item>
           <Item gridColStart={[1, 2, 3, 4, 9]} gridColEnd={[9, 8, 11, 10, 13]}>
             <Card
+              variant={PRIMARY}
+              accent={ACCENT_ALPHA}
               padding={[FOXTROT, FOXTROT, GOLF, GOLF, GOLF]}
               paddingTop={[HOTEL, HOTEL, INDIA, HOTEL, INDIA]}
               paddingBottom={[FOXTROT, FOXTROT, GOLF, GOLF, HOTEL]}
-              accentColor={ACCENT_ALPHA}
             >
               <Icon
                 type={BRIEFCASE}
@@ -159,10 +168,15 @@ function IndexPage() {
                 size={INDIA}
                 spacingBottom={DELTA}
               />
-              <Heading as="h2" size={DELTA} spacingBottom={FOXTROT}>
+              <Heading
+                as="h2"
+                size={DELTA}
+                spacingBottom={FOXTROT}
+                variant={PRIMARY}
+              >
                 Business
               </Heading>
-              <Text noMargin>
+              <Text noMargin variant={PRIMARY}>
                 I was a procurement professional before becoming a web
                 developer, instilling transferable skills like business acumen,
                 commercial awareness and project management prowess.
@@ -174,15 +188,15 @@ function IndexPage() {
       <Section variant={TERTIARY}>
         <Grid>
           <Item gridColStart={1} gridColEnd={[9, 8, 9, 8, 6]}>
-            <Heading as="h1" size={FOXTROT}>
+            <Heading as="h1" size={FOXTROT} variant={TERTIARY}>
               My skills.
             </Heading>
-            <Text>
+            <Text variant={TERTIARY}>
               I get excited about using the latest technologies and strive to
               build websites & apps that are accessible, performant, scalable
               and lightning fast.
             </Text>
-            <Text noMargin>
+            <Text noMargin variant={TERTIARY}>
               I enjoy a modern tech stack based around React.js, and am
               continuously adding new skills to my toolbox. A committed
               developer never stops learning, a challenge I embrace
@@ -210,10 +224,10 @@ function IndexPage() {
             gridColEnd={[9, 8, 11, 10, 9]}
             spacingBottom={GOLF}
           >
-            <Heading as="h2" size={ECHO}>
+            <Heading as="h2" size={ECHO} variant={PRIMARY}>
               Where to go from here?
             </Heading>
-            <Text size={ECHO} noMargin>
+            <Text size={ECHO} noMargin variant={PRIMARY}>
               I’ve been building stuff. You can see what I have been up to on my
               &nbsp;
               <InlineLink internalLink="/projects/">projects page</InlineLink>
@@ -226,17 +240,13 @@ function IndexPage() {
             <ButtonGroup>
               <Button
                 internalLink="/projects/"
-                buttonStyle={SECONDARY}
-                buttonSize={BRAVO}
+                variant={SECONDARY}
+                size={BRAVO}
                 bodyBg
               >
                 Projects
               </Button>
-              <Button
-                internalLink="/contact/"
-                buttonStyle={PRIMARY}
-                buttonSize={BRAVO}
-              >
+              <Button internalLink="/contact/" variant={PRIMARY} size={BRAVO}>
                 Contact
               </Button>
             </ButtonGroup>

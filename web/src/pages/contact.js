@@ -8,15 +8,16 @@ import Grid from '../components/Grid';
 import Item from '../components/Item';
 import ContactForm from '../components/ContactForm';
 
-import { sizes } from '../assets/styles/style-enums';
+import { sizes, variants } from '../assets/styles/style-enums';
 
 const { FOXTROT, GOLF, HOTEL, INDIA } = sizes;
+const { PRIMARY, SECONDARY } = variants;
 
 function ContactPage() {
   return (
     <Layout>
       <SEO title="Contact" />
-      <Section paddingTop={INDIA}>
+      <Section paddingTop={INDIA} variant={SECONDARY}>
         <Grid withoutBottomSpacing>
           <Item
             gridColStart={[1, 1, 2, 3, 4]}
@@ -24,7 +25,7 @@ function ContactPage() {
             spacingTop={[FOXTROT, GOLF, INDIA, HOTEL]}
             spacingBottom={[GOLF, HOTEL]}
           >
-            <ContactForm />
+            <ContactForm variant={PRIMARY} />
           </Item>
         </Grid>
       </Section>

@@ -5,12 +5,15 @@ import * as Yup from 'yup';
 import styled from '@emotion/styled';
 
 import Card from '../Card';
+import InlineLink from '../InlineLink';
 import Tooltip from '../Tooltip';
 import TextInput from './components/TextInput';
 import Textarea from './components/Textarea';
 import Checkbox from './components/Checkbox';
 import ButtonGroup from '../ButtonGroup';
 import Button from '../Button';
+
+import { variantPropType } from '../../utils/shared-prop-types';
 
 import {
   variants,
@@ -19,7 +22,7 @@ import {
   sizes,
 } from '../../assets/styles/style-enums';
 
-const { PRIMARY, TERTIARY } = variants;
+const { PRIMARY, SECONDARY, TERTIARY } = variants;
 const { DANGER, SUCCESS, ACCENT_BRAVO } = colors;
 const { END } = positions;
 const { ALPHA, ECHO, GOLF } = sizes;
@@ -38,26 +41,11 @@ const formStyles = ({ theme }) => ({
   },
 });
 
-const linkStyles = ({ theme }) => ({
-  color: theme.colors.n400,
-  fontWeight: theme.fontWeight.bold,
-  textDecoration: 'none',
-
-  '&:visited': {
-    color: theme.colors.n400,
-  },
-
-  '&:hover': {
-    color: theme.colors.p400,
-  },
-});
-
 // ....................component....................
 
 const StyledForm = styled(Form)(formStyles);
-const FormLink = styled.a(linkStyles);
 
-function ContactForm() {
+function ContactForm({ variant }) {
   // define character max lengths
   const firstNameMaxLength = 20;
   const lastNameMaxLength = 20;
@@ -128,56 +116,61 @@ function ContactForm() {
     >
       {/* destructure helper methods from props */}
       {({ isSubmitting, handleReset }) => (
-        <Card padding={[ECHO, GOLF]} accentColor={ACCENT_BRAVO}>
+        <Card padding={[ECHO, GOLF]} accent={ACCENT_BRAVO} variant={variant}>
           <StyledForm id="fs-frm" noValidate>
             <input
+              variant={variant}
               type="hidden"
               name="_subject"
               value="New enquiry from tomhendra.dev"
             />
             <TextInput
+              variant={variant}
               label="First Name"
               name="firstName"
               type="text"
               placeholder="Maggie"
             />
             <TextInput
+              variant={variant}
               label="Last Name"
               name="lastName"
               type="text"
               placeholder="Simpson"
             />
             <TextInput
+              variant={variant}
               label="Email Address"
               name="email"
               type="email"
               placeholder="maggie@fox.com"
             />
             <Textarea
+              variant={variant}
               label="Message"
               name="message"
               rows="8"
               placeholder="Your message (maximum 500 characters)"
               messageMaxLength={messageMaxLength}
             />
-            <Checkbox name="acceptedTerms">
+            <Checkbox name="acceptedTerms" variant={variant}>
               I agree to the&nbsp;
-              <FormLink href="/privacy-policy/" target="blank">
+              <InlineLink internalLink="/privacy-policy/">
                 privacy policy
-              </FormLink>
+              </InlineLink>
             </Checkbox>
             <ButtonGroup>
               <Button
-                buttonStyle={TERTIARY}
-                buttonSize={ALPHA}
+                variant={TERTIARY}
+                size={ALPHA}
                 disabled={isSubmitting}
                 onClick={handleReset}
               >
                 Reset
               </Button>
               <Button
-                buttonStyle={PRIMARY}
-                buttonSize={ALPHA}
+                variant={PRIMARY}
+                size={ALPHA}
                 type="submit"
                 disabled={isSubmitting}
               >
@@ -200,5 +193,14 @@ function ContactForm() {
     </Formik>
   );
 }
+// ....................propTypes....................
+
+ContactForm.propTypes = {
+  variant: variantPropType,
+};
+
+ContactForm.defaultProps = {
+  variant: SECONDARY,
+};
 
 export default ContactForm;

@@ -11,7 +11,7 @@ import { toPlainText } from '../../utils/helpers';
 import { withMediaQueries } from '../../assets/styles/style-helpers';
 import { variants, sizes } from '../../assets/styles/style-enums';
 
-const { TERTIARY } = variants;
+const { PRIMARY, TERTIARY } = variants;
 const { ALPHA, CHARLIE, DELTA, FOXTROT, GOLF } = sizes;
 
 // ....................styles....................
@@ -46,24 +46,21 @@ const Image = styled(Img)(imageStyles);
 function ProjectPreview({ project }) {
   return (
     <Card
+      variant={PRIMARY}
       justifyContent="space-between"
       padding={[FOXTROT, FOXTROT, FOXTROT, GOLF]}
       alignItems="stretch"
     >
       <Content>
         <Image fluid={project.mainImage} alt={project.alt} />
-        <Heading size={CHARLIE} spacingBottom={DELTA} as="h3">
+        <Heading as="h3" size={CHARLIE} spacingBottom={DELTA} variant={PRIMARY}>
           {project.title}
         </Heading>
-        <Text size={CHARLIE} noMargin>
+        <Text noMargin size={CHARLIE} variant={PRIMARY}>
           {toPlainText(project.description)}
         </Text>
       </Content>
-      <Button
-        buttonStyle={TERTIARY}
-        buttonSize={ALPHA}
-        internalLink={project.slug}
-      >
+      <Button variant={TERTIARY} size={ALPHA} internalLink={project.slug}>
         More Details
       </Button>
     </Card>

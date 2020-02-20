@@ -10,9 +10,10 @@ import Figure from '../Figure';
 import CodeBlock from '../CodeBlock';
 import InlineLink from '../InlineLink';
 
-import { sizes } from '../../assets/styles/style-enums';
+import { sizes, variants } from '../../assets/styles/style-enums';
 
 const { CHARLIE, DELTA, ECHO } = sizes;
+const { PRIMARY } = variants;
 
 // ....................serializers....................
 
@@ -22,34 +23,38 @@ const serializers = {
       switch (node.style) {
         case 'h2':
           return (
-            <Heading as="h2" size={ECHO}>
+            <Heading as="h2" size={ECHO} variant={PRIMARY}>
               {children}
             </Heading>
           );
 
         case 'h3':
           return (
-            <Heading as="h3" size={DELTA}>
+            <Heading as="h3" size={DELTA} variant={PRIMARY}>
               {children}
             </Heading>
           );
 
         case 'h4':
           return (
-            <Heading as="h4" size={CHARLIE}>
+            <Heading as="h4" size={CHARLIE} variant={PRIMARY}>
               {children}
             </Heading>
           );
 
         case 'blockquote':
           return (
-            <Text italic as="blockquote" size={DELTA}>
+            <Text italic as="blockquote" size={DELTA} variant={PRIMARY}>
               {children}
             </Text>
           );
 
         default:
-          return <Text size={DELTA}>{children}</Text>;
+          return (
+            <Text size={DELTA} variant={PRIMARY}>
+              {children}
+            </Text>
+          );
       }
     },
     figure: ({ node }) => <Figure node={node} />,
@@ -58,7 +63,7 @@ const serializers = {
     ),
   },
   listItem: ({ children }) => (
-    <Text noMargin as="li" size={DELTA}>
+    <Text noMargin as="li" size={DELTA} variant={PRIMARY}>
       {children}
     </Text>
   ),

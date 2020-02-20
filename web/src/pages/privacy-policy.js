@@ -8,32 +8,37 @@ import Grid from '../components/Grid';
 import Item from '../components/Item';
 import Heading from '../components/Heading';
 import Text from '../components/Text';
+import InlineLink from '../components/InlineLink';
 
-import { sizes } from '../assets/styles/style-enums';
+import { sizes, variants } from '../assets/styles/style-enums';
 
 const { FOXTROT, GOLF } = sizes;
+const { PRIMARY } = variants;
 
 function PrivacyPolicyPage() {
   return (
     <Layout>
       <SEO title="Privacy Policy" />
-      <Section>
+      <Section variant={PRIMARY}>
         <Grid>
           <Item
             gridColStart={[1, 1, 2, 3, 4]}
             gridColEnd={[9, 9, 12, 11, 10]}
             spacingBottom={GOLF}
           >
-            <Heading as="h1" size={FOXTROT}>
+            <Heading as="h1" size={FOXTROT} variant={PRIMARY}>
               Privacy Policy.
             </Heading>
-            <Text>
-              At tomhendra.dev, accessible from https://www.tomhendra.dev, one
-              of our main priorities is the privacy of our visitors. This
+            <Text variant={PRIMARY}>
+              At tomhendra.dev, accessible from&nbsp;
+              <InlineLink externalLink="https://tomhendra.dev">
+                https://tomhendra.dev
+              </InlineLink>
+              , one of our main priorities is the privacy of our visitors. This
               Privacy Policy document contains types of information that is
               collected and recorded by tomhendra.dev and how we use it.
             </Text>
-            <Text>
+            <Text variant={PRIMARY}>
               If you have additional questions or require more information about
               our Privacy Policy, do not hesitate to contact us.
             </Text>
@@ -43,71 +48,55 @@ function PrivacyPolicyPage() {
             gridColEnd={[9, 9, 12, 11, 10]}
             spacingBottom={FOXTROT}
           >
-            <Heading as="h2">General Data Protection Regulation (GDPR)</Heading>
-            <Text>We are a Data Controller of your information.</Text>
-            <Text>
+            <Heading as="h2" variant={PRIMARY}>
+              General Data Protection Regulation (GDPR)
+            </Heading>
+            <Text variant={PRIMARY}>
+              We are a Data Controller of your information.
+            </Text>
+            <Text variant={PRIMARY}>
               Tom Hendra legal basis for collecting and using the personal
               information described in this Privacy Policy depends on the
               Personal Information we collect and the specific context in which
               we collect the information:
             </Text>
-            <ul css={{ marginLeft: '4rem' }}>
+            <Text as="ul" variant={PRIMARY}>
+              <li>Tom Hendra needs to perform a contract with you</li>
+              <li>You have given Tom Hendra permission to do so</li>
               <li>
-                <Text>Tom Hendra needs to perform a contract with you</Text>
+                Processing your personal information is in Tom Hendra&apos;s
+                legitimate interests
               </li>
-              <li>
-                <Text>You have given Tom Hendra permission to do so</Text>
-              </li>
-              <li>
-                <Text>
-                  Processing your personal information is in Tom Hendra&apos;s
-                  legitimate interests
-                </Text>
-              </li>
-              <li>
-                <Text>Tom Hendra needs to comply with the law</Text>
-              </li>
-            </ul>
-            <Text>
+              <li>Tom Hendra needs to comply with the law</li>
+            </Text>
+            <Text variant={PRIMARY}>
               Tom Hendra will retain your personal information only for as long
               as is necessary for the purposes set out in this Privacy Policy.
               We will retain and use your information to the extent necessary to
               comply with our legal obligations, resolve disputes, and enforce
               our policies.
             </Text>
-            <Text>
+            <Text variant={PRIMARY}>
               If you are a resident of the European Economic Area (EEA), you
               have certain data protection rights. If you wish to be informed
               what Personal Information we hold about you and if you want it to
               be removed from our systems, please contact us.
             </Text>
-            <Text>
+            <Text variant={PRIMARY}>
               In certain circumstances, you have the following data protection
               rights:
             </Text>
-            <ul css={{ marginLeft: '4rem' }}>
+            <Text as="ul" variant={PRIMARY}>
               <li>
-                <Text>
-                  The right to access, update or to delete the information we
-                  have on you.
-                </Text>
+                The right to access, update or to delete the information we have
+                on you.
               </li>
-              <li>
-                <Text>The right of rectification.</Text>
-              </li>
-              <li>
-                <Text>The right to object.</Text>
-              </li>
-              <li>
-                <Text>The right of restriction.</Text>
-              </li>
-              <li>
-                <Text>The right to data portability</Text>
-              </li>
-              <li>
-                <Text>The right to withdraw consent</Text>
-              </li>
-            </ul>
+              <li>The right of rectification.</li>
+              <li>The right to object.</li>
+              <li>The right of restriction.</li>
+              <li>The right to data portability</li>
+              <li>The right to withdraw consent</li>
+            </Text>
           </Item>
           <Item
             gridColStart={[1, 1, 2, 3, 4]}
@@ -115,7 +104,7 @@ function PrivacyPolicyPage() {
             spacingBottom={FOXTROT}
           >
             <Heading as="h2">Log Files</Heading>
-            <Text>
+            <Text variant={PRIMARY}>
               tomhendra.dev follows a standard procedure of using log files.
               These files log visitors when they visit websites. All hosting
               companies do this and a part of hosting services&apos; analytics.
@@ -133,8 +122,10 @@ function PrivacyPolicyPage() {
             gridColEnd={[9, 9, 12, 11, 10]}
             spacingBottom={FOXTROT}
           >
-            <Heading as="h2">Cookies and Web Beacons</Heading>
-            <Text>
+            <Heading as="h2" variant={PRIMARY}>
+              Cookies and Web Beacons
+            </Heading>
+            <Text variant={PRIMARY}>
               Like any other website, tomhendra.dev uses &apos;cookies&apos;.
               These cookies are used to store information including
               visitors&apos; preferences, and the pages on the website that the
@@ -148,12 +139,14 @@ function PrivacyPolicyPage() {
             gridColEnd={[9, 9, 12, 11, 10]}
             spacingBottom={FOXTROT}
           >
-            <Heading as="h2">Privacy Policies</Heading>
-            <Text>
+            <Heading as="h2" variant={PRIMARY}>
+              Privacy Policies
+            </Heading>
+            <Text variant={PRIMARY}>
               You may consult this list to find the Privacy Policy for each of
               the advertising partners of tomhendra.dev.
             </Text>
-            <Text>
+            <Text variant={PRIMARY}>
               Third-party ad servers or ad networks uses technologies like
               cookies, JavaScript, or Web Beacons that are used in their
               respective advertisements and links that appear on tomhendra.dev,
@@ -163,7 +156,7 @@ function PrivacyPolicyPage() {
               and/or to personalize the advertising content that you see on
               websites that you visit.
             </Text>
-            <Text>
+            <Text variant={PRIMARY}>
               Note that tomhendra.dev has no access to or control over these
               cookies that are used by third-party advertisers.
             </Text>
@@ -173,8 +166,10 @@ function PrivacyPolicyPage() {
             gridColEnd={[9, 9, 12, 11, 10]}
             spacingBottom={FOXTROT}
           >
-            <Heading as="h2">Third Party Privacy Policies</Heading>
-            <Text>
+            <Heading as="h2" variant={PRIMARY}>
+              Third Party Privacy Policies
+            </Heading>
+            <Text variant={PRIMARY}>
               tomhendra.dev&apos;s Privacy Policy does not apply to other
               advertisers or websites. Thus, we are advising you to consult the
               respective Privacy Policies of these third-party ad servers for
@@ -183,7 +178,7 @@ function PrivacyPolicyPage() {
               a complete list of these Privacy Policies and their links here:
               Privacy Policy Links.
             </Text>
-            <Text>
+            <Text variant={PRIMARY}>
               You can choose to disable cookies through your individual browser
               options. To know more detailed information about cookie management
               with specific web browsers, it can be found at the browsers&apos;
@@ -195,14 +190,16 @@ function PrivacyPolicyPage() {
             gridColEnd={[9, 9, 12, 11, 10]}
             spacingBottom={FOXTROT}
           >
-            <Heading as="h2">Children&apos;s Information</Heading>
-            <Text>
+            <Heading as="h2" variant={PRIMARY}>
+              Children&apos;s Information
+            </Heading>
+            <Text variant={PRIMARY}>
               Another part of our priority is adding protection for children
               while using the internet. We encourage parents and guardians to
               observe, participate in, and/or monitor and guide their online
               activity.
             </Text>
-            <Text>
+            <Text variant={PRIMARY}>
               tomhendra.dev does not knowingly collect any Personal Identifiable
               Information from children under the age of 13. If you think that
               your child provided this kind of information on our website, we
@@ -216,17 +213,23 @@ function PrivacyPolicyPage() {
             gridColEnd={[9, 9, 12, 11, 10]}
             spacingBottom={FOXTROT}
           >
-            <Heading as="h2">Online Privacy Policy Only</Heading>
-            <Text>
-              Our Privacy Policy created at GDPRPrivacyPolicy.net applies only
-              to our online activities and is valid for visitors to our website
-              with regards to the information that they shared and/or collect in
-              tomhendra.dev. This policy is not applicable to any information
-              collected offline or via channels other than this website. Our
-              GDPR Privacy Policy was generated from the &nbsp;
-              <a href="https://gdprprivacypolicy.net">
+            <Heading as="h2" variant={PRIMARY}>
+              Online Privacy Policy Only
+            </Heading>
+            <Text variant={PRIMARY}>
+              Our Privacy Policy created at&nbsp;
+              <InlineLink externalLink="https://GDPRPrivacyPolicy.net">
+                GDPRPrivacyPolicy.net
+              </InlineLink>
+              &nbsp;applies only to our online activities and is valid for
+              visitors to our website with regards to the information that they
+              shared and/or collect in tomhendra.dev. This policy is not
+              applicable to any information collected offline or via channels
+              other than this website. Our GDPR Privacy Policy was generated
+              from the&nbsp;
+              <InlineLink externalLink="https://gdprprivacypolicy.net">
                 GDPR Privacy Policy Generator.
-              </a>
+              </InlineLink>
               &nbsp;
             </Text>
           </Item>
@@ -235,8 +238,10 @@ function PrivacyPolicyPage() {
             gridColEnd={[9, 9, 12, 11, 10]}
             spacingBottom={FOXTROT}
           >
-            <Heading as="h2">Consent</Heading>
-            <Text>
+            <Heading as="h2" variant={PRIMARY}>
+              Consent
+            </Heading>
+            <Text variant={PRIMARY}>
               By using our website, you hereby consent to our Privacy Policy and
               agree to its terms.
             </Text>

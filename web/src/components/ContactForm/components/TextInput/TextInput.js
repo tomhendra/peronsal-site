@@ -1,14 +1,24 @@
 import React from 'react';
 import { useField } from 'formik';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
-import Label from '../Label';
+import Text from '../../../Text';
 import Tooltip from '../../../Tooltip';
 
-import { colors, positions } from '../../../../assets/styles/style-enums';
+import { variantPropType } from '../../../../utils/shared-prop-types';
+
+import {
+  colors,
+  positions,
+  sizes,
+  variants,
+} from '../../../../assets/styles/style-enums';
 
 const { DANGER } = colors;
 const { START } = positions;
+const { CHARLIE } = sizes;
+const { PRIMARY, SECONDARY, TERTIARY } = variants;
 
 // ....................styles....................
 
@@ -17,58 +27,107 @@ const containerStyles = ({ theme }) => ({
   zIndex: theme.zIndex.input,
 });
 
-const elementStyles = ({ theme, error, touched }) => ({
-  WebkitAppearance: 'none',
-  MozAppearance: 'none',
-  appearance: 'none',
-  backgroundColor: 'inherit',
-  borderColor: !(error && touched) ? theme.colors.n500 : theme.colors.danger,
-  borderStyle: 'solid',
-  borderRadius: theme.borderRadius.bravo,
-  borderWidth: theme.borderWidth.bravo,
-  color: theme.colors.bodyColor,
-  fontFamily: theme.fontStack.default,
-  fontSize: theme.typography.text.delta.fontSize,
-  marginTop: theme.spacings.alpha,
-  padding: theme.spacings.charlie,
-  width: '100%',
+function elementStyles({ theme, variant, error, touched }) {
+  const baseStyles = {
+    WebkitAppearance: 'none',
+    MozAppearance: 'none',
+    appearance: 'none',
+    borderStyle: 'solid',
+    borderRadius: theme.borderRadius.bravo,
+    borderWidth: theme.borderWidth.bravo,
+    fontFamily: theme.fontStack.default,
+    fontSize: theme.typography.text.delta.fontSize,
+    marginTop: theme.spacings.alpha,
+    padding: theme.spacings.charlie,
+    width: '100%',
+  };
 
-  '&::placeholder': {
-    color: theme.colors.n300,
-  },
-});
+  const colorVariants = {
+    [PRIMARY]: {
+      backgroundColor: theme.colors.white,
+      color: theme.colors.n200,
+      borderColor: !(error && touched)
+        ? theme.colors.n500
+        : theme.colors.danger,
+
+      '&::placeholder': {
+        color: theme.colors.n300,
+      },
+    },
+    [SECONDARY]: {
+      backgroundColor: theme.colors.bodyBg,
+      color: theme.colors.bodyColor,
+      borderColor: !(error && touched)
+        ? theme.colors.n500
+        : theme.colors.danger,
+
+      '&::placeholder': {
+        color: theme.colors.n300,
+      },
+    },
+    [TERTIARY]: {
+      backgroundColor: theme.colors.n100,
+      color: theme.colors.n900,
+      borderColor: !(error && touched)
+        ? theme.colors.n400
+        : theme.colors.danger,
+
+      '&::placeholder': {
+        color: theme.colors.n700,
+      },
+    },
+  };
+
+  const colorConfig = colorVariants[variant];
+
+  return {
+    ...baseStyles,
+    ...colorConfig,
+  };
+}
 
 // ....................component....................
 
-const TextInputContainer = styled.div(containerStyles);
-const TextInputElement = styled.input(elementStyles);
+const Container = styled.div(containerStyles);
+const Element = styled.input(elementStyles);
 
-function TextInput({ label, ...otherProps }) {
+function TextInput({ label, variant, ...otherProps }) {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
-  // which we can spread on <TextInputElement>.
+  // which we can spread on <Element>.
   const [field, meta] = useField(otherProps);
   const { error, touched } = meta;
   const { id, name } = otherProps;
   return (
-    <TextInputContainer>
-      <Label htmlFor={id || name}>
+    <Container>
+      <Text as="label" htmlFor={id || name} size={CHARLIE} variant={variant}>
         {label}
-        <TextInputElement
+        <Element
+          variant={variant}
           error={error}
           touched={touched}
           {...field}
           {...otherProps}
         />
-      </Label>
+      </Text>
       {touched && error ? (
         <Tooltip variant={DANGER} align={START}>
           {error}
         </Tooltip>
       ) : null}
-    </TextInputContainer>
+    </Container>
   );
 }
 
 // ....................propTypes....................
+
+TextInput.propTypes = {
+  label: PropTypes.string,
+  variant: variantPropType,
+};
+
+TextInput.defaultProps = {
+  label: '⚠️No label provided',
+  variant: SECONDARY,
+};
 
 export default TextInput;

@@ -4,15 +4,16 @@ import PropTypes from 'prop-types';
 
 import Heading from '../../../Heading';
 
-import { sizes } from '../../../../assets/styles/style-enums';
+import { sizes, variants } from '../../../../assets/styles/style-enums';
 
 const { ALPHA } = sizes;
+const { PRIMARY } = variants;
 
 // ....................component....................
 
 function PostedDate({ date }) {
   return (
-    <Heading sub as="h2" size={ALPHA} noMargin>
+    <Heading noMargin as="h2" size={ALPHA} variant={PRIMARY}>
       Posted&nbsp;
       {differenceInDays(new Date(), new Date(date)) > 5
         ? format(new Date(date), 'do MMMM, yyyy')

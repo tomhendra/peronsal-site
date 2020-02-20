@@ -7,10 +7,11 @@ import Card from '../Card';
 import Heading from '../Heading';
 
 import { withMediaQueries } from '../../assets/styles/style-helpers';
-import { colors, sizes } from '../../assets/styles/style-enums';
+import { colors, sizes, variants } from '../../assets/styles/style-enums';
 
 const { ACCENT_CHARLIE } = colors;
 const { FOXTROT, GOLF } = sizes;
+const { PRIMARY } = variants;
 
 // ....................styles....................
 
@@ -56,8 +57,9 @@ function BlogPostPreview({ post }) {
   return (
     <StyledLink to={post.slug} aria-label={post.title}>
       <Card
+        variant={PRIMARY}
         as="article"
-        accentColor={ACCENT_CHARLIE}
+        accent={ACCENT_CHARLIE}
         padding={[FOXTROT, FOXTROT, GOLF, FOXTROT, GOLF]}
         // justifyContent="space-between"
         alignItems="stretch"
@@ -70,7 +72,7 @@ function BlogPostPreview({ post }) {
           }}
         />
 
-        <Heading noMargin as="h3">
+        <Heading noMargin as="h3" variant={PRIMARY}>
           {post.title}
         </Heading>
       </Card>

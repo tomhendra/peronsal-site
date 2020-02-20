@@ -3,22 +3,21 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import Text from '../Text';
-
 // ....................styles....................
 
 function styles({ theme }) {
   const baseStyles = {
+    color: 'inherit',
     display: 'inline-block',
     position: 'relative',
     textDecoration: 'none',
 
     '&::before': {
-      backgroundColor: theme.colors.l900,
+      backgroundColor: theme.colors.l800,
       borderRadius: theme.borderRadius.alpha,
-      bottom: 1,
+      bottom: -2,
       content: '""',
-      height: 8,
+      height: '33%',
       left: 0,
       position: 'absolute',
       transition: `transform ${theme.transitions.default}`,
@@ -33,8 +32,12 @@ function styles({ theme }) {
       },
     },
 
+    '&:active': {
+      color: 'inherit',
+    },
+
     '&:visited': {
-      color: theme.colors.n400,
+      color: 'inherit',
     },
   };
 
@@ -46,7 +49,7 @@ function styles({ theme }) {
 // ....................component....................
 
 const InternalLinkElement = styled(Link)(styles);
-const ExternalLinkElement = styled(Text)(styles);
+const ExternalLinkElement = styled.a(styles);
 
 function InlineLink({ internalLink, externalLink, ...rest }) {
   return internalLink ? (
@@ -54,7 +57,6 @@ function InlineLink({ internalLink, externalLink, ...rest }) {
   ) : (
     <ExternalLinkElement
       {...rest}
-      as="a"
       target="blank"
       rel="noopener"
       href={externalLink}

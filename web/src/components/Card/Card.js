@@ -7,6 +7,7 @@ import {
   alignItemsPropType,
   alignContentPropType,
   sizePropType,
+  variantPropType,
   shadowPropType,
   colorPropType,
 } from '../../utils/shared-prop-types';
@@ -26,9 +27,15 @@ import {
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
-import { colors, shadows, sizes } from '../../assets/styles/style-enums';
+import {
+  colors,
+  shadows,
+  sizes,
+  variants,
+} from '../../assets/styles/style-enums';
 
 const { BRAND, ACCENT_ALPHA, ACCENT_BRAVO, ACCENT_CHARLIE } = colors;
+const { PRIMARY, SECONDARY, TERTIARY } = variants;
 
 const {
   STANDARD_ALPHA,
@@ -47,7 +54,8 @@ const { FOXTROT } = sizes;
 // ....................styles....................
 
 function styles({
-  accentColor,
+  variant,
+  accent,
   shadow,
   padding,
   paddingTop,
@@ -86,6 +94,22 @@ function styles({
     alignContent,
   };
 
+  // color variants must be matched child elements.
+  // I.e.Text, Heading, Subheading must be of same variant.
+  const colorVariants = {
+    [PRIMARY]: {
+      backgroundColor: theme.colors.white,
+    },
+    [SECONDARY]: {
+      backgroundColor: theme.colors.bodyBg,
+    },
+    [TERTIARY]: {
+      backgroundColor: theme.colors.n100,
+    },
+  };
+
+  const colorConfig = colorVariants[variant];
+
   const accentStyles = {
     [BRAND]: {
       borderColor: theme.colors.brand,
@@ -101,7 +125,7 @@ function styles({
     },
   };
 
-  const accentConfig = accentStyles[accentColor];
+  const accentConfig = accentStyles[accent];
 
   const shadowStyles = {
     [STANDARD_ALPHA]: shadowStandardAlpha(theme.colors.shadowNeutral),
@@ -122,6 +146,7 @@ function styles({
     ...baseStyles,
     ...paddingStyles,
     ...flexboxStyles,
+    ...colorConfig,
     ...accentConfig,
     ...shadowConfig,
   });
@@ -134,7 +159,8 @@ const Card = styled.div(styles);
 // ....................propTypes....................
 
 Card.propTypes = {
-  accentColor: colorPropType,
+  variant: variantPropType,
+  accent: colorPropType,
   shadow: shadowPropType,
   padding: sizePropType,
   paddingTop: sizePropType,
@@ -149,7 +175,8 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  accentColor: ACCENT_BRAVO,
+  variant: SECONDARY,
+  accent: ACCENT_BRAVO,
   shadow: STANDARD_DELTA,
   padding: FOXTROT,
   paddingTop: null,

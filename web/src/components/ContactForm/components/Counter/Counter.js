@@ -1,11 +1,15 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
+
+import { variantPropType } from '../../../../utils/shared-prop-types';
 
 import Text from '../../../Text';
 
-import { sizes } from '../../../../assets/styles/style-enums';
+import { sizes, variants } from '../../../../assets/styles/style-enums';
 
 const { CHARLIE } = sizes;
+const { SECONDARY } = variants;
 
 // ....................styles....................
 
@@ -16,13 +20,10 @@ const containerStyles = ({ theme }) => ({
   height: theme.spacings.golf,
 });
 
-const textStyles = ({ theme }) => ({
-  marginRight: theme.spacings.bravo,
-});
-
 const svgStyles = ({ theme }) => ({
   height: theme.iconSizes.foxtrot,
   width: theme.iconSizes.foxtrot,
+  marginLeft: theme.spacings.bravo,
 
   '& circle': {
     fill: 'none',
@@ -56,18 +57,17 @@ function colouredRingStyles({ theme, messageMaxLength, charsRemaining }) {
 // ....................component....................
 
 const CounterContainer = styled.div(containerStyles);
-const CounterText = styled(Text)(textStyles);
 const CounterSvg = styled.svg(svgStyles);
 const GreyRing = styled.circle(greyRingStyles);
 const ColouredRing = styled.circle(colouredRingStyles);
 
-function Counter({ messageMaxLength, charsEntered }) {
+function Counter({ messageMaxLength, charsEntered, variant }) {
   const charsRemaining = messageMaxLength - charsEntered;
   return (
     <CounterContainer>
-      <CounterText noMargin size={CHARLIE}>
+      <Text noMargin size={CHARLIE} variant={variant}>
         {`Characters remaining: ${charsRemaining}`}
-      </CounterText>
+      </Text>
       <CounterSvg>
         <GreyRing cx="50%" cy="50%" r="10" />
         <ColouredRing
@@ -81,5 +81,19 @@ function Counter({ messageMaxLength, charsEntered }) {
     </CounterContainer>
   );
 }
+
+// ...................propTypes....................
+
+Counter.propTypes = {
+  messageMaxLength: PropTypes.number,
+  charsEntered: PropTypes.number,
+  variant: variantPropType,
+};
+
+Counter.defaultProps = {
+  messageMaxLength: null,
+  charsEntered: null,
+  variant: SECONDARY,
+};
 
 export default Counter;

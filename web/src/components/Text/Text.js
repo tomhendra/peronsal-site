@@ -2,7 +2,11 @@ import React from 'react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
-import { childrenPropType, sizePropType } from '../../utils/shared-prop-types';
+import {
+  childrenPropType,
+  sizePropType,
+  variantPropType,
+} from '../../utils/shared-prop-types';
 
 import {
   getSpacingValues,
@@ -10,9 +14,10 @@ import {
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
-import { sizes } from '../../assets/styles/style-enums';
+import { sizes, variants } from '../../assets/styles/style-enums';
 
 const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT } = sizes;
+const { PRIMARY, SECONDARY, TERTIARY } = variants;
 
 // ....................styles....................
 
@@ -23,6 +28,7 @@ function styles({
   strike,
   noMargin,
   spacingBottom,
+  variant,
   size,
   theme,
 }) {
@@ -30,11 +36,25 @@ function styles({
     fontFamily: theme.fontStack.default,
     fontStyle: !italic ? 'normal' : 'italic',
     fontWeight: !bold ? theme.fontWeight.regular : theme.fontWeight.bold,
+    listStylePosition: as === 'ul' || (as === 'li' && 'inside'),
     marginBottom: !noMargin ? getSpacingValues(spacingBottom, theme) : 0,
-    marginLeft: as === 'li' && theme.spacings.echo,
     textDecoration: !strike ? 'none' : 'line-through',
     wordWrap: 'break-word',
   };
+
+  const colorVariants = {
+    [PRIMARY]: {
+      color: theme.colors.n200,
+    },
+    [SECONDARY]: {
+      color: theme.colors.bodyColor,
+    },
+    [TERTIARY]: {
+      color: theme.colors.n900,
+    },
+  };
+
+  const colorConfig = colorVariants[variant];
 
   const mobileSizeMap = {
     [ALPHA]: ALPHA,
@@ -76,6 +96,7 @@ function styles({
 
   return withMediaQueries(theme)({
     ...baseStyles,
+    ...colorConfig,
     ...sizeDeclarations,
     ...blockquoteStyles,
   });
@@ -85,7 +106,9 @@ function styles({
 
 const TextElement = styled.p(styles);
 function Text({
+  as,
   noMargin,
+  variant,
   size,
   spacingBottom,
   bold,
@@ -95,7 +118,9 @@ function Text({
 }) {
   return (
     <TextElement
+      as={as}
       noMargin={noMargin}
+      variant={variant}
       size={size}
       spacingBottom={spacingBottom}
       bold={bold}
@@ -111,6 +136,7 @@ function Text({
 
 Text.propTypes = {
   noMargin: PropTypes.bool,
+  variant: variantPropType,
   size: sizePropType,
   spacingBottom: sizePropType,
   bold: PropTypes.bool,
@@ -121,6 +147,7 @@ Text.propTypes = {
 
 Text.defaultProps = {
   noMargin: false,
+  variant: SECONDARY,
   size: DELTA,
   spacingBottom: [CHARLIE, CHARLIE, DELTA],
   bold: false,

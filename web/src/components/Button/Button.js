@@ -12,7 +12,7 @@ const { ALPHA, BRAVO, CHARLIE } = sizes;
 
 // ....................styles....................
 
-function buttonStyles({ buttonStyle, buttonSize, inheritBg, theme }) {
+function buttonStyles({ variant, size, inheritBg, theme }) {
   const baseStyles = {
     alignItems: 'center',
     borderRadius: theme.borderRadius.bravo,
@@ -96,8 +96,8 @@ function buttonStyles({ buttonStyle, buttonSize, inheritBg, theme }) {
     },
   };
 
-  const colorConfig = colorVariants[buttonStyle];
-  const sizeConfig = sizeVariants[buttonSize];
+  const colorConfig = colorVariants[variant];
+  const sizeConfig = sizeVariants[size];
 
   return {
     ...baseStyles,
@@ -125,8 +125,8 @@ const ButtonElement = styled.button(buttonStyles);
 function Button({
   externalLink,
   internalLink,
-  buttonStyle,
-  buttonSize,
+  variant,
+  size,
   inheritBg,
   ...rest
 }) {
@@ -138,8 +138,8 @@ function Button({
     <InternalLink to={internalLink}>
       <InternalLinkElement
         {...rest}
-        buttonStyle={buttonStyle}
-        buttonSize={buttonSize}
+        variant={variant}
+        size={size}
         inheritBg={inheritBg}
       />
     </InternalLink>
@@ -150,8 +150,8 @@ function Button({
       target="blank"
       rel="noopener"
       href={externalLink}
-      buttonStyle={buttonStyle}
-      buttonSize={buttonSize}
+      variant={variant}
+      size={size}
       inheritBg={inheritBg}
     />
   ) : (
@@ -159,8 +159,8 @@ function Button({
     // based on defaultProp values being defined as null.
     <ButtonElement
       {...rest}
-      buttonStyle={buttonStyle}
-      buttonSize={buttonSize}
+      variant={variant}
+      size={size}
       inheritBg={inheritBg}
     />
   );
@@ -169,16 +169,16 @@ function Button({
 // ....................propTypes....................
 
 Button.protoTypes = {
-  buttonStyle: variantPropType,
-  buttonSize: PropTypes.oneOf([ALPHA, BRAVO, CHARLIE]),
+  variant: variantPropType,
+  size: PropTypes.oneOf([ALPHA, BRAVO, CHARLIE]),
   externalLink: PropTypes.string,
   internalLink: PropTypes.string,
   inheritBg: PropTypes.bool,
 };
 
 Button.defaultProps = {
-  buttonStyle: SECONDARY,
-  buttonSize: BRAVO,
+  variant: SECONDARY,
+  size: BRAVO,
   externalLink: null,
   internalLink: null,
   inheritBg: false,

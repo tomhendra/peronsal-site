@@ -3,7 +3,10 @@ import { useField } from 'formik';
 import styled from '@emotion/styled';
 import { hideVisually } from 'polished';
 
-import { childrenPropType } from '../../../../utils/shared-prop-types';
+import {
+  childrenPropType,
+  variantPropType,
+} from '../../../../utils/shared-prop-types';
 import { withMediaQueries } from '../../../../assets/styles/style-helpers';
 
 import Icon from '../../../Icon';
@@ -15,12 +18,14 @@ import {
   icons,
   positions,
   sizes,
+  variants,
 } from '../../../../assets/styles/style-enums';
 
 const { DANGER, WHITE } = colors;
 const { CHECK } = icons;
 const { START } = positions;
 const { ALPHA } = sizes;
+const { PRIMARY, SECONDARY, TERTIARY } = variants;
 
 // ....................styles....................
 
@@ -38,8 +43,8 @@ const elementStyles = ({ theme }) => ({
   },
 });
 
-const labelStyles = ({ theme, checked, error, touched }) =>
-  withMediaQueries(theme)({
+function labelStyles({ theme, variant, checked, error, touched }) {
+  const baseStyles = {
     alignItems: 'center',
     display: 'flex',
     flexWrap: 'wrap',
@@ -48,7 +53,22 @@ const labelStyles = ({ theme, checked, error, touched }) =>
       theme.typography.text.charlie.fontSize,
     ],
     position: 'relative',
+  };
 
+  const colorVariants = {
+    [PRIMARY]: {
+      color: theme.colors.n200,
+    },
+    [SECONDARY]: {
+      color: theme.colors.bodyColor,
+    },
+    [TERTIARY]: {
+      color: theme.colors.n900,
+    },
+  };
+  const colorConfig = colorVariants[variant];
+
+  const checkboxStyles = {
     '&::before': {
       backgroundColor: !checked ? 'inherit' : theme.colors.p400,
       borderColor:
@@ -83,7 +103,14 @@ const labelStyles = ({ theme, checked, error, touched }) =>
         strokeWidth: 3,
       },
     },
+  };
+
+  return withMediaQueries(theme)({
+    ...baseStyles,
+    ...colorConfig,
+    ...checkboxStyles,
   });
+}
 
 // ....................component....................
 
@@ -91,7 +118,7 @@ const CheckboxContainer = styled.div(containerStyles);
 const CheckboxLabel = styled(Label)(labelStyles);
 const CheckboxElement = styled.input(elementStyles);
 
-function Checkbox({ children, ...otherProps }) {
+function Checkbox({ variant, children, ...otherProps }) {
   // We need to tell useField what type of input this is
   // since React treats radios and checkboxes differently
   // than inputs/select/textarea.
@@ -103,6 +130,7 @@ function Checkbox({ children, ...otherProps }) {
     <CheckboxContainer>
       <CheckboxElement id={id || name} type="checkbox" {...field} />
       <CheckboxLabel
+        variant={variant}
         htmlFor={id || name}
         checked={checked}
         error={error}
@@ -124,10 +152,12 @@ function Checkbox({ children, ...otherProps }) {
 
 Checkbox.propTypes = {
   children: childrenPropType,
+  variant: variantPropType,
 };
 
 Checkbox.defaultProps = {
   children: null,
+  variant: SECONDARY,
 };
 
 export default Checkbox;

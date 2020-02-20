@@ -11,9 +11,10 @@ import Heading from '../Heading';
 import PostedDate from './components/PostedDate';
 import CategoryList from './components/CategoryList';
 
-import { sizes } from '../../assets/styles/style-enums';
+import { sizes, variants } from '../../assets/styles/style-enums';
 
 const { ECHO } = sizes;
+const { PRIMARY } = variants;
 
 // ....................styles....................
 
@@ -30,11 +31,11 @@ const PostMainImage = styled(Img)(imageStyles);
 function BlogPost({ post }) {
   const { _rawBody, title, mainImage, publishedAt, categories } = post;
   return (
-    <Section>
+    <Section variant={PRIMARY}>
       <article>
         <Grid>
           <Item gridColStart={[1, 1, 1, 3, 3]} gridColEnd={[9, 9, 12, 11, 10]}>
-            <Heading as="h1" size={ECHO}>
+            <Heading as="h1" size={ECHO} variant={PRIMARY}>
               {title}
             </Heading>
             {publishedAt && <PostedDate date={publishedAt} />}

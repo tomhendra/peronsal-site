@@ -11,26 +11,27 @@ import BlogPostPreview from '../components/BlogPostPreview';
 
 import usePosts from '../hooks/usePosts';
 
-import { sizes } from '../assets/styles/style-enums';
+import { sizes, variants } from '../assets/styles/style-enums';
 
 const { FOXTROT, GOLF, HOTEL } = sizes;
+const { SECONDARY } = variants;
 
 function BlogPage() {
   const posts = usePosts();
   return (
     <Layout>
       <SEO title="Blog" />
-      <Section fullViewportHeight>
+      <Section fullViewportHeight variant={SECONDARY}>
         <Grid withoutBottomSpacing>
           <Item
             gridColStart={1}
             gridColEnd={[9, 8, 9, 8, 6]}
             spacingBottom={HOTEL}
           >
-            <Heading as="h1" size={FOXTROT}>
+            <Heading as="h1" size={FOXTROT} variant={SECONDARY}>
               Blog.
             </Heading>
-            <Text noMargin>
+            <Text noMargin variant={SECONDARY}>
               Welcome to a mishmash of ramblings about all of my passions; tech,
               food, fitness and travel. I hope you find it useful, or at least a
               little interesting.
@@ -50,9 +51,9 @@ function BlogPage() {
               gridColEnd={[9, 8, 10, 8, 6]}
               spacingBottom={GOLF}
             >
-              <Heading>
+              <Heading variant={SECONDARY}>
                 There are currently no posts to display. Please check back soon
-                once I have upped my blogging game!
+                once I have upped my blogging game. SMH!
               </Heading>
             </Item>
           )}
