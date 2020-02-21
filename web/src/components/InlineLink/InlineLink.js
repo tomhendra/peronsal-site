@@ -26,9 +26,10 @@ function styles({ theme }) {
       zIndex: theme.zIndex.behind,
     },
 
-    '&:hover': {
+    '&:hover, &:focus': {
       '&::before': {
         transform: 'translateY(50%)',
+        transition: `transform ${theme.transitions.springDefault}`,
       },
     },
 

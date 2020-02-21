@@ -25,17 +25,33 @@ function buttonStyles({ variant, size, inheritBg, theme }) {
     justifyContent: 'center',
     lineHeight: 1,
     minWidth: theme.spacings.juliett,
+    position: 'relative',
     textAlign: 'center',
     textDecoration: 'none',
     textTransform: 'uppercase',
     transition: `transform ${theme.transitions.default}`,
 
-    '&:hover': {
-      transform: 'scale(1.05)',
+    '&::after': {
+      backgroundColor: 'transparent',
+      borderRadius: theme.borderRadius.bravo,
+      borderStyle: 'solid',
+      borderWidth: theme.borderWidth.charlie,
+      content: '""',
+      position: 'absolute',
+      left: 0,
+      top: 0,
+      height: '100%',
+      width: '100%',
+      transformOrigin: 'top right',
+      transition: `transform ${theme.transitions.default}`,
+      zIndex: theme.zIndex.behind,
     },
 
-    '&:active': {
-      transform: 'scale(0.95)',
+    '&:hover, &:focus': {
+      '&::after': {
+        transition: `transform ${theme.transitions.springDefault}`,
+        transform: 'translate(-10px, 10px)',
+      },
     },
 
     '&:disabled': {
@@ -51,9 +67,8 @@ function buttonStyles({ variant, size, inheritBg, theme }) {
       borderColor: theme.colors.n300,
       color: theme.colors.n100,
 
-      '&:hover,:focus': {
-        backgroundColor: theme.colors.p300,
-        color: theme.colors.n000,
+      '&:after': {
+        borderColor: theme.colors.n300,
       },
     },
     [SECONDARY]: {
@@ -61,9 +76,8 @@ function buttonStyles({ variant, size, inheritBg, theme }) {
       borderColor: theme.colors.n300,
       color: theme.colors.n300,
 
-      '&:hover,:focus': {
-        backgroundColor: theme.colors.n600,
-        color: theme.colors.n200,
+      '&:after': {
+        borderColor: theme.colors.n300,
       },
     },
     [TERTIARY]: {
@@ -71,9 +85,8 @@ function buttonStyles({ variant, size, inheritBg, theme }) {
       borderColor: theme.colors.n500,
       color: theme.colors.n400,
 
-      '&:hover,:focus': {
-        backgroundColor: theme.colors.n800,
-        color: theme.colors.n300,
+      '&:after': {
+        borderColor: theme.colors.n500,
       },
     },
   };

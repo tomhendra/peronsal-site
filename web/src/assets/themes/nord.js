@@ -360,6 +360,7 @@ export const transitions = {
   fast: '100ms cubic-bezier(0.165, -0.235, 0.58, 1.18)',
   default: '200ms cubic-bezier(0.165, -0.235, 0.58, 1.18)',
   slow: '300ms cubic-bezier(0.165, -0.235, 0.58, 1.18)',
+  springDefault: '275ms cubic-bezier(0.175, 0.885, 0.32, 1.275)',
 };
 
 export const zIndex = {
