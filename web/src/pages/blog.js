@@ -23,25 +23,27 @@ function BlogPage() {
       <SEO title="Blog" />
       <Section fullViewportHeight variant={SECONDARY}>
         <Grid withoutBottomSpacing>
-          <Item
-            gridColStart={1}
-            gridColEnd={[9, 8, 9, 8, 6]}
-            spacingBottom={HOTEL}
-          >
+          <Item gridColStart={1} gridColEnd={[9, 8, 9, 8, 6]}>
             <Heading as="h1" size={FOXTROT} variant={SECONDARY}>
               Blog.
             </Heading>
-            <Text noMargin variant={SECONDARY}>
-              Welcome to a mishmash of ramblings about all of my passions; tech,
-              food, fitness and travel. I hope you find it useful, or at least a
-              little interesting.
-            </Text>
+            {posts.length > 0 && (
+              <Text noMargin variant={SECONDARY}>
+                Welcome to a mishmash of ramblings about all of my passions;
+                tech, food, fitness and travel. I hope you find it useful, or at
+                least a little interesting.
+              </Text>
+            )}
           </Item>
         </Grid>
         <Grid withRowGaps>
           {posts.length ? (
             posts.map(post => (
-              <Item gridColSpan={[8, 4, 6, 4, 4]} key={post.id}>
+              <Item
+                gridColSpan={[8, 4, 6, 4, 4]}
+                key={post.id}
+                spacingTop={HOTEL}
+              >
                 <BlogPostPreview post={post} />
               </Item>
             ))
@@ -51,10 +53,10 @@ function BlogPage() {
               gridColEnd={[9, 8, 10, 8, 6]}
               spacingBottom={GOLF}
             >
-              <Heading variant={SECONDARY}>
+              <Text variant={SECONDARY}>
                 There are currently no posts to display. Please check back soon
                 once I have upped my blogging game. SMH!
-              </Heading>
+              </Text>
             </Item>
           )}
         </Grid>
