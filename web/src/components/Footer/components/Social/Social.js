@@ -16,7 +16,6 @@ const { BRAVO } = sizes;
 const containerStyles = ({ theme }) =>
   withMediaQueries(theme)({
     display: 'flex',
-    // flexWrap: 'wrap',
     justifyContent: [
       'flex-start',
       'flex-start',
@@ -38,6 +37,7 @@ const linkStyles = ({ theme }) =>
   withMediaQueries(theme)({
     display: 'flex',
     alignItems: 'center',
+    backgroundColor: theme.colors.n700,
     borderWidth: theme.borderWidth.charlie,
     borderStyle: 'solid',
     borderColor: theme.colors.n500,
@@ -48,14 +48,40 @@ const linkStyles = ({ theme }) =>
       theme.typography.text.bravo.fontSize,
       theme.typography.text.charlie.fontSize,
     ],
+    justifyContent: 'center',
     padding: [
       `${theme.spacings.alpha} ${theme.spacings.bravo}`,
-
       `${theme.spacings.alpha} ${theme.spacings.bravo}`,
       `${theme.spacings.alpha} ${theme.spacings.charlie}`,
     ],
+    position: 'relative',
     textDecoration: 'none',
     textTransform: 'uppercase',
+    transition: `transform ${theme.transitions.default}`,
+
+    '&::after': {
+      backgroundColor: theme.colors.n700,
+      borderWidth: theme.borderWidth.charlie,
+      borderStyle: 'solid',
+      borderColor: theme.colors.n500,
+      borderRadius: theme.borderRadius.bravo,
+      content: '""',
+      height: `calc(100% + (${theme.borderWidth.charlie} * 2))`,
+      width: `calc(100% + (${theme.borderWidth.charlie} * 2))`,
+      position: 'absolute',
+      left: -theme.borderWidth.charlie,
+      top: -theme.borderWidth.charlie,
+      zIndex: theme.zIndex.behind,
+      transformOrigin: 'top right',
+      transition: `transform ${theme.transitions.default}`,
+    },
+
+    '&:hover, &:focus': {
+      '&::after': {
+        transition: `transform ${theme.transitions.springDefault}`,
+        transform: 'translate(-6px, 6px)',
+      },
+    },
   });
 
 // ....................component....................

@@ -38,10 +38,11 @@ function buttonStyles({ variant, size, inheritBg, theme }) {
       borderWidth: theme.borderWidth.charlie,
       content: '""',
       position: 'absolute',
-      left: 0,
-      top: 0,
-      height: '100%',
-      width: '100%',
+      // absolute positioning ignores borders, so we hack-a-way uh huh uh huh...
+      left: -theme.borderWidth.charlie,
+      top: -theme.borderWidth.charlie,
+      height: `calc(100% + (${theme.borderWidth.charlie} * 2))`,
+      width: `calc(100% + (${theme.borderWidth.charlie} * 2))`,
       transformOrigin: 'top right',
       transition: `transform ${theme.transitions.default}`,
       zIndex: theme.zIndex.behind,
@@ -50,7 +51,7 @@ function buttonStyles({ variant, size, inheritBg, theme }) {
     '&:hover, &:focus': {
       '&::after': {
         transition: `transform ${theme.transitions.springDefault}`,
-        transform: 'translate(-10px, 10px)',
+        transform: 'translate(-7px, 7px)',
       },
     },
 

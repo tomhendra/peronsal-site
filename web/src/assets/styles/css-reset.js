@@ -1,5 +1,5 @@
 export const cssReset = {
-  '*,::before,&::after': {
+  '*,*::before,*::after': {
     margin: 0,
     padding: 0,
     boxSizing: 'inherit',
