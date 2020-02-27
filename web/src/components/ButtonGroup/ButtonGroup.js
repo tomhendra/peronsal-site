@@ -17,8 +17,8 @@ function styles({ theme }) {
     flexDirection: ['column', 'row'],
     position: 'relative',
 
-    '& *': {
-      flex: 1,
+    '& > *': {
+      flex: 'auto',
     },
 
     '& > *:not(:last-of-type)': {

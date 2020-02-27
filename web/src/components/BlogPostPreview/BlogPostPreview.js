@@ -70,7 +70,7 @@ const StyledLink = styled(Link)(({ theme }) =>
       [Container]: {
         '&::after': {
           transition: `transform ${theme.transitions.springDefault}`,
-          transform: 'translate(-12px, 12px)',
+          transform: 'translate(-10px, 10px)',
         },
       },
     },
