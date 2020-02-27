@@ -76,6 +76,7 @@ function styles({
     display: 'flex',
     flexWrap: 'no-wrap',
     height: '100%',
+    overflow: 'hidden',
     zIndex: theme.zIndex.card,
   };
 

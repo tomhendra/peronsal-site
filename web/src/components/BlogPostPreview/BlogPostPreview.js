@@ -15,6 +15,25 @@ const { PRIMARY } = variants;
 
 // ....................styles....................
 
+const Container = styled(Card)(({ theme }) => ({
+  '&::after': {
+    backgroundColor: 'transparent',
+    borderColor: theme.colors.accentCharlie,
+    borderRadius: theme.borderRadius.bravo,
+    borderStyle: 'solid',
+    borderWidth: theme.borderWidth.echo,
+    content: '""',
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    height: '100%',
+    width: '100%',
+    transformOrigin: 'top right',
+    transition: `transform ${theme.transitions.default}`,
+    zIndex: theme.zIndex.behind,
+  },
+}));
+
 const Image = styled(Img)(({ theme }) =>
   withMediaQueries(theme)({
     borderRadius: theme.borderRadius.charlie,
@@ -32,7 +51,6 @@ const Image = styled(Img)(({ theme }) =>
 
 const StyledLink = styled(Link)(({ theme }) =>
   withMediaQueries(theme)({
-    overflow: 'hidden',
     height: '100%',
     minHeight: [
       theme.spacings.november,
@@ -41,11 +59,28 @@ const StyledLink = styled(Link)(({ theme }) =>
       theme.spacings.november,
       theme.spacings.papa,
     ],
+    position: 'relative',
     textDecoration: 'none',
 
-    '&:hover': {
+    '&:hover, &:focus': {
       [Image]: {
         filter: 'none',
+      },
+
+      [Container]: {
+        '&::after': {
+          transition: `transform ${theme.transitions.springDefault}`,
+          transform: 'translate(-12px, 12px)',
+        },
+      },
+    },
+
+    '&:active': {
+      [Container]: {
+        '&::after': {
+          transition: `transform ${theme.transitions.fast}`,
+          transform: 'translate(0px, 0px)',
+        },
       },
     },
   }),
@@ -56,7 +91,7 @@ const StyledLink = styled(Link)(({ theme }) =>
 function BlogPostPreview({ post }) {
   return (
     <StyledLink to={post.slug} aria-label={post.title}>
-      <Card
+      <Container
         variant={PRIMARY}
         as="article"
         accent={ACCENT_CHARLIE}
@@ -75,7 +110,7 @@ function BlogPostPreview({ post }) {
         <Heading noMargin as="h3" variant={PRIMARY}>
           {post.title}
         </Heading>
-      </Card>
+      </Container>
     </StyledLink>
   );
 }
