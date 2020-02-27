@@ -15,9 +15,10 @@ function styles({ theme }) {
   return withMediaQueries(theme)({
     display: 'flex',
     flexDirection: ['column', 'row'],
+    position: 'relative',
 
-    '& > *': {
-      flexGrow: 1,
+    '& *': {
+      flex: 1,
     },
 
     '& > *:not(:last-of-type)': {

@@ -23,7 +23,7 @@ import {
 } from '../../assets/styles/style-enums';
 
 const { PRIMARY, SECONDARY, TERTIARY } = variants;
-const { DANGER, SUCCESS, ACCENT_BRAVO } = colors;
+const { DANGER, ACCENT_BRAVO } = colors;
 const { END } = positions;
 const { ALPHA, ECHO, GOLF } = sizes;
 
@@ -160,12 +160,7 @@ function ContactForm({ variant }) {
               </InlineLink>
             </Checkbox>
             <ButtonGroup>
-              <Button
-                variant={TERTIARY}
-                size={ALPHA}
-                disabled={isSubmitting}
-                onClick={handleReset}
-              >
+              <Button variant={TERTIARY} size={ALPHA} onClick={handleReset}>
                 Reset
               </Button>
               <Button
@@ -174,18 +169,17 @@ function ContactForm({ variant }) {
                 type="submit"
                 disabled={isSubmitting}
               >
-                Send
+                {!serverState && !isSubmitting
+                  ? 'Send'
+                  : !serverState && isSubmitting
+                  ? 'Sending message...'
+                  : serverState && serverState.ok && 'Message sent!'}
               </Button>
-              {serverState &&
-                (!serverState.ok ? (
-                  <Tooltip variant={DANGER} align={END}>
-                    {serverState.msg}
-                  </Tooltip>
-                ) : (
-                  <Tooltip variant={SUCCESS} align={END}>
-                    {serverState.msg}
-                  </Tooltip>
-                ))}
+              {serverState && !serverState.ok && (
+                <Tooltip variant={DANGER} align={END}>
+                  {serverState.msg}
+                </Tooltip>
+              )}
             </ButtonGroup>
           </StyledForm>
         </Card>

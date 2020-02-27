@@ -55,10 +55,21 @@ function buttonStyles({ variant, size, inheritBg, theme }) {
       },
     },
 
+    '&:active': {
+      '&::after': {
+        transition: `transform ${theme.transitions.fast}`,
+        transform: 'translate(0px, 0px)',
+      },
+    },
+
     '&:disabled': {
-      opacity: 0.4,
+      opacity: 0.5,
       pointerStandardts: 'none',
       userSelectable: 'none',
+      '&::after': {
+        transition: `transform ${theme.transitions.default}`,
+        transform: 'translate(0px, 0px)',
+      },
     },
   };
 
