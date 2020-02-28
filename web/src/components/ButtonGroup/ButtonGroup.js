@@ -18,7 +18,7 @@ function styles({ theme }) {
     position: 'relative',
 
     '& > *': {
-      flex: 'auto',
+      flex: '1 0 auto',
     },
 
     '& > *:not(:last-of-type)': {
