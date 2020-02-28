@@ -2043,10 +2043,10 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@sanity/base@1.149.2", "@sanity/base@^1.149.2":
-  version "1.149.2"
-  resolved "https://registry.yarnpkg.com/@sanity/base/-/base-1.149.2.tgz#eeb318f9bd8cfca5b92b3663f7ee5c0ac444cffe"
-  integrity sha512-8xaHCvsbDOdXSFew3hY2xrVKCaHSuRsxtrfnxykVd5+iYY/juVp1P5D5APLFx4fhcWb1rvJzJ8DZUvIHtP+2Mw==
+"@sanity/base@1.149.3", "@sanity/base@^1.149.3":
+  version "1.149.3"
+  resolved "https://registry.yarnpkg.com/@sanity/base/-/base-1.149.3.tgz#5d8c8f75915282388f6d56eecef5188796cecdcc"
+  integrity sha512-3KSbYm63wInfxEnDvMGw7ydkX09+GwPRiKxTYCdVxwWPWshmmQJeN5NJLy11tQ1B/T3DsXkuSiUodV5QRPjleQ==
   dependencies:
     "@sanity/client" "1.149.2"
     "@sanity/generate-help-url" "1.149.0"
@@ -2150,12 +2150,12 @@
     react-ace "^5.0.1"
     react-icons "^2.2.7"
 
-"@sanity/components@^1.149.2":
-  version "1.149.2"
-  resolved "https://registry.yarnpkg.com/@sanity/components/-/components-1.149.2.tgz#901469d3f17708fa8d9f360c5a03451ff1501ae2"
-  integrity sha512-9lXvbn6bdBCRzysvJiBA9VLDUmHEyDbCt2GVKUpApN7E98nxMzBsH2bv0jH0c1ZBkUwM9CmkiiVkV7uKwmxylw==
+"@sanity/components@^1.149.3":
+  version "1.149.3"
+  resolved "https://registry.yarnpkg.com/@sanity/components/-/components-1.149.3.tgz#a5493c5c45fa8df417fd259ad32d230a66203fc1"
+  integrity sha512-NkUpo9qad+LXUIClzxGIssihKMcX3ScTtw/KiM0Dqs7cUwuW58b5opm7hBjbXD63aklXKN16oTGaBAsl09SWfQ==
   dependencies:
-    "@sanity/base" "1.149.2"
+    "@sanity/base" "1.149.3"
     attr-accept "^1.1.0"
     boundless-arrow-key-navigation "^1.1.0"
     chance "^1.0.4"
@@ -2252,10 +2252,10 @@
     postcss-value-parser "^3.3.0"
     source-list-map "^2.0.0"
 
-"@sanity/dashboard@^1.149.2":
-  version "1.149.2"
-  resolved "https://registry.yarnpkg.com/@sanity/dashboard/-/dashboard-1.149.2.tgz#6fe33b25d1fd2062070966f8bd85b08f86864fd2"
-  integrity sha512-PaIX+bF0nUIECflxGB58SGXHSdgoVc06lopDVfPK21lCn7vnaTL5eI2C57aKaLjEjIfLIuh98XLZdz7okeLnJg==
+"@sanity/dashboard@^1.149.3":
+  version "1.149.3"
+  resolved "https://registry.yarnpkg.com/@sanity/dashboard/-/dashboard-1.149.3.tgz#2e9b344149ed77a054435f8f69ec09a7bde99ded"
+  integrity sha512-43Hr9V50gpgI9XI/nZVJwAVXtNISRl9b+v4sHAOU3SewgRaES5ErB6tXRALr5u0E9mU54Oei+QI3Sc/mmJ+wfQ==
   dependencies:
     lodash "^4.17.15"
     react-icons "^2.2.7"
@@ -2268,12 +2268,12 @@
     "@sanity/generate-help-url" "1.149.0"
     lodash "^4.17.15"
 
-"@sanity/default-layout@^1.149.2":
-  version "1.149.2"
-  resolved "https://registry.yarnpkg.com/@sanity/default-layout/-/default-layout-1.149.2.tgz#fe2494b3ef0280def66327c8978320f0b503ced0"
-  integrity sha512-Cth0W/DlYxpG4xU6ZtG90Qhaczxf05fc1oTswZTI5YlIyNpzB+Tx8miiJ0+Ff01HSb4dytaMp1sI2m4yuEOlwA==
+"@sanity/default-layout@^1.149.3":
+  version "1.149.3"
+  resolved "https://registry.yarnpkg.com/@sanity/default-layout/-/default-layout-1.149.3.tgz#80ebbc4e487f281e6037df2b74d1b74a39ac1a60"
+  integrity sha512-jBoY1ZzJBMnGU5X+KEsES2cKBhxSnJjnCmwr/oID0iUkYrgeFWwt1Db2qhKTLorRoIJHnBgLO8pEjGbhLsm/+g==
   dependencies:
-    "@sanity/base" "1.149.2"
+    "@sanity/base" "1.149.3"
     "@sanity/generate-help-url" "1.149.0"
     is-hotkey "^0.1.4"
     lodash "^4.17.15"
@@ -2292,18 +2292,18 @@
     prop-types "^15.6.0"
     rxjs "^6.5.3"
 
-"@sanity/desk-tool@^1.149.2":
-  version "1.149.2"
-  resolved "https://registry.yarnpkg.com/@sanity/desk-tool/-/desk-tool-1.149.2.tgz#d08577455c3cbb61f1f425b8585ca115290933e3"
-  integrity sha512-a+lTzs0/1j4elhY34ODPkpA4X1RefLc7lJPWqZCGMCYNczjWxVd+vcMncGJlStRD89mdjJ4zGjR/JeQVggz/8w==
+"@sanity/desk-tool@^1.149.3":
+  version "1.149.3"
+  resolved "https://registry.yarnpkg.com/@sanity/desk-tool/-/desk-tool-1.149.3.tgz#33864b905da835f2ca45cbb0cbd6a38c5ef7d55e"
+  integrity sha512-OOjfkYMBSM21TtGvxjGMTRhA4MtxrK1w7EI/idVUT/oYhk0lRdVZMrfZzLouo5FG34us88qG+t9ODDf1n+/Nqg==
   dependencies:
     "@reach/auto-id" "^0.7.2"
-    "@sanity/base" "1.149.2"
+    "@sanity/base" "1.149.3"
     "@sanity/data-aspects" "1.149.0"
     "@sanity/form-builder" "1.149.0"
     "@sanity/generate-help-url" "1.149.0"
     "@sanity/mutator" "1.149.0"
-    "@sanity/react-hooks" "1.149.2"
+    "@sanity/react-hooks" "1.149.3"
     "@sanity/structure" "1.149.0"
     "@sanity/uuid" "1.149.0"
     "@sanity/validation" "1.149.0"
@@ -2523,12 +2523,12 @@
     rxjs "^6.5.3"
     shallow-equals "^1.0.0"
 
-"@sanity/react-hooks@1.149.2":
-  version "1.149.2"
-  resolved "https://registry.yarnpkg.com/@sanity/react-hooks/-/react-hooks-1.149.2.tgz#102634923eb5d7c5c4f52db82c8689220b290425"
-  integrity sha512-IC++oMqcWazc77NESUPKI3zAKEh671RoI+n7q2Ce/TivELrKscdPGWnykZhi5D3J4n3tGSjL9Gs66FTCku6J6A==
+"@sanity/react-hooks@1.149.3":
+  version "1.149.3"
+  resolved "https://registry.yarnpkg.com/@sanity/react-hooks/-/react-hooks-1.149.3.tgz#b0867286fa52bb59731db7aafb1d1ea9192bbc3f"
+  integrity sha512-ZUYIqxwiafxp3yEn/+7Jd7qYTfnwpijtrZJsEbYp6/TV+FlxKFfLBXp1g7j6BK7vE8CMsXCyRcrulgWs2FTmrw==
   dependencies:
-    "@sanity/base" "1.149.2"
+    "@sanity/base" "1.149.3"
     lodash "^4.17.15"
     rxjs "^6.5.3"
     shallow-equals "^1.0.0"
@@ -7410,9 +7410,10 @@ gatsby-plugin-sharp@^2.4.5:
     svgo "1.3.2"
     uuid "^3.3.3"
 
-gatsby-react-router-scroll@^2.1.21:
-  version "2.1.21"
-  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.1.21.tgz#bc4aeee424da034287b6fe64d6b08f47d6cb6881"
+gatsby-react-router-scroll@^2.1.22:
+  version "2.1.22"
+  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.1.22.tgz#588b4a23004997481082d89fc4dd746f6a356ab5"
+  integrity sha512-VSwDrfiUL//eOVqtzBImxDZSQ7PbS4As8IWOP093tOS+r6ddLiSINGW7CewI/0CdYEKwIVGF5fHMWJWgg3gvEQ==
   dependencies:
     "@babel/runtime" "^7.7.6"
     scroll-behavior "^0.9.10"
@@ -7494,10 +7495,10 @@ gatsby-transformer-sharp@^2.3.16:
     semver "^5.7.1"
     sharp "^0.23.4"
 
-gatsby@^2.19.22:
-  version "2.19.22"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.19.22.tgz#23696b9d9e0ef5195fcda8f8f6c00bfc60695891"
-  integrity sha512-Q64XdeMcI4wv/kr6CZCMTCF0PLOGUQ9fYal68cqMDuIPWdLB+0b5roMw/GZMnc0EOyv3GsXQrcvbjH24NzHGGQ==
+gatsby@^2.19.23:
+  version "2.19.23"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.19.23.tgz#cd4abbef59339906b99a55101858d50c8dc91aed"
+  integrity sha512-mg9ezE9uy0qzv9jpU9OXsOlO1zl0/rggHxtvhiEuvHu+LQogKFfLpffheclmFaLCYXGIjxzZriYnO1LmhoxeWw==
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.7.5"
@@ -7563,7 +7564,7 @@ gatsby@^2.19.22:
     gatsby-graphiql-explorer "^0.2.34"
     gatsby-link "^2.2.29"
     gatsby-plugin-page-creator "^2.1.40"
-    gatsby-react-router-scroll "^2.1.21"
+    gatsby-react-router-scroll "^2.1.22"
     gatsby-telemetry "^1.1.49"
     glob "^7.1.6"
     got "8.3.2"
