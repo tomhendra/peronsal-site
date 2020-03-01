@@ -15,7 +15,6 @@ function styles({ theme }) {
   return withMediaQueries(theme)({
     display: 'flex',
     flexDirection: ['column', 'row'],
-    position: 'relative',
 
     '& > *': {
       flex: '1 0 auto',
