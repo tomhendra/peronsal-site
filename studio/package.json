@@ -9,8 +9,8 @@
   "scripts": {
     "start": "sanity start",
     "build": "sanity build",
-    "format": "prettier --write \"**/*.js\" \"!node_modules/**\" \"!dist/**\"",
-    "lint": "eslint . --fix",
+    "lint": "eslint --ignore-path ../.gitignore . --ext ts --ext tsx --ext js --ext jsx",
+    "lint:fix": "yarn lint --fix",
     "test": "sanity check",
     "deploy:graphql": "sanity graphql deploy --playground",
     "deploy:sanity": "sanity deploy",

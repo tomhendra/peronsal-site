@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "jsx": "react",
+    "lib": ["dom", "es2015", "es2017"],
+    "moduleResolution": "node",
+    "strict": true,
+    "noEmit": true, // Don't create files when running tsc
+    "skipLibCheck": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "./web/src/**/*",
+    "./node_modules/@sanity/base/types/**/*.ts",
+    "./**/*.ts",
+    "./**/*.tsx"
+  ]
+}

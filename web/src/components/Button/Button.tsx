@@ -147,26 +147,14 @@ const InternalLinkElement = styled.button(buttonStyles);
 const ExternalLinkElement = styled.a(buttonStyles);
 const ButtonElement = styled.button(buttonStyles);
 
-function Button({
-  externalLink,
-  internalLink,
-  variant,
-  size,
-  inheritBg,
-  ...rest
-}) {
+function Button({ externalLink, internalLink, variant, size, inheritBg, ...rest }) {
   return internalLink ? (
     // if internalLink prop is provided, return button wrapped with Gatsby Link.
     // it is not possible to use custom props on Gatsby (Reach) Link as React will
     // warn about unknown props on DOM nodes.
     // This is a known issue: https://github.com/gatsbyjs/gatsby/issues/11362
     <InternalLink to={internalLink}>
-      <InternalLinkElement
-        {...rest}
-        variant={variant}
-        size={size}
-        inheritBg={inheritBg}
-      />
+      <InternalLinkElement {...rest} variant={variant} size={size} inheritBg={inheritBg} />
     </InternalLink>
   ) : externalLink ? (
     // if externalLink prop is provided, return anchor tag.
@@ -182,12 +170,7 @@ function Button({
   ) : (
     // default return button if internalLink/externalLink props not provided,
     // based on defaultProp values being defined as null.
-    <ButtonElement
-      {...rest}
-      variant={variant}
-      size={size}
-      inheritBg={inheritBg}
-    />
+    <ButtonElement {...rest} variant={variant} size={size} inheritBg={inheritBg} />
   );
 }
 
