@@ -35,7 +35,7 @@
     "setup": "yarn install && yarn postinstall"
   },
   "devDependencies": {
-    "@types/node": "13.7.6",
+    "@types/node": "13.7.7",
     "@types/react": "16.9.23",
     "@types/react-dom": "16.9.5",
     "@typescript-eslint/eslint-plugin": "2.21.0",
@@ -47,12 +47,12 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-react": "7.18.3",
-    "eslint-plugin-react-hooks": "1.7.0",
+    "eslint-plugin-react-hooks": "2.5.0",
     "husky": "4.2.3",
     "lerna": "3.20.2",
     "lint-staged": "10.0.8",
     "prettier": "1.19.1",
-    "typescript": "3.8.2"
+    "typescript": "3.8.3"
   },
   "husky": {
     "hooks": {
@@ -60,7 +60,7 @@
     }
   },
   "lint-staged": {
-    "{web,studio}/**/*.ts": [
+    "{web,studio}/**/*.{ts,tsx,js,jsx}": [
       "eslint --fix --quiet --ignore-path .gitignore",
       "prettier --write --quiet --ignore-path .gitignore"
     ]
