@@ -53,7 +53,9 @@ function BlogPost({ post }) {
             {_rawBody && <PortableText blocks={_rawBody} />}
           </Item>
           <Item gridColStart={[1, 1, 1, 3, 3]} gridColEnd={[9, 9, 11, 11, 10]}>
-            <aside>{categories && <CategoryList categories={categories} />}</aside>
+            <aside>
+              {categories && <CategoryList categories={categories} />}
+            </aside>
           </Item>
         </Grid>
       </article>
@@ -64,7 +66,9 @@ function BlogPost({ post }) {
 // ....................propTypes....................
 
 BlogPost.propTypes = {
-  post: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.array, PropTypes.object])),
+  post: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.array, PropTypes.object]),
+  ),
 };
 
 BlogPost.defaultProps = {

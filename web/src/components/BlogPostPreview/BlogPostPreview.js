@@ -46,7 +46,7 @@ const Image = styled(Img)(({ theme }) =>
       theme.spacings.foxtrot,
     ],
     transition: `filter ${theme.transitions.slow}`,
-  })
+  }),
 );
 
 const StyledLink = styled(Link)(({ theme }) =>
@@ -83,7 +83,7 @@ const StyledLink = styled(Link)(({ theme }) =>
         },
       },
     },
-  })
+  }),
 );
 
 // ....................component....................

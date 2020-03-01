@@ -27,7 +27,12 @@ import {
   withMediaQueries,
 } from '../../assets/styles/style-helpers';
 
-import { colors, shadows, sizes, variants } from '../../assets/styles/style-enums';
+import {
+  colors,
+  shadows,
+  sizes,
+  variants,
+} from '../../assets/styles/style-enums';
 
 const { BRAND, ACCENT_ALPHA, ACCENT_BRAVO, ACCENT_CHARLIE } = colors;
 const { PRIMARY, SECONDARY, TERTIARY } = variants;

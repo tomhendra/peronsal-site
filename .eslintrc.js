@@ -51,6 +51,8 @@ module.exports = {
     'no-console': 0,
     'spaced-comment': 0,
     'no-use-before-define': 0,
+    'no-nested-ternary': 0,
+    'no-underscore-dangle': 0,
     'linebreak-style': 0,
     'consistent-return': 0,
     import: 0,
@@ -76,6 +78,7 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'react/jsx-props-no-spreading': 0,
     quotes: [
       2,
       'single',
@@ -84,7 +87,6 @@ module.exports = {
         avoidEscape: true,
       },
     ],
-    indent: ['error', 2, { SwitchCase: 1 }],
     'jsx-a11y/href-no-hash': 'off',
     'jsx-a11y/anchor-is-valid': [
       'warn',

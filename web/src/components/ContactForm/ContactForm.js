@@ -15,7 +15,12 @@ import Button from '../Button';
 
 import { variantPropType } from '../../utils/shared-prop-types';
 
-import { variants, colors, positions, sizes } from '../../assets/styles/style-enums';
+import {
+  variants,
+  colors,
+  positions,
+  sizes,
+} from '../../assets/styles/style-enums';
 
 const { PRIMARY, SECONDARY, TERTIARY } = variants;
 const { DANGER, ACCENT_BRAVO } = colors;
@@ -84,16 +89,25 @@ function ContactForm({ variant }) {
       onSubmit={handleOnSubmit}
       validationSchema={Yup.object({
         firstName: Yup.string()
-          .max(firstNameMaxLength, `Must be ${firstNameMaxLength} characters or less`)
+          .max(
+            firstNameMaxLength,
+            `Must be ${firstNameMaxLength} characters or less`,
+          )
           .required('Required'),
         lastName: Yup.string()
-          .max(lastNameMaxLength, `Must be ${lastNameMaxLength} characters or less`)
+          .max(
+            lastNameMaxLength,
+            `Must be ${lastNameMaxLength} characters or less`,
+          )
           .required('Required'),
         email: Yup.string()
           .email('Invalid email address')
           .required('Required'),
         message: Yup.string()
-          .max(messageMaxLength, `Must be ${messageMaxLength} characters or less`)
+          .max(
+            messageMaxLength,
+            `Must be ${messageMaxLength} characters or less`,
+          )
           .required('Required'),
         acceptedTerms: Yup.boolean()
           .required('Required')
@@ -104,10 +118,33 @@ function ContactForm({ variant }) {
       {({ isSubmitting, handleReset }) => (
         <Card padding={[ECHO, GOLF]} accent={ACCENT_BRAVO} variant={variant}>
           <StyledForm id="fs-frm" noValidate>
-            <input variant={variant} type="hidden" name="_subject" value="New enquiry from tomhendra.dev" />
-            <TextInput variant={variant} label="First Name" name="firstName" type="text" placeholder="Maggie" />
-            <TextInput variant={variant} label="Last Name" name="lastName" type="text" placeholder="Simpson" />
-            <TextInput variant={variant} label="Email Address" name="email" type="email" placeholder="maggie@fox.com" />
+            <input
+              variant={variant}
+              type="hidden"
+              name="_subject"
+              value="New enquiry from tomhendra.dev"
+            />
+            <TextInput
+              variant={variant}
+              label="First Name"
+              name="firstName"
+              type="text"
+              placeholder="Maggie"
+            />
+            <TextInput
+              variant={variant}
+              label="Last Name"
+              name="lastName"
+              type="text"
+              placeholder="Simpson"
+            />
+            <TextInput
+              variant={variant}
+              label="Email Address"
+              name="email"
+              type="email"
+              placeholder="maggie@fox.com"
+            />
             <Textarea
               variant={variant}
               label="Message"
@@ -118,13 +155,20 @@ function ContactForm({ variant }) {
             />
             <Checkbox name="acceptedTerms" variant={variant}>
               I agree to the&nbsp;
-              <InlineLink internalLink="/privacy-policy/">privacy policy</InlineLink>
+              <InlineLink internalLink="/privacy-policy/">
+                privacy policy
+              </InlineLink>
             </Checkbox>
             <ButtonGroup>
               <Button variant={TERTIARY} size={ALPHA} onClick={handleReset}>
                 Reset
               </Button>
-              <Button variant={PRIMARY} size={ALPHA} type="submit" disabled={isSubmitting}>
+              <Button
+                variant={PRIMARY}
+                size={ALPHA}
+                type="submit"
+                disabled={isSubmitting}
+              >
                 {!serverState && !isSubmitting
                   ? 'Send'
                   : !serverState && isSubmitting
