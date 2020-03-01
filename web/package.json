@@ -15,8 +15,6 @@
     "start:app": "yarn develop",
     "build": "run-p build:**",
     "build:app": "gatsby build",
-    "lint": "eslint --ignore-path ../.gitignore . --ext ts --ext tsx --ext js --ext jsx",
-    "lint:fix": "yarn lint --fix",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "clean": "gatsby clean",
     "serve": "gatsby serve",

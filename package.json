@@ -20,7 +20,8 @@
     "start": "lerna run start --parallel",
     "build": "lerna run build --parallel",
     "format": "lerna run format --parallel",
-    "lint": "lerna run lint --parallel",
+    "lint": "eslint --ignore-path ./.gitignore . --ext ts --ext tsx --ext js --ext jsx",
+    "lint:fix": "yarn lint --fix",
     "test": "lerna run test",
     "deploy:graphql": "cd studio && yarn deploy:graphql",
     "deploy:sanity": "cd studio && yarn deploy:sanity",
@@ -59,9 +60,9 @@
     }
   },
   "lint-staged": {
-    "{web,studio}/**/*.tsx": [
-      "prettier --write --ignore-path .gitignore",
-      "eslint --fix --ignore-path .gitignore"
+    "{web,studio}/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write --quiet --ignore-path .gitignore",
+      "eslint --fix --quiet --ignore-path .gitignore"
     ]
   }
 }
