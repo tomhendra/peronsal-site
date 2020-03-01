@@ -56,12 +56,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsc --noEmit && lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "{web,studio}/**/*.{ts,tsx,js,jsx}": [
-      "eslint --fix --quiet --ignore-path .gitignore",
+      "eslint . --fix --quiet --ignore-path .gitignore",
       "prettier --write --quiet --ignore-path .gitignore"
     ]
   }

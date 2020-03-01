@@ -33,11 +33,7 @@ const FigcaptionElement = styled(Text)(figcaptionStyles);
 const FigureImage = styled(Img)(imageStyles);
 
 function Figure({ node }) {
-  const fluidProps = getFluidGatsbyImage(
-    node.asset._id,
-    { maxWidth: 675 },
-    sanityConfig,
-  );
+  const fluidProps = getFluidGatsbyImage(node.asset._id, { maxWidth: 675 }, sanityConfig);
 
   return (
     <FigureElement>
@@ -52,9 +48,7 @@ function Figure({ node }) {
 // ....................propTypes....................
 
 Figure.propTypes = {
-  node: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  ),
+  node: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object])),
 };
 
 Figure.defaultProps = {
