@@ -1,9 +1,6 @@
 import styled from '@emotion/styled';
 
-import {
-  withMediaQueries,
-  getSpacingValues,
-} from '../../assets/styles/style-helpers';
+import { withMediaQueries, getSpacingValues } from '../../assets/styles/style-helpers';
 
 import { sizes } from '../../assets/styles/style-enums';
 
