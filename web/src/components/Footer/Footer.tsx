@@ -17,7 +17,6 @@ const { ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT } = sizes;
 
 const footerStyles = ({ theme }) =>
   withMediaQueries(theme)({
-    backgroundColor: theme.colors.n700,
     color: theme.colors.n400,
     paddingTop: [
       theme.spacings.hotel,
