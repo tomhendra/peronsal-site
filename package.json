@@ -59,9 +59,9 @@
     }
   },
   "lint-staged": {
-    "{web,studio}/**/*.{js,jsx,ts,tsx}": [
-      "prettier --write --quiet --ignore-path .gitignore",
-      "eslint --fix --quiet --ignore-path .gitignore"
+    "{web,studio}/**/*.tsx": [
+      "prettier --write --ignore-path .gitignore",
+      "eslint --fix --ignore-path .gitignore"
     ]
   }
 }
