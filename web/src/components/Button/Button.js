@@ -3,7 +3,10 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import { variantPropType } from '../../utils/shared-prop-types';
+import {
+  variantPropType,
+  childrenPropType,
+} from '../../utils/shared-prop-types';
 
 import { variants, sizes } from '../../assets/styles/style-enums';
 
@@ -12,37 +15,23 @@ const { ALPHA, BRAVO, CHARLIE } = sizes;
 
 // ....................styles....................
 
-function buttonStyles({ variant, size, inheritBg, theme }) {
+function buttonStyles({ variant, size, theme }) {
   const baseStyles = {
-    alignItems: 'center',
-    borderRadius: theme.borderRadius.bravo,
-    borderStyle: 'solid',
-    borderWidth: theme.borderWidth.charlie,
+    border: 0,
     cursor: 'pointer',
-    display: 'flex',
-    fontFamily: theme.fontStack.heading,
-    fontWeight: theme.fontWeight.medium,
-    justifyContent: 'center',
-    lineHeight: 1,
-    minWidth: theme.spacings.juliett,
     position: 'relative',
-    textAlign: 'center',
     textDecoration: 'none',
-    textTransform: 'uppercase',
-    transition: `transform ${theme.transitions.default}`,
 
     '&::after': {
-      backgroundColor: 'transparent',
       borderRadius: theme.borderRadius.bravo,
       borderStyle: 'solid',
       borderWidth: theme.borderWidth.charlie,
       content: '""',
       position: 'absolute',
-      // absolute positioning ignores borders, so we hack-a-way uh huh uh huh...
-      left: -theme.borderWidth.charlie,
-      top: -theme.borderWidth.charlie,
-      height: `calc(100% + (${theme.borderWidth.charlie} * 2))`,
-      width: `calc(100% + (${theme.borderWidth.charlie} * 2))`,
+      left: 0,
+      top: 0,
+      height: '100%',
+      width: '100%',
       transformOrigin: 'top right',
       transition: `transform ${theme.transitions.default}`,
       zIndex: theme.zIndex.behind,
@@ -75,28 +64,16 @@ function buttonStyles({ variant, size, inheritBg, theme }) {
 
   const colorVariants = {
     [PRIMARY]: {
-      backgroundColor: theme.colors.p400,
-      borderColor: theme.colors.n300,
-      color: theme.colors.n100,
-
       '&:after': {
         borderColor: theme.colors.n300,
       },
     },
     [SECONDARY]: {
-      backgroundColor: !inheritBg ? theme.colors.white : 'inherit',
-      borderColor: theme.colors.n300,
-      color: theme.colors.n300,
-
       '&:after': {
         borderColor: theme.colors.n300,
       },
     },
     [TERTIARY]: {
-      backgroundColor: !inheritBg ? theme.colors.white : 'inherit',
-      borderColor: theme.colors.n500,
-      color: theme.colors.n400,
-
       '&:after': {
         borderColor: theme.colors.n500,
       },
@@ -106,16 +83,74 @@ function buttonStyles({ variant, size, inheritBg, theme }) {
   const sizeVariants = {
     [ALPHA]: {
       height: '4.8rem',
+    },
+    [BRAVO]: {
+      height: '6rem',
+    },
+    [CHARLIE]: {
+      height: '7.2rem',
+    },
+  };
+
+  const colorConfig = colorVariants[variant];
+  const sizeConfig = sizeVariants[size];
+
+  return {
+    ...baseStyles,
+    ...colorConfig,
+    ...sizeConfig,
+  };
+}
+
+function innerButtonStyles({ variant, size, inheritBg, theme }) {
+  const baseStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: theme.borderRadius.bravo,
+    borderStyle: 'solid',
+    borderWidth: theme.borderWidth.charlie,
+    width: '100%',
+    height: '100%',
+    fontFamily: theme.fontStack.heading,
+    fontWeight: theme.fontWeight.medium,
+    lineHeight: 1,
+    position: 'relative',
+    textDecoration: 'none',
+    textTransform: 'uppercase',
+  };
+
+  const colorVariants = {
+    [PRIMARY]: {
+      backgroundColor: theme.colors.p400,
+      borderColor: theme.colors.n300,
+      color: theme.colors.n100,
+    },
+    [SECONDARY]: {
+      backgroundColor: !inheritBg ? theme.colors.white : 'inherit',
+      borderColor: theme.colors.n300,
+      color: theme.colors.n300,
+    },
+    [TERTIARY]: {
+      backgroundColor: !inheritBg ? theme.colors.white : 'inherit',
+      borderColor: theme.colors.n500,
+      color: theme.colors.n400,
+    },
+  };
+
+  const sizeVariants = {
+    [ALPHA]: {
+      minWidth: theme.spacings.india,
       fontSize: theme.typography.text.delta.fontSize,
       padding: `0 ${theme.spacings.delta}`,
     },
     [BRAVO]: {
-      height: '6rem',
+      minWidth: theme.spacings.juliett,
       fontSize: theme.typography.text.echo.fontSize,
       padding: `0 ${theme.spacings.echo}`,
     },
     [CHARLIE]: {
-      height: '7.2rem',
+      minWidth: theme.spacings.kilo,
       fontSize: theme.typography.text.foxtrot.fontSize,
       padding: `0 ${theme.spacings.foxtrot}`,
     },
@@ -132,20 +167,14 @@ function buttonStyles({ variant, size, inheritBg, theme }) {
 }
 
 const linkStyles = {
-  display: 'flex',
   textDecoration: 'none',
-
-  '& :first-of-type': {
-    flexGrow: 1,
-  },
 };
 
 // ....................component....................
 
-const InternalLink = styled(Link)(linkStyles);
-const InternalLinkElement = styled.button(buttonStyles);
-const ExternalLinkElement = styled.a(buttonStyles);
 const ButtonElement = styled.button(buttonStyles);
+const InnerButton = styled.span(innerButtonStyles);
+const InternalLink = styled(Link)(linkStyles);
 
 function Button({
   externalLink,
@@ -153,47 +182,49 @@ function Button({
   variant,
   size,
   inheritBg,
-  ...rest
+  children,
 }) {
   return internalLink ? (
     // if internalLink prop is provided, return button wrapped with Gatsby Link.
     // it is not possible to use custom props on Gatsby (Reach) Link as React will
     // warn about unknown props on DOM nodes.
     // This is a known issue: https://github.com/gatsbyjs/gatsby/issues/11362
-    <InternalLink to={internalLink}>
-      <InternalLinkElement
-        {...rest}
-        variant={variant}
-        size={size}
-        inheritBg={inheritBg}
-      />
-    </InternalLink>
+    <ButtonElement variant={variant} size={size}>
+      <InternalLink to={internalLink}>
+        <InnerButton variant={variant} size={size} inheritBg={inheritBg}>
+          {children}
+        </InnerButton>
+      </InternalLink>
+    </ButtonElement>
   ) : externalLink ? (
     // if externalLink prop is provided, return anchor tag.
-    <ExternalLinkElement
-      {...rest}
+    <ButtonElement
+      as="a"
       target="blank"
       rel="noopener"
       href={externalLink}
       variant={variant}
       size={size}
-      inheritBg={inheritBg}
-    />
+    >
+      <InnerButton variant={variant} size={size} inheritBg={inheritBg}>
+        {children}
+      </InnerButton>
+    </ButtonElement>
   ) : (
     // default return button if internalLink/externalLink props not provided,
     // based on defaultProp values being defined as null.
-    <ButtonElement
-      {...rest}
-      variant={variant}
-      size={size}
-      inheritBg={inheritBg}
-    />
+    <ButtonElement variant={variant} size={size}>
+      <InnerButton variant={variant} size={size} inheritBg={inheritBg}>
+        {children}
+      </InnerButton>
+    </ButtonElement>
   );
 }
 
 // ....................propTypes....................
 
 Button.protoTypes = {
+  children: childrenPropType,
   variant: variantPropType,
   size: PropTypes.oneOf([ALPHA, BRAVO, CHARLIE]),
   externalLink: PropTypes.string,
@@ -202,6 +233,7 @@ Button.protoTypes = {
 };
 
 Button.defaultProps = {
+  children: null,
   variant: SECONDARY,
   size: BRAVO,
   externalLink: null,

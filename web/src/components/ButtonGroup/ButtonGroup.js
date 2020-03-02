@@ -20,7 +20,7 @@ function styles({ theme }) {
       flex: '1 0 auto',
     },
 
-    '& > *:not(:last-of-type)': {
+    '& > *:not(:last-child)': {
       marginRight: getSpacingValues([0, DELTA], theme),
       marginBottom: getSpacingValues([DELTA, 0], theme),
     },
