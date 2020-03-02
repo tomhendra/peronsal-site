@@ -183,6 +183,7 @@ function Button({
   size,
   inheritBg,
   children,
+  ...rest
 }) {
   return internalLink ? (
     // if internalLink prop is provided, return button wrapped with Gatsby Link.
@@ -213,7 +214,7 @@ function Button({
   ) : (
     // default return button if internalLink/externalLink props not provided,
     // based on defaultProp values being defined as null.
-    <ButtonElement variant={variant} size={size}>
+    <ButtonElement variant={variant} size={size} {...rest}>
       <InnerButton variant={variant} size={size} inheritBg={inheritBg}>
         {children}
       </InnerButton>
