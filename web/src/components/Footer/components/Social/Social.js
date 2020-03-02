@@ -35,42 +35,20 @@ const containerStyles = ({ theme }) =>
 
 const linkStyles = ({ theme }) =>
   withMediaQueries(theme)({
-    display: 'flex',
-    alignItems: 'center',
-    backgroundColor: theme.colors.n700,
-    borderWidth: theme.borderWidth.charlie,
-    borderStyle: 'solid',
-    borderColor: theme.colors.n500,
-    borderRadius: theme.borderRadius.bravo,
-    color: theme.colors.n400,
-    fontSize: [
-      theme.typography.text.bravo.fontSize,
-      theme.typography.text.bravo.fontSize,
-      theme.typography.text.charlie.fontSize,
-    ],
-    justifyContent: 'center',
-    padding: [
-      `${theme.spacings.alpha} ${theme.spacings.bravo}`,
-      `${theme.spacings.alpha} ${theme.spacings.bravo}`,
-      `${theme.spacings.alpha} ${theme.spacings.charlie}`,
-    ],
     position: 'relative',
     textDecoration: 'none',
-    textTransform: 'uppercase',
-    transition: `transform ${theme.transitions.default}`,
 
     '&::after': {
-      backgroundColor: theme.colors.n700,
       borderWidth: theme.borderWidth.charlie,
       borderStyle: 'solid',
       borderColor: theme.colors.n500,
       borderRadius: theme.borderRadius.bravo,
       content: '""',
-      height: `calc(100% + (${theme.borderWidth.charlie} * 2))`,
-      width: `calc(100% + (${theme.borderWidth.charlie} * 2))`,
+      height: '100%',
+      width: '100%',
       position: 'absolute',
-      left: -theme.borderWidth.charlie,
-      top: -theme.borderWidth.charlie,
+      left: 0,
+      top: 0,
       zIndex: theme.zIndex.behind,
       transformOrigin: 'top right',
       transition: `transform ${theme.transitions.default}`,
@@ -84,10 +62,37 @@ const linkStyles = ({ theme }) =>
     },
   });
 
+const innerLinkStyles = ({ theme }) =>
+  withMediaQueries(theme)({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: theme.colors.n900,
+    borderWidth: theme.borderWidth.charlie,
+    borderStyle: 'solid',
+    borderColor: theme.colors.n500,
+    borderRadius: theme.borderRadius.bravo,
+    color: theme.colors.n400,
+    fontSize: [
+      theme.typography.text.bravo.fontSize,
+      theme.typography.text.bravo.fontSize,
+      theme.typography.text.charlie.fontSize,
+    ],
+    padding: [
+      `${theme.spacings.alpha} ${theme.spacings.bravo}`,
+      `${theme.spacings.alpha} ${theme.spacings.bravo}`,
+      `${theme.spacings.alpha} ${theme.spacings.charlie}`,
+    ],
+    textTransform: 'uppercase',
+    height: '100%',
+    width: '100%',
+  });
+
 // ....................component....................
 
 const SocialContainer = styled.div(containerStyles);
 const SocialLink = styled.a(linkStyles);
+const InnerLink = styled.span(innerLinkStyles);
 
 function Social() {
   return (
@@ -97,44 +102,48 @@ function Social() {
         target="_blank"
         rel="noopener"
       >
-        <Icon
-          type={GITHUB}
-          color={NEUTRAL}
-          size={BRAVO}
-          alt="GitHub logo"
-          spacingRight={BRAVO}
-        />
-        GitHub
+        <InnerLink>
+          <Icon
+            type={GITHUB}
+            color={NEUTRAL}
+            size={BRAVO}
+            alt="GitHub logo"
+            spacingRight={BRAVO}
+          />
+          GitHub
+        </InnerLink>
       </SocialLink>
       <SocialLink
         href="https://www.linkedin.com/in/tom-hendra/"
         target="_blank"
         rel="noopener"
-        // cheeky little override to align LinkedIn logo at baseline of text
-        // css={{ alignItems: 'flex-start' }}
       >
-        <Icon
-          type={LINKEDIN}
-          color={NEUTRAL}
-          size={BRAVO}
-          alt="LinkedIn logo"
-          spacingRight={BRAVO}
-        />
-        LinkedIn
+        <InnerLink>
+          <Icon
+            type={LINKEDIN}
+            color={NEUTRAL}
+            size={BRAVO}
+            alt="LinkedIn logo"
+            spacingRight={BRAVO}
+          />
+          LinkedIn
+        </InnerLink>
       </SocialLink>
       <SocialLink
         href="https://twitter.com/TomHendra"
         target="_blank"
         rel="noopener"
       >
-        <Icon
-          type={TWITTER}
-          color={NEUTRAL}
-          size={BRAVO}
-          alt="Twitter logo"
-          spacingRight={BRAVO}
-        />
-        Twitter
+        <InnerLink>
+          <Icon
+            type={TWITTER}
+            color={NEUTRAL}
+            size={BRAVO}
+            alt="Twitter logo"
+            spacingRight={BRAVO}
+          />
+          Twitter
+        </InnerLink>
       </SocialLink>
     </SocialContainer>
   );

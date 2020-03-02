@@ -186,10 +186,7 @@ function Button({
   ...rest
 }) {
   return internalLink ? (
-    // if internalLink prop is provided, return button wrapped with Gatsby Link.
-    // it is not possible to use custom props on Gatsby (Reach) Link as React will
-    // warn about unknown props on DOM nodes.
-    // This is a known issue: https://github.com/gatsbyjs/gatsby/issues/11362
+    // if internalLink prop is provided, return Gatsby Link inside button.
     <ButtonElement variant={variant} size={size}>
       <InternalLink to={internalLink}>
         <InnerButton variant={variant} size={size} inheritBg={inheritBg}>
@@ -198,7 +195,7 @@ function Button({
       </InternalLink>
     </ButtonElement>
   ) : externalLink ? (
-    // if externalLink prop is provided, return anchor tag.
+    // if externalLink prop is provided, return button as anchor element.
     <ButtonElement
       as="a"
       target="blank"
@@ -214,6 +211,7 @@ function Button({
   ) : (
     // default return button if internalLink/externalLink props not provided,
     // based on defaultProp values being defined as null.
+    // ...rest required by Formik for event handlers
     <ButtonElement variant={variant} size={size} {...rest}>
       <InnerButton variant={variant} size={size} inheritBg={inheritBg}>
         {children}
