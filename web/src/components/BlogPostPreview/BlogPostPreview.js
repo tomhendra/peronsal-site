@@ -16,6 +16,14 @@ const { PRIMARY } = variants;
 // ....................styles....................
 
 const Container = styled(Card)(({ theme }) => ({
+  minHeight: [
+    theme.spacings.november,
+    theme.spacings.mike,
+    theme.spacings.oscar,
+    theme.spacings.november,
+    theme.spacings.papa,
+  ],
+
   '&::after': {
     backgroundColor: 'transparent',
     borderColor: theme.colors.accentCharlie,
@@ -37,7 +45,6 @@ const Container = styled(Card)(({ theme }) => ({
 const Image = styled(Img)(({ theme }) =>
   withMediaQueries(theme)({
     borderRadius: theme.borderRadius.charlie,
-    filter: 'grayscale(100%)',
     marginBottom: [
       theme.spacings.echo,
       theme.spacings.echo,
@@ -51,22 +58,10 @@ const Image = styled(Img)(({ theme }) =>
 
 const StyledLink = styled(Link)(({ theme }) =>
   withMediaQueries(theme)({
-    height: '100%',
-    minHeight: [
-      theme.spacings.november,
-      theme.spacings.mike,
-      theme.spacings.oscar,
-      theme.spacings.november,
-      theme.spacings.papa,
-    ],
     position: 'relative',
     textDecoration: 'none',
 
     '&:hover, &:focus': {
-      [Image]: {
-        filter: 'none',
-      },
-
       [Container]: {
         '&::after': {
           transition: `transform ${theme.transitions.springDefault}`,
