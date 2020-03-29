@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 
+import { Button } from '../components';
 import useProjects from '../hooks/useProjects';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -11,7 +12,6 @@ import Heading from '../components/Heading';
 import Text from '../components/Text';
 import ProjectPreview from '../components/ProjectPreview';
 import ButtonGroup from '../components/ButtonGroup';
-import Button from '../components/Button';
 
 import { sizes, variants } from '../assets/styles/style-enums';
 import InlineLink from '../components/InlineLink';
@@ -48,7 +48,7 @@ function ProjectsPage() {
         </Grid>
         <Grid withRowGaps>
           {projects.length ? (
-            projects.map(project => (
+            projects.map((project) => (
               <Item gridColSpan={[8, 8, 6, 6, 4]} key={project.id}>
                 <ProjectPreview project={project} />
               </Item>

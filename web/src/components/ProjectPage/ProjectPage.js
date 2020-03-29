@@ -3,13 +3,13 @@ import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
+import { Button } from '../Button';
 import Section from '../Section';
 import Grid from '../Grid';
 import Item from '../Item';
 import Heading from '../Heading';
 import PortableText from '../PortableText';
 import ButtonGroup from '../ButtonGroup';
-import Button from '../Button';
 import TechStack from '../TechStack';
 
 import { sizes, variants } from '../../assets/styles/style-enums';
@@ -124,7 +124,7 @@ function ProjectPage({ project }) {
             </Heading>
             <TechStack
               gridSize={ALPHA}
-              stack={_rawTechstack.map(item => item.title)}
+              stack={_rawTechstack.map((item) => item.title)}
             />
           </Item>
           <Item

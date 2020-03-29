@@ -27,7 +27,7 @@
     "@sanity/default-layout": "^1.149.5",
     "@sanity/default-login": "^1.149.0",
     "@sanity/desk-tool": "^1.149.5",
-    "date-fns": "^2.11.0",
+    "date-fns": "^2.11.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

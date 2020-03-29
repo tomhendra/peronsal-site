@@ -249,10 +249,10 @@ export const fontStack = {
 };
 
 export const fontWeight = {
-  regular: '400',
-  medium: '500',
-  semiBold: '600',
-  bold: '700',
+  regular: 400,
+  medium: 500,
+  semiBold: 600,
+  bold: 700,
 };
 
 // ....................sizes....................

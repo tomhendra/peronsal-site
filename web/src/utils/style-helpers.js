@@ -19,7 +19,7 @@ const styles = theme => {
 */
 export function withMediaQueries(theme) {
   return facepaint(
-    theme.breakpoints.map(bp => `@media only screen and (min-width: ${bp})`),
+    theme.breakpoints.map((bp) => `@media only screen and (min-width: ${bp})`),
   );
 }
 
@@ -73,11 +73,11 @@ export function getSpacingValues(size, theme) {
           )
           // map over size array & grab values from theme.
           // handles arrays with mix of strings & numbers e.g. [ALPHA, BRAVO, 0, 0, BRAVO]
-          .map(value => (typeof value === 'string' ? spacings[value] : value))
+          .map((value) => (typeof value === 'string' ? spacings[value] : value))
       );
     }
     if (sizeArr.length === facepaintArrayLength) {
-      return sizeArr.map(value =>
+      return sizeArr.map((value) =>
         typeof value === 'string' ? spacings[value] : value,
       );
     }
@@ -100,11 +100,10 @@ function typographyHelper(type, size, theme) {
   const { typography } = theme;
   const typographyType = typography[type];
 
-  const generateValues = property => {
-    return Array.isArray(size)
-      ? size.map(val => typographyType[val][property])
+  const generateValues = (property) =>
+    Array.isArray(size)
+      ? size.map((val) => typographyType[val][property])
       : typographyType[size][property];
-  };
 
   return {
     fontSize: generateValues('fontSize'),
@@ -123,46 +122,46 @@ export const getSubheadingDeclarations = (size, theme) =>
 
 // ....................shadows....................
 
-export const shadowStandardAlpha = shadowColor => ({
+export const shadowStandardAlpha = (shadowColor) => ({
   boxShadow: `0 1px 3px ${transparentize(0.8, shadowColor)}`,
 });
 
-export const shadowStandardBravo = shadowColor => ({
+export const shadowStandardBravo = (shadowColor) => ({
   boxShadow: `0 4px 6px ${transparentize(0.8, shadowColor)}`,
 });
 
-export const shadowStandardCharlie = shadowColor => ({
+export const shadowStandardCharlie = (shadowColor) => ({
   boxShadow: `0 5px 15px ${transparentize(0.8, shadowColor)}`,
 });
 
-export const shadowStandardDelta = shadowColor => ({
+export const shadowStandardDelta = (shadowColor) => ({
   boxShadow: `0 10px 24px ${transparentize(0.8, shadowColor)}`,
 });
 
-export const shadowStandardEcho = shadowColor => ({
+export const shadowStandardEcho = (shadowColor) => ({
   boxShadow: `0 15px 35px ${transparentize(0.8, shadowColor)}`,
 });
 
-export const shadowOffsetAlpha = shadowColor => ({
+export const shadowOffsetAlpha = (shadowColor) => ({
   boxShadow: `0 1px 3px ${transparentize(0.88, shadowColor)},
          0 1px 2px ${transparentize(0.76, shadowColor)}`,
 });
 
-export const shadowOffsetBravo = shadowColor => ({
+export const shadowOffsetBravo = (shadowColor) => ({
   boxShadow: `0 3px 6px ${transparentize(0.85, shadowColor)},
          0 2px 4px ${transparentize(0.88, shadowColor)}`,
 });
 
-export const shadowOffsetCharlie = shadowColor => ({
+export const shadowOffsetCharlie = (shadowColor) => ({
   boxShadow: `0 10px 20px ${transparentize(0.85, shadowColor)},
          0 3px 6px ${transparentize(0.9, shadowColor)}`,
 });
 
-export const shadowOffsetDelta = shadowColor => ({
+export const shadowOffsetDelta = (shadowColor) => ({
   boxShadow: `0 15px 25px ${transparentize(0.85, shadowColor)},
          0 5px 10px ${transparentize(0.95, shadowColor)}`,
 });
 
-export const shadowOffsetEcho = shadowColor => ({
+export const shadowOffsetEcho = (shadowColor) => ({
   boxShadow: `0 20px 40px ${transparentize(0.8, shadowColor)}`,
 });

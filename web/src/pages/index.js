@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../components';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
@@ -6,7 +7,6 @@ import Grid from '../components/Grid';
 import Item from '../components/Item';
 import Heading from '../components/Heading';
 import ButtonGroup from '../components/ButtonGroup';
-import Button from '../components/Button';
 import Text from '../components/Text';
 import InlineLink from '../components/InlineLink';
 import Card from '../components/Card';

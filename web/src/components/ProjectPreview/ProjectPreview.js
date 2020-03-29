@@ -2,10 +2,10 @@ import React from 'react';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 
+import { Button } from '../Button';
 import Card from '../Card';
 import Heading from '../Heading';
 import Text from '../Text';
-import Button from '../Button';
 
 import { toPlainText } from '../../utils/helpers';
 import { withMediaQueries } from '../../assets/styles/style-helpers';

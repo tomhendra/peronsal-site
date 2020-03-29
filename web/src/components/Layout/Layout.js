@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Global } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 
-import { themes } from '../../assets/themes';
-import { cssReset } from '../../assets/styles';
+import { themes, cssReset } from '../../assets/styles';
+
 import Wrapper from '../Wrapper';
 import Header from '../Header';
 import Footer from '../Footer';

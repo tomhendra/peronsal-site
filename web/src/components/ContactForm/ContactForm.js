@@ -4,6 +4,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import styled from '@emotion/styled';
 
+import { Button } from '../Button';
 import Card from '../Card';
 import InlineLink from '../InlineLink';
 import Tooltip from '../Tooltip';
@@ -11,7 +12,6 @@ import TextInput from './components/TextInput';
 import Textarea from './components/Textarea';
 import Checkbox from './components/Checkbox';
 import ButtonGroup from '../ButtonGroup';
-import Button from '../Button';
 
 import { variantPropType } from '../../utils/shared-prop-types';
 
@@ -69,7 +69,7 @@ function ContactForm({ variant }) {
         actions.resetForm();
         handleServerResponse(true, 'Message submitted. Thank you!');
       })
-      .catch(error => {
+      .catch((error) => {
         actions.setSubmitting(false);
         handleServerResponse(false, error.response.data.error);
       });
@@ -100,9 +100,7 @@ function ContactForm({ variant }) {
             `Must be ${lastNameMaxLength} characters or less`,
           )
           .required('Required'),
-        email: Yup.string()
-          .email('Invalid email address')
-          .required('Required'),
+        email: Yup.string().email('Invalid email address').required('Required'),
         message: Yup.string()
           .max(
             messageMaxLength,
