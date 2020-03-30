@@ -2,14 +2,53 @@ import styled from '@emotion/styled';
 
 import { Variants, Sizes } from '../../../utils/enums';
 
-interface ButtonElementProps {
+interface Props {
   variant: Variants;
   size: Sizes.Alpha | Sizes.Bravo | Sizes.Charlie;
 }
 
-export const ButtonElement = styled('button')<ButtonElementProps>(
-  ({ variant, size, theme }): {} => {
-    const baseStyles = {
+export const ButtonElement = styled('button')<Props>(
+  ({ variant, size, theme }) => {
+    const { Primary, Secondary, Tertiary } = Variants;
+
+    const colorVariants = {
+      [Primary]: {
+        '&:after': {
+          borderColor: theme.colors.n300,
+        },
+      },
+      [Secondary]: {
+        '&:after': {
+          borderColor: theme.colors.n300,
+        },
+      },
+      [Tertiary]: {
+        '&:after': {
+          borderColor: theme.colors.n500,
+        },
+      },
+    };
+
+    const colorConfig = colorVariants[variant];
+
+    const { Alpha, Bravo, Charlie } = Sizes;
+
+    const sizeVariants = {
+      [Alpha]: {
+        height: '4.8rem',
+      },
+      [Bravo]: {
+        height: '6rem',
+      },
+      [Charlie]: {
+        height: '7.2rem',
+      },
+    };
+    const sizeConfig = sizeVariants[size];
+
+    return {
+      ...colorConfig,
+      ...sizeConfig,
       border: 0,
       cursor: 'pointer',
       position: 'relative',
@@ -53,50 +92,6 @@ export const ButtonElement = styled('button')<ButtonElementProps>(
           transform: 'translate(0px, 0px)',
         },
       },
-    };
-
-    const { Primary, Secondary, Tertiary } = Variants;
-
-    const colorVariants = {
-      [Primary]: {
-        '&:after': {
-          borderColor: theme.colors.n300,
-        },
-      },
-      [Secondary]: {
-        '&:after': {
-          borderColor: theme.colors.n300,
-        },
-      },
-      [Tertiary]: {
-        '&:after': {
-          borderColor: theme.colors.n500,
-        },
-      },
-    };
-
-    const colorConfig = colorVariants[variant];
-
-    const { Alpha, Bravo, Charlie } = Sizes;
-
-    const sizeVariants = {
-      [Alpha]: {
-        height: '4.8rem',
-      },
-      [Bravo]: {
-        height: '6rem',
-      },
-      [Charlie]: {
-        height: '7.2rem',
-      },
-    };
-
-    const sizeConfig = sizeVariants[size];
-
-    return {
-      ...baseStyles,
-      ...colorConfig,
-      ...sizeConfig,
     };
   },
 );

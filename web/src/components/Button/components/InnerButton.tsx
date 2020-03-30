@@ -2,31 +2,14 @@ import styled from '@emotion/styled';
 
 import { Variants, Sizes } from '../../../utils/enums';
 
-interface InnerButtonProps {
+interface Props {
   variant: Variants;
   size: Sizes.Alpha | Sizes.Bravo | Sizes.Charlie;
   inheritBg?: boolean;
 }
 
-export const InnerButton = styled('span')<InnerButtonProps>(
-  ({ theme, variant, size, inheritBg }): {} => {
-    const baseStyles = {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderRadius: theme.borderRadius.bravo,
-      borderStyle: 'solid',
-      borderWidth: theme.borderWidth.charlie,
-      width: '100%',
-      height: '100%',
-      fontFamily: theme.fontStack.heading,
-      fontWeight: theme.fontWeight.medium,
-      lineHeight: 1,
-      position: 'relative',
-      textDecoration: 'none',
-      textTransform: 'uppercase',
-    };
-
+export const InnerButton = styled('span')<Props>(
+  ({ theme, variant, size, inheritBg }) => {
     const { Primary, Secondary, Tertiary } = Variants;
 
     const colorVariants = {
@@ -72,9 +55,22 @@ export const InnerButton = styled('span')<InnerButtonProps>(
     const sizeConfig = sizeVariants[size];
 
     return {
-      ...baseStyles,
       ...colorConfig,
       ...sizeConfig,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: theme.borderRadius.bravo,
+      borderStyle: 'solid',
+      borderWidth: theme.borderWidth.charlie,
+      width: '100%',
+      height: '100%',
+      fontFamily: theme.fontStack.heading,
+      fontWeight: theme.fontWeight.medium,
+      lineHeight: 1,
+      position: 'relative',
+      textDecoration: 'none',
+      textTransform: 'uppercase',
     };
   },
 );

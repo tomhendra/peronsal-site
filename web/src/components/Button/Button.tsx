@@ -9,7 +9,7 @@ import {
   ExternalLink,
 } from './components';
 
-interface ButtonProps {
+interface Props {
   variant: Variants;
   size: Sizes.Alpha | Sizes.Bravo | Sizes.Charlie;
   internalLink?: string;
@@ -18,7 +18,7 @@ interface ButtonProps {
   children: ReactNode;
 }
 
-export const Button: FC<ButtonProps> = ({
+export const Button: FC<Props> = ({
   variant,
   size,
   internalLink,
