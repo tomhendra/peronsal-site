@@ -11,9 +11,8 @@
     "esModuleInterop": true
   },
   "include": [
-    "./web/src/**/*",
-    "./node_modules/@sanity/base/types/**/*.ts",
-    "./**/*.ts",
-    "./**/*.tsx"
+    "./web/**/*",
+    "./studio/**/*",
+    "./node_modules/@sanity/base/types/**/*.ts"
   ]
 }

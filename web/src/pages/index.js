@@ -13,7 +13,7 @@ import Card from '../components/Card';
 import Icon from '../components/Icon';
 import TechStack from '../components/TechStack';
 
-import { colors, icons, sizes, variants } from '../assets/styles/style-enums';
+import { colors, icons, Sizes, Variants } from '../utils/enums';
 
 const { ACCENT_ALPHA } = colors;
 const { BRIEFCASE, CODE, PEN_TOOL } = icons;
@@ -28,8 +28,8 @@ const {
   JULIETT,
   LIMA,
   MIKE,
-} = sizes;
-const { PRIMARY, SECONDARY, TERTIARY } = variants;
+} = Sizes;
+const { PRIMARY, SECONDARY, TERTIARY } = Variants;
 
 function IndexPage() {
   return (
