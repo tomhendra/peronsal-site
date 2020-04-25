@@ -6,11 +6,10 @@ import { Variants, ButtonSizes, Children } from '../../../utils/types';
 type Props = {
   variant: Variants;
   size: ButtonSizes;
-  inheritBg?: boolean;
   children: Children;
 };
 
-export const StyledSpan = ({ variant, size, inheritBg, children }: Props) => (
+export const StyledSpan = ({ variant, size, children }: Props) => (
   <span
     css={(theme) => {
       const colorVariants = {
@@ -20,12 +19,12 @@ export const StyledSpan = ({ variant, size, inheritBg, children }: Props) => (
           color: theme.colors.n100,
         },
         secondary: {
-          backgroundColor: !inheritBg ? theme.colors.white : 'inherit',
+          backgroundColor: theme.colors.white,
           borderColor: theme.colors.n300,
           color: theme.colors.n300,
         },
         tertiary: {
-          backgroundColor: !inheritBg ? theme.colors.white : 'inherit',
+          backgroundColor: theme.colors.white,
           borderColor: theme.colors.n500,
           color: theme.colors.n400,
         },

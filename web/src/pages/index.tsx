@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Button,
   ButtonGroup,
@@ -15,7 +16,7 @@ import {
   TechStack,
 } from '../components';
 
-const IndexPage = () => (
+const Index = () => (
   <Layout>
     <SEO title="Software Developer" />
     <Section fullViewportHeight centerContentVertically variant="primary">
@@ -35,12 +36,7 @@ const IndexPage = () => (
         </Item>
         <Item gridColStart={[2, 2, 4, 4, 4]} gridColEnd={[8, 8, 10, 10, 8]}>
           <ButtonGroup>
-            <Button
-              internalLink="/projects/"
-              variant="secondary"
-              size="bravo"
-              inheritBg
-            >
+            <Button internalLink="/projects/" variant="secondary" size="bravo">
               Projects
             </Button>
             <Button internalLink="/contact/" variant="primary" size="bravo">
@@ -205,12 +201,7 @@ const IndexPage = () => (
         </Item>
         <Item gridColStart={[2, 2, 3, 3, 4]} gridColEnd={[8, 8, 9, 9, 8]}>
           <ButtonGroup>
-            <Button
-              internalLink="/projects/"
-              variant="secondary"
-              size="bravo"
-              inheritBg
-            >
+            <Button internalLink="/projects/" variant="secondary" size="bravo">
               Projects
             </Button>
             <Button internalLink="/contact/" variant="primary" size="bravo">
@@ -223,4 +214,4 @@ const IndexPage = () => (
   </Layout>
 );
 
-export default IndexPage;
+export default Index;

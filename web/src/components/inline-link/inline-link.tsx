@@ -28,7 +28,7 @@ export const InlineLink = ({ internalLink, externalLink, children }: Props) =>
   ) : (
     <StyledSpan>
       <a target="blank" rel="noopener" href={externalLink} css={linkStyles}>
-        >{children}
+        {children}
       </a>
     </StyledSpan>
   );

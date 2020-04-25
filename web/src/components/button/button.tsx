@@ -14,7 +14,6 @@ type Props = {
   size: ButtonSizes;
   internalLink?: string;
   externalLink?: string;
-  inheritBg?: boolean;
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
   onClick?: () => void;
@@ -27,7 +26,6 @@ export const Button = (props: Props) => {
     size = 'bravo',
     internalLink,
     externalLink,
-    inheritBg,
     type = 'button',
     disabled,
     onClick,
@@ -38,7 +36,7 @@ export const Button = (props: Props) => {
     // if internalLink prop is provided, return Gatsby Link inside button.
     <StyledButton variant={variant} size={size} type="button">
       <StyledLink to={internalLink}>
-        <StyledSpan variant={variant} size={size} inheritBg={inheritBg}>
+        <StyledSpan variant={variant} size={size}>
           {children}
         </StyledSpan>
       </StyledLink>
@@ -47,7 +45,7 @@ export const Button = (props: Props) => {
     // if externalLink prop is provided, return anchor element inside button.
     <StyledButton variant={variant} size={size} type="button">
       <StyledAnchor externalLink={externalLink}>
-        <StyledSpan variant={variant} size={size} inheritBg={inheritBg}>
+        <StyledSpan variant={variant} size={size}>
           {children}
         </StyledSpan>
       </StyledAnchor>
@@ -63,7 +61,7 @@ export const Button = (props: Props) => {
       disabled={disabled}
       onClick={onClick}
     >
-      <StyledSpan variant={variant} size={size} inheritBg={inheritBg}>
+      <StyledSpan variant={variant} size={size}>
         {children}
       </StyledSpan>
     </StyledButton>
