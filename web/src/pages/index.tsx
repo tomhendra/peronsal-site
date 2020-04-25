@@ -15,7 +15,7 @@ import {
   TechStack,
 } from '../components';
 
-export const IndexPage = () => (
+const IndexPage = () => (
   <Layout>
     <SEO title="Software Developer" />
     <Section fullViewportHeight centerContentVertically variant="primary">

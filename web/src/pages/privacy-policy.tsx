@@ -12,7 +12,7 @@ import {
   InlineLink,
 } from '../components';
 
-export const PrivacyPolicyPage = () => (
+const PrivacyPolicy = () => (
   <Layout>
     <SEO title="Privacy Policy" />
     <Section variant="primary">
@@ -262,3 +262,5 @@ export const PrivacyPolicyPage = () => (
     </Section>
   </Layout>
 );
+
+export default PrivacyPolicy;

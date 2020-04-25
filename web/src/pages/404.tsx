@@ -11,7 +11,7 @@ import {
   InlineLink,
 } from '../components';
 
-export const NotFound = () => (
+const NotFound = () => (
   <Layout>
     <SEO title="404: Not found" />
     <Section variant="primary" fullViewportHeight>
@@ -35,3 +35,5 @@ export const NotFound = () => (
     </Section>
   </Layout>
 );
+
+export default NotFound;

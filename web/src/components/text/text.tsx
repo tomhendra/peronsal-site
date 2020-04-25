@@ -64,7 +64,7 @@ export const Text = (props: Props) => {
 
     const sizeVariants: SizeVariants = {
       p: {
-        size: ['bravo', 'bravo', 'charlie'],
+        size: ['charlie', 'charlie', 'delta'],
         spacingBottom: ['charlie', 'charlie', 'delta'],
       },
       li: {
@@ -90,7 +90,6 @@ export const Text = (props: Props) => {
     };
 
     const TextSizeConfig = getTextDeclarations(sizeVariants[as].size, theme);
-    console.log(TextSizeConfig);
     const spacingConfig = getSpacingValues(
       sizeVariants[as].spacingBottom,
       theme,

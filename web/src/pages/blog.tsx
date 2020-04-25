@@ -14,7 +14,7 @@ import {
 import { usePosts } from '../hooks';
 import { PostData } from '../utils/types';
 
-export const Blog = () => {
+const Blog = () => {
   const posts = usePosts();
   return (
     <Layout>
@@ -62,3 +62,5 @@ export const Blog = () => {
     </Layout>
   );
 };
+
+export default Blog;

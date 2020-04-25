@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Layout, SEO, Section, Grid, Item, ContactForm } from '../components';
 
-export const Contact = () => (
+const Contact = () => (
   <Layout>
     <SEO title="Contact" />
     <Section paddingTop="india" variant="secondary">
@@ -20,3 +20,5 @@ export const Contact = () => (
     </Section>
   </Layout>
 );
+
+export default Contact;

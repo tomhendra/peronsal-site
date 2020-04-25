@@ -37,7 +37,7 @@ type Props = {
   errors: { message: string }[];
 };
 
-export const BlogPostTemplate = ({ data, errors }: Props) => {
+const BlogPostTemplate = ({ data, errors }: Props) => {
   const post = data && data.post;
   return (
     <Layout>
@@ -54,3 +54,5 @@ export const BlogPostTemplate = ({ data, errors }: Props) => {
     </Layout>
   );
 };
+
+export default BlogPostTemplate;

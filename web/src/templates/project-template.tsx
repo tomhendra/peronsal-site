@@ -39,7 +39,7 @@ type Props = {
   errors: { message: string }[];
 };
 
-export const ProjectTemplate = ({ data, errors }: Props) => {
+const ProjectTemplate = ({ data, errors }: Props) => {
   const project = data && data.project;
   return (
     <Layout>
@@ -55,3 +55,5 @@ export const ProjectTemplate = ({ data, errors }: Props) => {
     </Layout>
   );
 };
+
+export default ProjectTemplate;

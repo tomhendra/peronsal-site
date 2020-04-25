@@ -18,7 +18,7 @@ import {
 import { useProjects } from '../hooks';
 import { ProjectData } from '../utils/types';
 
-export const Projects = () => {
+const Projects = () => {
   const projects = useProjects();
   return (
     <Layout>
@@ -103,3 +103,5 @@ export const Projects = () => {
     </Layout>
   );
 };
+
+export default Projects;
