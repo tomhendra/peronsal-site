@@ -11,15 +11,24 @@ type Props = {
   children: Children;
 };
 
+const linkStyles = {
+  textDecoration: 'none',
+  '&:visited, &:hover': {
+    color: 'inherit',
+  },
+};
+
 export const InlineLink = ({ internalLink, externalLink, children }: Props) =>
   internalLink ? (
     <StyledSpan>
-      <Link to={internalLink}>{children}</Link>
+      <Link to={internalLink} css={linkStyles}>
+        {children}
+      </Link>
     </StyledSpan>
   ) : (
     <StyledSpan>
-      <a target="blank" rel="noopener" href={externalLink}>
-        {children}
+      <a target="blank" rel="noopener" href={externalLink} css={linkStyles}>
+        >{children}
       </a>
     </StyledSpan>
   );
