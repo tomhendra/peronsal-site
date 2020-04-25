@@ -13,7 +13,7 @@ export const StyledContainer = ({ children }: Props) => (
 
       '&:hover': {
         // select StyledTooltip adn reveal on hover
-        '&:first-child': {
+        '&:first-of-type': {
           visibility: 'visible',
         },
       },

@@ -9,8 +9,6 @@ import {
 
 import { Variants, Children, TextSizes, Spacings } from '../../utils/types';
 
-// ....................styles....................
-
 type Props = {
   as?: 'p' | 'li' | 'article' | 'blockquote' | 'figcaption' | 'label';
   variant: Variants;
@@ -92,6 +90,7 @@ export const Text = (props: Props) => {
     };
 
     const TextSizeConfig = getTextDeclarations(sizeVariants[as].size, theme);
+    console.log(TextSizeConfig);
     const spacingConfig = getSpacingValues(
       sizeVariants[as].spacingBottom,
       theme,

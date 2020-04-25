@@ -257,7 +257,7 @@ export const fontWeight = {
 
 // ....................sizes....................
 
-export const sizes = {
+export const spacings = {
   alpha: '0.4rem', // 4px
   bravo: '0.8rem', // 8px
   charlie: '1.2rem', // 12px
@@ -327,27 +327,27 @@ export const grid = {
   alpha: {
     cols: 8,
     maxWidth: '38rem', // 380px
-    gutter: sizes.delta,
+    gutter: spacings.delta,
   },
   bravo: {
     cols: 8,
     maxWidth: '51.2rem', // 512px
-    gutter: sizes.delta,
+    gutter: spacings.delta,
   },
   charlie: {
     cols: 12,
     maxWidth: '70.4rem', // 704px
-    gutter: sizes.delta,
+    gutter: spacings.delta,
   },
   delta: {
     cols: 12,
     maxWidth: '86.4rem', // 864px
-    gutter: sizes.echo,
+    gutter: spacings.echo,
   },
   echo: {
     cols: 12,
     maxWidth: '120rem', // 1200px
-    gutter: sizes.echo,
+    gutter: spacings.echo,
   },
 };
 
