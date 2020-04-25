@@ -1,0 +1,67 @@
+{
+  "private": true,
+  "name": "web",
+  "description": "Gatsby frontend for Tom Hendra portfolio website.",
+  "license": "MIT",
+  "author": "Tom Hendra <hola@tomhendra.dev>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomhendra/portfolio"
+  },
+  "version": "2.0.0",
+  "scripts": {
+    "develop": "yarn clean && GATSBY_GRAPHQL_IDE=playground gatsby develop --open",
+    "start": "run-p start:**",
+    "start:app": "yarn develop",
+    "build": "run-p build:**",
+    "build:app": "gatsby build",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "clean": "gatsby clean",
+    "serve": "gatsby serve",
+    "info": "gatsby info --clipboard"
+  },
+  "dependencies": {
+    "@babel/core": "^7.9.0",
+    "@emotion/react": "^11.0.0-next.12",
+    "@emotion/styled": "11.0.0-next.12",
+    "@sanity/block-content-to-react": "^2.0.7",
+    "axios": "^0.19.2",
+    "date-fns": "^2.12.0",
+    "dotenv": "^8.2.0",
+    "facepaint": "^1.2.1",
+    "formik": "^2.1.4",
+    "gatsby": "^2.20.35",
+    "gatsby-image": "^2.3.5",
+    "gatsby-plugin-emotion": "^4.2.3",
+    "gatsby-plugin-gtag": "^1.0.13",
+    "gatsby-plugin-manifest": "^2.3.7",
+    "gatsby-plugin-offline": "^3.1.5",
+    "gatsby-plugin-react-helmet": "^3.2.5",
+    "gatsby-plugin-sharp": "^2.5.7",
+    "gatsby-plugin-typescript": "^2.3.5",
+    "gatsby-source-filesystem": "^2.2.5",
+    "gatsby-source-sanity": "^5.0.6",
+    "gatsby-transformer-sharp": "^2.4.7",
+    "polished": "^3.5.2",
+    "prism-react-renderer": "^1.0.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-feather": "^2.0.8",
+    "react-helmet": "^6.0.0",
+    "react-intersection-observer": "^8.26.2",
+    "typeface-fira-code": "^1.1.4",
+    "typeface-fira-sans-extra-condensed": "^0.0.72",
+    "typeface-inconsolata": "^0.0.72",
+    "yup": "^0.28.4"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "keywords": [
+    "tom hendra"
+  ],
+  "engines": {
+    "node": "14.x"
+  }
+}

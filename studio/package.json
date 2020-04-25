@@ -1,0 +1,46 @@
+{
+  "private": true,
+  "name": "studio",
+  "description": "Sanity studio CMS for Tom Hendra portfolio website.",
+  "license": "MIT",
+  "author": "Tom Hendra <hola@tomhendra.dev>",
+  "repository": "https://github.com/tomhendra/portfolio",
+  "version": "2.0.0",
+  "scripts": {
+    "start": "sanity start",
+    "build": "sanity build",
+    "test": "sanity check",
+    "deploy:graphql": "sanity graphql deploy --playground",
+    "deploy:sanity": "sanity deploy",
+    "init": "sanity init && yarn run deploy:graphql",
+    "export": "rimraf export && sanity dataset export production export/production.tar.gz"
+  },
+  "dependencies": {
+    "@babel/core": "^7.9.0",
+    "@emotion/core": "10.0.28",
+    "@sanity/base": "^1.149.10",
+    "@sanity/cli": "^1.149.9",
+    "@sanity/code-input": "^1.149.7",
+    "@sanity/components": "^1.149.10",
+    "@sanity/core": "^1.149.12",
+    "@sanity/dashboard": "^1.149.10",
+    "@sanity/default-layout": "^1.149.10",
+    "@sanity/default-login": "^1.149.11",
+    "@sanity/desk-tool": "^1.149.10",
+    "date-fns": "^2.12.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "sanity-plugin-google-analytics": "^0.2.6"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  },
+  "keywords": [
+    "tom hendra"
+  ],
+  "engines": {
+    "node": "14.x"
+  },
+  "main": "index.js"
+}
