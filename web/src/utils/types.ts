@@ -429,13 +429,7 @@ export type ProjectData = {
   alt: string;
   id: string;
   description: Block[];
-  mainImage: {
-    alt: string;
-    asset: {
-      fluid: import('gatsby-image').FluidObject;
-    };
-    caption: string;
-  };
+  mainImage: import('gatsby-image').FluidObject;
   base64: string;
   sizes: string;
   src: string;

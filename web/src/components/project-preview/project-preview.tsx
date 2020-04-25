@@ -18,7 +18,7 @@ export const ProjectPreview = ({ project }: Props) => (
     alignItems="stretch"
   >
     <StyledContainer>
-      <StyledImg fluid={project.mainImage.asset.fluid} alt={project.alt} />
+      <StyledImg fluid={project.mainImage} alt={project.alt} />
       <Heading as="h3" variant="primary">
         {project.title}
       </Heading>
