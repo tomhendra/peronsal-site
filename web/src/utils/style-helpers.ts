@@ -121,7 +121,7 @@ export function getTextDeclarations(
 
   function generateValues(property: 'fontSize' | 'lineHeight') {
     if (Array.isArray(size)) {
-      return size.map((val: TextSizes) => typographyType[val]);
+      return size.map((val: TextSizes) => typographyType[val][property]);
     }
     return typographyType[size][property];
   }
@@ -140,7 +140,7 @@ export function getHeadingDeclarations(
 
   function generateValues(property: 'fontSize' | 'lineHeight') {
     if (Array.isArray(size)) {
-      return size.map((val: HeadingSizes) => typographyType[val]);
+      return size.map((val: HeadingSizes) => typographyType[val][property]);
     }
     return typographyType[size][property];
   }
@@ -159,7 +159,7 @@ export function getSubheadingDeclarations(
 
   function generateValues(property: 'fontSize' | 'lineHeight') {
     if (Array.isArray(size)) {
-      return size.map((val: SubHeadingSizes) => typographyType[val]);
+      return size.map((val: SubHeadingSizes) => typographyType[val][property]);
     }
     return typographyType[size][property];
   }
