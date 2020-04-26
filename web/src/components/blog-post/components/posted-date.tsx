@@ -8,7 +8,7 @@ type Props = {
 };
 
 export const PostedDate = ({ date }: Props) => (
-  <Heading noSpacingBottom as="h2" variant="primary">
+  <Heading noSpacingBottom as="h5" variant="primary">
     Posted&nbsp;
     {differenceInDays(new Date(), new Date(date)) > 5
       ? format(new Date(date), 'do MMMM, yyyy')

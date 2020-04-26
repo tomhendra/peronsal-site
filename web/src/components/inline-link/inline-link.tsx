@@ -12,6 +12,7 @@ type Props = {
 };
 
 const linkStyles = {
+  color: 'inherit',
   textDecoration: 'none',
   '&:visited, &:hover': {
     color: 'inherit',

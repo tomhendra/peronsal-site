@@ -13,6 +13,7 @@ type Props = {
   as?: 'p' | 'li' | 'article' | 'blockquote' | 'figcaption' | 'label';
   variant: Variants;
   noSpacingBottom?: boolean;
+  feature?: boolean;
   bold?: boolean;
   italic?: boolean;
   strike?: boolean;
@@ -24,6 +25,7 @@ export const Text = (props: Props) => {
   const {
     as = 'p',
     variant = 'secondary',
+    feature = false,
     noSpacingBottom = false,
     bold = false,
     italic = false,
@@ -64,7 +66,9 @@ export const Text = (props: Props) => {
 
     const sizeVariants: SizeVariants = {
       p: {
-        size: ['charlie', 'charlie', 'delta'],
+        size: !feature
+          ? ['charlie', 'charlie', 'delta']
+          : ['delta', 'delta', 'echo'],
         spacingBottom: ['charlie', 'charlie', 'delta'],
       },
       li: {

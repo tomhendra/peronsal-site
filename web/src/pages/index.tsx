@@ -29,7 +29,7 @@ const Index = () => (
           <Heading as="h1" variant="primary">
             Hola, I am Tom.
           </Heading>
-          <Text noSpacingBottom variant="primary">
+          <Text feature noSpacingBottom variant="primary">
             I’m a software developer from the UK living in Spain. I am
             passionate about code, design &amp; food!
           </Text>
@@ -191,7 +191,7 @@ const Index = () => (
           <Heading as="h2" variant="primary">
             Where to go from here?
           </Heading>
-          <Text noSpacingBottom variant="primary">
+          <Text feature noSpacingBottom variant="primary">
             I’ve been building stuff. You can see what I have been up to on my
             &nbsp;
             <InlineLink internalLink="/projects/">projects page</InlineLink>

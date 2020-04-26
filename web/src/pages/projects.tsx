@@ -80,7 +80,7 @@ const Projects = () => {
             <Heading as="h2" variant="primary">
               Oh, but there’s more…
             </Heading>
-            <Text noSpacingBottom variant="primary">
+            <Text feature noSpacingBottom variant="primary">
               I’ve started a blog! If you’d like to read about things I feel
               inspired enough to write about, check out the&nbsp;
               <InlineLink internalLink="/blog/">Blog Page</InlineLink>
