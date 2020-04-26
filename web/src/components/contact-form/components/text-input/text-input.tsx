@@ -15,10 +15,10 @@ type Props = {
 };
 
 export const TextInput = (props: Props) => {
-  const { label, variant = 'secondary', ...otherProps } = props;
+  const { label, variant = 'secondary', ...rest } = props;
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
-  // which we can spread on <Element>.
-  const [field, meta] = useField(otherProps);
+  // which we can spread on <StyledInput>.
+  const [field, meta] = useField(rest);
   const { error, touched } = meta;
   const { name } = field;
 
@@ -31,7 +31,7 @@ export const TextInput = (props: Props) => {
           error={error}
           touched={touched}
           {...field}
-          {...otherProps}
+          {...rest}
         />
       </Text>
       {touched && error ? (

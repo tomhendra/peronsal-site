@@ -7,7 +7,7 @@ type Props = {
   name: string;
 };
 
-export const StyledCheckbox = ({ name }: Props) => (
+export const StyledCheckbox = ({ name, ...rest }: Props) => (
   <input
     id={name}
     type="checkbox"
@@ -18,5 +18,6 @@ export const StyledCheckbox = ({ name }: Props) => (
         borderColor: theme.colors.p400,
       },
     })}
+    {...rest}
   />
 );

@@ -13,16 +13,16 @@ type Props = {
 };
 
 export const Checkbox = (props: Props) => {
-  const { variant = 'secondary', children, ...otherProps } = props;
+  const { variant = 'secondary', children, ...rest } = props;
   // We need to tell useField what type of input this is
   // since React treats radios and checkboxes differently
   // than inputs/select/textarea.
-  const [field, meta] = useField({ ...otherProps, type: 'checkbox' });
+  const [field, meta] = useField({ ...rest, type: 'checkbox' });
   const { error, touched } = meta;
   const { name, checked } = field;
   return (
     <StyledContainer>
-      <StyledCheckbox name={name} {...field} />
+      <StyledCheckbox name={name} {...field} {...rest} />
       <StyledLabel
         variant={variant}
         name={name}

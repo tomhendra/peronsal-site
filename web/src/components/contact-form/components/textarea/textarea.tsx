@@ -17,10 +17,10 @@ type Props = {
 };
 
 export const Textarea = (props: Props) => {
-  const { label, messageMaxLength, variant, rows, ...otherProps } = props;
+  const { label, messageMaxLength, variant, rows, ...rest } = props;
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
-  // which we can spread on <Element>.
-  const [field, meta] = useField(otherProps);
+  // which we can spread on <StyledTextarea>.
+  const [field, meta] = useField(rest);
   const { value } = field;
   const { error, touched } = meta;
   const { name } = field;
@@ -35,7 +35,7 @@ export const Textarea = (props: Props) => {
           touched={touched}
           rows={rows}
           {...field}
-          {...otherProps}
+          {...rest}
         />
       </Text>
       {/* props supplied for counter to calculate how many chars remaining & provider feedback */}

@@ -9,7 +9,7 @@ type Props = {
   touched: boolean;
 };
 
-export const StyledInput = ({ variant, error, touched }: Props) => (
+export const StyledInput = ({ variant, error, touched, ...rest }: Props) => (
   <input
     css={(theme) => {
       const colorVariants = {
@@ -63,5 +63,6 @@ export const StyledInput = ({ variant, error, touched }: Props) => (
         width: '100%',
       };
     }}
+    {...rest}
   />
 );
