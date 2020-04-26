@@ -30,7 +30,7 @@ async function createBlogPostPages(graphql, actions, reporter) {
     const slug = node.slug.current;
     const path = `/blog/${slug}/`;
 
-    reporter.info(`🧩 Creating project page: ${path}`);
+    reporter.info(`🧩 Creating blog post: ${path}`);
 
     createPage({
       path,
