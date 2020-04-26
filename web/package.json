@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/tomhendra/portfolio"
   },
-  "version": "2.0.0",
+  "version": "4.0.0",
   "scripts": {
     "develop": "yarn clean && GATSBY_GRAPHQL_IDE=playground gatsby develop --open",
     "start": "run-p start:**",
@@ -59,8 +59,5 @@
   },
   "keywords": [
     "tom hendra"
-  ],
-  "engines": {
-    "node": "14.x"
-  }
+  ]
 }

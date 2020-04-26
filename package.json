@@ -1,6 +1,6 @@
 {
   "name": "tomhendra-portfolio",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "private": true,
   "description": "Portfolio website for Tom Hendra, web developer",
   "author": "Tom Hendra <hola@tomhendra.dev>",
@@ -9,9 +9,6 @@
   ],
   "license": "MIT",
   "repository": "https://github.com/tomhendra/portfolio",
-  "engines": {
-    "node": "14.x"
-  },
   "workspaces": [
     "web",
     "studio"
