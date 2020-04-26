@@ -58,6 +58,7 @@ export const Card = (props: Props) => {
     alignItems = 'center',
     alignContent,
     children,
+    ...rest
   } = props;
 
   return (
@@ -148,6 +149,7 @@ export const Card = (props: Props) => {
           ...shadowConfig,
         });
       }}
+      {...rest}
     >
       {children}
     </div>

@@ -8,7 +8,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledCard = ({ children }: Props) => (
+export const StyledCard = ({ children, ...rest }: Props) => (
   <Card
     variant="primary"
     accent="accentCharlie"
@@ -41,6 +41,7 @@ export const StyledCard = ({ children }: Props) => (
         zIndex: theme.zIndex.behind,
       },
     })}
+    {...rest}
   >
     {children}
   </Card>
