@@ -10,11 +10,11 @@ type Props = {
 
 export const StyledContainer = ({ children }: Props) => (
   <div
-    css={(theme) => ({
-      display: 'flex',
-      justifyContent: 'space-between',
-      margin: '0 auto',
-      ...withMediaQueries(theme)({
+    css={(theme) =>
+      withMediaQueries(theme)({
+        display: 'flex',
+        justifyContent: 'space-between',
+        margin: '0 auto',
         maxWidth: [
           '100vw',
           '100vw',
@@ -22,9 +22,10 @@ export const StyledContainer = ({ children }: Props) => (
           theme.grid.delta.maxWidth,
           theme.grid.echo.maxWidth,
         ],
-      }),
-      width: '100%',
-    })}
+
+        width: '100%',
+      })
+    }
   >
     {children}
   </div>

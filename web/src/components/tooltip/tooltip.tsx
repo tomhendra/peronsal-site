@@ -99,8 +99,8 @@ export const Tooltip = (props: Props) => {
           // if align === 'center', element moved by half its own width to center itself
           transform:
             align === 'center' ? `${translateDirection}(-50%)` : undefined,
-          // arrow positioning based on where Tooltip is portioned & aligned
 
+          // arrow positioning based on where Tooltip is portioned & aligned
           '&::after': {
             // Tooltip arrow base styles
             border: `${theme.borderWidth.foxtrot} solid transparent`,
