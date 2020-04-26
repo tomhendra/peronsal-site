@@ -72,6 +72,7 @@ const Index = () => (
           gridColEnd={[9, 8, 11, 10, 5]}
           spacingBottom={['golf', 'golf', 'hotel', 'hotel', 0]}
         >
+          {' '}
           <Card
             variant="primary"
             accent="accentAlpha"
@@ -80,18 +81,18 @@ const Index = () => (
             paddingBottom={['foxtrot', 'foxtrot', 'golf', 'golf', 'hotel']}
           >
             <Icon
-              type="Code"
+              type="PenTool"
               color="accentAlpha"
               size="india"
               spacingBottom="delta"
             />
-            <Heading as="h2" variant="primary">
-              Code
+            <Heading as="h3" variant="primary">
+              Design
             </Heading>
             <Text noSpacingBottom variant="primary">
-              My technical skill set is built upon the rich & diverse JavaScript
-              ecosystem. My natural close attention to detail enhances my
-              ability to write clean, well organized code.
+              I have a keen eye for design and know my way around industry
+              standard tools like Sketch & the Adobe Creative Suite. I am a
+              coder who appreciates the designer things in life.
             </Text>
           </Card>
         </Item>
@@ -108,18 +109,18 @@ const Index = () => (
             paddingBottom={['foxtrot', 'foxtrot', 'golf', 'golf', 'hotel']}
           >
             <Icon
-              type="PenTool"
+              type="Code"
               color="accentAlpha"
               size="india"
               spacingBottom="delta"
             />
-            <Heading as="h2" variant="primary">
-              Design
+            <Heading as="h3" variant="primary">
+              Code
             </Heading>
             <Text noSpacingBottom variant="primary">
-              I have a keen eye for design and know my way around industry
-              standard tools like Sketch & the Adobe Creative Suite. I am a
-              coder who appreciates the designer things in life.
+              My technical skill set is built upon the rich & diverse JavaScript
+              ecosystem. My natural close attention to detail enhances my
+              ability to write clean, well organized code.
             </Text>
           </Card>
         </Item>
@@ -137,7 +138,7 @@ const Index = () => (
               size="india"
               spacingBottom="delta"
             />
-            <Heading as="h2" variant="primary">
+            <Heading as="h3" variant="primary">
               Business
             </Heading>
             <Text noSpacingBottom variant="primary">

@@ -9,7 +9,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledTooltip = ({ children }: Props) => (
+export const StyledTooltip = ({ children, ...rest }: Props) => (
   <Tooltip
     variant="neutral"
     align="center"
@@ -18,6 +18,7 @@ export const StyledTooltip = ({ children }: Props) => (
       marginBottom: theme.spacings.delta,
       visibility: 'hidden',
     })}
+    {...rest}
   >
     {children}
   </Tooltip>
