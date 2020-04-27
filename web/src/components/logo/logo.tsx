@@ -36,8 +36,6 @@ export const Logo = (props: Props) => {
       spacingRight={spacingRight}
       spacingBottom={spacingBottom}
       spacingLeft={spacingLeft}
-      aria-label="SVG image of a robot used as the brand logo for Tom Hendra, Web
-        Developer."
     >
       <svg
         viewBox="0 0 60 68"

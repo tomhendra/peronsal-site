@@ -32,6 +32,8 @@ export const StyledContainer = (props: Props) => {
   return (
     <div
       role="img"
+      aria-label="SVG image of a robot used as the brand logo for Tom Hendra, Web
+        Developer."
       css={(theme) =>
         withMediaQueries(theme)({
           height: size && getSpacingValues(size, theme),
