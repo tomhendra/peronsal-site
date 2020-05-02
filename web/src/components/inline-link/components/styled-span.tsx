@@ -19,7 +19,7 @@ export const StyledSpan = ({ children }: Props) => (
         borderRadius: theme.borderRadius.alpha,
         bottom: -2,
         content: '""',
-        height: '33%',
+        height: '25%',
         left: 0,
         position: 'absolute',
         transition: `transform ${theme.transitions.default}`,

@@ -72,15 +72,15 @@ export const Text = (props: Props) => {
         spacingBottom: ['charlie', 'charlie', 'delta'],
       },
       li: {
-        size: ['bravo', 'bravo', 'charlie'],
+        size: ['charlie', 'charlie', 'delta'],
         spacingBottom: ['charlie', 'charlie', 'delta'],
       },
       article: {
-        size: ['bravo', 'bravo', 'charlie'],
+        size: ['charlie', 'charlie', 'delta'],
         spacingBottom: ['charlie', 'charlie', 'delta'],
       },
       figcaption: {
-        size: ['bravo', 'bravo', 'charlie'],
+        size: ['charlie', 'charlie', 'delta'],
         spacingBottom: [0],
       },
       label: {
@@ -88,7 +88,7 @@ export const Text = (props: Props) => {
         spacingBottom: [0],
       },
       blockquote: {
-        size: ['bravo', 'bravo', 'charlie'],
+        size: ['charlie', 'charlie', 'delta'],
         spacingBottom: ['charlie', 'charlie', 'delta'],
       },
     };
@@ -106,6 +106,7 @@ export const Text = (props: Props) => {
       fontStyle: !italic ? 'normal' : 'italic',
       fontWeight: !bold ? theme.fontWeight.regular : theme.fontWeight.bold,
       listStylePosition: as === 'li' && 'inside',
+      marginLeft: as === 'li' && theme.spacings.foxtrot,
       marginBottom: !noSpacingBottom ? spacingConfig : 0,
       textDecoration: !strike ? 'none' : 'line-through',
       wordWrap: 'break-word',

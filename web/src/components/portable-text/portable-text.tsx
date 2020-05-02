@@ -38,6 +38,20 @@ const serializers = {
             </Heading>
           );
 
+        case 'h5':
+          return (
+            <Heading as="h5" variant="primary">
+              {children}
+            </Heading>
+          );
+
+        case 'h6':
+          return (
+            <Heading as="h6" variant="primary">
+              {children}
+            </Heading>
+          );
+
         case 'blockquote':
           return (
             <Text as="blockquote" variant="primary">
@@ -46,10 +60,7 @@ const serializers = {
           );
 
         default:
-          return (
-            // eslint-disable-next-line no-undef
-            <Text variant="primary">{children}</Text>
-          );
+          return <Text variant="primary">{children}</Text>;
       }
     },
     figure: ({ node, children }: FigureType) => (
