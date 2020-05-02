@@ -106,7 +106,7 @@ export const Text = (props: Props) => {
       fontStyle: !italic ? 'normal' : 'italic',
       fontWeight: !bold ? theme.fontWeight.regular : theme.fontWeight.bold,
       listStylePosition: as === 'li' && 'inside',
-      marginLeft: as === 'li' && theme.spacings.foxtrot,
+      marginLeft: as === 'li' && theme.spacings.echo,
       marginBottom: !noSpacingBottom ? spacingConfig : 0,
       textDecoration: !strike ? 'none' : 'line-through',
       wordWrap: 'break-word',

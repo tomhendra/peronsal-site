@@ -1,5 +1,6 @@
+/** @jsx jsx */
 /* eslint-disable react/display-name */
-import React from 'react';
+import { jsx } from '@emotion/react';
 import BasePortableText from '@sanity/block-content-to-react';
 
 import { Heading, Text, Figure, CodeBlock, InlineLink } from '..';
@@ -19,35 +20,55 @@ const serializers = {
       switch (node.style) {
         case 'h2':
           return (
-            <Heading as="h2" variant="primary">
+            <Heading
+              as="h2"
+              variant="primary"
+              css={(theme) => ({ marginTop: theme.spacings.golf })}
+            >
               {children}
             </Heading>
           );
 
         case 'h3':
           return (
-            <Heading as="h3" variant="primary">
+            <Heading
+              as="h3"
+              variant="primary"
+              css={(theme) => ({ marginTop: theme.spacings.golf })}
+            >
               {children}
             </Heading>
           );
 
         case 'h4':
           return (
-            <Heading as="h4" variant="primary">
+            <Heading
+              as="h4"
+              variant="primary"
+              css={(theme) => ({ marginTop: theme.spacings.echo })}
+            >
               {children}
             </Heading>
           );
 
         case 'h5':
           return (
-            <Heading as="h5" variant="primary">
+            <Heading
+              as="h5"
+              variant="primary"
+              css={(theme) => ({ marginTop: theme.spacings.delta })}
+            >
               {children}
             </Heading>
           );
 
         case 'h6':
           return (
-            <Heading as="h6" variant="primary">
+            <Heading
+              as="h6"
+              variant="primary"
+              css={(theme) => ({ marginTop: theme.spacings.charlie })}
+            >
               {children}
             </Heading>
           );

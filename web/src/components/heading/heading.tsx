@@ -22,6 +22,7 @@ export const Heading = (props: Props) => {
     variant = 'secondary',
     noSpacingBottom = false,
     children,
+    ...rest
   } = props;
 
   const styles = (theme: Theme) => {
@@ -101,16 +102,40 @@ export const Heading = (props: Props) => {
 
   switch (as) {
     case 'h1':
-      return <h1 css={(theme) => styles(theme)}>{children}</h1>;
+      return (
+        <h1 css={(theme) => styles(theme)} {...rest}>
+          {children}
+        </h1>
+      );
     case 'h2':
-      return <h2 css={(theme) => styles(theme)}>{children}</h2>;
+      return (
+        <h2 css={(theme) => styles(theme)} {...rest}>
+          {children}
+        </h2>
+      );
     case 'h3':
-      return <h3 css={(theme) => styles(theme)}>{children}</h3>;
+      return (
+        <h3 css={(theme) => styles(theme)} {...rest}>
+          {children}
+        </h3>
+      );
     case 'h4':
-      return <h4 css={(theme) => styles(theme)}>{children}</h4>;
+      return (
+        <h4 css={(theme) => styles(theme)} {...rest}>
+          {children}
+        </h4>
+      );
     case 'h5':
-      return <h5 css={(theme) => styles(theme)}>{children}</h5>;
+      return (
+        <h5 css={(theme) => styles(theme)} {...rest}>
+          {children}
+        </h5>
+      );
     default:
-      return <h6 css={(theme) => styles(theme)}>{children}</h6>;
+      return (
+        <h6 css={(theme) => styles(theme)} {...rest}>
+          {children}
+        </h6>
+      );
   }
 };
