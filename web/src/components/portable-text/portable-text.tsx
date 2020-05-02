@@ -23,7 +23,7 @@ const serializers = {
             <Heading
               as="h2"
               variant="primary"
-              css={(theme) => ({ marginTop: theme.spacings.golf })}
+              css={(theme) => ({ marginTop: theme.spacings.hotel })}
             >
               {children}
             </Heading>
@@ -34,7 +34,7 @@ const serializers = {
             <Heading
               as="h3"
               variant="primary"
-              css={(theme) => ({ marginTop: theme.spacings.golf })}
+              css={(theme) => ({ marginTop: theme.spacings.hotel })}
             >
               {children}
             </Heading>
@@ -56,7 +56,7 @@ const serializers = {
             <Heading
               as="h5"
               variant="primary"
-              css={(theme) => ({ marginTop: theme.spacings.delta })}
+              css={(theme) => ({ marginTop: theme.spacings.foxtrot })}
             >
               {children}
             </Heading>
