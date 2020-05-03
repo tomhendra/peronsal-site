@@ -8,9 +8,10 @@ interface Props {
   children: Children;
 }
 
-export const StyledBurger = ({ open, children }: Props) => (
+export const StyledBurger = ({ open, onClick, children }: Props) => (
   <button
     type="button"
+    onClick={onClick}
     aria-label="Burger icon button to open navigation menu"
     css={(theme) => ({
       background: 'transparent',
