@@ -33,8 +33,8 @@ export const TechStack = ({ gridSize, stack, noSpacingBottom }: Props) => {
     'Testing',
     'Tools',
     'CMS',
-    'Databases',
     'Deployment',
+    'Databases',
   ];
   // sort stack based on category
   const stackGroupedByCategory = stackToDisplay.sort((a: Tech, b: Tech) => {
