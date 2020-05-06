@@ -29,6 +29,7 @@ export const TechStack = ({ gridSize, stack, noSpacingBottom }: Props) => {
     'Languages',
     'Libraries',
     'Frameworks',
+    'CSS',
     'Testing',
     'Tools',
     'CMS',
