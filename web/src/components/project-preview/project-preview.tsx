@@ -4,13 +4,13 @@ import { Button, Card, Heading, Text } from '..';
 import { StyledContainer, StyledImg } from './components';
 
 import { toPlainText } from '../../utils/helpers';
-import { ProjectData } from '../../utils/types';
+import { ProjectHookData } from '../../utils/types';
 
 type Props = {
-  project: ProjectData;
+  project: ProjectHookData;
 };
 
-export const ProjectPreview = ({ project }: Props) => (
+export const ProjectPreview = ({ project }: Props): JSX.Element => (
   <Card
     variant="primary"
     justifyContent="space-between"

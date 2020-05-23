@@ -10,7 +10,7 @@ import {
   StyledContainer,
 } from './components';
 
-export const Footer = () => (
+export const Footer = (): JSX.Element => (
   <StyledFooter>
     <StyledContainer>
       <Grid>

@@ -13,13 +13,13 @@ import {
 
 import { StyledImg } from './components';
 
-import { ProjectData } from '../../utils/types';
+import { ProjectTemplateQuery } from '../../utils/types';
 
 type Props = {
-  project: ProjectData;
+  project: ProjectTemplateQuery;
 };
 
-export const Project = ({ project }: Props) => {
+export const Project = ({ project }: Props): JSX.Element => {
   const {
     title,
     mainImage,

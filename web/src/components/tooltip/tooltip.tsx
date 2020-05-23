@@ -17,7 +17,7 @@ type Props = {
   children: Children;
 };
 
-export const Tooltip = (props: Props) => {
+export const Tooltip = (props: Props): JSX.Element => {
   const {
     variant = 'neutral',
     position = 'top',

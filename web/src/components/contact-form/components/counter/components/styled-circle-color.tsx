@@ -6,7 +6,7 @@ type Props = {
   charsRemaining: number;
 };
 
-export const StyledCircleColor = (props: Props) => {
+export const StyledCircleColor = (props: Props): JSX.Element => {
   const { messageMaxLength, charsRemaining } = props;
   return (
     <circle

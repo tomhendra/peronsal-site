@@ -7,7 +7,7 @@ import {
   StyledNavLink,
 } from './components';
 
-export const MobileNav = () => {
+export const MobileNav = (): JSX.Element => {
   const [open, setOpen] = useState(false);
 
   return (

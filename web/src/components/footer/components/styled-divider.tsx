@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-export const StyledDivider = () => (
+export const StyledDivider = (): JSX.Element => (
   <div
     css={(theme) => ({
       backgroundColor: theme.colors.n500,

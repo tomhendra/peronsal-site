@@ -8,7 +8,7 @@ type Props = {
   children: Children;
 };
 
-export const ButtonGroup = ({ children }: Props) => (
+export const ButtonGroup = ({ children }: Props): JSX.Element => (
   <div
     css={(theme) =>
       withMediaQueries(theme)({

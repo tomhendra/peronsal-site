@@ -7,7 +7,7 @@ type Props = {
   name: string;
 };
 
-export const StyledCheckbox = ({ name, ...rest }: Props) => (
+export const StyledCheckbox = ({ name, ...rest }: Props): JSX.Element => (
   <input
     id={name}
     type="checkbox"

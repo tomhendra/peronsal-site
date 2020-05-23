@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { ProjectDataHook } from '../utils/types';
+import { ProjectHookQuery, ProjectHookData } from '../utils/types';
 
-export function useProjects() {
+export function useProjects(): ProjectHookData[] {
   const data = useStaticQuery(graphql`
     query {
       projects: allSanityProject(sort: { fields: publishedAt, order: DESC }) {
@@ -9,21 +9,18 @@ export function useProjects() {
           node {
             _id
             title
-            slug {
-              current
-            }
-            publishedAt(formatString: "Do MMMM, YYYY")
             mainImage {
-              alt
               asset {
                 fluid {
                   ...GatsbySanityImageFluid
                 }
               }
+              alt
+            }
+            slug {
+              current
             }
             _rawDescription(resolveReferences: { maxDepth: 5 })
-            repo
-            url
           }
         }
       }
@@ -31,14 +28,13 @@ export function useProjects() {
   `);
 
   return data.projects.edges.map(
-    ({ node }: { node: ProjectDataHook }) =>
+    ({ node }: { node: ProjectHookQuery }) =>
       node && {
         id: node._id,
         title: node.title,
-        slug: `/projects/${node.slug.current}`,
-        publishedAt: node.publishedAt,
         mainImage: node.mainImage.asset.fluid,
         alt: node.mainImage.alt,
+        slug: `/projects/${node.slug.current}`,
         description: node._rawDescription,
       },
   );

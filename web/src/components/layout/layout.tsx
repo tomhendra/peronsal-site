@@ -13,7 +13,7 @@ type Props = {
   children: Children;
 };
 
-export const Layout = ({ children }: Props) => (
+export const Layout = ({ children }: Props): JSX.Element => (
   <ThemeProvider theme={theme}>
     <Global
       styles={{

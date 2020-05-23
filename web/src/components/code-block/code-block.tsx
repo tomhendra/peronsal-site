@@ -33,7 +33,7 @@ type Props = {
   language: Language;
 };
 
-export const CodeBlock = ({ code, language }: Props) => (
+export const CodeBlock = ({ code, language }: Props): JSX.Element => (
   <Highlight {...defaultProps} theme={nord} code={code} language={language}>
     {({ className, style, tokens, getLineProps, getTokenProps }) => (
       <Pre className={className} style={style}>

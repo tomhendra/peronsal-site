@@ -17,7 +17,7 @@ type Props = {
   spacingLeft?: Spacings;
 };
 
-export const Icon = (props: Props) => {
+export const Icon = (props: Props): JSX.Element => {
   const {
     color = 'brand',
     size = 'echo',

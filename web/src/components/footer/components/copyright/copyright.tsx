@@ -5,7 +5,7 @@ import { useSiteMetadata } from '../../../../hooks';
 import { Logo } from '../../..';
 import { StyledContainer, StyledSpan } from './components';
 
-export const Copyright = () => {
+export const Copyright = (): JSX.Element => {
   const { siteMetadata } = useSiteMetadata();
   const date = new Date().getFullYear();
   return (

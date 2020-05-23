@@ -7,7 +7,7 @@ type Props = {
   children: Children;
 };
 
-export const Wrapper = ({ children }: Props) => (
+export const Wrapper = ({ children }: Props): JSX.Element => (
   <div
     css={{
       minHeight: '100vh',

@@ -8,7 +8,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledCard = ({ children, ...rest }: Props) => (
+export const StyledCard = ({ children, ...rest }: Props): JSX.Element => (
   <Card
     variant="primary"
     accent="accentCharlie"

@@ -15,7 +15,7 @@ type Props = {
   children: Children;
 };
 
-export const Section = (props: Props) => {
+export const Section = (props: Props): JSX.Element => {
   const {
     paddingTop,
     paddingBottom,

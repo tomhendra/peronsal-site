@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { TechStackHook } from '../utils/types';
+import { TechStackHookQuery, TechStackHookData } from '../utils/types';
 
-export function useTechStack() {
+export function useTechStack(): TechStackHookData[] {
   const data = useStaticQuery(graphql`
     query {
       techStack: allSanityTechnology(sort: { fields: title, order: ASC }) {
@@ -34,7 +34,7 @@ export function useTechStack() {
   `);
 
   return data.techStack.edges.map(
-    ({ node }: { node: TechStackHook }) =>
+    ({ node }: { node: TechStackHookQuery }) =>
       node && {
         id: node._id,
         title: node.title,

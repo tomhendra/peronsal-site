@@ -4,7 +4,7 @@ import { Icon } from '../../..';
 
 import { StyledContainer, StyledSpan, StyledAnchor } from './components';
 
-export const Social = () => (
+export const Social = (): JSX.Element => (
   <StyledContainer>
     <StyledAnchor href="https://github.com/tomhendra">
       <StyledSpan>

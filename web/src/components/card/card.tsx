@@ -43,7 +43,7 @@ type Props = {
   children: Children;
 };
 
-export const Card = (props: Props) => {
+export const Card = (props: Props): JSX.Element => {
   const {
     variant = 'secondary',
     accent = 'accentBravo',

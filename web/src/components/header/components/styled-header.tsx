@@ -12,7 +12,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledHeader = ({ children }: Props) => (
+export const StyledHeader = ({ children }: Props): JSX.Element => (
   <header
     css={(theme) =>
       withMediaQueries(theme)({

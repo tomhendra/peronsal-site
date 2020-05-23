@@ -3,13 +3,13 @@ import React from 'react';
 import { Section, Grid, Item, PortableText, Heading } from '..';
 import { StyledImg, PostedDate, CategoryList } from './components';
 
-import { PostData } from '../../utils/types';
+import { BlogPostTemplateQuery } from '../../utils/types';
 
 type Props = {
-  post: PostData;
+  post: BlogPostTemplateQuery;
 };
 
-export const BlogPost = ({ post }: Props) => {
+export const BlogPost = ({ post }: Props): JSX.Element => {
   const { _rawBody, title, mainImage, publishedAt, categories } = post;
   return (
     <Section variant="primary">

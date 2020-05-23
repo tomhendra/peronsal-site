@@ -6,7 +6,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledContainer = ({ children }: Props) => (
+export const StyledContainer = ({ children }: Props): JSX.Element => (
   <div
     css={(theme) => ({
       position: 'relative',

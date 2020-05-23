@@ -110,7 +110,7 @@ type Props = {
   blocks: Block[];
 };
 
-export const PortableText = ({ blocks }: Props) => (
+export const PortableText = ({ blocks }: Props): JSX.Element => (
   <BasePortableText
     blocks={blocks}
     serializers={serializers}

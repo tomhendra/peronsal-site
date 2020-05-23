@@ -10,7 +10,7 @@ type Props = {
   meta?: [];
 };
 
-export const SEO = (props: Props) => {
+export const SEO = (props: Props): JSX.Element => {
   const { title, description, lang = 'en', meta = [] } = props;
   const { siteMetadata } = useSiteMetadata();
   const metaDescription = description || siteMetadata.description;

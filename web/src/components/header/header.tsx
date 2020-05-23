@@ -10,7 +10,7 @@ import {
   MobileNav,
 } from './components';
 
-export const Header = () => (
+export const Header = (): JSX.Element => (
   <StyledHeader>
     <StyledContainer>
       <StyledLink to="/">

@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Layout, SEO, Section, Grid, Item, ContactForm } from '../components';
 
-const Contact = () => (
+const Contact = (): JSX.Element => (
   <Layout>
     <SEO title="Contact" />
     <Section paddingTop="india" variant="secondary">

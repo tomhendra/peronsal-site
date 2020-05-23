@@ -4,17 +4,14 @@ import { graphql } from 'gatsby';
 import { Layout, SEO, GraphQLErrors, BlogPost } from '../components';
 
 import { toPlainText } from '../utils/helpers';
-import { PostData } from '../utils/types';
+import { BlogPostTemplateQuery } from '../utils/types';
 
 export const query = graphql`
   query BlogPostTemplateQuery($id: String!) {
     post: sanityPost(id: { eq: $id }) {
+      _id
       title
       publishedAt
-      categories {
-        _id
-        title
-      }
       mainImage {
         asset {
           fluid(maxHeight: 512) {
@@ -24,6 +21,10 @@ export const query = graphql`
         alt
         caption
       }
+      categories {
+        _id
+        title
+      }
       _rawExcerpt(resolveReferences: { maxDepth: 5 })
       _rawBody(resolveReferences: { maxDepth: 5 })
     }
@@ -32,12 +33,12 @@ export const query = graphql`
 
 type Props = {
   data: {
-    post: PostData;
+    post: BlogPostTemplateQuery;
   };
   errors: { message: string }[];
 };
 
-const BlogPostTemplate = ({ data, errors }: Props) => {
+const BlogPostTemplate = ({ data, errors }: Props): JSX.Element => {
   const post = data && data.post;
   return (
     <Layout>

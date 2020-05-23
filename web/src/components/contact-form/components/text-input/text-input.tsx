@@ -14,7 +14,7 @@ type Props = {
   type: 'text' | 'email';
 };
 
-export const TextInput = (props: Props) => {
+export const TextInput = (props: Props): JSX.Element => {
   const { label, variant = 'secondary', ...rest } = props;
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
   // which we can spread on <StyledInput>.

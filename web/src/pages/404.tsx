@@ -11,7 +11,7 @@ import {
   InlineLink,
 } from '../components';
 
-const NotFound = () => (
+const NotFound = (): JSX.Element => (
   <Layout>
     <SEO title="404: Not found" />
     <Section variant="primary" fullViewportHeight>

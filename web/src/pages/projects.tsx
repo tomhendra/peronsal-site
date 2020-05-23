@@ -16,9 +16,9 @@ import {
 } from '../components';
 
 import { useProjects } from '../hooks';
-import { ProjectData } from '../utils/types';
+import { ProjectHookData } from '../utils/types';
 
-const Projects = () => {
+const Projects = (): JSX.Element => {
   const projects = useProjects();
   return (
     <Layout>
@@ -47,7 +47,7 @@ const Projects = () => {
         </Grid>
         <Grid withRowGaps>
           {projects.length ? (
-            projects.map((project: ProjectData) => (
+            projects.map((project: ProjectHookData) => (
               <Item gridColSpan={[8, 8, 6, 6, 4]} key={project.id}>
                 <ProjectPreview project={project} />
               </Item>

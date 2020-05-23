@@ -8,7 +8,7 @@ type Props = {
   errors: { message: string }[];
 };
 
-export const GraphQLErrors = ({ errors }: Props) => (
+export const GraphQLErrors = ({ errors }: Props): JSX.Element => (
   <Section variant="primary">
     <Heading as="h2" variant="primary">
       GraphQL Error

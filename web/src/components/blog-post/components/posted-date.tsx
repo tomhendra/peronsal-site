@@ -7,7 +7,7 @@ type Props = {
   date: Date;
 };
 
-export const PostedDate = ({ date }: Props) => (
+export const PostedDate = ({ date }: Props): JSX.Element => (
   <Heading noSpacingBottom as="h5" variant="primary">
     Posted&nbsp;
     {differenceInDays(new Date(), new Date(date)) > 5

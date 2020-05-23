@@ -8,13 +8,16 @@ type Props = {
   children: Children;
 };
 
-export const StyledAnchor = ({ externalLink, children }: Props) => (
-  <a
-    href={externalLink}
-    target="blank"
-    rel="noopener"
-    css={{ textDecoration: 'none' }}
-  >
-    {children}
-  </a>
-);
+export const StyledAnchor = (props: Props): JSX.Element => {
+  const { externalLink, children } = props;
+  return (
+    <a
+      href={externalLink}
+      target="blank"
+      rel="noopener"
+      css={{ textDecoration: 'none' }}
+    >
+      {children}
+    </a>
+  );
+};

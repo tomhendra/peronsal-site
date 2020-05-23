@@ -2,7 +2,7 @@ import React from 'react';
 
 import { StyledNav, StyledNavLink } from './components';
 
-export const Navbar = () => (
+export const Navbar = (): JSX.Element => (
   <StyledNav>
     <StyledNavLink to="/" activeClassName="currentPage">
       Home

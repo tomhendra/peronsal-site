@@ -21,7 +21,7 @@ type Props = {
   children: Children;
 };
 
-export const Text = (props: Props) => {
+export const Text = (props: Props): JSX.Element => {
   const {
     as = 'p',
     variant = 'secondary',

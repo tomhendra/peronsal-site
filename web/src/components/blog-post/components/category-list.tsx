@@ -7,7 +7,7 @@ type Props = {
   categories: Category[];
 };
 
-export const CategoryList = ({ categories }: Props) => (
+export const CategoryList = ({ categories }: Props): JSX.Element => (
   <ul
     css={(theme) => ({
       display: 'flex',

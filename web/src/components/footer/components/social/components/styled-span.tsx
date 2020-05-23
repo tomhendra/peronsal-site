@@ -9,7 +9,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledSpan = ({ children }: Props) => (
+export const StyledSpan = ({ children }: Props): JSX.Element => (
   <div
     css={(theme) =>
       withMediaQueries(theme)({

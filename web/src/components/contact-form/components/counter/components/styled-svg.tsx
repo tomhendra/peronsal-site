@@ -7,7 +7,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledSvg = ({ children }: Props) => (
+export const StyledSvg = ({ children }: Props): JSX.Element => (
   <svg
     css={(theme) => ({
       height: theme.iconSizes.foxtrot,

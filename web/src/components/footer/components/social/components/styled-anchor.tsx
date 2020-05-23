@@ -9,7 +9,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledAnchor = ({ href, children }: Props) => (
+export const StyledAnchor = ({ href, children }: Props): JSX.Element => (
   <a
     href={href}
     target="blank"

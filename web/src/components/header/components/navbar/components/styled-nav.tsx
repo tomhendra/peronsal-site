@@ -8,7 +8,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledNav = ({ children }: Props) => (
+export const StyledNav = ({ children }: Props): JSX.Element => (
   <nav
     css={(theme) =>
       withMediaQueries(theme)({

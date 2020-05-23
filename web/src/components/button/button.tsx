@@ -20,7 +20,7 @@ type Props = {
   children: Children;
 };
 
-export const Button = (props: Props) => {
+export const Button = (props: Props): JSX.Element => {
   const {
     variant = 'secondary',
     size = 'bravo',

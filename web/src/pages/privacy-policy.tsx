@@ -12,7 +12,7 @@ import {
   InlineLink,
 } from '../components';
 
-const PrivacyPolicy = () => (
+const PrivacyPolicy = (): JSX.Element => (
   <Layout>
     <SEO title="Privacy Policy" />
     <Section variant="primary">

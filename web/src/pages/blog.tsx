@@ -12,9 +12,9 @@ import {
 } from '../components';
 
 import { usePosts } from '../hooks';
-import { PostData } from '../utils/types';
+import { BlogPostHookData } from '../utils/types';
 
-const Blog = () => {
+const Blog = (): JSX.Element => {
   const posts = usePosts();
   return (
     <Layout>
@@ -36,7 +36,7 @@ const Blog = () => {
         </Grid>
         <Grid withRowGaps>
           {posts.length ? (
-            posts.map((post: PostData) => (
+            posts.map((post: BlogPostHookData) => (
               <Item
                 gridColSpan={[8, 4, 6, 4, 4]}
                 key={post.id}

@@ -19,8 +19,10 @@ const linkStyles = {
   },
 };
 
-export const InlineLink = ({ internalLink, externalLink, children }: Props) =>
-  internalLink ? (
+export const InlineLink = (props: Props): JSX.Element => {
+  const { internalLink, externalLink, children } = props;
+
+  return internalLink ? (
     <StyledSpan>
       <Link to={internalLink} css={linkStyles}>
         {children}
@@ -33,3 +35,4 @@ export const InlineLink = ({ internalLink, externalLink, children }: Props) =>
       </a>
     </StyledSpan>
   );
+};

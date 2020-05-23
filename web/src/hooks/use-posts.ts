@@ -1,8 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-import { PostDataHook } from '../utils/types';
+import { BlogPostHookQuery, BlogPostHookData } from '../utils/types';
 
-export function usePosts() {
+export function usePosts(): BlogPostHookData[] {
   const data = useStaticQuery(graphql`
     query {
       posts: allSanityPost(sort: { fields: publishedAt, order: DESC }) {
@@ -10,17 +10,17 @@ export function usePosts() {
           node {
             _id
             title
-            slug {
-              current
-            }
             publishedAt(formatString: "Do MMMM, YYYY")
             mainImage {
-              alt
               asset {
                 fluid {
                   ...GatsbySanityImageFluid
                 }
               }
+              alt
+            }
+            slug {
+              current
             }
           }
         }
@@ -29,7 +29,7 @@ export function usePosts() {
   `);
 
   return data.posts.edges.map(
-    ({ node }: { node: PostDataHook }) =>
+    ({ node }: { node: BlogPostHookQuery }) =>
       node && {
         id: node._id,
         title: node.title,

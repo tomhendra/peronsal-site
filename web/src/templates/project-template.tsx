@@ -4,11 +4,12 @@ import { graphql } from 'gatsby';
 import { toPlainText } from '../utils/helpers';
 
 import { Layout, SEO, GraphQLErrors, Project } from '../components';
-import { ProjectData } from '../utils/types';
+import { ProjectTemplateQuery } from '../utils/types';
 
 export const query = graphql`
   query ProjectTemplateQuery($id: String!) {
     project: sanityProject(id: { eq: $id }) {
+      _id
       title
       mainImage {
         asset {
@@ -34,12 +35,12 @@ export const query = graphql`
 
 type Props = {
   data: {
-    project: ProjectData;
+    project: ProjectTemplateQuery;
   };
   errors: { message: string }[];
 };
 
-const ProjectTemplate = ({ data, errors }: Props) => {
+const ProjectTemplate = ({ data, errors }: Props): JSX.Element => {
   const project = data && data.project;
   return (
     <Layout>

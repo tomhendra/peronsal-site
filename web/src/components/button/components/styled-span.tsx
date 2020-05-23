@@ -9,7 +9,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledSpan = ({ variant, size, children }: Props) => (
+export const StyledSpan = ({ variant, size, children }: Props): JSX.Element => (
   <span
     css={(theme) => {
       const colorVariants = {

@@ -16,7 +16,7 @@ type Props = {
   rows?: number;
 };
 
-export const Textarea = (props: Props) => {
+export const Textarea = (props: Props): JSX.Element => {
   const { label, messageMaxLength, variant, rows, ...rest } = props;
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
   // which we can spread on <StyledTextarea>.

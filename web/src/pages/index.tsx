@@ -16,7 +16,7 @@ import {
   TechStack,
 } from '../components';
 
-const Index = () => (
+const Index = (): JSX.Element => (
   <Layout>
     <SEO title="Software Developer" />
     <Section fullViewportHeight centerContentVertically variant="primary">

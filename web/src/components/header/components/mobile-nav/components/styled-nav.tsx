@@ -7,7 +7,7 @@ interface Props {
   children: Children;
 }
 
-export const StyledNav = ({ open, children }: Props) => (
+export const StyledNav = ({ open, children }: Props): JSX.Element => (
   <nav
     css={(theme) => ({
       display: 'flex',

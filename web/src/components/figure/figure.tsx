@@ -13,7 +13,7 @@ const FigureImage = styled(Img)(({ theme }) => ({
   borderRadius: theme.borderRadius.alpha,
 }));
 
-export const Figure = ({ node }: FigureType) => {
+export const Figure = ({ node }: FigureType): JSX.Element => {
   const fluidProps = getFluidGatsbyImage(
     node.asset._id,
     { maxWidth: 675 },

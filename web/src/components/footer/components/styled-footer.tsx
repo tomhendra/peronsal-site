@@ -8,7 +8,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledFooter = ({ children }: Props) => (
+export const StyledFooter = ({ children }: Props): JSX.Element => (
   <footer
     css={(theme) =>
       withMediaQueries(theme)({

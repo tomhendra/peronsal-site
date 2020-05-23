@@ -343,6 +343,16 @@ export type LinkMark = {
 
 // ....................sanity queried data....................
 
+export type SiteMetadata = {
+  site: {
+    siteMetadata: {
+      title: string;
+      description: string;
+      author: string;
+    };
+  };
+};
+
 export type Block = BodyPortableText | Figure | CodeBlock | ListItem;
 
 export type Category = {
@@ -350,18 +360,7 @@ export type Category = {
   title: string;
 };
 
-export type Tech = {
-  id: string;
-  title: string;
-  category: string;
-  logoSmall: import('gatsby-image').FixedObject;
-  logoMedium: import('gatsby-image').FixedObject;
-  logoLarge: import('gatsby-image').FixedObject;
-  logoUrl: string;
-  alt: string;
-};
-
-export type TechStackHook = {
+export type TechStackHookQuery = {
   _id: string;
   title: string;
   category: {
@@ -378,95 +377,98 @@ export type TechStackHook = {
   };
 };
 
-export type PostData = {
+export type TechStackHookData = {
+  id: string;
+  title: string;
+  category: string;
+  logoSmall: import('gatsby-image').FixedObject;
+  logoMedium: import('gatsby-image').FixedObject;
+  logoLarge: import('gatsby-image').FixedObject;
+  logoUrl: string;
+  alt: string;
+};
+
+export type BlogPostTemplateQuery = {
   _id: string;
+  title: string;
+  publishedAt: Date;
+  mainImage: {
+    asset: {
+      fluid: import('gatsby-image').FluidObject;
+    };
+    alt: string;
+    caption: string;
+  };
+  categories: Category[];
   _rawBody: Block[];
   _rawExcerpt: Block[];
-  alt: string;
-  id: string;
-  categories: Category[];
+};
+
+export type BlogPostHookQuery = {
+  _id: string;
+  title: string;
+  publishedAt: Date;
   mainImage: {
     asset: {
       fluid: import('gatsby-image').FluidObject;
     };
     alt: string;
-    aspectRatio: number;
-    base64: string;
-    sizes: string;
-    src: string;
-    srcWebp: string;
-    srcSet: string;
-    srcSetWebp: string;
   };
-  publishedAt: Date;
-  slug: string;
-  title: string;
-};
-
-export type PostDataHook = {
-  _id: string;
-  title: string;
   slug: {
     current: string;
   };
-  publishedAt: Date;
-  mainImage: {
-    alt: string;
-    asset: {
-      fluid: import('gatsby-image').FluidObject;
-    };
-  };
 };
 
-export type ProjectData = {
-  _rawApproach: Block[];
-  _rawCredits: Block[];
-  _rawDescription: Block[];
-  _rawObjective: Block[];
-  _rawPurpose: Block[];
-  _rawRole: Block[];
-  _rawTechstack: Tech[];
-  alt: string;
+export type BlogPostHookData = {
   id: string;
-  description: Block[];
+  title: string;
+  slug: string;
+  publishedAt: Date;
   mainImage: import('gatsby-image').FluidObject;
-  base64: string;
-  sizes: string;
-  src: string;
-  srcWebp: string;
-  srcSet: string;
-  srcSetWebp: string;
-  repo: string;
-  url: string;
-  publishedAt: Date;
-  slug: string;
-  title: string;
+  alt: string;
 };
 
-export type ProjectDataHook = {
+export type ProjectTemplateQuery = {
   _id: string;
   title: string;
-  slug: {
-    current: string;
-  };
-  publishedAt: Date;
   mainImage: {
-    alt: string;
     asset: {
       fluid: import('gatsby-image').FluidObject;
     };
+    alt: string;
+    caption: string;
   };
   _rawDescription: Block[];
+  _rawPurpose: Block[];
+  _rawObjective: Block[];
+  _rawApproach: Block[];
+  _rawTechstack: TechStackHookData[];
+  _rawRole: Block[];
+  _rawCredits: Block[];
   repo: string;
   url: string;
 };
 
-export type SiteMetadata = {
-  site: {
-    siteMetadata: {
-      title: string;
-      description: string;
-      author: string;
+export type ProjectHookQuery = {
+  _id: string;
+  title: string;
+  mainImage: {
+    asset: {
+      fluid: import('gatsby-image').FluidObject;
     };
+    alt: string;
   };
+  slug: {
+    current: string;
+  };
+  _rawDescription: Block[];
+};
+
+export type ProjectHookData = {
+  id: string;
+  title: string;
+  mainImage: import('gatsby-image').FluidObject;
+  alt: string;
+  slug: string;
+  description: Block[];
 };

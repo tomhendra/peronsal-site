@@ -10,7 +10,7 @@ type Props = {
   rows?: number;
 };
 
-export const StyledTextarea = (props: Props) => {
+export const StyledTextarea = (props: Props): JSX.Element => {
   const { variant, error, touched, rows, ...rest } = props;
   return (
     <textarea

@@ -16,7 +16,7 @@ type Props = {
   children: Children;
 };
 
-export const Heading = (props: Props) => {
+export const Heading = (props: Props): JSX.Element => {
   const {
     as = 'h2',
     variant = 'secondary',

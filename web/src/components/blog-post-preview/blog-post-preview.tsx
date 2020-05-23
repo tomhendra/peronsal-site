@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { PostData } from '../../utils/types';
+import { BlogPostHookData } from '../../utils/types';
 
 import { Heading } from '..';
 
 import { StyledCard, StyledImg, StyledLink } from './components';
 
 type Props = {
-  post: PostData;
+  post: BlogPostHookData;
 };
 
-export const BlogPostPreview = ({ post }: Props) => (
+export const BlogPostPreview = ({ post }: Props): JSX.Element => (
   <StyledLink to={post.slug} aria-label={post.title}>
     <StyledCard>
       <StyledImg

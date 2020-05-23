@@ -31,7 +31,7 @@ type Props = {
   children: Children;
 };
 
-export const Item = (props: Props) => {
+export const Item = (props: Props): JSX.Element => {
   const {
     spacingTop,
     spacingRight,

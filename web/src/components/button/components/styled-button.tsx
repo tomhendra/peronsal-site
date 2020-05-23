@@ -12,11 +12,12 @@ type Props = {
   children: Children;
 };
 
-export const StyledButton = (props: Props) => {
+export const StyledButton = (props: Props): JSX.Element => {
   const { size, variant, type, disabled, onClick, children } = props;
   return (
     // eslint-disable-next-line react/button-has-type
     <button
+      // eslint-disable-next-line react/button-has-type
       type={type}
       aria-label="Button"
       disabled={disabled}

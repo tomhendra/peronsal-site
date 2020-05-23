@@ -12,7 +12,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledLabel = (props: Props) => {
+export const StyledLabel = (props: Props): JSX.Element => {
   const { variant, name, checked, error, touched, children } = props;
 
   return (

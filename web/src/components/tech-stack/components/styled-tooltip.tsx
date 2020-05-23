@@ -9,7 +9,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledTooltip = ({ children, ...rest }: Props) => (
+export const StyledTooltip = ({ children, ...rest }: Props): JSX.Element => (
   <Tooltip
     variant="neutral"
     align="center"

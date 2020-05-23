@@ -12,7 +12,7 @@ type Props = {
   children: Children;
 };
 
-export const Checkbox = (props: Props) => {
+export const Checkbox = (props: Props): JSX.Element => {
   const { variant = 'secondary', children, ...rest } = props;
   // We need to tell useField what type of input this is
   // since React treats radios and checkboxes differently
@@ -22,7 +22,7 @@ export const Checkbox = (props: Props) => {
   const { name, checked } = field;
   return (
     <StyledContainer>
-      <StyledCheckbox name={name} {...field} {...rest} />
+      <StyledCheckbox {...field} {...rest} />
       <StyledLabel
         variant={variant}
         name={name}

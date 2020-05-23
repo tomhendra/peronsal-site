@@ -18,7 +18,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledContainer = (props: Props) => {
+export const StyledContainer = (props: Props): JSX.Element => {
   const {
     size,
     spacing,
