@@ -440,7 +440,7 @@ export type ProjectTemplateQuery = {
   _rawPurpose: Block[];
   _rawObjective: Block[];
   _rawApproach: Block[];
-  _rawTechstack: TechStackHookData[];
+  _rawTechstack: TechStackHookQuery[];
   _rawRole: Block[];
   _rawCredits: Block[];
   repo: string;
