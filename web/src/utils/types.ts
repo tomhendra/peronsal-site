@@ -344,12 +344,10 @@ export type LinkMark = {
 // ....................sanity queried data....................
 
 export type SiteMetadata = {
-  site: {
-    siteMetadata: {
-      title: string;
-      description: string;
-      author: string;
-    };
+  siteMetadata: {
+    title: string;
+    description: string;
+    author: string;
   };
 };
 
