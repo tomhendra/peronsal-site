@@ -1,6 +1,6 @@
 import { Block } from './types';
 
-export function toPlainText(blocks: Block[]) {
+export function toPlainText(blocks: Block[]): string {
   // https://www.sanity.io/docs/what-you-need-to-know-about-block-text/presenting-block-text
   return (
     blocks
@@ -21,6 +21,6 @@ export function toPlainText(blocks: Block[]) {
 }
 
 // Capitalize first letter of string
-export function capitalize(string: string) {
+export function capitalize(string: string): string {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
