@@ -60,7 +60,7 @@
     }
   },
   "lint-staged": {
-    "{web,studio}/**/*.{ts,tsx}": "eslint --fix --quiet --ignore-path .gitignore"
+    "{web,studio}/**/*.{js,ts,tsx}": "eslint --fix --quiet --ignore-path .gitignore"
   },
   "dependencies": {}
 }

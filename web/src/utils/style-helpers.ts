@@ -116,7 +116,7 @@ export function getSpacingValues(
 export function getTextDeclarations(
   size: TextSizes | TextSizes[],
   theme: Theme,
-) {
+): CSSObject {
   const typographyType = theme.text;
 
   function generateValues(property: 'fontSize' | 'lineHeight') {
@@ -135,7 +135,7 @@ export function getTextDeclarations(
 export function getHeadingDeclarations(
   size: HeadingSizes | HeadingSizes[],
   theme: Theme,
-) {
+): CSSObject {
   const typographyType = theme.headings;
 
   function generateValues(property: 'fontSize' | 'lineHeight') {
@@ -154,7 +154,7 @@ export function getHeadingDeclarations(
 export function getSubheadingDeclarations(
   size: SubHeadingSizes | SubHeadingSizes[],
   theme: Theme,
-) {
+): CSSObject {
   const typographyType = theme.subHeadingSizes;
 
   function generateValues(property: 'fontSize' | 'lineHeight') {
