@@ -1,70 +1,82 @@
 <div align=center>
 <img alt="Tom Hendra Logo" src="https://res.cloudinary.com/tomhendra/image/upload/v1567091669/tomhendra-logo/tomhendra-logo-round-1024.png" width="100" />
 <h1>Portfolio</h1>
-<p>My personal website built with Gatsby</p>
+<p>A portfolio website and blog.</p>
 </div>
 
-## Introduction
+## Features
 
-**[My portfolio](https://tomhendra.dev)** has been built using a React hooks pattern for Gatsby, which I learned from a **[Frontend Masters course](https://frontendmasters.com/courses/gatsby/)**.
+My portfolio [tomhendra.dev](https://tomhendra.dev) is a Progressive Web App which uses a CMS for writing blog posts and showcasing projects.
 
-This readme is mainly for me to document & retain the process, since this is my first Gatsby site! 🚀
+- **Frontend:** Gatsby, TypeScript, Emotion.
+- **CMS:** Sanity studio.
+- **Repo:** Lerna, Yarn workspaces.
+- **Deployment:** Vercel.
+- **Analytics:** Google analytics.
 
-## Getting started with Gatsby
+## Installation
 
-The Gatsby website has a really well put together **[tutorial](https://www.gatsbyjs.org/tutorial/)** to get things kicked off with dependencies etc. Once Homebrew, Node, Git & Gatsby cli is installed, you're ready to start building a Gatsby site.
+Clone the repo and run setup.
 
-## Building a site
+```sh
+git clone git@github.com:tomhendra/portfolio
+cd portfolio
+yarn setup
+```
 
-1.  **Gatsby**
+## Setup
 
-    Bare bones are built using the Gatsby CLI to create a new site.
+Create a new project for Sanity studio.
 
-    ```sh
-    # create a new Gatsby site using the built in cli
-    gatsby new portfolio
-    ```
+```sh
+# Install command line tools globally
+~/$ npm install @sanity/cli -g
 
-    Navigate into the new directory and start it up.
+# Navigate to studio
+~/$ cd studio
 
-    ```sh
-    cd portfolio/
-    gatsby develop
-    ```
+# Create a new Sanity project
+~/studio$ sanity init
+```
 
-    The site is running at `http://localhost:8000`
+Head to [https://manage.sanity.io](https://manage.sanity.io) and retrieve credentials.
 
-    There's also see a second link: `http://localhost:8000/___graphql`.
-    _This is a tool to experiment with querying data with GraphQL._
+TODO: ---> Sanity **CORS Origins**
+TODO: ---> Sanity **Tokens**
+TODO: ---> Sanity **Webhooks**
 
-    Yeah. That's it!
+Use vercel cli to upload environment variables as indicated in vercel.json.
 
-2.  **Navigation.**
+create a .env file in `web/` and add Sanity & Google analytics credentials.
 
-    Site navigation uses Reach router's Link already build in to Gatsby. Reach is an awesome tool, because it puts accessibility at the forefront. Kudos to **[Reach](https://reach.tech/router)**.
+GATSBY_SANITY_PROJECT_ID=**insert credential here**
+GATSBY_SANITY_DATASET=**insert credential here**
+GATSBY_SANITY_READ_TOKEN=**insert credential here**
+GOOGLE_ANALYTICS_TRACKING_ID=**insert credential here**
 
-    ```javascript
-    // make your import at the top of the js file.
-    import { Link } from 'gatsby';
-    ```
+## Development
 
-    ```javascript
-    // Use as as you see fit.
-    <Link to="about/">about</Link>
-    ```
+Start both dev server for Gatsby & sanity studio.
 
-3.  **Emotion css-in-js.**
+```sh
+yarn start
+```
 
-    Styled with the wonderful **[Emotion](https://emotion.sh/docs/introduction)** library.
+- Gatsby is running at [http://localhost:8000](http://localhost:8000)
+- Sanity studio is running at [http://localhost:3333/studio](http://localhost:3333/studio)
+- GraphQL explorer is running at [http://localhost:8000/\_\_\_graphql](http://localhost:8000/___graphql)
 
-    ```sh
-    # Install these dependencies and you're good to go!
-    npm i @emotion/core @emotion/styled gatsby-plugin-emotion
-    ```
+## Deployment
 
-4.  **Animations - TBC**
+Push to gitHub then head over to [vercel.com](https://vercel.com) and follow their instructions for setting up a project from GitHub.
 
-5.  **Performance - TBC**
+Assign a domain name to the project.
 
-6.  **Sanity**
-    `http://localhost:3333/studio`
+Each new push to GitHub will trigger a new build with both the front end and CMS deployed to Vercel, so sanity studio can be accessed at `http://domain.name/studio`.
+
+TODO: ---> Sanity **Custom Studio URL**
+
+## Creating content
+
+TODO: ---> **Writing a blog post**
+TODO: ---> **Creating projects**

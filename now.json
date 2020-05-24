@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "tomhendra-portfolio",
   "build": {
     "env": {
       "GATSBY_SANITY_PROJECT_ID": "@sanity_project_id",
