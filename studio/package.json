@@ -16,7 +16,7 @@
     "export": "rimraf export && sanity dataset export production export/production.tar.gz"
   },
   "dependencies": {
-    "@babel/core": "^7.9.6",
+    "@babel/core": "^7.10.0",
     "@emotion/core": "10.0.28",
     "@sanity/base": "^1.149.15",
     "@sanity/cli": "^1.149.13",
