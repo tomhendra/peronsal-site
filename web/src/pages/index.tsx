@@ -192,10 +192,10 @@ const Index = (): JSX.Element => (
             Where to go from here?
           </Heading>
           <Text feature noSpacingBottom variant="primary">
-            I’ve been building stuff. You can see what I have been up to on my
-            &nbsp;
+            I’ve been building stuff. You can see what I have been up to on
+            my&nbsp;
             <InlineLink internalLink="/projects/">projects page</InlineLink>
-            &nbsp;Or&nbsp;
+            .&nbsp;Or&nbsp;
             <InlineLink internalLink="/contact/">let’s connect</InlineLink>
             &nbsp;if you have seen enough already!
           </Text>
