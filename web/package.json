@@ -47,7 +47,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.8",
-    "react-helmet": "^6.0.0",
+    "react-helmet": "^6.1.0",
     "react-intersection-observer": "^8.26.2",
     "typeface-fira-code": "^1.1.4",
     "typeface-fira-sans-extra-condensed": "^0.0.72",
