@@ -8,7 +8,7 @@ const isProd = process.env.NODE_ENV === 'production';
 module.exports = {
   siteMetadata: {
     title: 'Tom Hendra',
-    description: 'Portfolio website for Tom Hendra, web developer.',
+    description: 'Portfolio website for Tom Hendra: Software Developer.',
     author: 'Tom Hendra',
   },
   plugins: [
