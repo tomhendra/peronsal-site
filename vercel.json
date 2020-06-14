@@ -1,13 +1,5 @@
 {
   "version": 2,
-  "build": {
-    "env": {
-      "SANITY_PROJECT_ID": "@sanity_project_id",
-      "SANITY_DATASET": "@sanity_project_dataset",
-      "SANITY_AUTH_TOKEN": "@sanity_auth_token",
-      "GOOGLE_ANALYTICS_TRACKING_ID": "@google_analytics_tracking_id"
-    }
-  },
   "builds": [
     {
       "src": "web/package.json",
