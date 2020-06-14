@@ -49,9 +49,9 @@ Use vercel cli to upload environment variables as indicated in vercel.json.
 
 create a .env file in `web/` and add Sanity & Google analytics credentials.
 
-GATSBY_SANITY_PROJECT_ID=**insert credential here**
-GATSBY_SANITY_DATASET=**insert credential here**
-GATSBY_SANITY_READ_TOKEN=**insert credential here**
+SANITY_PROJECT_ID=**insert credential here**
+SANITY_DATASET=**insert credential here**
+SANITY_AUTH_TOKEN=**insert credential here**
 GOOGLE_ANALYTICS_TRACKING_ID=**insert credential here**
 
 ## Development
