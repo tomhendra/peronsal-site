@@ -28,7 +28,7 @@ export const Figure = ({ node }: FigureType): JSX.Element => {
         as="figcaption"
         css={(theme) => ({ marginTop: theme.spacings.charlie })}
       >
-        {node.caption}
+        <figcaption>{node.caption}</figcaption>
       </Text>
     </figure>
   );
