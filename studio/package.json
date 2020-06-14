@@ -8,7 +8,7 @@
   "version": "2.0.0",
   "scripts": {
     "start": "sanity start",
-    "build": "sanity graphql deploy --dataset production --no-playground && sanity build",
+    "build": "sanity graphql deploy --no-playground && sanity build",
     "test": "sanity check",
     "deploy:graphql": "sanity graphql deploy --dataset development --playground",
     "deploy:sanity": "sanity deploy",
