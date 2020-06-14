@@ -2,9 +2,9 @@
   "version": 2,
   "build": {
     "env": {
-      "GATSBY_SANITY_PROJECT_ID": "@sanity_project_id",
-      "GATSBY_SANITY_DATASET": "@sanity_project_dataset",
-      "GATSBY_SANITY_READ_TOKEN": "@sanity_read_token",
+      "SANITY_PROJECT_ID": "@sanity_project_id",
+      "SANITY_DATASET": "@sanity_project_dataset",
+      "SANITY_AUTH_TOKEN": "@sanity_auth_token",
       "GOOGLE_ANALYTICS_TRACKING_ID": "@google_analytics_tracking_id"
     }
   },
