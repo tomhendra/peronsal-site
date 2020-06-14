@@ -4,6 +4,13 @@
     "projectId": "xm39xo8g",
     "dataset": "production"
   },
+  "env": {
+    "development": {
+      "api": {
+        "dataset": "development"
+      }
+    }
+  },
   "project": {
     "name": "tomhendra.dev",
     "basePath": "/studio"
