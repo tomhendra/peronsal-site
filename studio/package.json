@@ -8,9 +8,10 @@
   "version": "2.0.0",
   "scripts": {
     "start": "sanity start",
-    "build": "sanity graphql deploy --no-playground && sanity build",
+    "build": "sanity build",
     "test": "sanity check",
-    "deploy:graphql": "sanity graphql deploy --dataset development --playground",
+    "deploy:graphql-dev": "sanity graphql deploy --dataset development --generation gen2 --playground",
+    "deploy:graphql-prod": "sanity graphql deploy --dataset production --generation gen2 --no-playground",
     "deploy:sanity": "sanity deploy",
     "init": "sanity init && yarn run deploy:graphql",
     "export": "rimraf export && sanity dataset export production export/production.tar.gz"
