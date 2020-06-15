@@ -2,7 +2,7 @@
 async function createBlogPostPages(graphql, actions, reporter) {
   const { createPage } = actions;
   const result = await graphql(`
-    query {
+    {
       allSanityPost {
         edges {
           node {
@@ -44,7 +44,7 @@ async function createBlogPostPages(graphql, actions, reporter) {
 async function createProjectPages(graphql, actions, reporter) {
   const { createPage } = actions;
   const result = await graphql(`
-    query {
+    {
       allSanityProject {
         edges {
           node {
