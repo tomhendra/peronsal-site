@@ -20,17 +20,15 @@
     "lint": "tsc --noEmit && eslint '{web,studio}/**/*.{js,ts,tsx}' --ignore-path .gitignore",
     "lint:fix": "yarn lint --fix",
     "test": "lerna run test",
-    "deploy:graphql-dev": "cd studio && yarn deploy:graphql-dev",
-    "deploy:graphql-prod": "cd studio && yarn deploy:graphql-prod",
-    "deploy:sanity": "cd studio && yarn deploy:sanity",
-    "export:sanity": "lerna run --scope studio export",
+    "deploy:graphql-dev": "lerna run --scope studio deploy:graphql-dev",
+    "deploy:graphql-prod": "lerna run --scope studio deploy:graphql-prod",
+    "deploy:sanity": "lerna run --scope studio deploy:sanity",
     "clean:cache": "lerna run --scope web clean",
     "clean:workspaces": "lerna clean",
-    "clean:root": "rm -rf node_modules",
+    "clean:root": "rimraf node_modules",
     "clean:all": "yarn clean:cache && yarn clean:workspaces && yarn clean:root",
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "postinstall": "yarn bootstrap",
-    "setup": "yarn install && yarn postinstall"
+    "setup": "yarn install && yarn bootstrap"
   },
   "devDependencies": {
     "@types/facepaint": "^1.2.1",
@@ -39,20 +37,21 @@
     "@types/react": "16.9.36",
     "@types/react-dom": "16.9.8",
     "@types/yup": "0.29.3",
-    "@typescript-eslint/eslint-plugin": "3.2.0",
-    "@typescript-eslint/parser": "3.2.0",
+    "@typescript-eslint/eslint-plugin": "3.3.0",
+    "@typescript-eslint/parser": "3.3.0",
     "eslint": "7.2.0",
     "eslint-config-airbnb": "18.1.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-import": "2.21.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-prettier": "3.1.3",
+    "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-react": "7.20.0",
     "eslint-plugin-react-hooks": "4.0.4",
     "husky": "4.2.5",
     "lerna": "3.22.1",
     "lint-staged": "10.2.10",
     "prettier": "2.0.5",
+    "rimraf": "3.0.2",
     "typescript": "3.9.5"
   },
   "husky": {
@@ -62,6 +61,5 @@
   },
   "lint-staged": {
     "{web,studio}/**/*.{js,ts,tsx}": "eslint --fix --quiet --ignore-path .gitignore"
-  },
-  "dependencies": {}
+  }
 }
