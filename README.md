@@ -4,9 +4,9 @@
 <p>A portfolio website and blog.</p>
 </div>
 
-## Features
-
 A Progressive Web App portfolio with CMS for writing blog posts and showcasing projects.
+
+## Tech stack
 
 - **Frontend:** Gatsby, TypeScript, Emotion.
 - **CMS:** Sanity studio.
