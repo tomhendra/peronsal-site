@@ -19,7 +19,7 @@
     "init": "sanity init && yarn deploy:graphql"
   },
   "dependencies": {
-    "@babel/core": "^7.10.2",
+    "@babel/core": "^7.10.3",
     "@emotion/core": "10.0.28",
     "@sanity/base": "^1.149.16",
     "@sanity/cli": "^1.149.16",
