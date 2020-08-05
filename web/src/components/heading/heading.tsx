@@ -1,7 +1,13 @@
 /** @jsx jsx */
-import { jsx, Theme } from '@emotion/react';
+import { jsx, Interpolation } from '@emotion/react';
 
-import { Variants, Children, HeadingSizes, Spacings } from '../../utils/types';
+import {
+  Variants,
+  Children,
+  HeadingSizes,
+  Spacings,
+  Theme,
+} from '../../utils/types';
 
 import {
   getSpacingValues,
@@ -10,6 +16,8 @@ import {
 } from '../../utils/style-helpers';
 
 type Props = {
+  css?: Interpolation<Theme>; // fix for bug when reusing component & applying extra styles with css prop.
+
   as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   variant: Variants;
   noSpacingBottom?: boolean;

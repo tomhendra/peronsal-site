@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/react';
+import { jsx, Interpolation } from '@emotion/react';
 
 import { capitalize } from '../../utils/helpers';
 
@@ -8,9 +8,11 @@ import {
   Positions,
   Alignments,
   Children,
+  Theme,
 } from '../../utils/types';
 
 type Props = {
+  css?: Interpolation<Theme>; // fix for bug when reusing component & applying extra styles with css prop.
   variant: FeedbackVariants;
   position: Positions;
   align: Alignments;

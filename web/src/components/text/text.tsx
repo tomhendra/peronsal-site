@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Theme } from '@emotion/react';
+import { jsx, Interpolation } from '@emotion/react';
 
 import {
   getSpacingValues,
@@ -7,9 +7,16 @@ import {
   withMediaQueries,
 } from '../../utils/style-helpers';
 
-import { Variants, Children, TextSizes, Spacings } from '../../utils/types';
+import {
+  Variants,
+  Children,
+  TextSizes,
+  Spacings,
+  Theme,
+} from '../../utils/types';
 
 type Props = {
+  css?: Interpolation<Theme>; // fix for bug when reusing component & applying extra styles with css prop.
   as?: 'p' | 'li' | 'article' | 'blockquote' | 'figcaption' | 'label';
   variant: Variants;
   noSpacingBottom?: boolean;

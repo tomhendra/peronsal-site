@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/react';
+import { jsx, Interpolation } from '@emotion/react';
 
 import {
   Variants,
@@ -10,6 +10,7 @@ import {
   AlignItems,
   AlignContent,
   Children,
+  Theme,
 } from '../../utils/types';
 
 import {
@@ -28,6 +29,7 @@ import {
 } from '../../utils/style-helpers';
 
 type Props = {
+  css?: Interpolation<Theme>; // fix for bug when reusing component & applying extra styles with css prop.
   variant?: Variants;
   accent?: 'brand' | 'accentAlpha' | 'accentBravo' | 'accentCharlie';
   shadow?: Shadows;
