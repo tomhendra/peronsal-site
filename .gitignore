@@ -32,6 +32,6 @@ dist/
 .vercel
 
 # custom
-legacy/
+backup/
 next-with-stitches/
 sanity-next-blog/
