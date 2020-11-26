@@ -1,6 +1,7 @@
 {
-  "packages": ["studio", "web"],
-  "npmClient": "yarn",
-  "useWorkspaces": true,
-  "version": "2.0.0"
+    "packages": [
+      "studio"
+    ],
+    "version": "0.0.1",
+    "npmClient": "yarn"
 }

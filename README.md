@@ -1,101 +1,48 @@
-<div align=center>
-<img alt="Tom Hendra Logo" src="https://res.cloudinary.com/tomhendra/image/upload/v1567091669/tomhendra-logo/tomhendra-logo-round-1024.png" width="100" />
-<h1>Portfolio</h1>
-<p>A portfolio website and blog.</p>
-</div>
 
-A Progressive Web App portfolio with CMS for writing blog posts and showcasing projects.
+# A Fresh Start with Next.JS + Stitches + Sanity.io.
 
-## Tech stack
+Moving away from Gatsby & Emotion, because Next.js & Stitches are evolved tools.
 
-- **Frontend:** Gatsby, TypeScript, Emotion.
-- **CMS:** Sanity studio.
-- **Repo:** Lerna, Yarn workspaces.
-- **Deployment:** Vercel.
-- **Analytics:** Google analytics.
+```bash
+# Run the frontend
+yarn run dev
 
-## Installation
-
-```sh
-# Install Yarn globally if required
-$ brew install yarn
-
-# Clone the repo and run setup.
-$ git clone git@github.com:tomhendra/portfolio
-$ cd portfolio
-$ yarn setup
-
-# Install Sanity command line tools globally if required
-$ npm i -g @sanity/cli
-
-# Install Vercel command line tools globally if required
-$ npm i -g vercel
+# Run the Studio
+yarn run start:sanity
 ```
 
-## Setup
+The blog will be running at `http://localhost:3000`, the Studio will run at `http://localhost:3333`.
 
-Head to [https://manage.sanity.io](https://manage.sanity.io) and create a new project.
+# Done So Far
 
-Create two datasets: 'production' & 'development'. Copy the project ID.
+- The starter is Sanity official: [Next.js blog with comment section](https://github.com/sanity-io/sanity-template-nextjs-blog-comments/tree/1cc803b66b55921c109bc16fda7d150a9e92323f).
+- Replace Tailwind CSS in favour of Stitches using the official Vercel example: [Stitches Example](https://github.com/vercel/next.js/tree/canary/examples/with-stitches).
 
-In Sanity dashboard settings > API add http://localhost:3333 & custom domain to CORS origins.
+# Done
 
-Setup of a new Sanity project can also be done with the cli if preferred:
+- Populated all required credentials on Vercel & Sanity.io. 
+- Studio initialized and new `development` dataset created.
+- Populated dataset with two blog posts copied from live site. 
+- Removed Tailwind packages, added Stitches & Typescript packages / init for Next.js. 
+- Changed all file extensions to .tsx. 
 
-```sh
-$ cd studio && sanity init
-```
+# TODO
 
-Use Vercel cli to upload environment variables following the terminal prompts choosing development, preview & production environments for `SANITY_PROJECT_ID` & production only for `GOOGLE_ANALYTICS_TRACKING_ID`.
-
-```sh
-$ vercel env add
-# ... Follow prompt instructions
-```
-
-create an `.env` file in `web/` and add Sanity project ID & [Google analytics tracking ID](https://support.google.com/analytics/answer/1008080?hl=en).
-
-```sh
-SANITY_PROJECT_ID=
-GOOGLE_ANALYTICS_TRACKING_ID=
-```
-
-**Ensure `.env` is included in the `.gitignore` file.**
-
-## Development
-
-Deploy a GraphQL API for the development environment from the current Sanity schema. Any change to the schema will require this command to be run again.
-
-```sh
-$ yarn deploy:graphql-dev
-```
-
-Start the dev servers.
-
-```sh
-$ yarn start
-```
-
-- Gatsby is running at [http://localhost:8000](http://localhost:8000)
-- Sanity studio is running at [http://localhost:3333/studio](http://localhost:3333/studio)
-- GraphQL explorer is running at [http://localhost:8000/\_\_\_graphql](http://localhost:8000/___graphql)
-
-## Deployment
-
-Deploy a GraphQL API for production from the current Sanity schema. Any change to the schema will require this command to be run again.
-
-```sh
-$ yarn deploy:graphql-prod
-```
-
-Push to gitHub then head over to [vercel.com](https://vercel.com) and follow their instructions for setting up a project from GitHub.
-
-Assign a [custom domain](https://vercel.com/docs/v2/custom-domains) to the project.
-
-Each new push to GitHub will trigger a new build with both the front end and CMS deployed to Vercel, so sanity studio can be accessed at `http://domain.name/studio`. Pushes to branches will deploy a preview, and pushes to master & pull/merge requests will deploy to the production domain - [more info](https://vercel.com/docs/v2/git-integrations).
-
-## Configure Web hook
-
-On the [Vercel dashboard](https://vercel.com) in project settings > Git Integration create a Deploy Hook for the master branch. Copy the resulting URL and enter this on the Sanity dashboard settings > API > Add new webhook and choose the production dataset.
-
-Now each published content change in Sanity Studio will trigger a redeploy on Vercel.
+1. Sort out app structure once the Next.js docs have been read! 
+2. Get functional **ASAP!** - worry about prettifying later:
+  - Get rid of Tailwind utility classnames.
+  - Basic layout with Stitches.
+  - Fetch data from Sanity & blog post routes.
+3. Config prettier & eslint.
+4. Config husky & lint-staged.
+5. Config Jest & Testing Library.
+6. Write useful npm scripts. 
+7. Work out Sanity commenting system with [this post](https://css-tricks.com/how-to-create-a-commenting-engine-with-next-js-and-sanity/) and Sanity docs.
+8. New **simple** design.
+9.  Test Framer Motion with Stitches.
+10. Style properly with Stitches. 
+11. Save a copy in GitHub boilerplates.
+12. Add pages & dev further...
+13. Delete old & create new production dataset as a copy of development **before** merging next to main.
+14. Delete Vercel project and start afresh (Add size env variables during deployment).
+15. Add custom domain in Vercel dashboard.

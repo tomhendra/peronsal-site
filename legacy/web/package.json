@@ -1,0 +1,64 @@
+{
+  "private": true,
+  "name": "web",
+  "description": "Gatsby frontend for Tom Hendra portfolio website.",
+  "license": "MIT",
+  "author": "Tom Hendra <hola@tomhendra.dev>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomhendra/portfolio"
+  },
+  "version": "4.0.0",
+  "scripts": {
+    "develop": "yarn clean && GATSBY_GRAPHQL_IDE=playground gatsby develop --open",
+    "start": "run-p start:**",
+    "start:app": "yarn develop",
+    "build": "run-p build:**",
+    "build:app": "gatsby build",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "clean": "gatsby clean",
+    "serve": "gatsby serve",
+    "info": "gatsby info --clipboard"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@emotion/react": "^11.0.0-rc.0",
+    "@emotion/styled": "11.0.0-next.12",
+    "@sanity/block-content-to-react": "^2.0.7",
+    "axios": "^0.20.0",
+    "date-fns": "^2.16.1",
+    "dotenv": "^8.2.0",
+    "facepaint": "^1.2.1",
+    "formik": "^2.2.0",
+    "gatsby": "^2.24.80",
+    "gatsby-cli": "2.12.109",
+    "gatsby-image": "^2.4.21",
+    "gatsby-plugin-gtag": "^1.0.13",
+    "gatsby-plugin-manifest": "^2.4.35",
+    "gatsby-plugin-offline": "^3.2.33",
+    "gatsby-plugin-react-helmet": "^3.3.14",
+    "gatsby-plugin-sharp": "^2.6.42",
+    "gatsby-plugin-typescript": "^2.4.22",
+    "gatsby-source-filesystem": "^2.3.35",
+    "gatsby-source-sanity": "^6.0.4",
+    "gatsby-transformer-sharp": "^2.5.18",
+    "polished": "^4.0.3",
+    "prism-react-renderer": "^1.1.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-feather": "^2.0.8",
+    "react-helmet": "^6.1.0",
+    "react-intersection-observer": "^8.29.0",
+    "typeface-fira-code": "^1.1.13",
+    "typeface-fira-sans-extra-condensed": "^1.1.13",
+    "typeface-inconsolata": "^1.1.13",
+    "yup": "^0.29.3"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "keywords": [
+    "tom hendra"
+  ]
+}

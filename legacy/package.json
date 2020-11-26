@@ -1,0 +1,66 @@
+{
+  "name": "tomhendra-portfolio",
+  "version": "4.0.0",
+  "private": true,
+  "description": "Portfolio website for Tom Hendra, Software Developer",
+  "author": "Tom Hendra <hola@tomhendra.dev>",
+  "keywords": [
+    "tom hendra"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/tomhendra/portfolio",
+  "workspaces": [
+    "web",
+    "studio"
+  ],
+  "scripts": {
+    "start": "lerna run start --parallel",
+    "build": "lerna run build --parallel",
+    "format": "lerna run format --parallel",
+    "lint": "tsc --noEmit && eslint '{web,studio}/**/*.{js,ts,tsx}' --ignore-path .gitignore",
+    "lint:fix": "yarn lint --fix",
+    "test": "lerna run test",
+    "deploy:graphql-dev": "lerna run --scope studio deploy:graphql-dev",
+    "deploy:graphql-prod": "lerna run --scope studio deploy:graphql-prod",
+    "deploy:sanity": "lerna run --scope studio deploy:sanity",
+    "clean:cache": "lerna run --scope web clean",
+    "clean:workspaces": "lerna clean",
+    "clean:root": "rimraf node_modules",
+    "clean:lockfile": "rimraf yarn.lock",
+    "clean:all": "yarn clean:cache && yarn clean:workspaces && yarn clean:root && yarn clean:lockfile",
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "setup": "yarn install && yarn bootstrap"
+  },
+  "devDependencies": {
+    "@types/facepaint": "^1.2.1",
+    "@types/node": "14.11.10",
+    "@types/react": "16.9.53",
+    "@types/react-dom": "16.9.8",
+    "@types/react-helmet": "^6.1.0",
+    "@types/yup": "0.29.8",
+    "@typescript-eslint/eslint-plugin": "4.4.1",
+    "@typescript-eslint/parser": "4.4.1",
+    "eslint": "7.11.0",
+    "eslint-config-airbnb": "18.2.0",
+    "eslint-config-prettier": "6.13.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.3.1",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "7.21.4",
+    "eslint-plugin-react-hooks": "4.1.2",
+    "husky": "4.3.0",
+    "lerna": "3.22.1",
+    "lint-staged": "10.4.2",
+    "prettier": "2.1.2",
+    "rimraf": "3.0.2",
+    "typescript": "4.0.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsc --noEmit && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{web,studio}/**/*.{js,ts,tsx}": "eslint --fix --quiet --ignore-path .gitignore"
+  }
+}
