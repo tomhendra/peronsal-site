@@ -30,8 +30,3 @@ public/
 dist/
 
 .vercel
-
-# custom
-backup/
-next-with-stitches/
-sanity-next-blog/
