@@ -1,48 +1,50 @@
 
-# A Fresh Start with Next.JS + Stitches + Sanity.io.
+# A Fresh Start with Next.JS + Stitches + Forestry.io || Tina
 
-Moving away from Gatsby & Emotion, because Next.js & Stitches are evolved tools.
+**Frontend**: Moving away from Gatsby & Emotion, because Next.js & Stitches are more evolved tools.
+**CMS**: Moving away from Sanity.io to Forestry because Sanity was overkill for this project. The monorepo / API route requires more dev & maintenance, is less lightweight & less dev-friendly than Git / markdown. Plus Tina looks like fun to play with! 🙂
 
-```bash
-# Run the frontend
-yarn run dev
+Starters used for kicking things off:
 
-# Run the Studio
-yarn run start:sanity
-```
+- Next JS blog starter with TS from [Vercel](https://github.com/vercel/next.js/tree/canary/examples/blog-starter-typescript).
+- Next JS blog starter with Stitches from [Vercel](https://github.com/vercel/next.js/tree/canary/examples/with-stitches).
+- Next JS blog starter from Vercel adapted by [Forestry](https://github.com/forestryio/next-blog-forestry).
 
-The blog will be running at `http://localhost:3000`, the Studio will run at `http://localhost:3333`.
+The following examples are being used on recommendation by the Stitches docs: "to find inspiration, ideas and design patterns on how to use Stitches in a real-world application".
 
-# Done So Far
+- Design System from [Modulz](https://github.com/modulz/design-system/).
+- Stitches site from [Modulz](https://github.com/modulz/stitches-site).
 
-- The starter is Sanity official: [Next.js blog with comment section](https://github.com/sanity-io/sanity-template-nextjs-blog-comments/tree/1cc803b66b55921c109bc16fda7d150a9e92323f).
-- Replace Tailwind CSS in favour of Stitches using the official Vercel example: [Stitches Example](https://github.com/vercel/next.js/tree/canary/examples/with-stitches).
+## Done
 
-# Done
+- Created new branch `legacy` as a backup of `main`.
+- Created new branch `next`.
+- Deleted old Vercel deployments from GitHub repo.
+- Deleted old Vercel project and created a fresh one.
+- Copied blog posts from Sanity to markdown.
 
-- Populated all required credentials on Vercel & Sanity.io. 
-- Studio initialized and new `development` dataset created.
-- Populated dataset with two blog posts copied from live site. 
-- Removed Tailwind packages, added Stitches & Typescript packages / init for Next.js. 
-- Changed all file extensions to .tsx. 
+# TODO Dev
 
-# TODO
+1. Read the Next.js & Stitches docs!
+2. Replace Tailwind utility classnames with Stitches components.
+3. Run dev server to test functionality!
+4. Darkmode (priority because of FOUC issue with Stitches).
+5. Test Framer Motion with Stitches.
+6. Config prettier, eslint, husky & lint-staged.
+7. Config Jest & Testing Library.
+8. Write npm scripts. 
+9. New **simple** design.
+10. Styles with Stitches.
+11. Animations with Framer Motion. 
+12. Save as a starter template in GitHub boilerplates.
+13. Dev further... projects, pages etc.
 
-1. Sort out app structure once the Next.js docs have been read! 
-2. Get functional **ASAP!** - worry about prettifying later:
-  - Get rid of Tailwind utility classnames.
-  - Basic layout with Stitches.
-  - Fetch data from Sanity & blog post routes.
-3. Config prettier & eslint.
-4. Config husky & lint-staged.
-5. Config Jest & Testing Library.
-6. Write useful npm scripts. 
-7. Work out Sanity commenting system with [this post](https://css-tricks.com/how-to-create-a-commenting-engine-with-next-js-and-sanity/) and Sanity docs.
-8. New **simple** design.
-9.  Test Framer Motion with Stitches.
-10. Style properly with Stitches. 
-11. Save a copy in GitHub boilerplates.
-12. Add pages & dev further...
-13. Delete old & create new production dataset as a copy of development **before** merging next to main.
-14. Delete Vercel project and start afresh (Add size env variables during deployment).
-15. Add custom domain in Vercel dashboard.
+## TODO Production
+
+1. Push `next` branch to GitHub (trigger Preview deployment).
+2. Delete legacy directory.
+3. Change Vercel Build & Development Settings from Other to Next.js.
+4. Remove unused Sanity env variables in Vercel dashboard.
+5. Merge next branch into main (trigger Production deployment).
+6. Delete Sanity project.
+7. Look into Forestry / Tina (with MDX?).
