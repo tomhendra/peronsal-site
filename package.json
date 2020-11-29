@@ -1,27 +1,49 @@
 {
   "name": "personal-site",
-  "version": "2.0.0-alpha",
+  "version": "2.0.0-alpha.0",
+  "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "rm -rf .next/cache && next dev",
+    "dev:watch": "rm -rf .next/cache && next-remote-watch ./posts",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc"
+    "export": "next export",
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    "lint": "eslint --ext ts --ext tsx --fix"
   },
   "dependencies": {
     "date-fns": "2.16.1",
-    "gray-matter": "4.0.2",
-    "next": "latest",
-    "ramda": "^0.27.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "remark": "13.0.0",
-    "remark-html": "13.0.1",
-    "typescript": "^4.1.2"
+    "gray-matter": "^4.0.2",
+    "next": "10.0.3",
+    "next-mdx-remote": "^1.0.0",
+    "next-remote-watch": "^0.2.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "theme-ui": "0.3.4",
+    "typeface-source-sans-pro": "1.1.13",
+    "ramda": "^0.27.1"
   },
   "devDependencies": {
-    "@types/react": "^17.0.0",
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.10",
-    "@types/react-dom": "^17.0.0"
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.2",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
