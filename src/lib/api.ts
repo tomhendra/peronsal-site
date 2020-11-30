@@ -29,7 +29,6 @@ export function getPostBySlug(slug: string): BasicPost {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   const { data, content } = matter(fileContents);
-  console.log(data);
 
   const { title, date, description } = data;
 

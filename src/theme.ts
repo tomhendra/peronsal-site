@@ -1,13 +1,13 @@
 import { Theme } from 'theme-ui';
-import 'typeface-source-sans-pro';
+import 'fontsource-inter';
 
 const theme: Theme = {
   useColorSchemeMediaQuery: true,
   fonts: {
     body:
-      '"source sans pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial',
+      'inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial',
     heading:
-      '"source sans pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial',
+      'inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial',
     monospace: `Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
   },
   colors: {

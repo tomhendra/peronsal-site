@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui';
+/** @jsxImportSource theme-ui */
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { ThemeUICSSObject } from 'theme-ui';
@@ -14,7 +13,12 @@ export interface NavLinkProps {
   activeSx?: ThemeUICSSObject;
 }
 
-export function NavLink({ href, children, linkSx, activeSx }: NavLinkProps) {
+export function NavLink({
+  href,
+  children,
+  linkSx,
+  activeSx,
+}: NavLinkProps): JSX.Element {
   const { asPath } = useRouter();
 
   const addedSx = asPath === href ? activeSx : {};

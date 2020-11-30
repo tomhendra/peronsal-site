@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui';
+/** @jsxImportSource theme-ui */
 import { useColorMode } from 'theme-ui';
 import { CMS_NAME } from '../pages';
 import { NavLink } from './NavLink';

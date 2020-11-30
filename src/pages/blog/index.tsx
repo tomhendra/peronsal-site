@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Styled } from 'theme-ui';
+/** @jsxImportSource theme-ui */
+import { Styled } from 'theme-ui';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Layout } from '../../components/Layout';

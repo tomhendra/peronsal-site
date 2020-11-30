@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Styled } from 'theme-ui';
+/** @jsxImportSource theme-ui */
+import { Styled } from 'theme-ui';
 import { Layout } from '../components/Layout';
 import Head from 'next/head';
 
@@ -19,11 +19,11 @@ export default function Index() {
             mt: 7,
           }}
         >
-          <Styled.h1 sx={{ fontSize: 6, mb: 4 }}>
-            This is my cool website.
+          <Styled.h1 sx={{ fontSize: 16, mb: 4 }}>
+            This is my amazing website.
           </Styled.h1>
           <Styled.p sx={{ fontSize: 3 }}>
-            My cool website has a dark mode and a blog and uses Nextjs.
+            My website has a dark mode and a blog and uses Nextjs. Boom!
           </Styled.p>
         </div>
       </Layout>

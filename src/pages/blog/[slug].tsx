@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Styled } from 'theme-ui';
+/** @jsxImportSource theme-ui */
+import { Styled } from 'theme-ui';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';

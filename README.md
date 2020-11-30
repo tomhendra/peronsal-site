@@ -5,11 +5,11 @@
 
 **References**:
 
-- Next JS blog starter with TS from [Vercel](https://github.com/vercel/next.js/tree/canary/examples/blog-starter-typescript).
 - Next JS MDX Remote Example from [Vercel](https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote).
+- Next JS blog starter with TS from [Vercel](https://github.com/vercel/next.js/tree/canary/examples/blog-starter-typescript).
 - Next JS blog starter with Theme UI from [Cadell Christo](https://github.com/cadbox1/cadell-nextjs-blog-starter).
-- Next JS Theme UI boilerplate from [Frédérick Morin](https://github.com/freddydumont/theme-ui-next-boilerplate).
 - TypeScript, ESLint and Prettier config from [Paulin Trognon](https://paulintrognon.fr/blog/typescript-prettier-eslint-next-js).
+- Jest & Testing Library config from [Frédérick Morin](https://github.com/freddydumont/theme-ui-next-boilerplate).
 
 ## Done
 
@@ -20,18 +20,18 @@
 - Copied blog posts from Sanity to markdown.
 - Config prettier, eslint, husky & lint-staged.
 - Write npm scripts.
-- Get Theme UI working.
-- Get blog working with MDX files.
+- Get Theme UI working with `next-mdx-remote`.
+- Get Theme UI working with `next-mdx-remote` + React 17.0.1.
 
 # TODO Dev
 
-1. Read the Next.js & Theme UI docs!
-2. Understand data flow & write proper types.
-3. Refactor `api.ts` (Ramda utils?).
-4. Work out React 17 support for Theme UI (see notes) - currently on 16.13.1 as last known working version.
+1. Read the Next.js & Theme UI docs thoroughly!
+2. Understand data flow.
+3. Write proper types.
+4. Refactor `api.ts` (Ramda utils).
 5. Config Jest & Testing Library ref. [Frédérick Morin](https://github.com/freddydumont/theme-ui-next-boilerplate).
 6. New **simple** design.
-7. Components with Theme UI
+7. TDD components with Theme UI.
 8. Animations with Framer Motion.
 9. Save as a starter template in GitHub boilerplates.
 10. Dev further... projects, pages etc.
