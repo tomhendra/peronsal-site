@@ -5,9 +5,8 @@
 
 **References**:
 
-- Next JS MDX Remote Example from [Vercel](https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote).
+- MDNEXT starter from [Domitrius Clark](https://github.com/domitriusclark/mdnext).
 - Next JS blog starter with TS from [Vercel](https://github.com/vercel/next.js/tree/canary/examples/blog-starter-typescript).
-- Next JS blog starter with Theme UI from [Cadell Christo](https://github.com/cadbox1/cadell-nextjs-blog-starter).
 - TypeScript, ESLint and Prettier config from [Paulin Trognon](https://paulintrognon.fr/blog/typescript-prettier-eslint-next-js).
 - Jest & Testing Library config from [Frédérick Morin](https://github.com/freddydumont/theme-ui-next-boilerplate).
 
