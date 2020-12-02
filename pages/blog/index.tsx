@@ -2,7 +2,7 @@ import { Box, Stack } from '@chakra-ui/core';
 
 import { BLOG_CONTENT_PATH } from '@config/constants';
 import { getMdxContent } from '@utils/get-mdx-content';
-import ContentBox from '@components/ContentBox';
+import ContentBox from '@components/todo/ContentBox';
 import Search from '@components/Search';
 import { Layout } from '@components/Layout';
 

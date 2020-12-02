@@ -30,7 +30,7 @@ export async function getMdxContent(source) {
         data,
         mdx,
       };
-    }),
+    })
   );
   return content;
 }

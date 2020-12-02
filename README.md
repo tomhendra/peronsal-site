@@ -21,17 +21,18 @@
 - Hacked apart more advanced MDNEXT Reflex.js example to understand data + ideas & inspiration.
 - Installed fresh copy of MDNEXT blog starter.
 - Configured environment + TypeScript.
+- Refactor app, document & index pages to TypeScript.
 
 ## TODO Dev
 
-1. Define TypeScript interfaces for data.
-2. Refactor pages to TypeScript.
-3. Read the Next.js docs thoroughly!
-4. Config Jest & Testing Library.
-5. Consider upgrade to React 17: check Theme UI support [progress](https://github.com/system-ui/theme-ui/issues/1239).
-6. New **simple** design.
-7. Read the Theme UI docs thoroughly!
-8. Refactor components to Theme UI + TypeScript.
+1. Read the Next.js docs thoroughly!
+2. Read the Theme UI docs thoroughly!
+3. Refactor components to TypeScript + Theme UI.
+4. Refactor blog index & [...slug] pages to TypeScript.
+5. Define TypeScript interfaces for data.
+6. Consider upgrade to React 17: check Theme UI support [progress](https://github.com/system-ui/theme-ui/issues/1239).
+7. Config Jest & Testing Library.
+8. New **simple** design.
 9. Animations with Framer Motion.
 10. Refactor utils using Ramda & FP principles.
 11. Save as a starter template in GitHub boilerplates.
@@ -59,5 +60,5 @@
 
 Options:
 
-1. Stick with React v16.13.1. & Wait for Theme UI v0.5.0. ☑️
-1. Upgrade to React v17.0.1 & Use Theme UI 0.5.0-alpha.2.
+1. Stick with React v16.13.1. & Wait for Theme UI v0.5.0.
+1. Upgrade to React v17.0.1 & Use Theme UI 0.5.0-alpha.2. ☑️
