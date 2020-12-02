@@ -19,22 +19,23 @@
 - Tested config for prettier, eslint, husky & lint-staged for TS environment.
 - Tested POC of Theme UI + Framer Motion + next-mdx-remote + React 17.0.1.
 - Hacked apart more advanced MDNEXT Reflex.js example to understand data + ideas & inspiration.
+- Installed fresh copy of MDNEXT blog starter.
+- Configured environment + TypeScript.
 
 ## TODO Dev
 
-1. Read the Next.js docs thoroughly!
-2. Config TypeScript environment.
-3. Write types & interfaces.
-4. Refactor utils using Ramda & FP principles.
-5. Config Jest & Testing Library.
-6. Consider upgrade to React 17: check Theme UI support [progress](https://github.com/system-ui/theme-ui/issues/1239).
-7. Convert MDNEXT Starter Blog from Chakra UI to Theme UI.
-8. New **simple** design.
-9. Read the Theme UI docs thoroughly!
-10. TDD components with Theme UI.
-11. Animations with Framer Motion.
-12. Save as a starter template in GitHub boilerplates.
-13. Dev further... projects, pages etc.
+1. Define TypeScript interfaces for data.
+2. Refactor pages to TypeScript.
+3. Read the Next.js docs thoroughly!
+4. Config Jest & Testing Library.
+5. Consider upgrade to React 17: check Theme UI support [progress](https://github.com/system-ui/theme-ui/issues/1239).
+6. New **simple** design.
+7. Read the Theme UI docs thoroughly!
+8. Refactor components to Theme UI + TypeScript.
+9. Animations with Framer Motion.
+10. Refactor utils using Ramda & FP principles.
+11. Save as a starter template in GitHub boilerplates.
+12. Dev further... projects, pages etc.
 
 ## TODO Pre-Production
 

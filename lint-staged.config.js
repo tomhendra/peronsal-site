@@ -4,11 +4,11 @@ module.exports = {
   // Run ESLint on changes to JavaScript/TypeScript files
   '**/*.(ts|js)?(x)': (filenames) => `yarn lint ${filenames.join(' ')}`,
   // Run prettier on config files
-  '*.(js|json|md)': () => 'prettier --write',
+  '*/.(js|json|md)': () => 'prettier --write',
   // Run prettier on pages
-  'pages/**/*.(ts|js)?(x)': () => 'prettier --write',
+  '/pages/**/*.(ts|js)?(x)': () => 'prettier --write',
   // Run prettier on src
-  'src/**/*.(ts|js)?(x)': () => 'prettier --write',
+  '/src/**/*.(ts|js)?(x)': () => 'prettier --write',
   // Run prettier on content
-  'content/**/*.md?(x)': () => 'prettier --write',
+  '/content/**/*.md?(x)': () => 'prettier --write',
 };
