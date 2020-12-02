@@ -7,10 +7,7 @@ export function sortMdxContent(
 ): Array<MdxBlogPost | MdxProject> {
   const contentToSort = content;
 
-  const sortByPropertyCaseInsensitive = R.sortBy(
-    R.compose(R.toLower, R.prop(prop))
-  );
+  const sortByProperty = R.sortBy(R.prop(prop));
 
-  const sortedContent = sortByPropertyCaseInsensitive(contentToSort);
-  return sortedContent;
+  return sortByProperty(contentToSort);
 }

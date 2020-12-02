@@ -1,14 +1,14 @@
 import { Layout, BlogPage } from '@components';
 import { getMdxPaths, getMdxContent } from '@utils';
 import config from '@config';
-import { BlogPost } from 'types';
+import { MdxBlogPost } from 'types';
 import { NextSeo } from 'next-seo';
 
-export interface BlogsPageProps {
-  blog: BlogPost;
+export interface BlogPostPageProps {
+  blog: MdxBlogPost;
 }
 
-export default function BlogPostPage({ blog }: BlogsPageProps) {
+export default function BlogPostPage({ blog }: BlogPostPageProps) {
   return (
     <Layout>
       <NextSeo

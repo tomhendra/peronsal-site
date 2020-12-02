@@ -1,8 +1,8 @@
 /** @jsxImportSource theme-ui */
-import { BlogPost } from 'types';
+import { MdxBlogPost } from 'types';
 
 export interface BlogMetaProps {
-  blog: BlogPost;
+  blog: MdxBlogPost;
 }
 
 export function BlogMeta({ blog, ...props }: BlogMetaProps) {

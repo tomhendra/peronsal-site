@@ -1,10 +1,10 @@
 /** @jsxImportSource theme-ui */
 import Link from 'next/link';
-import { BlogPost } from 'types';
+import { MdxBlogPost } from 'types';
 import { BlogMeta } from '.';
 
 export interface BlogTeaserProps {
-  blog: BlogPost;
+  blog: MdxBlogPost;
 }
 
 export function BlogTeaser({ blog, ...props }: BlogTeaserProps) {

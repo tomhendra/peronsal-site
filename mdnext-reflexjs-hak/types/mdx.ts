@@ -19,6 +19,7 @@ export interface MdxBlogPost extends MdxContent {
     author: string;
     image: string;
     caption: string;
+    categories: string[];
   };
 }
 
@@ -29,9 +30,9 @@ export interface MdxProject extends MdxContent {
     excerpt: string;
     image: string;
     caption: string;
+    categories: string[];
     repo: string;
     live: string;
-    stack: string[];
   };
 }
 
