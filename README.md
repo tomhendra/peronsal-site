@@ -9,6 +9,8 @@
 - TypeScript, ESLint and Prettier config from [Paulin Trognon](https://paulintrognon.fr/blog/typescript-prettier-eslint-next-js).
 - Jest & Testing Library config from [Frédérick Morin](https://github.com/freddydumont/theme-ui-next-boilerplate).
 
+**TO KEEP AS LIGHTWEIGHT AS POSSIBLE FOR QUICK REFACTORS, WHILST LEARNING REACT PROPERLY & PRACTISING KENT C DODD'S TEACHINGS ON THIS PROJECT!**
+
 ## Done
 
 - Created new branch `legacy` as a backup of `main`.
@@ -17,26 +19,28 @@
 - Deleted old Vercel project and created a fresh one.
 - Copied blog posts from Sanity to MDX files.
 - Tested config for prettier, eslint, husky & lint-staged for TS environment.
-- Tested POC of Theme UI + Framer Motion + next-mdx-remote + React 17.0.1.
+- Tested POC: Theme UI + Framer Motion + next-mdx-remote + React 17.0.1.
 - Hacked apart more advanced MDNEXT Reflex.js example to understand data + ideas & inspiration.
 - Installed fresh copy of MDNEXT blog starter.
-- Configured environment + TypeScript.
-- Refactor app, document & index pages to TypeScript.
+- Configured environment with TypeScript, ESLine, Prettier, Husky & Lint-staged.
+- Rough refactor to TypeScript i.e. types & interfaces not done, just fixed enough errors to get things operational.
+- Rough refactor to Theme UI. Site operational without dev server error.
 
 ## TODO Dev
 
-1. Read the Next.js docs thoroughly!
-2. Read the Theme UI docs thoroughly!
-3. Refactor components to TypeScript + Theme UI.
-4. Refactor blog index & [...slug] pages to TypeScript.
-5. Define TypeScript interfaces for data.
-6. Consider upgrade to React 17: check Theme UI support [progress](https://github.com/system-ui/theme-ui/issues/1239).
+1. Rewrite logic for tags / tagList.
+2. Read the Next.js docs thoroughly!
+3. Read the Theme UI docs thoroughly!
+4. Read the Ramda docs thoroughly!
+5. Define TypeScript interfaces for data & fix errors.
+6. Define TypeScript interfaces & types for components & fix errors.
 7. Config Jest & Testing Library.
-8. New **simple** design.
-9. Animations with Framer Motion.
-10. Refactor utils using Ramda & FP principles.
-11. Save as a starter template in GitHub boilerplates.
-12. Dev further... projects, pages etc.
+8. Refactor utils using Ramda & FP principles.
+9. New **simple** design.
+10. Animations with Framer Motion.
+11. Dev further... projects, pages, refactor etc.
+12. Think about reusability and refactor accordingly.
+13. Save as a starter template in GitHub boilerplates.
 
 ## TODO Pre-Production
 
@@ -60,5 +64,10 @@
 
 Options:
 
-1. Stick with React v16.13.1. & Wait for Theme UI v0.5.0.
-1. Upgrade to React v17.0.1 & Use Theme UI 0.5.0-alpha.2. ☑️
+1. Stick with React v16.13.1. & wait for Theme UI v0.5.0.
+2. Upgrade to React v17.0.1 & use Theme UI 0.5.0-alpha.1. ☑️
+
+Notes:
+
+sx prop usage still throws TS error with 0.5.0-alpha.1:
+`Property 'sx' does not exist on type 'IntrinsicAttributes &...`

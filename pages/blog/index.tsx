@@ -1,32 +1,32 @@
-import { Box, Stack } from '@chakra-ui/core';
-
-import { BLOG_CONTENT_PATH } from '@config/constants';
-import { getMdxContent } from '@utils/get-mdx-content';
-import ContentBox from '@components/todo/ContentBox';
-import Search from '@components/Search';
-import { Layout } from '@components/Layout';
+/** @jsxImportSource theme-ui */
+import { Flex } from 'theme-ui';
+import { useState } from 'react';
+import { BLOG_CONTENT_PATH } from '@config';
+import { getMdxContent } from '@utils';
+import { BlogPostPreview, Layout, SEO, Search } from '@components';
 
 export default function BlogPage({ allMdx }) {
-  const [filteredBlogs, setFilteredBlogs] = React.useState(allMdx);
+  const [filteredBlogs, setFilteredBlogs] = useState(allMdx);
 
   const handleFilter = (data) => {
     setFilteredBlogs(data);
   };
 
   return (
-    <Layout>
-      <Box pb={3}>
-        {/* Content Area + Input + Tag filter */}
-        <Stack spacing={[4, 8, 12]} justify="center" alignItems="center">
-          <Search blogs={allMdx} handleFilter={handleFilter} />
-          <Stack spacing={[2, 6, 12]}>
-            {filteredBlogs?.map((blog) => (
-              <ContentBox key={blog.slug} blog={blog} />
-            ))}
-          </Stack>
-        </Stack>
-      </Box>
-    </Layout>
+    <>
+      <SEO
+        title="Blog"
+        description="Tom Hendra's blog about all things tech and food."
+      />
+      <Layout>
+        <Search blogs={allMdx} handleFilter={handleFilter} />
+        <Flex sx={{ flexDirection: 'column' }}>
+          {filteredBlogs?.map((blog) => (
+            <BlogPostPreview key={blog.slug} blog={blog} />
+          ))}
+        </Flex>
+      </Layout>
+    </>
   );
 }
 

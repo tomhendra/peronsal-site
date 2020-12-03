@@ -1,6 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { ThemeToggleButton } from '@components/ThemeToggleButton';
-import { NavbarLink } from '.';
+import { NavbarLink, ModeToggle } from '.';
 import { Box, Flex } from 'theme-ui';
 
 export function Navbar({ ...props }) {
@@ -22,7 +21,7 @@ export function Navbar({ ...props }) {
         >
           <NavbarLink href="/">Home</NavbarLink>
           <NavbarLink href="/blog">Blog</NavbarLink>
-          <ThemeToggleButton />
+          <ModeToggle />
         </Flex>
       </Flex>
     </Box>

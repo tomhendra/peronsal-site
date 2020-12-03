@@ -1,19 +1,18 @@
 import hydrate from 'next-mdx-remote/hydrate';
-
-import { BLOG_CONTENT_PATH } from '@config/constants';
-import { getMdxContent } from '@utils/get-mdx-content';
-import components from '@components/MDXComponents';
-import { Layout } from '@components/Layout';
+import { BLOG_CONTENT_PATH } from '@config';
+import { getMdxContent } from '@utils';
+import { Box, Text } from 'theme-ui';
+import { MdxComponents, Layout } from '@components';
 
 export default function BlogPost({ mdxSource, frontMatter }) {
-  const content = hydrate(mdxSource, { components });
+  const content = hydrate(mdxSource, { MdxComponents });
 
   return (
     <Layout>
-      <div>
-        <h1>{frontMatter.title}</h1>
+      <Box>
+        <Text as="h1">{frontMatter.title}</Text>
         {content}
-      </div>
+      </Box>
     </Layout>
   );
 }

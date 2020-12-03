@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { NavLink } from 'theme-ui';
 
 export interface NavbarLinkProps {
@@ -9,8 +9,8 @@ export interface NavbarLinkProps {
 
 export function NavbarLink({ href, children, ...props }: NavbarLinkProps) {
   return (
-    <Link href={href} passHref>
+    <NextLink href={href} passHref>
       <NavLink {...props}>{children}</NavLink>
-    </Link>
+    </NextLink>
   );
 }

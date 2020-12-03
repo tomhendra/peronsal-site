@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+/** @jsxImportSource theme-ui */
+import { useState, useEffect } from 'react';
 import Fuse from 'fuse.js';
+import { Flex, Input } from 'theme-ui';
 
-import { Flex, Stack, Input } from '@chakra-ui/core';
-
-import TagList from './TagList';
+// import { TagList } from '@components';
 
 const fuseOptions = {
   threshold: 0.35,
@@ -16,13 +16,13 @@ const fuseOptions = {
   keys: ['title', 'tags'],
 };
 
-export default function Search({ blogs, handleFilter }) {
+export function Search({ blogs, handleFilter }) {
   const [searchValue, setSearchValue] = useState('');
   const [searchTags, setSearchTags] = useState([]);
   const fuse = new Fuse(blogs, fuseOptions);
-  const tags = [...new Set(blogs.flatMap(({ tags }) => tags))];
+  // const tags = [...new Set(blogs.flatMap(({ tags }) => tags))];
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (searchValue === '' && searchTags.length === 0) {
       handleFilter(blogs);
     } else {
@@ -48,6 +48,7 @@ export default function Search({ blogs, handleFilter }) {
     setSearchValue(value);
   };
 
+  /*
   const onTagClick = (tag) => {
     if (searchTags.includes(tag)) {
       setSearchTags(searchTags.filter((included) => included != tag));
@@ -55,18 +56,24 @@ export default function Search({ blogs, handleFilter }) {
       setSearchTags([...searchTags, tag]);
     }
   };
-
+*/
   return (
-    <Stack
-      direction="column"
-      w={['100%', '75%', '50%']}
-      align="center"
-      spacing={[6, 8, 10]}
+    <Flex
+      sx={{
+        flexDirection: 'column',
+        width: ['100%', '75%', '50%'],
+        alignItems: 'center',
+        // spacing={[6, 8, 10]}
+      }}
     >
-      <Flex justify="space-around">
-        <TagList tags={tags} value={searchTags} onChange={setSearchTags} />
+      <Flex
+        sx={{
+          justifyContent: 'space-around',
+        }}
+      >
+        {/* <TagList tags={tags} value={searchTags} onChange={setSearchTags} /> */}
       </Flex>
       <Input value={searchValue} onChange={onChange} />
-    </Stack>
+    </Flex>
   );
 }

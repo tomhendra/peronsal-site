@@ -1,18 +1,22 @@
 /** @jsxImportSource theme-ui */
-import { NextSeo } from 'next-seo';
-import { Layout } from '@components/Layout';
+import { Layout, SEO } from '@components';
 import { Box, Text } from 'theme-ui';
 
 export default function Index() {
   return (
-    <Layout>
-      <NextSeo
+    <>
+      <SEO
         title="Tom Hendra"
         description="Software developer from the UK passionate about code and Spain."
       />
-      <Box>
-        <Text>Hello from Theme UI components!</Text>
-      </Box>
-    </Layout>
+      <Layout>
+        <Box>
+          <Text>
+            Hello from Theme UI components! If you see this message things are
+            working.
+          </Text>
+        </Box>
+      </Layout>
+    </>
   );
 }

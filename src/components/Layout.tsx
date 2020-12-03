@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 import { Container, Flex, Text } from 'theme-ui';
-import { Navbar } from '@components/Navbar';
+import { Navbar } from '@components';
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -9,7 +9,6 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   return (
     <>
-      {/* SEO component was removed from here... */}
       <Navbar as="header" />
       <Container as="main" p={6}>
         {children}
