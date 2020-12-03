@@ -19,7 +19,7 @@ import { Flex } from 'theme-ui';
 //   );
 // }
 
-export function TagList({ tags, value, onChange }) {
+export function TagCloud({ tags, value, onChange }) {
   // const { getCheckboxProps } = useCheckboxGroup({
   //   value,
   //   onChange,

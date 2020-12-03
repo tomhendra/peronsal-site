@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Fuse from 'fuse.js';
 import { Flex, Input } from 'theme-ui';
 
-// import { TagList } from '@components';
+// import { TagCloud } from '@components';
 
 const fuseOptions = {
   threshold: 0.35,
@@ -63,17 +63,16 @@ export function Search({ blogs, handleFilter }) {
         flexDirection: 'column',
         width: ['100%', '75%', '50%'],
         alignItems: 'center',
-        // spacing={[6, 8, 10]}
       }}
     >
+      <Input value={searchValue} onChange={onChange} />
       <Flex
         sx={{
           justifyContent: 'space-around',
         }}
       >
-        {/* <TagList tags={tags} value={searchTags} onChange={setSearchTags} /> */}
+        {/* <TagCloud tags={tags} value={searchTags} onChange={setSearchTags} /> */}
       </Flex>
-      <Input value={searchValue} onChange={onChange} />
     </Flex>
   );
 }

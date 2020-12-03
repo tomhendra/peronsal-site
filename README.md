@@ -13,51 +13,58 @@
 
 ## Done
 
-- Created new branch `legacy` as a backup of `main`.
-- Created new branch `next` to move forward with NextJS.
-- Deleted old Vercel deployments from GitHub repo.
-- Deleted old Vercel project and created a fresh one.
-- Copied blog posts from Sanity to MDX files.
-- Tested config for prettier, eslint, husky & lint-staged for TS environment.
-- Tested POC: Theme UI + Framer Motion + next-mdx-remote + React 17.0.1.
-- Hacked apart more advanced MDNEXT Reflex.js example to understand data + ideas & inspiration.
-- Installed fresh copy of MDNEXT blog starter.
-- Configured environment with TypeScript, ESLine, Prettier, Husky & Lint-staged.
-- Rough refactor to TypeScript i.e. types & interfaces not done, just fixed enough errors to get things operational.
-- Rough refactor to Theme UI. Site operational without dev server error.
+- DevOps: Created new branch `legacy` as a backup of `main`.
+- DevOps: Created new branch `next` to move forward with NextJS.
+- DevOps: Deleted old Vercel deployments from GitHub repo.
+- DevOps: Deleted old Vercel project and created a fresh one.
+- DevOps: Copied blog posts from Sanity to MDX files.
+- POC: Config for prettier, eslint, husky & lint-staged for TS environment.
+- POC: Theme UI + Framer Motion + next-mdx-remote + React 17.0.1.
+- Research: Hacked apart further developed MDNEXT Reflex.js starter to understand data + ideas & inspiration.
+- Init: Installed fresh copy of MDNEXT blog starter.
+- Config: TypeScript, ESLint, Prettier, Husky & Lint-staged.
+- Refactor: Dirty TypeScript: Types & interfaces not defined with lots of errors to fix.
+- Refactor: Dirty Theme UI: Chakra UI removed. site runs without dev server errors.
 
-## TODO Dev
+## TODO: Dev
 
-1. Rewrite logic for tags / tagList.
-2. Read the Next.js docs thoroughly!
-3. Read the Theme UI docs thoroughly!
-4. Read the Ramda docs thoroughly!
-5. Define TypeScript interfaces for data & fix errors.
-6. Define TypeScript interfaces & types for components & fix errors.
-7. Config Jest & Testing Library.
-8. Refactor utils using Ramda & FP principles.
-9. New **simple** design.
-10. Animations with Framer Motion.
-11. Dev further... projects, pages, refactor etc.
-12. Think about reusability and refactor accordingly.
-13. Save as a starter template in GitHub boilerplates.
+1. Research: Read the Next.js docs thoroughly!
+2. Config: Jest, Testing Library & Cypress.
+3. Testing: Write some tests!
+4. Types: Define interfaces for data & fix errors.
+5. Types: Define interfaces & types for components & fix errors.
+6. Feature: About page.
+7. Feature: Projects.
+8. Refactor: SearchBox.
+9. Refactor: TagCloud.
+10. Research: Read the Ramda docs thoroughly!
+11. Refactor: All - using Ramda & FP principles.
+12. Feature: CodeBlock with Prism + Copy to clipboard button.
+13. Research: Reread Refactoring UI.
+14. Design: New **simple** design in Figma.
+15. Research: Read the Theme UI docs thoroughly!
+16. Feature: Implement new design & mobile-first layout.
+17. Refactor?: Replace Theme UI components with own.
+18. Feature: Interactions with Framer Motion.
+19. Research: Think about reusability and refactor accordingly with config interface.
+20. DevOps: Save as a starter template in GitHub boilerplates.
 
-## TODO Pre-Production
+## TODO: Pre-Production
 
-1. Push `next` branch to GitHub (trigger Preview deployment).
-2. Delete legacy directory.
-3. Change Vercel Build & Development Settings from Other to Next.js.
-4. Remove unused Sanity env variables in Vercel dashboard.
-5. Merge next branch into main (trigger Production deployment).
+1. DevOps: Push `next` branch to GitHub (trigger Preview deployment).
+2. DevOps: Delete legacy directory.
+3. DevOps: Change Vercel Build & Development Settings from Other to Next.js.
+4. DevOps: Remove unused Sanity env variables in Vercel dashboard.
+5. DevOps: Merge next branch into main (trigger Production deployment).
 
-## TODO Post-Production
+## TODO: Post-Production
 
-1. Delete Sanity project.
-2. Look into Forestry / Tina / GraphCMS.
+1. DevOps: Delete Sanity project.
+2. Research: Look into Forestry / Tina / GraphCMS.
 
 ## Issues
 
-**Theme UI doesn't support automatic runtime in React 17 yet**
+### Theme UI doesn't support automatic runtime in React 17 yet:
 
 - [Issue #1160](https://github.com/system-ui/theme-ui/issues/1160#issuecomment-715530924).
 - [Issue #1239](https://github.com/system-ui/theme-ui/issues/1239).
