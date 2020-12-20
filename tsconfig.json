@@ -1,26 +1,29 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "target": "es5",
-    "module": "esnext",
-    "jsx": "preserve",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "noEmit": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "baseUrl": "./",
+    "strict": true, // embrace TS
+    "allowJs": true, // check JS files
+    "noEmit": true, // do not compile to JS (Next handles this via Babel)
+    "skipLibCheck": true, // node_modules not checked
+    "jsx": "preserve", // ?
+    "target": "ES2020", // ?
+    "forceConsistentCasingInFileNames": true, // ?
+    "lib": ["dom", "dom.iterable", "esnext"], // ?
+    "module": "ESNext", // ?
+    "moduleResolution": "node", // ?
+    "esModuleInterop": true, // ?
+    "resolveJsonModule": true, // ?
+    "isolatedModules": true, // ?
+    "baseUrl": "./", // required for path imports to work
     "paths": {
+      // make paths available for imports e.g. import { fn } from 'utils' rather than '../../..utils'
+      "@test/*": ["test/*"], // cannot export * from test/index.ts as utils exposes render from @testing-library/react + our custom render.
       "@components": ["src/components"],
-      "@config": ["src/config"],
-      "@utils": ["src/utils"],
-      "@types": ["src/types"]
+      "@models": ["src/core/models"],
+      "@theme": ["src/core/theme"],
+      "@utils": ["src/core/utils"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "legacy", "mdnext-reflexjs-hak"]
+  // *.* includes config files in root because https://stackoverflow.com/a/61993196
+  "include": ["*.*", "test/**/*", "src/**/*", "content/**/*"],
+  "exclude": ["node_modules"]
 }

@@ -9,7 +9,7 @@
 .pnp.js
 
 # testing
-/coverage
+/coverage/
 
 # next.js
 /.next/
@@ -35,4 +35,4 @@ yarn-error.log*
 
 # Custom
 legacy/
-# mdnext-reflexjs-hak/
+mdnext-reflexjs-hak/

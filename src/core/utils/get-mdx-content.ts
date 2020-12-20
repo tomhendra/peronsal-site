@@ -13,7 +13,7 @@ export async function getMdxContent(source) {
   if (!files.length) return [];
 
   const content = await Promise.all(
-    files.map(async (filepath) => {
+    files.map(async filepath => {
       const slug = filepath
         .replace(source, '')
         .replace(/^\/+/, '')
@@ -30,7 +30,7 @@ export async function getMdxContent(source) {
         data,
         mdx,
       };
-    })
+    }),
   );
   return content;
 }

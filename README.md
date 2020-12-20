@@ -1,7 +1,10 @@
 # A Fresh Start with Next.JS + Theme UI + MDX.
 
-**Frontend**: Moving away from Gatsby & Emotion, because Next.js & Theme UI are more evolved tools.
-**CMS**: Moving away from Sanity.io because it was overkill for this project. The monorepo / API route requires more dev & maintenance, is less lightweight & less dev-friendly than MDX. Plus Tina looks like fun to play with! 🚂
+**Frontend**: Moving away from Gatsby & Emotion, because Next.js & Theme UI are
+more evolved tools. **CMS**: Moving away from Sanity.io because it was overkill
+for this project. The monorepo / API route requires more dev & maintenance, is
+less lightweight & less dev-friendly than MDX. Plus Tina looks like fun to play
+with! 🚂
 
 **References**:
 
@@ -24,30 +27,31 @@
 - Init: Installed fresh copy of MDNEXT blog starter.
 - Config: TypeScript, ESLint, Prettier, Husky & Lint-staged.
 - Refactor: Dirty TypeScript: Types & interfaces not defined with lots of errors to fix.
-- Refactor: Dirty Theme UI: Chakra UI removed. site runs without dev server errors.
+- Refactor: Dirty Theme UI: Chakra UI removed & dev server runs without errors.
 
 ## TODO: Dev
 
-1. Research: Read the Next.js docs thoroughly!
-2. Config: Jest, Testing Library & Cypress.
-3. Testing: Write some tests!
-4. Types: Define interfaces for data & fix errors.
-5. Types: Define interfaces & types for components & fix errors.
-6. Feature: About page.
-7. Feature: Projects.
-8. Refactor: SearchBox.
-9. Refactor: TagCloud.
-10. Research: Read the Ramda docs thoroughly!
-11. Refactor: All - using Ramda & FP principles.
-12. Feature: CodeBlock with Prism + Copy to clipboard button.
-13. Research: Reread Refactoring UI.
-14. Design: New **simple** design in Figma.
-15. Research: Read the Theme UI docs thoroughly!
-16. Feature: Implement new design & mobile-first layout.
-17. Refactor?: Replace Theme UI components with own.
-18. Feature: Interactions with Framer Motion.
-19. Research: Think about reusability and refactor accordingly with config interface.
-20. DevOps: Save as a starter template in GitHub boilerplates.
+1. Config: Jest & Testing Library.
+2. Config: Cypress.
+3. Research: Read the Next.js docs thoroughly!
+4. Testing: Define TS models for data & fix errors.
+5. Testing: Define TS models for components & fix errors.
+6. Testing: Write tests!
+7. Feature: About page.
+8. Feature: Projects.
+9. Refactor: SearchBox.
+10. Refactor: TagCloud.
+11. Research: Read the Ramda docs thoroughly!
+12. Refactor: All - using Ramda & FP principles.
+13. Feature: CodeBlock with Prism + Copy to clipboard button.
+14. Research: Reread Refactoring UI.
+15. Design: New **simple** design in Figma.
+16. Research: Read the Theme UI docs thoroughly!
+17. Feature: Implement new design & mobile-first layout.
+18. Refactor?: Replace Theme UI components with own.
+19. Feature: Interactions with Framer Motion.
+20. Research: Think about reusability and refactor accordingly with config interface.
+21. DevOps: Save as a starter template in GitHub boilerplates.
 
 ## TODO: Pre-Production
 

@@ -27,7 +27,7 @@ export function Search({ blogs, handleFilter }) {
       handleFilter(blogs);
     } else {
       // Allow for a search for tag
-      const formattedTags = [...searchTags.map((item) => ({ tags: item }))];
+      const formattedTags = [...searchTags.map(item => ({ tags: item }))];
       const formattedTitle = searchValue.length ? [{ title: searchValue }] : [];
       const queries = {
         $or: [
@@ -38,12 +38,12 @@ export function Search({ blogs, handleFilter }) {
           },
         ],
       };
-      const results = fuse.search(queries).map((result) => result.item);
+      const results = fuse.search(queries).map(result => result.item);
       handleFilter(results);
     }
   }, [searchValue, searchTags]);
 
-  const onChange = (e) => {
+  const onChange = e => {
     const { value } = e.target;
     setSearchValue(value);
   };

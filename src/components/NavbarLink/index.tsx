@@ -2,12 +2,16 @@
 import NextLink from 'next/link';
 import { NavLink } from 'theme-ui';
 
-export interface NavbarLinkProps {
+export interface Props {
   href: string;
   children: React.ReactNode;
 }
 
-export function NavbarLink({ href, children, ...props }: NavbarLinkProps) {
+export function NavbarLink({
+  href,
+  children,
+  ...props
+}: Props): React.ReactElement {
   return (
     <NextLink href={href} passHref>
       <NavLink {...props}>{children}</NavLink>

@@ -1,14 +1,13 @@
 /** @jsxImportSource theme-ui */
 import { Flex } from 'theme-ui';
 import { useState } from 'react';
-import { BLOG_CONTENT_PATH } from '@config';
-import { getMdxContent } from '@utils';
+import { BLOG_CONTENT_PATH, getMdxContent } from '@utils';
 import { BlogPostPreview, Layout, SEO, Search } from '@components';
 
 export default function BlogPage({ allMdx }) {
   const [filteredBlogs, setFilteredBlogs] = useState(allMdx);
 
-  const handleFilter = (data) => {
+  const handleFilter = data => {
     setFilteredBlogs(data);
   };
 
@@ -21,7 +20,7 @@ export default function BlogPage({ allMdx }) {
       <Layout>
         <Search blogs={allMdx} handleFilter={handleFilter} />
         <Flex sx={{ flexDirection: 'column' }}>
-          {filteredBlogs?.map((blog) => (
+          {filteredBlogs?.map(blog => (
             <BlogPostPreview key={blog.slug} blog={blog} />
           ))}
         </Flex>
@@ -32,7 +31,7 @@ export default function BlogPage({ allMdx }) {
 
 export async function getStaticProps() {
   const posts = await getMdxContent(BLOG_CONTENT_PATH);
-  const allMdx = posts.map((post) => ({
+  const allMdx = posts.map(post => ({
     slug: post.slug,
     ...post.data,
   }));

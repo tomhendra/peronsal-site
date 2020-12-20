@@ -26,7 +26,7 @@ export function BlogPostPreview({ blog }) {
       </NextLink>
       <Text>{blog.description}</Text>
       <Flex>
-        {blog.tags.map((tag) => (
+        {blog.tags.map(tag => (
           <Text key={tag}>#{tag}</Text>
         ))}
       </Flex>

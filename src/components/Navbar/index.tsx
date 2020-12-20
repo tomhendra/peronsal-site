@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { NavbarLink, ModeToggle } from '.';
+import { NavbarLink, ModeToggle } from '@components';
 import { Box, Flex } from 'theme-ui';
 
 export function Navbar({ ...props }) {

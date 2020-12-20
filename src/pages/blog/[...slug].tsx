@@ -1,6 +1,6 @@
 import hydrate from 'next-mdx-remote/hydrate';
-import { BLOG_CONTENT_PATH } from '@config';
-import { getMdxContent } from '@utils';
+import { BLOG_CONTENT_PATH } from 'src/core/utils';
+import { getMdxContent } from 'src/core/utils';
 import { Box, Text } from 'theme-ui';
 import { MdxComponents, Layout } from '@components';
 
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { slug } }) {
   const posts = await getMdxContent(BLOG_CONTENT_PATH);
   const postSlug = slug.join('/');
-  const [post] = posts.filter((post) => post.slug === postSlug);
+  const [post] = posts.filter(post => post.slug === postSlug);
 
   if (!post) {
     console.warn(`No content found for slug ${postSlug}`);
