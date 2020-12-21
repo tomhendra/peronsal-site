@@ -1,9 +1,8 @@
-import { NavbarLink } from '../NavbarLink';
-import { render } from '../../../test/utils';
+import { NavbarLink } from './';
+import { render } from '@test/utils';
 
 test('Renders the link', () => {
   const { container } = render(<NavbarLink href="a link">a link</NavbarLink>);
-  debugger;
   expect(container.firstChild).toMatchInlineSnapshot(`
     .emotion-0 {
       box-sizing: border-box;

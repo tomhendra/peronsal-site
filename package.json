@@ -21,7 +21,7 @@
     "format:check": "yarn prettier --check",
     "format": "yarn prettier --write",
     "type:check": "tsc",
-    "validate": "npm-run-all --parallel type:check format:check build",
+    "validate": "npm-run-all --parallel format:check type:check test build",
     "rm:cache": "rm -rf .next/cache",
     "export": "next export"
   },

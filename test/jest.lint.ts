@@ -4,5 +4,10 @@ module.exports = {
   rootDir: path.join(__dirname, '..'),
   displayName: 'lint',
   runner: 'jest-runner-eslint',
-  testMatch: ['<rootDir>/**/*.+(js|ts|tsx)'],
+  testPathIgnorePatterns: [
+    '<rootDir>/.next/',
+    '<rootDir>/node_modules/',
+    '<rootDir>/legacy/',
+  ],
+  testMatch: ['**/?(*.)+(js|json|ts|tsx|css|md|mdx)'],
 };
