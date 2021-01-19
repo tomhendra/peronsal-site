@@ -1,4 +1,4 @@
-import { NavbarLink } from './';
+import { NavbarLink } from '@components/NavbarLink';
 import { render } from '@test/utils';
 
 test('Renders the link', () => {

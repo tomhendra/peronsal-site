@@ -5,10 +5,10 @@ import theme from '../src/core/theme';
 // TODO --> Work out Theme UI's useColorMode hook in test env.
 
 function customRender(ui, { testTheme = theme, ...options } = {}) {
-  function Wrapper({ children }) {
+  function Providers({ children }) {
     return <ThemeProvider theme={testTheme}>{children}</ThemeProvider>;
   }
-  return render(ui, { wrapper: Wrapper, ...options });
+  return render(ui, { wrapper: Providers, ...options });
 }
 
 export { customRender as render };

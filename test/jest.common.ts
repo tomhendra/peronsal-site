@@ -14,7 +14,7 @@ module.exports = {
   moduleNameMapper: {
     '@test/(.*)': '<rootDir>/test/$1',
     '@components/(.*)': '<rootDir>/src/components/$1',
-    '@models/(.*)': '<rootDir>/src/core/models/$1',
+    '@types/(.*)': '<rootDir>/src/core/types/$1',
     '@theme/(.*)': '<rootDir>/src/core/theme/$1',
     '@utils/(.*)': '<rootDir>/src/core/utils/$1',
     '\\.css$': require.resolve('./style-mock.ts'), // mock because Jest tries to require CSS files like commonJS modules

@@ -1,8 +1,7 @@
 import hydrate from 'next-mdx-remote/hydrate';
-import { BLOG_CONTENT_PATH } from 'src/core/utils';
-import { getMdxContent } from 'src/core/utils';
+import { BLOG_CONTENT_PATH, getMdxContent, MdxComponents } from '@utils';
 import { Box, Text } from 'theme-ui';
-import { MdxComponents, Layout } from '@components';
+import { Layout } from '@components';
 
 export default function BlogPost({ mdxSource, frontMatter }) {
   const content = hydrate(mdxSource, { MdxComponents });

@@ -8,9 +8,9 @@ with! 🚂
 
 **References**:
 
-- MDNEXT blog starter from [Domitrius Clark](https://github.com/domitriusclark/mdnext).
-- TypeScript, ESLint and Prettier config from [Paulin Trognon](https://paulintrognon.fr/blog/typescript-prettier-eslint-next-js).
-- Jest & Testing Library config from [Frédérick Morin](https://github.com/freddydumont/theme-ui-next-boilerplate).
+- [MDNEXT blog starter](https://github.com/domitriusclark/mdnext) from Domitrius Clark.
+- [Testing JavaScript](https://testingjavascript.com) by Kent C. Dodds.
+- [Epic React](https://epicreact.dev) by Kent C. Dodds.
 
 **TO KEEP AS LIGHTWEIGHT AS POSSIBLE FOR QUICK REFACTORS, WHILST LEARNING REACT PROPERLY & PRACTISING KENT C DODD'S TEACHINGS ON THIS PROJECT!**
 
@@ -28,10 +28,11 @@ with! 🚂
 - Config: TypeScript, ESLint, Prettier, Husky & Lint-staged.
 - Refactor: Dirty TypeScript: Types & interfaces not defined with lots of errors to fix.
 - Refactor: Dirty Theme UI: Chakra UI removed & dev server runs without errors.
+- Config: Jest & Testing Library.
 
 ## TODO: Dev
 
-1. Config: Jest & Testing Library.
+1. Convert to Tailwind CSS
 2. Config: Cypress.
 3. Research: Read the Next.js docs thoroughly!
 4. Testing: Define TS models for data & fix errors.
@@ -45,13 +46,12 @@ with! 🚂
 12. Refactor: All - using Ramda & FP principles.
 13. Feature: CodeBlock with Prism + Copy to clipboard button.
 14. Research: Reread Refactoring UI.
-15. Design: New **simple** design in Figma.
-16. Research: Read the Theme UI docs thoroughly!
+15. Research: Read the Tailwind CSS docs thoroughly!
+16. Design: New **simple** design in Figma.
 17. Feature: Implement new design & mobile-first layout.
-18. Refactor?: Replace Theme UI components with own.
-19. Feature: Interactions with Framer Motion.
-20. Research: Think about reusability and refactor accordingly with config interface.
-21. DevOps: Save as a starter template in GitHub boilerplates.
+18. Feature: Interactions with Framer Motion.
+19. Research: Think about reusability and refactor accordingly with config interface.
+20. DevOps: Save as a starter template in GitHub starter templates.
 
 ## TODO: Pre-Production
 
@@ -76,9 +76,5 @@ with! 🚂
 Options:
 
 1. Stick with React v16.13.1. & wait for Theme UI v0.5.0.
-2. Upgrade to React v17.0.1 & use Theme UI 0.5.0-alpha.1. ☑️
-
-Notes:
-
-sx prop usage still throws TS error with 0.5.0-alpha.1:
-`Property 'sx' does not exist on type 'IntrinsicAttributes &...`
+2. Upgrade to React v17.0.1 & use Theme UI 0.5.0-alpha.x.
+3. Use Tailwind CSS instead! ☑️

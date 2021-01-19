@@ -9,5 +9,5 @@ module.exports = {
     '<rootDir>/node_modules/',
     '<rootDir>/legacy/',
   ],
-  testMatch: ['**/?(*.)+(js|json|ts|tsx|css|md|mdx)'],
+  testMatch: ['**/?(*.)+(js|ts|tsx)'],
 };

@@ -4,7 +4,7 @@ module.exports = {
   testEnvironment: 'jest-environment-node',
   coverageDirectory: '<rootDir>/coverage/server',
   testMatch: [
-    '**/__server_tests__/**/*.[jt]s?(x)',
+    '**/__ssr_tests__/**/*.[jt]s?(x)',
     '**/?(*.)ssr.+(spec|test).[jt]s?(x)',
   ],
 };

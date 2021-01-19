@@ -1,7 +1,6 @@
 export * from './BlogPostPreview';
 export * from './CopyButton';
 export * from './Layout';
-export * from './MdxComponents';
 export * from './ModeToggle';
 export * from './Navbar';
 export * from './NavbarLink';

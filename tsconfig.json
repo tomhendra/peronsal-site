@@ -13,14 +13,16 @@
     "esModuleInterop": true, // ?
     "resolveJsonModule": true, // ?
     "isolatedModules": true, // ?
-    "baseUrl": "./", // required for path imports to work
+    "baseUrl": ".", // required for path imports to work
     "paths": {
       // make paths available for imports e.g. import { fn } from 'utils' rather than '../../..utils'
       "@test/*": ["test/*"],
       "@components/*": ["src/components/*"],
-      "@models/*": ["src/core/models/*"],
-      "@theme/*": ["src/core/theme/*"],
-      "@utils/*": ["src/core/utils/*"]
+      "@components": ["src/components"],
+      "@types": ["src/core/types"],
+      "@theme": ["src/core/theme"],
+      "@utils": ["src/core/utils"],
+      "@utils/*": ["src/core/utils"]
     }
   },
   // *.* includes config files in root because https://stackoverflow.com/a/61993196
