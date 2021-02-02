@@ -76,5 +76,5 @@ with! 🚂
 Options:
 
 1. Stick with React v16.13.1. & wait for Theme UI v0.5.0.
-2. Upgrade to React v17.0.1 & use Theme UI 0.5.0-alpha.x.
-3. Use Tailwind CSS instead! ☑️
+2. Upgrade to React v17.0.1 & use Theme UI 0.6.0-alpha.x. ☑️
+3. Use Tailwind CSS instead!
