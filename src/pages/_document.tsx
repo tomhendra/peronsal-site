@@ -6,14 +6,15 @@ import NextDocument, {
   DocumentContext,
 } from 'next/document';
 import { InitializeColorMode } from 'theme-ui';
-import React from 'react';
 
 class Document extends NextDocument {
+  // Docs do not provide a return type which should be Promise<X>
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await NextDocument.getInitialProps(ctx);
     return { ...initialProps };
   }
-  render() {
+  render(): React.ReactElement {
     return (
       <Html lang="en">
         <Head>

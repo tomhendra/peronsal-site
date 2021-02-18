@@ -3,7 +3,13 @@ import { BLOG_CONTENT_PATH, getMdxContent, MdxComponents } from '@utils';
 import { Box, Text } from 'theme-ui';
 import { Layout } from '@components';
 
-export default function BlogPost({ mdxSource, frontMatter }) {
+// TODO ---> MDX Types
+interface Props {
+  mdxSource: any;
+  frontMatter: any;
+}
+
+function BlogPost({ mdxSource, frontMatter }: Props): React.ReactElement {
   const content = hydrate(mdxSource, { MdxComponents });
 
   return (
@@ -46,3 +52,5 @@ export async function getStaticProps({ params: { slug } }) {
     },
   };
 }
+
+export default BlogPost;

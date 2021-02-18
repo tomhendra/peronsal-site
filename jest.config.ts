@@ -9,7 +9,7 @@ module.exports = {
       functions: 1,
       lines: 1,
     },
-    '<rootDir>/src/core/utils/get-mdx-content.ts': {
+    '<rootDir>/src/shared/utils/get-mdx-content.ts': {
       statements: 100,
       branches: 80,
       functions: 100,

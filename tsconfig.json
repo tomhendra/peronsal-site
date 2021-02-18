@@ -4,7 +4,8 @@
     "allowJs": true, // check JS files
     "noEmit": true, // do not compile to JS (Next handles this via Babel)
     "skipLibCheck": true, // node_modules not checked
-    "jsx": "preserve", // ?
+    "jsx": "preserve", // ? Next auto-inserts
+    "jsxImportSource": "@emotion/react",
     "target": "ES2020", // ?
     "forceConsistentCasingInFileNames": true, // ?
     "lib": ["dom", "dom.iterable", "esnext"], // ?
@@ -19,10 +20,10 @@
       "@test/*": ["test/*"],
       "@components/*": ["src/components/*"],
       "@components": ["src/components"],
-      "@types": ["src/core/types"],
-      "@theme": ["src/core/theme"],
-      "@utils": ["src/core/utils"],
-      "@utils/*": ["src/core/utils"]
+      "@types": ["src/shared/types"],
+      "@theme": ["src/shared/theme"],
+      "@utils": ["src/shared/utils"],
+      "@utils/*": ["src/shared/utils"]
     }
   },
   // *.* includes config files in root because https://stackoverflow.com/a/61993196

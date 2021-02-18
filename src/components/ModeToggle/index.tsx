@@ -2,7 +2,7 @@
 import { IconButton, useColorMode } from 'theme-ui';
 import { FiSun, FiMoon } from 'react-icons/fi';
 
-export function ModeToggle({ ...props }) {
+export function ModeToggle({ ...props }): React.ReactElement {
   const [colorMode, setColorMode] = useColorMode();
 
   return (

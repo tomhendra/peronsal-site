@@ -27,9 +27,11 @@ module.exports = {
   ],
   rules: {
     'react/prop-types': 'off', // TypeScript handles prop types
+    'react/jsx-uses-react': 'off', // note required using new transform: https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
     'react/react-in-jsx-scope': 'off', // not required for Next.js
     'jsx-a11y/anchor-is-valid': 'off', // incompatible with Next.js <Link /> (https://github.com/vercel/next.js/issues/5533)
     '@typescript-eslint/no-unused-vars': ['error'], // default is warn
+    '@typescript-eslint/explicit-module-boundary-types': 'off', // handled by explicit-function-return-type: https://github.com/typescript-eslint/typescript-eslint/issues/2719
     '@typescript-eslint/explicit-function-return-type': [
       // default is warn & provide options object
       'warn',

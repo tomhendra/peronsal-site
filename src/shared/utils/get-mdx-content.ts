@@ -4,7 +4,7 @@ import renderToString from 'next-mdx-remote/render-to-string';
 import matter from 'gray-matter';
 import glob from 'fast-glob';
 
-import { MdxComponents } from './mdx-components';
+import { MdxComponents } from '@components/mdx-components';
 
 export async function getMdxContent(source) {
   const contentGlob = `${source}/**/*.mdx`;

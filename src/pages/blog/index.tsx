@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { BLOG_CONTENT_PATH, getMdxContent } from '@utils';
 import { BlogPostPreview, Layout, SEO, Search } from '@components';
 
-export default function BlogPage({ allMdx }) {
+function Blog({ allMdx }) {
   const [filteredBlogs, setFilteredBlogs] = useState(allMdx);
 
   const handleFilter = data => {
@@ -29,6 +29,11 @@ export default function BlogPage({ allMdx }) {
   );
 }
 
+/*
+ * Essentially, getStaticProps allows you to tell Next.js:
+ * “Hey, this page has some data dependencies - so when you pre-render this page at build time, make sure to resolve them first!”
+ */
+
 export async function getStaticProps() {
   const posts = await getMdxContent(BLOG_CONTENT_PATH);
   const allMdx = posts.map(post => ({
@@ -42,3 +47,5 @@ export async function getStaticProps() {
     },
   };
 }
+
+export default Blog;

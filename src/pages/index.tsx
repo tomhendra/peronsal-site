@@ -1,8 +1,7 @@
-/** @jsxImportSource theme-ui */
 import { Layout, SEO } from '@components';
 import { Box, Text } from 'theme-ui';
 
-export default function Index() {
+function Home(): React.ReactElement {
   return (
     <>
       <SEO
@@ -11,12 +10,12 @@ export default function Index() {
       />
       <Layout>
         <Box>
-          <Text>
-            Hello from Theme UI components! If you see this message things are
-            working.
-          </Text>
+          <Text>Hello from Theme UI components!</Text>
+          <Text>If you see this message then data is flowing.</Text>
         </Box>
       </Layout>
     </>
   );
 }
+
+export default Home;

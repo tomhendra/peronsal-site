@@ -1,9 +1,9 @@
 import { ThemeProvider } from 'theme-ui';
-import theme from '../core/theme';
+import theme from '../shared/theme';
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 
-const App = ({ Component, pageProps }: AppProps): React.ReactElement => {
+function App({ Component, pageProps }: AppProps): React.ReactElement {
   return (
     <ThemeProvider theme={theme}>
       <DefaultSeo
@@ -22,6 +22,6 @@ const App = ({ Component, pageProps }: AppProps): React.ReactElement => {
       <Component {...pageProps} />
     </ThemeProvider>
   );
-};
+}
 
 export default App;
