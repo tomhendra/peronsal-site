@@ -12,16 +12,16 @@ import { WithChildren } from 'src/shared/types/type-utils';
 // https://epicreact.dev/modules/testing-react-apps/context-and-custom-render-method-extra-credit-solution-2
 
 type renderOptions = {
-  testColorMode?: 'default' | 'dark';
+  colorMode?: 'default' | 'dark';
   options?: Omit<RenderOptions, 'queries'>;
 };
 
 function render(ui: ReactElement, options: renderOptions = {}): RenderResult {
-  const { testColorMode = 'default', ...otherOptions } = options;
+  const { colorMode = 'default', ...otherOptions } = options;
 
   function Mode(): ReactElement {
     const [, setColorMode] = useColorMode();
-    useEffect(() => setColorMode(testColorMode), [setColorMode]);
+    useEffect(() => setColorMode(colorMode), [setColorMode]);
     return <div />;
   }
 

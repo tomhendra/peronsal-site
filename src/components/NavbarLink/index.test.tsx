@@ -1,9 +1,9 @@
 import { NavbarLink } from '@components/NavbarLink';
 import { render, screen } from '@test/test-utils';
 
-test('renders with the default styles for the default theme', () => {
+test('renders with the default styles for the default colorMode', () => {
   render(<NavbarLink href="link">a link</NavbarLink>, {
-    testColorMode: 'default',
+    colorMode: 'default',
   });
   const link = screen.getByText(/a link/i);
   expect(link).toMatchInlineSnapshot(`
@@ -33,9 +33,9 @@ test('renders with the default styles for the default theme', () => {
   `);
 });
 
-test('renders with the dark styles for the dark theme', () => {
+test('renders with the dark styles for the dark colorMode', () => {
   render(<NavbarLink href="link">a link</NavbarLink>, {
-    testColorMode: 'dark',
+    colorMode: 'dark',
   });
   const link = screen.getByText(/a link/i);
   expect(link).toMatchInlineSnapshot(`
