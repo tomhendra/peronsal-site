@@ -1,5 +1,5 @@
 module.exports = {
-  ...require('./test/jest.common'),
+  ...require('./src/test/jest.common'),
   collectCoverageFrom: ['<rootDir>/src/**/*.+(ts|tsx)'], // only collected coverage report data from src
   coverageThreshold: {
     // set thresholds for test coverage 2% below the current level to allow for some flexibility
@@ -9,7 +9,7 @@ module.exports = {
       functions: 1,
       lines: 1,
     },
-    '<rootDir>/src/shared/utils/get-mdx-content.ts': {
+    '<rootDir>/src/utils/get-mdx-content.ts': {
       statements: 100,
       branches: 80,
       functions: 100,
@@ -17,9 +17,9 @@ module.exports = {
     },
   },
   projects: [
-    '<rootDir>/test/jest.client.ts',
-    '<rootDir>/test/jest.server.ts',
-    '<rootDir>/test/jest.lint.ts',
+    '<rootDir>/src/test/jest.client.ts',
+    '<rootDir>/src/test/jest.server.ts',
+    '<rootDir>/src/test/jest.lint.ts',
   ],
 };
 

@@ -20,10 +20,9 @@
       "@test/*": ["test/*"],
       "@components/*": ["src/components/*"],
       "@components": ["src/components"],
-      "@types": ["src/shared/types"],
-      "@theme": ["src/shared/theme"],
-      "@utils": ["src/shared/utils"],
-      "@utils/*": ["src/shared/utils"]
+      "@types": ["src/types"],
+      "@utils": ["src/utils"],
+      "@utils/*": ["src/utils"]
     }
   },
   // *.* includes config files in root because https://stackoverflow.com/a/61993196

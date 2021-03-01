@@ -7,3 +7,4 @@ export * from './NavbarLink';
 export * from './SearchBox';
 export * from './SEO';
 export * from './TagCloud';
+export * from './mdx-components';

@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'theme-ui';
-import theme from '../shared/theme';
+import theme from '../theme';
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 

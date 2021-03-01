@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { Flex } from 'theme-ui';
 import { useState } from 'react';
-import { BLOG_CONTENT_PATH, getMdxContent } from '@utils';
+import { POST_CONTENT_PATH, getMdxContent } from '@utils';
 import { BlogPostPreview, Layout, SEO, Search } from '@components';
 
 function Blog({ allMdx }) {
@@ -35,7 +35,7 @@ function Blog({ allMdx }) {
  */
 
 export async function getStaticProps() {
-  const posts = await getMdxContent(BLOG_CONTENT_PATH);
+  const posts = await getMdxContent(POST_CONTENT_PATH);
   const allMdx = posts.map(post => ({
     slug: post.slug,
     ...post.data,

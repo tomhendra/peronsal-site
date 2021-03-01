@@ -17,10 +17,9 @@ module.exports = {
   ],
   extends: [
     'eslint:recommended',
+    'plugin:prettier/recommended',
     'plugin:@typescript-eslint/eslint-recommended', // disables ESLint rules that TypeScript renders unnecessary.
     'plugin:@typescript-eslint/recommended', // specific typescript-eslint plugin rules that are sometimes useful e.g. for interfaces.
-    'eslint-config-prettier', // disable ESLint rules that Prettier renders unnecessary.
-    'eslint-config-prettier/@typescript-eslint', // disable ESLint rules from typescript-eslint which conflict with prettier.
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
