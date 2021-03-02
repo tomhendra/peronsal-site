@@ -2,14 +2,15 @@ import hydrate from 'next-mdx-remote/hydrate';
 import { POST_CONTENT_PATH, getMdxContent } from '@utils';
 import { Box, Text } from 'theme-ui';
 import { Layout, MdxComponents } from '@components';
+import { Mdx, PostData } from '@types';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
-// TODO ---> MDX Types
-interface Props {
-  mdx: any;
-  data: any;
+interface BlogPostProps {
+  mdx: Mdx;
+  data: PostData;
 }
 
-function BlogPost({ mdx, data }: Props): React.ReactElement {
+function BlogPost({ mdx, data }: BlogPostProps): React.ReactElement {
   const content = hydrate(mdx, { MdxComponents });
 
   return (
@@ -22,7 +23,7 @@ function BlogPost({ mdx, data }: Props): React.ReactElement {
   );
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getMdxContent(POST_CONTENT_PATH);
   const paths = posts.map(({ slug }) => ({
     params: {
@@ -34,11 +35,17 @@ export async function getStaticPaths() {
     paths,
     fallback: false,
   };
-}
+};
 
-export async function getStaticProps({ params: { slug } }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  if (!params) {
+    throw new Error('Static page rendering requested without path parameters.');
+  }
+
+  const { slug } = params;
+  const postSlug = Array.isArray(slug) ? slug.join('/') : '';
+
   const posts = await getMdxContent(POST_CONTENT_PATH);
-  const postSlug = slug.join('/');
   const [post] = posts.filter(post => post.slug === postSlug);
 
   if (!post) {
@@ -53,6 +60,6 @@ export async function getStaticProps({ params: { slug } }) {
       data,
     },
   };
-}
+};
 
 export default BlogPost;

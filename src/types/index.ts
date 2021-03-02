@@ -1,1 +1,1 @@
-export * from './mdx.types';
+export * from './mdx-types';

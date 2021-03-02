@@ -1,8 +1,13 @@
 /** @jsxImportSource theme-ui */
+import { PostPreview } from '@types';
 import NextLink from 'next/link';
 import { Link, Box, Text, Flex } from 'theme-ui';
 
-export function BlogPostPreview({ blog }) {
+interface Props {
+  blog: PostPreview;
+}
+
+export function BlogPostPreview({ blog }: Props): React.ReactElement {
   return (
     <Box
       role="group"
@@ -24,11 +29,9 @@ export function BlogPostPreview({ blog }) {
           {blog.title}
         </Link>
       </NextLink>
-      <Text>{blog.description}</Text>
+      <Text>{blog.excerpt}</Text>
       <Flex>
-        {blog.tags.map(tag => (
-          <Text key={tag}>#{tag}</Text>
-        ))}
+        {blog.tags && blog.tags.map(tag => <Text key={tag}>#{tag}</Text>)}
       </Flex>
     </Box>
   );

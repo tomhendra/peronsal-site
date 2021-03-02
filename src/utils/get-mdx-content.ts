@@ -3,22 +3,22 @@ import path from 'path';
 import matter from 'gray-matter';
 import glob from 'fast-glob';
 import renderToString from 'next-mdx-remote/render-to-string';
+import { MdxContent } from '@types';
 
 import { MdxComponents } from '@components/mdx-components';
 
-export async function getMdxContent(source) {
+export async function getMdxContent(source: string): Promise<MdxContent[]> {
   const contentGlob = `${source}/**/*.mdx`;
   const files = glob.sync(contentGlob);
 
   if (!files.length) return [];
 
-  const content = await Promise.all(
+  const mdxContent = await Promise.all(
     files.map(async filepath => {
       const slug = filepath
         .replace(source, '') // remove content dir in path
         .replace(/^\/+/, '') // remove backslashes in path
         .replace(new RegExp(path.extname(filepath) + '$'), ''); // remove extension: /\.mdx$/
-
       // Read entire mdx file and save as string
       const mdxString = await fs.readFile(filepath);
       // Use gray-matter to parse content & metadata from mdxString data
@@ -28,13 +28,13 @@ export async function getMdxContent(source) {
 
       return {
         filepath, // for debugging
-        content, // for debugging
         slug,
-        data,
+        content, // for debugging
         mdx,
+        data,
       };
     }),
   );
 
-  return content;
+  return mdxContent;
 }

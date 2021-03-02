@@ -6,7 +6,7 @@ interface LayoutProps {
   children?: React.ReactNode;
 }
 
-export function Layout({ children }: LayoutProps) {
+export function Layout({ children }: LayoutProps): React.ReactElement {
   return (
     <>
       <Navbar as="header" />

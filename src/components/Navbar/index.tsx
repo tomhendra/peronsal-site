@@ -2,7 +2,7 @@
 import { NavbarLink, ModeToggle } from '@components';
 import { Box, Flex } from 'theme-ui';
 
-export function Navbar({ ...props }) {
+export function Navbar({ ...props }): React.ReactElement {
   return (
     <Box {...props}>
       <Flex
