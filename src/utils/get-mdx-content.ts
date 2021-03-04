@@ -4,8 +4,7 @@ import matter from 'gray-matter';
 import glob from 'fast-glob';
 import renderToString from 'next-mdx-remote/render-to-string';
 import { MdxContent } from '@types';
-
-import { MdxComponents } from '@components/mdx-components';
+import { components } from '@components';
 
 export async function getMdxContent(source: string): Promise<MdxContent[]> {
   const contentGlob = `${source}/**/*.mdx`;
@@ -24,7 +23,7 @@ export async function getMdxContent(source: string): Promise<MdxContent[]> {
       // Use gray-matter to parse content & metadata from mdxString data
       const { content, data } = matter(mdxString);
       // call renderToString with content & components to render it with
-      const mdx = await renderToString(content, { MdxComponents, scope: data });
+      const mdx = await renderToString(content, { components, scope: data });
 
       return {
         filepath, // for debugging

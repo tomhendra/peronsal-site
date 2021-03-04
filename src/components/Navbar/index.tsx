@@ -12,6 +12,11 @@ export function Navbar({ ...props }): React.ReactElement {
           justifyContent: 'space-between',
         }}
       >
+        <input
+          sx={{
+            variant: 'inputs.shadow',
+          }}
+        ></input>
         <NavbarLink href="/">tomhendra.dev</NavbarLink>
         <Flex
           sx={{

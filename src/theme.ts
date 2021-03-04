@@ -1,24 +1,12 @@
 import { Theme } from 'theme-ui';
 
-const future: Theme = {
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+const theme: Theme = {
   fonts: {
-    body:
-      'Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif',
+    body: '-apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif',
     heading:
       'Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif',
     monospace:
       '"Fira Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-  },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
-  fontWeights: {
-    body: 400,
-    heading: 600,
-    bold: 800,
-  },
-  lineHeights: {
-    body: 1.75,
-    heading: 1.25,
   },
   colors: {
     text: '#000',
@@ -38,6 +26,17 @@ const future: Theme = {
       },
     },
   },
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  fontWeights: {
+    body: 400,
+    heading: 600,
+    bold: 800,
+  },
+  lineHeights: {
+    body: 1.75,
+    heading: 1.25,
+  },
   styles: {
     root: {
       fontFamily: 'body',
@@ -45,8 +44,8 @@ const future: Theme = {
       fontWeight: 'body',
     },
     h1: {
-      color: 'text',
-      fontFamily: 'heading',
+      color: 'secondary',
+      fontFamily: 'monospace',
       lineHeight: 'heading',
       fontWeight: 'heading',
       fontSize: 5,
@@ -125,4 +124,4 @@ const future: Theme = {
   },
 };
 
-export default future;
+export default theme;
