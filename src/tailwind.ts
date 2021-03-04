@@ -1,4 +1,6 @@
-import { Theme } from 'theme-ui';
+// Based on https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
+// and https://tailwindcss.com/components
+
 export const borderWidths = {
   px: '1px',
   '0': '0',
@@ -14,7 +16,7 @@ export const baseColors = {
   black: '#000',
   white: '#fff',
   gray: [
-    'null',
+    null,
     '#f7fafc',
     '#edf2f7',
     '#e2e8f0',
@@ -26,7 +28,7 @@ export const baseColors = {
     '#1a202c',
   ],
   red: [
-    'null',
+    null,
     '#fff5f5',
     '#fed7d7',
     '#feb2b2',
@@ -38,7 +40,7 @@ export const baseColors = {
     '#742a2a',
   ],
   orange: [
-    'null',
+    null,
     '#fffaf0',
     '#feebc8',
     '#fbd38d',
@@ -50,7 +52,7 @@ export const baseColors = {
     '#7b341e',
   ],
   yellow: [
-    'null',
+    null,
     '#fffff0',
     '#fefcbf',
     '#faf089',
@@ -62,7 +64,7 @@ export const baseColors = {
     '#744210',
   ],
   green: [
-    'null',
+    null,
     '#f0fff4',
     '#c6f6d5',
     '#9ae6b4',
@@ -74,7 +76,7 @@ export const baseColors = {
     '#22543d',
   ],
   teal: [
-    'null',
+    null,
     '#e6fffa',
     '#b2f5ea',
     '#81e6d9',
@@ -86,7 +88,7 @@ export const baseColors = {
     '#234e52',
   ],
   blue: [
-    'null',
+    null,
     '#ebf8ff',
     '#bee3f8',
     '#90cdf4',
@@ -98,7 +100,7 @@ export const baseColors = {
     '#2a4365',
   ],
   indigo: [
-    'null',
+    null,
     '#ebf4ff',
     '#c3dafe',
     '#a3bffa',
@@ -110,7 +112,7 @@ export const baseColors = {
     '#3c366b',
   ],
   purple: [
-    'null',
+    null,
     '#faf5ff',
     '#e9d8fd',
     '#d6bcfa',
@@ -122,7 +124,7 @@ export const baseColors = {
     '#44337a',
   ],
   pink: [
-    'null',
+    null,
     '#fff5f7',
     '#fed7e2',
     '#fbb6ce',
@@ -235,7 +237,8 @@ export const buttons = {
   },
 };
 
-export const lightColors = {
+export const colors = {
+  ...baseColors,
   grayDark: baseColors.gray[8],
   text: baseColors.gray[8],
   background: baseColors.white,
@@ -250,33 +253,6 @@ export const lightColors = {
   light: baseColors.gray[1],
   dark: baseColors.gray[8],
   textMuted: baseColors.gray[6],
-};
-
-export const darkColors = {
-  grayDark: baseColors.gray[8],
-  text: baseColors.gray[8],
-  background: baseColors.black,
-  primary: baseColors.blue[7],
-  primaryHover: baseColors.blue[8],
-  secondary: baseColors.gray[6],
-  muted: baseColors.gray[3],
-  success: baseColors.green[3],
-  info: baseColors.blue[4],
-  warning: baseColors.yellow[3],
-  danger: baseColors.red[3],
-  light: baseColors.gray[1],
-  dark: baseColors.gray[8],
-  textMuted: baseColors.gray[6],
-};
-
-export const colors = {
-  ...baseColors,
-  ...lightColors,
-  modes: {
-    dark: {
-      ...darkColors,
-    },
-  },
 };
 
 export const baseFonts = {
@@ -306,15 +282,15 @@ export const fontSizes = [
 ];
 
 export const baseFontWeights = {
-  hairline: 100,
-  thin: 200,
-  light: 300,
-  normal: 400,
-  medium: 500,
-  semibold: 600,
-  bold: 700,
-  extrabold: 800,
-  black: 900,
+  hairline: '100',
+  thin: '200',
+  light: '300',
+  normal: '400',
+  medium: '500',
+  semibold: '600',
+  bold: '700',
+  extrabold: '800',
+  black: '900',
 };
 
 export const fontWeights = {
@@ -332,45 +308,43 @@ const commonInputStyles = {
   lineHeight: `tight`,
 };
 
-export const forms = {
-  input: {
-    shadow: {
-      ...commonInputStyles,
-      border: `none`,
-      color: `gray.7`,
-      boxShadow: `default`,
-      '&:focus': {
-        outline: `none`,
-        boxShadow: `outline`,
-      },
+export const inputs = {
+  shadow: {
+    ...commonInputStyles,
+    border: `none`,
+    color: `gray.7`,
+    boxShadow: `default`,
+    '&:focus': {
+      outline: `none`,
+      boxShadow: `outline`,
     },
-    inline: {
-      ...commonInputStyles,
-      backgroundColor: `gray.2`,
-      borderWidth: `2px`,
-      borderStyle: `solid`,
-      borderColor: `gray.2`,
-      color: `gray.7`,
-      '&:focus': {
-        outline: `none`,
-        borderColor: `primary`,
-        backgroundColor: `white`,
-      },
+  },
+  inline: {
+    ...commonInputStyles,
+    backgroundColor: `gray.2`,
+    borderWidth: `2px`,
+    borderStyle: `solid`,
+    borderColor: `gray.2`,
+    color: `gray.7`,
+    '&:focus': {
+      outline: `none`,
+      borderColor: `primary`,
+      backgroundColor: `white`,
     },
-    underline: {
-      ...commonInputStyles,
-      backgroundColor: `transparent`,
-      border: `none`,
-      borderBottomWidth: `2px`,
-      borderBottomStyle: `solid`,
-      borderBottomColor: `primary`,
-      borderRadius: `0px`,
-      color: `gray.7`,
-      '&:focus': {
-        outline: `none`,
-        borderColor: `primary`,
-        backgroundColor: `white`,
-      },
+  },
+  underline: {
+    ...commonInputStyles,
+    backgroundColor: `transparent`,
+    border: `none`,
+    borderBottomWidth: `2px`,
+    borderBottomStyle: `solid`,
+    borderBottomColor: `primary`,
+    borderRadius: `0px`,
+    color: `gray.7`,
+    '&:focus': {
+      outline: `none`,
+      borderColor: `primary`,
+      backgroundColor: `white`,
     },
   },
 };
@@ -508,13 +482,13 @@ export const space = [
 ];
 
 export const zIndices = {
-  //   auto: 'auto',
-  '0': 0,
-  '10': 10,
-  '20': 20,
-  '30': 30,
-  '40': 40,
-  '50': 50,
+  auto: 'auto',
+  '0': '0',
+  '10': '10',
+  '20': '20',
+  '30': '30',
+  '40': '40',
+  '50': '50',
 };
 
 const heading = {
@@ -656,7 +630,7 @@ export const transitions = {
   },
 };
 
-export const tailwind: Theme = {
+export const tailwind = {
   borderWidths,
   breakpoints,
   colors,
@@ -672,8 +646,8 @@ export const tailwind: Theme = {
   zIndices,
   styles,
   buttons,
-  // forms,
-  // transforms,
+  inputs,
+  transforms,
   transitions,
 };
 

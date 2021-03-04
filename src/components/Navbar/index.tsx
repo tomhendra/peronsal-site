@@ -2,9 +2,9 @@
 import { NavbarLink, ModeToggle } from '@components';
 import { Box, Flex } from 'theme-ui';
 
-export function Navbar({ ...props }): React.ReactElement {
+export function Navbar(): React.ReactElement {
   return (
-    <Box {...props}>
+    <Box>
       <Flex
         as="nav"
         p={4}
@@ -12,15 +12,10 @@ export function Navbar({ ...props }): React.ReactElement {
           justifyContent: 'space-between',
         }}
       >
-        <input
-          sx={{
-            variant: 'inputs.shadow',
-          }}
-        ></input>
         <NavbarLink href="/">tomhendra.dev</NavbarLink>
         <Flex
           sx={{
-            width: 128,
+            width: '5/6',
             justifyContent: 'space-between',
           }}
         >

@@ -1,5 +1,5 @@
 import { NavbarLink } from '@components/NavbarLink';
-import { render, screen } from '@test/test-utils';
+import { render, screen } from '../../test/test-utils';
 
 test('renders with the default styles for the default colorMode', () => {
   render(<NavbarLink href="link">a link</NavbarLink>, {
@@ -14,14 +14,14 @@ test('renders with the default styles for the default colorMode', () => {
       color: inherit;
       -webkit-text-decoration: none;
       text-decoration: none;
-      font-weight: 800;
+      font-weight: 700;
       display: inline-block;
     }
 
     .emotion-0:hover,
     .emotion-0:focus,
     .emotion-0.active {
-      color: var(--theme-ui-colors-primary, #11e);
+      color: var(--theme-ui-colors-primary, #2b6cb0);
     }
 
     <a
@@ -46,14 +46,14 @@ test('renders with the dark styles for the dark colorMode', () => {
       color: inherit;
       -webkit-text-decoration: none;
       text-decoration: none;
-      font-weight: 800;
+      font-weight: 700;
       display: inline-block;
     }
 
     .emotion-0:hover,
     .emotion-0:focus,
     .emotion-0.active {
-      color: var(--theme-ui-colors-primary, #0fc);
+      color: var(--theme-ui-colors-primary, #2b6cb0);
     }
 
     <a

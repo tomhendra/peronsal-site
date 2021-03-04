@@ -8,14 +8,14 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps): React.ReactElement {
   return (
-    <>
-      <Navbar as="header" />
+    <header>
+      <Navbar />
       <Container as="main" p={6}>
         {children}
       </Container>
       <Flex as="footer" p={4} sx={{ justifyContent: 'center' }}>
         <Text>© {new Date().getFullYear()} Tom Hendra</Text>
       </Flex>
-    </>
+    </header>
   );
 }
