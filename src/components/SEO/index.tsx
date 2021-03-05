@@ -5,6 +5,6 @@ interface SeoProps {
   description: string;
 }
 
-export function SEO({ title, description }: SeoProps): React.ReactElement {
+export function SEO({ title, description }: SeoProps) {
   return <NextSeo title={title} description={description} />;
 }

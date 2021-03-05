@@ -10,7 +10,7 @@ interface BlogPostProps {
   data: PostData;
 }
 
-function BlogPost({ mdx, data }: BlogPostProps): React.ReactElement {
+function BlogPost({ mdx, data }: BlogPostProps) {
   const content = hydrate(mdx, { components });
 
   return (

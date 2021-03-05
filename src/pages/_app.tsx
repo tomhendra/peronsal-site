@@ -3,7 +3,7 @@ import theme from '../theme';
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 
-function App({ Component, pageProps }: AppProps): React.ReactElement {
+function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <DefaultSeo

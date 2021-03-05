@@ -15,7 +15,7 @@ class Document extends NextDocument {
     const initialProps = await NextDocument.getInitialProps(ctx);
     return { ...initialProps };
   }
-  render(): React.ReactElement {
+  render() {
     return (
       <Html lang="en">
         <Head />

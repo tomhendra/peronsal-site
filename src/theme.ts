@@ -1,5 +1,7 @@
 import { Theme } from 'theme-ui';
-export const borderWidths = {
+import nightOwl from '@theme-ui/prism/presets/night-owl';
+
+const borderWidths = {
   px: '1px',
   '0': '0',
   '2': '2px',
@@ -7,9 +9,7 @@ export const borderWidths = {
   '8': '8px',
 };
 
-export const breakpoints = ['640px', '768px', '1024px', '1280px'];
-
-export const baseColors = {
+const baseColors = {
   transparent: 'transparent',
   black: '#000',
   white: '#fff',
@@ -135,6 +135,391 @@ export const baseColors = {
   ],
 };
 
+const defaultColors = {
+  // standard color palette
+  text: baseColors.gray[8],
+  background: baseColors.white,
+  primary: baseColors.pink[7],
+  secondary: baseColors.gray[6],
+  accent: baseColors.pink[5],
+  highlight: baseColors.yellow[5],
+  muted: baseColors.gray[3],
+  // additional colors
+  textMuted: baseColors.gray[6],
+  primaryHover: baseColors.pink[8],
+  light: baseColors.gray[1],
+  dark: baseColors.gray[8],
+  grayDark: baseColors.gray[8],
+  success: baseColors.green[3],
+  info: baseColors.blue[4],
+  warning: baseColors.yellow[3],
+  danger: baseColors.red[3],
+};
+
+const darkColors = {
+  text: baseColors.white,
+  background: baseColors.gray[8],
+};
+
+const colors = {
+  ...baseColors,
+  ...defaultColors,
+  modes: {
+    dark: {
+      ...darkColors,
+    },
+  },
+};
+
+const baseFonts = {
+  sans:
+    'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+  serif: 'Georgia,Cambria,"Times New Roman",Times,serif',
+  mono: 'Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
+};
+
+const fonts = {
+  ...baseFonts,
+  body: baseFonts.sans,
+  heading: 'inherit',
+  monospace: baseFonts.mono,
+};
+
+const fontSizes = [
+  '0.875rem',
+  '1rem',
+  '1.25rem',
+  '1.5rem',
+  '1.875rem',
+  '2.25rem',
+  '3rem',
+  '4rem',
+  '4.5rem',
+];
+
+const baseFontWeights = {
+  hairline: 100,
+  thin: 200,
+  light: 300,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  black: 900,
+};
+
+const fontWeights = {
+  ...baseFontWeights,
+  body: baseFontWeights.normal,
+  heading: baseFontWeights.bold,
+};
+
+const letterSpacings = {
+  tighter: '-0.05em',
+  tight: '-0.025em',
+  normal: '0',
+  wide: '0.025em',
+  wider: '0.05em',
+  widest: '0.1em',
+};
+
+const baseLineHeights = {
+  none: '1',
+  tight: '1.25',
+  snug: '1.375',
+  normal: '1.5',
+  relaxed: '1.625',
+  loose: '2',
+};
+
+const lineHeights = {
+  ...baseLineHeights,
+  body: baseLineHeights.relaxed,
+  heading: baseLineHeights.tight,
+};
+
+const radii = {
+  none: '0',
+  sm: '0.125rem',
+  default: '0.25rem',
+  md: '0.375rem',
+  lg: '0.5rem',
+  full: '9999px',
+};
+
+const shadows = {
+  xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
+  sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+  default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+  md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+  lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+  xl:
+    '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+  '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+  inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+  outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
+  none: 'none',
+};
+
+const spacing = {
+  px: '1px',
+  '0': '0',
+  '1': '0.25rem',
+  '2': '0.5rem',
+  '3': '0.75rem',
+  '4': '1rem',
+  '5': '1.25rem',
+  '6': '1.5rem',
+  '8': '2rem',
+  '10': '2.5rem',
+  '12': '3rem',
+  '16': '4rem',
+  '20': '5rem',
+  '24': '6rem',
+  '32': '8rem',
+  '40': '10rem',
+  '48': '12rem',
+  '56': '14rem',
+  '64': '16rem',
+};
+
+const maxWidth = {
+  xs: '20rem',
+  sm: '24rem',
+  md: '28rem',
+  lg: '32rem',
+  xl: '36rem',
+  '2xl': '42rem',
+  '3xl': '48rem',
+  '4xl': '56rem',
+  '5xl': '64rem',
+  '6xl': '72rem',
+};
+
+const width = {
+  '1/2': '50%',
+  '1/3': '33.333333%',
+  '2/3': '66.666667%',
+  '1/4': '25%',
+  '2/4': '50%',
+  '3/4': '75%',
+  '1/5': '20%',
+  '2/5': '40%',
+  '3/5': '60%',
+  '4/5': '80%',
+  '1/6': '16.666667%',
+  '2/6': '33.333333%',
+  '3/6': '50%',
+  '4/6': '66.666667%',
+  '5/6': '83.333333%',
+  '1/12': '8.333333%',
+  '2/12': '16.666667%',
+  '3/12': '25%',
+  '4/12': '33.333333%',
+  '5/12': '41.666667%',
+  '6/12': '50%',
+  '7/12': '58.333333%',
+  '8/12': '66.666667%',
+  '9/12': '75%',
+  '10/12': '83.333333%',
+  '11/12': '91.666667%',
+};
+
+const sizes = {
+  ...spacing,
+  ...maxWidth,
+  ...width,
+  container: 768,
+  full: '100%',
+  screenHeight: '100vh',
+  screenWidth: '100vw',
+};
+
+const space = [
+  '0',
+  '0.25rem',
+  '0.5rem',
+  '1rem',
+  '2rem',
+  '4rem',
+  '8rem',
+  '16rem',
+  '32rem',
+];
+
+const zIndices = {
+  //   auto: 'auto',
+  '0': 0,
+  '10': 10,
+  '20': 20,
+  '30': 30,
+  '40': 40,
+  '50': 50,
+};
+
+const transitions = {
+  property: {
+    none: 'none',
+    all: 'all',
+    default:
+      'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
+    colors: 'background-color, border-color, color, fill, stroke',
+    opacity: 'opacity',
+    shadow: 'box-shadow',
+    transform: 'transform',
+  },
+  timingFunction: {
+    linear: 'linear',
+    in: 'cubic-bezier(0.4, 0, 1, 1)',
+    out: 'cubic-bezier(0, 0, 0.2, 1)',
+    'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+    fast: '100ms cubic-bezier(0.165, -0.235, 0.58, 1.18)',
+    default: '200ms cubic-bezier(0.165, -0.235, 0.58, 1.18)',
+    slow: '300ms cubic-bezier(0.165, -0.235, 0.58, 1.18)',
+    springDefault: '275ms cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+  },
+  duration: {
+    '75': '75ms',
+    '100': '100ms',
+    '150': '150ms',
+    '200': '200ms',
+    '300': '300ms',
+    '500': '500ms',
+    '700': '700ms',
+    '1000': '1000ms',
+  },
+};
+
+// const transforms = {
+//   transformOrigin: {
+//     center: 'center',
+//     top: 'top',
+//     'top-right': 'top right',
+//     right: 'right',
+//     'bottom-right': 'bottom right',
+//     bottom: 'bottom',
+//     'bottom-left': 'bottom left',
+//     left: 'left',
+//     'top-left': 'top left',
+//   },
+//   translate: {
+//     ...spacing,
+//     '-full': '-100%',
+//     '-1/2': '-50%',
+//     '1/2': '50%',
+//     full: '100%',
+//   },
+//   scale: {
+//     '0': '0',
+//     '50': '.5',
+//     '75': '.75',
+//     '90': '.9',
+//     '95': '.95',
+//     '100': '1',
+//     '105': '1.05',
+//     '110': '1.1',
+//     '125': '1.25',
+//     '150': '1.5',
+//   },
+//   rotate: {
+//     '-180': '-180deg',
+//     '-90': '-90deg',
+//     '-45': '-45deg',
+//     '0': '0',
+//     '45': '45deg',
+//     '90': '90deg',
+//     '180': '180deg',
+//   },
+//   skew: {
+//     '-12': '-12deg',
+//     '-6': '-6deg',
+//     '-3': '-3deg',
+//     '0': '0',
+//     '3': '3deg',
+//     '6': '6deg',
+//     '12': '12deg',
+//   },
+// };
+
+const breakpoints = ['640px', '768px', '1024px', '1280px'];
+
+// Markdown Styles
+const heading = {
+  fontFamily: 'heading',
+  fontWeight: 'heading',
+  lineHeight: 'heading',
+  m: 0,
+  mb: 1,
+};
+
+const styles = {
+  root: {
+    fontFamily: 'body',
+    lineHeight: 'body',
+    fontWeight: 'body',
+  },
+  a: {
+    color: 'primary',
+    textDecoration: 'none',
+    ':hover': {
+      textDecoration: 'underline',
+    },
+  },
+  h1: {
+    ...heading,
+    fontSize: 6,
+    mt: 2,
+  },
+  h2: {
+    ...heading,
+    fontSize: 5,
+    mt: 2,
+  },
+  h3: {
+    ...heading,
+    fontSize: 4,
+    mt: 3,
+  },
+  h4: {
+    ...heading,
+    fontSize: 3,
+  },
+  h5: {
+    ...heading,
+    fontSize: 2,
+  },
+  h6: {
+    ...heading,
+    fontSize: 1,
+    mb: 2,
+  },
+  code: {
+    ...nightOwl,
+  },
+
+  pre: {},
+  hr: {
+    bg: 'muted',
+    border: 0,
+    height: '1px',
+    m: 3,
+  },
+};
+
+// Variants
+
+const layout = {
+  root: {},
+  header: {
+    p: 3,
+  },
+  main: {
+    pt: 5,
+  },
+  footer: {},
+};
+
 const commonButtonStyles = {
   py: 2,
   px: 3,
@@ -143,7 +528,7 @@ const commonButtonStyles = {
   lineHeight: `inherit`,
 };
 
-export const buttons = {
+const buttons = {
   simple: {
     ...commonButtonStyles,
     backgroundColor: `primary`,
@@ -235,104 +620,16 @@ export const buttons = {
   },
 };
 
-export const lightColors = {
-  grayDark: baseColors.gray[8],
-  text: baseColors.gray[8],
-  background: baseColors.white,
-  primary: baseColors.blue[7],
-  primaryHover: baseColors.blue[8],
-  secondary: baseColors.gray[6],
-  muted: baseColors.gray[3],
-  success: baseColors.green[3],
-  info: baseColors.blue[4],
-  warning: baseColors.yellow[3],
-  danger: baseColors.red[3],
-  light: baseColors.gray[1],
-  dark: baseColors.gray[8],
-  textMuted: baseColors.gray[6],
-};
-
-export const darkColors = {
-  grayDark: baseColors.gray[8],
-  text: baseColors.gray[8],
-  background: baseColors.black,
-  primary: baseColors.blue[7],
-  primaryHover: baseColors.blue[8],
-  secondary: baseColors.gray[6],
-  muted: baseColors.gray[3],
-  success: baseColors.green[3],
-  info: baseColors.blue[4],
-  warning: baseColors.yellow[3],
-  danger: baseColors.red[3],
-  light: baseColors.gray[1],
-  dark: baseColors.gray[8],
-  textMuted: baseColors.gray[6],
-};
-
-export const colors = {
-  ...baseColors,
-  ...lightColors,
-  modes: {
-    dark: {
-      ...darkColors,
-    },
-  },
-};
-
-export const baseFonts = {
-  sans:
-    'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
-  serif: 'Georgia,Cambria,"Times New Roman",Times,serif',
-  mono: 'Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
-};
-
-export const fonts = {
-  ...baseFonts,
-  body: baseFonts.sans,
-  heading: 'inherit',
-  monospace: baseFonts.mono,
-};
-
-export const fontSizes = [
-  '0.875rem',
-  '1rem',
-  '1.25rem',
-  '1.5rem',
-  '1.875rem',
-  '2.25rem',
-  '3rem',
-  '4rem',
-  '4.5rem',
-];
-
-export const baseFontWeights = {
-  hairline: 100,
-  thin: 200,
-  light: 300,
-  normal: 400,
-  medium: 500,
-  semibold: 600,
-  bold: 700,
-  extrabold: 800,
-  black: 900,
-};
-
-export const fontWeights = {
-  ...baseFontWeights,
-  body: baseFontWeights.normal,
-  heading: baseFontWeights.bold,
-};
-
 const commonInputStyles = {
   py: 2,
   px: 3,
   fontSize: `100%`,
   borderRadius: `default`,
-  appearance: `none`,
+  // appearance: `none`,
   lineHeight: `tight`,
 };
 
-export const forms = {
+const forms = {
   input: {
     shadow: {
       ...commonInputStyles,
@@ -375,306 +672,32 @@ export const forms = {
   },
 };
 
-export const letterSpacings = {
-  tighter: '-0.05em',
-  tight: '-0.025em',
-  normal: '0',
-  wide: '0.025em',
-  wider: '0.05em',
-  widest: '0.1em',
-};
-
-export const baseLineHeights = {
-  none: '1',
-  tight: '1.25',
-  snug: '1.375',
-  normal: '1.5',
-  relaxed: '1.625',
-  loose: '2',
-};
-
-export const lineHeights = {
-  ...baseLineHeights,
-  body: baseLineHeights.relaxed,
-  heading: baseLineHeights.tight,
-};
-
-export const radii = {
-  none: '0',
-  sm: '0.125rem',
-  default: '0.25rem',
-  md: '0.375rem',
-  lg: '0.5rem',
-  full: '9999px',
-};
-
-const tailwindSpacing = {
-  px: '1px',
-  '0': '0',
-  '1': '0.25rem',
-  '2': '0.5rem',
-  '3': '0.75rem',
-  '4': '1rem',
-  '5': '1.25rem',
-  '6': '1.5rem',
-  '8': '2rem',
-  '10': '2.5rem',
-  '12': '3rem',
-  '16': '4rem',
-  '20': '5rem',
-  '24': '6rem',
-  '32': '8rem',
-  '40': '10rem',
-  '48': '12rem',
-  '56': '14rem',
-  '64': '16rem',
-};
-
-const tailwindMaxWidth = {
-  xs: '20rem',
-  sm: '24rem',
-  md: '28rem',
-  lg: '32rem',
-  xl: '36rem',
-  '2xl': '42rem',
-  '3xl': '48rem',
-  '4xl': '56rem',
-  '5xl': '64rem',
-  '6xl': '72rem',
-};
-
-const tailwindWidth = {
-  '1/2': '50%',
-  '1/3': '33.333333%',
-  '2/3': '66.666667%',
-  '1/4': '25%',
-  '2/4': '50%',
-  '3/4': '75%',
-  '1/5': '20%',
-  '2/5': '40%',
-  '3/5': '60%',
-  '4/5': '80%',
-  '1/6': '16.666667%',
-  '2/6': '33.333333%',
-  '3/6': '50%',
-  '4/6': '66.666667%',
-  '5/6': '83.333333%',
-  '1/12': '8.333333%',
-  '2/12': '16.666667%',
-  '3/12': '25%',
-  '4/12': '33.333333%',
-  '5/12': '41.666667%',
-  '6/12': '50%',
-  '7/12': '58.333333%',
-  '8/12': '66.666667%',
-  '9/12': '75%',
-  '10/12': '83.333333%',
-  '11/12': '91.666667%',
-};
-
-export const sizes = {
-  ...tailwindSpacing,
-  ...tailwindMaxWidth,
-  ...tailwindWidth,
-  full: '100%',
-  screenHeight: '100vh',
-  screenWidth: '100vw',
-};
-
-export const shadows = {
-  xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
-  sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-  default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-  md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-  lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-  xl:
-    '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-  '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-  inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
-  outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
-  none: 'none',
-};
-
-export const space = [
-  '0',
-  '0.25rem',
-  '0.5rem',
-  '1rem',
-  '2rem',
-  '4rem',
-  '8rem',
-  '16rem',
-  '32rem',
-];
-
-export const zIndices = {
-  //   auto: 'auto',
-  '0': 0,
-  '10': 10,
-  '20': 20,
-  '30': 30,
-  '40': 40,
-  '50': 50,
-};
-
-const heading = {
-  fontFamily: 'heading',
-  fontWeight: 'heading',
-  lineHeight: 'heading',
-  m: 0,
-  mb: 1,
-};
-
-export const styles = {
-  root: {
-    fontFamily: 'body',
-    lineHeight: 'body',
-    fontWeight: 'body',
-  },
-  a: {
-    color: 'primary',
-    textDecoration: 'none',
-    ':hover': {
-      textDecoration: 'underline',
-    },
-  },
-  h1: {
-    ...heading,
-    fontSize: 6,
-    mt: 2,
-  },
-  h2: {
-    ...heading,
-    fontSize: 5,
-    mt: 2,
-  },
-  h3: {
-    ...heading,
-    fontSize: 4,
-    mt: 3,
-  },
-  h4: {
-    ...heading,
-    fontSize: 3,
-  },
-  h5: {
-    ...heading,
-    fontSize: 2,
-  },
-  h6: {
-    ...heading,
-    fontSize: 1,
-    mb: 2,
-  },
-  code: {},
-  pre: {},
-  hr: {
-    bg: 'muted',
-    border: 0,
-    height: '1px',
-    m: 3,
-  },
-};
-
-export const transforms = {
-  transformOrigin: {
-    center: 'center',
-    top: 'top',
-    'top-right': 'top right',
-    right: 'right',
-    'bottom-right': 'bottom right',
-    bottom: 'bottom',
-    'bottom-left': 'bottom left',
-    left: 'left',
-    'top-left': 'top left',
-  },
-  translate: {
-    ...tailwindSpacing,
-    '-full': '-100%',
-    '-1/2': '-50%',
-    '1/2': '50%',
-    full: '100%',
-  },
-  scale: {
-    '0': '0',
-    '50': '.5',
-    '75': '.75',
-    '90': '.9',
-    '95': '.95',
-    '100': '1',
-    '105': '1.05',
-    '110': '1.1',
-    '125': '1.25',
-    '150': '1.5',
-  },
-  rotate: {
-    '-180': '-180deg',
-    '-90': '-90deg',
-    '-45': '-45deg',
-    '0': '0',
-    '45': '45deg',
-    '90': '90deg',
-    '180': '180deg',
-  },
-  skew: {
-    '-12': '-12deg',
-    '-6': '-6deg',
-    '-3': '-3deg',
-    '0': '0',
-    '3': '3deg',
-    '6': '6deg',
-    '12': '12deg',
-  },
-};
-
-export const transitions = {
-  property: {
-    none: 'none',
-    all: 'all',
-    default:
-      'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
-    colors: 'background-color, border-color, color, fill, stroke',
-    opacity: 'opacity',
-    shadow: 'box-shadow',
-    transform: 'transform',
-  },
-  timingFunction: {
-    linear: 'linear',
-    in: 'cubic-bezier(0.4, 0, 1, 1)',
-    out: 'cubic-bezier(0, 0, 0.2, 1)',
-    'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
-  },
-  duration: {
-    '75': '75ms',
-    '100': '100ms',
-    '150': '150ms',
-    '200': '200ms',
-    '300': '300ms',
-    '500': '500ms',
-    '700': '700ms',
-    '1000': '1000ms',
-  },
-};
-
-export const tailwind: Theme = {
+const theme: Theme = {
+  // borders: {},
+  // borderStyles: {},
   borderWidths,
-  breakpoints,
   colors,
   fonts,
   fontSizes,
   fontWeights,
   letterSpacings,
   lineHeights,
-  sizes,
-  shadows,
-  space,
+  // opacities: {},
   radii,
+  shadows,
+  sizes,
+  space,
   zIndices,
-  styles,
-  buttons,
-  // forms,
-  // transforms,
   transitions,
+  // transforms,
+  breakpoints,
+  styles,
+  layout,
+  buttons,
+  forms,
 };
 
-export default tailwind;
+export default theme;
+
+// https://dev.theme-ui.com/sx-prop#theme-aware-properties
+// https://dev.theme-ui.com/theme-spec/

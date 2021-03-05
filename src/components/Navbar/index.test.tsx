@@ -1,11 +1,11 @@
-import { NavbarLink } from '@components/NavbarLink';
+import { Navbar } from '@components/Navbar';
 import { render, screen } from '../../test/test-utils';
 
 test('renders with the default styles for the default colorMode', () => {
-  render(<NavbarLink href="link">a link</NavbarLink>, {
+  render(<Navbar />, {
     colorMode: 'default',
   });
-  const link = screen.getByText(/a link/i);
+  const link = screen.getByText(/tomhendra.dev/i);
   expect(link).toMatchInlineSnapshot(`
     .emotion-0 {
       box-sizing: border-box;
@@ -21,23 +21,23 @@ test('renders with the default styles for the default colorMode', () => {
     .emotion-0:hover,
     .emotion-0:focus,
     .emotion-0.active {
-      color: var(--theme-ui-colors-primary, #2b6cb0);
+      color: var(--theme-ui-colors-primary, #b83280);
     }
 
     <a
       class="emotion-0"
-      href="/link"
+      href="/"
     >
-      a link
+      tomhendra.dev
     </a>
   `);
 });
 
 test('renders with the dark styles for the dark colorMode', () => {
-  render(<NavbarLink href="link">a link</NavbarLink>, {
+  render(<Navbar />, {
     colorMode: 'dark',
   });
-  const link = screen.getByText(/a link/i);
+  const link = screen.getByText(/tomhendra.dev/i);
   expect(link).toMatchInlineSnapshot(`
     .emotion-0 {
       box-sizing: border-box;
@@ -53,14 +53,14 @@ test('renders with the dark styles for the dark colorMode', () => {
     .emotion-0:hover,
     .emotion-0:focus,
     .emotion-0.active {
-      color: var(--theme-ui-colors-primary, #2b6cb0);
+      color: var(--theme-ui-colors-primary, #b83280);
     }
 
     <a
       class="emotion-0"
-      href="/link"
+      href="/"
     >
-      a link
+      tomhendra.dev
     </a>
   `);
 });

@@ -7,7 +7,7 @@ interface Props {
   blog: PostPreview;
 }
 
-export function BlogPostPreview({ blog }: Props): React.ReactElement {
+export function BlogPostPreview({ blog }: Props) {
   return (
     <Box
       role="group"

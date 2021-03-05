@@ -4,7 +4,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export function Table({ children }: Props): React.ReactElement {
+export function Table({ children }: Props) {
   return (
     <table
       sx={{

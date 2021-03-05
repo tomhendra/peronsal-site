@@ -1,7 +1,7 @@
 import { Layout, SEO } from '@components';
 import { Box, Text } from 'theme-ui';
 
-function Home(): React.ReactElement {
+function Home() {
   return (
     <>
       <SEO

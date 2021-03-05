@@ -33,7 +33,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off', // handled by explicit-function-return-type: https://github.com/typescript-eslint/typescript-eslint/issues/2719
     '@typescript-eslint/explicit-function-return-type': [
       // default is warn & provide options object
-      'warn',
+      'off',
       {
         allowExpressions: true, // only functions which are part of a declaration will be checked
         allowConciseArrowFunctionExpressionsStartingWithVoid: true, // concise arrow functions that start with the void keyword will not be checked

@@ -1,29 +1,34 @@
 /** @jsxImportSource theme-ui */
-import { NavbarLink, ModeToggle } from '@components';
-import { Box, Flex } from 'theme-ui';
+import { ModeToggle } from './components/ModeToggle';
+import NextLink from 'next/link';
+import { NavLink } from 'theme-ui';
 
-export function Navbar(): React.ReactElement {
+export function Navbar() {
   return (
-    <Box>
-      <Flex
-        as="nav"
-        p={4}
+    <div
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      <NextLink href="/" passHref>
+        <NavLink>tomhendra.dev</NavLink>
+      </NextLink>
+      <nav
         sx={{
-          justifyContent: 'space-between',
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
-        <NavbarLink href="/">tomhendra.dev</NavbarLink>
-        <Flex
-          sx={{
-            width: '5/6',
-            justifyContent: 'space-between',
-          }}
-        >
-          <NavbarLink href="/">Home</NavbarLink>
-          <NavbarLink href="/blog">Blog</NavbarLink>
-          <ModeToggle />
-        </Flex>
-      </Flex>
-    </Box>
+        <NextLink href="/" passHref>
+          <NavLink pr={3}>Home</NavLink>
+        </NextLink>
+        <NextLink href="/blog" passHref>
+          <NavLink pr={3}>Blog</NavLink>
+        </NextLink>
+        <ModeToggle />
+      </nav>
+    </div>
   );
 }

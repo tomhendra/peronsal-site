@@ -9,7 +9,7 @@ interface BlogProps {
   posts: MdxContent[];
 }
 
-function Blog({ posts }: BlogProps): React.ReactElement {
+function Blog({ posts }: BlogProps) {
   return (
     <>
       <SEO title="Blog" description="Tom Hendra's blog." />
