@@ -1,9 +1,9 @@
 /** @jsxImportSource theme-ui */
-import { Flex } from 'theme-ui';
 import { POST_CONTENT_PATH, getMdxContent } from '@utils';
 import { BlogPostPreview, Layout, SEO } from '@components';
 import { MdxContent } from '@types';
 import { GetStaticProps } from 'next';
+import { Styled } from '@theme-ui/mdx';
 
 interface BlogProps {
   posts: MdxContent[];
@@ -14,11 +14,17 @@ function Blog({ posts }: BlogProps) {
     <>
       <SEO title="Blog" description="Tom Hendra's blog." />
       <Layout>
-        <Flex sx={{ flexDirection: 'column' }}>
+        <div
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          <Styled.h1>Blog</Styled.h1>
           {posts.map(post => (
             <BlogPostPreview key={post.slug} blog={post} />
           ))}
-        </Flex>
+        </div>
       </Layout>
     </>
   );

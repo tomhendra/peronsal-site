@@ -1,9 +1,10 @@
 import hydrate from 'next-mdx-remote/hydrate';
 import { POST_CONTENT_PATH, getMdxContent } from '@utils';
-import { Box, Text } from 'theme-ui';
 import { Layout, components } from '@components';
 import { MdxSource, PostData } from '@types';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { Styled } from 'theme-ui';
+import Image from 'next/image';
 
 interface BlogPostProps {
   mdx: MdxSource;
@@ -12,13 +13,20 @@ interface BlogPostProps {
 
 function BlogPost({ mdx, data }: BlogPostProps) {
   const content = hydrate(mdx, { components });
+  const { title, image, caption } = data;
 
   return (
     <Layout>
-      <Box>
-        <Text as="h1">{data.title}</Text>
-        {content}
-      </Box>
+      <Styled.h1>{title ? title : 'Untitled'}</Styled.h1>
+      <Image
+        src={image ? image : '/public/images/camera.jpg'}
+        alt={caption}
+        height={500}
+        width={768}
+        layout="responsive"
+      />
+      <Styled.p>{caption}</Styled.p>
+      {content}
     </Layout>
   );
 }

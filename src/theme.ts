@@ -173,7 +173,7 @@ const colors = {
 
 const baseFonts = {
   sans:
-    'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+    'Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
   serif: 'Georgia,Cambria,"Times New Roman",Times,serif',
   mono: 'Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
 };
@@ -444,7 +444,7 @@ const transitions = {
 
 const breakpoints = ['640px', '768px', '1024px', '1280px'];
 
-// Markdown Styles
+// Markdown & Styled Styles
 const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
@@ -496,6 +496,7 @@ const styles = {
   },
   code: {
     ...nightOwl,
+    p: 3,
   },
 
   pre: {},
@@ -508,10 +509,11 @@ const styles = {
 };
 
 // Variants
-
 const layout = {
   root: {},
   header: {
+    bg: 'inherit',
+    boxShadow: 'sm',
     p: 3,
   },
   main: {
