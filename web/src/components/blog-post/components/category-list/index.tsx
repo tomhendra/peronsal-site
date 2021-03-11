@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { Category } from '../../../types/types';
+import { Category } from '../../../../types';
 
 type Props = {
   categories: Category[];

@@ -9,7 +9,7 @@ import {
   Colors,
   CSSObject,
   Theme,
-} from '../types/types';
+} from '../types';
 
 // ....................media queries....................
 

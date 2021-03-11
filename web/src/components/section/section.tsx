@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { Spacings, Variants, Children } from '../../types/types';
+import { Spacings, Variants, Children } from '../../types';
 
 import { getSpacingValues, withMediaQueries } from '../../utils/style-helpers';
 

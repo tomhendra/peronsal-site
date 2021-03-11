@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { toPlainText } from '../utils/helpers';
 
 import { Layout, SEO, GraphQLErrors, Project } from '../components';
-import { ProjectTemplateQuery } from '../types/types';
+import { ProjectTemplateQuery } from '../types';
 
 export const query = graphql`
   query ProjectTemplateQuery($id: String!) {

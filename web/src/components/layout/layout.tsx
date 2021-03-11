@@ -4,7 +4,7 @@ import React from 'react';
 import { Wrapper, Header, Footer } from '..';
 
 import { themes } from '../../theme';
-import { Children } from '../../types/types';
+import { Children } from '../../types';
 
 // TODO: --------> use state to change on switch
 const theme = themes.nord;

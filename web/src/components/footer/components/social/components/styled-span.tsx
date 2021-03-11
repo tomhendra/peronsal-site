@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 
 import { withMediaQueries } from '../../../../../utils/style-helpers';
 
-import { Children } from '../../../../../types/types';
+import { Children } from '../../../../../types';
 
 type Props = {
   children: Children;

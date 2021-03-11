@@ -7,7 +7,7 @@ import {
   StyledAnchor,
 } from './components';
 
-import { Variants, ButtonSizes, Children } from '../../types/types';
+import { Variants, ButtonSizes, Children } from '../../types';
 
 type Props = {
   variant: Variants;

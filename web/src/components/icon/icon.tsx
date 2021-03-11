@@ -4,7 +4,7 @@ import * as featherIcons from 'react-feather';
 
 import { StyledContainer } from './components';
 
-import { IconColors, IconSizes, Spacings, Icons } from '../../types/types';
+import { IconColors, IconSizes, Spacings, Icons } from '../../types';
 
 type Props = {
   type: Icons;

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { Children, IconSizes, Spacings } from '../../../types/types';
+import { Children, IconSizes, Spacings } from '../../../types';
 
 import {
   withMediaQueries,

@@ -1,4 +1,4 @@
-import { Block } from '../types/types';
+import { Block } from '../types';
 
 export function toPlainText(blocks: Block[]): string {
   // https://www.sanity.io/docs/what-you-need-to-know-about-block-text/presenting-block-text

@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { Layout, SEO, GraphQLErrors, BlogPost } from '../components';
 
 // import { toPlainText } from '../utils/helpers';
-import { BlogPostTemplateQuery } from '../types/types';
+import { BlogPostTemplateQuery } from '../types';
 
 export const query = graphql`
   query BlogPostTemplateQuery($id: String!) {

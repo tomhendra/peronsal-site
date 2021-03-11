@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { Children } from '../../../types/types';
+import { Children } from '../../../types';
 
 type Props = {
   children: Children;

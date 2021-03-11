@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import { withMediaQueries } from '../../../../../utils/style-helpers';
-import { Variants, Children } from '../../../../../types/types';
+import { Variants, Children } from '../../../../../types';
 
 type Props = {
   variant: Variants;

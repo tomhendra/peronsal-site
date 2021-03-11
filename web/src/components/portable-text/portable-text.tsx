@@ -12,7 +12,7 @@ import {
   ListItemType,
   LinkMark,
   Block,
-} from '../../types/types';
+} from '../../types';
 
 const serializers = {
   types: {

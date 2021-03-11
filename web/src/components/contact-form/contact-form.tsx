@@ -7,7 +7,7 @@ import { Button, ButtonGroup, Card, InlineLink, Tooltip } from '..';
 
 import { StyledForm, TextInput, Textarea, Checkbox } from './components';
 
-import { Variants } from '../../types/types';
+import { Variants } from '../../types';
 
 type Props = {
   variant: Variants;

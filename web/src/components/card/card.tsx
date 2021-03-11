@@ -11,7 +11,7 @@ import {
   AlignContent,
   Children,
   Theme,
-} from '../../types/types';
+} from '../../types';
 
 import {
   shadowStandardAlpha,

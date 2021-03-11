@@ -16,7 +16,7 @@ import {
 } from '../components';
 
 import { useProjects } from '../lib';
-import { ProjectHookData } from '../types/types';
+import { ProjectHookData } from '../types';
 
 const Projects = (): JSX.Element => {
   const projects = useProjects();

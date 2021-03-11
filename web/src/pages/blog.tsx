@@ -12,7 +12,7 @@ import {
 } from '../components';
 
 import { usePosts } from '../lib';
-import { BlogPostHookData } from '../types/types';
+import { BlogPostHookData } from '../types';
 
 const Blog = (): JSX.Element => {
   const posts = usePosts();

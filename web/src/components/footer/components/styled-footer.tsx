@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { Children } from '../../../types/types';
+import { Children } from '../../../types';
 import { withMediaQueries } from '../../../utils/style-helpers';
 
 type Props = {

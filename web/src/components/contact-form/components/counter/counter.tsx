@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Variants } from '../../../../types/types';
+import { Variants } from '../../../../types';
 
 import { Text } from '../../..';
 import {

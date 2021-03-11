@@ -13,7 +13,7 @@ import {
 
 import { StyledImg } from './components';
 
-import { ProjectTemplateQuery } from '../../types/types';
+import { ProjectTemplateQuery } from '../../types';
 
 type Props = {
   project: ProjectTemplateQuery;

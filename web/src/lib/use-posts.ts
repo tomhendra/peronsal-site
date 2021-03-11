@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-import { BlogPostHookQuery, BlogPostHookData } from '../types/types';
+import { BlogPostHookQuery, BlogPostHookData } from '../types';
 
 export function usePosts(): BlogPostHookData[] {
   const data = useStaticQuery(graphql`

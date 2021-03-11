@@ -9,7 +9,7 @@ import {
   Alignments,
   Children,
   Theme,
-} from '../../types/types';
+} from '../../types';
 
 type Props = {
   css?: Interpolation<Theme>; // fix for bug when reusing component & applying extra styles with css prop.

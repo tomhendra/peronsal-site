@@ -9,7 +9,7 @@ import {
   AlignItems,
   AlignContent,
   Children,
-} from '../../types/types';
+} from '../../types';
 
 import { getSpacingValues, withMediaQueries } from '../../utils/style-helpers';
 

@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { TechStackHookQuery, TechStackHookData } from '../types/types';
+import { TechStackHookQuery, TechStackHookData } from '../types';
 
 export function useTechStack(): TechStackHookData[] {
   const data = useStaticQuery(graphql`

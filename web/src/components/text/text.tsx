@@ -7,13 +7,7 @@ import {
   withMediaQueries,
 } from '../../utils/style-helpers';
 
-import {
-  Variants,
-  Children,
-  TextSizes,
-  Spacings,
-  Theme,
-} from '../../types/types';
+import { Variants, Children, TextSizes, Spacings, Theme } from '../../types';
 
 type Props = {
   css?: Interpolation<Theme>; // fix for bug when reusing component & applying extra styles with css prop.

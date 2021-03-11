@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 
 import { Tooltip } from '../..';
 
-import { Children } from '../../../types/types';
+import { Children } from '../../../types';
 
 type Props = {
   children: Children;

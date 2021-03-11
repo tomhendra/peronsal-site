@@ -4,7 +4,8 @@
     "allowJs": true, // check JS files
     "noEmit": true, // do not compile to JS
     "skipLibCheck": true, // node_modules not checked
-    "jsx": "react",
+    "jsx": "preserve",
+    // "jsxImportSource": "@emotion/react",
     "target": "esnext",
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",

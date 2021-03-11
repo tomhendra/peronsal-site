@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { ProjectHookQuery, ProjectHookData } from '../types/types';
+import { ProjectHookQuery, ProjectHookData } from '../types';
 
 export function useProjects(): ProjectHookData[] {
   const data = useStaticQuery(graphql`

@@ -1,13 +1,7 @@
 /** @jsx jsx */
 import { jsx, Interpolation } from '@emotion/react';
 
-import {
-  Variants,
-  Children,
-  HeadingSizes,
-  Spacings,
-  Theme,
-} from '../../types/types';
+import { Variants, Children, HeadingSizes, Spacings, Theme } from '../../types';
 
 import {
   getSpacingValues,

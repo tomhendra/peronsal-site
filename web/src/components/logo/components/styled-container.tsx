@@ -6,7 +6,7 @@ import {
   getSpacingValues,
 } from '../../../utils/style-helpers';
 
-import { Spacings, IconSizes, Children } from '../../../types/types';
+import { Spacings, IconSizes, Children } from '../../../types';
 
 type Props = {
   size: IconSizes;

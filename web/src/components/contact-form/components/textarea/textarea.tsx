@@ -4,7 +4,7 @@ import { useField } from 'formik';
 import { Text, Tooltip } from '../../..';
 import { Counter } from '..';
 import { StyledContainer, StyledTextarea } from './components';
-import { Variants } from '../../../../types/types';
+import { Variants } from '../../../../types';
 
 type Props = {
   label: string;

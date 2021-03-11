@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
-import { withMediaQueries } from '../../../utils/style-helpers';
+import { withMediaQueries } from '../../../../utils/style-helpers';
 
 export const StyledLink = styled(Link)(({ theme }) =>
   withMediaQueries(theme)({

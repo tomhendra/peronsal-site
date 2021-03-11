@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/react';
 
 import { withMediaQueries, getSpacingValues } from '../../utils/style-helpers';
-import { Children } from '../../types/types';
+import { Children } from '../../types';
 
 type Props = {
   children: Children;

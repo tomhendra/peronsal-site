@@ -4,7 +4,7 @@ import { Section, Grid, Item, PortableText, Heading } from '..';
 import { PostedDate, CategoryList } from './components';
 import Img from 'gatsby-image';
 
-import { BlogPostTemplateQuery } from '../../types/types';
+import { BlogPostTemplateQuery } from '../../types';
 
 type Props = {
   post: BlogPostTemplateQuery;

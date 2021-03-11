@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import Img from 'gatsby-image';
 
 import { Text } from '..';
-import { FigureType } from '../../types/types';
+import { FigureType } from '../../types';
 
 const sanityConfig = require('../../../sanity-config');
 

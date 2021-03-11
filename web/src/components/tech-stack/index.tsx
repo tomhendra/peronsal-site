@@ -8,7 +8,7 @@ import {
   StyledTooltip,
   StyledImg,
 } from './components';
-import { TechStackHookData } from '../../types/types';
+import { TechStackHookData } from '../../types';
 
 type Props = {
   gridSize: 'alpha' | 'delta';

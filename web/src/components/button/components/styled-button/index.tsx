@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { Variants, ButtonSizes, Children } from '../../../types/types';
+import { Variants, ButtonSizes, Children } from '../../../../types';
 
 type Props = {
   variant: Variants;
