@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { toPlainText } from '../utils/helpers';
 
 import { Layout, SEO, GraphQLErrors, Project } from '../components';
-import { ProjectTemplateQuery } from '../utils/types';
+import { ProjectTemplateQuery } from '../types/types';
 
 export const query = graphql`
   query ProjectTemplateQuery($id: String!) {
@@ -33,14 +33,12 @@ export const query = graphql`
   }
 `;
 
-type Props = {
-  data: {
-    project: ProjectTemplateQuery;
-  };
+interface Props {
+  data: { project: ProjectTemplateQuery };
   errors: { message: string }[];
-};
+}
 
-const ProjectTemplate = ({ data, errors }: Props): JSX.Element => {
+function ProjectTemplate({ data, errors }: Props) {
   const project = data && data.project;
   return (
     <Layout>
@@ -55,6 +53,6 @@ const ProjectTemplate = ({ data, errors }: Props): JSX.Element => {
       {project && <Project project={project} />}
     </Layout>
   );
-};
+}
 
 export default ProjectTemplate;

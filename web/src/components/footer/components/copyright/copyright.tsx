@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useSiteMetadata } from '../../../../hooks';
+import { useSiteMetadata } from '../../../../lib';
 
 import { Logo } from '../../..';
 import { StyledContainer, StyledSpan } from './components';

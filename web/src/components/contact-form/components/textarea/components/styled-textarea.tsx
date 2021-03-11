@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { Variants } from '../../../../../utils/types';
+import { Variants } from '../../../../../types/types';
 
 type Props = {
   variant: Variants;
@@ -15,7 +15,7 @@ export const StyledTextarea = (props: Props): JSX.Element => {
   return (
     <textarea
       rows={rows}
-      css={(theme) => {
+      css={theme => {
         const colorVariants = {
           primary: {
             backgroundColor: theme.colors.white,

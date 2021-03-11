@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { Children } from '../../../utils/types';
+import { Children } from '../../../types/types';
 import { withMediaQueries } from '../../../utils/style-helpers';
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 
 export const StyledContainer = ({ children }: Props): JSX.Element => (
   <div
-    css={(theme) =>
+    css={theme =>
       withMediaQueries(theme)({
         display: 'flex',
         flexDirection: 'column',

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { Category } from '../../../utils/types';
+import { Category } from '../../../types/types';
 
 type Props = {
   categories: Category[];
@@ -9,7 +9,7 @@ type Props = {
 
 export const CategoryList = ({ categories }: Props): JSX.Element => (
   <ul
-    css={(theme) => ({
+    css={theme => ({
       display: 'flex',
       listStyle: 'none',
       marginTop: theme.spacings.foxtrot,
@@ -26,7 +26,7 @@ export const CategoryList = ({ categories }: Props): JSX.Element => (
       },
     })}
   >
-    {categories.map((category) => (
+    {categories.map(category => (
       <li key={category._id}>{category.title}</li>
     ))}
   </ul>

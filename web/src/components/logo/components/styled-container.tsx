@@ -6,7 +6,7 @@ import {
   getSpacingValues,
 } from '../../../utils/style-helpers';
 
-import { Spacings, IconSizes, Children } from '../../../utils/types';
+import { Spacings, IconSizes, Children } from '../../../types/types';
 
 type Props = {
   size: IconSizes;
@@ -34,7 +34,7 @@ export const StyledContainer = (props: Props): JSX.Element => {
       role="img"
       aria-label="SVG image of a robot used as the brand logo for Tom Hendra, Web
         Developer."
-      css={(theme) =>
+      css={theme =>
         withMediaQueries(theme)({
           height: size && getSpacingValues(size, theme),
           margin: spacing && getSpacingValues(spacing, theme),

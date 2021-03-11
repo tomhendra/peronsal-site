@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { Children, IconSizes, Spacings } from '../../../utils/types';
+import { Children, IconSizes, Spacings } from '../../../types/types';
 
 import {
   withMediaQueries,
@@ -32,7 +32,7 @@ export const StyledContainer = (props: Props): JSX.Element => {
   return (
     <div
       role="img"
-      css={(theme) =>
+      css={theme =>
         withMediaQueries(theme)({
           height: theme.iconSizes[size],
           margin: spacing && getSpacingValues(spacing, theme),

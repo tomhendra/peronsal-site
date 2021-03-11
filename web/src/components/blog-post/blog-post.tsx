@@ -1,9 +1,10 @@
 import React from 'react';
 
 import { Section, Grid, Item, PortableText, Heading } from '..';
-import { StyledImg, PostedDate, CategoryList } from './components';
+import { PostedDate, CategoryList } from './components';
+import Img from 'gatsby-image';
 
-import { BlogPostTemplateQuery } from '../../utils/types';
+import { BlogPostTemplateQuery } from '../../types/types';
 
 type Props = {
   post: BlogPostTemplateQuery;
@@ -21,13 +22,7 @@ export const BlogPost = ({ post }: Props): JSX.Element => {
             </Heading>
             {publishedAt && <PostedDate date={publishedAt} />}
             {mainImage && mainImage.asset && (
-              <StyledImg
-                alt={mainImage.alt}
-                sizes={{
-                  ...mainImage.asset.fluid,
-                  aspectRatio: 9 / 5,
-                }}
-              />
+              <Img alt={mainImage.alt} fluid={mainImage.asset.fluid} />
             )}
           </Item>
           <Item gridColStart={[1, 1, 1, 3, 3]} gridColEnd={[9, 9, 11, 11, 10]}>

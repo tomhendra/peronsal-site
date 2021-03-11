@@ -7,7 +7,7 @@ import { Button, ButtonGroup, Card, InlineLink, Tooltip } from '..';
 
 import { StyledForm, TextInput, Textarea, Checkbox } from './components';
 
-import { Variants } from '../../utils/types';
+import { Variants } from '../../types/types';
 
 type Props = {
   variant: Variants;
@@ -59,7 +59,7 @@ export const ContactForm = ({ variant = 'secondary' }: Props): JSX.Element => {
         actions.resetForm();
         handleServerResponse(true, 'Message submitted. Thank you!');
       })
-      .catch((error) => {
+      .catch(error => {
         actions.setSubmitting(false);
         handleServerResponse(false, error.response.data.error);
       });

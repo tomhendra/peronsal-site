@@ -12,7 +12,7 @@ import {
   ListItemType,
   LinkMark,
   Block,
-} from '../../utils/types';
+} from '../../types/types';
 
 const serializers = {
   types: {
@@ -23,7 +23,7 @@ const serializers = {
             <Heading
               as="h2"
               variant="primary"
-              css={(theme) => ({ marginTop: theme.spacings.hotel })}
+              css={theme => ({ marginTop: theme.spacings.hotel })}
             >
               {children}
             </Heading>
@@ -34,7 +34,7 @@ const serializers = {
             <Heading
               as="h3"
               variant="primary"
-              css={(theme) => ({ marginTop: theme.spacings.hotel })}
+              css={theme => ({ marginTop: theme.spacings.hotel })}
             >
               {children}
             </Heading>
@@ -45,7 +45,7 @@ const serializers = {
             <Heading
               as="h4"
               variant="primary"
-              css={(theme) => ({ marginTop: theme.spacings.echo })}
+              css={theme => ({ marginTop: theme.spacings.echo })}
             >
               {children}
             </Heading>
@@ -56,7 +56,7 @@ const serializers = {
             <Heading
               as="h5"
               variant="primary"
-              css={(theme) => ({ marginTop: theme.spacings.foxtrot })}
+              css={theme => ({ marginTop: theme.spacings.foxtrot })}
             >
               {children}
             </Heading>
@@ -67,7 +67,7 @@ const serializers = {
             <Heading
               as="h6"
               variant="primary"
-              css={(theme) => ({ marginTop: theme.spacings.charlie })}
+              css={theme => ({ marginTop: theme.spacings.charlie })}
             >
               {children}
             </Heading>

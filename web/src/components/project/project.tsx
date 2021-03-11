@@ -13,7 +13,7 @@ import {
 
 import { StyledImg } from './components';
 
-import { ProjectTemplateQuery } from '../../utils/types';
+import { ProjectTemplateQuery } from '../../types/types';
 
 type Props = {
   project: ProjectTemplateQuery;
@@ -103,7 +103,7 @@ export const Project = ({ project }: Props): JSX.Element => {
             </Heading>
             <TechStack
               gridSize="alpha"
-              stack={_rawTechstack.map((item) => item.title)}
+              stack={_rawTechstack.map(item => item.title)}
             />
           </Item>
           <Item

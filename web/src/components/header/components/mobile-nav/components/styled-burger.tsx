@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { Children } from '../../../../../utils/types';
+import { Children } from '../../../../../types/types';
 
 interface Props {
   open: boolean;
@@ -15,7 +15,7 @@ export const StyledBurger = (props: Props): JSX.Element => {
       type="button"
       onClick={onClick}
       aria-label="Burger icon button to open navigation menu"
-      css={(theme) => ({
+      css={theme => ({
         background: 'transparent',
         border: 'none',
         cursor: 'pointer',

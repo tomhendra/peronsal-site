@@ -9,7 +9,7 @@ import {
   Colors,
   CSSObject,
   Theme,
-} from './types';
+} from '../types/types';
 
 // ....................media queries....................
 
@@ -31,7 +31,7 @@ export function withMediaQueries(
   theme: Theme,
 ): import('facepaint').DynamicStyleFunction {
   return facepaint(
-    theme.breakpoints.map((bp) => `@media only screen and (min-width: ${bp})`),
+    theme.breakpoints.map(bp => `@media only screen and (min-width: ${bp})`),
   );
 }
 

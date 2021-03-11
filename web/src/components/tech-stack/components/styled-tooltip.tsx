@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 
 import { Tooltip } from '../..';
 
-import { Children } from '../../../utils/types';
+import { Children } from '../../../types/types';
 
 type Props = {
   children: Children;
@@ -14,7 +14,7 @@ export const StyledTooltip = ({ children, ...rest }: Props): JSX.Element => (
     variant="neutral"
     align="center"
     position="top"
-    css={(theme) => ({
+    css={theme => ({
       marginBottom: theme.spacings.delta,
       visibility: 'hidden',
     })}

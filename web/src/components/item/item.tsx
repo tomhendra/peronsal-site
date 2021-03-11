@@ -9,7 +9,7 @@ import {
   AlignItems,
   AlignContent,
   Children,
-} from '../../utils/types';
+} from '../../types/types';
 
 import { getSpacingValues, withMediaQueries } from '../../utils/style-helpers';
 
@@ -52,7 +52,7 @@ export const Item = (props: Props): JSX.Element => {
 
   return (
     <div
-      css={(theme) => {
+      css={theme => {
         const baseStyles = {
           label: 'item',
           display: 'flex',
@@ -76,7 +76,7 @@ export const Item = (props: Props): JSX.Element => {
 
         function getGridSpanValues(spanValue: GridPositions | GridPositions[]) {
           return Array.isArray(spanValue)
-            ? spanValue.map((val) => `span ${val}`)
+            ? spanValue.map(val => `span ${val}`)
             : `span ${spanValue}`;
         }
 

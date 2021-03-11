@@ -4,7 +4,7 @@ import { useField } from 'formik';
 import { Icon, Tooltip } from '../../..';
 import { StyledContainer, StyledCheckbox, StyledLabel } from './components';
 
-import { Variants, Children } from '../../../../utils/types';
+import { Variants, Children } from '../../../../types/types';
 
 type Props = {
   variant: Variants;

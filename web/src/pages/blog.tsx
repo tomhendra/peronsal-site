@@ -11,8 +11,8 @@ import {
   BlogPostPreview,
 } from '../components';
 
-import { usePosts } from '../hooks';
-import { BlogPostHookData } from '../utils/types';
+import { usePosts } from '../lib';
+import { BlogPostHookData } from '../types/types';
 
 const Blog = (): JSX.Element => {
   const posts = usePosts();

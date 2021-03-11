@@ -6,7 +6,7 @@ import {
   shadowStandardCharlie,
 } from '../../../utils/style-helpers';
 
-import { Children } from '../../../utils/types';
+import { Children } from '../../../types/types';
 
 type Props = {
   children: Children;
@@ -14,7 +14,7 @@ type Props = {
 
 export const StyledHeader = ({ children }: Props): JSX.Element => (
   <header
-    css={(theme) =>
+    css={theme =>
       withMediaQueries(theme)({
         alignItems: 'center',
         backgroundColor: theme.colors.white,

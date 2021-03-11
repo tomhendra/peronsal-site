@@ -13,7 +13,7 @@ import {
   TextSizes,
   Spacings,
   Theme,
-} from '../../utils/types';
+} from '../../types/types';
 
 type Props = {
   css?: Interpolation<Theme>; // fix for bug when reusing component & applying extra styles with css prop.
@@ -147,23 +147,23 @@ export const Text = (props: Props): JSX.Element => {
 
   switch (as) {
     case 'p':
-      return <p css={(theme) => styles(theme)}>{children}</p>;
+      return <p css={theme => styles(theme)}>{children}</p>;
     case 'li':
-      return <li css={(theme) => styles(theme)}>{children}</li>;
+      return <li css={theme => styles(theme)}>{children}</li>;
     case 'article':
-      return <article css={(theme) => styles(theme)}>{children}</article>;
+      return <article css={theme => styles(theme)}>{children}</article>;
     case 'figcaption':
-      return <figcaption css={(theme) => styles(theme)}>{children}</figcaption>;
+      return <figcaption css={theme => styles(theme)}>{children}</figcaption>;
     case 'label':
       return (
-        <label css={(theme) => styles(theme)} htmlFor={htmlFor}>
+        <label css={theme => styles(theme)} htmlFor={htmlFor}>
           {children}
         </label>
       );
     default:
       return (
         <blockquote
-          css={(theme) => ({ ...styles(theme), ...blockquoteStyles(theme) })}
+          css={theme => ({ ...styles(theme), ...blockquoteStyles(theme) })}
         >
           {children}
         </blockquote>

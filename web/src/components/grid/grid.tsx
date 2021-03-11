@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 
 import { withMediaQueries } from '../../utils/style-helpers';
 
-import { Children } from '../../utils/types';
+import { Children } from '../../types/types';
 
 type Props = {
   devMode?: boolean;
@@ -15,7 +15,7 @@ export const Grid = (props: Props): JSX.Element => {
   const { devMode, withRowGaps, children } = props;
   return (
     <div
-      css={(theme) =>
+      css={theme =>
         withMediaQueries(theme)({
           display: 'grid',
           gridTemplateRows: 'auto',

@@ -1,99 +1,44 @@
 module.exports = {
-  parser: '@typescript-eslint/parser', // Specifies the ESLint parser
-  extends: [
-    'airbnb',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:import/typescript',
-    'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
-  ],
-  plugins: ['@typescript-eslint', 'prettier', 'react-hooks'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-    sourceType: 'module', // Allows for the use of imports
-    ecmaFeatures: {
-      jsx: true,
-    },
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    ecmaFeatures: { jsx: true },
     project: './tsconfig.json',
   },
-  env: {
-    browser: true,
-    jest: true,
-    node: true,
-  },
+  settings: { react: { version: 'detect' } },
+  env: { node: true, browser: true, jest: true },
+  plugins: [
+    'prettier',
+    '@typescript-eslint/eslint-plugin',
+    'react',
+    'react-hooks',
+    'jsx-a11y',
+  ],
+  extends: [
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/eslint-recommended', // disables ESLint rules that TypeScript renders unnecessary.
+    'plugin:@typescript-eslint/recommended', // specific typescript-eslint plugin rules that are sometimes useful e.g. for interfaces.
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
+  ],
   rules: {
-    '@typescript-eslint/no-unused-vars': [
-      1,
+    'react/prop-types': 'off', // TypeScript handles prop types
+    'react/jsx-uses-react': 'off', // note required using new transform: https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
+    'react/react-in-jsx-scope': 'off', // not required for Next.js
+    'jsx-a11y/anchor-is-valid': 'off', // incompatible with Next.js <Link /> (https://github.com/vercel/next.js/issues/5533)
+    '@typescript-eslint/no-unused-vars': ['error'], // default is warn
+    '@typescript-eslint/explicit-module-boundary-types': 'off', // handled by explicit-function-return-type: https://github.com/typescript-eslint/typescript-eslint/issues/2719
+    '@typescript-eslint/explicit-function-return-type': [
+      // default is warn & provide options objects
+      'off',
       {
-        argsIgnorePattern: 'res|next|stage|^err|on|config|e',
+        allowExpressions: true, // only functions which are part of a declaration will be checked
+        allowConciseArrowFunctionExpressionsStartingWithVoid: true, // concise arrow functions that start with the void keyword will not be checked
       },
     ],
-    'arrow-body-style': [2, 'as-needed'],
-    'no-param-reassign': [
-      2,
-      {
-        props: false,
-      },
-    ],
-    'no-unused-expressions': [
-      1,
-      {
-        allowTaggedTemplates: true,
-      },
-    ],
-    '@typescript-eslint/prefer-interface': 0,
-    '@typescript-eslint/explicit-function-return-type': 0,
-    '@typescript-eslint/no-use-before-define': 0,
-    '@typescript-eslint/camelcase': 0,
-    '@typescript-eslint/no-var-requires': 0,
-    '@typescript-eslint/no-explicit-any': 0,
-    '@typescript-eslint/no-non-null-assertion': 0,
-    'no-console': 0,
-    'spaced-comment': 0,
-    'no-use-before-define': 0,
-    'no-nested-ternary': 0,
-    'no-underscore-dangle': 0,
-    'linebreak-style': 0,
-    'consistent-return': 0,
-    import: 0,
-    'func-names': 0,
-    'import/no-extraneous-dependencies': 0,
-    'import/prefer-default-export': 0,
-    'import/no-cycle': 0,
-    'space-before-function-paren': 0,
-    'import/extensions': 0,
-    'react/jsx-one-expression-per-line': 0,
-    'react/no-danger': 0,
-    'react/display-name': 1,
-    'react/react-in-jsx-scope': 0,
-    'react/jsx-uses-react': 1,
-    'react/forbid-prop-types': 0,
-    'react/no-unescaped-entities': 0,
-    'react/prop-types': 0,
-    'react/jsx-curly-newline': 0,
-    'react/jsx-filename-extension': [
-      1,
-      {
-        extensions: ['.js', '.jsx', '.tsx'],
-      },
-    ],
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-    'react/jsx-props-no-spreading': 0,
-    quotes: [
-      2,
-      'single',
-      {
-        allowTemplateLiterals: true,
-        avoidEscape: true,
-      },
-    ],
-    'jsx-a11y/href-no-hash': 'off',
-    'jsx-a11y/anchor-is-valid': [
-      'warn',
-      {
-        aspects: ['invalidHref'],
-      },
-    ],
+    'prettier/prettier': ['warn', {}, { usePrettierrc: true }], // warn on unformatted code & use usePrettierrc rules
   },
 };

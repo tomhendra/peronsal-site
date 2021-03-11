@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { Variants, ButtonSizes, Children } from '../../../utils/types';
+import { Variants, ButtonSizes, Children } from '../../../types/types';
 
 type Props = {
   variant: Variants;
@@ -22,7 +22,7 @@ export const StyledButton = (props: Props): JSX.Element => {
       aria-label="Button"
       disabled={disabled}
       onClick={onClick}
-      css={(theme) => {
+      css={theme => {
         const sizeVariants = {
           alpha: '4.8rem',
           bravo: '6rem',

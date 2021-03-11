@@ -3,7 +3,7 @@ import React from 'react';
 
 import { StyledContainer } from './components';
 
-import { Spacings, IconSizes, IconColors } from '../../utils/types';
+import { Spacings, IconSizes, IconColors } from '../../types/types';
 
 type Props = {
   color: IconColors;

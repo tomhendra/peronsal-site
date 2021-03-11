@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useTechStack } from '../../hooks';
+import { useTechStack } from '../../lib';
 
 import {
   StyledGrid,
@@ -8,7 +8,7 @@ import {
   StyledTooltip,
   StyledImg,
 } from './components';
-import { TechStackHookData } from '../../utils/types';
+import { TechStackHookData } from '../../types/types';
 
 type Props = {
   gridSize: 'alpha' | 'delta';

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { Children } from '../../../utils/types';
+import { Children } from '../../../types/types';
 import { Card } from '../..';
 
 type Props = {
@@ -15,7 +15,7 @@ export const StyledCard = ({ children, ...rest }: Props): JSX.Element => (
     padding={['foxtrot', 'foxtrot', 'golf', 'foxtrot', 'golf']}
     // justifyContent="space-between"
     alignItems="stretch"
-    css={(theme) => ({
+    css={theme => ({
       minHeight: [
         theme.spacings.november,
         theme.spacings.mike,

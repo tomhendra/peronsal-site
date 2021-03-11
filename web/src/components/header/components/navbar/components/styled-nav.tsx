@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/react';
 
 import { withMediaQueries } from '../../../../../utils/style-helpers';
-import { Children } from '../../../../../utils/types';
+import { Children } from '../../../../../types/types';
 
 type Props = {
   children: Children;
@@ -10,7 +10,7 @@ type Props = {
 
 export const StyledNav = ({ children }: Props): JSX.Element => (
   <nav
-    css={(theme) =>
+    css={theme =>
       withMediaQueries(theme)({
         alignItems: 'center',
         display: ['none', 'none', 'flex'],

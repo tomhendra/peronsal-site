@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { Children } from '../../../../../utils/types';
+import { Children } from '../../../../../types/types';
 
 type Props = {
   children: Children;
@@ -9,7 +9,7 @@ type Props = {
 
 export const StyledContainer = ({ children }: Props): JSX.Element => (
   <div
-    css={(theme) => ({
+    css={theme => ({
       padding: `${theme.spacings.bravo} 0`,
       position: 'relative',
       zIndex: theme.zIndex.input,

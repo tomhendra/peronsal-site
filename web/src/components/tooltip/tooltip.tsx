@@ -9,7 +9,7 @@ import {
   Alignments,
   Children,
   Theme,
-} from '../../utils/types';
+} from '../../types/types';
 
 type Props = {
   css?: Interpolation<Theme>; // fix for bug when reusing component & applying extra styles with css prop.
@@ -30,7 +30,7 @@ export const Tooltip = (props: Props): JSX.Element => {
 
   return (
     <div
-      css={(theme) => {
+      css={theme => {
         const variantOptions = {
           neutral: {
             backgroundColor: theme.colors.n200,

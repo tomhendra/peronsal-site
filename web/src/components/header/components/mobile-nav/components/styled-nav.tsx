@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { Children } from '../../../../../utils/types';
+import { Children } from '../../../../../types/types';
 
 interface Props {
   open: boolean;
@@ -9,7 +9,7 @@ interface Props {
 
 export const StyledNav = ({ open, children }: Props): JSX.Element => (
   <nav
-    css={(theme) => ({
+    css={theme => ({
       display: 'flex',
       flexDirection: 'column',
       background: theme.colors.bodyBg,

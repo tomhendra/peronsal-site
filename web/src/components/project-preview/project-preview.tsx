@@ -4,7 +4,7 @@ import { Button, Card, Heading, Text } from '..';
 import { StyledContainer, StyledImg } from './components';
 
 import { toPlainText } from '../../utils/helpers';
-import { ProjectHookData } from '../../utils/types';
+import { ProjectHookData } from '../../types/types';
 
 type Props = {
   project: ProjectHookData;

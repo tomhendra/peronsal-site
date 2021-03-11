@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { Children } from '../../../../../utils/types';
+import { Children } from '../../../../../types/types';
 
 import { withMediaQueries } from '../../../../../utils/style-helpers';
 
@@ -11,7 +11,7 @@ type Props = {
 
 export const StyledNav = ({ children }: Props): JSX.Element => (
   <nav
-    css={(theme) =>
+    css={theme =>
       withMediaQueries(theme)({
         display: 'flex',
         flexWrap: 'wrap',

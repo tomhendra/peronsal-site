@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BlogPostHookData } from '../../utils/types';
+import { BlogPostHookData } from '../../types/types';
 
 import { Heading } from '..';
 

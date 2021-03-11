@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 
 import { withMediaQueries } from '../../../utils/style-helpers';
 
-import { Children } from '../../../utils/types';
+import { Children } from '../../../types/types';
 
 type Props = {
   gridSize: 'alpha' | 'delta';
@@ -15,7 +15,7 @@ export const StyledGrid = (props: Props): JSX.Element => {
   const { gridSize, noSpacingBottom, children } = props;
   return (
     <div
-      css={(theme) => {
+      css={theme => {
         const baseStyles = {
           display: 'grid',
           marginBottom: !noSpacingBottom ? theme.spacings.foxtrot : 0,

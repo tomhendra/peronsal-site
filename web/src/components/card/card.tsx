@@ -11,7 +11,7 @@ import {
   AlignContent,
   Children,
   Theme,
-} from '../../utils/types';
+} from '../../types/types';
 
 import {
   shadowStandardAlpha,
@@ -65,7 +65,7 @@ export const Card = (props: Props): JSX.Element => {
 
   return (
     <div
-      css={(theme) => {
+      css={theme => {
         const baseStyles = {
           backgroundColor: theme.colors.white,
           borderRadius: theme.borderRadius.charlie,

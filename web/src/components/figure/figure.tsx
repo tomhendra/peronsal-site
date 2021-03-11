@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import Img from 'gatsby-image';
 
 import { Text } from '..';
-import { FigureType } from '../../utils/types';
+import { FigureType } from '../../types/types';
 
 const sanityConfig = require('../../../sanity-config');
 
@@ -21,12 +21,12 @@ export const Figure = ({ node }: FigureType): JSX.Element => {
   );
 
   return (
-    <figure css={(theme) => ({ margin: `${theme.spacings.golf} 0` })}>
+    <figure css={theme => ({ margin: `${theme.spacings.golf} 0` })}>
       <FigureImage fluid={fluidProps} alt={node.alt} />
       <Text
         variant="secondary"
         as="figcaption"
-        css={(theme) => ({ marginTop: theme.spacings.charlie })}
+        css={theme => ({ marginTop: theme.spacings.charlie })}
       >
         <figcaption>{node.caption}</figcaption>
       </Text>

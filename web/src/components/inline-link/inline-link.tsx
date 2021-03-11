@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import { Link } from 'gatsby';
-import { Children } from '../../utils/types';
+import { Children } from '../../types/types';
 
 import { StyledSpan } from './components';
 

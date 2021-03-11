@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { Spacings, Variants, Children } from '../../utils/types';
+import { Spacings, Variants, Children } from '../../types/types';
 
 import { getSpacingValues, withMediaQueries } from '../../utils/style-helpers';
 
@@ -28,7 +28,7 @@ export const Section = (props: Props): JSX.Element => {
 
   return (
     <section
-      css={(theme) => {
+      css={theme => {
         // color variants must be matched child elements.
         // I.e.Text, Heading, Subheading must be of same variant.
         const colorVariants = {

@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/react';
 
 import { withMediaQueries } from '../../../../../utils/style-helpers';
-import { Children } from '../../../../../utils/types';
+import { Children } from '../../../../../types/types';
 
 type Props = {
   href: string;
@@ -14,7 +14,7 @@ export const StyledAnchor = ({ href, children }: Props): JSX.Element => (
     href={href}
     target="blank"
     rel="noopener"
-    css={(theme) =>
+    css={theme =>
       withMediaQueries(theme)({
         position: 'relative',
         textDecoration: 'none',

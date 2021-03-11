@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 
 import { withMediaQueries } from '../../../../../utils/style-helpers';
 
-import { Children } from '../../../../../utils/types';
+import { Children } from '../../../../../types/types';
 
 type Props = {
   children: Children;
@@ -11,7 +11,7 @@ type Props = {
 
 export const StyledSpan = ({ children }: Props): JSX.Element => (
   <div
-    css={(theme) =>
+    css={theme =>
       withMediaQueries(theme)({
         display: 'flex',
         alignItems: 'center',

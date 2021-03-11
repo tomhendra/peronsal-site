@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { Variants, ButtonSizes, Children } from '../../../utils/types';
+import { Variants, ButtonSizes, Children } from '../../../types/types';
 
 type Props = {
   variant: Variants;
@@ -11,7 +11,7 @@ type Props = {
 
 export const StyledSpan = ({ variant, size, children }: Props): JSX.Element => (
   <span
-    css={(theme) => {
+    css={theme => {
       const colorVariants = {
         primary: {
           backgroundColor: theme.colors.p400,

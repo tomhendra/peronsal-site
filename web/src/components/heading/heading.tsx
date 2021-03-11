@@ -7,7 +7,7 @@ import {
   HeadingSizes,
   Spacings,
   Theme,
-} from '../../utils/types';
+} from '../../types/types';
 
 import {
   getSpacingValues,
@@ -111,37 +111,37 @@ export const Heading = (props: Props): JSX.Element => {
   switch (as) {
     case 'h1':
       return (
-        <h1 css={(theme) => styles(theme)} {...rest}>
+        <h1 css={theme => styles(theme)} {...rest}>
           {children}
         </h1>
       );
     case 'h2':
       return (
-        <h2 css={(theme) => styles(theme)} {...rest}>
+        <h2 css={theme => styles(theme)} {...rest}>
           {children}
         </h2>
       );
     case 'h3':
       return (
-        <h3 css={(theme) => styles(theme)} {...rest}>
+        <h3 css={theme => styles(theme)} {...rest}>
           {children}
         </h3>
       );
     case 'h4':
       return (
-        <h4 css={(theme) => styles(theme)} {...rest}>
+        <h4 css={theme => styles(theme)} {...rest}>
           {children}
         </h4>
       );
     case 'h5':
       return (
-        <h5 css={(theme) => styles(theme)} {...rest}>
+        <h5 css={theme => styles(theme)} {...rest}>
           {children}
         </h5>
       );
     default:
       return (
-        <h6 css={(theme) => styles(theme)} {...rest}>
+        <h6 css={theme => styles(theme)} {...rest}>
           {children}
         </h6>
       );

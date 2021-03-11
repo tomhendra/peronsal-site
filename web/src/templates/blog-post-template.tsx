@@ -3,8 +3,8 @@ import { graphql } from 'gatsby';
 
 import { Layout, SEO, GraphQLErrors, BlogPost } from '../components';
 
-import { toPlainText } from '../utils/helpers';
-import { BlogPostTemplateQuery } from '../utils/types';
+// import { toPlainText } from '../utils/helpers';
+import { BlogPostTemplateQuery } from '../types/types';
 
 export const query = graphql`
   query BlogPostTemplateQuery($id: String!) {
@@ -46,7 +46,7 @@ const BlogPostTemplate = ({ data, errors }: Props): JSX.Element => {
       {post && (
         <SEO
           title={post.title || 'Untitled'}
-          description={toPlainText(post._rawExcerpt)}
+          // description={toPlainText(post._rawExcerpt)}
           // image={post.mainImage}
         />
       )}

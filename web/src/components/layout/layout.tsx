@@ -3,8 +3,8 @@ import React from 'react';
 
 import { Wrapper, Header, Footer } from '..';
 
-import { themes } from '../../themes';
-import { Children } from '../../utils/types';
+import { themes } from '../../theme';
+import { Children } from '../../types/types';
 
 // TODO: --------> use state to change on switch
 const theme = themes.nord;

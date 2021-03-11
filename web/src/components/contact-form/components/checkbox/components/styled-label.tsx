@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import { withMediaQueries } from '../../../../../utils/style-helpers';
-import { Variants, Children } from '../../../../../utils/types';
+import { Variants, Children } from '../../../../../types/types';
 
 type Props = {
   variant: Variants;
@@ -18,7 +18,7 @@ export const StyledLabel = (props: Props): JSX.Element => {
   return (
     <label
       htmlFor={name}
-      css={(theme) => {
+      css={theme => {
         const colorVariants = {
           primary: {
             color: theme.colors.n200,
