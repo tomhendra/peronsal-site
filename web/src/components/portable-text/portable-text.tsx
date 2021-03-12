@@ -1,6 +1,4 @@
-/** @jsx jsx */
 /* eslint-disable react/display-name */
-import { jsx } from '@emotion/react';
 import BasePortableText from '@sanity/block-content-to-react';
 
 import { Heading, Text, Figure, CodeBlock, InlineLink } from '..';
@@ -110,7 +108,7 @@ type Props = {
   blocks: Block[];
 };
 
-export const PortableText = ({ blocks }: Props): JSX.Element => (
+export const PortableText = ({ blocks }: Props) => (
   <BasePortableText
     blocks={blocks}
     serializers={serializers}

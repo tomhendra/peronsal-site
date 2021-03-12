@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import { Children } from '../../../types';
 import { withMediaQueries } from '../../../utils/style-helpers';
 
@@ -8,7 +5,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledFooter = ({ children }: Props): JSX.Element => (
+export const StyledFooter = ({ children }: Props) => (
   <footer
     css={theme =>
       withMediaQueries(theme)({

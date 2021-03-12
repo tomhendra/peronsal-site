@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Button, Card, Heading, Text } from '..';
 import { StyledContainer, StyledImg } from './components';
 
@@ -10,7 +8,7 @@ type Props = {
   project: ProjectHookData;
 };
 
-export const ProjectPreview = ({ project }: Props): JSX.Element => (
+export const ProjectPreview = ({ project }: Props) => (
   <Card
     variant="primary"
     justifyContent="space-between"

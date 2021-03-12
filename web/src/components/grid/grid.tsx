@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import { withMediaQueries } from '../../utils/style-helpers';
 
 import { Children } from '../../types';
@@ -11,7 +8,7 @@ type Props = {
   children: Children;
 };
 
-export const Grid = (props: Props): JSX.Element => {
+export const Grid = (props: Props) => {
   const { devMode, withRowGaps, children } = props;
   return (
     <div

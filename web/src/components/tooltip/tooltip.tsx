@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, Interpolation } from '@emotion/react';
+import { Interpolation } from '@emotion/react';
 
 import { capitalize } from '../../utils/helpers';
 
@@ -19,7 +18,7 @@ type Props = {
   children: Children;
 };
 
-export const Tooltip = (props: Props): JSX.Element => {
+export const Tooltip = (props: Props) => {
   const {
     variant = 'neutral',
     position = 'top',

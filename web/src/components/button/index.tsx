@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {
   StyledButton,
   StyledSpan,
@@ -20,7 +18,7 @@ type Props = {
   children: Children;
 };
 
-export const Button = (props: Props): JSX.Element => {
+export const Button = (props: Props) => {
   const {
     variant = 'secondary',
     size = 'bravo',

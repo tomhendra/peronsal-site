@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
 import { Link } from 'gatsby';
 import { Children } from '../../types';
 
@@ -19,7 +17,7 @@ const linkStyles = {
   },
 };
 
-export const InlineLink = (props: Props): JSX.Element => {
+export const InlineLink = (props: Props) => {
   const { internalLink, externalLink, children } = props;
 
   return internalLink ? (

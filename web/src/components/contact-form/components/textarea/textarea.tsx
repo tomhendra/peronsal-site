@@ -1,4 +1,3 @@
-import React from 'react';
 import { useField } from 'formik';
 
 import { Text, Tooltip } from '../../..';
@@ -16,7 +15,7 @@ type Props = {
   rows?: number;
 };
 
-export const Textarea = (props: Props): JSX.Element => {
+export const Textarea = (props: Props) => {
   const { label, messageMaxLength, variant, rows, ...rest } = props;
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
   // which we can spread on <StyledTextarea>.

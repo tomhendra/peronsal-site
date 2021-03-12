@@ -1,4 +1,3 @@
-import React from 'react';
 import { useField } from 'formik';
 
 import { Text, Tooltip } from '../../..';
@@ -14,7 +13,7 @@ type Props = {
   type: 'text' | 'email';
 };
 
-export const TextInput = (props: Props): JSX.Element => {
+export const TextInput = (props: Props) => {
   const { label, variant = 'secondary', ...rest } = props;
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
   // which we can spread on <StyledInput>.

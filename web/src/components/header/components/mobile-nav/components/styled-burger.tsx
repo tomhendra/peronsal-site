@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
 import { Children } from '../../../../../types';
 
 interface Props {
@@ -8,7 +6,7 @@ interface Props {
   children: Children;
 }
 
-export const StyledBurger = (props: Props): JSX.Element => {
+export const StyledBurger = (props: Props) => {
   const { open, onClick, children } = props;
   return (
     <button

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {
   Button,
   ButtonGroup,
@@ -19,7 +17,7 @@ type Props = {
   project: ProjectTemplateQuery;
 };
 
-export const Project = ({ project }: Props): JSX.Element => {
+export const Project = ({ project }: Props) => {
   const {
     title,
     mainImage,

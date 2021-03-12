@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import { Variants } from '../../../../../types';
 
 type Props = {
@@ -9,7 +6,7 @@ type Props = {
   touched: boolean;
 };
 
-export const StyledInput = (props: Props): JSX.Element => {
+export const StyledInput = (props: Props) => {
   const { variant, error, touched, ...rest } = props;
   return (
     <input

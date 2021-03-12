@@ -1,4 +1,3 @@
-import React from 'react';
 import { useField } from 'formik';
 
 import { Icon, Tooltip } from '../../..';
@@ -12,7 +11,7 @@ type Props = {
   children: Children;
 };
 
-export const Checkbox = (props: Props): JSX.Element => {
+export const Checkbox = (props: Props) => {
   const { variant = 'secondary', children, ...rest } = props;
   // We need to tell useField what type of input this is
   // since React treats radios and checkboxes differently

@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-import React from 'react';
 
 import {
   Button,
@@ -18,7 +17,7 @@ import {
 import { useProjects } from '../lib';
 import { ProjectHookData } from '../types';
 
-const Projects = (): JSX.Element => {
+const Projects = () => {
   const projects = useProjects();
   return (
     <Layout>

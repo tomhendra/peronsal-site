@@ -1,5 +1,6 @@
 import { ThemeProvider, Global } from '@emotion/react';
-import React from 'react';
+
+// import './index.css';
 
 import { Wrapper, Header, Footer } from '..';
 
@@ -13,7 +14,7 @@ type Props = {
   children: Children;
 };
 
-export const Layout = ({ children }: Props): JSX.Element => (
+export const Layout = ({ children }: Props) => (
   <ThemeProvider theme={theme}>
     <Global
       styles={{

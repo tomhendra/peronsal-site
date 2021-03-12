@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import { Children, IconSizes, Spacings } from '../../../types';
 
 import {
@@ -18,7 +15,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledContainer = (props: Props): JSX.Element => {
+export const StyledContainer = (props: Props) => {
   const {
     size,
     spacing,

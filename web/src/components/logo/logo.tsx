@@ -1,5 +1,4 @@
 import { useTheme } from '@emotion/react';
-import React from 'react';
 
 import { StyledContainer } from './components';
 
@@ -15,7 +14,7 @@ type Props = {
   spacingLeft?: Spacings;
 };
 
-export const Logo = (props: Props): JSX.Element => {
+export const Logo = (props: Props) => {
   const {
     color = 'neutral',
     size = 'bravo',

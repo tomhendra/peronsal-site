@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, Interpolation } from '@emotion/react';
+import { Interpolation } from '@emotion/react';
 
 import {
   getSpacingValues,
@@ -7,7 +6,7 @@ import {
   withMediaQueries,
 } from '../../utils/style-helpers';
 
-import { Variants, Children, TextSizes, Spacings, Theme } from '../../types';
+import { Variants, Children, TextSizes, Spacings, Theme } from 'types';
 
 type Props = {
   css?: Interpolation<Theme>; // fix for bug when reusing component & applying extra styles with css prop.
@@ -22,7 +21,7 @@ type Props = {
   children: Children;
 };
 
-export const Text = (props: Props): JSX.Element => {
+export const Text = (props: Props) => {
   const {
     as = 'p',
     variant = 'secondary',

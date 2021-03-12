@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import { Children } from '../../../types';
 import { withMediaQueries } from '../../../utils/style-helpers';
 
@@ -8,7 +5,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledContainer = ({ children }: Props): JSX.Element => (
+export const StyledContainer = ({ children }: Props) => (
   <div
     css={theme =>
       withMediaQueries(theme)({

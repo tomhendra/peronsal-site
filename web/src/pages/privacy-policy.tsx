@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-import React from 'react';
 
 import {
   Layout,
@@ -12,7 +11,7 @@ import {
   InlineLink,
 } from '../components';
 
-const PrivacyPolicy = (): JSX.Element => (
+const PrivacyPolicy = () => (
   <Layout>
     <SEO title="Privacy Policy" />
     <Section variant="primary">

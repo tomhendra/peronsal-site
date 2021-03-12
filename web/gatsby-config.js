@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 require('dotenv').config({ path: '.env' });
-
 const path = require('path');
 const sanityConfig = require('./sanity-config');
 
@@ -13,25 +13,32 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-gtag',
-      options: {
-        // your google analytics tracking id
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
-        // Puts tracking script in the head instead of the body
-        head: false,
-        // enable ip anonymization
-        anonymize: true,
-        // respect do not track
-        respectDNT: true,
-      },
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
         path: path.join(__dirname, 'src', 'images'),
       },
     },
+    'gatsby-plugin-typescript',
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        src: path.join(__dirname, 'src'),
+        components: path.join(__dirname, 'src/components'),
+        images: path.join(__dirname, 'src/images'),
+        lib: path.join(__dirname, 'src/lib'),
+        pages: path.join(__dirname, 'src/pages'),
+        templates: path.join(__dirname, 'src/templates'),
+        theme: path.join(__dirname, 'src/theme'),
+        types: path.join(__dirname, 'src/types'),
+        utils: path.join(__dirname, 'src/utils'),
+      },
+    },
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-source-sanity',
       options: {
@@ -40,10 +47,6 @@ module.exports = {
         overlayDrafts: !isProd,
       },
     },
-    // 'gatsby-plugin-emotion',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -56,7 +59,18 @@ module.exports = {
         icon: 'src/images/logo/tomhendra-logo-512.png',
       },
     },
-    'gatsby-plugin-offline',
-    'gatsby-plugin-typescript',
+    {
+      resolve: 'gatsby-plugin-gtag',
+      options: {
+        // your google analytics tracking id
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // enable ip anonymization
+        anonymize: true,
+        // respect do not track
+        respectDNT: true,
+      },
+    },
   ],
 };

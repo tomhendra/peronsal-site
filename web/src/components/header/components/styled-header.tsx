@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import {
   withMediaQueries,
   shadowStandardCharlie,
@@ -12,7 +9,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledHeader = ({ children }: Props): JSX.Element => (
+export const StyledHeader = ({ children }: Props) => (
   <header
     css={theme =>
       withMediaQueries(theme)({

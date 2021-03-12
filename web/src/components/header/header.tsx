@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Logo } from '..';
 
 import {
@@ -10,7 +8,7 @@ import {
   MobileNav,
 } from './components';
 
-export const Header = (): JSX.Element => (
+export const Header = () => (
   <StyledHeader>
     <StyledContainer>
       <StyledLink to="/">

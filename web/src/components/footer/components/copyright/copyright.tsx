@@ -1,11 +1,9 @@
-import React from 'react';
-
 import { useSiteMetadata } from '../../../../lib';
 
 import { Logo } from '../../..';
 import { StyledContainer, StyledSpan } from './components';
 
-export const Copyright = (): JSX.Element => {
+export const Copyright = () => {
   const { siteMetadata } = useSiteMetadata();
   const date = new Date().getFullYear();
   return (

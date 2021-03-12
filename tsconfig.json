@@ -5,7 +5,7 @@
     "noEmit": true, // do not compile to JS
     "skipLibCheck": true, // node_modules not checked
     "jsx": "preserve",
-    // "jsxImportSource": "@emotion/react",
+    "jsxImportSource": "@emotion/react",
     "target": "esnext",
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
@@ -17,11 +17,15 @@
     "baseUrl": ".", // required for path imports to work
     "paths": {
       // make paths available for imports e.g. import { fn } from 'utils' rather than '../../..utils'
-      "@components/*": ["web/src/components/*"],
-      "@components": ["web/src/components"],
-      "@utils": ["web/src/utils"],
-      "@utils/*": ["web/src/utils"],
-      "@types": ["web/src/types"]
+      "src": ["web/src/"],
+      "components": ["web/src/components/"],
+      "images": ["web/src/images/"],
+      "lib": ["web/src/lib/"],
+      "pages": ["web/src/pages/"],
+      "templates": ["web/src/templates/"],
+      "theme": ["web/src/theme/"],
+      "types": ["web/src/types/"],
+      "utils": ["web/src/utils/"]
     }
   },
   // *.* includes config files in root because https://stackoverflow.com/a/61993196

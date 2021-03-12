@@ -1,5 +1,5 @@
 import { useTheme } from '@emotion/react';
-import React from 'react';
+
 import * as featherIcons from 'react-feather';
 
 import { StyledContainer } from './components';
@@ -17,7 +17,7 @@ type Props = {
   spacingLeft?: Spacings;
 };
 
-export const Icon = (props: Props): JSX.Element => {
+export const Icon = (props: Props) => {
   const {
     color = 'brand',
     size = 'echo',

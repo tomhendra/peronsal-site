@@ -1,12 +1,10 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
 import { Children } from '../../../../../types';
 
 type Props = {
   children: Children;
 };
 
-export const StyledContainer = ({ children }: Props): JSX.Element => (
+export const StyledContainer = ({ children }: Props) => (
   <div
     css={theme => ({
       position: 'relative',

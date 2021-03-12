@@ -1,9 +1,8 @@
 /* eslint-disable max-len */
-import React from 'react';
 
 import { Layout, SEO, Section, Grid, Item, ContactForm } from '../components';
 
-const Contact = (): JSX.Element => (
+const Contact = () => (
   <Layout>
     <SEO title="Contact" />
     <Section paddingTop="india" variant="secondary">

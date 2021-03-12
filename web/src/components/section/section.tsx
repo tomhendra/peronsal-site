@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import { Spacings, Variants, Children } from '../../types';
 
 import { getSpacingValues, withMediaQueries } from '../../utils/style-helpers';
@@ -15,7 +12,7 @@ type Props = {
   children: Children;
 };
 
-export const Section = (props: Props): JSX.Element => {
+export const Section = (props: Props) => {
   const {
     paddingTop,
     paddingBottom,

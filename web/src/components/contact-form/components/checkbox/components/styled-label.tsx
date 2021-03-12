@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
 import { withMediaQueries } from '../../../../../utils/style-helpers';
 import { Variants, Children } from '../../../../../types';
 
@@ -12,7 +10,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledLabel = (props: Props): JSX.Element => {
+export const StyledLabel = (props: Props) => {
   const { variant, name, checked, error, touched, children } = props;
 
   return (

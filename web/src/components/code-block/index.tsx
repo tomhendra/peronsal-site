@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import Highlight, { defaultProps, Language } from 'prism-react-renderer';
 
@@ -33,7 +32,7 @@ type Props = {
   language: Language;
 };
 
-export const CodeBlock = ({ code, language }: Props): JSX.Element => (
+export const CodeBlock = ({ code, language }: Props) => (
   <Highlight {...defaultProps} theme={nord} code={code} language={language}>
     {({ className, style, tokens, getLineProps, getTokenProps }) => (
       <Pre className={className} style={style}>

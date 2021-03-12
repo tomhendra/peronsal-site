@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, Interpolation } from '@emotion/react';
+import { Interpolation } from '@emotion/react';
 
 import { Variants, Children, HeadingSizes, Spacings, Theme } from '../../types';
 
@@ -18,7 +17,7 @@ type Props = {
   children: Children;
 };
 
-export const Heading = (props: Props): JSX.Element => {
+export const Heading = (props: Props) => {
   const {
     as = 'h2',
     variant = 'secondary',

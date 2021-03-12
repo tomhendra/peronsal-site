@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useTechStack } from '../../lib';
 
 import {
@@ -17,9 +15,11 @@ type Props = {
 };
 
 // Component must be passed an array of techstack titles
-export const TechStack = (props: Props): JSX.Element => {
+export const TechStack = (props: Props) => {
   const { gridSize, stack, noSpacingBottom } = props;
   const allStack = useTechStack();
+  console.log(allStack);
+
   // verify whether complete stack or filtered stack should be displayed
   const stackToDisplay = !stack
     ? allStack

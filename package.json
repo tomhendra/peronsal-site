@@ -31,6 +31,8 @@
     "postinstall": "lerna bootstrap --use-workspaces"
   },
   "devDependencies": {
+    "@commitlint/cli": "12.0.1",
+    "@commitlint/config-conventional": "12.0.1",
     "@types/facepaint": "^1.2.1",
     "@types/node": "14.14.33",
     "@types/react": "17.0.3",

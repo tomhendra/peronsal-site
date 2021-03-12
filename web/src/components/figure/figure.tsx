@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
 import { getFluidGatsbyImage } from 'gatsby-source-sanity';
 import styled from '@emotion/styled';
 import Img from 'gatsby-image';
@@ -13,7 +11,7 @@ const FigureImage = styled(Img)(({ theme }) => ({
   borderRadius: theme.borderRadius.alpha,
 }));
 
-export const Figure = ({ node }: FigureType): JSX.Element => {
+export const Figure = ({ node }: FigureType) => {
   const fluidProps = getFluidGatsbyImage(
     node.asset._id,
     { maxWidth: 675 },

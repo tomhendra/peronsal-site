@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import { withMediaQueries } from '../../../../../utils/style-helpers';
 import { Children } from '../../../../../types';
 
@@ -9,7 +6,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledAnchor = ({ href, children }: Props): JSX.Element => (
+export const StyledAnchor = ({ href, children }: Props) => (
   <a
     href={href}
     target="blank"

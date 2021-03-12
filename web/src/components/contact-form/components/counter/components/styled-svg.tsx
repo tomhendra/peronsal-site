@@ -1,13 +1,10 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import { Children } from '../../../../../types';
 
 type Props = {
   children: Children;
 };
 
-export const StyledSvg = ({ children }: Props): JSX.Element => (
+export const StyledSvg = ({ children }: Props) => (
   <svg
     css={theme => ({
       height: theme.iconSizes.foxtrot,

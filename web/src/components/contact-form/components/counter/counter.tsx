@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Variants } from '../../../../types';
 
 import { Text } from '../../..';
@@ -16,7 +14,7 @@ type Props = {
   variant: Variants;
 };
 
-export const Counter = (props: Props): JSX.Element => {
+export const Counter = (props: Props) => {
   const { messageMaxLength, charsEntered, variant = 'secondary' } = props;
   const charsRemaining = messageMaxLength - charsEntered;
   return (

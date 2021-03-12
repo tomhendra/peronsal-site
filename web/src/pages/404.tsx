@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {
   Layout,
   SEO,
@@ -11,7 +9,7 @@ import {
   InlineLink,
 } from '../components';
 
-const NotFound = (): JSX.Element => (
+const NotFound = () => (
   <Layout>
     <SEO title="404: Not found" />
     <Section variant="primary" fullViewportHeight>

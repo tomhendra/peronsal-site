@@ -1,4 +1,3 @@
-import React from 'react';
 import { graphql } from 'gatsby';
 
 import { Layout, SEO, GraphQLErrors, BlogPost } from '../components';
@@ -38,7 +37,7 @@ type Props = {
   errors: { message: string }[];
 };
 
-const BlogPostTemplate = ({ data, errors }: Props): JSX.Element => {
+const BlogPostTemplate = ({ data, errors }: Props) => {
   const post = data && data.post;
   return (
     <Layout>

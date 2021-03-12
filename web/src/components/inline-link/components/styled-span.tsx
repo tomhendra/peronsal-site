@@ -1,12 +1,10 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
 import { Children } from '../../../types';
 
 type Props = {
   children: Children;
 };
 
-export const StyledSpan = ({ children }: Props): JSX.Element => (
+export const StyledSpan = ({ children }: Props) => (
   <span
     css={theme => ({
       color: 'inherit',

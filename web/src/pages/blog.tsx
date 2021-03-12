@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React from 'react';
+
 import {
   Layout,
   SEO,
@@ -14,7 +14,7 @@ import {
 import { usePosts } from '../lib';
 import { BlogPostHookData } from '../types';
 
-const Blog = (): JSX.Element => {
+const Blog = () => {
   const posts = usePosts();
   return (
     <Layout>

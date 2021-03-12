@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import {
   GridPositions,
   Spacings,
@@ -31,7 +28,7 @@ type Props = {
   children: Children;
 };
 
-export const Item = (props: Props): JSX.Element => {
+export const Item = (props: Props) => {
   const {
     spacingTop,
     spacingRight,

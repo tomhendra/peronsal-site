@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Grid, Item } from '..';
 import {
   Copyright,
@@ -10,7 +8,7 @@ import {
   StyledContainer,
 } from './components';
 
-export const Footer = (): JSX.Element => (
+export const Footer = () => (
   <StyledFooter>
     <StyledContainer>
       <Grid>

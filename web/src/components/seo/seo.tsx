@@ -1,4 +1,3 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import { useSiteMetadata } from '../../lib';
@@ -10,7 +9,7 @@ type Props = {
   meta?: [];
 };
 
-export const SEO = (props: Props): JSX.Element => {
+export const SEO = (props: Props) => {
   const { title, description, lang = 'en', meta = [] } = props;
   const { siteMetadata } = useSiteMetadata();
   const metaDescription = description || siteMetadata.description;

@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, Interpolation } from '@emotion/react';
+import { Interpolation } from '@emotion/react';
 
 import {
   Variants,
@@ -45,7 +44,7 @@ type Props = {
   children: Children;
 };
 
-export const Card = (props: Props): JSX.Element => {
+export const Card = (props: Props) => {
   const {
     variant = 'secondary',
     accent = 'accentBravo',

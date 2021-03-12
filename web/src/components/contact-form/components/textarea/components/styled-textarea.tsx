@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import { Variants } from '../../../../../types';
 
 type Props = {
@@ -10,7 +7,7 @@ type Props = {
   rows?: number;
 };
 
-export const StyledTextarea = (props: Props): JSX.Element => {
+export const StyledTextarea = (props: Props) => {
   const { variant, error, touched, rows, ...rest } = props;
   return (
     <textarea

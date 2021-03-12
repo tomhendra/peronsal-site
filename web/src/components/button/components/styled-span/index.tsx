@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import { Variants, ButtonSizes, Children } from '../../../../types';
 
 type Props = {
@@ -9,7 +6,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledSpan = ({ variant, size, children }: Props): JSX.Element => (
+export const StyledSpan = ({ variant, size, children }: Props) => (
   <span
     css={theme => {
       const colorVariants = {

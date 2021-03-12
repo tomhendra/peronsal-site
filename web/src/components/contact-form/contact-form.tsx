@@ -13,7 +13,7 @@ type Props = {
   variant: Variants;
 };
 
-export const ContactForm = ({ variant = 'secondary' }: Props): JSX.Element => {
+export const ContactForm = ({ variant = 'secondary' }: Props) => {
   // define character max lengths
   const firstNameMaxLength = 20;
   const lastNameMaxLength = 20;

@@ -1,19 +1,16 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 type Props = {
   messageMaxLength: number;
   charsRemaining: number;
 };
 
-export const StyledCircleColor = (props: Props): JSX.Element => {
+export const StyledCircleColor = (props: Props) => {
   const { messageMaxLength, charsRemaining } = props;
   return (
     <circle
       cx="50%"
       cy="50%"
       r="10"
-      css={(theme) => {
+      css={theme => {
         const r = 10;
         const ringLength = 2 * Math.PI * r;
         const grey = (ringLength * charsRemaining) / messageMaxLength;

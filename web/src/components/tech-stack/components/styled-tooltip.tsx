@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import { Tooltip } from '../..';
 
 import { Children } from '../../../types';
@@ -9,7 +6,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledTooltip = ({ children, ...rest }: Props): JSX.Element => (
+export const StyledTooltip = ({ children, ...rest }: Props) => (
   <Tooltip
     variant="neutral"
     align="center"

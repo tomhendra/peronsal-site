@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import { Children } from '../../../../../types';
 
 import { withMediaQueries } from '../../../../../utils/style-helpers';
@@ -9,7 +6,7 @@ type Props = {
   children: Children;
 };
 
-export const StyledNav = ({ children }: Props): JSX.Element => (
+export const StyledNav = ({ children }: Props) => (
   <nav
     css={theme =>
       withMediaQueries(theme)({
