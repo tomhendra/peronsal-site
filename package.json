@@ -19,7 +19,7 @@
     "lint": "jest --config test/jest.lint.ts",
     "format": "yarn prettier --write",
     "type:check": "tsc",
-    "validate": "yarn test && yarn build",
+    "validate": "npm test && npm build",
     "rm:cache": "rm -rf .next/cache",
     "export": "next export"
   },
