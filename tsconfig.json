@@ -19,8 +19,9 @@
       // make paths available for imports e.g. import { fn } from 'utils' rather than '../../..utils'
       "src": ["web/src/"],
       "components": ["web/src/components/"],
-      "images": ["web/src/images/"],
-      "lib": ["web/src/lib/"],
+      "containers": ["web/src/containers"],
+      "images": ["web/src/assets/images/"],
+      "hooks": ["web/src/hooks"],
       "pages": ["web/src/pages/"],
       "templates": ["web/src/templates/"],
       "theme": ["web/src/theme/"],

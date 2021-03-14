@@ -1,4 +1,4 @@
-const theme = {
+export const theme = {
   plain: {
     color: '#d8dee9',
     backgroundColor: '#3b4252',
@@ -72,5 +72,3 @@ const theme = {
     },
   ],
 };
-
-module.exports = theme;

@@ -16,7 +16,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: path.join(__dirname, 'src', 'images'),
+        path: path.join(__dirname, 'src', 'assets', 'images'),
       },
     },
     'gatsby-plugin-typescript',
@@ -25,8 +25,9 @@ module.exports = {
       options: {
         src: path.join(__dirname, 'src'),
         components: path.join(__dirname, 'src/components'),
-        images: path.join(__dirname, 'src/images'),
-        lib: path.join(__dirname, 'src/lib'),
+        containers: path.join(__dirname, 'src/containers'),
+        images: path.join(__dirname, 'src/assets/images'),
+        hooks: path.join(__dirname, 'src/hooks'),
         pages: path.join(__dirname, 'src/pages'),
         templates: path.join(__dirname, 'src/templates'),
         theme: path.join(__dirname, 'src/theme'),
@@ -56,7 +57,7 @@ module.exports = {
         background_color: '#3b4252',
         theme_color: '#88c0d0',
         display: 'minimal-ui',
-        icon: 'src/images/logo/tomhendra-logo-512.png',
+        icon: 'src/assets/images/logo/tomhendra-logo-512.png',
       },
     },
     {

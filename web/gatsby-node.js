@@ -34,7 +34,7 @@ async function createBlogPostPages(graphql, actions, reporter) {
 
     createPage({
       path,
-      component: require.resolve('./src/templates/blog-post-template.tsx'),
+      component: require.resolve('./src/templates/blog-post.tsx'),
       context: { id },
     });
   });
@@ -76,7 +76,7 @@ async function createProjectPages(graphql, actions, reporter) {
 
     createPage({
       path,
-      component: require.resolve('./src/templates/project-template.tsx'),
+      component: require.resolve('./src/templates/project.tsx'),
       context: { id },
     });
   });

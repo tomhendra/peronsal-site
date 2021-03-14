@@ -1,12 +1,12 @@
-import { useTechStack } from '../../lib';
+import { useTechStack } from '../../hooks';
 
 import {
   StyledGrid,
   StyledContainer,
   StyledTooltip,
   StyledImg,
-} from './components';
-import { TechStackHookData } from '../../types';
+} from './styled';
+import { TechStackHookData } from 'types';
 
 type Props = {
   gridSize: 'alpha' | 'delta';

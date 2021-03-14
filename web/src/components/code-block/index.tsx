@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import Highlight, { defaultProps, Language } from 'prism-react-renderer';
+import * as nord from './themes/nord';
 
-// TODO: --------> Dive into prism-react-renderer and really understand types.
+// TODO: Dive into prism-react-renderer and really understand things.
 
 const Pre = styled.pre(({ theme }) => ({
   borderRadius: theme.borderRadius.delta,
@@ -25,29 +26,31 @@ const LineNo = styled.span(({ theme }) => ({
   opacity: '0.3',
 }));
 
-const nord = require('./themes/nord');
-
 type Props = {
   code: string;
   language: Language;
 };
 
-export const CodeBlock = ({ code, language }: Props) => (
-  <Highlight {...defaultProps} theme={nord} code={code} language={language}>
-    {({ className, style, tokens, getLineProps, getTokenProps }) => (
-      <Pre className={className} style={style}>
-        {tokens.map((line, i) => (
-          <div {...getLineProps({ line, key: i })}>
-            <LineNo>{i + 1}</LineNo>
-            {line.map((token, key) => (
-              <span {...getTokenProps({ token, key })} />
+export function CodeBlock({ code, language }: Props) {
+  return (
+    <Highlight {...defaultProps} theme={nord} code={code} language={language}>
+      {function ({ className, style, tokens, getLineProps, getTokenProps }) {
+        return (
+          <Pre className={className} style={style}>
+            {tokens.map((line, i) => (
+              <div key={i} {...getLineProps({ line, key: i })}>
+                <LineNo>{i + 1}</LineNo>
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token, key })} />
+                ))}
+              </div>
             ))}
-          </div>
-        ))}
-      </Pre>
-    )}
-  </Highlight>
-);
+          </Pre>
+        );
+      }}
+    </Highlight>
+  );
+}
 
 /*
  Types for language defined as what @sanity/code-input supports.

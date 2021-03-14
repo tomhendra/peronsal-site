@@ -1,11 +1,6 @@
-import {
-  StyledButton,
-  StyledSpan,
-  StyledLink,
-  StyledAnchor,
-} from './components';
+import { StyledButton, StyledSpan, StyledLink, StyledAnchor } from './styled';
 
-import { Variants, ButtonSizes, Children } from '../../types';
+import { Variants, ButtonSizes, Children } from 'types';
 
 type Props = {
   variant: Variants;

@@ -31,14 +31,7 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 'off', // incompatible with Next.js <Link /> (https://github.com/vercel/next.js/issues/5533)
     '@typescript-eslint/no-unused-vars': ['error'], // default is warn
     '@typescript-eslint/explicit-module-boundary-types': 'off', // handled by explicit-function-return-type: https://github.com/typescript-eslint/typescript-eslint/issues/2719
-    '@typescript-eslint/explicit-function-return-type': [
-      // default is warn & provide options objects
-      'off',
-      {
-        allowExpressions: true, // only functions which are part of a declaration will be checked
-        allowConciseArrowFunctionExpressionsStartingWithVoid: true, // concise arrow functions that start with the void keyword will not be checked
-      },
-    ],
+    '@typescript-eslint/explicit-function-return-type': 'off', // default is warn & provide options objects. prefer inference.
     'prettier/prettier': ['warn', {}, { usePrettierrc: true }], // warn on unformatted code & use usePrettierrc rules
   },
 };

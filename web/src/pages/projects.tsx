@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-
 import {
   Button,
   ButtonGroup,
@@ -12,10 +10,10 @@ import {
   Text,
   InlineLink,
   ProjectPreview,
-} from '../components';
+} from 'components';
 
-import { useProjects } from '../lib';
-import { ProjectHookData } from '../types';
+import { useProjects } from 'web/src/hooks';
+import { ProjectHookData } from 'types';
 
 const Projects = () => {
   const projects = useProjects();

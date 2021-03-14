@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-
 import {
   Layout,
   SEO,
@@ -9,12 +7,12 @@ import {
   Heading,
   Text,
   BlogPostPreview,
-} from '../components';
+} from 'components';
 
-import { usePosts } from '../lib';
-import { BlogPostHookData } from '../types';
+import { usePosts } from 'web/src/hooks';
+import { BlogPostHookData } from 'types';
 
-const Blog = () => {
+function Blog() {
   const posts = usePosts();
   return (
     <Layout>
@@ -61,6 +59,6 @@ const Blog = () => {
       </Section>
     </Layout>
   );
-};
+}
 
 export default Blog;

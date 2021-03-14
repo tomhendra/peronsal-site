@@ -10,7 +10,7 @@ import {
   AlignContent,
   Children,
   Theme,
-} from '../../types';
+} from 'types';
 
 import {
   shadowStandardAlpha,
@@ -25,7 +25,7 @@ import {
   shadowOffsetEcho,
   getSpacingValues,
   withMediaQueries,
-} from '../../utils/style-helpers';
+} from 'utils';
 
 type Props = {
   css?: Interpolation<Theme>; // fix for bug when reusing component & applying extra styles with css prop.
@@ -44,7 +44,7 @@ type Props = {
   children: Children;
 };
 
-export const Card = (props: Props) => {
+export function Card(props: Props) {
   const {
     variant = 'secondary',
     accent = 'accentBravo',
@@ -155,4 +155,4 @@ export const Card = (props: Props) => {
       {children}
     </div>
   );
-};
+}
