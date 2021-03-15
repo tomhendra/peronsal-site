@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { ProjectHookQuery, ProjectHookData } from 'types';
 
 export function useProjects(): ProjectHookData[] {
-  const data = useStaticQuery(graphql`
+  const sanityData = useStaticQuery(graphql`
     query {
       projects: allSanityProject(sort: { fields: publishedAt, order: DESC }) {
         edges {
@@ -27,7 +27,11 @@ export function useProjects(): ProjectHookData[] {
     }
   `);
 
-  return data.projects.edges.map(
+  if (!sanityData) {
+    console.warn('No project data fetched...');
+  }
+
+  return sanityData.projects.edges.map(
     ({ node }: { node: ProjectHookQuery }) =>
       node && {
         id: node._id,

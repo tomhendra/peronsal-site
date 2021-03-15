@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { TechStackHookQuery, TechStackHookData } from 'types';
 
 export function useTechStack(): TechStackHookData[] {
-  const data = useStaticQuery(graphql`
+  const sanityData = useStaticQuery(graphql`
     query {
       techStack: allSanityTechnology(sort: { fields: title, order: ASC }) {
         edges {
@@ -33,11 +33,11 @@ export function useTechStack(): TechStackHookData[] {
     }
   `);
 
-  if (!data) {
-    console.error('No data fetched for tech stack.');
+  if (!sanityData) {
+    console.error('No tech stack data fetched...');
   }
 
-  return data.techStack.edges.map(
+  return sanityData.techStack.edges.map(
     ({ node }: { node: TechStackHookQuery }) =>
       node && {
         id: node._id,

@@ -8,8 +8,7 @@ import {
   Text,
   BlogPostPreview,
 } from 'components';
-
-import { usePosts } from 'web/src/hooks';
+import { usePosts } from 'hooks';
 import { BlogPostHookData } from 'types';
 
 function Blog() {

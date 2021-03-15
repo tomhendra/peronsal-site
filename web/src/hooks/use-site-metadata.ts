@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { SiteMetadata } from 'types';
 
 export function useSiteMetadata(): SiteMetadata {
-  const data = useStaticQuery(graphql`
+  const sanityData = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -14,5 +14,9 @@ export function useSiteMetadata(): SiteMetadata {
     }
   `);
 
-  return data && data.site;
+  if (!sanityData) {
+    console.warn('No metadata fetched...');
+  }
+
+  return sanityData.site;
 }

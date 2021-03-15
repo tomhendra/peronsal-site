@@ -28,6 +28,10 @@ export function usePosts(): BlogPostHookData[] {
     }
   `);
 
+  if (!data) {
+    console.warn('No blog post data fetched...');
+  }
+
   return data.posts.edges.map(
     ({ node }: { node: BlogPostHookQuery }) =>
       node && {

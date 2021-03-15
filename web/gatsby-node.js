@@ -17,10 +17,7 @@ async function createBlogPostPages(graphql, actions, reporter) {
   `);
 
   if (result.errors) {
-    reporter.panic(
-      '🚨 ERROR: Loading "createPages" query while creating blog post pages.',
-      result.errors,
-    );
+    reporter.panic('🚨 Error fetching blog post data.', result.errors);
   }
 
   const postEdges = (result.data.allSanityPost || {}).edges || [];
@@ -30,7 +27,7 @@ async function createBlogPostPages(graphql, actions, reporter) {
     const slug = node.slug.current;
     const path = `/blog/${slug}/`;
 
-    reporter.info(`🧩 Creating blog post: ${path}`);
+    reporter.info(`🛠 Creating blog post: ${path}`);
 
     createPage({
       path,
@@ -59,10 +56,7 @@ async function createProjectPages(graphql, actions, reporter) {
   `);
 
   if (result.errors) {
-    reporter.panic(
-      '🚨 ERROR: Loading "createPages" query while creating project pages.',
-      result.errors,
-    );
+    reporter.panic('🚨 Error fetching project data', result.errors);
   }
 
   const projectEdges = (result.data.allSanityProject || {}).edges || [];
@@ -72,7 +66,7 @@ async function createProjectPages(graphql, actions, reporter) {
     const slug = node.slug.current;
     const path = `/projects/${slug}/`;
 
-    reporter.info(`🧩 Creating project page: ${path}`);
+    reporter.info(`🛠 Creating project page: ${path}`);
 
     createPage({
       path,
