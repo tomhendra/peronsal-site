@@ -1,12 +1,8 @@
-import { Logo } from '..';
+import { Logo } from 'components';
 
-import {
-  StyledHeader,
-  StyledContainer,
-  StyledLink,
-  Navbar,
-  MobileNav,
-} from './components';
+import { StyledHeader, StyledContainer, StyledLink } from './styled';
+
+import { Navbar, MobileNav } from './components';
 
 export const Header = () => (
   <StyledHeader>

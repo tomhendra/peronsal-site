@@ -16,7 +16,8 @@
     "deploy:graphql-prod": "sanity graphql deploy --dataset production --generation gen2 --no-playground",
     "deploy:graphql": "npm run deploy:graphql-prod && npm run deploy:graphql-dev",
     "deploy:sanity": "sanity deploy",
-    "init": "sanity init && npm run deploy:graphql"
+    "init": "sanity init && npm run deploy:graphql",
+    "clean": "rm -rf node_modules"
   },
   "dependencies": {
     "@sanity/base": "^2.6.0",

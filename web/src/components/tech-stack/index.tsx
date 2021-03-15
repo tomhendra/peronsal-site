@@ -18,7 +18,6 @@ type Props = {
 export const TechStack = (props: Props) => {
   const { gridSize, stack, noSpacingBottom } = props;
   const allStack = useTechStack();
-  console.log(allStack);
 
   // verify whether complete stack or filtered stack should be displayed
   const stackToDisplay = !stack
