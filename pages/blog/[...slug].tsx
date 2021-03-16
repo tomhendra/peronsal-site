@@ -1,5 +1,5 @@
 import hydrate from 'next-mdx-remote/hydrate';
-import { POST_CONTENT_PATH, getMdxContent } from '@utils';
+import { POST_CONTENT_PATH, getMdxContent } from '@lib';
 import { Layout, components } from '@components';
 import { MdxSource, PostData } from '@types';
 import { GetStaticPaths, GetStaticProps } from 'next';

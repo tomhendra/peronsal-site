@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { POST_CONTENT_PATH, getMdxContent } from '@utils';
+import { POST_CONTENT_PATH, getMdxContent } from '@lib';
 import { BlogPostPreview, Layout, SEO } from '@components';
 import { MdxContent } from '@types';
 import { GetStaticProps } from 'next';

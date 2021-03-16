@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
+/// <reference path="../types/theme-ui-prism.d.ts" />
 import { Theme } from 'theme-ui';
 import nightOwl from '@theme-ui/prism/presets/night-owl';
 

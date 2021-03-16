@@ -1,5 +1,5 @@
 import { Navbar } from '@components/navbar';
-import { render, screen } from '../../test/test-utils';
+import { render, screen } from '@test/test-utils';
 
 test('renders with the default styles for the default colorMode', () => {
   render(<Navbar />, {

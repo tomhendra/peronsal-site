@@ -4,28 +4,41 @@
     "allowJs": true, // check JS files
     "noEmit": true, // do not compile to JS (Next handles this via Babel)
     "skipLibCheck": true, // node_modules not checked
-    "jsx": "preserve", // ? Next auto-inserts
+    "jsx": "preserve", // Next auto-inserts
     "jsxImportSource": "@emotion/react",
-    "target": "ES2020", // ?
-    "forceConsistentCasingInFileNames": true, // ?
-    "lib": ["dom", "dom.iterable", "esnext"], // ?
-    "module": "ESNext", // ?
-    "moduleResolution": "node", // ?
-    "esModuleInterop": true, // ?
-    "resolveJsonModule": true, // ?
-    "isolatedModules": true, // ?
+    "target": "ESNext",
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "typeRoots": ["./types", "./node_modules/@types"],
     "baseUrl": ".", // required for path imports to work
     "paths": {
-      // make paths available for imports e.g. import { fn } from 'utils' rather than '../../..utils'
+      "@components": ["components"],
+      "@components/*": ["components/*"],
+      "@lib": ["lib"],
+      "@lib/*": ["lib"],
+      "@test/": ["test"],
       "@test/*": ["test/*"],
-      "@components/*": ["src/components/*"],
-      "@components": ["src/components"],
-      "@types": ["src/types"],
-      "@utils": ["src/utils"],
-      "@utils/*": ["src/utils"]
+      "@theme/": ["theme"],
+      "@theme/*": ["theme/*"],
+      "@types": ["types"],
+      "@types/*": ["types/*"]
     }
   },
   // *.* includes config files in root because https://stackoverflow.com/a/61993196
-  "include": ["*.*", "test/**/*", "src/**/*", "content/**/*"],
+  "include": [
+    "*.*",
+    "components/**/*",
+    "content/**/*",
+    "lib/**/*",
+    "pages/**/*",
+    "test/**/*",
+    "theme/**/*",
+    "types/**/*"
+  ],
   "exclude": ["node_modules"]
 }

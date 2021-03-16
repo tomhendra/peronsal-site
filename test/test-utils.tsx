@@ -6,7 +6,7 @@ import {
 } from '@testing-library/react';
 import { ThemeProvider, useColorMode } from 'theme-ui';
 import theme from '../theme';
-import { WithChildren } from 'src/types/type-utils';
+import { WithChildren } from 'types/type-utils';
 
 // https://testing-library.com/docs/react-testing-library/setup/#custom-render
 // https://epicreact.dev/modules/testing-react-apps/context-and-custom-render-method-extra-credit-solution-2
