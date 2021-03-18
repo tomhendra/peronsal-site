@@ -33,7 +33,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn build"
+      "pre-commit": "lint-staged && npm build"
     }
   },
   "lint-staged": {
@@ -48,7 +48,8 @@
     ]
   },
   "dependencies": {
-    "@theme-ui/prism": "^0.3.5",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
     "fast-glob": "^3.2.5",
     "gray-matter": "^4.0.2",
     "next": "^10.0.9",
@@ -59,12 +60,12 @@
     "prism-react-renderer": "^1.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-icons": "^4.2.0",
-    "theme-ui": "^0.5.0-alpha.2"
+    "react-icons": "^4.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
+    "@emotion/babel-plugin": "^11.2.0",
     "@emotion/jest": "^11.2.1",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",

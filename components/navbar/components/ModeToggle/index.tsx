@@ -1,24 +1,22 @@
-/** @jsxImportSource theme-ui */
-import { useColorMode } from 'theme-ui';
+import * as React from 'react';
 import { FiSun, FiMoon } from 'react-icons/fi';
+import { StyledButton } from './styled';
+import { useLocalStorageState } from 'hooks';
 
 export function ModeToggle() {
-  const [colorMode, setColorMode] = useColorMode();
+  const [theme, setTheme] = useLocalStorageState('theme', 'light');
+  const nextTheme = theme === 'light' ? 'dark' : 'light';
+
+  React.useEffect(() => {
+    document.body.dataset.theme = theme;
+  }, [theme]);
 
   return (
-    <button
-      sx={{
-        width: 8,
-        height: 8,
-        background: 'inherit',
-        color: 'inherit',
-        border: 'none',
-        p: 0,
-      }}
-      aria-label="Toggle dark mode"
-      onClick={() => setColorMode(colorMode === 'default' ? 'dark' : 'default')}
+    <StyledButton
+      aria-label="Toggle colour mode"
+      onClick={() => setTheme(nextTheme)}
     >
-      {colorMode === 'default' ? <FiMoon /> : <FiSun />}
-    </button>
+      {nextTheme === 'light' ? <FiMoon /> : <FiSun />}
+    </StyledButton>
   );
 }

@@ -5,7 +5,6 @@ import NextDocument, {
   NextScript,
   DocumentContext,
 } from 'next/document';
-import { InitializeColorMode } from 'theme-ui';
 
 class Document extends NextDocument {
   static async getInitialProps(ctx: DocumentContext) {
@@ -16,10 +15,29 @@ class Document extends NextDocument {
     return (
       <Html lang="en">
         <Head>
-          <link rel="stylesheet" href="/fonts/fonts.css" />
+          <link
+            rel="preload"
+            href="/fonts/RobotoSlab.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Inter.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/RobotoMono.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
         </Head>
         <body>
-          <InitializeColorMode />
           <Main />
           <NextScript />
         </body>

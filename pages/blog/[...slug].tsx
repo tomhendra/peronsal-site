@@ -3,7 +3,6 @@ import { POST_CONTENT_PATH, getMdxContent } from '@lib';
 import { Layout, components } from '@components';
 import { MdxSource, PostData } from '@types';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { Styled } from 'theme-ui';
 import Image from 'next/image';
 
 interface BlogPostProps {
@@ -17,7 +16,7 @@ function BlogPost({ mdx, data }: BlogPostProps) {
 
   return (
     <Layout>
-      <Styled.h1>{title ? title : 'Untitled'}</Styled.h1>
+      <h1>{title ? title : 'Untitled'}</h1>
       <Image
         src={image ? image : '/public/images/camera.jpg'}
         alt={caption}
@@ -25,7 +24,7 @@ function BlogPost({ mdx, data }: BlogPostProps) {
         width={768}
         layout="responsive"
       />
-      <Styled.p>{caption}</Styled.p>
+      <p>{caption}</p>
       {content}
     </Layout>
   );

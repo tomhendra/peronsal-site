@@ -1,5 +1,6 @@
-/** @jsxImportSource theme-ui */
-import { Container, Navbar } from '@components';
+import { Navbar } from 'components';
+import { StyledContainer } from './styled';
+import theme from 'theme';
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -8,41 +9,40 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   return (
     <div
-      sx={{
+      css={{
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
-        variant: 'layout.root',
       }}
     >
       <header
-        sx={{
+        css={{
           width: '100%',
-          variant: 'layout.header',
+          ...theme.layout.header,
         }}
       >
-        <Container>
+        <StyledContainer>
           <Navbar />
-        </Container>
+        </StyledContainer>
       </header>
       <main
-        sx={{
+        css={{
           width: '100%',
           flex: '1 1 auto',
-          variant: 'layout.main',
+          ...theme.layout.main,
         }}
       >
-        <Container>{children}</Container>
+        <StyledContainer>{children}</StyledContainer>
       </main>
       <footer
-        sx={{
+        css={{
           width: '100%',
-          variant: 'layout.footer',
+          ...theme.layout.footer,
         }}
       >
-        <Container>
+        <StyledContainer>
           <p>Footer Goes Here</p>
-        </Container>
+        </StyledContainer>
       </footer>
     </div>
   );

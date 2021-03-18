@@ -1,34 +1,22 @@
-/** @jsxImportSource theme-ui */
 import { ModeToggle } from './components/ModeToggle';
 import NextLink from 'next/link';
-import { NavLink } from 'theme-ui';
+import { StyledContainer, StyledNav } from './styled';
 
 export function Navbar() {
   return (
-    <div
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-      }}
-    >
+    <StyledContainer>
       <NextLink href="/" passHref>
-        <NavLink>tomhendra.dev</NavLink>
+        <a>tomhendra.dev</a>
       </NextLink>
-      <nav
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-        }}
-      >
+      <StyledNav>
         <NextLink href="/" passHref>
-          <NavLink pr={3}>Home</NavLink>
+          <a>Home</a>
         </NextLink>
         <NextLink href="/blog" passHref>
-          <NavLink pr={3}>Blog</NavLink>
+          <a>Blog</a>
         </NextLink>
         <ModeToggle />
-      </nav>
-    </div>
+      </StyledNav>
+    </StyledContainer>
   );
 }

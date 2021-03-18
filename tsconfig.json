@@ -17,15 +17,17 @@
     "typeRoots": ["./types", "./node_modules/@types"],
     "baseUrl": ".", // required for path imports to work
     "paths": {
-      "@components": ["components"],
+      "@components": ["components/"],
       "@components/*": ["components/*"],
-      "@lib": ["lib"],
-      "@lib/*": ["lib"],
-      "@test/": ["test"],
+      "@hooks": ["hooks/"],
+      "@hooks/*": ["hooks/*"],
+      "@lib": ["lib/"],
+      "@lib/*": ["lib/*"],
+      "@test/": ["test/"],
       "@test/*": ["test/*"],
-      "@theme/": ["theme"],
+      "@theme/": ["theme/"],
       "@theme/*": ["theme/*"],
-      "@types": ["types"],
+      "@types": ["types/"],
       "@types/*": ["types/*"]
     }
   },
@@ -34,6 +36,7 @@
     "*.*",
     "components/**/*",
     "content/**/*",
+    "hooks/**/*",
     "lib/**/*",
     "pages/**/*",
     "test/**/*",

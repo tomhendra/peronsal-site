@@ -1,5 +1,4 @@
-import { Layout, SEO } from '@components';
-import { Styled } from 'theme-ui';
+import { Layout, SEO } from 'components';
 
 function Home() {
   return (
@@ -10,14 +9,14 @@ function Home() {
       />
       <Layout>
         <section>
-          <Styled.h1>Hello, I am Tom.</Styled.h1>
-          <Styled.p>
+          <h1>Hello, I am Tom.</h1>
+          <p>
             I’m a software developer from the UK currently located in sunny
             Spain.
-          </Styled.p>
-          <Styled.p>
+          </p>
+          <p>
             I perpetually learn, build web apps and write about what I discover.
-          </Styled.p>
+          </p>
         </section>
       </Layout>
     </>
