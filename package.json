@@ -21,7 +21,8 @@
     "format": "npm prettier --write",
     "validate": "npm test && npm build",
     "rm:cache": "rm -rf .next/cache",
-    "export": "next export"
+    "export": "next export",
+    "prepare": "husky install"
   },
   "jest-runner-eslint": {
     "cliOptions": {
