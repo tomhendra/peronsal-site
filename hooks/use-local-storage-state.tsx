@@ -2,12 +2,12 @@ import * as React from 'react';
 
 export function useLocalStorageState(
   key: string,
-  defaultValue: unknown,
+  defaultValue: string | (() => void),
   { serialize = JSON.stringify, deserialize = JSON.parse } = {},
 ) {
   const [state, setState] = React.useState(() => {
-    const valueInLocalStorage =
-      typeof window !== 'undefined' && window.localStorage.getItem(key);
+    if (typeof window === 'undefined') return;
+    const valueInLocalStorage = window.localStorage.getItem(key);
 
     if (valueInLocalStorage) {
       // the try/catch is here in case the localStorage value was set before we had the serialization in place

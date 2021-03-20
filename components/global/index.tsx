@@ -6,7 +6,7 @@ export function Global() {
     <EmotionGlobal
       styles={{
         '::selection': {
-          backgroundColor: theme.colors.background,
+          backgroundColor: theme.colors.muted,
           color: theme.colors.primary,
         },
 
