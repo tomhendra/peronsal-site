@@ -1,46 +1,63 @@
 ---
-title: 'Next.js, Emotion & CSS Variable Theming'
+title: 'Exploring Next.js, Emotion & CSS Variable Theming'
 date: '2021-20-03'
-excerpt: 'A Next.js setup taking aspects of several great tools and techiques.'
+excerpt: 'A path to great DX by taking elements from other great tools.'
 author: 'Tom Hendra'
 image: '/images/gadgets.jpg'
 caption: 'An image of gadgets.'
 tags: ['Next.js', 'Emotion', 'CSS', 'Theme UI']
 ---
 
-I recently decided to revamp my blog for the third time, and like many others decided to follow the trend from Gatsby to Next.js. My old blog had served me well but was too complex for my needs. It was the first thing I ever built with React and I got carried away, essentially creating a reusbale component library for a one-off website with a Sanity.io CMS. It was fun to build and I learned a tonne, but it was like using a jet turbine to power my lawnmower. I needed to approach the subsequent iteration with a gentler hand.
+I recently decided to revamp my blog for the third time, and like many others in the community decided to follow the trend in moving from Gatsby to Next.js. My old blog had served me well but it was too complex for my needs. It was the first thing I ever built with React and I got carried away, essentially building a reusbale component library for a one-off website hooked up to a Sanity.io CMS. It was fun to build and I learned a tonne, but it was like using a jet turbine to power my lawnmower. I needed to approach the subsequent iteration with a gentler hand.
 
-Next.js is still overkill, I mean who needs an all-powerful fullstack React Framwork for a simeple blog? But I am eager to learn Next.js as that's what all the cool kids are doing, so the choice was made.
+Next.js is still overkill, I mean who needs an all-powerful fullstack React framework for a simple blog? But I am eager to learn Next.js as that's what all the cool kids are doing, so the choice was already made.
 
 ## Styling
 
-I love a great developer experience (DX) as much as the next person, which is why I ended up going too far with my Gatsby site's components. All four pages for the site were written in squeaky clean markup because I spent a lot of time creating a nice component API. I avoided having to use Emotion's css prop in my pages and instead accepted style props in my components for all possible use cases like a component library might do, ladeling on the complexity.
+I love a great developer experience (DX) as much as the next person, which is why I ended up going too far with my Gatsby site's components. The entire four pages for the site were written in squeaky clean markup because I spent a lot of time on a component API to avoid using Emotion's css prop in my pages. Instead I implelemented components to accept style props, like a component library might do, ladeling on the complexity.
 
-But I am not building a design system (yet) so I decided to explore what options were available to spare me from a. spending too much time writing component code and b. the horror of writing untidy code for my pages, with css prop styles all over the place for tweaking spacing here and there chasing pixel-perfection.
+But I am not building a design system (yet) so I decided to explore what tooling options were available to spare me from (a) spending too much time writing component code and (b) the horror of writing untidy code for my pages, with css prop styles all over the place to tweak spacing here and there while chasing pixel-perfection. The standout options were Theme UI and Tailwind CSS.
 
 ## Theme UI
 
-I stumbled across Theme UI and really liked the underlying principles of a standardized theme specification. Theme UI isn't just some venture into the unknown clutching a fancy idea, the developers created it with careful consideration derived from lessons learned during the evolution of several other libraries that came before it, which gives it credibility. I spent quite some time reviewing Theme UI, and while I enjoyed the DX, I didn't enjoy fighting with alpha versions and configs for compatability with the latest version of Next.js. I also struggled to find answers to questions for what is a surprisingly unpopular styling solution. It was also too much abstraction, since I want to grow my CSS skills, and Theme UI obscures much of it.
+I really like the principle of a standardized theme specification. Theme UI isn't just some venture into the unknown clutching a fancy idea, the developers created it with careful consideration derived from lessons learned during the evolution of several other libraries that came before it, which gives Theme UI credibility.
+
+While I enjoyed the DX, I didn't enjoy fighting with alpha versions and configs for compatability with the latest version of Next.js. I also struggled to find answers to questions about what is a surprisingly unpopular styling solution. It was also too much abstraction from plain CSS in some areas such as media queries, and since I want to grow my CSS skills it is important to not remove myself too much from actually writing it.
 
 ## Tailwind CSS
 
-Tailwind has gained a lot of traction and for good reasaon; the underlying design system is sublime. Having the glorious Refactoring UI in my toolkit I have tremendous respect for Adam Wathan & Steve Schoger's work. Refactoring UI opens portals from the developer realm to the design world, and the result is like using Figma with cheat codes. But seeing a troupe of classnames lined up makes me feel uneasy. Given the glowing feedback Talwind receives, I am sure the unease subsides with acclimitization, and I fully intend to test that theory at some point. But for now Tailwind doesn't meet the cut because easy to read and maintain code for my blog - a testing ground for all the shiny new things - needs to be free from chaos.
+Tailwind has gained a lot of traction and for good reasaon; the underlying design system is sublime. Having the glorious Refactoring UI already in my toolkit I have tremendous respect for Adam Wathan & Steve Schoger's work. Refactoring UI opens portals from the developer realm to the design one, and the result is like using Figma with cheat codes!
 
-## Emotion
+But seeing a troupe of classnames lined up makes me feel uneasy. Given the glowing feedback Tailwind receives, I am sure the unease subsides with acclimitization, and I fully intend to test that theory at some point. But for my personal site I need easy to read and maintainable code; a testing ground for all the shiny new things must be free from chaos for quick iteration.
 
-Familiar territory and the lightbulb moment came next. I'm already on good terms with Emotion after the Gatsby site I spent so much time iterating upon and learning from. Why not take some features from Theme UI, and implement them myself with Emotion? After all, Theme UI is built upon Emotion itself. That way I can stay closer to vanilla CSS and get to learn about how Theme UI works. Sure it might be more work, but hey, I get to tinker and it'll be more rewarding in the end.
+There was also the requirement to learn the Tailwind API rather than build on the CSS skills that I want to develop. It is too far removed from plain CSS for me to develop my skills in that area.
+
+## Eureka
+
+Then came the lightbulb moment: Maybe a new styling tool wasn't the right solution. I liked the structured theme of Theme UI, and the well considered design system of Tailwind, but didn't want to use a tool that abstracted away from plain CSS too much. I was already on good terms with Emotion after the Gatsby site I spent so much time iterating upon and learning from, so why not take some features from Theme UI and Tailwind and implement them myself with Emotion? That way I can stay closer to vanilla CSS and as a bonus get to explore how the other tools work.
+
+## But What About Reducing Complexity?
+
+In the outset I wanted to avoid two things that bothered me while implementing the previous version of my personal site:
+
+1.  Spending too much time writing component code
+2.  Writing untidy code for my pages
+
+The search for technical solutions gave rise to an unexpected conclusion. While tools like Theme UI and Tailwind CSS are great for speedy development and provde a fantastic API, in the interest of growing my CSS skills I found that I wasn't really confortable with the level of abstraction these tools bring.
+
+My problems could be better soloved with a change in mindset. In this case, I am building a personal site and blog with a handful of pages. It isn't justifiable to spend time on creating a clean component API. For the few basic pages I need, using the css prop for tweaks here and there in the markup isn't much of a problem.
 
 ## CSS Variable Theming
 
-React guru, Kent C Dodds, enlightened me to the performance benefits of CSS variables over React context with his blog post [Use CSS Variables instead of React Context](https://epicreact.dev/css-variables/). Performance always matters, and with [95% browser coverage](https://caniuse.com/css-variables) it was an easy sell. In terms of how to put together colour swatches as part of a design system, Elad Shechter had me covered with his article on [Why CSS HSL Colors are Better!](https://elad.medium.com/why-css-hsl-colors-are-better-83b1e0b6eead). The plan was in place.
+React guru, Kent C Dodds, enlightened me to the performance benefits of CSS variables over React context with his blog post [Use CSS Variables instead of React Context](https://epicreact.dev/css-variables/). Performance **always** matters, and with [95% browser coverage](https://caniuse.com/css-variables) it was an easy sell. In terms of how to put together colour swatches as part of a design system, Elad Shechter had me covered with his article on [Why CSS HSL Colors are Better!](https://elad.medium.com/why-css-hsl-colors-are-better-83b1e0b6eead). The plan was in place.
 
-## Putting it All Together
+## The Configuration
 
-So how do we stitch all of this together for performant, well-organized theming coupled with the great DX of Emotion? Well, we create a hybrid by following these steps.
+So how do we stitch all of this together for performant, well-organized theming coupled with the great DX of Emotion? We create a hybrid by following these steps:
 
 1. Setup Emotion to work with the latest version of Next.js.
-2. Take some design system elements from Tailwind and CSS Variable configuration from from Kent C Dodds and Elad Shechter
-3. Create an object theme based on the theme specification from Theme UI that consumes CSS Variables.
+2. Take some design system elements from Tailwind and CSS Variable configuration from from Kent C Dodds and Elad Shechter.
+3. Create a theme object based on the theme specification from Theme UI which consumes the CSS Variables.
 4. Create a toggle component to switch between light and dark themes.
 
 ## Configuring Emotion with Next.js
@@ -66,7 +83,7 @@ Emotion 11 installation is as easy as `npm i @emotion/react @emotion/styled`. To
 
 ## Defining CSS Variables for our Theme
 
-We define our colour scales Tailwind-style using CSS variables based on the teachings of Kent C Dodds and Elad Shechter.
+We define our colour scales Tailwind-style using CSS variables.
 
 ```css
 /* styles/colors.css */
@@ -155,7 +172,7 @@ body[data-theme='dark'] {
 
 ## Creating & Using a Theme with Emotion
 
-Then we follow [Theme UI's theme specification](https://dev.theme-ui.com/theme-spec/) to build a thoughtfully structured theme, using our CSS variables for the `colors` section.
+Then we follow [Theme UI's theme specification](https://dev.theme-ui.com/theme-spec/) to build a thoughtfully structured theme, using our CSS variables for the `colors` object.
 
 ```ts
 const baseColors = {
@@ -274,7 +291,7 @@ export default App;
 
 ## Building a Theme Toggle Component
 
-Lastly we create a theme toggle to switch between themes using CSS [data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes).
+And lastly we create a theme toggle to switch between themes using CSS [data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes).
 
 ```tsx
 // ModeToggle.tsx
@@ -301,8 +318,6 @@ export function ModeToggle() {
   );
 }
 ```
-
-And just like that, now we can have the best of everything!
 
 ## Just One More Thing...
 
@@ -380,20 +395,11 @@ export function ModeToggle() {
 
 ## Summary
 
-And there we have it. To recap, we can have a setup with nice DX which includes:
+And there we have it. To recap, we have a Next.js configuration with great DX featuring:
 
-- Emotion for [all of the benefits](https://mxstbr.com/thoughts/css-in-js/) that CSS-in-JS brings, configured to work with the latest version of Next.js.
+- Emotion for [all of the benefits](https://mxstbr.com/thoughts/css-in-js/) that CSS-in-JS brings configured to work with the latest version of Next.js.
 - Perforamant theming through the use of CSS Custom Properties (variables).
-- An organized theme structure based on the theme specification from Theme UI.
+- An organized theme structure based on the theme specification used by Theme UI.
 - An elegant reusable hook for storing anything we wish in the browser's local storage.
 
-In the outset of my 2021 blog revamp I wanted to avoid two things that bothered me while coding the previous version:
-
-1.  Spending too much time writing component code
-2.  Writing untidy code for my pages
-
-The search for technical solutions to these problems gave rise to some unexpected self-reflection. While tools like Theme UI and Tailwind CSS are great for speedy development, in the interest of growing my CSS skills I found that I wasn't really confortable with their level of abstraction.
-
-Sometimes problems can be soloved with a change in mindset. Inb my case, I am building a personal blog with a handful of pages. When I start building a design system of components then I can focus on delivering a clean component API for a nice developer experience. But for my little space on the internet, it really isn't necessary to do so. If the few pages I need use the css prop here and there in the markup, then so be it.
-
-The lesson I have learned? - Always use a suitable approach for the task at hand, and do not create complexity where it isn't justifiable.
+The big takeaway I have learned from this is to use a suitable approach for the task at hand, and not create complexity where it isn't justifiable. Sometimes we can get carried away with creating solutions for problems that can be solved in other ways, which only becomes apparaent when we step away from the code and look at the bigger picture.
