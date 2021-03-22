@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import { Global } from 'components';
-import 'styles/reset.css';
+import 'styles/remedy.css';
 import 'styles/colors.css';
 import 'styles/fonts.css';
 
