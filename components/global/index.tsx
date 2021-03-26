@@ -26,14 +26,6 @@ export function Global() {
           display: 'none',
         },
 
-        '.lockScroll': {
-          overflow: 'hidden !important',
-        },
-
-        '.isCurrent > a': {
-          color: `${theme.colors.primary} !important`,
-        },
-
         'span[aria-hidden="true"]': {
           display: 'none',
         },
