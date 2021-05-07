@@ -70,7 +70,7 @@ The next step is to set up HTTPS in Cloudflare.
 
 ### 1: Encryption
 
-To create a secure connection between Cloudflare and Vercel, set Cloudflare's
+To create a secure connection between Cloudflare and Vercel, set Clousdflare's
 encryption level within the 'SSL/TLS' tab to 'Full (strict)'. Vercel has a
 Cloudflare Origin CA Certificate so we can use the strict option.
 
@@ -114,7 +114,7 @@ curl:
 curl http://example.com/.well-known/acme-challenge -I
 ```
 
-If succesfful you should see `HTTP/1.1 404 Not Found` returned, which means you
+If successful you should see `HTTP/1.1 404 Not Found` returned, which means you
 have a configuration that will allow Vercel to run smoothly!
 
 You can now confirm traffic is being handled via Cloudflare by checking the SSL
@@ -122,8 +122,8 @@ certificate in the browser when visiting the URL.
 
 ### Summary
 
-Now all should be up and running with a proxy-enabled Clouflare site. Vercel
-recommends to avoid using the proxy due to performance degredation, but in my
+Now all should be up and running with a proxy-enabled Cloudflare site. Vercel
+recommends to avoid using the proxy due to performance degradation, but in my
 case this has proven negligible.
 
 Again credit to Dom Talbot's blog post. He did all the hard work and I just
