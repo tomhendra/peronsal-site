@@ -1,20 +1,20 @@
 ---
 title: 'React & AWS Amplify with DataStore Setup for User Owned Data'
 date: '2020-30-04'
-excerpt: 'DataStore offers offline functionality for cross-platform devices. Learn how to setup a React project from scratch with the Amplify CLI that supports each user having access to their own set of data.'
+excerpt: 'How to setup a React project + auth with user-specific data + DataStore for easy offline functionality.'
 author: 'Tom Hendra'
 image: ''
 caption: ''
 tags: ['AWS', 'Amplify', 'Authentication']
 ---
 
-As a Frontend Developer, I love how much power Amplify gives us to get a fullstack app up and running on AWS without needing to be a DevOps ninja. I have however found the documentation to be lacklustre, with overlaps in the Libraries and CLI sections, alongside some outdated information in places. There are many excellent alternative guides on the internet, but many of them are outdated. This post serves as an up-to- date guide (at the time of writing) to setting up a project from scratch with the following using the Amplify CLI tool:
+Get up and running quickly with Create React App and the Amplify CLI to create a full stack app powered by Amplify DataStore for easy offline functionality, plus authentication and authorization for user-specific data.
 
 1. React frontend via Create React App with TypeScript
 2. Amplify backend configured to use DataStore
 3. Amazon Cognito User Pools for owner based authorization of access to data
 
-The end result is an app that supports authentication by username and password, where each user has their own data which is inaccessible to other users.
+The end result is an app that supports authentication by username and password, where each user has their own data which is inaccessible to others.
 
 If you don't already have an AWS account or the Amplify CLI setup, please refer to the Amplify CLI installation instructions [in the docs](https://docs.amplify.aws/cli/start/install). Also, in the interest of conciseness we will skip over styling and get straight to the point.
 
