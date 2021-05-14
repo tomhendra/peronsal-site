@@ -109,7 +109,7 @@ Choose the default authentication and security configuration & username.
 ❯ Username
 ```
 
-When asked if you wish to configure advanced settings select No.
+When asked if you wish to configure advanced settings select No, I am done.
 
 ```shell
 ? Do you want to configure advanced settings?
@@ -121,7 +121,7 @@ When asked if you wish to configure advanced settings select No.
   Yes, I want to make some additional changes.
 ```
 
-Choose `n` for an annotated GraphQL schema, choose the default schema template, select `y` to edit the schema, and pick your code editor of choice.
+Choose `n` for an annotated GraphQL schema, choose the default schema template, select `y` to edit the schema, and pick your code editor of choice to launch it and edit the schema.
 
 ```shell
 ? Do you have an annotated GraphQL schema? (y/N) n
@@ -161,28 +161,28 @@ Amplify.configure(awsExports);
 
 ## Generate GraphQL Schema, Types & Deploy the API
 
-Run the command `amplify push` to trigger the API codegen and deployment to the cloud.
+Run the command `amplify push` to build all your local backend resources and provision it in the cloud.
 
 ```shell
 amplify push
 ```
 
-You will be promted to generate code which will create GraphQL queries, mutations and subscriptions as well as TypeScript types to use for interacting with the AWS Amplify API. Choose TypeScript as the language and define your preference for where the generated output should be.
+You will be promted to generate code which will create GraphQL queries, mutations and subscriptions as well as TypeScript types to use for interacting with the AWS Amplify API. Choose TypeScript as the language and define your preference for where the output should be generated.
 
 ```shell
-? Do you want to generate code for your newly created GraphQL API Yes
+? Do you want to generate code for your newly created GraphQL API (y)
 ? Choose the code generation language target
   javascript
 ❯ typescript
   flow
 ? Enter the file name pattern of graphql queries, mutations and subscriptions (src/graphql/**/*.ts)
 ? Do you want to generate/update all possible GraphQL operations - queries, mutations and subscriptio
-ns Yes
-? Enter maximum statement depth [increase from default if your schema is deeply nested] 2
+ns - (y)
+? Enter maximum statement depth [increase from default if your schema is deeply nested] (2)
 ? Enter the file name for the generated code (src/API.ts)
 ```
 
-Setup will likely take a few minutes.
+Setup will take a few minutes.
 
 ## Troubleshooting
 
