@@ -193,7 +193,7 @@ But there is one more matter to consider. Next.js re-renders on route changes an
 
 ## Persisting Between Route Changes
 
-One of the many elegant patterns I learned from Kent C Dodd's [Epic React](https://epicreact.dev/) course is to create a generic custom hook for storing state in `localStorage`. To avoid an error being thrown, we also need to ensure not to try and access `window` on the server where it will be `undefined` as per the [Next.js docs](https://nextjs.org/docs/migrating/from-create-react-app#safely-accessing-web-apis).
+One of the many elegant patterns I learned from Kent C Dodd's [Epic React](https://epicreact.dev/) course is to create a generic custom hook for storing state in `localStorage`. To avoid an error being thrown, we also need to ensure not to try and access `window` on the server where it will be `undefined` as stated in the [Next.js docs](https://nextjs.org/docs/migrating/from-create-react-app#safely-accessing-web-apis).
 
 ```tsx
 // use-local-storage-state.tsx
