@@ -1,7 +1,0 @@
-{
-  "compilerOptions": {
-    "moduleResolution": "node",
-    "baseUrl": "./src"
-  },
-  "include": ["src", "d.ts"]
-}
