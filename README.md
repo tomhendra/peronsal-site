@@ -9,9 +9,9 @@ Personal site 3.0 is built with [Astro](https://docs.astro.build/getting-started
 Version 1.0 used Gatsby and Sanity CMS in, and 2.0 used Next.js + MDX based on
 the trend of 2021, but 2.0 remains unfinished since I feel that a full stack
 framework like Next.js is overkill for a basic website. Plus I didn't like being
-pushed towards Vercel where Next.js deployments shine... I remember when Vercel 
-reduced the number of serverless functions included with their free plan, which 
-pushed users to a pro plan if existing deployments exceeded the limit. This makes 
+pushed towards Vercel where Next.js deployments shine... I remember when Vercel
+reduced the number of serverless functions included with their free plan, which
+pushed users to a pro plan if existing deployments exceeded the limit. This makes
 me very wary of Vercel.
 
 Many devs love an over-engineered site, and that's fine, I used to too, it is
@@ -103,4 +103,3 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://github.com/snowpackjs/astro) or jump into our [Discord server](https://astro.build/chat).
-

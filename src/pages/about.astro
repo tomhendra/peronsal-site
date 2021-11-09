@@ -1,7 +1,7 @@
 ---
-  // Component Imports
+// Component Imports
 import BaseHead from "../components/BaseHead.astro";
-import BlogHeader from "../components/BlogHeader.astro"
+import BlogHeader from "../components/BlogHeader.astro";
 
 let title = "About";
 let description = "The perfect starter for your perfect blog.";
@@ -10,7 +10,8 @@ let permalink = "https://example.com/";
 
 <html lang="en">
   <head>
-  <BaseHead title={title} description={description} permalink={permalink} />
+    <!-- <BaseHead title={title} description={description} permalink={permalink} /> -->
+    <BaseHead title={title} description={description} permalink={permalink} />
     <link rel="stylesheet" href="/blog.css" />
     <style>
       body { width: 100%; display: grid; grid-template-rows: 3.5rem 1fr;
@@ -24,9 +25,9 @@ let permalink = "https://example.com/";
     </style>
   </head>
   <body>
-  <BlogHeader />
-      <div class="layout">
-      <main class="content">      
+    <BlogHeader />
+    <div class="layout">
+      <main class="content">
         <p>
           Hello there! I’m Tom. I’m a passionate foodie from the UK who loves
           building things with code.
@@ -37,11 +38,12 @@ let permalink = "https://example.com/";
           career, new life.
         </p>
         <p>
-          I already knew how to build WordPress websites using a site
-          builder plugin, but soon became curious about how things worked under
-          the hood. I realised that in order to level up, I needed to learn how
-          to code. I dabbled with PHP and CSS before researching where the industry was headed, rather than where it had been, and the
-          community pointed me towards the JavaScript ecosystem.
+          I already knew how to build WordPress websites using a site-builder
+          plugin, but soon became curious about how things worked under the
+          hood. I realised that in order to level up, I needed to learn how to
+          code. I dabbled with PHP and CSS before researching where the industry
+          was headed, rather than where it had been, and the community pointed
+          me towards the JavaScript ecosystem.
         </p>
         <p>
           The moment I realised that I had made the right choice was when I
@@ -52,12 +54,12 @@ let permalink = "https://example.com/";
         </p>
         <p>
           I've since aquired enough skills to build full stack web apps from
-          start to finish using techniques I've learned from industry experts, and
-          I'm excited to continue to learn and grow as a developer. I am now
-          seeking a full-time role where I can fulfil my potential and help a
-          company to achieve their goals.
+          start to finish, raised my standards by learning from experts
+          in the community, and I'm excited to continue to grow as a developer. 
+          I am now seeking a full-time role where I can expand my skillset and
+          help a company to achieve their goals.
         </p>
       </main>
-      </div>
+    </div>
   </body>
 </html>
