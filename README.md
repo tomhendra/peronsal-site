@@ -1,66 +1,43 @@
 <div align=center>
 <img alt="Tom Hendra Logo" src="https://res.cloudinary.com/tomhendra/image/upload/v1567091669/tomhendra-logo/tomhendra-logo-round-1024.png" width="100" />
 <h1>Portfolio</h1>
-<p>A developer portfolio built with Astro 🚀</p>
+<p>A place for projects and to make contact</p>
 </div>
 
 ## Tech stack
 
-- **Front end:** Astro, CSS.
-- **Data:** Markdown, Forestry.io
-- **Deployment:** Cloudflare Pages
-- **Analytics:** Fathom
+- **App:** Remix, CSS.
+- **Deployment:** Cloudflare Workers
+- **Analytics:** Fathom (?0)
 
-# Astro Starter Kit: Blog
+# Welcome to Remix!
 
-```
-npm init astro -- --template blog
-```
+- [Remix Docs](https://docs.remix.run)
+- [Customer Dashboard](https://remix.run/dashboard)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/snowpackjs/astro/tree/latest/examples/blog)
+## Development
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+You will be running two processes during development when using Vercel as your server.
 
-Features:
+- Your Miniflare server in one (miniflare is a local environment for Cloudflare Workers)
+- The Remix development server in another
 
-- ✅ SEO-friendly setup with canonical URLs and OpenGraph data
-- ✅ Full Markdown support
-- ✅ RSS 2.0 generation
-- ✅ Sitemap.xml generation
+```sh
+# in one tab (starts remix dev server)
+$ npm run dev
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   ├── robots.txt
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   └── Tour.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+# in another (starts miniflare server)
+$ npm start
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Open up [http://127.0.0.1:8787](http://127.0.0.1:8787) and you should be ready to go!
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+If you'd rather run everything in a single tab, you can look at [concurrently](https://npm.im/concurrently) or similar tools to run both processes in one tab.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Deployment
 
-## 🧞 Commands
+Use wrangler to build and deploy your application to Cloudflare Workers:
 
-All commands are run from the root of the project, from a terminal:
-
-| Command         | Action                                      |
-| :-------------- | :------------------------------------------ |
-| `npm install`   | Installs dependencies                       |
-| `npm run dev`   | Starts local dev server at `localhost:3000` |
-| `npm run build` | Build your production site to `./dist/`     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://github.com/snowpackjs/astro) or jump into our [Discord server](https://astro.build/chat).
+```sh
+npm run deploy
+```
