@@ -6,8 +6,8 @@ import stylesUrl from "../styles/index.css";
 
 export let meta: MetaFunction = () => {
   return {
-    title: "Remix Starter",
-    description: "Welcome to remix!"
+    title: "Tom Hendra's Personal Site",
+    description: "Welcome to my personal site! See what I'm up to orr get in touch."
   };
 };
 
