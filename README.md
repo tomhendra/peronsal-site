@@ -7,13 +7,12 @@
 ## Tech stack
 
 - **App:** Remix, CSS.
-- **Deployment:** Cloudflare Workers
-- **Analytics:** Fathom (?0)
-
+- **Deployment:** Cloudflare
+- **Analytics:** Fathom (?)
+  
 # Welcome to Remix!
 
-- [Remix Docs](https://docs.remix.run)
-- [Customer Dashboard](https://remix.run/dashboard)
+- [Remix Docs](https://remix.run/docs)
 
 ## Development
 
