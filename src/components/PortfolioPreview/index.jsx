@@ -1,17 +1,20 @@
-import { h } from 'preact';
+import {h} from 'preact';
 import Styles from './styles.module.scss';
 
-function PortfolioPreview({ project }) {
+function PortfolioPreview({project}) {
   return (
     <div className={Styles.card}>
-      <div className={Styles.titleCard} style={`background-image:url(${project.img})`}>
+      <div
+        className={Styles.titleCard}
+        style={`background-image:url(${project.img})`}
+      >
         <h1 className={Styles.title}>{project.title}</h1>
       </div>
       <div className="pa3">
         <p className={`${Styles.desc} mt0 mb2`}>{project.description}</p>
         <div className={Styles.tags}>
           Tagged:
-          {project.tags.map((t) => (
+          {project.tags.map(t => (
             <div className={Styles.tag} data-tag={t}>
               {t}
             </div>

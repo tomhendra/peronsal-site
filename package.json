@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "format": "prettier --write '**/*.{js,json,md,yml,yaml,css,scss,html,ts,tsx}'"
+    "format": "prettier --write '**/*.{json,yml,yaml,md,css,scss,ts,tsx,js,jsx,astro}'"
   },
   "devDependencies": {
     "@astrojs/renderer-preact": "^0.3.0",
