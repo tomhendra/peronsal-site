@@ -1,42 +1,24 @@
-<div align=center>
-<img alt="Tom Hendra Logo" src="https://res.cloudinary.com/tomhendra/image/upload/v1567091669/tomhendra-logo/tomhendra-logo-round-1024.png" width="100" />
-<h1>Portfolio</h1>
-<p>A place for projects and to make contact</p>
-</div>
+# Astro Starter Kit: Portfolio
 
-## Tech stack
-
-- **App:** Remix, CSS.
-- **Deployment:** Cloudflare
-- **Analytics:** Fathom (?)
-  
-# Welcome to Remix!
-
-- [Remix Docs](https://remix.run/docs)
-
-## Development
-
-You will be running two processes during development when using Vercel as your server.
-
-- Your Miniflare server in one (miniflare is a local environment for Cloudflare Workers)
-- The Remix development server in another
-
-```sh
-# in one tab (starts remix dev server)
-$ npm run dev
-
-# in another (starts miniflare server)
-$ npm start
+```
+npm init astro -- --template portfolio
 ```
 
-Open up [http://127.0.0.1:8787](http://127.0.0.1:8787) and you should be ready to go!
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/portfolio-svelte)
 
-If you'd rather run everything in a single tab, you can look at [concurrently](https://npm.im/concurrently) or similar tools to run both processes in one tab.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## Deployment
+## 🧞 Commands
 
-Use wrangler to build and deploy your application to Cloudflare Workers:
+All commands are run from the root of the project, from a terminal:
 
-```sh
-npm run deploy
-```
+| Command           | Action                                       |
+|:----------------  |:-------------------------------------------- |
+| `npm install`     | Installs dependencies                        |
+| `npm run dev`     | Starts local dev server at `localhost:3000`  |
+| `npm run build`   | Build your production site to `./dist/`      |
+| `npm run preview` | Preview your build locally, before deploying |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
