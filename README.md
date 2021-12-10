@@ -1,39 +1,32 @@
-# Astro Starter Kit: Portfolio
+# Welcome to Remix!
 
+- [Remix Docs](https://remix.run/docs)
+
+## Development
+
+You will be running two processes during development:
+
+- The Miniflare server (miniflare is a local environment for Cloudflare Workers)
+- The Remix development server
+
+```sh
+# in one tab, start the remix dev server
+$ npm run dev
+
+# in another, start the miniflare server
+$ npm start
 ```
-npm init astro -- --template portfolio
+
+Open up [http://127.0.0.1:8787](http://127.0.0.1:8787) and you should be ready to go!
+
+If you'd rather run everything in a single tab, you can look at [concurrently](https://npm.im/concurrently) or similar tools to run both processes in one tab.
+
+## Deployment
+
+Use [wrangler](https://developers.cloudflare.com/workers/cli-wrangler) to build and deploy your application to Cloudflare Workers. If you don't have it yet, follow [the installation guide](https://developers.cloudflare.com/workers/cli-wrangler/install-update) to get it setup. Be sure to [authenticate the CLI](https://developers.cloudflare.com/workers/cli-wrangler/authentication) as well.
+
+Once that's done, you should be able to deploy your app:
+
+```sh
+npm run deploy
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/portfolio)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command           | Action                                       |
-| :---------------- | :------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://github.com/withastro/astro) or
-jump into our [Discord server](https://astro.build/chat).
-
-## Commitlint Types
-
-- build
-- chore
-- ci
-- docs
-- feat
-- fix
-- perf
-- refactor
-- revert
-- style
-- test
