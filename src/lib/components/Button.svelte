@@ -1,6 +1,5 @@
 <script>
   export let size = 'md';
-  export let text = 'button';
 
   const SIZES = {
     sm: `--font-size: 8px; --padding: 10px 14px;`,
@@ -9,23 +8,18 @@
   };
 
   const style = SIZES[size];
-  // https://svelte.dev/tutorial/component-events
-  import {createEventDispatcher} from 'svelte';
-  const dispatch = createEventDispatcher();
-
-  function logMessage() {
-    dispatch('message', {
-      message: 'Hello from the button component!',
-    });
-  }
 </script>
 
 <!-- https://svelte.dev/tutorial/dom-event-forwarding -->
-<button class="btn" on:click on:click={logMessage} {style}>{text}</button>
+<button class="btn" on:click {style}>
+  <slot>
+    <em>No button text provided</em>
+  </slot>
+</button>
 
 <style>
   .btn {
-    background-color: hsl(165deg 47% 47% / 1);
+    background-color: hotpink;
     color: white;
     cursor: pointer;
     border: none;
@@ -35,6 +29,6 @@
   }
 
   .btn:hover {
-    background-color: hsl(165deg 55% 54% / 1);
+    background-color: deeppink;
   }
 </style>
