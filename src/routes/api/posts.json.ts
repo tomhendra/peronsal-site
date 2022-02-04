@@ -36,3 +36,24 @@ export async function get() {
     body: sortedPosts,
   };
 }
+
+/*
+ * The posts API is functional, but it can be improved in several ways.
+
+For starters, we’ll definitely want to put the code we just wrote into a 
+try/catch block that returns the proper status code when things go wrong. 
+Some refactoring might also be in order. We’ll also probably want to add some 
+other extra features to this API route eventually.
+
+Our API is currently missing pagination options, which could be very needed 
+depending on the number of posts.
+
+Another possible future enhancement would be adding the post’s content to the 
+returned JSON, which we don’t do currently. The “resolver” function offers a 
+default.render method for that, if you so choose.
+
+Finally, you could build in some post filtering, but it might be better to 
+build out a dynamic endpoint for that. The SvelteKit docs section on Rest 
+parameters is worth a look as far as that goes.
+ 
+*/
