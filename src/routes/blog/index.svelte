@@ -19,6 +19,10 @@
   export let posts;
 </script>
 
+<svelte:head>
+  <title>About Tom Hendra's blog index page</title>
+</svelte:head>
+
 <ul>
   {#if posts.length}
     {#each posts as post}

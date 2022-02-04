@@ -5,6 +5,11 @@
   export let categories;
 </script>
 
+<svelte:head>
+  <title>Tom's blog | {title}</title>
+  <meta property="og:title" content={title} />
+</svelte:head>
+
 <h1>{title}</h1>
 
 <p>Published: {date}</p>
