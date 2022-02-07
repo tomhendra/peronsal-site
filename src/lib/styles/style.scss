@@ -462,7 +462,21 @@ body[data-theme='dark'] {
 /* 
  * general styles
  */
+:root {
+  @media (pointer: coarse) {
+    html {
+      --min-tap-height: 44px;
+    }
+  }
+}
+// define variable to assign to width of wrapper in __layout.svelte by
+// subtracting --scrollbar-width (defined in app.html) from viewport width
+html {
+  --full-width: calc(100vw - var(--scrollbar-width));
+}
+
 body {
+  overflow-y: scroll; // explicit scrollbar to avoid scroll-based layout shifts
   background-color: var(--grey-100);
   font-family: var(--sans);
 }
@@ -472,7 +486,9 @@ main {
   max-width: var(--container-md);
   padding: var(--space-4);
 }
-
+/* 
+ * handle heading tags in markdown 
+ */
 :where(h2, h3, h4, h5, h6) {
   .icon-link {
     position: relative;
