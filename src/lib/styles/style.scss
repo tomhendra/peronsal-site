@@ -1,4 +1,10 @@
 /* 
+ * changes to untitled UI to be reflected in this file:
+ *  - updated colours
+ *  - updated shadows 
+ */
+
+/* 
  * minimal reset: 
  * https://courses.joshwcomeau.com/css-for-js/treasure-trove/010-global-styles 
  */
@@ -378,7 +384,7 @@ h6 {
    */
   --text-xs: 0.75rem; /* 12px */
   --text-sm: 0.875rem; /* 14px */
-  --text-md: 1rem; /* 16px */
+  --text-md: 1rem; /* 16px (body text) */
   --text-lg: 1.125rem; /* 18px */
   --text-xl: 1.25rem; /* 20px */
   --display-xs: 1.5rem; /* 24px */
@@ -424,7 +430,7 @@ h6 {
   --ls-widest: 0.1rem;
 }
 /* 
- * themes 
+ * colour themes 
  */
 body[data-theme='light'] {
   --text: var();
@@ -470,13 +476,14 @@ body[data-theme='dark'] {
   }
 }
 
-// --scrollbar-width is defined in __layout.svelte
 html {
+  // --scrollbar-width is defined in __layout.svelte
   --full-width: calc(100vw - var(--scrollbar-width));
 }
 
 body {
-  overflow-y: scroll; // explicit scrollbar to avoid scroll-based layout shifts
+  // explicit scrollbar to avoid scroll-based layout shifts
+  overflow-y: scroll;
   background-color: var(--grey-100);
   font-family: var(--sans);
 }
@@ -506,5 +513,14 @@ main {
 
   &:hover .icon-link::before {
     opacity: 1;
+  }
+}
+/*
+ * increase font size for captions on mobile
+ * TODO: move to component if one is created later
+ */
+@media (max-width: 34.375rem) {
+  figcaption {
+    font-size: var(--text-md);
   }
 }
