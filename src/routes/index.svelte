@@ -1,8 +1,8 @@
 <script>
   import {prefetch} from '$app/navigation';
 
-  prefetch('/blog'); // Loads the blog page in the background
-  prefetch('/about'); // Loads the about page in the background
+  // prefetch('/blog'); // Loads the blog page in the background
+  // prefetch('/about'); // Loads the about page in the background
   // prefetchRoutes(); // Loads ALL routes in the background
 </script>
 

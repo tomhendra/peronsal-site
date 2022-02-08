@@ -469,8 +469,8 @@ body[data-theme='dark'] {
     }
   }
 }
-// define variable to assign to width of wrapper in __layout.svelte by
-// subtracting --scrollbar-width (defined in app.html) from viewport width
+
+// --scrollbar-width is defined in __layout.svelte
 html {
   --full-width: calc(100vw - var(--scrollbar-width));
 }

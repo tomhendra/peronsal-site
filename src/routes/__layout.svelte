@@ -11,12 +11,25 @@
 </script>
 
 <script>
+  import {onMount} from 'svelte';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import '$lib/styles/style.scss';
   import {fade} from 'svelte/transition';
 
   export let currentRoute;
+
+  // vw refers to the viewport width not counting the scrollbar, so we define
+  // --scrollbarWidth for use in style.css: calc(100vw - var(--scrollbarWidth))
+  onMount(() => {
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+
+    document.documentElement.style.setProperty(
+      '--scrollbarWidth',
+      scrollbarWidth + 'px',
+    );
+  });
 </script>
 
 <div class="wrapper">
