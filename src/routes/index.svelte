@@ -1,5 +1,6 @@
 <script>
-  import {prefetch} from '$app/navigation';
+  // import {prefetch} from '$app/navigation';
+  import {Button} from '$lib/components';
 
   // prefetch('/blog'); // Loads the blog page in the background
   // prefetch('/about'); // Loads the about page in the background
@@ -11,6 +12,9 @@
 </svelte:head>
 
 <p>I am the homepage...</p>
+<Button size="md" variant="primary" on:click={() => console.log('button click')}
+  >Click me</Button
+>
 
 <!-- SvelteKit offers a slightly less greedy version of preloading, as one of 
   its anchor options - https://kit.svelte.dev/docs#anchor-options.

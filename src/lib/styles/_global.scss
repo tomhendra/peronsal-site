@@ -1,0 +1,49 @@
+:root {
+  // --scrollbar-width is defined in __layout.svelte
+  --full-width: calc(100vw - var(--scrollbar-width));
+}
+
+body {
+  // explicit scrollbar to avoid scroll-based layout shifts
+  overflow-y: scroll;
+  background-color: var(--grey-100);
+  font-family: var(--sans);
+}
+
+/* 
+ * handle heading tags in markdown 
+ */
+:where(h2, h3, h4, h5, h6) {
+  .icon-link {
+    position: relative;
+
+    &::before {
+      content: '#';
+      position: absolute;
+      left: -1ch;
+      top: 0;
+      line-height: 1;
+      opacity: 0;
+      text-decoration: underline;
+    }
+  }
+
+  &:hover .icon-link::before {
+    opacity: 1;
+  }
+}
+
+@media (pointer: coarse) {
+  :root {
+    --min-tap-height: 44px;
+  }
+}
+/*
+ * increase font size for captions on mobile
+ * TODO: move to components as required
+ */
+@media (max-width: 34.375rem) {
+  figcaption {
+    font-size: var(--text-md);
+  }
+}

@@ -1,0 +1,57 @@
+:root {
+  /*
+   * font families 
+   */
+  --sans: 'Inter', 'system-ui', sans-serif;
+  --serif: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+  --mono: 'Fira Code', 'Menlo', 'Monaco', 'Consolas', monospace;
+  /* 
+    * text sizes 
+    */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-md: 1rem; /* 16px (body text) */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --display-xs: 1.5rem; /* 24px */
+  --display-sm: 1.875rem; /* 30px */
+  --display-md: 2.25rem; /* 36px */
+  --display-lg: 3rem; /* 48px */
+  --display-xl: 3.75rem; /* 60px */
+  --display-2xl: 4.5rem; /* 72px */
+  /* 
+    * line heights 
+    */
+  --lh-text-xs: 1.125rem; /* 18px */
+  --lh-text-sm: 1.25rem; /* 20px */
+  --lh-text-md: 1.5rem; /* 24px */
+  --lh-text-lg: 1.75rem; /* 28px */
+  --lh-text-xl: 1.875rem; /* 30px */
+  --lh-display-xs: 2rem; /* 32px */
+  --lh-display-sm: 2.375rem; /* 38px */
+  --lh-display-md: 2.75rem; /* 44px !! tracking -2% */
+  --lh-display-lg: 3.75rem; /* 60px !! tracking -2% */
+  --lh-display-xl: 4.625rem; /* 72px !! tracking -2% */
+  --lh-display-2xl: 5.625rem; /* 90px !! tracking -2% */
+  /* 
+    * font weights 
+    */
+  --fw-hairline: 100;
+  --fw-thin: 200;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+  /* 
+    * letter spacing 
+    */
+  --ls-tighter: -0.05rem;
+  --ls-tight: -0.025rem;
+  --ls-normal: 0;
+  --ls-wide: 0.025rem;
+  --ls-wider: 0.05rem;
+  --ls-widest: 0.1rem;
+}

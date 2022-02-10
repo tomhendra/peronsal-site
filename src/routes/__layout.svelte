@@ -13,9 +13,8 @@
 <script>
   import {onMount} from 'svelte';
   import {fade} from 'svelte/transition';
-  import '$lib/styles/style.scss';
-  import Header from '$lib/components/Header.svelte';
-  import Footer from '$lib/components/Footer.svelte';
+  import '$lib/styles/styles.scss';
+  import {Header, Footer} from '$lib/components';
 
   export let currentRoute;
   /*
@@ -38,7 +37,11 @@
 <div class="wrapper">
   <Header />
   {#key currentRoute}
-    <main in:fade={{duration: 150, delay: 150}} out:fade={{duration: 150}}>
+    <main
+      class="container"
+      in:fade={{duration: 150, delay: 150}}
+      out:fade={{duration: 150}}
+    >
       <slot />
     </main>
   {/key}
@@ -53,7 +56,10 @@
     width: var(--full-width);
   }
 
-  main {
+  .container {
     flex: 1;
+    margin: 0 auto;
+    max-width: var(--container-md);
+    padding: var(--space-4);
   }
 </style>

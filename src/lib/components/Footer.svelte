@@ -1,7 +1,7 @@
-<footer>I am the Footer</footer>
+<footer class="footer">I am the Footer</footer>
 
 <style>
-  footer {
+  .footer {
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;

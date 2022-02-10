@@ -1,33 +1,33 @@
-<header>
+<header class="header">
   <a href="/">Home</a>
   <nav>
-    <ul>
+    <ul class="nav-link-ul">
       <li>
-        <a href="/blog">Blog</a>
+        <a class="nav-link" href="/blog">Blog</a>
       </li>
       <li>
-        <a href="/about">About</a>
+        <a class="nav-link" href="/about">About</a>
       </li>
     </ul>
   </nav>
 </header>
 
 <style>
-  header {
+  .header {
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  ul {
+  .nav-link-ul {
     margin: 0;
     list-style-type: none;
     display: flex;
     gap: 1rem;
   }
 
-  a {
+  .nav-link {
     text-decoration: none;
     color: inherit;
   }
