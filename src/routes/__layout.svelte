@@ -11,9 +11,9 @@
 </script>
 
 <script>
+  import '$lib/styles/index.scss';
   import {onMount} from 'svelte';
   import {fade} from 'svelte/transition';
-  import '$lib/styles/styles.scss';
   import {Header, Footer} from '$lib/components';
 
   export let currentRoute;

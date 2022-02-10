@@ -1,0 +1,78 @@
+:root {
+  /* 
+   * grey
+   */
+  --grey-600-conic: conic-gradient(
+    from 259.08deg at 50% 50%,
+    var(--grey-600) 0deg,
+    var(--grey-500) 360deg
+  );
+  --grey-600-500-90deg: linear-gradient(
+    90deg,
+    var(--grey-600) 0%,
+    var(--grey-500) 100%
+  );
+  --grey-700-600-45deg: linear-gradient(
+    45deg,
+    var(--grey-700) 0%,
+    var(--grey-600) 100%
+  );
+  --grey-800-600-45deg: linear-gradient(
+    45deg,
+    var(--grey-800) 0%,
+    var(--grey-600) 100%
+  );
+  --grey-800-600-90deg: linear-gradient(
+    63.44deg,
+    var(--grey-800) 16.72%,
+    var(--grey-600) 83.39%
+  );
+  --grey-800-700-27deg: linear-gradient(
+    26.57deg,
+    var(--grey-800) 8.33%,
+    var(--grey-700) 91.67%
+  );
+  --grey-900-600-45deg: linear-gradient(
+    45deg,
+    var(--grey-900) 0%,
+    var(--grey-600) 100%
+  );
+  /* 
+   * primary
+   */
+  --primary-600-conic: conic-gradient(
+    from 259.08deg at 50% 50%,
+    var(--primary-600) 0deg,
+    var(--primary-500) 360deg
+  );
+  --primary-600-500-90deg: linear-gradient(
+    90deg,
+    var(--primary-600) 0%,
+    var(--primary-500) 100%
+  );
+  --primary-700-600-45deg: linear-gradient(
+    45deg,
+    var(--primary-700) 0%,
+    var(--primary-600) 100%
+  );
+  --primary-800-600-45deg: linear-gradient(
+    45deg,
+    var(--primary-800) 0%,
+    var(--primary-600) 100%
+  );
+  --primary-800-600-90deg: linear-gradient(
+    63.44deg,
+    var(--primary-800) 16.72%,
+    var(--primary-600) 83.39%
+  );
+  --primary-800-700-27deg: linear-gradient(
+    26.57deg,
+    var(--primary-800) 8.33%,
+    var(--primary-700) 91.67%
+  );
+  --primary-900-600-45deg: linear-gradient(
+    45deg,
+    var(--primary-900) 0%,
+    var(--primary-600) 100%
+  );
+}

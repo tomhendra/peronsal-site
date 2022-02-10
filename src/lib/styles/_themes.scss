@@ -1,0 +1,33 @@
+body[data-theme='light'] {
+  --text: var();
+  --background: var();
+  --primary: var();
+  --secondary: var();
+  --accent: var();
+  --highlight: var();
+  --muted: var();
+
+  --text-muted: var();
+  --primary-hover: var();
+  --info: var();
+  --error: var();
+  --warning: var();
+  --success: var();
+}
+
+body[data-theme='dark'] {
+  --text: var();
+  --background: var();
+  --primary: var();
+  --secondary: var();
+  --accent: var();
+  --highlight: var();
+  --muted: var();
+
+  --text-muted: var();
+  --primary-hover: var();
+  --info: var();
+  --error: var();
+  --warning: var();
+  --success: var();
+}
