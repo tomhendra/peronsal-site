@@ -11,7 +11,7 @@ body {
 }
 
 /* 
- * handle heading tags in markdown 
+ handle heading tags in markdown 
  */
 :where(h2, h3, h4, h5, h6) {
   .icon-link {
@@ -39,8 +39,8 @@ body {
   }
 }
 /*
- * increase font size for captions on mobile
- * TODO: move to components as required
+ increase font size for captions on mobile
+ TODO: move to components as required
  */
 @media (max-width: 34.375rem) {
   figcaption {

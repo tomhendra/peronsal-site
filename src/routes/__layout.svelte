@@ -18,9 +18,9 @@
 
   export let currentRoute;
   /*
-   * vw refers to the viewport width excluding the scrollbar, so we define
-   * --scrollbarWidth for use in our CSS...
-   * --fullWidth: calc(100vw - var(--scrollbarWidth))
+    vw refers to the viewport width excluding the scrollbar, so we define
+    --scrollbarWidth for use in our CSS...
+    --fullWidth: calc(100vw - var(--scrollbarWidth))
    */
   onMount(() => {
     const viewportWidth = window.innerWidth;
