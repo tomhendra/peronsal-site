@@ -55,3 +55,7 @@ You can preview the production build with `npm run preview`.
 - revert
 - style
 - test
+
+## Primary Colour
+
+hsl(47deg 100% 50%);
