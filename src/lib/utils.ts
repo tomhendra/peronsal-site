@@ -7,3 +7,9 @@ export function onInterval(callback, milliseconds) {
     clearInterval(interval);
   });
 }
+
+export function getScrollbarWidth() {
+  const viewportWidth = window.innerWidth;
+  const viewportWidthWithoutScrollbar = document.documentElement.clientWidth;
+  return viewportWidth - viewportWidthWithoutScrollbar;
+}

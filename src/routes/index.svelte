@@ -8,13 +8,14 @@
 </script>
 
 <svelte:head>
-  <title>About Tom Hendra's blog homepage</title>
+  <title>Home • Tom Hendra's blog</title>
 </svelte:head>
 
-<p>I am the homepage...</p>
-<Button size="md" variant="primary" on:click={() => console.log('button click')}
-  >Click me</Button
->
+<h1>Hi, I'm Tom!</h1>
+<p>
+  Welcome to my blog, a space to share disoveries and insights into web
+  development with the world.
+</p>
 
 <!-- SvelteKit offers a slightly less greedy version of preloading, as one of 
   its anchor options - https://kit.svelte.dev/docs#anchor-options.

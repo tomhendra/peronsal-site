@@ -6,8 +6,20 @@
 body {
   // explicit scrollbar to avoid scroll-based layout shifts
   overflow-y: scroll;
-  background-color: var(--grey-100);
+  background-color: var(--background);
   font-family: var(--sans);
+  font-weight: var(--fw-normal);
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--fw-semibold);
+  color: var(--heading);
 }
 
 /* 
