@@ -13,3 +13,9 @@ export function getScrollbarWidth() {
   const viewportWidthWithoutScrollbar = document.documentElement.clientWidth;
   return viewportWidth - viewportWidthWithoutScrollbar;
 }
+
+export const getCookieValue = (
+  cookie: string | null,
+  name: string,
+): string | null =>
+  cookie?.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || null;

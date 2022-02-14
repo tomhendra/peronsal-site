@@ -39,3 +39,18 @@
     <p>No posts to display</p>
   {/if}
 </ul>
+
+<style lang="scss">
+  li {
+    list-style: none;
+    color: var(--primary);
+  }
+
+  a {
+    color: var(--primary);
+
+    & :visited {
+      color: var(--primary);
+    }
+  }
+</style>

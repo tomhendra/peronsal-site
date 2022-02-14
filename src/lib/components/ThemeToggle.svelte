@@ -1,8 +1,11 @@
-<script>
-  function toggle() {
-    window.document.body.dataset.theme =
-      window.document.body.dataset.theme === 'dark' ? 'light' : 'dark';
-  }
+<script lang="ts">
+  import {setTheme, theme} from '$lib/shared/stores';
+  import type {Theme} from '$lib/shared/types';
+
+  $: nextTheme = ($theme === 'dark' ? 'light' : 'dark') as Theme;
+  const handleThemeIconClick = () => {
+    setTheme(nextTheme);
+  };
 </script>
 
-<button on:click={toggle}>Theme</button>
+<button on:click={handleThemeIconClick}>Theme</button>

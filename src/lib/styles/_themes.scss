@@ -3,7 +3,7 @@ body[data-theme='light'] {
   --heading: var(--grey-900);
   --background: var(--white);
   --footer-background: var(--grey-200);
-  --primary: var(--primary-500);
+  --primary: var(--primary-600);
   --secondary: var(--secondary-500);
   --accent: var();
   --highlight: var();
@@ -21,7 +21,7 @@ body[data-theme='dark'] {
   --text: var(--grey-100);
   --background: var(--grey-800);
   --footer-background: var(--grey-700);
-  --primary: var();
+  --primary: var(--primary-500);
   --secondary: var();
   --accent: var();
   --highlight: var();

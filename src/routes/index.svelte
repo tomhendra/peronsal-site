@@ -1,6 +1,4 @@
 <script>
-  import {Button} from '$lib/components';
-
   // import {prefetch} from '$app/navigation';
   // prefetch('/blog'); // Loads the blog page in the background
   // prefetch('/about'); // Loads the about page in the background

@@ -15,8 +15,9 @@
   import {fade} from 'svelte/transition';
 
   import '$lib/styles/index.scss';
-  import {getScrollbarWidth} from '$lib/utils';
+  import {getScrollbarWidth} from '$lib/shared/utils';
   import {Header, Footer} from '$lib/components';
+  import {theme} from '$lib/shared/stores';
 
   export let currentRoute;
   onMount(() => {
@@ -34,18 +35,20 @@
   });
 </script>
 
-<div class="wrapper">
-  <Header />
-  {#key currentRoute}
-    <main
-      class="container"
-      in:fade={{duration: 150, delay: 150}}
-      out:fade={{duration: 150}}
-    >
-      <slot />
-    </main>
-  {/key}
-  <Footer />
+<div id="theme-wrapper" class={$theme}>
+  <div id="wrapper" class="wrapper">
+    <Header />
+    {#key currentRoute}
+      <main
+        class="container"
+        in:fade={{duration: 150, delay: 150}}
+        out:fade={{duration: 150}}
+      >
+        <slot />
+      </main>
+    {/key}
+    <Footer />
+  </div>
 </div>
 
 <style>
