@@ -3,6 +3,7 @@
   import {browser} from '$app/env';
   import {Themes} from '$lib/shared/constants';
   import {theme} from '$lib/shared/stores';
+  import {addClass, removeClass} from '$lib/shared/utils';
   import {onMount, tick} from 'svelte';
 
   let isDarkMode: boolean;
@@ -22,11 +23,11 @@
       await tick();
 
       if (isDarkMode) {
-        document.documentElement.classList.add('dark');
-        document.documentElement.classList.remove('light');
+        addClass('dark');
+        removeClass('light');
       } else {
-        document.documentElement.classList.remove('dark');
-        document.documentElement.classList.add('light');
+        removeClass('dark');
+        addClass('light');
       }
     }
   };

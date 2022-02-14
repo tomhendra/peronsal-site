@@ -14,8 +14,17 @@ export function getScrollbarWidth() {
   return viewportWidth - viewportWidthWithoutScrollbar;
 }
 
-export const getCookieValue = (
+export function getCookieValue(
   cookie: string | null,
   name: string,
-): string | null =>
-  cookie?.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || null;
+): string | null {
+  return cookie?.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || null;
+}
+
+export function addClass(value: string): void {
+  document.documentElement.classList.add(value);
+}
+
+export function removeClass(value: string): void {
+  document.documentElement.classList.remove(value);
+}
