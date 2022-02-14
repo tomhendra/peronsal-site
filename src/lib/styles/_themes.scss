@@ -1,4 +1,4 @@
-body[data-theme='light'] {
+.light {
   --text: var(--grey-500);
   --heading: var(--grey-900);
   --background: var(--white);
@@ -17,7 +17,7 @@ body[data-theme='light'] {
   --success: var();
 }
 
-body[data-theme='dark'] {
+.dark {
   --text: var(--grey-100);
   --background: var(--grey-800);
   --footer-background: var(--grey-700);
