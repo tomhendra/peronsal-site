@@ -1,10 +1,10 @@
 <script lang="ts">
-  import Sun from './icons/Sun.svelte';
+  import {onMount, tick} from 'svelte';
   import {browser} from '$app/env';
   import {Themes} from '$lib/shared/constants';
   import {theme} from '$lib/shared/stores';
   import {addClass, removeClass} from '$lib/shared/utils';
-  import {onMount, tick} from 'svelte';
+  import {Sun, Moon} from './icons/';
 
   let isDarkMode: boolean;
   $: isDarkMode = $theme === Themes.Dark;
@@ -13,14 +13,18 @@
   $: enableOrDisable = isDarkMode ? 'Disable' : 'Enable';
 
   // There's also some code in app.html to help avoid unwanted flashes of dark/light
-  const toggleDarkMode = async (): Promise<void> => {
+  async function toggleDarkMode(): Promise<void> {
     theme.set(isDarkMode ? Themes.Light : Themes.Dark);
 
     if (browser) {
       window.localStorage.setItem('theme', JSON.stringify($theme));
 
       // Not exactly sure why this is needed but without it, the first click fails.
+      // TODO: Figure out why this is needed.
       await tick();
+
+      // removed --> window.document.body.dataset.theme =
+      // window.document.body.dataset.theme === 'dark' ? 'light' : 'dark';
 
       if (isDarkMode) {
         addClass('dark');
@@ -30,7 +34,7 @@
         addClass('light');
       }
     }
-  };
+  }
 
   onMount(() => {
     /* 
@@ -54,17 +58,19 @@
   title="{enableOrDisable} dark mode"
   aria-pressed={isDarkMode}
 >
+  {#if isDarkMode}
+    <Sun />
+  {:else}
+    <Moon />
+  {/if}
   <span class="visually-hidden">{enableOrDisable} dark mode</span>
-  <Sun />
 </button>
 
 <style lang="scss">
   button {
+    cursor: pointer;
     border: none;
     background: var(--background);
-  }
-
-  .dark {
-    color: var(--text);
+    color: var(--color-text);
   }
 </style>

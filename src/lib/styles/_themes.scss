@@ -1,36 +1,40 @@
+// body[data-theme='dark']
 .light {
-  --text: var(--grey-500);
-  --heading: var(--grey-900);
-  --background: var(--white);
-  --footer-background: var(--grey-200);
-  --primary: var(--primary-600);
-  --secondary: var(--secondary-500);
-  --accent: var();
-  --highlight: var();
-  --muted: var();
+  --colour-text: var(--grey-500);
+  --colour-text-muted: var(--grey-400);
+  --colour-heading: var(--grey-900);
+  --colour-background-main: var(--white);
+  --colour-background-footer: var(--grey-50);
+  --colour-border: var(--grey-100);
+  --colour-primary: var(--primary-600);
+  --colour-secondary: var(--secondary-500);
 
-  --text-muted: var();
-  --primary-hover: var();
-  --info: var();
-  --error: var();
-  --warning: var();
-  --success: var();
+  --colour-accent: var();
+  --colour-highlight: var();
+  --colour-muted: var();
+  --colour-primary-hover: var();
+  --colour-info: var();
+  --colour-error: var();
+  --colour-warning: var();
+  --colour-success: var();
 }
 
 .dark {
-  --text: var(--grey-100);
-  --background: var(--grey-800);
-  --footer-background: var(--grey-700);
-  --primary: var(--primary-500);
-  --secondary: var();
-  --accent: var();
-  --highlight: var();
-  --muted: var();
+  --colour-text: var(--grey-100);
+  --colour-text-muted: var(--grey-400);
+  --colour-heading: var(--white);
+  --colour-background-main: var(--grey-900);
+  --colour-background-footer: var(--grey-800);
+  --colour-border: var(--grey-800);
+  --colour-primary: var(--primary-500);
+  --colour-secondary: var(--secondary-500);
 
-  --text-muted: var();
-  --primary-hover: var();
-  --info: var();
-  --error: var();
-  --warning: var();
-  --success: var();
+  --colour-accent: var();
+  --colour-highlight: var();
+  --colour-muted: var();
+  --colour-primary-hover: var();
+  --colour-info: var();
+  --colour-error: var();
+  --colour-warning: var();
+  --colour-success: var();
 }

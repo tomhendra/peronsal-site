@@ -6,10 +6,10 @@
 body {
   // explicit scrollbar to avoid scroll-based layout shifts
   overflow-y: scroll;
-  background-color: var(--background);
-  font-family: var(--sans);
+  background-color: var(--colour-background-main);
+  font-family: var(--ff-sans);
   font-weight: var(--fw-normal);
-  color: var(--text);
+  color: var(--colour-text);
 }
 
 h1,
@@ -19,7 +19,7 @@ h4,
 h5,
 h6 {
   font-weight: var(--fw-semibold);
-  color: var(--heading);
+  color: var(--colour-heading);
 }
 
 /* 
@@ -56,6 +56,6 @@ h6 {
  */
 @media (max-width: 34.375rem) {
   figcaption {
-    font-size: var(--text-md);
+    font-size: var(--fs-text-md);
   }
 }

@@ -1,21 +1,21 @@
 :root {
-  --sans: 'Inter', 'system-ui', sans-serif;
-  --serif: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
-  --mono: 'Fira Code', 'Menlo', 'Monaco', 'Consolas', monospace;
+  --ff-sans: 'Inter', 'system-ui', sans-serif;
+  --ff-serif: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+  --ff-mono: 'Fira Code', 'Menlo', 'Monaco', 'Consolas', monospace;
   /* 
     text sizes 
   */
-  --text-xs: 0.75rem; /* 12px */
-  --text-sm: 0.875rem; /* 14px */
-  --text-md: 1rem; /* 16px (body text) */
-  --text-lg: 1.125rem; /* 18px */
-  --text-xl: 1.25rem; /* 20px */
-  --display-xs: 1.5rem; /* 24px */
-  --display-sm: 1.875rem; /* 30px */
-  --display-md: 2.25rem; /* 36px */
-  --display-lg: 3rem; /* 48px */
-  --display-xl: 3.75rem; /* 60px */
-  --display-2xl: 4.5rem; /* 72px */
+  --fs-text-xs: 0.75rem; /* 12px */
+  --fs-text-sm: 0.875rem; /* 14px */
+  --fs-text-md: 1rem; /* 16px (body text) */
+  --fs-text-lg: 1.125rem; /* 18px */
+  --fs-text-xl: 1.25rem; /* 20px */
+  --fs-display-xs: 1.5rem; /* 24px */
+  --fs-display-sm: 1.875rem; /* 30px */
+  --fs-display-md: 2.25rem; /* 36px */
+  --fs-display-lg: 3rem; /* 48px */
+  --fs-display-xl: 3.75rem; /* 60px */
+  --fs-display-2xl: 4.5rem; /* 72px */
   /* 
     line heights 
   */
