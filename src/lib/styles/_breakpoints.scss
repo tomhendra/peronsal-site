@@ -1,0 +1,44 @@
+/* 
+Sass variables used for breakpoints since CSS var() doesn't work in @media rules. 
+CSS environment variables would fix this - keep an eye on the proposal: 
+https://drafts.csswg.org/css-env-1/ 
+*/
+
+$breakpoint-lg: calc(1500 / 16) + 1rem;
+$breakpoint-md: calc(1100 / 16) + 1rem;
+$breakpoint-sm: calc(550 / 16) + 1rem;
+
+/* example usage:
+
+@use '../styles/breakpoints' as *;
+ 
+--- desktop first ---
+Default: Desktop monitors, 1501px and up
+
+@media (max-width: $breakpoint-lg) {
+  laptop-styles: 1500px and under
+} 
+
+@media (max-width: $breakpoint-md) {
+  tablet-styles: 1100px and under
+} 
+
+@media (max-width: $breakpoint-sm) {
+  mobile-styles: 550px and under
+} 
+
+--- mobile first ---
+Default: Phones from 0px to 549px
+
+@media (min-width: $breakpoint-sm) {
+  tablet-styles: 550px and over
+} 
+
+@media (min-width: $breakpoint-md) {
+  laptop-styles: 1100px and over
+} 
+
+@media (min-width: $breakpoint-lg) {
+  desktop-styles: 1500px and over
+} 
+*/

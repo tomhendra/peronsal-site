@@ -5,31 +5,31 @@
   /* 
     text sizes 
   */
-  --fs-text-xs: 0.75rem; /* 12px */
-  --fs-text-sm: 0.875rem; /* 14px */
-  --fs-text-md: 1rem; /* 16px (body text) */
-  --fs-text-lg: 1.125rem; /* 18px */
-  --fs-text-xl: 1.25rem; /* 20px */
-  --fs-display-xs: 1.5rem; /* 24px */
-  --fs-display-sm: 1.875rem; /* 30px */
-  --fs-display-md: 2.25rem; /* 36px */
-  --fs-display-lg: 3rem; /* 48px */
-  --fs-display-xl: 3.75rem; /* 60px */
-  --fs-display-2xl: 4.5rem; /* 72px */
+  --fs-text-xs: calc(12 / 16 * 1rem);
+  --fs-text-sm: calc(14 / 16 * 1rem);
+  --fs-text-md: calc(16 / 16 * 1rem); /* body text*/
+  --fs-text-lg: calc (18 / 16 * 1rem);
+  --fs-text-xl: calc(20 / 16 * 1rem);
+  --fs-display-xs: calc(24 / 16 * 1rem);
+  --fs-display-sm: calc(30 / 16 * 1rem);
+  --fs-display-md: calc(36 / 16 * 1rem);
+  --fs-display-lg: calc(48 / 16 * 1rem);
+  --fs-display-xl: calc(60 / 16 * 1rem);
+  --fs-display-2xl: calc(72 / 16 * 1rem);
   /* 
     line heights 
   */
-  --lh-text-xs: 1.125rem; /* 18px */
-  --lh-text-sm: 1.25rem; /* 20px */
-  --lh-text-md: 1.5rem; /* 24px */
-  --lh-text-lg: 1.75rem; /* 28px */
-  --lh-text-xl: 1.875rem; /* 30px */
-  --lh-display-xs: 2rem; /* 32px */
-  --lh-display-sm: 2.375rem; /* 38px */
-  --lh-display-md: 2.75rem; /* 44px !! tracking -2% */
-  --lh-display-lg: 3.75rem; /* 60px !! tracking -2% */
-  --lh-display-xl: 4.625rem; /* 72px !! tracking -2% */
-  --lh-display-2xl: 5.625rem; /* 90px !! tracking -2% */
+  --lh-text-xs: calc(18 / 16 * 1rem);
+  --lh-text-sm: calc(20 / 16 * 1rem);
+  --lh-text-md: calc(24 / 16 * 1rem);
+  --lh-text-lg: calc(28 / 16 * 1rem);
+  --lh-text-xl: calc(30 / 16 * 1rem);
+  --lh-display-xs: calc(32 / 16 * 1rem);
+  --lh-display-sm: calc(38 / 16 * 1rem);
+  --lh-display-md: calc(44 / 16 * 1rem); /* --ls-tighter */
+  --lh-display-lg: calc(60 / 16 * 1rem); /* --ls-tightest */
+  --lh-display-xl: calc(72 / 16 * 1rem); /* --ls-super-tight */
+  --lh-display-2xl: calc(90 / 16 * 1rem); /* --ls-super-tight */
   /* 
     font weights 
   */
@@ -45,6 +45,8 @@
   /* 
     letter spacing 
   */
+  --ls-super-tight: -0.1rem;
+  --ls-tightest: -0.075rem;
   --ls-tighter: -0.05rem;
   --ls-tight: -0.025rem;
   --ls-normal: 0;

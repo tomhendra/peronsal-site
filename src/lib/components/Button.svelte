@@ -44,15 +44,15 @@
   }
   /* sizes */
   .sm {
-    font-size: 8px;
-    padding: 10px 14px;
+    font-size: var(--fs-text-sm);
+    padding: var(--space-3) var(--space-4);
   }
   .md {
-    font-size: 12px;
-    padding: 10px 16px;
+    font-size: var(--fs-text-md);
+    padding: var(--space-4) var(--space-6);
   }
   .lg {
-    font-size: 16px;
-    padding: 12px 24px;
+    font-size: var(--fs-text-lg);
+    padding: var(--space-6) var(--space-8);
   }
 </style>

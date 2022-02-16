@@ -8,7 +8,8 @@
     <meta name="theme-color" content="#ffd100" />
 
     <script>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      /* On page load or when changing themes, best to add inline in `head` 
+       to avoid FOUC */
       if (
         ('theme' in localStorage &&
           JSON.parse(localStorage.theme) === 'dark') ||
@@ -20,7 +21,6 @@
         document.documentElement.classList.add('light');
       }
     </script>
-
     %svelte.head%
   </head>
   <body>

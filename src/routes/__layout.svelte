@@ -16,13 +16,14 @@
   import {fade} from 'svelte/transition';
   import {getScrollbarWidth} from '$lib/shared/utils';
   import {ThemeToggle} from '$lib/components/';
-  import {Twitter, GitHub} from '$lib/components/icons/';
+  import {Twitter, GitHub, Menu} from '$lib/components/icons/';
 
   export let currentRoute;
+
   /* 
-  vw refers to the viewport width excluding the scrollbar, so we can define
-  --scrollbarWidth for use in our CSS... 
-  --fullWidth: calc(100vw - var(--scrollbarWidth))
+    vw refers to the viewport width excluding the scrollbar, so we can define
+    --scrollbarWidth for use in our CSS... 
+    --fullWidth: calc(100vw - var(--scrollbarWidth))
   */
   onMount(() => {
     const scrollbarWidth = getScrollbarWidth();
@@ -37,9 +38,9 @@
   <header class="header">
     <div class="header-container">
       <a class="nav-link" href="/">Tom Hendra</a>
-      <div class="nav-container">
+      <div class="nav-desktop">
         <nav>
-          <ul class="nav-link-ul">
+          <ul class="nav-list">
             <li>
               <a class="nav-link" href="/blog">Blog</a>
             </li>
@@ -49,6 +50,9 @@
           </ul>
         </nav>
         <ThemeToggle />
+      </div>
+      <div class="nav-mobile">
+        <Menu />
       </div>
     </div>
   </header>
@@ -65,7 +69,7 @@
     <div class="footer-container">
       <div class="footer-social-container">
         <a
-          class="footer-social-icon"
+          class="footer-social-link"
           href="https://twitter.com/tomhendra"
           target="_blank"
         >
@@ -75,7 +79,7 @@
           <Twitter />
         </a>
         <a
-          class="footer-social-icon"
+          class="footer-social-link"
           href="https://github.com/tomhendra"
           target="_blank"
         >
@@ -87,13 +91,15 @@
       </div>
       <span class="footer-logo">Tom Hendra</span>
       <span class="footer-copyright"
-        >© {new Date().getFullYear()} Tom Hendra</span
+        >&copy; {new Date().getFullYear()} Tom Hendra</span
       >
     </div>
   </footer>
 </div>
 
 <style lang="scss">
+  @use '../lib/styles/breakpoints' as *;
+
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -106,13 +112,17 @@
     margin: 0 auto;
     max-width: var(--container-xl);
     /* unique container styles */
-    padding: var(--space-8);
+    padding: 0 var(--space-8);
     flex: 1;
     width: 100%;
+
+    @media (max-width: $breakpoint-sm) {
+      padding: 0 var(--space-4);
+    }
   }
 
   /* 
-  header styles 
+    header styles 
   */
   .header {
     border-bottom: 1px solid var(--colour-border);
@@ -122,23 +132,40 @@
     /* common container styles */
     margin: 0 auto;
     max-width: var(--container-xl);
-    padding: var(--space-6) var(--space-8);
     /* unique container styles */
+    padding: var(--space-6) var(--space-8);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: baseline;
+
+    @media (max-width: $breakpoint-sm) {
+      align-items: center;
+      padding: var(--space-4);
+    }
   }
 
-  .nav-container {
+  .nav-desktop {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: var(--space-8);
     align-items: center;
+
+    @media (max-width: $breakpoint-sm) {
+      display: none;
+    }
   }
 
-  .nav-link-ul {
+  .nav-mobile {
+    display: none;
+
+    @media (max-width: $breakpoint-sm) {
+      display: revert;
+    }
+  }
+
+  .nav-list {
     list-style-type: none;
     display: flex;
     gap: var(--space-8);
@@ -150,7 +177,7 @@
   }
 
   /* 
-  footer styles 
+    footer styles 
   */
   .footer {
     background-color: var(--colour-background-footer);
@@ -165,6 +192,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @media (max-width: $breakpoint-sm) {
+      flex-direction: column;
+      align-items: center;
+      padding: var(--space-12) var(--space-4);
+      gap: var(--space-6);
+    }
   }
 
   .footer-social-container {
@@ -173,14 +207,25 @@
     align-items: center;
   }
 
-  .footer-social-icon {
+  .footer-social-link {
     color: var(--colour-text-muted);
-    width: 24px;
+    /* 
+      in CSS for JS devs in module 9 there will be a way to increase tap 
+      target without affecting the design
+      
+    min-height: var(--min-tap-size);
+    min-width: var(--min-tap-size); 
+    */
   }
 
   .footer-logo {
     color: var(--colour-heading);
     font-weight: var(--fw-semibold);
+
+    @media (max-width: $breakpoint-sm) {
+      order: -1;
+      margin-bottom: var(--space-6);
+    }
   }
 
   .footer-copyright {

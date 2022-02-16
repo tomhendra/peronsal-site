@@ -12,20 +12,19 @@
   let enableOrDisable: string;
   $: enableOrDisable = isDarkMode ? 'Disable' : 'Enable';
 
-  // There's also some code in app.html to help avoid unwanted flashes of dark/light
+  // Additional code in app.html to help avoid unwanted flashes of dark/light
   async function toggleDarkMode(): Promise<void> {
     theme.set(isDarkMode ? Themes.Light : Themes.Dark);
 
     if (browser) {
       window.localStorage.setItem('theme', JSON.stringify($theme));
 
-      // Not exactly sure why this is needed but without it, the first click fails.
-      // TODO: Figure out why this is needed.
+      // First click fails withtout this.
+      // TODO Figure out why it is needed.
       await tick();
 
       // removed --> window.document.body.dataset.theme =
       // window.document.body.dataset.theme === 'dark' ? 'light' : 'dark';
-
       if (isDarkMode) {
         addClass('dark');
         removeClass('light');
@@ -53,6 +52,7 @@
 </script>
 
 <button
+  class="theme-toggle"
   on:click={toggleDarkMode}
   class:dark={isDarkMode}
   title="{enableOrDisable} dark mode"
@@ -67,7 +67,7 @@
 </button>
 
 <style lang="scss">
-  button {
+  .theme-toggle {
     cursor: pointer;
     border: none;
     background: var(--background);
