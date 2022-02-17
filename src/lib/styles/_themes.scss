@@ -1,39 +1,41 @@
 .light {
-  --colour-text: var(--grey-500);
-  --colour-text-muted: var(--grey-400);
-  --colour-heading: var(--grey-900);
-  --colour-background-main: var(--white);
-  --colour-background-footer: var(--grey-50);
-  --colour-border: var(--grey-100);
-  --colour-primary: var(--primary-600);
-  --colour-secondary: var(--secondary-500);
+  --color-text: var(--gray-500);
+  --color-text-muted: var(--gray-400);
+  --color-heading: var(--gray-900);
+  --color-background: var(--white);
+  --color-background-footer: var(--gray-50);
+  --color-border: var(--gray-100);
+  --color-primary: var(--primary-600);
+  --color-secondary: var(--secondary-500);
+  --color-overlay: hsl(0deg 0% 90% / 0.5);
 
-  --colour-accent: var();
-  --colour-highlight: var();
-  --colour-muted: var();
-  --colour-primary-hover: var();
-  --colour-info: var();
-  --colour-error: var();
-  --colour-warning: var();
-  --colour-success: var();
+  --color-accent: var();
+  --color-highlight: var();
+  --color-muted: var();
+  --color-primary-hover: var();
+  --color-info: var();
+  --color-error: var();
+  --color-warning: var();
+  --color-success: var();
 }
 
 .dark {
-  --colour-text: var(--grey-100);
-  --colour-text-muted: var(--grey-400);
-  --colour-heading: var(--white);
-  --colour-background-main: var(--grey-900);
-  --colour-background-footer: var(--grey-800);
-  --colour-border: var(--grey-800);
-  --colour-primary: var(--primary-500);
-  --colour-secondary: var(--secondary-500);
+  --color-text: var(--gray-100);
+  --color-text-muted: var(--gray-400);
+  --color-heading: var(--white);
+  --color-background: var(--gray-900);
+  --color-background-footer: var(--gray-800);
+  --color-border: var(--gray-800);
+  --color-primary: var(--primary-500);
+  --color-secondary: var(--secondary-500);
+  --color-overlay: rgba(230, 230, 230, 0.041);
 
-  --colour-accent: var();
-  --colour-highlight: var();
-  --colour-muted: var();
-  --colour-primary-hover: var();
-  --colour-info: var();
-  --colour-error: var();
-  --colour-warning: var();
-  --colour-success: var();
+  --color-accent: var();
+  --color-highlight: var();
+  --color-muted: var();
+  --color-primary-hover: var();
+  --color-info: var();
+  --color-error: var();
+  --color-warning: var();
+  --color-success: var();
 }

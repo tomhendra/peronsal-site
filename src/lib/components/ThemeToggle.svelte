@@ -4,7 +4,7 @@
   import {Themes} from '$lib/shared/constants';
   import {theme} from '$lib/shared/stores';
   import {addClass, removeClass} from '$lib/shared/utils';
-  import {Sun, Moon} from './icons/';
+  import {Sun, Moon} from './icons';
 
   let isDarkMode: boolean;
   $: isDarkMode = $theme === Themes.Dark;
