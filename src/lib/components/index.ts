@@ -5,3 +5,4 @@ export {default as Footer} from './Footer.svelte';
 export {default as MobileMenu} from './MobileMenu.svelte';
 export {default as MobileMenuButton} from './MobileMenuButton.svelte';
 export {default as UnstyledButton} from './UnstyledButton.svelte';
+export {default as PostPreview} from './PostPreview.svelte';

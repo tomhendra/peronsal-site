@@ -24,7 +24,7 @@
   --color-highlight: var(--primary-100);
 
   --color-primary: var(--primary-500);
-  --color-primary-text: var(--primary-600);
+  --color-primary-text: var(--primary-700);
   --color-primary-background: var(--primary-50);
   --color-primary-hover: var(--primary-400);
 
@@ -40,7 +40,7 @@
 }
 
 .dark {
-  --color-text: var(--gray-100);
+  --color-text: var(--gray-300);
   --color-heading: var(--gray-25);
   --color-background: var(--gray-900);
   --color-overlay: hsl(0deg 0% 80% / 0.5);
@@ -53,8 +53,8 @@
   --color-highlight: var(--primary-100);
 
   --color-primary: var(--primary-500);
-  --color-primary-text: var(--primary-600);
-  --color-primary-background: var(--primary-50);
+  --color-primary-text: var(--primary-400);
+  --color-primary-background: var(--primary-900);
   --color-primary-hover: var(--primary-400);
 
   --color-accent: var(--accent-500);

@@ -16,6 +16,8 @@
 </script>
 
 <script>
+  import {PostPreview} from '$lib/components';
+
   export let posts;
 </script>
 
@@ -23,22 +25,22 @@
   <title>About Tom Hendra's blog index page</title>
 </svelte:head>
 
-<ul>
+<div class="posts-grid">
   {#if posts.length}
     {#each posts as post}
-      <li>
-        <h2>
-          <a href={post.path}>
-            {post.meta.title}
-          </a>
-        </h2>
-        Published {post.meta.date}
-      </li>
+      <PostPreview {post} />
     {/each}
   {:else}
     <p>No posts to display</p>
   {/if}
-</ul>
+</div>
 
 <style lang="scss">
+  .posts-grid {
+    display: grid;
+    grid-column-gap: var(--space-8);
+    grid-row-gap: var(--space-12);
+    grid: auto-flow / 1fr 1fr;
+    margin-bottom: var(--space-16);
+  }
 </style>
