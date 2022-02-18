@@ -8,7 +8,7 @@
   export let close: () => void;
 </script>
 
-<Dialog class="hui-dialog" {open}>
+<Dialog class="hui-dialog" {open} on:close={close}>
   <DialogOverlay class="hui-dialog-overlay" />
   <div class="mobile-menu">
     <nav class="mobile-nav">
@@ -18,6 +18,7 @@
     </nav>
     <ThemeToggle />
     <MobileMenuButton on:click={close}>
+      <span class="visually-hidden">Close the mobile menu</span>
       <Close />
     </MobileMenuButton>
   </div>
@@ -49,7 +50,7 @@
     right: 100px;
     bottom: 0;
     left: 0;
-    padding: var(--space-12);
+    padding: var(--space-24) var(--space-8);
   }
 
   .mobile-nav {

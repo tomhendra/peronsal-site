@@ -34,7 +34,7 @@
   @use '../styles/breakpoints' as *;
 
   .footer {
-    background-color: var(--color-background-footer);
+    background-color: var(--color-muted-background);
   }
 
   .footer-container {
@@ -62,7 +62,7 @@
   }
 
   .footer-social-link {
-    color: var(--color-text-muted);
+    color: var(--color-muted-text);
     /* 
       in CSS for JS devs in module 9 there will be a way to increase tap 
       target without affecting the design
@@ -83,6 +83,6 @@
   }
 
   .footer-copyright {
-    color: var(--color-text-muted);
+    color: var(--color-muted-text);
   }
 </style>

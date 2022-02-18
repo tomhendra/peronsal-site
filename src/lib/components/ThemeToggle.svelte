@@ -72,5 +72,6 @@
     border: none;
     background: var(--background);
     color: var(--color-text);
+    padding: 0;
   }
 </style>

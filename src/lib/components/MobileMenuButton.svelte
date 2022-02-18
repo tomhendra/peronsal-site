@@ -13,10 +13,10 @@
       position: fixed;
       bottom: var(--space-4);
       right: var(--space-4);
-      background-color: transparent;
+      background-color: var(--color-overlay);
       backdrop-filter: var(--blur-sm);
       border-radius: var(--radius-full);
-      border: var(--border-2) solid var(--color-text);
+      border: var(--border-1) solid var(--color-muted-border);
       padding: var(--space-5);
       color: var(--color-text);
     }

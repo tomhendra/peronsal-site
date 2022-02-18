@@ -1,41 +1,69 @@
+/*
+  ref: https://theme-ui.com/theming
+  text -	Body foreground color
+  background -	Body background color
+  primary -	Primary brand color for links, buttons, etc.
+  secondary -	A secondary *brand* color for alternative styling
+  accent -	A contrast color for emphasizing UI
+  highlight -	A background color for highlighting text
+  muted -	A faint color for backgrounds, borders, and accents that do not 
+  require high contrast with the background color
+*/
+
 .light {
   --color-text: var(--gray-500);
-  --color-text-muted: var(--gray-400);
   --color-heading: var(--gray-900);
   --color-background: var(--white);
-  --color-background-footer: var(--gray-50);
-  --color-border: var(--gray-100);
-  --color-primary: var(--primary-600);
-  --color-secondary: var(--secondary-500);
-  --color-overlay: hsl(0deg 0% 90% / 0.5);
+  --color-overlay: hsl(0deg 0% 20% / 0.5);
 
-  --color-accent: var();
-  --color-highlight: var();
-  --color-muted: var();
-  --color-primary-hover: var();
-  --color-info: var();
-  --color-error: var();
-  --color-warning: var();
-  --color-success: var();
+  --color-muted-text: var(--gray-400);
+  --color-muted-background: var(--gray-50);
+  --color-muted-border: var(--gray-300);
+  --color-muted-separator: var(--gray-100);
+
+  --color-highlight: var(--primary-100);
+
+  --color-primary: var(--primary-500);
+  --color-primary-text: var(--primary-600);
+  --color-primary-background: var(--primary-50);
+  --color-primary-hover: var(--primary-400);
+
+  --color-accent: var(--accent-500);
+  --color-accent-text: var(--accent-600);
+  --color-accent-background: var(--accent-50);
+  --color-accent-hover: var(--accent-400);
+
+  --color-info: var(--accent-500);
+  --color-error: var(--error-500);
+  --color-warning: var(--warning-500);
+  --color-success: var(--success-500);
 }
 
 .dark {
   --color-text: var(--gray-100);
-  --color-text-muted: var(--gray-400);
-  --color-heading: var(--white);
+  --color-heading: var(--gray-25);
   --color-background: var(--gray-900);
-  --color-background-footer: var(--gray-800);
-  --color-border: var(--gray-800);
-  --color-primary: var(--primary-500);
-  --color-secondary: var(--secondary-500);
-  --color-overlay: rgba(230, 230, 230, 0.041);
+  --color-overlay: hsl(0deg 0% 80% / 0.5);
 
-  --color-accent: var();
-  --color-highlight: var();
-  --color-muted: var();
-  --color-primary-hover: var();
-  --color-info: var();
-  --color-error: var();
-  --color-warning: var();
-  --color-success: var();
+  --color-muted-text: var(--gray-400);
+  --color-muted-background: var(--gray-800);
+  --color-muted-border: var(--gray-700);
+  --color-muted-separator: var(--gray-800);
+
+  --color-highlight: var(--primary-100);
+
+  --color-primary: var(--primary-500);
+  --color-primary-text: var(--primary-600);
+  --color-primary-background: var(--primary-50);
+  --color-primary-hover: var(--primary-400);
+
+  --color-accent: var(--accent-500);
+  --color-accent-text: var(--accent-600);
+  --color-accent-background: var(--accent-50);
+  --color-accent-hover: var(--accent-400);
+
+  --color-info: var(--accent-500);
+  --color-error: var(--error-500);
+  --color-warning: var(--warning-500);
+  --color-success: var(--success-500);
 }

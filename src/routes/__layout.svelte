@@ -1,7 +1,6 @@
 <script context="module">
   export const load = ({url}) => {
     const currentRoute = url.pathname;
-
     return {
       props: {
         currentRoute,
@@ -11,15 +10,12 @@
 </script>
 
 <script>
-  import MobileMenuButton from '../lib/components/MobileMenuButton.svelte';
-
   import '$lib/styles/index.scss';
   import {onMount} from 'svelte';
   import {fade} from 'svelte/transition';
   import {getScrollbarWidth} from '$lib/shared/utils';
-  import {Header, Footer} from '$lib/components';
+  import {Header, Footer, MobileMenu, MobileMenuButton} from '$lib/components';
   import {Menu} from '$lib/components/icons';
-  import MobileMenu from '$lib/components/MobileMenu.svelte';
   /* 
     vw refers to the viewport width excluding the scrollbar, so we can define
     --scrollbarWidth for use in our CSS... 
@@ -42,6 +38,7 @@
 <div id="wrapper" class="wrapper">
   <Header />
   <MobileMenuButton on:click={toggleMobileMenu}>
+    <span class="visually-hidden">Open the mobile menu</span>
     <Menu />
   </MobileMenuButton>
   <MobileMenu open={isMobileMenuOpen} close={toggleMobileMenu} />

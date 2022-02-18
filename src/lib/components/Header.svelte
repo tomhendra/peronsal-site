@@ -25,7 +25,7 @@
   @use '../styles/breakpoints' as *;
 
   .header {
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-muted-separator);
   }
 
   .header-container {
