@@ -1,4 +1,6 @@
 <script lang="ts">
+  import ArrowUpRight from './icons/ArrowUpRight.svelte';
+
   interface Post {
     path: string;
     meta: {
@@ -21,9 +23,14 @@
       {post.meta.date}
     </span>
     <a class="post-link" href={post.path}>
-      <h2 class="post-title">
-        {post.meta.title}
-      </h2>
+      <div class="post-title-container">
+        <h2 class="post-title">
+          {post.meta.title}
+        </h2>
+        <div class="icon-container">
+          <ArrowUpRight />
+        </div>
+      </div>
     </a>
     <p class="post-description">{post.meta.description}</p>
   </div>
@@ -38,6 +45,10 @@
 
 <style lang="scss">
   @use '../styles/breakpoints' as *;
+
+  img {
+    width: 100%;
+  }
 
   .post-link {
     text-decoration: none;
@@ -66,6 +77,12 @@
     color: var(--color-primary-text);
   }
 
+  .post-title-container {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-6);
+  }
+
   .post-title {
     font-size: var(--fs-display-xs);
     font-weight: var(--fw-semibold);
@@ -73,6 +90,11 @@
     @media (max-width: $breakpoint-sm) {
       font-size: var(--fs-text-xl);
     }
+  }
+
+  .icon-container {
+    flex-shrink: 0;
+    padding-top: var(--space-1);
   }
 
   .post-description {

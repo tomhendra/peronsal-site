@@ -4,3 +4,4 @@ export {default as GitHub} from './GitHub.svelte';
 export {default as Twitter} from './Twitter.svelte';
 export {default as Menu} from './Menu.svelte';
 export {default as Close} from './Close.svelte';
+export {default as ArrowUpRight} from './ArrowUpRight.svelte';
