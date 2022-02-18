@@ -47,7 +47,7 @@
   .mobile-menu {
     position: fixed;
     top: 0;
-    right: var(--space-24);
+    right: var(--space-24∫);
     bottom: 0;
     left: 0;
     display: flex;

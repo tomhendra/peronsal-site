@@ -21,7 +21,7 @@ const config = {
     }),
     /* Other preprocessors here, like mdsvex */
     mdsvex({
-      extensions: ['.md'],
+      extensions: ['.md', '.svx'],
       rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
       layout: {
         blog: 'src/routes/blog/_post.svelte',
