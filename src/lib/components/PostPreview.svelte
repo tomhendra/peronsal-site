@@ -37,6 +37,8 @@
 </div>
 
 <style lang="scss">
+  @use '../styles/breakpoints' as *;
+
   .post-link {
     text-decoration: none;
     color: var(--color-heading);
@@ -67,6 +69,10 @@
   .post-title {
     font-size: var(--fs-display-xs);
     font-weight: var(--fw-semibold);
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: var(--fs-text-xl);
+    }
   }
 
   .post-description {
