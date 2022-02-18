@@ -30,9 +30,11 @@
   });
 
   export let currentRoute;
-
   let isMobileMenuOpen = false;
-  const toggleMobileMenu = () => (isMobileMenuOpen = !isMobileMenuOpen);
+
+  function toggleMobileMenu() {
+    isMobileMenuOpen = !isMobileMenuOpen;
+  }
 </script>
 
 <div id="wrapper" class="wrapper">

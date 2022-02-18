@@ -1,6 +1,11 @@
 <script lang="ts">
   import {ThemeToggle} from '$lib/components/';
-  import {Dialog, DialogOverlay} from '@rgossiaux/svelte-headlessui';
+  import {
+    Dialog,
+    DialogOverlay,
+    DialogTitle,
+    DialogDescription,
+  } from '@rgossiaux/svelte-headlessui';
   import {Close} from './icons';
   import MobileMenuButton from './MobileMenuButton.svelte';
 
@@ -8,10 +13,14 @@
   export let close: () => void;
 </script>
 
-<Dialog class="hui-dialog" {open} on:close={close}>
-  <DialogOverlay class="hui-dialog-overlay" />
+<Dialog class="hui-dialog--mobile-menu" {open} on:close={close}>
+  <DialogOverlay class="hui-dialog-overlay--mobile-menu" />
+  <DialogTitle>Mobile Menu</DialogTitle>
+  <DialogDescription
+    >Navigate to another part of the website, or toggle the colour theme.
+  </DialogDescription>
   <div class="mobile-menu">
-    <nav class="mobile-nav">
+    <nav class="mobile-menu-nav">
       <a class="nav-link" href="/">Home</a>
       <a class="nav-link" href="/blog">Blog</a>
       <a class="nav-link" href="/about">About</a>
@@ -25,11 +34,7 @@
 </Dialog>
 
 <style lang="scss">
-  :global(.hui-dialog) {
-    padding: var(--space-8);
-  }
-
-  :global(.hui-dialog-overlay) {
+  :global(.hui-dialog-overlay--mobile-menu) {
     position: fixed;
     top: 0;
     right: 0;
@@ -40,20 +45,19 @@
   }
 
   .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: var(--space-24);
+    bottom: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     gap: var(--space-8);
-    height: 100%;
     background-color: var(--color-background);
-    position: absolute;
-    top: 0;
-    right: 100px;
-    bottom: 0;
-    left: 0;
     padding: var(--space-24) var(--space-8);
   }
 
-  .mobile-nav {
+  .mobile-menu-nav {
     display: flex;
     flex-direction: column;
     gap: var(--space-8);

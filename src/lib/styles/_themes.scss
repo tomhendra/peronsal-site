@@ -2,9 +2,9 @@
   ref: https://theme-ui.com/theming
   text -	Body foreground color
   background -	Body background color
-  primary -	Primary brand color for links, buttons, etc.
+  primary -	Primary *brand* color for links, buttons, etc.
   secondary -	A secondary *brand* color for alternative styling
-  accent -	A contrast color for emphasizing UI
+  accent -	A *contrast* color for emphasizing UI
   highlight -	A background color for highlighting text
   muted -	A faint color for backgrounds, borders, and accents that do not 
   require high contrast with the background color
@@ -14,7 +14,7 @@
   --color-text: var(--gray-500);
   --color-heading: var(--gray-900);
   --color-background: var(--white);
-  --color-overlay: hsl(0deg 0% 20% / 0.5);
+  --color-overlay: hsl(0deg 0% 75% / 0.5);
 
   --color-muted-text: var(--gray-400);
   --color-muted-background: var(--gray-50);

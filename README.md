@@ -19,10 +19,11 @@ Everything you need to build a Svelte project, powered by
 
 ## TODO
 
-1. look into better theme variables - system ui theme specification
-2. go through flexbox module in CSS for JS Dev again and see if layout can be
-   improved.
-3. accessibility health check.
-4. work out a proper way to handle dark mode preferences. Perhaps cookies.
-5. save boilerplate of this project stripped out once finished.
-6. add an easter egg to console: I can haz dad joke?
+1. revisit flexbox module in CSS for JS Devs & see if layout can be improved.
+2. accessibility health check.
+
+## MAYBE LATER
+
+1. work out a better way to handle dark mode preferences, perhaps with cookies.
+2. save a stripped out version of this project as a starter, once finished.
+3. add an easter egg to console.
