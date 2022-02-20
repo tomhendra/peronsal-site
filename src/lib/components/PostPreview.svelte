@@ -1,16 +1,6 @@
 <script lang="ts">
   import ArrowUpRight from './icons/ArrowUpRight.svelte';
-
-  interface Post {
-    path: string;
-    meta: {
-      title: string;
-      date: string;
-      description: string;
-      categories: string[];
-    };
-  }
-
+  import type {Post} from '$lib/types';
   export let post: Post;
 </script>
 

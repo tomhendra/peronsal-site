@@ -1,7 +1,13 @@
-# create-svelte
+## Things I like about Svelte & SvelteKit
 
-Everything you need to build a Svelte project, powered by
-[`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+- Sprinkling in TS or Sass with `lang="ts" or lang="scss"`
+- Collocation of components and styles
+- Page and layout components can have a load function which runs on the server
+  to fetch data before the component is created
+- @lib baked in
+- It feels closer to native web platform APIs than to a framework
+- Animations have first class support
+- Vite has great DX
 
 ## Commit Types
 

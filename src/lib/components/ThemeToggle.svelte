@@ -1,9 +1,9 @@
 <script lang="ts">
   import {onMount, tick} from 'svelte';
   import {browser} from '$app/env';
-  import {Themes} from '$lib/shared/constants';
-  import {theme} from '$lib/shared/stores';
-  import {addClass, removeClass} from '$lib/shared/utils';
+  import {Themes} from '$lib/constants';
+  import {theme} from '$lib/stores';
+  import {addClass, removeClass} from '$lib/utils';
   import {Sun, Moon} from './icons';
 
   let isDarkMode: boolean;

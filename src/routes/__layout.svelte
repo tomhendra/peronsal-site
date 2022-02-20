@@ -13,7 +13,7 @@
   import '$lib/styles/index.scss';
   import {onMount} from 'svelte';
   import {fade} from 'svelte/transition';
-  import {getScrollbarWidth} from '$lib/shared/utils';
+  import {getScrollbarWidth} from '$lib/utils';
   import {Header, Footer, MobileMenu, MobileMenuButton} from '$lib/components';
   import {Menu} from '$lib/components/icons';
   /* 

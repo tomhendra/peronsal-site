@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-  <title>Home • Tom Hendra's blog</title>
+  <title>Blog • Tom Hendra</title>
 </svelte:head>
 
 <h1>Hi, I'm Tom!</h1>
