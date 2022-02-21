@@ -24,13 +24,13 @@
     </a>
     <p class="post-description">{post.meta.description}</p>
   </div>
-  <div class="category-list">
+  <ul class="post-category-list">
     {#each post.meta.categories as category}
-      <span class="post-category">
+      <li class="post-category">
         {category}
-      </span>
+      </li>
     {/each}
-  </div>
+  </ul>
 </div>
 
 <style lang="scss">
@@ -91,13 +91,16 @@
     color: var(--color-text);
   }
 
-  .category-list {
+  .post-category-list {
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
   }
 
   .post-category {
+    list-style: none;
     font-size: var(--fs-text-sm);
     font-weight: var(--fw-medium);
     color: var(--color-primary-text);

@@ -2,9 +2,14 @@
 title: 'Superpowers for the Self-Guided Learner'
 description: 'Obtain superpowers to become a more efficient learner.'
 date: '2020-04-14'
+updated: '2020-04-14'
 categories:
   - 'learning'
   - 'self-improvement'
+coverImage: '/images/superpowers-for-the-self-guided-learner.
+png'
+coverImageAlt: 'Man looking at open book with illuminated pages'
+coverImageCaption: 'Photo by Kaushal Moradiya from Pexels'
 ---
 
 Almost two years ago I left my old life behind in the UK, sold everything I

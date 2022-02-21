@@ -5,5 +5,8 @@ export interface Post {
     date: string;
     description: string;
     categories: string[];
+    coverImage: string;
+    alt: string;
+    caption: string;
   };
 }

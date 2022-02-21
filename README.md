@@ -26,7 +26,6 @@
 ## TODO
 
 1. revisit flexbox module in CSS for JS Devs & see if layout can be improved.
-2. accessibility health check.
 
 ## MAYBE LATER
 

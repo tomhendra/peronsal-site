@@ -15,25 +15,29 @@
     "@rgossiaux/svelte-headlessui": "^1.0.0-beta.9",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
-    "@typescript-eslint/eslint-plugin": "^5.10.1",
-    "@typescript-eslint/parser": "^5.10.1",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
     "autoprefixer": "^10.4.2",
     "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-svelte3": "^3.2.1",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-svelte3": "^3.4.0",
     "mdsvex": "^0.10.5",
-    "prettier": "^2.4.1",
-    "prettier-plugin-svelte": "^2.4.0",
-    "sass": "^1.49.7",
-    "svelte": "^3.44.0",
-    "svelte-check": "^2.2.6",
-    "svelte-preprocess": "^4.10.2",
+    "postcss": "^8.4.6",
+    "prettier": "^2.5.1",
+    "prettier-plugin-svelte": "^2.6.0",
+    "sass": "^1.49.8",
+    "svelte": "^3.46.4",
+    "svelte-check": "^2.4.5",
+    "svelte-preprocess": "^4.10.3",
     "tslib": "^2.3.1",
-    "typescript": "^4.4.3"
+    "typescript": "^4.5.5"
   },
   "type": "module",
   "dependencies": {
     "rehype-autolink-headings": "^6.1.1",
     "rehype-slug": "^5.0.1"
+  },
+  "peerDependencies": {
+    "postcss": "^8.1.0"
   }
 }

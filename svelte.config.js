@@ -31,3 +31,6 @@ const config = {
 };
 
 export default config;
+
+// https://www.reddit.com/r/sveltejs/comments/mdd9ov/using_viteimagetools_with_sveltekit/
+//  https://github.com/sveltejs/kit/pull/3984#discussion_r809351119
