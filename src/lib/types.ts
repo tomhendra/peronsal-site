@@ -7,6 +7,6 @@ export interface Post {
     categories: string[];
     coverImage: string;
     alt: string;
-    caption: string;
+    credit: string;
   };
 }

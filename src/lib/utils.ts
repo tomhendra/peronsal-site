@@ -28,3 +28,7 @@ export function addClass(value: string): void {
 export function removeClass(value: string): void {
   document.documentElement.classList.remove(value);
 }
+
+export function slugFromPath(path) {
+  return path.match(/([\w-]+)\.(svelte\.md|md|svx)/i)?.[1] ?? null;
+}

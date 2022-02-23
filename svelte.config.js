@@ -4,6 +4,7 @@ import {mdsvex} from 'mdsvex';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import autoprefixer from 'autoprefixer';
+import image from 'svelte-image';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -18,6 +19,7 @@ const config = {
         plugins: [autoprefixer],
       },
       /* Other sveltePreprocess options here, like SCSS */
+      ...image(),
     }),
     /* Other preprocessors here, like mdsvex */
     mdsvex({

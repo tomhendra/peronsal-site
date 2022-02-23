@@ -3,6 +3,9 @@ title: 'Exploring Next.js, Emotion & CSS Variable Theming'
 description:
   'A path to a better DX by combining elements from other great tools.'
 date: '2021-20-03'
+coverImage: 'superpowers.jpg'
+alt: 'A man holding a book with lights radiating from it.'
+credit: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'nextjs'
   - 'emotion'

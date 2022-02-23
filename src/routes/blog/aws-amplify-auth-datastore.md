@@ -4,6 +4,9 @@ description:
   'How to setup a React project + auth with user-specific data + DataStore for
   easy offline functionality.'
 date: '2021-30-04'
+coverImage: 'superpowers.jpg'
+alt: 'A man holding a book with lights radiating from it.'
+credit: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'aws'
   - 'auth'

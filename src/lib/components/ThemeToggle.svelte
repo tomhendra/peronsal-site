@@ -6,6 +6,17 @@
   import {addClass, removeClass} from '$lib/utils';
   import {Sun, Moon} from './icons';
 
+  /* 
+    you can reference a store value by prefixing the store name with $ as opposed to:
+
+    theme.subscribe(value => {
+      isDarkMode = value === Themes.DARK;
+    });
+
+    You're not limited to using $theme inside the markup, either — you can use 
+    it anywhere in the <script> as well, such as in event handlers or reactive 
+    declarations.
+  */
   let isDarkMode: boolean;
   $: isDarkMode = $theme === Themes.Dark;
 
@@ -14,6 +25,8 @@
 
   // Additional code in app.html to help avoid unwanted flashes of dark/light
   async function toggleDarkMode(): Promise<void> {
+    console.log(theme);
+
     theme.set(isDarkMode ? Themes.Light : Themes.Dark);
 
     if (browser) {
@@ -23,8 +36,6 @@
       // TODO Figure out why it is needed.
       await tick();
 
-      // removed --> window.document.body.dataset.theme =
-      // window.document.body.dataset.theme === 'dark' ? 'light' : 'dark';
       if (isDarkMode) {
         addClass('dark');
         removeClass('light');

@@ -6,7 +6,7 @@ export async function get() {
     and the value is a “resolver” function (not an official term) that loads the 
     file contents as a JavaScript promise.
   */
-  const allPostFiles = import.meta.glob('../blog/_posts/**/*.md');
+  const allPostFiles = import.meta.glob('../blog/**/*.md');
   const iterablePostFiles = Object.entries(allPostFiles);
   /* 
     The map method is there to shape each file’s data, so it’s easier to work
@@ -16,6 +16,7 @@ export async function get() {
   const allPosts = await Promise.all(
     iterablePostFiles.map(async ([path, resolver]) => {
       const {metadata} = await resolver();
+
       /* 
         Since we know the path will begin with .. and end with .md, we can
         safely use .slice(2, -3) to end up with the route. 
