@@ -17,8 +17,8 @@ const config = {
     preprocess({
       postcss: {
         plugins: [autoprefixer],
-        ...image(),
       },
+      ...image(),
       /* Other sveltePreprocess options here, like SCSS */
     }),
     /* Other preprocessors here, like mdsvex */

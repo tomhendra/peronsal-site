@@ -7,10 +7,15 @@
 
 <div class="post-preview-card">
   <a class="img-link" href={post.path}>
+    <!-- setting hard ratio in Image feels nasty. 
+      TODO: come back to this after learning more about handling images in CSS. 
+      Perhaps fork repo and use aspect-ratio instrad of padding-bottom!
+    -->
     <Image
       class="img"
       src="images/{post.meta.coverImage}"
       alt={post.meta.alt}
+      ratio="66.67%"
     />
   </a>
   <div class="post-preview-content">
@@ -40,6 +45,10 @@
 
 <style lang="scss">
   @use '../styles/breakpoints' as *;
+
+  :global(.img) {
+    object-fit: cover;
+  }
 
   .img-link {
     flex-grow: 0;
