@@ -1,18 +1,6 @@
-<script context="module">
-  export const load = ({url}) => {
-    const currentRoute = url.pathname;
-    return {
-      props: {
-        currentRoute,
-      },
-    };
-  };
-</script>
-
 <script>
   import '$lib/styles/index.scss';
   import {onMount} from 'svelte';
-  import {fade} from 'svelte/transition';
   import {getScrollbarWidth} from '$lib/utils';
   import {Header, Footer, MobileMenu, MobileMenuButton} from '$lib/components';
   import {Menu} from '$lib/components/icons';
@@ -29,7 +17,6 @@
     );
   });
 
-  export let currentRoute;
   let isMobileMenuOpen = false;
 
   function toggleMobileMenu() {
@@ -44,15 +31,9 @@
     <Menu />
   </MobileMenuButton>
   <MobileMenu open={isMobileMenuOpen} close={toggleMobileMenu} />
-  {#key currentRoute}
-    <main
-      class="main-container"
-      in:fade={{duration: 150, delay: 150}}
-      out:fade={{duration: 150}}
-    >
-      <slot />
-    </main>
-  {/key}
+  <main class="main-container">
+    <slot />
+  </main>
   <Footer />
 </div>
 

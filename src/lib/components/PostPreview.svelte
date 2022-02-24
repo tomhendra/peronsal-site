@@ -1,17 +1,12 @@
 <script lang="ts">
   import ArrowUpRight from './icons/ArrowUpRight.svelte';
-  import Image from 'svelte-image';
   import type {Post} from '$lib/types';
   export let post: Post;
 </script>
 
 <div class="post-preview-card">
   <a class="img-link" href={post.path}>
-    <Image
-      class="img"
-      src="images/{post.meta.coverImage}"
-      alt={post.meta.alt}
-    />
+    <img class="img" src="images/{post.meta.coverImage}" alt={post.meta.alt} />
   </a>
   <div class="post-preview-content">
     <span class="post-date">
@@ -40,15 +35,6 @@
 
 <style lang="scss">
   @use '../styles/breakpoints' as *;
-
-  .img-link {
-    width: 100%;
-    height: 100%;
-  }
-
-  :global(.placeholder) {
-    padding: 0;
-  }
 
   .post-link {
     text-decoration: none;
