@@ -11,7 +11,6 @@
       class="img"
       src="images/{post.meta.coverImage}"
       alt={post.meta.alt}
-      ratio="2 / 1"
     />
   </a>
   <div class="post-preview-content">
