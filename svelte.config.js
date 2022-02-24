@@ -18,10 +18,10 @@ const config = {
       postcss: {
         plugins: [autoprefixer],
       },
-      ...image(),
       /* Other sveltePreprocess options here, like SCSS */
     }),
     /* Other preprocessors here, like mdsvex */
+    image(),
     mdsvex({
       extensions: ['.svx', '.md'],
       rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],

@@ -1,6 +1,6 @@
 ## Commit Types
 
-Commitlint is unnecessary for this repo, but meaningful commit messages are...
+Commitlint is unnecessary for this repo, but meaningful commit messages are.
 
 - build
 - chore
@@ -14,4 +14,8 @@ Commitlint is unnecessary for this repo, but meaningful commit messages are...
 - style
 - test
 
-## SvelteKit is in beta - beware of [breaking changes](https://github.com/sveltejs/kit/blob/master/packages/kit/CHANGELOG.md)
+## SvelteKit is still in beta
+
+- [changelog](https://github.com/sveltejs/kit/blob/master/packages/kit/CHANGELOG.md)
+- [1.0 milestones](https://github.com/sveltejs/kit/milestone/2)
+- [post-1.0 milestones](https://github.com/sveltejs/kit/milestone/4)
