@@ -1,21 +1,23 @@
 import adapter from '@sveltejs/adapter-auto';
+import image from 'svelte-image';
 import preprocess from 'svelte-preprocess';
+import autoprefixer from 'autoprefixer';
 import {mdsvex} from 'mdsvex';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import autoprefixer from 'autoprefixer';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+  extensions: ['.svelte', '.md', '.svelte.md'],
   kit: {
     adapter: adapter(),
   },
-  extensions: ['.svelte', '.svx', '.md'],
   // https://github.com/sveltejs/svelte-preprocess
   preprocess: [
     preprocess({
       postcss: {
         plugins: [autoprefixer],
+        ...image(),
       },
       /* Other sveltePreprocess options here, like SCSS */
     }),
