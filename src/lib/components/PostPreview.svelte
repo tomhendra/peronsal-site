@@ -2,7 +2,6 @@
   import ArrowUpRight from './icons/ArrowUpRight.svelte';
   import type {Post} from '$lib/types';
   export let post: Post;
-  import Image from 'svelte-image';
 </script>
 
 <div class="post-preview-card">
@@ -11,12 +10,7 @@
       TODO: come back to this after learning more about handling images in CSS. 
       Perhaps fork repo and use aspect-ratio instrad of padding-bottom!
     -->
-    <Image
-      class="img"
-      src="images/{post.meta.coverImage}"
-      alt={post.meta.alt}
-      ratio="66.67%"
-    />
+    <img class="img" src="images/{post.meta.coverImage}" alt={post.meta.alt} />
   </a>
   <div class="post-preview-content">
     <span class="post-date">

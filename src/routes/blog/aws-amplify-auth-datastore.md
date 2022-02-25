@@ -12,16 +12,6 @@ categories:
   - 'auth'
 ---
 
-<script> 
-import Image from 'svelte-image'
-</script>
-
-<Image
-  src="/images/superpowers.jpg"
-  alt="a picture of a man holding a book"
-  ratio="66.666%"
-/>
-
 Get up and running quickly with Create React App and the Amplify CLI to create a
 full stack app powered by Amplify DataStore for easy offline functionality, plus
 authentication and authorization for user-specific data.
