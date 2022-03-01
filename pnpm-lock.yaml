@@ -1,15 +1,16 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@rgossiaux/svelte-headlessui': ^1.0.0-beta.9
-  '@sveltejs/adapter-auto': next
-  '@sveltejs/kit': next
+  '@rgossiaux/svelte-headlessui': ^1.0.0-beta.10
+  '@sveltejs/adapter-auto': ^1.0.0-next.29
+  '@sveltejs/kit': ^1.0.0-next.287
   '@typescript-eslint/eslint-plugin': ^5.12.1
   '@typescript-eslint/parser': ^5.12.1
   autoprefixer: ^10.4.2
   eslint: ^7.32.0
   eslint-config-prettier: ^8.4.0
   eslint-plugin-svelte3: ^3.4.1
+  lodash: ^4.17.21
   mdsvex: ^0.10.5
   postcss: ^8.4.7
   prettier: ^2.5.1
@@ -19,6 +20,7 @@ specifiers:
   sass: ^1.49.9
   svelte: ^3.46.4
   svelte-check: ^2.4.5
+  svelte-cloudinary: ^0.2.5
   svelte-preprocess: ^4.10.4
   tslib: ^2.3.1
   typescript: ^4.5.5
@@ -28,15 +30,16 @@ dependencies:
   rehype-slug: 5.0.1
 
 devDependencies:
-  '@rgossiaux/svelte-headlessui': 1.0.0-beta.9_svelte@3.46.4
-  '@sveltejs/adapter-auto': 1.0.0-next.28
-  '@sveltejs/kit': 1.0.0-next.286_sass@1.49.9+svelte@3.46.4
+  '@rgossiaux/svelte-headlessui': 1.0.0-beta.10_svelte@3.46.4
+  '@sveltejs/adapter-auto': 1.0.0-next.29
+  '@sveltejs/kit': 1.0.0-next.287_sass@1.49.9+svelte@3.46.4
   '@typescript-eslint/eslint-plugin': 5.12.1_78ba2542c270c83b2a80bb1c125195b6
   '@typescript-eslint/parser': 5.12.1_eslint@7.32.0+typescript@4.5.5
   autoprefixer: 10.4.2_postcss@8.4.7
   eslint: 7.32.0
   eslint-config-prettier: 8.4.0_eslint@7.32.0
   eslint-plugin-svelte3: 3.4.1_eslint@7.32.0+svelte@3.46.4
+  lodash: 4.17.21
   mdsvex: 0.10.5_svelte@3.46.4
   postcss: 8.4.7
   prettier: 2.5.1
@@ -44,6 +47,7 @@ devDependencies:
   sass: 1.49.9
   svelte: 3.46.4
   svelte-check: 2.4.5_c5cb09fa6d50d3650e28319a32bd7849
+  svelte-cloudinary: 0.2.5_lodash@4.17.21
   svelte-preprocess: 4.10.4_ec89ba02fdec1f0dce753a01f35d6599
   tslib: 2.3.1
   typescript: 4.5.5
@@ -127,8 +131,8 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@rgossiaux/svelte-headlessui/1.0.0-beta.9_svelte@3.46.4:
-    resolution: {integrity: sha512-w6FP70vXzl7gxlYP3EJN6u2vQd30Vr/qmCkSJbp8ZkuCAbTEt3b3YPJFrcOS3Pkz4+XU4z+bMFUALTgXId6XsQ==}
+  /@rgossiaux/svelte-headlessui/1.0.0-beta.10_svelte@3.46.4:
+    resolution: {integrity: sha512-0pSkKreSpVaE8WPBzF+IqHPvrsh8D2aJw3sh3VdermoQb/G3iChTz4sjWv3DOM0L+iijSUTZc733vDW2JZssdg==}
     peerDependencies:
       svelte: ^3.44.0
     dependencies:
@@ -143,12 +147,12 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sveltejs/adapter-auto/1.0.0-next.28:
-    resolution: {integrity: sha512-MuJUghh7HYXeThS1btsKJFZBN//DM5BmfTXhSBRN3MgKwDMF1XYvadNegZI2nIVzb9RQTh/al3jGKKZfBVHGEg==}
+  /@sveltejs/adapter-auto/1.0.0-next.29:
+    resolution: {integrity: sha512-kqaT5dtyBcpQiyDgUxCvpYKOv4uqPissW8f0OPvMQJBD554px985nkQJWh0rsr9f+SRzxH3vW+kRsn7UgVRMvQ==}
     dependencies:
       '@sveltejs/adapter-cloudflare': 1.0.0-next.14
-      '@sveltejs/adapter-netlify': 1.0.0-next.47
-      '@sveltejs/adapter-vercel': 1.0.0-next.44
+      '@sveltejs/adapter-netlify': 1.0.0-next.48
+      '@sveltejs/adapter-vercel': 1.0.0-next.45
     dev: true
 
   /@sveltejs/adapter-cloudflare/1.0.0-next.14:
@@ -157,28 +161,28 @@ packages:
       esbuild: 0.14.23
     dev: true
 
-  /@sveltejs/adapter-netlify/1.0.0-next.47:
-    resolution: {integrity: sha512-fyJ2UP14ViusPFMtnuXbLRxE9bQ3dQ7Aj5HkAddN4fgV1A15tGWthrSUOH0iozYmOYLu6AWvUxx9o01OhJbfZQ==}
+  /@sveltejs/adapter-netlify/1.0.0-next.48:
+    resolution: {integrity: sha512-bX/u1y63gQ5H1qlAn53Gk/soGWOwCjly0DHvXuD8cojB6vbZhtcnYU5H6mws+uZ6F6qDaNnttC77chPsttsU9g==}
     dependencies:
       '@iarna/toml': 2.2.5
       esbuild: 0.14.23
       tiny-glob: 0.2.9
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.44:
-    resolution: {integrity: sha512-q0o7JG0pAam2lkkM5XiaLzYBGSRtOogjXpKYwpc7iiMuaSV4nzsnYlLxwbtib7ZJQzE1D32pPZQuvf5pAIqrmQ==}
+  /@sveltejs/adapter-vercel/1.0.0-next.45:
+    resolution: {integrity: sha512-WoOMu4FSWjVeRiPq2NKfdZhobfOLmDykObZmm8JHptMDb0/I5SB+6wstzAeaNtQr2ZbQkUy0k7EX95riJifEEQ==}
     dependencies:
       esbuild: 0.14.23
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.286_sass@1.49.9+svelte@3.46.4:
-    resolution: {integrity: sha512-txWUYKLpZohHPCEYc3oYIByMnZe+d/FItMBiCNJbTLdKaDop+SfCOzBar+K9IgP2MTXSScILSkPOms845uhz0A==}
+  /@sveltejs/kit/1.0.0-next.287_sass@1.49.9+svelte@3.46.4:
+    resolution: {integrity: sha512-aiCCuSpE9U8tX+29fnPfh9qHzWm8dBP7hkWvzcb1SZqbij8WXHyntUg/LXmhqlb8zKflEMLWa8iS+coqYDPmPQ==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
       svelte: ^3.44.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.37_svelte@3.46.4+vite@2.8.4
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.38_svelte@3.46.4+vite@2.8.4
       sade: 1.8.1
       svelte: 3.46.4
       vite: 2.8.4_sass@1.49.9
@@ -190,8 +194,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.0.0-next.37_svelte@3.46.4+vite@2.8.4:
-    resolution: {integrity: sha512-EdSXw2rXeOahNrQfMJVZxa/NxZxW1a0TiBI3s+pVxnxU14hEQtnkLtdbTFhnceu22gJpNPFSIJRcIwRBBDQIeA==}
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.38_svelte@3.46.4+vite@2.8.4:
+    resolution: {integrity: sha512-epYAVZvfpiDZwB4Whe5AALk3zF5odKFf8Vx4q2tth+QuXmr0GLZ13ri02zINS6pHRCx+GjtOqCEEwMaPAfPcgQ==}
     engines: {node: ^14.13.1 || >= 16}
     peerDependencies:
       diff-match-patch: ^1.0.5
@@ -543,6 +547,14 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /cloudinary-core/2.12.3_lodash@4.17.21:
+    resolution: {integrity: sha512-Ll4eDzcrIVn4zCttMh3Mdi+KNz07p5EEjBT2PQSRx8Eok1lKPt3uBBenOk/w88RKK3B8SFIWcEe/mN4BHQ0p8A==}
+    peerDependencies:
+      lodash: '>=4.0'
+    dependencies:
+      lodash: 4.17.21
     dev: true
 
   /color-convert/1.9.3:
@@ -1311,6 +1323,10 @@ packages:
     resolution: {integrity: sha1-WjUNoLERO4N+z//VgSy+WNbq4ZM=}
     dev: true
 
+  /lodash/4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: true
+
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
@@ -1764,6 +1780,14 @@ packages:
       - sass
       - stylus
       - sugarss
+    dev: true
+
+  /svelte-cloudinary/0.2.5_lodash@4.17.21:
+    resolution: {integrity: sha512-zKTuv/AmHOFVvdFLvp9hDJP1hYW/XVJ7JbCK80u93BWWNhHVOmJaSSgonfrxjfmVoV6Uu6h6LWzclzaMzLHqUg==}
+    dependencies:
+      cloudinary-core: 2.12.3_lodash@4.17.21
+    transitivePeerDependencies:
+      - lodash
     dev: true
 
   /svelte-hmr/0.14.9_svelte@3.46.4:

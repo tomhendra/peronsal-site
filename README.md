@@ -1,6 +1,7 @@
 ## Commit Types
 
-Commitlint is unnecessary for this repo, but meaningful commit messages are.
+Commitlint is unnecessary for this repo, but meaningful commit messages are good
+practice.
 
 - build
 - chore
@@ -22,14 +23,10 @@ Commitlint is unnecessary for this repo, but meaningful commit messages are.
 
 ## Handy Links for Image Optimisation
 
-- [vite-imagetools repo](https://github.com/JonasKruckenberg/imagetools/tree/main/packages/vite)
-- [vite-imagetools example 1](https://github.com/svelteschool/summit-sites/blob/main/src/lib/speakers/Speakers.svelte)
-- [vite-imagetools example 2](https://github.com/sveltejs/kit/issues/3208#issuecomment-1006018224)
-- [vite-imagetools example 3](https://github.com/jessebenjamin1/sk-image-idea/blob/main/src/routes/index.svelte)
-- [vite-imagetools blog post](https://rodneylab.com/sveltekit-image-plugin/)
 - [Edge Resizer](https://resizer.pictures/)
+- [images.weserv.nl](https://images.weserv.nl/)
 
-Or go manual:
+Or go the manual route
 
 - svgs: https://jakearchibald.github.io/svgomg/
 - images: https://squoosh.app/
