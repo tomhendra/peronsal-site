@@ -2,8 +2,7 @@
 title: 'Convert Google Fonts to woff2 the Right Way'
 description: 'How to reduce the filesize of Google Fonts in the correct way.'
 date: '2021-19-03'
-coverImage: 'superpowers.jpg'
-alt: 'A man holding a book with lights radiating from it.'
+coverImage: 'bizarre-platypus-2400.png'alt: 'Bizarre Platypus #2400'
 credit: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'typography'

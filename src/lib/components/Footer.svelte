@@ -74,7 +74,7 @@
 
   .footer-logo {
     color: var(--color-heading);
-    font-weight: var(--fw-semibold);
+    font-weight: var(--font-weight-semibold);
 
     @media (max-width: $breakpoint-sm) {
       order: -1;

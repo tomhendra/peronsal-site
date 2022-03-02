@@ -1,56 +1,62 @@
 :root {
-  --ff-sans: 'Inter', 'system-ui', sans-serif;
-  --ff-serif: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
-  --ff-mono: 'Fira Code', 'Menlo', 'Monaco', 'Consolas', monospace;
+  --font-family-sans: 'Inter', 'system-ui', sans-serif;
+  --font-family-serif: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+  --font-family-mono: 'Fira Code', 'Menlo', 'Monaco', 'Consolas', monospace;
   /* 
     text sizes 
   */
-  --fs-text-xs: calc(12 / 16 * 1rem);
-  --fs-text-sm: calc(14 / 16 * 1rem);
-  --fs-text-md: calc(16 / 16 * 1rem); /* body text*/
-  --fs-text-lg: calc (18 / 16 * 1rem);
-  --fs-text-xl: calc(20 / 16 * 1rem);
-  --fs-display-xs: calc(24 / 16 * 1rem);
-  --fs-display-sm: calc(30 / 16 * 1rem);
-  --fs-display-md: calc(36 / 16 * 1rem);
-  --fs-display-lg: calc(48 / 16 * 1rem);
-  --fs-display-xl: calc(60 / 16 * 1rem);
-  --fs-display-2xl: calc(72 / 16 * 1rem);
+  --font-size-text-xs: calc(12 / 16 * 1rem);
+  --font-size-text-sm: calc(14 / 16 * 1rem);
+  --font-size-text-md: calc(16 / 16 * 1rem); /* body text*/
+  --font-size-text-lg: calc (18 / 16 * 1rem);
+  --font-size-text-xl: calc(20 / 16 * 1rem);
+  --font-size-display-xs: calc(24 / 16 * 1rem);
+  --font-size-display-sm: calc(30 / 16 * 1rem);
+  --font-size-display-md: calc(36 / 16 * 1rem);
+  --font-size-display-lg: calc(48 / 16 * 1rem);
+  --font-size-display-xl: calc(60 / 16 * 1rem);
+  --font-size-display-2xl: calc(72 / 16 * 1rem);
   /* 
     line heights 
   */
-  --lh-text-xs: calc(18 / 16 * 1rem);
-  --lh-text-sm: calc(20 / 16 * 1rem);
-  --lh-text-md: calc(24 / 16 * 1rem);
-  --lh-text-lg: calc(28 / 16 * 1rem);
-  --lh-text-xl: calc(30 / 16 * 1rem);
-  --lh-display-xs: calc(32 / 16 * 1rem);
-  --lh-display-sm: calc(38 / 16 * 1rem);
-  --lh-display-md: calc(44 / 16 * 1rem); /* --ls-tighter */
-  --lh-display-lg: calc(60 / 16 * 1rem); /* --ls-tightest */
-  --lh-display-xl: calc(72 / 16 * 1rem); /* --ls-super-tight */
-  --lh-display-2xl: calc(90 / 16 * 1rem); /* --ls-super-tight */
+  --line-height-text-xs: calc(18 / 16 * 1rem);
+  --line-height-text-sm: calc(20 / 16 * 1rem);
+  --line-height-text-md: calc(24 / 16 * 1rem);
+  --line-height-text-lg: calc(28 / 16 * 1rem);
+  --line-height-text-xl: calc(30 / 16 * 1rem);
+  --line-height-display-xs: calc(32 / 16 * 1rem);
+  --line-height-display-sm: calc(38 / 16 * 1rem);
+  --line-height-display-md: calc(44 / 16 * 1rem); /* --letter-spacing-tighter */
+  --line-height-display-lg: calc(
+    60 / 16 * 1rem
+  ); /* --letter-spacing-tightest */
+  --line-height-display-xl: calc(
+    72 / 16 * 1rem
+  ); /* --letter-spacing-super-tight */
+  --line-height-display-2xl: calc(
+    90 / 16 * 1rem
+  ); /* --letter-spacing-super-tight */
   /* 
     font weights 
   */
-  --fw-hairline: 100;
-  --fw-thin: 200;
-  --fw-light: 300;
-  --fw-normal: 400;
-  --fw-medium: 500;
-  --fw-semibold: 600;
-  --fw-bold: 700;
-  --fw-extrabold: 800;
-  --fw-black: 900;
+  --font-weight-hairline: 100;
+  --font-weight-thin: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
   /* 
     letter spacing 
   */
-  --ls-super-tight: -0.1rem;
-  --ls-tightest: -0.075rem;
-  --ls-tighter: -0.05rem;
-  --ls-tight: -0.025rem;
-  --ls-normal: 0;
-  --ls-wide: 0.025rem;
-  --ls-wider: 0.05rem;
-  --ls-widest: 0.1rem;
+  --letter-spacing-super-tight: -0.1rem;
+  --letter-spacing-tightest: -0.075rem;
+  --letter-spacing-tighter: -0.05rem;
+  --letter-spacing-tight: -0.025rem;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025rem;
+  --letter-spacing-wider: 0.05rem;
+  --letter-spacing-widest: 0.1rem;
 }

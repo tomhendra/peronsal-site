@@ -3,7 +3,6 @@
   // prefetch('/blog'); // Loads the blog page in the background
   // prefetch('/about'); // Loads the about page in the background
   // prefetchRoutes(); // Loads ALL routes in the background
-  import {Image} from '$lib/components';
 </script>
 
 <svelte:head>
@@ -15,8 +14,6 @@
   Welcome to my blog, a space to share disoveries and insights into web
   development with the world.
 </p>
-
-<Image />
 
 <!-- SvelteKit offers a slightly less greedy version of preloading, as one of 
   its anchor options - https://kit.svelte.dev/docs#anchor-options.

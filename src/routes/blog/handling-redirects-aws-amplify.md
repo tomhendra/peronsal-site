@@ -2,8 +2,7 @@
 title: 'Redirects with AWS Amplify'
 description: 'How to handle redirects with AWS Amplify.'
 date: '2021-05-21'
-coverImage: 'superpowers.jpg'
-alt: 'A man holding a book with lights radiating from it.'
+coverImage: 'bizarre-platypus-2400.png'alt: 'Bizarre Platypus #2400'
 credit: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'react'

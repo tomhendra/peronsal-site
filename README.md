@@ -25,6 +25,7 @@ practice.
 
 - [Edge Resizer](https://resizer.pictures/)
 - [images.weserv.nl](https://images.weserv.nl/)
+- [svelte-cloudinary](https://github.com/cupcakearmy/svelte-cloudinary)
 
 Or go the manual route
 

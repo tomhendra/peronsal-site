@@ -3,8 +3,7 @@ title: 'How to Set Up Cloudflare with Vercel'
 description:
   'Setting up Cloudflare with Vercel explained in a step-by-step guide.'
 date: '2020-10-08'
-coverImage: 'superpowers.jpg'
-alt: 'A man holding a book with lights radiating from it.'
+coverImage: 'bizarre-platypus-2400.png'alt: 'Bizarre Platypus #2400'
 credit: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'vercel'

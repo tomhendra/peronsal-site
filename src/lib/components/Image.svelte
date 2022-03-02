@@ -1,11 +1,11 @@
 <script>
   import {image, initialize} from 'svelte-cloudinary';
+  import {CLOUDINARY_PLUBLIC_ID, CLOUDINARY_PROJECT_DIR} from '$lib/constants';
 
-  // https://res.cloudinary.com/tomhendra/image/upload/v1646152015/tomhendra/bizarre-platypus-2400.png
+  export let filename = null;
+  export let alt = null;
 
-  const CLOUDINARY_PLUBLIC_ID = 'tomhendra';
-  const src = 'tomhendra/bizarre-platypus-2400.png';
-  let alt = 'Bizarre Platypus';
+  const src = `${CLOUDINARY_PROJECT_DIR}/${filename}`;
 
   initialize({cloud_name: CLOUDINARY_PLUBLIC_ID});
 </script>

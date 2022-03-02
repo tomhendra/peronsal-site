@@ -2,8 +2,7 @@
 title: 'React Router Setup for Create React App'
 description: 'How to configure React Router for Create React App.'
 date: '2021-05-16'
-coverImage: 'superpowers.jpg'
-alt: 'A man holding a book with lights radiating from it.'
+coverImage: 'bizarre-platypus-2400.png'alt: 'Bizarre Platypus #2400'
 credit: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'react'

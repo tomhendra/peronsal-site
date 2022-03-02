@@ -1,16 +1,13 @@
 <script lang="ts">
   import ArrowUpRight from './icons/ArrowUpRight.svelte';
   import type {Post} from '$lib/types';
+  import {Image} from '$lib/components';
   export let post: Post;
 </script>
 
-<div class="post-preview-card">
+<article class="post-preview-wrapper">
   <a class="img-link" href={post.path}>
-    <!-- setting hard ratio in Image feels nasty. 
-      TODO: come back to this after learning more about handling images in CSS. 
-      Perhaps fork repo and use aspect-ratio instrad of padding-bottom!
-    -->
-    <img class="img" src="images/{post.meta.coverImage}" alt={post.meta.alt} />
+    <Image filename={post.meta.coverImage} alt={post.meta.alt} />
   </a>
   <div class="post-preview-content">
     <span class="post-date">
@@ -35,7 +32,7 @@
       </li>
     {/each}
   </ul>
-</div>
+</article>
 
 <style lang="scss">
   @use '../styles/breakpoints' as *;
@@ -56,7 +53,7 @@
       text-decoration: underline;
     }
   }
-  .post-preview-card {
+  .post-preview-wrapper {
     display: flex;
     flex-direction: column;
   }
@@ -70,8 +67,8 @@
   }
 
   .post-date {
-    font-size: var(--fs-text-sm);
-    font-weight: var(--fw-semibold);
+    font-size: var(--font-size-text-sm);
+    font-weight: var(--font-weight-semibold);
     color: var(--color-primary-text);
   }
 
@@ -82,11 +79,11 @@
   }
 
   .post-title {
-    font-size: var(--fs-display-xs);
-    font-weight: var(--fw-semibold);
+    font-size: var(--font-size-display-xs);
+    font-weight: var(--font-weight-semibold);
 
     @media (max-width: $breakpoint-sm) {
-      font-size: var(--fs-text-xl);
+      font-size: var(--font-size-text-xl);
     }
   }
 
@@ -97,6 +94,10 @@
 
   .post-description {
     color: var(--color-text);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
   }
 
   .post-category-list {
@@ -109,8 +110,8 @@
 
   .post-category {
     list-style: none;
-    font-size: var(--fs-text-sm);
-    font-weight: var(--fw-medium);
+    font-size: var(--font-size-text-sm);
+    font-weight: var(--font-weight-medium);
     color: var(--color-primary-text);
     background-color: var(--color-primary-background);
     padding: 2px var(--space-2);
