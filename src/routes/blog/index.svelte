@@ -4,25 +4,30 @@
  distinct <script> tag, differentiated with a context="module" attribute -->
 <script context="module">
   export const load = async ({fetch}) => {
-    const posts = await fetch('/api/posts.json');
-    const allPosts = await posts.json();
+    const postRes = await fetch(`/api/posts.json`);
+    const {posts} = await postRes.json();
+
+    const totalRes = await fetch(`/api/posts/count.json`);
+    const {total} = await totalRes.json();
 
     return {
-      props: {
-        posts: allPosts,
-      },
+      props: {posts, total},
     };
   };
 </script>
 
 <script>
   import {PostGrid} from '$lib/components';
-
+  import {siteDescription} from '$lib/config';
   export let posts;
+  export let total;
 </script>
 
 <svelte:head>
   <title>All posts • Tom Hendra</title>
+  <meta data-key="description" name="description" content={siteDescription} />
 </svelte:head>
 
+<h1>Blog</h1>
+<p>{total} posts</p>
 <PostGrid {posts} />

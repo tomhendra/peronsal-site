@@ -1,6 +1,5 @@
 ---
 title: 'Superpowers for the Self-Guided Learner'
-description: 'Obtain superpowers to become a more efficient learner.'
 date: '2020-04-14'
 updated: '2020-04-14'
 coverImage: 'bizarre-platypus-2400.png'alt: 'Bizarre Platypus #2400'
@@ -8,13 +7,16 @@ credit: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'learning'
   - 'self-improvement'
+excerpt: "In 2018 I left my old life behind in the UK, sold everything I owned, and moved
+to Spain with the aim of changing career from procurement professional to
+software developer, by way of full-time self-guided learning."
 ---
 
-Almost two years ago I left my old life behind in the UK, sold everything I
-owned, and moved to Spain with the aim of changing career from procurement
-professional to software developer, by way of full-time self-guided learning. In
-that time I have taken many online courses, and have recently questioned myself:
-"How much have I **_really learned"?_**
+In 2018 I left my old life behind in the UK, sold everything I owned, and moved
+to Spain with the aim of changing career from procurement professional to
+software developer, by way of full-time self-guided learning. In that time I
+have taken many online courses, and have recently questioned myself: "How much
+have I **_really learned"?_**
 
 It's easy to get caught in a tutorial loop. It feels safe and comfortable having
 our hand held, shown what to do, given small challenges to build our confidence.

@@ -1,12 +1,15 @@
 ---
 title: 'Convert Google Fonts to woff2 the Right Way'
-description: 'How to reduce the filesize of Google Fonts in the correct way.'
 date: '2021-19-03'
 coverImage: 'bizarre-platypus-2400.png'alt: 'Bizarre Platypus #2400'
 credit: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'typography'
   - 'css'
+excerpt: "Google Fonts is a great resource for typefaces. It is a well-established
+platform and the web app is a joy do use. However if we want to self-host the
+fonts we download, which we should do according to Google, the default download 
+from Google Fonts is TTF."
 ---
 
 Google Fonts is a great resource for typefaces. It is a well-established

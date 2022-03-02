@@ -1,13 +1,16 @@
 ---
 title: 'How to Set Up Cloudflare with Vercel'
-description:
-  'Setting up Cloudflare with Vercel explained in a step-by-step guide.'
 date: '2020-10-08'
-coverImage: 'bizarre-platypus-2400.png'alt: 'Bizarre Platypus #2400'
+coverImage: 'bizarre-platypus-2400.png'
+alt: 'Bizarre Platypus #2400'
 credit: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'vercel'
   - 'cloudflare'
+excerpt:
+  "There are some potential issues with getting Vercel to play nicely with
+Cloudflare when using the proxy feature which brings the security benefits.
+Here's how to get things running smoothly."
 ---
 
 There are some potential issues with getting Vercel to play nicely with

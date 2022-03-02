@@ -4,7 +4,7 @@
   import {Themes} from '$lib/constants';
   import {theme} from '$lib/stores';
   import {addClass, removeClass} from '$lib/utils';
-  import {Sun, Moon} from './icons';
+  import {Sun, Moon} from '$lib/components/icons';
 
   /* 
     you can reference a store value by prefixing the store name with $ as opposed to:

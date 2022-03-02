@@ -23,9 +23,6 @@ const config = {
     mdsvex({
       extensions: ['.svx', '.md'],
       rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
-      layout: {
-        blog: 'src/routes/blog/_post.svelte',
-      },
     }),
   ],
 };

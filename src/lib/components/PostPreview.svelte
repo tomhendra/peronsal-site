@@ -1,32 +1,32 @@
 <script lang="ts">
   import ArrowUpRight from './icons/ArrowUpRight.svelte';
-  import type {Post} from '$lib/types';
+  import type {PostMetadata} from '$lib/types';
   import {Image} from '$lib/components';
-  export let post: Post;
+  export let post: PostMetadata;
 </script>
 
 <article class="post-preview-wrapper">
-  <a class="img-link" href={post.path}>
-    <Image filename={post.meta.coverImage} alt={post.meta.alt} />
+  <a class="img-link" href="/blog/{post.slug}">
+    <Image filename={post.coverImage} alt={post.alt} />
   </a>
   <div class="post-preview-content">
     <span class="post-date">
-      {post.meta.date}
+      {post.date}
     </span>
-    <a class="post-link" href={post.path}>
+    <a class="post-link" href="/blog/{post.slug}">
       <div class="post-title-container">
         <h2 class="post-title">
-          {post.meta.title}
+          {post.title}
         </h2>
         <div class="icon-container">
           <ArrowUpRight />
         </div>
       </div>
     </a>
-    <p class="post-description">{post.meta.description}</p>
+    <p class="post-excerpt">{post.excerpt}</p>
   </div>
   <ul class="post-category-list">
-    {#each post.meta.categories as category}
+    {#each post.categories as category}
       <li class="post-category">
         {category}
       </li>
@@ -81,6 +81,8 @@
   .post-title {
     font-size: var(--font-size-display-xs);
     font-weight: var(--font-weight-semibold);
+    hyphens: auto;
+    overflow-wrap: break-word;
 
     @media (max-width: $breakpoint-sm) {
       font-size: var(--font-size-text-xl);
@@ -92,11 +94,11 @@
     padding-top: var(--space-1);
   }
 
-  .post-description {
+  .post-excerpt {
     color: var(--color-text);
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     overflow: hidden;
   }
 

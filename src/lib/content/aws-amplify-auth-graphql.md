@@ -1,8 +1,5 @@
 ---
 title: 'React & AWS Amplify with DataStore Setup for User Owned Data'
-description:
-  'How to setup a React project + auth with user-specific data + DataStore for
-  easy offline functionality.'
 date: '2021-30-04'
 coverImage: 'bizarre-platypus-2400.png'
 alt: 'Bizarre Platypus #2400'
@@ -10,23 +7,29 @@ credit: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'aws'
   - 'auth'
+excerpt:
+  'Get up and running quickly with Create React App and the Amplify CLI to create a
+GraphQL powered full stack app, with authentication and authorization for
+user-specific data.'
 ---
 
 Get up and running quickly with Create React App and the Amplify CLI to create a
-full stack app powered by Amplify DataStore for easy offline functionality, plus
-authentication and authorization for user-specific data.
+GraphQL powered full stack app, with authentication and authorization for
+user-specific data.
+
+## Steps
 
 1. React frontend via Create React App with TypeScript
-2. Amplify backend configured to use DataStore
+2. Amplify GraphQL API backend via AppSync
 3. Amazon Cognito User Pools for owner based authorization of access to data
 
 The end result is an app that supports authentication by username and password,
-where each user has their own data which is inaccessible to others.
+where each user has their own data which is inaccessible to other users.
 
-If you don't already have an AWS account or the Amplify CLI setup, please refer
-to the Amplify CLI installation instructions
-[in the docs](https://docs.amplify.aws/cli/start/install). Also, in the interest
-of conciseness we will skip over styling and get straight to the point.
+Please refer to the Amplify CLI installation instructions
+[in the docs](https://docs.amplify.aws/cli/start/install)if you don't already
+have the CLI tool installed. Also, in the interest of conciseness we will skip
+over styling.
 
 ## Setup
 
@@ -78,9 +81,9 @@ the Amplify CLI installation instructions
   AWS access keys
 ```
 
-## Configure API & DataStore
+## Configure API
 
-We now need to add the API for React to interface with.
+We now need to add the GraphQL API for React to interface with.
 
 ```shell
 amplify add api
@@ -121,39 +124,25 @@ Choose the default authentication and security configuration & username.
 ❯ Username
 ```
 
-When asked if you wish to configure advanced settings (for the authentication
-and security configuration) select No.
+When asked if you wish to configure advanced settings select No, I am done.
 
 ```shell
- Do you want to configure advanced settings?
+? Do you want to configure advanced settings?
+❯ No, I am done.
+  Yes, I want to make some additional changes.
+
+? Do you want to configure advanced settings for the GraphQL API
 ❯ No, I am done.
   Yes, I want to make some additional changes.
 ```
 
-Next, when asked if you wish to configure advanced settings for the GraphQL API,
-select Yes.
-
-Choose No for `Configure additional auth types?`, but we do need to Enable
-conflict detection in order to setup DataStore. The resolution strategy should
-be set to `Auto Merge`.
-
-```shell
-? Do you want to configure advanced settings for the GraphQL API
-  No, I am done.
-❯ Yes, I want to make some additional changes.
-
-? Configure additional auth types? No
-? Enable conflict detection? (y/N) y
-? Select the default resolution strategy (Use arrow keys)
-❯ Auto Merge
-```
-
-Choose `n` for the annotated GraphQL schema, choose the default schema template,
-select `y` to edit the schema, and pick your code editor of choice.
+Choose `n` for an annotated GraphQL schema, choose the default schema template,
+select `y` to edit the schema, and pick your code editor of choice to launch it
+and edit the schema.
 
 ```shell
 ? Do you have an annotated GraphQL schema? (y/N) n
-❯ Single object with fields (e.g., “Todo” with ID, name, description)
+❯ Single object with fields (e.g., “Todo” with ID, name, excerpt)
 ? Do you want to edit the schema now? (y/N) y
 ? Choose your default editor: (Use arrow keys)
 ❯ Visual Studio Code
@@ -169,23 +158,10 @@ the part I find most tutorials online do not mention.
 type Task @model @auth(rules: [{allow: owner}]) {
   id: ID!
   title: String!
-  description: String!
+  excerpt: String!
   createdAt: AWSDateTime
 }
 ```
-
-### Generate the API Schema
-
-To generate the schema for React to interact with DataStore, run the following
-command.
-
-```shell
-amplify codegen models
-```
-
-This will create a directory `src/models` in the react app, containing the
-models required for calling the DataStore API functions, along with the
-TypeScript definitions.
 
 ## Configure Amplify for React
 
@@ -204,34 +180,38 @@ import awsExports from './aws-exports';
 Amplify.configure(awsExports);
 ```
 
-## Syncing Data to Cloud
+## Generate GraphQL Schema, Types & Deploy the API
 
-It is recommended to develop without cloud synchronization enabled initially so
-you can change the schema as your application takes shape without the impact of
-having to update the provisioned backend.
-
-Once you are satisfied with the schema, setup cloud synchronization with
-`amplify push`.
+Run the command `amplify push` to build all your local backend resources and
+provision it in the cloud.
 
 ```shell
 amplify push
 ```
 
-You will be prompted to generate GraphQL schema. Since we are using the
-DataStore API this is not necessary.
+You will be promted to generate code which will create GraphQL queries,
+mutations and subscriptions as well as TypeScript types to use for interacting
+with the AWS Amplify API. Choose TypeScript as the language and define your
+preference for where the output should be generated.
 
 ```shell
-Do you want to generate code for your newly created GraphQL API (Y/n) n
+? Do you want to generate code for your newly created GraphQL API (y)
+? Choose the code generation language target
+  javascript
+❯ typescript
+  flow
+? Enter the file name pattern of graphql queries, mutations and subscriptions (src/graphql/**/*.ts)
+? Do you want to generate/update all possible GraphQL operations - queries, mutations and subscriptio
+ns - (y)
+? Enter maximum statement depth [increase from default if your schema is deeply nested] (2)
+? Enter the file name for the generated code (src/API.ts)
 ```
 
-Setup will likely take a few minutes. Once finished, the data saved locally will
-be synchronized to the cloud automatically.
+Setup will take a few minutes.
 
 ## Troubleshooting
 
-Add the following to `src/App.tsx` to log DataStore activity to the console.
-This can be useful to check that the data is flowing correctly, and what data is
-being transferred.
+Add the following to `src/App.tsx` to log activity to the console.
 
 ```js
 import Amplify from 'aws-amplify';

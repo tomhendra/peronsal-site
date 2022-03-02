@@ -1,7 +1,5 @@
 ---
 title: 'Exploring Next.js, Emotion & CSS Variable Theming'
-description:
-  'A path to a better DX by combining elements from other great tools.'
 date: '2021-20-03'
 coverImage: 'bizarre-platypus-2400.png'alt: 'Bizarre Platypus #2400'
 credit: 'Photo by Kaushal Moradiya from Pexels'
@@ -9,6 +7,11 @@ categories:
   - 'nextjs'
   - 'emotion'
   - 'css'
+excerpt:
+  "While exploring styling solutions for my personal site v3, I found that liked
+the structured theming of Theme UI and the well-considered design system of
+Tailwind, but didn't want to use a tool that abstracted away from vanilla CSS
+too much."
 ---
 
 While exploring styling solutions for my personal site v3, I found that liked
