@@ -5,7 +5,7 @@ export const siteLink = 'https://github.com/tomhendra/blog';
 export const siteAuthor = 'Tom Hendra';
 
 // Controls how many posts are shown per page on the main blog index pages
-export const postsPerPage = 10;
+export const postsPerPage = 6;
 
 // Edit this to alter the main nav menu. (Also used by the footer and mobile nav.)
 export const navItems = [

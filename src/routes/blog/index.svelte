@@ -17,7 +17,7 @@
 </script>
 
 <script>
-  import {PostGrid} from '$lib/components';
+  import {PostGrid, Pagination} from '$lib/components';
   import {siteDescription} from '$lib/config';
   export let posts;
   export let total;
@@ -29,5 +29,5 @@
 </svelte:head>
 
 <h1>Blog</h1>
-<p>{total} posts</p>
 <PostGrid {posts} />
+<Pagination currentPage={1} totalPosts={total} />

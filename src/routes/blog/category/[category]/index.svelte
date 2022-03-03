@@ -20,11 +20,11 @@
 </script>
 
 <script>
-  import {PostGrid} from '$lib/components';
+  import {PostGrid, Pagination} from '$lib/components';
 
   export let posts;
   export let category;
-  // export let total;
+  export let total;
 </script>
 
 <!-- This dynamic page renders any page at /blog/category/* -->
@@ -37,11 +37,11 @@
 
 {#if posts.length}
   <PostGrid {posts} />
-  <!-- <Pagination
+  <Pagination
     currentPage="1"
     totalPosts={total}
     path="/blog/category/{category}/page"
-  /> -->
+  />
 {:else}
   <p>
     <strong>Ope!</strong> Sorry, couldn't find any posts in the category "{category}".

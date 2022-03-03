@@ -4,7 +4,7 @@ import {getSlugFromPath} from '.';
 
 export async function getPostsData({
   offset = 0,
-  limit = postsPerPage,
+  page = postsPerPage,
   category = '',
 } = {}): Promise<{posts: PostMetadata[]}> {
   /*
@@ -43,8 +43,8 @@ export async function getPostsData({
     sortedPosts = sortedPosts.slice(offset);
   }
 
-  if (limit && limit < sortedPosts.length && limit != -1) {
-    sortedPosts = sortedPosts.slice(0, limit);
+  if (page && page < sortedPosts.length && page != -1) {
+    sortedPosts = sortedPosts.slice(0, page);
   }
 
   sortedPosts = sortedPosts.map(post => ({
