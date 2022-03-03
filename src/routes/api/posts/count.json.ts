@@ -1,4 +1,6 @@
-export const get = async () => {
+import type {APIResponse} from '$lib/types';
+
+export const get = async (): Promise<APIResponse> => {
   try {
     const posts = import.meta.glob(`../../../lib/content/*.md`);
 

@@ -7,23 +7,23 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  extensions: ['.svelte', '.md', '.svelte.md'],
+  extensions: ['.svelte', '.md'],
   // https://github.com/sveltejs/svelte-preprocess
   preprocess: [
     preprocess({
-      postcss: {
-        plugins: [autoprefixer],
-      },
       /* Other sveltePreprocess options here, like SCSS */
       scss: {
         // Ensures Sass variables are always available inside component <style>
         // blocks e.g. breakpoints.$variableDefinedInFile
         prependData: `@use 'src/lib/styles/breakpoints';`,
       },
+      postcss: {
+        plugins: [autoprefixer],
+      },
     }),
     /* Other preprocessors here, like mdsvex */
     mdsvex({
-      extensions: ['.md', '.svx'],
+      extensions: ['.md'],
       rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
     }),
   ],

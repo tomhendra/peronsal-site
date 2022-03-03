@@ -25,8 +25,6 @@
 
   // Additional code in app.html to help avoid unwanted flashes of dark/light
   async function toggleDarkMode(): Promise<void> {
-    console.log(theme);
-
     theme.set(isDarkMode ? Themes.Light : Themes.Dark);
 
     if (browser) {

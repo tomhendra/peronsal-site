@@ -9,3 +9,4 @@ export {default as PostPreview} from './PostPreview.svelte';
 export {default as PostGrid} from './PostGrid.svelte';
 export {default as Image} from './Image.svelte';
 export {default as Pagination} from './Pagination.svelte';
+export {default as RenderedPost} from './RenderedPost.svelte';

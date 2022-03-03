@@ -1,5 +1,10 @@
-<script context="module">
-  export const load = async ({fetch}) => {
+<script context="module" lang="ts">
+  interface Category {
+    title: string;
+    count: number;
+  }
+
+  export async function load({fetch}) {
     const res = await fetch(`/api/posts.json`);
     let {posts} = await res.json();
 
@@ -28,28 +33,34 @@
         uniqueCategories: sortedUniqueCategories,
       },
     };
-  };
+  }
 </script>
 
-<script>
-  export let uniqueCategories;
+<script lang="ts">
+  export let uniqueCategories: Category[];
 </script>
 
 <svelte:head>
-  <title>Blog | Categories</title>
+  <title>Blog • Categories</title>
+  <meta
+    property="og:image"
+    content="https://tomhendra.dev/images/site-image.png"
+  />
+  <meta
+    name="twitter:image"
+    content="https://tomhendra.dev/images/site-image.png"
+  />
 </svelte:head>
 
-<div>
-  <h1>All blog categories</h1>
+<h1 class="h2">All blog categories</h1>
 
-  <ul>
-    {#each uniqueCategories as category}
-      <li>
-        <a href="/blog/category/{category.title}">
-          {category.title}
-        </a>
-        ({category.count})
-      </li>
-    {/each}
-  </ul>
-</div>
+<ul>
+  {#each uniqueCategories as category}
+    <li>
+      <a href="/blog/category/{category.title}">
+        {category.title}
+      </a>
+      ({category.count})
+    </li>
+  {/each}
+</ul>

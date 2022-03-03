@@ -1,7 +1,8 @@
 <script lang="ts">
   import {PostPreview} from '$lib/components';
+  import type {Post} from '$lib/types';
 
-  export let posts;
+  export let posts: Post[];
 </script>
 
 <div class="posts-grid">

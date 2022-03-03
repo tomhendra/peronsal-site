@@ -1,13 +1,10 @@
-<!-- This file handles any /blog/page/x route for pagination -->
-<script context="module">
-  import {postsPerPage, siteDescription} from '$lib/config';
-  import {getPostsData} from '$lib/utils';
+<script context="module" lang="ts">
+  import {getPosts} from '$lib/utils';
 
-  export const load = async ({fetch, params}) => {
+  export async function load({fetch, params}) {
     try {
       const page = params.page ? params.page : 1;
 
-      // Keeps from duplicationg the blog index route as page 1
       if (page <= 1) {
         return {
           status: 301,
@@ -15,11 +12,12 @@
         };
       }
 
-      let offset = page * postsPerPage - postsPerPage;
+      let offset = page * 10 - 10;
 
-      const totalPostsRes = await fetch('/api/posts/count.json');
-      const {total} = await totalPostsRes.json();
-      const {posts} = await getPostsData({offset, page});
+      const posts = await getPosts({offset, limit: 10});
+
+      const count = await fetch(`/api/posts/count.json`);
+      const {total} = await count.json();
 
       return {
         status: 200,
@@ -35,32 +33,38 @@
         error: error.message,
       };
     }
-  };
+  }
 </script>
 
-<script>
+<script lang="ts">
+  import type {Post} from '$lib/types';
   import {PostGrid, Pagination} from '$lib/components';
 
-  export let page;
-  export let totalPosts;
-  export let posts = [];
+  export let posts: Post[];
+  export let page: number = 1;
+  export let totalPosts: number;
+
+  $: lowerBound = page * 10 - 9 || 1;
+  $: upperBound = Math.min(page * 10, totalPosts);
 </script>
 
 <svelte:head>
-  <title>Blog - page {page}</title>
-  <meta data-key="description" name="description" content={siteDescription} />
+  <title>Tom Hendra • Blog page {page}</title>
+  <meta
+    data-key="description"
+    name="description"
+    content="Blog posts about discoveries in web development."
+  />
+  <meta
+    property="og:image"
+    content="https://tomhendra.dev/images/site-image.png"
+  />
+  <meta
+    name="twitter:image"
+    content="https://tomhendra.dev/images/site-image.png"
+  />
 </svelte:head>
 
-<!-- TODO: this is duplicated in both `[page].svelte` files -->
-{#if posts.length}
-  <h1>Blog</h1>
-  <PostGrid {posts} />
-
-  <Pagination currentPage={page} {totalPosts} />
-{:else}
-  <h1>Oops!</h1>
-
-  <p>Sorry, no posts to show here.</p>
-
-  <a href="/blog">Back to blog</a>
-{/if}
+<h1 class="h2">Posts {lowerBound}–{upperBound} of {totalPosts}</h1>
+<PostGrid {posts} />
+<Pagination currentPage={page} {totalPosts} />

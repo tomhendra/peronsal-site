@@ -1,39 +1,29 @@
-<script>
-  import {postsPerPage} from '$lib/config';
+<script lang="ts">
+  export let currentPage: number;
+  export let totalPosts: number;
 
-  export let currentPage;
-  export let totalPosts;
-  export let path = '/blog/page';
+  let pagesAvailable: number;
+  $: pagesAvailable = Math.ceil(totalPosts / 10);
 
-  let pagesAvailable;
-  $: pagesAvailable = Math.ceil(totalPosts / postsPerPage);
-
-  const isCurrentPage = page => page == currentPage;
+  const isCurrentPage = (page: number): boolean => page == currentPage;
 </script>
 
-<!-- For some reason, the pagination wasn't re-rendering properly during navigation without the #key block -->
-{#key currentPage}
-  {#if pagesAvailable > 1}
-    <nav aria-label="Pagination navigation" class="pagination">
-      <ul>
-        {#each Array.from({length: pagesAvailable}, (_, i) => i + 1) as page}
-          <li>
-            <a href="{path}/{page}" aria-current={isCurrentPage(page)}>
-              <span class="visually-hidden">
-                {#if isCurrentPage(page)}
-                  Current page:
-                {:else}
-                  Go to page
-                {/if}
-              </span>
-              {page}
-            </a>
-          </li>
-        {/each}
-      </ul>
-    </nav>
-  {/if}
-{/key}
+<nav aria-label="Pagination navigation" class="pagination">
+  <ul>
+    {#each Array.from({length: pagesAvailable}, (_, i) => i + 1) as page}
+      <li>
+        <a href="/blog/page/{page}" aria-current={isCurrentPage(page)}>
+          {#if isCurrentPage(page)}
+            <span class="visually-hidden"> Current page </span>
+          {:else}
+            <span class="visually-hidden"> Go to page </span>
+          {/if}
+          {page}
+        </a>
+      </li>
+    {/each}
+  </ul>
+</nav>
 
 <style>
   .pagination {

@@ -1,7 +1,7 @@
-import {postsPerPage} from '$lib/config';
-import {getPostsData} from '$lib/utils';
+import type {APIResponse, PostsEndpointOptions} from '$lib/types';
+import {getPosts} from '$lib/utils';
 
-export const get = async ({url}) => {
+export const get = async ({url}): Promise<APIResponse> => {
   try {
     /*
       These let you add query params to change what's retrieved from the 
@@ -9,12 +9,12 @@ export const get = async ({url}) => {
     */
     const params = new URLSearchParams(url.search);
 
-    const options = {
+    const options: PostsEndpointOptions = {
       offset: parseInt(params.get('offset')) || null,
-      limit: parseInt(params.get('limit')) || postsPerPage,
+      limit: parseInt(params.get('limit')) || 10,
     };
 
-    const {posts} = await getPostsData(options);
+    const posts = await getPosts({...options});
 
     return {
       status: 200,
