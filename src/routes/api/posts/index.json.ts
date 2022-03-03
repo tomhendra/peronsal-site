@@ -1,5 +1,5 @@
 import {postsPerPage} from '$lib/config';
-import {fetchPostsMetadata} from '$lib/utils';
+import {getPostsData} from '$lib/utils';
 
 export const get = async ({url}) => {
   try {
@@ -14,7 +14,7 @@ export const get = async ({url}) => {
       limit: parseInt(params.get('limit')) || postsPerPage,
     };
 
-    const {posts} = await fetchPostsMetadata(options);
+    const {posts} = await getPostsData(options);
 
     return {
       status: 200,

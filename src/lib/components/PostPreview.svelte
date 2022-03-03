@@ -56,6 +56,7 @@
   .post-preview-wrapper {
     display: flex;
     flex-direction: column;
+    max-width: var(--container-sm);
   }
 
   .post-preview-content {
@@ -81,10 +82,8 @@
   .post-title {
     font-size: var(--font-size-display-xs);
     font-weight: var(--font-weight-semibold);
-    hyphens: auto;
-    overflow-wrap: break-word;
 
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: $sm) {
       font-size: var(--font-size-text-xl);
     }
   }

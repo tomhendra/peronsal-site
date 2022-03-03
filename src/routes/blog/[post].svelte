@@ -1,7 +1,6 @@
 <!-- This file renders each individual blog post for reading -->
 <script context="module">
   export const load = async ({params}) => {
-    console.log(params);
     try {
       const post = await import(`../../lib/content/${params.post}.md`);
 

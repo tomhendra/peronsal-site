@@ -1,11 +1,11 @@
 <!-- TODO: add pagination to this route -->
 <script context="module">
-  import {fetchPostsMetadata} from '$lib/utils';
+  import {getPostsData} from '$lib/utils';
 
   export const load = async ({params, fetch}) => {
     const category = params.category;
     const options = {category};
-    const {posts} = await fetchPostsMetadata(options);
+    const {posts} = await getPostsData(options);
     const res = await fetch(`/api/posts/category/${category}/count.json`);
     const {total} = await res.json();
 

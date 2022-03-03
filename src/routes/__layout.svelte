@@ -56,7 +56,7 @@
     flex: 1;
     width: 100%;
 
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: $sm) {
       padding: 0 var(--space-4);
     }
   }

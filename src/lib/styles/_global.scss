@@ -21,10 +21,17 @@ h6 {
   font-weight: var(--font-weight-semibold);
   color: var(--color-heading);
 }
-/* 
-  prevent layout from breaking when there aren't any soft wrap opportunities
-*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p {
+  /* 
+    prevent layout from breaking when there aren't any soft wrap opportunities
+  */
   overflow-wrap: break-word;
   hyphens: auto;
   /* Prefix for Safari */

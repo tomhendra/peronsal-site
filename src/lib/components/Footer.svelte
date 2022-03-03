@@ -31,10 +31,8 @@
 </footer>
 
 <style lang="scss">
-  @use '../styles/breakpoints' as *;
-
   .footer {
-    background-color: var(--color-muted-background);
+    background-color: var(--gray-800);
   }
 
   .footer-container {
@@ -47,7 +45,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: breakpoints.$sm) {
       flex-direction: column;
       align-items: center;
       padding: var(--space-12) var(--space-4);
@@ -62,7 +60,7 @@
   }
 
   .footer-social-link {
-    color: var(--color-muted-text);
+    color: var(--gray-400);
     /* 
       in CSS for JS devs in module 9 there will be a way to increase tap 
       target without affecting the design
@@ -73,16 +71,16 @@
   }
 
   .footer-logo {
-    color: var(--color-heading);
+    color: var(--gray-400);
     font-weight: var(--font-weight-semibold);
 
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: breakpoints.$sm) {
       order: -1;
       margin-bottom: var(--space-6);
     }
   }
 
   .footer-copyright {
-    color: var(--color-muted-text);
+    color: var(--gray-400);
   }
 </style>

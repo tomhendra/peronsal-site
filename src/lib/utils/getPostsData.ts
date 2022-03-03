@@ -2,7 +2,7 @@ import {postsPerPage} from '$lib/config';
 import type {PostMetadata} from '$lib/types';
 import {getSlugFromPath} from '.';
 
-export async function fetchPostsMetadata({
+export async function getPostsData({
   offset = 0,
   limit = postsPerPage,
   category = '',
@@ -51,6 +51,7 @@ export async function fetchPostsMetadata({
     slug: post.slug,
     title: post.title,
     date: post.date,
+    updated: post.updated,
     coverImage: post.coverImage,
     alt: post.alt,
     credit: post.credit,

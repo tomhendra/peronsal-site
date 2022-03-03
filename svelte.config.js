@@ -9,22 +9,27 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 const config = {
   extensions: ['.svelte', '.md', '.svelte.md'],
   // https://github.com/sveltejs/svelte-preprocess
-  kit: {
-    adapter: adapter(),
-  },
   preprocess: [
     preprocess({
       postcss: {
         plugins: [autoprefixer],
       },
       /* Other sveltePreprocess options here, like SCSS */
+      scss: {
+        // Ensures Sass variables are always available inside component <style>
+        // blocks e.g. breakpoints.$variableDefinedInFile
+        prependData: `@use 'src/lib/styles/breakpoints';`,
+      },
     }),
     /* Other preprocessors here, like mdsvex */
     mdsvex({
-      extensions: ['.svx', '.md'],
+      extensions: ['.md', '.svx'],
       rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
     }),
   ],
+  kit: {
+    adapter: adapter(),
+  },
 };
 
 export default config;

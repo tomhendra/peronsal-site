@@ -22,8 +22,6 @@
 </header>
 
 <style lang="scss">
-  @use '../styles/breakpoints' as *;
-
   .header {
     border-bottom: 1px solid var(--color-muted-separator);
   }
@@ -39,7 +37,7 @@
     justify-content: space-between;
     align-items: baseline;
 
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: breakpoints.$sm) {
       align-items: center;
       padding: var(--space-4);
     }
@@ -52,7 +50,7 @@
     gap: var(--space-8);
     align-items: center;
 
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: breakpoints.$sm) {
       display: none;
     }
   }

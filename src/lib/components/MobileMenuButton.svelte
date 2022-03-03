@@ -8,7 +8,7 @@
   .mobile-menu-button {
     display: none;
 
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: $sm) {
       display: revert;
       position: fixed;
       bottom: var(--space-4);

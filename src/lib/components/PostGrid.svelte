@@ -15,8 +15,6 @@
 </div>
 
 <style lang="scss">
-  @use '../../lib/styles/breakpoints' as *;
-
   .posts-grid {
     display: grid;
     grid-column-gap: var(--space-8);
@@ -24,7 +22,7 @@
     grid: auto-flow / 1fr 1fr;
     margin-bottom: var(--space-16);
 
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: breakpoints.$sm) {
       grid-template-columns: 1fr;
     }
   }

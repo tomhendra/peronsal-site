@@ -1,11 +1,11 @@
-import {fetchPostsMetadata} from '$lib/utils';
+import {getPostsData} from '$lib/utils';
 
 export const get = async ({params}) => {
   const {category} = params;
   const options = {category, limit: -1};
 
   try {
-    const {posts} = await fetchPostsMetadata(options);
+    const {posts} = await getPostsData(options);
 
     return {
       status: 200,
