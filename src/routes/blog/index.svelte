@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-  <title>Josh Collinsworth | Blog</title>
+  <title>Tom Hendra • Blog</title>
   <meta
     data-key="description"
     name="description"
