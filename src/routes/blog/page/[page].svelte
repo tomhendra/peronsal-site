@@ -1,7 +1,7 @@
 <script context="module" lang="ts">
   import {getPosts} from '$lib/utils';
 
-  export async function load({fetch, params}) {
+  export const load = async ({fetch, params}) => {
     try {
       const page = params.page ? params.page : 1;
 
@@ -33,7 +33,7 @@
         error: error.message,
       };
     }
-  }
+  };
 </script>
 
 <script lang="ts">

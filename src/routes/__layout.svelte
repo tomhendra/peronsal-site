@@ -1,5 +1,5 @@
 <script>
-  import '$lib/styles/index.scss';
+  import '$lib/styles/global.scss';
   import {onMount} from 'svelte';
   import {getScrollbarWidth} from '$lib/utils';
   import {Header, Footer, MobileMenu, MobileMenuButton} from '$lib/components';
