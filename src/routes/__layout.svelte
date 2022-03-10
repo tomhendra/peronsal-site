@@ -27,8 +27,8 @@
 <div id="wrapper" class="wrapper">
   <Header />
   <MobileMenuButton on:click={toggleMobileMenu}>
-    <span class="visually-hidden">Open the mobile menu</span>
     <Menu />
+    <span class="visually-hidden">Open the mobile menu</span>
   </MobileMenuButton>
   <MobileMenu open={isMobileMenuOpen} close={toggleMobileMenu} />
   <main>
@@ -38,8 +38,6 @@
 </div>
 
 <style lang="scss">
-  @use '../lib/styles/breakpoints' as *;
-
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -56,7 +54,7 @@
     flex: 1;
     width: 100%;
 
-    @media (max-width: $sm) {
+    @media (max-width: breakpoints.$sm) {
       padding: 0 var(--space-4);
     }
   }

@@ -37,6 +37,7 @@ p {
 }
 
 em {
+  font-style: normal;
   font-variation-settings: 'slnt' -10;
 }
 
@@ -64,14 +65,5 @@ em {
 @media (pointer: coarse) {
   :root {
     --min-tap-size: 44px;
-  }
-}
-/* 
-  increase font size for captions on mobile
-  TODO: move to components as required
- */
-@media (max-width: 34.375rem) {
-  figcaption {
-    font-size: var(--font-size-text-md);
   }
 }

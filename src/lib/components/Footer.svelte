@@ -10,17 +10,17 @@
         href="https://twitter.com/tomhendra"
         target="_blank"
       >
+        <Twitter />
         <span class="visually-hidden">Link to Tom Hendra's Twitter Account</span
         >
-        <Twitter />
       </a>
       <a
         class="footer-social-link"
         href="https://github.com/tomhendra"
         target="_blank"
       >
-        <span class="visually-hidden">Link to Tom Hendra's GitHub Account</span>
         <GitHub />
+        <span class="visually-hidden">Link to Tom Hendra's GitHub Account</span>
       </a>
     </div>
     <span class="footer-logo">Tom Hendra</span>

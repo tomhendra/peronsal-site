@@ -3,12 +3,10 @@
 </button>
 
 <style lang="scss">
-  @use '../styles/breakpoints' as *;
-
   .mobile-menu-button {
     display: none;
 
-    @media (max-width: $sm) {
+    @media (max-width: breakpoints.$sm) {
       display: revert;
       position: fixed;
       bottom: var(--space-4);

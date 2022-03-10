@@ -11,7 +11,7 @@
 
 <h1>Hi, I'm Tom!</h1>
 <p>
-  Welcome to my blog, a space to share disoveries and insights into web
+  Welcome to my blog, a space to share <em>disoveries</em> and insights into web
   development with the world.
 </p>
 

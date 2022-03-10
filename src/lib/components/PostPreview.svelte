@@ -20,6 +20,9 @@
         </h2>
         <div class="icon-container">
           <ArrowUpRight />
+          <span class="visually-hidden"
+            >Decorative arrow indicating navigation</span
+          >
         </div>
       </div>
     </a>
@@ -45,8 +48,6 @@
 </article>
 
 <style lang="scss">
-  @use '../styles/breakpoints' as *;
-
   :global(.img) {
     object-fit: cover;
   }
@@ -93,7 +94,7 @@
     font-size: var(--font-size-display-xs);
     font-weight: var(--font-weight-semibold);
 
-    @media (max-width: $sm) {
+    @media (max-width: breakpoints.$sm) {
       font-size: var(--font-size-text-xl);
     }
   }

@@ -27,8 +27,8 @@
     </nav>
     <ThemeToggle />
     <MobileMenuButton on:click={close}>
-      <span class="visually-hidden">Close the mobile menu</span>
       <Close />
+      <span class="visually-hidden">Close the mobile menu</span>
     </MobileMenuButton>
   </div>
 </Dialog>
