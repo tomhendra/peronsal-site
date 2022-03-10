@@ -3,7 +3,7 @@ title: 'Superpowers for the Self-Guided Learner'
 date: '2020-04-14'
 updated: '2020-04-14'
 coverImage: 'bizarre-platypus-2400.png'alt: 'Bizarre Platypus #2400'
-credit: 'Photo by Kaushal Moradiya from Pexels'
+caption: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'learning'
   - 'self-improvement'

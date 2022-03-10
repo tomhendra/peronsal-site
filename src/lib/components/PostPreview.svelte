@@ -20,9 +20,7 @@
         </h2>
         <div class="icon-container">
           <ArrowUpRight />
-          <span class="visually-hidden"
-            >Decorative arrow indicating navigation</span
-          >
+          <span class="visually-hidden">Decorative arrow</span>
         </div>
       </div>
     </a>

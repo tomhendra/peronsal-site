@@ -3,7 +3,7 @@ title: 'Redirects with AWS Amplify'
 date: '2021-05-21'
 coverImage: 'bizarre-platypus-2400.png'
 alt: 'Bizarre Platypus #2400'
-credit: 'Photo by Kaushal Moradiya from Pexels'
+caption: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'react'
   - 'aws'

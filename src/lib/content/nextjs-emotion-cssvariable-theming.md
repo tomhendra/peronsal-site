@@ -2,7 +2,7 @@
 title: 'Exploring Next.js, Emotion & CSS Variable Theming'
 date: '2021-20-03'
 coverImage: 'bizarre-platypus-2400.png'alt: 'Bizarre Platypus #2400'
-credit: 'Photo by Kaushal Moradiya from Pexels'
+caption: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'nextjs'
   - 'emotion'

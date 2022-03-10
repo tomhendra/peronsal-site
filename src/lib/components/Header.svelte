@@ -4,20 +4,17 @@
 
 <header class="header">
   <div class="header-container">
-    <a class="nav-link" href="/">Tom Hendra</a>
-    <div class="desktop-nav">
-      <nav>
-        <ul class="nav-list">
-          <li>
-            <a class="nav-link" href="/blog">Blog</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/about">About</a>
-          </li>
-        </ul>
-      </nav>
-      <ThemeToggle />
+    <div class="logo-wrapper">
+      <a href="/">
+        <img src="/logo.svg" alt="Logo - Home" class="logo" />
+      </a>
+      <a href="/" class="nav-link">Tom Hendra</a>
     </div>
+    <nav class="desktop-nav">
+      <a class="nav-link" href="/blog">Blog</a>
+      <a class="nav-link" href="/about">About</a>
+    </nav>
+    <ThemeToggle />
   </div>
 </header>
 
@@ -31,34 +28,35 @@
     margin: 0 auto;
     max-width: var(--container-xl);
     /* unique container styles */
-    padding: var(--space-6) var(--space-8);
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
+    gap: var(--space-8);
+    padding: var(--space-6) var(--space-8);
 
     @media (max-width: breakpoints.$sm) {
-      align-items: center;
       padding: var(--space-4);
     }
+  }
+
+  .logo-wrapper {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .logo {
+    width: var(--space-8);
   }
 
   .desktop-nav {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
     gap: var(--space-8);
-    align-items: center;
 
     @media (max-width: breakpoints.$sm) {
       display: none;
     }
-  }
-
-  .nav-list {
-    list-style-type: none;
-    display: flex;
-    gap: var(--space-8);
   }
 
   .nav-link {

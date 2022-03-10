@@ -10,7 +10,7 @@
     you can reference a store value by prefixing the store name with $ as opposed to:
 
     theme.subscribe(value => {
-      isDarkMode = value === Themes.DARK;
+      isDarkMode = value === Themes.Dark;
     });
 
     You're not limited to using $theme inside the markup, either — you can use 

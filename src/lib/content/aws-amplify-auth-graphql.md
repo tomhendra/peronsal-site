@@ -3,7 +3,7 @@ title: 'React & AWS Amplify with DataStore Setup for User Owned Data'
 date: '2021-30-04'
 coverImage: 'bizarre-platypus-2400.png'
 alt: 'Bizarre Platypus #2400'
-credit: 'Photo by Kaushal Moradiya from Pexels'
+caption: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'aws'
   - 'auth'

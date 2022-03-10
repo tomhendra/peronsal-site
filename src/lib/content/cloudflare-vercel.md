@@ -3,7 +3,7 @@ title: 'How to Set Up Cloudflare with Vercel'
 date: '2020-10-08'
 coverImage: 'bizarre-platypus-2400.png'
 alt: 'Bizarre Platypus #2400'
-credit: 'Photo by Kaushal Moradiya from Pexels'
+caption: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'vercel'
   - 'cloudflare'
@@ -131,6 +131,6 @@ Now all should be up and running with a proxy-enabled Cloudflare site. Vercel
 recommends to avoid using the proxy due to performance degradation, but in my
 case this has proven negligible.
 
-Again credit to Dom Talbot's blog post. He did all the hard work and I just
+Again caption to Dom Talbot's blog post. He did all the hard work and I just
 piggy backed his solution and have rewritten it here for my own future
 reference, and for anyone else who is in the same situation.
