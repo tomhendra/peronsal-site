@@ -65,8 +65,8 @@
       in CSS for JS devs in module 9 there will be a way to increase tap 
       target without affecting the design
       
-    min-height: var(--min-tap-size);
-    min-width: var(--min-tap-size); 
+      min-height: var(--min-tap-size);
+      min-width: var(--min-tap-size); 
     */
   }
 

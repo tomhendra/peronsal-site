@@ -31,7 +31,7 @@
     <Menu />
   </MobileMenuButton>
   <MobileMenu open={isMobileMenuOpen} close={toggleMobileMenu} />
-  <main class="main-container">
+  <main>
     <slot />
   </main>
   <Footer />
@@ -47,7 +47,7 @@
     width: var(--fullWidth);
   }
 
-  .main-container {
+  .wrapper main {
     /* common container styles */
     margin: 0 auto;
     max-width: var(--container-xl);

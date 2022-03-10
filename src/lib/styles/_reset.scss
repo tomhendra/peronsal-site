@@ -32,6 +32,14 @@ body,
 */
 body {
   line-height: 1.5;
+  /*
+    Since MacOS Mojave, released in 2018, Apple has disabled subpixel 
+    antialiasing by default. If you use a retina display, subpixel antialiasing 
+    appears to do more harm than good, creating muddier, less-legible text.
+
+    Confusingly, however, MacOS browsers like Chrome and Safari don't "inherit" 
+    the system default. We need to explicitly flip it to use antialiased
+  */
   -webkit-font-smoothing: antialiased;
 }
 /*

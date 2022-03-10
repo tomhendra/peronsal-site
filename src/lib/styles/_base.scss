@@ -1,13 +1,13 @@
 :root {
-  // --scrollbar-width is defined in __layout.svelte
+  /* --scrollbar-width is defined in __layout.svelte */
   --full-width: calc(100vw - var(--scrollbar-width));
 }
 
 body {
-  // explicit scrollbar to avoid scroll-based layout shifts
+  /* explicit scrollbar to avoid scroll-based layout shifts */
   overflow-y: scroll;
   background-color: var(--color-background);
-  font-family: var(--font-family-sans);
+  font-family: var(--font-sans);
   font-weight: var(--font-weight-normal);
   color: var(--color-text);
 }
@@ -29,18 +29,18 @@ h4,
 h5,
 h6,
 p {
-  /* 
-    prevent layout from breaking when there aren't any soft wrap opportunities
-  */
+  /* prevent layout from breaking when there aren't any soft wrap opportunities */
   overflow-wrap: break-word;
   hyphens: auto;
-  /* Prefix for Safari */
+  /* prefix for Safari */
   -webkit-hyphens: auto;
 }
 
-/* 
- handle heading tags in markdown 
- */
+em {
+  font-variation-settings: 'slnt' -10;
+}
+
+/* handle heading tags in markdown */
 :where(h2, h3, h4, h5, h6) {
   .icon-link {
     position: relative;
@@ -66,9 +66,9 @@ p {
     --min-tap-size: 44px;
   }
 }
-/*
- increase font size for captions on mobile
- TODO: move to components as required
+/* 
+  increase font size for captions on mobile
+  TODO: move to components as required
  */
 @media (max-width: 34.375rem) {
   figcaption {

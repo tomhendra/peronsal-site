@@ -23,7 +23,17 @@
         </div>
       </div>
     </a>
-    <p class="post-excerpt">{post.excerpt}</p>
+    <div>
+      <!-- post excerpt is wrapped in a div to avoid buggy behaviour 
+        (thin slices of truncated text below the ellipsis) caused by 
+        -webkit-line-clamp when applied to a direct child of a flex/grid container. 
+        
+        Direct children inside a flexbox/grid parent will be stretched according 
+        to the flex/grid layout algorithm. We need our clamped paragraphs to use 
+        Flow layout. So by wrapping our paragraph in a div, we ensure that the
+        correct layout mode is used. -->
+      <p class="post-excerpt">{post.excerpt}</p>
+    </div>
   </div>
   <ul class="post-category-list">
     {#each post.categories as category}
@@ -95,6 +105,7 @@
 
   .post-excerpt {
     color: var(--color-text);
+    /* line-clamp will replace this ceremony once it becomes spec */
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
