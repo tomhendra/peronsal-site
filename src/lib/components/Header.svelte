@@ -3,16 +3,16 @@
 </script>
 
 <header class="header">
-  <div class="header-container">
-    <div class="logo-wrapper">
+  <div class="container">
+    <div class="logo-container">
       <a href="/">
-        <img src="/logo.svg" alt="Logo - Home" class="logo" />
+        <img src="/logo.svg" alt="Logo - Home" />
       </a>
-      <a href="/" class="nav-link">Tom Hendra</a>
+      <a href="/">Tom Hendra</a>
     </div>
-    <nav class="desktop-nav">
-      <a class="nav-link" href="/blog">Blog</a>
-      <a class="nav-link" href="/about">About</a>
+    <nav>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
     </nav>
     <ThemeToggle />
   </div>
@@ -23,7 +23,7 @@
     border-bottom: 1px solid var(--color-muted-separator);
   }
 
-  .header-container {
+  .container {
     /* common container styles */
     margin: 0 auto;
     max-width: var(--container-xl);
@@ -38,18 +38,18 @@
     }
   }
 
-  .logo-wrapper {
+  .logo-container {
     display: flex;
     align-items: center;
     gap: var(--space-2);
     margin-right: auto;
   }
 
-  .logo {
+  .logo-container img {
     width: var(--space-8);
   }
 
-  .desktop-nav {
+  .header nav {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-8);
@@ -59,7 +59,7 @@
     }
   }
 
-  .nav-link {
+  .header a {
     text-decoration: none;
     color: inherit;
   }
