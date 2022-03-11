@@ -39,10 +39,10 @@
   }
 
   .logo-wrapper {
-    margin-right: auto;
     display: flex;
     align-items: center;
     gap: var(--space-2);
+    margin-right: auto;
   }
 
   .logo {
