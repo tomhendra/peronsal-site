@@ -5,45 +5,31 @@
 
   export let filename = '';
   export let alt = '';
-  export let caption = '';
+  export let ratio = '';
+  export let height = '';
 
   const src = `${CLOUDINARY_PROJECT_DIR}/${filename}`;
 
   initialize({cloud_name: CLOUDINARY_PLUBLIC_ID});
 </script>
 
-<figure>
-  <img use:image={{src, bind: true, lazy: true}} class="img" {alt} />
-  <figcaption>{caption}</figcaption>
-</figure>
+<img
+  use:image={{src, bind: true, lazy: true}}
+  class="img"
+  {alt}
+  style="--ratio: {ratio}; --height: {height}"
+/>
 
 <style lang="scss">
-  figure {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-  }
-
   img {
-    height: 240px;
-    width: 100%;
     display: block;
+    width: 100%;
+    height: var(--height);
     object-fit: cover;
-  }
 
-  figcaption {
-    font-size: var(--font-size-text-sm);
-    color: var(--color-text);
-    text-decoration: none;
-  }
-
-  @media (max-width: breakpoints.$sm) {
-    img {
-      height: 200px;
-    }
-
-    figcaption {
-      font-size: var(--font-size-text-md);
+    @supports (aspect-ratio: 1 / 1) {
+      height: revert;
+      aspect-ratio: var(--ratio);
     }
   }
 </style>

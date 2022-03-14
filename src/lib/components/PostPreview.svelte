@@ -7,7 +7,7 @@
 
 <article class="post-preview-wrapper">
   <a class="img-link" href="/blog/{post.slug}">
-    <Image filename={post.coverImage} alt={post.alt} />
+    <Image filename={post.coverImage} alt={post.alt} ratio="3 / 2" />
   </a>
   <div class="post-preview-content">
     <span class="post-date">

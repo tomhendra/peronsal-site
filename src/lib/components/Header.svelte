@@ -4,12 +4,10 @@
 
 <header class="header">
   <div class="container">
-    <div class="logo-container">
-      <a href="/">
-        <img src="/logo.svg" alt="Logo - Home" />
-      </a>
-      <a href="/">Tom Hendra</a>
-    </div>
+    <a class="logo-container" href="/">
+      <img src="/logo.svg" alt="Logo - Home" />
+      <span>Tom Hendra</span>
+    </a>
     <nav>
       <a href="/blog">Blog</a>
       <a href="/about">About</a>

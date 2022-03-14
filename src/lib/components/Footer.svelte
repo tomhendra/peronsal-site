@@ -15,12 +15,10 @@
         <span class="visually-hidden">Link to Tom Hendra's GitHub Account</span>
       </a>
     </div>
-    <div class="logo-container">
-      <a href="/">
-        <img src="/logo.svg" alt="Logo - Home" />
-      </a>
-      <a href="/" class="nav-link">Tom Hendra</a>
-    </div>
+    <a class="logo-container" href="/">
+      <img src="/logo.svg" alt="Logo - Home" />
+      <span>Tom Hendra</span>
+    </a>
     <span>&copy; {new Date().getFullYear()} Tom Hendra</span>
   </div>
 </footer>
