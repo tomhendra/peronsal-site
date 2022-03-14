@@ -1,21 +1,18 @@
 <script lang="ts">
   //https://github.com/cupcakearmy/svelte-cloudinary
-  import {image, initialize} from 'svelte-cloudinary';
-  import {CLOUDINARY_PLUBLIC_ID, CLOUDINARY_PROJECT_DIR} from '$lib/constants';
+  import {image} from 'svelte-cloudinary';
+  import {CLOUDINARY_PROJECT_DIR} from '$lib/constants';
 
-  export let filename = '';
+  export let source = '';
   export let alt = '';
   export let ratio = '';
   export let height = '';
 
-  const src = `${CLOUDINARY_PROJECT_DIR}/${filename}`;
-
-  initialize({cloud_name: CLOUDINARY_PLUBLIC_ID});
+  const src = `${CLOUDINARY_PROJECT_DIR}/${source}`;
 </script>
 
 <img
   use:image={{src, bind: true, lazy: true}}
-  class="img"
   {alt}
   style="--ratio: {ratio}; --height: {height}"
 />
