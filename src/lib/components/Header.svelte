@@ -19,6 +19,10 @@
 <style lang="scss">
   .header {
     border-bottom: 1px solid var(--color-muted-separator);
+    position: sticky;
+    top: -16px;
+    padding-top: 16px;
+    background-color: var(--color-background);
   }
 
   .container {
