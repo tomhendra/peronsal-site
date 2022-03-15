@@ -23,6 +23,21 @@
     top: -16px;
     padding-top: 16px;
     background-color: var(--color-background);
+
+    & a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    & nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-8);
+
+      @media (max-width: breakpoints.$sm) {
+        display: none;
+      }
+    }
   }
 
   .container {
@@ -45,24 +60,9 @@
     align-items: center;
     gap: var(--space-2);
     margin-right: auto;
-  }
 
-  .logo-container img {
-    width: var(--space-8);
-  }
-
-  .header nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-8);
-
-    @media (max-width: breakpoints.$sm) {
-      display: none;
+    & img {
+      width: var(--space-8);
     }
-  }
-
-  .header a {
-    text-decoration: none;
-    color: inherit;
   }
 </style>

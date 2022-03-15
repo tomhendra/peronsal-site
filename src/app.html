@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+<!-- lang attribute must be set for the CSS declaration `hyphens: auto` to work -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%svelte.assets%/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" />
+    <!-- script in `<head>` to avoid FOUC on page load / theme change -->
     <script>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
       if (
         ('theme' in localStorage &&
           JSON.parse(localStorage.theme) === 'dark') ||
@@ -26,6 +27,16 @@
             format('woff2 supports variations'),
           url('/fonts/inter-variable.woff2') format('woff2-variations');
         font-weight: 100 900;
+        font-display: fallback;
+      }
+
+      @font-face {
+        font-family: 'Source Code Pro';
+        src: url('/fonts/source-code-pro-variable.woff2')
+            format('woff2 supports variations'),
+          url('/fonts/source-code-pro-variable.woff2')
+            format('woff2-variations');
+        font-weight: 200 900;
         font-display: fallback;
       }
     </style>

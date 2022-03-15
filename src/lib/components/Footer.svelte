@@ -35,14 +35,14 @@
   .footer {
     background-color: var(--gray-800);
     color: var(--gray-400);
+
+    & a {
+      text-decoration: none;
+      color: inherit;
+    }
   }
 
-  .footer a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .footer .container {
+  .container {
     /* common container styles */
     margin: 0 auto;
     max-width: var(--container-xl);
@@ -73,13 +73,13 @@
     color: var(--gray-400);
     font-weight: var(--font-weight-semibold);
 
+    & img {
+      width: var(--space-8);
+    }
+
     @media (max-width: breakpoints.$sm) {
       order: -1;
       margin-bottom: var(--space-6);
     }
-  }
-
-  .logo-container img {
-    width: var(--space-8);
   }
 </style>
