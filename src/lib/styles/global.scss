@@ -48,6 +48,13 @@ h6 {
   font-weight: var(--font-weight-semibold);
 }
 
+pre,
+code {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-text-sm);
+  font-weight: var(--font-weight-medium);
+}
+
 /* rehype-autolink-headings prepend # symbol */
 :where(h2, h3, h4, h5, h6) {
   .icon-link {
@@ -74,11 +81,4 @@ h6 {
   :root {
     --min-tap-size: 44px;
   }
-}
-
-pre,
-code {
-  font-family: var(--font-mono);
-  font-size: var(--font-size-text-sm);
-  font-weight: var(--font-weight-medium);
 }

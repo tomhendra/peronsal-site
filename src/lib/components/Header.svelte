@@ -2,7 +2,7 @@
   import {ThemeToggle} from '$lib/components/';
 </script>
 
-<header class="header">
+<header>
   <div class="container">
     <a class="logo-container" href="/">
       <img src="/logo.svg" alt="Logo - Home" />
@@ -17,7 +17,7 @@
 </header>
 
 <style lang="scss">
-  .header {
+  header {
     border-bottom: 1px solid var(--color-muted-separator);
     position: sticky;
     top: -16px;
