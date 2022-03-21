@@ -11,6 +11,7 @@
 html {
   /* --scrollbar-width is calculated in __layout.svelte */
   --full-width: calc(100vw - var(--scrollbar-width));
+  --vw: calc(var(--full-width) / 100);
 }
 
 body {

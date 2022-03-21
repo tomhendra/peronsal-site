@@ -31,15 +31,21 @@
   .primary {
     background-color: hotpink;
     color: white;
-    &:hover {
-      background-color: deeppink;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: deeppink;
+      }
     }
   }
   .secondary {
     background-color: rebeccapurple;
     color: white;
-    &:hover {
-      background-color: purple;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: purple;
+      }
     }
   }
   /* sizes */

@@ -26,40 +26,48 @@
   <meta property="og:url" content="https://tomhendra.dev/blog/{meta.slug}/" />
 </svelte:head>
 
-<article class="post compressed-content">
-  <img
-    class="cover-image"
-    src={imagePath}
-    alt=""
-    style="aspect-ratio: {meta.coverWidth} / {meta.coverHeight}"
-    width={meta.coverWidth}
-    height={meta.coverHeight}
-  />
+<main>
+  <article class="post compressed-content">
+    <img
+      class="cover-image"
+      src={imagePath}
+      alt=""
+      style="aspect-ratio: {meta.coverWidth} / {meta.coverHeight}"
+      width={meta.coverWidth}
+      height={meta.coverHeight}
+    />
 
-  <h1>{meta.title}</h1>
+    <h1>{meta.title}</h1>
 
-  <div class="meta">
-    <b>Published:</b>
-    {getReadableDate(meta.date)}
-    <br />
-    <b>Updated:</b>
-    {getReadableDate(meta.updated)}
-  </div>
+    <div class="meta">
+      <b>Published:</b>
+      {getReadableDate(meta.date)}
+      <br />
+      <b>Updated:</b>
+      {getReadableDate(meta.updated)}
+    </div>
 
-  <svelte:component this={PostContent} />
-
-  <aside class="post-footer">
+    <svelte:component this={PostContent} />
+  </article>
+  <aside>
     <!-- <Bio currentPage={meta.slug} /> -->
 
     <!-- {#if meta.categories}
-      <h2>Posted in:</h2>
-      <TagList>
-        {#each meta.categories as category}
-          <Tag to="/blog/category/{category}/">
-            {category}
-          </Tag>
-        {/each}
-      </TagList>
-    {/if} -->
+    <h2>Posted in:</h2>
+    <TagList>
+      {#each meta.categories as category}
+        <Tag to="/blog/category/{category}/">
+          {category}
+        </Tag>
+      {/each}
+    </TagList>
+  {/if} -->
   </aside>
-</article>
+</main>
+
+<style>
+  main {
+    max-width: 60ch;
+    margin: 0 auto;
+  }
+</style>

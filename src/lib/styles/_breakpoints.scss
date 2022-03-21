@@ -1,12 +1,12 @@
 /* 
 Sass variables used for breakpoints since CSS var() doesn't work in @media rules. 
-CSS environment variables would fix this - keep an eye on the proposal: 
-https://drafts.csswg.org/css-env-1/ 
+CSS environment variables would fix this - https://drafts.csswg.org/css-env-1/
+but it's not ready yet :( 
 */
 
-$lg: calc(1500 / 16) + 1rem;
-$md: calc(1100 / 16) + 1rem;
-$sm: calc(550 / 16) + 1rem;
+$lg: calc(1500 / 16) * 1rem;
+$md: calc(1100 / 16) * 1rem;
+$sm: calc(550 / 16) * 1rem;
 
 /* example usage:
  

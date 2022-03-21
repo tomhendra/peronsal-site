@@ -10,9 +10,10 @@
   import {MobileMenu, MobileMenuButton, ThemeToggle} from '$lib/components';
   import {Menu, Twitter, GitHub} from '$lib/components/icons';
   /* 
-    vw refers to the viewport width excluding the scrollbar, so we can define
-    --scrollbarWidth for use in our CSS... 
-    --fullWidth: calc(100vw - var(--scrollbarWidth))
+    vw refers to the viewport width excluding the scrollbar. to use vw units
+    without potential layout shift, we calculate the actual viewport width in 
+    our global SCSS file: --fullWidth: calc(100vw - var(--scrollbarWidth))
+    scrollbar width is calculated at the earliest oppurtunity, which is here.
   */
   onMount(() => {
     const scrollbarWidth = getScrollbarWidth();
@@ -23,10 +24,7 @@
   });
 
   let isMobileMenuOpen = false;
-
-  function toggleMobileMenu() {
-    isMobileMenuOpen = !isMobileMenuOpen;
-  }
+  const toggleMobileMenu = () => (isMobileMenuOpen = !isMobileMenuOpen);
 </script>
 
 <div id="wrapper" class="wrapper">
@@ -37,7 +35,7 @@
         <span>Tom Hendra</span>
       </a>
       <nav>
-        <a href="/blog">Blog</a>
+        <a href="/">Home</a>
         <a href="/about">About</a>
       </nav>
       <ThemeToggle />
@@ -48,9 +46,9 @@
     <span class="visually-hidden">Open the mobile menu</span>
   </MobileMenuButton>
   <MobileMenu open={isMobileMenuOpen} close={toggleMobileMenu} />
-  <main>
+  <div class="container">
     <slot />
-  </main>
+  </div>
   <footer>
     <div class="container">
       <div class="social-container">
@@ -84,14 +82,13 @@
     grid-template-rows: 80px 1fr 128px;
 
     @media (max-width: breakpoints.$sm) {
-      grid-template-rows: 80px 1fr 375px;
+      grid-template-rows: 80px 1fr 248px;
     }
   }
 
-  main {
-    max-width: var(--container-xl);
-    width: 100%;
+  .wrapper > .container {
     justify-self: center;
+    width: clamp(360px, 100%, var(--container-xl));
     padding: 0 var(--space-8);
 
     @media (max-width: breakpoints.$sm) {

@@ -1,19 +1,52 @@
-<script>
+<script context="module" lang="ts">
   // import {prefetch} from '$app/navigation';
-  // prefetch('/blog'); // Loads the blog page in the background
   // prefetch('/about'); // Loads the about page in the background
-  // prefetchRoutes(); // Loads ALL routes in the background
+  export async function load({fetch}) {
+    const res = await fetch(`/api/posts.json`);
+    const {posts} = await res.json();
+
+    const count = await fetch(`/api/posts/count.json`);
+    const {total} = await count.json();
+
+    return {
+      props: {
+        posts,
+        totalPosts: total,
+      },
+    };
+  }
+</script>
+
+<script lang="ts">
+  import type {Post} from '$lib/types';
+
+  import {PostGrid, Pagination} from '$lib/components';
+
+  export let posts: Post[] = [];
+  export let totalPosts: number;
 </script>
 
 <svelte:head>
-  <title>Blog • Tom Hendra</title>
+  <title>Tom Hendra • Blog</title>
+  <meta
+    data-key="description"
+    name="description"
+    content="Blog posts about discoveries in web development."
+  />
+  <meta
+    property="og:image"
+    content="https://tomhendra.dev/images/site-image.png"
+  />
+  <meta
+    name="twitter:image"
+    content="https://tomhendra.dev/images/site-image.png"
+  />
 </svelte:head>
 
-<h1>Hi, I'm Tom!</h1>
-<p>
-  Welcome to my blog, a space to share <em>disoveries</em> and insights into web
-  development with the world.
-</p>
+<main>
+  <PostGrid {posts} />
+</main>
+<Pagination currentPage={1} {totalPosts} />
 
 <!-- SvelteKit offers a slightly less greedy version of preloading, as one of 
   its anchor options - https://kit.svelte.dev/docs#anchor-options.
