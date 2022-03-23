@@ -19,7 +19,7 @@
 
 <style lang="scss">
   img {
-    display: block;
+    display: block; /* remove inline replaced element whitespace */
     width: 100%;
     height: var(--height);
     object-fit: cover;

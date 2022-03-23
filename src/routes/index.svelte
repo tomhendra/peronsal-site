@@ -21,6 +21,7 @@
   import type {Post} from '$lib/types';
 
   import {PostGrid, Pagination} from '$lib/components';
+  import Spacer from '$lib/components/Spacer.svelte';
 
   export let posts: Post[] = [];
   export let totalPosts: number;
@@ -44,6 +45,7 @@
 </svelte:head>
 
 <main>
+  <Spacer size={64} />
   <PostGrid {posts} />
 </main>
 <Pagination currentPage={1} {totalPosts} />

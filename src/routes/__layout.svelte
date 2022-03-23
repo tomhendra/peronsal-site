@@ -76,7 +76,6 @@
 
 <style lang="scss">
   .wrapper {
-    width: var(--fullWidth);
     min-height: 100%;
     display: grid;
     grid-template-rows: 80px 1fr 128px;
@@ -120,7 +119,7 @@
     }
   }
 
-  header .container {
+  header > .container {
     /* common container styles */
     margin: 0 auto;
     max-width: var(--container-xl);
@@ -157,7 +156,7 @@
     }
   }
 
-  footer .container {
+  footer > .container {
     /* common container styles */
     margin: 0 auto;
     max-width: var(--container-xl);
