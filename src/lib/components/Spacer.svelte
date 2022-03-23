@@ -1,31 +1,18 @@
 <script lang="ts">
-  export let axis: 'x' | 'y' = 'y';
-  export let size:
-    | 1
-    | 2
-    | 3
-    | 4
-    | 5
-    | 6
-    | 8
-    | 10
-    | 12
-    | 16
-    | 20
-    | 24
-    | 32
-    | 40
-    | 48
-    | 56
-    | 64 = 1;
+  export let axis: 'horizontal' | 'vertical' | null = null;
+  export let size: number | null = null;
+
+  let height = axis === 'horizontal' ? 1 : size;
+  let width = axis === 'vertical' ? 1 : size;
+  /* 
+    adapted for svelte from https://www.joshwcomeau.com/react/modern-spacer-gif/
+
+    this component uses pixel values, because it's often necessary to pick 
+    out-of-scale values for optical alignment
+   */
 </script>
 
-<span
-  style="
-    --height: {axis === 'x' ? 1 : `var(--space-${size})`};
-    --width: {axis === 'y' ? 1 : `var(--space-${size})`}; 
-  "
-/>
+<span style="--height: {height}; --width: {width};" />
 
 <style>
   span {

@@ -45,7 +45,6 @@
 </svelte:head>
 
 <main>
-  <Spacer size={64} />
   <PostGrid {posts} />
 </main>
 <Pagination currentPage={1} {totalPosts} />

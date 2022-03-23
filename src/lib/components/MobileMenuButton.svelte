@@ -6,7 +6,7 @@
   .mobile-menu-button {
     display: none;
 
-    @media (max-width: breakpoints.$sm) {
+    @include mobileAndDown {
       display: revert;
       position: fixed;
       bottom: var(--space-4);

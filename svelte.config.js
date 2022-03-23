@@ -13,9 +13,9 @@ const config = {
     preprocess({
       /* Other sveltePreprocess options here, like SCSS */
       scss: {
-        // Ensures Sass variables are always available inside component <style>
-        // blocks e.g. breakpoints.$variableDefinedInFile
-        prependData: `@use 'src/lib/styles/breakpoints';`,
+        // Ensures Sass mixins are always available inside component <style>
+        // blocks e.g. @include laptopAndUp { /* laptop styles */ }
+        prependData: `@import 'src/lib/styles/breakpoints';`,
       },
       postcss: {
         plugins: [autoprefixer],

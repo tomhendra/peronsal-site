@@ -1,42 +1,43 @@
 /* 
-Sass variables used for breakpoints since CSS var() doesn't work in @media rules. 
-CSS environment variables would fix this - https://drafts.csswg.org/css-env-1/
-but it's not ready yet :( 
+  Sass mixins used for breakpoints since CSS var() doesn't work in @media rules. 
+  CSS environment variables would correct this...
+  https://drafts.csswg.org/css-env-1/ but it's not ready yet
 */
 
-$lg: calc(1500 / 16) * 1rem;
-$md: calc(1100 / 16) * 1rem;
-$sm: calc(550 / 16) * 1rem;
+$mobile: calc(550 / 16) * 1rem;
+$tablet: calc(1100 / 16) * 1rem;
+$laptop: calc(1500 / 16) * 1rem;
 
-/* example usage:
- 
---- desktop first ---
-Default: Desktop monitors, 1501px and up
+// mobile first -- default: phones from 0px to 549px
+@mixin tabletAndUp {
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+@mixin laptopAndUp {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+@mixin desktopAndUp {
+  @media (min-width: $laptop) {
+    @content;
+  }
+}
 
-@media (max-width: breakpoints.$lg) {
-  laptop-styles: 1500px and under
-} 
-
-@media (max-width: breakpoints.$md) {
-  tablet-styles: 1100px and under
-} 
-
-@media (max-width: breakpoints.$sm) {
-  mobile-styles: 550px and under
-} 
-
---- mobile first ---
-Default: Phones from 0px to 549px
-
-@media (min-width: breakpoints.$sm) {
-  tablet-styles: 550px and over
-} 
-
-@media (min-width: breakpoints.$md) {
-  laptop-styles: 1100px and over
-} 
-
-@media (min-width: breakpoints.$lg) {
-  desktop-styles: 1500px and over
-} 
-*/
+// desktop first -- default: desktop monitors, 1501px and upwards
+@mixin laptopAndDown {
+  @media (max-width: $laptop) {
+    @content;
+  }
+}
+@mixin tabletAndDown {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+@mixin mobileAndDown {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}

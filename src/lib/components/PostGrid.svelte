@@ -23,7 +23,7 @@
     grid: auto-flow / 1fr 1fr;
     margin-bottom: var(--space-16);
 
-    @media (max-width: breakpoints.$sm) {
+    @include mobileAndDown {
       grid-template-columns: 1fr;
     }
   }

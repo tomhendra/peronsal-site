@@ -80,7 +80,7 @@
     display: grid;
     grid-template-rows: 80px 1fr 128px;
 
-    @media (max-width: breakpoints.$sm) {
+    @include mobileAndDown {
       grid-template-rows: 80px 1fr 248px;
     }
   }
@@ -90,7 +90,7 @@
     width: clamp(360px, 100%, var(--container-xl));
     padding: 0 var(--space-8);
 
-    @media (max-width: breakpoints.$sm) {
+    @include mobileAndDown {
       padding: 0 var(--space-4);
     }
   }
@@ -113,7 +113,7 @@
       flex-wrap: wrap;
       gap: var(--space-8);
 
-      @media (max-width: breakpoints.$sm) {
+      @include mobileAndDown {
         display: none;
       }
     }
@@ -129,7 +129,7 @@
     gap: var(--space-8);
     padding: var(--space-6) var(--space-8);
 
-    @media (max-width: breakpoints.$sm) {
+    @include mobileAndDown {
       padding: var(--space-4);
     }
   }
@@ -167,7 +167,7 @@
     flex-wrap: wrap;
     padding: var(--space-12) var(--space-8);
 
-    @media (max-width: breakpoints.$sm) {
+    @include mobileAndDown {
       flex-direction: column;
       padding: var(--space-12) var(--space-4);
       gap: var(--space-6);
@@ -191,7 +191,7 @@
       width: var(--space-8);
     }
 
-    @media (max-width: breakpoints.$sm) {
+    @include mobileAndDown {
       order: -1;
       margin-bottom: var(--space-6);
     }

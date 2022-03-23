@@ -92,7 +92,7 @@
     font-size: var(--font-size-display-xs);
     font-weight: var(--font-weight-semibold);
 
-    @media (max-width: breakpoints.$sm) {
+    @include mobileAndDown {
       font-size: var(--font-size-text-xl);
     }
   }
