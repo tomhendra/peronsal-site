@@ -1,6 +1,7 @@
 /* 
  abstract any repeated styles here as utility classes to keep CSS code DRY
 */
+@import './_breakpoints.scss';
 
 .visually-hidden {
   position: absolute;
@@ -13,10 +14,23 @@
   border: 0;
 }
 
-.max-width-wrapper {
-  max-width: 50ch;
+.max-width-container {
+  /* 
+    TODO: revise flow layout to recall why position: relative breaks layout
+    position: relative is included in the course demo for CSS for JS devs
+    this breaks other positioned elements in the document - Header is sticky
+    and the MobileMenuButton is fixed. 
+    manage the stacking context properly and uncomment to below declaration 
+  */
+  // position: relative;
+  max-width: min(100%, calc(var(--container-xl)) + var(--space-8) * 2);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--space-4);
-  padding-right: var(--space-4);
+  padding-left: var(--space-8);
+  padding-right: var(--space-8);
+
+  @include mobileAndDown {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
 }

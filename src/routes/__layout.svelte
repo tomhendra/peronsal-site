@@ -7,8 +7,7 @@
   import '$lib/styles/global.scss';
   import {onMount} from 'svelte';
   import {getScrollbarWidth} from '$lib/utils';
-  import {MobileMenu, MobileMenuButton, ThemeToggle} from '$lib/components';
-  import {Menu, Twitter, GitHub} from '$lib/components/icons';
+  import {MobileMenu, MobileMenuButton, Header, Footer} from '$lib/components';
   /* 
     vw refers to the viewport width excluding the scrollbar. to use vw units
     without potential layout shift, we calculate the actual viewport width in 
@@ -28,50 +27,13 @@
 </script>
 
 <div id="wrapper" class="wrapper">
-  <header>
-    <div class="container">
-      <a class="logo-container" href="/">
-        <img src="/logo.svg" alt="Logo - Home" />
-        <span>Tom Hendra</span>
-      </a>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-      </nav>
-      <ThemeToggle />
-    </div>
-  </header>
-  <MobileMenuButton on:click={toggleMobileMenu}>
-    <Menu />
-    <span class="visually-hidden">Open the mobile menu</span>
-  </MobileMenuButton>
+  <Header />
+  <MobileMenuButton on:click={toggleMobileMenu} />
   <MobileMenu open={isMobileMenuOpen} close={toggleMobileMenu} />
-  <div class="container">
+  <div class="max-width-container">
     <slot />
   </div>
-  <footer>
-    <div class="container">
-      <div class="social-container">
-        <a href="https://twitter.com/tomhendra" target="_blank">
-          <Twitter />
-          <span class="visually-hidden"
-            >Link to Tom Hendra's Twitter Account</span
-          >
-        </a>
-        <a href="https://github.com/tomhendra" target="_blank">
-          <GitHub />
-          <span class="visually-hidden"
-            >Link to Tom Hendra's GitHub Account</span
-          >
-        </a>
-      </div>
-      <a class="logo-container" href="/">
-        <img src="/logo.svg" alt="Logo - Home" />
-        <span>Tom Hendra</span>
-      </a>
-      <span>&copy; {new Date().getFullYear()} Tom Hendra</span>
-    </div>
-  </footer>
+  <Footer />
 </div>
 
 <style lang="scss">
@@ -82,118 +44,6 @@
 
     @include mobileAndDown {
       grid-template-rows: 80px 1fr 248px;
-    }
-  }
-
-  .wrapper > .container {
-    justify-self: center;
-    width: clamp(360px, 100%, var(--container-xl));
-    padding: 0 var(--space-8);
-
-    @include mobileAndDown {
-      padding: 0 var(--space-4);
-    }
-  }
-
-  /* header styles */
-  header {
-    position: sticky;
-    top: -16px;
-    padding-top: 16px;
-    background-color: var(--color-background);
-    border-bottom: 1px solid var(--color-muted-separator);
-
-    & a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    & nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-8);
-
-      @include mobileAndDown {
-        display: none;
-      }
-    }
-  }
-
-  header > .container {
-    /* common container styles */
-    margin: 0 auto;
-    max-width: var(--container-xl);
-    /* unique container styles */
-    display: flex;
-    align-items: center;
-    gap: var(--space-8);
-    padding: var(--space-6) var(--space-8);
-
-    @include mobileAndDown {
-      padding: var(--space-4);
-    }
-  }
-
-  header .logo-container {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    margin-right: auto;
-
-    & img {
-      width: var(--space-8);
-    }
-  }
-
-  /* footer styles */
-  footer {
-    background-color: var(--gray-800);
-    color: var(--gray-400);
-
-    & a {
-      text-decoration: none;
-      color: inherit;
-    }
-  }
-
-  footer > .container {
-    /* common container styles */
-    margin: 0 auto;
-    max-width: var(--container-xl);
-    /* unique container styles */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: var(--space-12) var(--space-8);
-
-    @include mobileAndDown {
-      flex-direction: column;
-      padding: var(--space-12) var(--space-4);
-      gap: var(--space-6);
-    }
-  }
-
-  footer .social-container {
-    display: flex;
-    align-items: center;
-    gap: var(--space-6);
-  }
-
-  footer .logo-container {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    color: var(--gray-400);
-    font-weight: var(--font-weight-semibold);
-
-    & img {
-      width: var(--space-8);
-    }
-
-    @include mobileAndDown {
-      order: -1;
-      margin-bottom: var(--space-6);
     }
   }
 </style>

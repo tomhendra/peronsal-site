@@ -1,5 +1,10 @@
+<script>
+  import {Menu} from '$lib/components/icons';
+</script>
+
 <button class="mobile-menu-button" on:click>
-  <slot />
+  <Menu />
+  <span class="visually-hidden">Open the mobile menu</span>
 </button>
 
 <style lang="scss">
