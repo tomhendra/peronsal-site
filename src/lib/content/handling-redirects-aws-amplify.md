@@ -1,13 +1,15 @@
 ---
 title: 'Redirects with AWS Amplify'
+subtitle: 'lorum ipsum'
 date: '2021-05-21'
+updated: ''
 coverImage: 'bizarre-platypus-2400.png'
 alt: 'Bizarre Platypus #2400'
 caption: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'react'
   - 'aws'
-excerpt: "The common use of client-side routers to handle redirects is not a good idea,
+description: "The common use of client-side routers to handle redirects is not a good idea,
 because browsers and search engines don't receive the status code of 301 / 302
 for a redirect that would usually be sent by a server."
 ---

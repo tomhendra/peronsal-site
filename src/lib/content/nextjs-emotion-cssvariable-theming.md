@@ -1,13 +1,16 @@
 ---
 title: 'Exploring Next.js, Emotion & CSS Variable Theming'
+subtitle: 'lorum ipsum'
 date: '2021-20-03'
-coverImage: 'bizarre-platypus-2400.png'alt: 'Bizarre Platypus #2400'
+updated: ''
+coverImage: 'bizarre-platypus-2400.png'
+alt: 'Bizarre Platypus #2400'
 caption: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'nextjs'
   - 'emotion'
   - 'css'
-excerpt:
+description:
   "While exploring styling solutions for my personal site v3, I found that liked
 the structured theming of Theme UI and the well-considered design system of
 Tailwind, but didn't want to use a tool that abstracted away from vanilla CSS

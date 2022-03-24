@@ -1,13 +1,15 @@
 ---
 title: 'Superpowers for the Self-Guided Learner'
+subtitle: 'lorum ipsum'
 date: '2020-04-14'
-updated: '2020-04-14'
-coverImage: 'bizarre-platypus-2400.png'alt: 'Bizarre Platypus #2400'
+updated: ''
+coverImage: 'bizarre-platypus-2400.png'
+alt: 'Bizarre Platypus #2400'
 caption: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'learning'
   - 'self-improvement'
-excerpt: "In 2018 I left my old life behind in the UK, sold everything I owned, and moved
+description: "In 2018 I left my old life behind in the UK, sold everything I owned, and moved
 to Spain with the aim of changing career from procurement professional to
 software developer, by way of full-time self-guided learning."
 ---

@@ -19,9 +19,7 @@
 
 <script lang="ts">
   import type {Post} from '$lib/types';
-
   import {PostGrid, Pagination} from '$lib/components';
-  import Spacer from '$lib/components/Spacer.svelte';
 
   export let posts: Post[] = [];
   export let totalPosts: number;
@@ -44,9 +42,11 @@
   />
 </svelte:head>
 
-<main>
-  <PostGrid {posts} />
-</main>
+<div class="max-width-container">
+  <main>
+    <PostGrid {posts} />
+  </main>
+</div>
 <Pagination currentPage={1} {totalPosts} />
 
 <!-- SvelteKit offers a slightly less greedy version of preloading, as one of 

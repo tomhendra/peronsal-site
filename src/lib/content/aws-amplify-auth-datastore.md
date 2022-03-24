@@ -1,13 +1,17 @@
 ---
 title: 'React & AWS Amplify with DataStore Setup for User Owned Data'
+subtitle: 'lorum ipsum'
 date: '2021-30-04'
+updated: ''
 coverImage: 'bizarre-platypus-2400.png'
+coverImageHeight: 
+coverImageWidth: 
 alt: 'Bizarre Platypus #2400'
 caption: 'Photo by Kaushal Moradiya from Pexels'
 categories:
   - 'aws'
   - 'auth'
-excerpt:
+description:
   'Get up and running quickly with Create React App and the Amplify CLI to create a
 full stack app powered by Amplify DataStore for easy offline functionality, plus
 authentication and authorization for user-specific data.'
@@ -154,7 +158,7 @@ select `y` to edit the schema, and pick your code editor of choice.
 
 ```shell
 ? Do you have an annotated GraphQL schema? (y/N) n
-❯ Single object with fields (e.g., “Todo” with ID, name, excerpt)
+❯ Single object with fields (e.g., “Todo” with ID, name, description)
 ? Do you want to edit the schema now? (y/N) y
 ? Choose your default editor: (Use arrow keys)
 ❯ Visual Studio Code
@@ -170,7 +174,7 @@ the part I find most tutorials online do not mention.
 type Task @model @auth(rules: [{allow: owner}]) {
   id: ID!
   title: String!
-  excerpt: String!
+  description: String!
   createdAt: AWSDateTime
 }
 ```

@@ -6,14 +6,14 @@
 </script>
 
 <article class="post-preview-wrapper">
-  <a class="img-link" href="/blog/{post.slug}">
+  <a class="img-link" href="/posts/{post.slug}">
     <Image source={post.coverImage} alt={post.alt} ratio="3 / 2" />
   </a>
   <div class="post-preview-content">
     <span class="post-date">
       {post.date}
     </span>
-    <a class="post-link" href="/blog/{post.slug}">
+    <a class="post-link" href="/posts/{post.slug}">
       <div class="post-title-container">
         <h2 class="post-title">
           {post.title}
@@ -25,7 +25,7 @@
       </div>
     </a>
     <div>
-      <!-- post excerpt is wrapped in a div to avoid buggy behaviour 
+      <!-- post description is wrapped in a div to avoid buggy behaviour 
         (thin slices of truncated text below the ellipsis) caused by 
         -webkit-line-clamp when applied to a direct child of a flex/grid container. 
         
@@ -33,7 +33,7 @@
         to the flex/grid layout algorithm. We need our clamped paragraphs to use 
         Flow layout. So by wrapping our paragraph in a div, we ensure that the
         correct layout mode is used. -->
-      <p class="post-excerpt">{post.excerpt}</p>
+      <p class="post-description">{post.description}</p>
     </div>
   </div>
   <ul class="post-category-list">
@@ -102,7 +102,7 @@
     padding-top: var(--space-1);
   }
 
-  .post-excerpt {
+  .post-description {
     color: var(--color-text);
     /* line-clamp will replace this ceremony once it becomes spec */
     display: -webkit-box;

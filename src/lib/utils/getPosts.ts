@@ -53,7 +53,7 @@ export async function getPosts({
     coverImage: post.coverImage,
     alt: post.alt,
     caption: post.caption,
-    excerpt: post.excerpt,
+    description: post.description,
   }));
 
   return finalPosts;

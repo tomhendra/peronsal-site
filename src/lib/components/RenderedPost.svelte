@@ -1,73 +1,76 @@
 <script lang="ts">
   import type {Post} from '$lib/types';
 
-  import {getReadableDate} from '$lib/utils';
+  import {getDate} from '$lib/utils';
   import type {SvelteComponent} from 'svelte';
 
   export let PostContent: SvelteComponent;
   export let meta: Post;
 
   let imagePath: string;
-  $: imagePath = `/images/post_images/${meta.coverImage}`;
+  $: imagePath = `/images/${meta.coverImage}`;
 </script>
 
 <svelte:head>
   <title>{meta.title} • Tom Hendra blog</title>
-  <meta data-key="description" name="description" content={meta.excerpt} />
+  <meta data-key="description" name="description" content={meta.description} />
+  <!-- https://css-tricks.com/essential-meta-tags-social-media/ -->
+  <!--  essential meta tags for fb & twitter -->
   <meta property="og:type" content="article" />
   <meta property="og:title" content={meta.title} />
-  <meta name="twitter:title" content={meta.title} />
-  <meta property="og:description" content={meta.excerpt} />
-  <meta name="twitter:description" content={meta.excerpt} />
+  <meta property="og:url" content="https://tomhendra.dev/posts/{meta.slug}/" />
   <meta property="og:image" content="https://tomhendra.dev{imagePath}" />
-  <meta property="og:image:width" content={String(meta.coverWidth)} />
-  <meta property="og:image:height" content={String(meta.coverHeight)} />
-  <meta name="twitter:image" content="https://tomhendra.dev{imagePath}" />
-  <meta property="og:url" content="https://tomhendra.dev/blog/{meta.slug}/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!--  non-essential, but recommended meta tags for fb & twitter -->
+  <meta property="og:description" content={meta.description} />
+  <meta property="og:site_name" content="Tom Hendra • Blog" />
+  <meta name="twitter:image:alt" content={meta.alt} />
+  <!-- structured properties -->
+  <meta property="og:image:width" content={String(meta.coverImageWidth)} />
+  <meta property="og:image:height" content={String(meta.coverImageHeight)} />
+  <!--  required for analytics -->
+  <meta name="twitter:site" content="@tomhendra" />
+  <!-- <meta property="fb:app_id" content="your_app_id" />  -->
 </svelte:head>
 
-<main>
-  <article class="post compressed-content">
-    <img
-      class="cover-image"
-      src={imagePath}
-      alt=""
-      style="aspect-ratio: {meta.coverWidth} / {meta.coverHeight}"
-      width={meta.coverWidth}
-      height={meta.coverHeight}
-    />
+<div class="max-width-wrapper">
+  <main>
+    <article>
+      <img
+        src={imagePath}
+        alt=""
+        style="aspect-ratio: {meta.coverImageWidth} / {meta.coverImageHeight}"
+        width={meta.coverImageWidth}
+        height={meta.coverImageHeight}
+      />
 
-    <h1>{meta.title}</h1>
+      <h1>{meta.title}</h1>
 
-    <div class="meta">
-      <b>Published:</b>
-      {getReadableDate(meta.date)}
-      <br />
-      <b>Updated:</b>
-      {getReadableDate(meta.updated)}
-    </div>
+      <div class="meta">
+        <b>Published:</b>
+        {getDate(meta.date)}
+        <br />
+        {#if meta.updated}
+          <b>Updated:</b>
+          {getDate(meta.updated)}
+        {/if}
+      </div>
 
-    <svelte:component this={PostContent} />
-  </article>
-  <aside>
-    <!-- <Bio currentPage={meta.slug} /> -->
+      <svelte:component this={PostContent} />
+    </article>
+    <aside>
+      <!-- <Bio currentPage={meta.slug} /> -->
 
-    <!-- {#if meta.categories}
+      <!-- {#if meta.categories}
     <h2>Posted in:</h2>
     <TagList>
       {#each meta.categories as category}
-        <Tag to="/blog/category/{category}/">
+        <Tag to="/posts/category/{category}/">
           {category}
         </Tag>
       {/each}
     </TagList>
   {/if} -->
-  </aside>
-</main>
-
-<style>
-  main {
-    max-width: 60ch;
-    margin: 0 auto;
-  }
-</style>
+    </aside>
+  </main>
+</div>

@@ -29,10 +29,10 @@ const render = (
 ${posts
   .map(
     post => `<item>
-<guid isPermaLink="true">https://tomhendra.dev/blog/${post.slug}</guid>
+<guid isPermaLink="true">https://tomhendra.dev/posts/${post.slug}</guid>
 <title>${post.title}</title>
-<link>https://tomhendra.dev/blog/${post.slug}</link>
-<description>${post.excerpt}</description>
+<link>https://tomhendra.dev/posts/${post.slug}</link>
+<description>${post.description}</description>
 <pubDate>${new Date(post.date).toUTCString()}</pubDate>
 </item>`,
   )

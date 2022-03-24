@@ -4,7 +4,7 @@
 
 <header>
   <div class="max-width-container">
-    <a class="logo-container" href="/">
+    <a class="logo-wrapper" href="/">
       <img src="/logo.svg" alt="Logo - Home" />
       <span>Tom Hendra</span>
     </a>
@@ -45,9 +45,10 @@
     display: flex;
     align-items: center;
     gap: var(--space-8);
+    padding-top: var(--space-4);
   }
 
-  .logo-container {
+  .logo-wrapper {
     display: flex;
     align-items: center;
     gap: var(--space-2);

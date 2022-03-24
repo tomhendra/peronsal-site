@@ -1,16 +1,16 @@
 export interface Post {
-  alt: string;
-  categories?: string | string[];
-  caption: string;
-  coverImage: string;
-  coverHeight?: number;
-  coverWidth?: number;
-  date: string;
-  excerpt: string;
-  slug: string;
-  subtitle: string;
   title: string;
+  subtitle: string;
+  date: string;
   updated?: string;
+  coverImage: string;
+  coverImageHeight?: number;
+  coverImageWidth?: number;
+  alt: string;
+  caption: string;
+  categories?: string | string[];
+  description: string;
+  slug: string;
 }
 
 export interface APIResponse {
@@ -35,11 +35,4 @@ export interface RSSResponse {
     'Cache-Control': string;
     'Content-Type': string;
   };
-}
-
-export interface contactFormSubmission {
-  from_page: string;
-  name: string;
-  email: string;
-  message: string;
 }
