@@ -6,7 +6,7 @@ updated: ''
 coverImage: 'bizarre-platypus-2400.png'
 alt: 'Bizarre Platypus #2400'
 caption: 'Photo by Kaushal Moradiya from Pexels'
-categories:
+tags:
   - 'react'
   - 'aws'
 description: "The common use of client-side routers to handle redirects is not a good idea,

@@ -3,10 +3,12 @@
   import {image} from 'svelte-cloudinary';
   import {CLOUDINARY_PROJECT_DIR} from '$lib/constants';
 
-  export let source = '';
-  export let alt = '';
-  export let ratio = '';
-  export let height = '';
+  export let source =
+    'https://plchldr.co/i/400x200?&bg=959393&fc=ffffff&text=<img />';
+  export let alt = null;
+  export let ratio = '2 / 1';
+  export let width = '100%';
+  export let height = 'auto';
 
   const src = `${CLOUDINARY_PROJECT_DIR}/${source}`;
 </script>
@@ -14,17 +16,17 @@
 <img
   use:image={{src, bind: true, lazy: true}}
   {alt}
-  style="--ratio: {ratio}; --height: {height}"
+  style="--ratio: {ratio}; --width: {width}; --height: {height}"
 />
 
 <style lang="scss">
   img {
-    display: block; /* remove inline replaced element whitespace */
-    width: 100%;
+    display: block;
+    width: var(--width);
     height: var(--height);
     object-fit: cover;
 
-    @supports (aspect-ratio: 1 / 1) {
+    @supports (aspect-ratio: 2 / 1) {
       height: revert;
       aspect-ratio: var(--ratio);
     }

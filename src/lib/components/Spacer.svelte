@@ -12,7 +12,7 @@
    */
 </script>
 
-<span style="--height: {height}; --width: {width};" />
+<span style="--height: {height}px; --width: {width}px;" />
 
 <style>
   span {

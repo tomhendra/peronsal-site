@@ -4,7 +4,7 @@ import {getSlugFromPath} from '.';
 export async function getPosts({
   offset = 0,
   limit = 4,
-  category = '',
+  tag = '',
 }: PostsEndpointOptions = {}): Promise<Post[]> {
   /*
     import.meta.glob is a Vite function which returns an object where each 
@@ -30,10 +30,8 @@ export async function getPosts({
     (a, b) => Number(new Date(b.date)) - Number(new Date(a.date)),
   );
 
-  if (category) {
-    sortedPosts = sortedPosts.filter(post =>
-      post.categories.includes(category),
-    );
+  if (tag) {
+    sortedPosts = sortedPosts.filter(post => post.tags.includes(tag));
   }
 
   if (offset) {
@@ -49,7 +47,7 @@ export async function getPosts({
     date: post.date,
     title: post.title,
     subtitle: post.subtitle,
-    categories: post.categories,
+    tags: post.tags,
     coverImage: post.coverImage,
     alt: post.alt,
     caption: post.caption,

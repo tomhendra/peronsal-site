@@ -1,14 +1,12 @@
 ---
 title: 'React & AWS Amplify with DataStore Setup for User Owned Data'
-subtitle: 'lorum ipsum'
-date: '2021-30-04'
-updated: ''
+subtitle: 'lorum ipsum lorum ipsum lorum ipsum lorum ipsum'
+date: '2021-04-30'
+updated: '2021-04-30'
 coverImage: 'bizarre-platypus-2400.png'
-coverImageHeight: 
-coverImageWidth: 
 alt: 'Bizarre Platypus #2400'
 caption: 'Photo by Kaushal Moradiya from Pexels'
-categories:
+tags:
   - 'aws'
   - 'auth'
 description:

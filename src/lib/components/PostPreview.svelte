@@ -1,7 +1,7 @@
 <script lang="ts">
   import ArrowUpRight from './icons/ArrowUpRight.svelte';
   import type {Post} from '$lib/types';
-  import {Image} from '$lib/components';
+  import {Image, TagList, Tag} from '$lib/components';
   export let post: Post;
 </script>
 
@@ -36,13 +36,13 @@
       <p class="post-description">{post.description}</p>
     </div>
   </div>
-  <ul class="post-category-list">
-    {#each post.categories as category}
-      <li class="post-category">
-        {category}
-      </li>
+  <TagList>
+    {#each post.tags as tag}
+      <Tag>
+        {tag}
+      </Tag>
     {/each}
-  </ul>
+  </TagList>
 </article>
 
 <style lang="scss">
@@ -109,23 +109,5 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
-  }
-
-  .post-category-list {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-  }
-
-  .post-category {
-    list-style: none;
-    font-size: var(--font-size-text-sm);
-    font-weight: var(--font-weight-medium);
-    color: var(--color-primary-text);
-    background-color: var(--color-primary-background);
-    padding: 2px var(--space-2);
-    border-radius: var(--radius-full);
   }
 </style>

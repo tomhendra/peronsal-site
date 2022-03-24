@@ -24,12 +24,12 @@
     background-color: var(--color-background);
     border-bottom: 1px solid var(--color-muted-separator);
 
-    & a {
+    a {
       text-decoration: none;
       color: inherit;
     }
 
-    & nav {
+    nav {
       display: flex;
       flex-wrap: wrap;
       gap: var(--space-8);
@@ -54,7 +54,7 @@
     gap: var(--space-2);
     margin-right: auto;
 
-    & img {
+    img {
       width: var(--space-8);
     }
   }

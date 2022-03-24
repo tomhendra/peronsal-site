@@ -4,11 +4,11 @@ export interface Post {
   date: string;
   updated?: string;
   coverImage: string;
-  coverImageHeight?: number;
-  coverImageWidth?: number;
+  // coverImageHeight?: number;
+  // coverImageWidth?: number;
   alt: string;
   caption: string;
-  categories?: string | string[];
+  tags?: string | string[];
   description: string;
   slug: string;
 }
@@ -25,7 +25,7 @@ export interface APIResponse {
 export interface PostsEndpointOptions {
   offset?: number;
   limit?: number;
-  category?: string;
+  tag?: string;
 }
 
 export interface RSSResponse {

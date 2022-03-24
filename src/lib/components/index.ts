@@ -11,3 +11,5 @@ export {default as RenderedPost} from './RenderedPost.svelte';
 export {default as Spacer} from './Spacer.svelte';
 export {default as Header} from './Header.svelte';
 export {default as Footer} from './Footer.svelte';
+export {default as TagList} from './TagList.svelte';
+export {default as Tag} from './Tag.svelte';

@@ -2,14 +2,14 @@
   import {getPosts} from '$lib/utils';
 
   export async function load({params}) {
-    const {category} = params;
+    const {tag} = params;
 
-    const posts = await getPosts({category});
+    const posts = await getPosts({tag});
 
     return {
       props: {
         posts,
-        category,
+        tag,
       },
     };
   }
@@ -20,12 +20,12 @@
   import {PostGrid} from '$lib/components';
 
   export let posts: Post[];
-  export let category: string;
+  export let tag: string;
 </script>
 
 <!-- TODO: site-image.png -->
 <svelte:head>
-  <title>Blog • Category: {category}</title>
+  <title>Blog • Tag: {tag}</title>
   <meta
     property="og:image"
     content="https://tomhendra.dev/images/site-image.png"
@@ -36,5 +36,5 @@
   />
 </svelte:head>
 
-<h1 class="h2">Category: <b>{category}</b></h1>
+<h1 class="h2">Tag: <b>{tag}</b></h1>
 <PostGrid {posts} />

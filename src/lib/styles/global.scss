@@ -38,6 +38,11 @@ em {
   font-style: oblique -10deg;
 }
 
+h1 {
+  font-size: var(--font-size-display-lg);
+  line-height: var(--line-height-display-lg);
+}
+
 h1,
 h2,
 h3,

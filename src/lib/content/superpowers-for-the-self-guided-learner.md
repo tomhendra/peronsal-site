@@ -6,7 +6,7 @@ updated: ''
 coverImage: 'bizarre-platypus-2400.png'
 alt: 'Bizarre Platypus #2400'
 caption: 'Photo by Kaushal Moradiya from Pexels'
-categories:
+tags:
   - 'learning'
   - 'self-improvement'
 description: "In 2018 I left my old life behind in the UK, sold everything I owned, and moved

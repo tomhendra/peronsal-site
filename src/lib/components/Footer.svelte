@@ -28,7 +28,7 @@
     background-color: var(--gray-800);
     color: var(--gray-400);
 
-    & a {
+    a {
       text-decoration: none;
       color: inherit;
     }
@@ -61,7 +61,7 @@
     color: var(--gray-400);
     font-weight: var(--font-weight-semibold);
 
-    & img {
+    img {
       width: var(--space-8);
     }
 

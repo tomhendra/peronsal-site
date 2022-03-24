@@ -6,7 +6,7 @@ updated: ''
 coverImage: 'bizarre-platypus-2400.png'
 alt: 'Bizarre Platypus #2400'
 caption: 'Photo by Kaushal Moradiya from Pexels'
-categories:
+tags:
   - 'vercel'
   - 'cloudflare'
 description:
