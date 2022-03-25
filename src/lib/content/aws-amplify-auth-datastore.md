@@ -15,6 +15,8 @@ full stack app powered by Amplify DataStore for easy offline functionality, plus
 authentication and authorization for user-specific data.'
 ---
 
+## Introduction
+
 Get up and running quickly with Create React App and the Amplify CLI to create a
 full stack app powered by Amplify DataStore for easy offline functionality, plus
 authentication and authorization for user-specific data.
@@ -32,6 +34,8 @@ to the Amplify CLI installation instructions
 of conciseness we will skip over styling and get straight to the point.
 
 ## Setup
+
+Let's start with the bare bones setup.
 
 ### Create a new React App
 

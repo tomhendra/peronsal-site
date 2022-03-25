@@ -1,4 +1,12 @@
 :root {
+  /* --scrollbar-width is defined in /src/routes/__layout.svelte */
+  --full-width: calc(100vw - var(--scrollbar-width));
+
+  --container-xl: 1280px;
+  --container-lg: 1024px;
+  --container-md: 720px;
+  --container-sm: 640px;
+
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -16,12 +24,6 @@
   --space-48: 192px;
   --space-56: 224px;
   --space-64: 256px;
-
-  --container-xl: 1280px;
-  --container-lg: 1024px;
-  --container-md: 720px;
-  --container-sm: 640px;
-  --container-xs: 400px;
 
   --border-0: 0px;
   --border-1: 1px;

@@ -1,7 +1,7 @@
 ---
 title: 'React & AWS Amplify with DataStore Setup for User Owned Data'
 subtitle: 'lorum ipsum'
-date: '2021-30-04'
+date: '2021-04-30'
 updated: ''
 coverImage: 'bizarre-platypus-2400.png'
 alt: 'Bizarre Platypus #2400'

@@ -1,7 +1,7 @@
 ---
 title: 'Exploring Next.js, Emotion & CSS Variable Theming'
 subtitle: 'lorum ipsum'
-date: '2021-20-03'
+date: '2021-03-20'
 updated: ''
 coverImage: 'bizarre-platypus-2400.png'
 alt: 'Bizarre Platypus #2400'

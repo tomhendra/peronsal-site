@@ -28,8 +28,8 @@
   <!-- <meta property="fb:app_id" content="your_app_id" />  -->
 </svelte:head>
 
-<main class="max-width-container">
-  <article>
+<main>
+  <article class="max-width-container">
     <section class="title-section">
       <div class="meta">
         <span class="date">
@@ -46,18 +46,17 @@
           {/each}
         </TagList>
       </div>
-      <div class="image-wrapper">
-        <figure>
-          <Image source={meta.coverImage} alt={meta.alt} ratio="5 / 7" />
-        </figure>
-      </div>
+      <figure class="image-wrapper">
+        <Image source={meta.coverImage} alt={meta.alt} ratio="5 / 7" />
+        <Spacer size={16} />
+        <figcaption>{meta.caption}</figcaption>
+      </figure>
     </section>
     <Spacer size={96} />
     <section class="post-content">
-      <p>{meta.description}</p>
-      <Spacer size={32} />
+      <p class="description">{meta.description}</p>
       <hr />
-      <Spacer size={48} />
+      <Spacer size={32} />
       <svelte:component this={PostContent} />
     </section>
   </article>
@@ -81,21 +80,26 @@
     padding: var(--space-20) 0;
     padding-right: var(--space-16);
 
+    @include mobileAndDown {
+      padding-right: 0;
+    }
+
     .date {
       color: var(--color-primary-heading);
       font-size: var(--font-size-md);
       font-weight: var(--font-weight-semibold);
       padding-bottom: var(--space-4);
-    }
 
-    .title {
-      padding-bottom: var(--space-6);
+      @include mobileAndDown {
+        font-size: var(--font-size-sm);
+      }
     }
 
     .subtitle {
       font-size: var(--font-size-text-xl);
       font-weight: var(--font-weight-normal);
       color: var(--color-muted-text);
+      margin-top: var(--space-3);
       padding-bottom: var(--space-12);
     }
   }
@@ -104,18 +108,23 @@
     background-color: var(--color-muted-background);
     padding: var(--space-20) var(--space-16);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    figure {
-      max-width: var(--container-xs);
+    figcaption {
+      align-self: flex-start;
     }
   }
 
   .post-content {
-    max-width: 720px;
     margin-left: auto;
     margin-right: auto;
+    max-width: var(--container-md);
+
+    .description {
+      font-size: var(--font-size-text-xl);
+    }
 
     hr {
       border: none;

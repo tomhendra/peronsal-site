@@ -6,7 +6,7 @@
   export let source =
     'https://plchldr.co/i/400x200?&bg=959393&fc=ffffff&text=<img />';
   export let alt = null;
-  export let ratio = '2 / 1';
+  export let ratio = null;
   export let width = '100%';
   export let height = 'auto';
 

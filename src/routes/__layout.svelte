@@ -5,17 +5,12 @@
   import {MobileMenu, MobileMenuButton, Header, Footer} from '$lib/components';
   import {initialize} from 'svelte-cloudinary';
   import {CLOUDINARY_PLUBLIC_ID} from '$lib/constants';
-  /* 
-    init svelte-cloudinary globally
-    https://svelte-cloudinary.vercel.app/#%F0%9F%91%B7-sapper 
-  */
+  // https://svelte-cloudinary.vercel.app/#%F0%9F%91%B7-sapper
   initialize({cloud_name: CLOUDINARY_PLUBLIC_ID});
   /* 
-    vw refers to the viewport width excluding the scrollbar. to use vw units
-    without potential layout shift, we calculate the actual viewport width in 
-    our global SCSS file: --fullWidth: calc(100vw - var(--scrollbarWidth))
-    scrollbar width is calculated at the earliest oppurtunity, which is here in 
-    the layout component.
+    vw units target the viewport width excluding the scrollbar. to use vw units
+    without potential layout shift, we need to calculate the scrollbar width at 
+    the earliest oppurtunity, which is here in the main layout component. 
   */
   onMount(() => {
     const scrollbarWidth = getScrollbarWidth();

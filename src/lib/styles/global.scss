@@ -1,18 +1,10 @@
+@use 'code';
 @use 'colors';
 @use 'effects';
-@use 'gradients';
-@use 'prism';
 @use 'reset';
 @use 'sizes';
-@use 'themes';
 @use 'typography';
 @use 'utils';
-
-html {
-  /* --scrollbar-width is calculated in __layout.svelte */
-  --full-width: calc(100vw - var(--scrollbar-width));
-  --vw: calc(var(--full-width) / 100);
-}
 
 body {
   background-color: var(--color-background);
@@ -26,61 +18,6 @@ body {
   hyphens: auto;
   /* prefix for Safari */
   -webkit-hyphens: auto;
-}
-
-/* 
-  manually apply variable font axis and use `<em>` tag rather than rely on 
-  browser synthesis for `font-style: italic;`
-*/
-em {
-  font-style: normal;
-  /* equivalent to font-variation-settings: "slnt" -10; */
-  font-style: oblique -10deg;
-}
-
-h1 {
-  font-size: var(--font-size-display-lg);
-  line-height: var(--line-height-display-lg);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-heading);
-  font-family: var(--font-sans);
-  font-weight: var(--font-weight-semibold);
-}
-
-pre,
-code {
-  font-family: var(--font-mono);
-  font-size: var(--font-size-text-sm);
-  font-weight: var(--font-weight-medium);
-}
-
-/* rehype-autolink-headings prepend # symbol */
-:where(h2, h3, h4, h5, h6) {
-  .icon-link {
-    position: relative;
-    color: var(--color-heading);
-
-    &::before {
-      content: '#';
-      position: absolute;
-      left: -1ch;
-      top: 0;
-      line-height: 1;
-      opacity: 0;
-      text-decoration: underline;
-    }
-  }
-
-  &:hover .icon-link::before {
-    opacity: 1;
-  }
 }
 
 @media (pointer: coarse) {

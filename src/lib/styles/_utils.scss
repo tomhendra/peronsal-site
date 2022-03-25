@@ -23,7 +23,7 @@
     manage the stacking context properly and uncomment to below declaration 
   */
   // position: relative;
-  max-width: min(100%, calc(var(--container-xl)) + var(--space-8) * 2);
+  max-width: min(var(--full-width), var(--container-xl));
   margin-left: auto;
   margin-right: auto;
   padding-left: var(--space-8);

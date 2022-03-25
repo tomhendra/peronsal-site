@@ -1,7 +1,7 @@
 ---
 title: 'Convert Google Fonts to woff2 the Right Way'
 subtitle: 'lorum ipsum'
-date: '2021-19-03'
+date: '2021-03-19'
 updated: ''
 coverImage: 'bizarre-platypus-2400.png'
 alt: 'Bizarre Platypus #2400'

@@ -1,7 +1,7 @@
 ---
 title: 'How to Set Up Cloudflare with Vercel'
 subtitle: 'lorum ipsum'
-date: '2020-10-08'
+date: '2020-08-10'
 updated: ''
 coverImage: 'bizarre-platypus-2400.png'
 alt: 'Bizarre Platypus #2400'
