@@ -1,4 +1,4 @@
-export interface Post {
+export interface PostData {
   title: string;
   subtitle: string;
   date: string;
@@ -16,7 +16,7 @@ export interface Post {
 export interface APIResponse {
   status: number;
   body: {
-    posts?: Post[];
+    posts?: PostData[];
     total?: number;
     error?: string;
   };

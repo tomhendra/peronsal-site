@@ -18,10 +18,10 @@
 </script>
 
 <script lang="ts">
-  import type {Post} from '$lib/types';
+  import type {PostData} from '$lib/types';
   import {PostGrid, Pagination} from '$lib/components';
 
-  export let posts: Post[] = [];
+  export let posts: PostData[] = [];
   export let totalPosts: number;
 </script>
 

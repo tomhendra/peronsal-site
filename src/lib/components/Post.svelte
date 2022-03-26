@@ -1,12 +1,12 @@
 <script lang="ts">
   import type {SvelteComponent} from 'svelte';
-  import type {Post} from '$lib/types';
+  import type {PostData} from '$lib/types';
   import {formatDate} from '$lib/utils';
   import {Image, TagList, Tag} from '$lib/components';
   import Spacer from './Spacer.svelte';
 
   export let PostContent: SvelteComponent;
-  export let meta: Post;
+  export let meta: PostData;
 </script>
 
 <svelte:head>

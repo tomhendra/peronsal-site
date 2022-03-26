@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  import type {Post} from '$lib/types';
+  import type {PostData} from '$lib/types';
   import type {SvelteComponent} from 'svelte';
 
   export async function load({params}) {
@@ -31,10 +31,10 @@
 </script>
 
 <script lang="ts">
-  import {RenderedPost} from '$lib/components';
+  import {Post} from '$lib/components';
 
   export let PostContent: SvelteComponent;
-  export let meta: Post;
+  export let meta: PostData;
 </script>
 
-<RenderedPost {PostContent} {meta} />
+<Post {PostContent} {meta} />

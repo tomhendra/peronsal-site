@@ -1,8 +1,8 @@
 <script lang="ts">
   import ArrowUpRight from './icons/ArrowUpRight.svelte';
-  import type {Post} from '$lib/types';
+  import type {PostData} from '$lib/types';
   import {Image, TagList, Tag} from '$lib/components';
-  export let post: Post;
+  export let post: PostData;
 </script>
 
 <article class="post-preview-wrapper">

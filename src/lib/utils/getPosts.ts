@@ -1,17 +1,17 @@
-import type {Post, PostsEndpointOptions} from '$lib/types';
+import type {PostData, PostsEndpointOptions} from '$lib/types';
 import {getSlugFromPath} from '.';
 
 export async function getPosts({
   offset = 0,
   limit = 4,
   tag = '',
-}: PostsEndpointOptions = {}): Promise<Post[]> {
+}: PostsEndpointOptions = {}): Promise<PostData[]> {
   /*
     import.meta.glob is a Vite function which returns an object where each 
     file’s relative path is the key, and the value is a “resolver” function 
     (not an official term) that loads the file contents as a JavaScript promise.
   */
-  const posts: Post[] = await Promise.all(
+  const posts: PostData[] = await Promise.all(
     Object.entries(import.meta.glob('../content/**/*.md')).map(
       /* 
         The map method is there to shape each file’s data, so it’s easier to work

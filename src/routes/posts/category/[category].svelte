@@ -16,10 +16,10 @@
 </script>
 
 <script lang="ts">
-  import type {Post} from '$lib/types';
+  import type {PostData} from '$lib/types';
   import {PostGrid} from '$lib/components';
 
-  export let posts: Post[];
+  export let posts: PostData[];
   export let tag: string;
 </script>
 
