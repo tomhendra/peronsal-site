@@ -1,5 +1,5 @@
 <script>
-  import {Menu, Twitter, GitHub} from '$lib/components/icons';
+  import {Twitter, GitHub} from '$lib/components/icons';
 </script>
 
 <footer>

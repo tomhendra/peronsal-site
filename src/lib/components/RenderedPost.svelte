@@ -1,7 +1,7 @@
 <script lang="ts">
   import type {SvelteComponent} from 'svelte';
   import type {Post} from '$lib/types';
-  import {getDate} from '$lib/utils';
+  import {formatDate} from '$lib/utils';
   import {Image, TagList, Tag} from '$lib/components';
   import Spacer from './Spacer.svelte';
 
@@ -33,9 +33,9 @@
     <section class="title-section">
       <div class="meta">
         <span class="date">
-          {getDate(meta.date)}
+          {formatDate(meta.date)}
           {#if meta.updated}
-            • Updated on {getDate(meta.updated)}
+            • Updated on {formatDate(meta.updated)}
           {/if}
         </span>
         <h1 class="title">{meta.title}</h1>

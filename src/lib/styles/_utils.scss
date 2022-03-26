@@ -1,7 +1,7 @@
 /* 
  abstract any repeated styles here as utility classes to keep CSS code DRY
 */
-@import './_breakpoints.scss';
+@import './breakpoints';
 
 .visually-hidden {
   position: absolute;

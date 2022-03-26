@@ -14,7 +14,7 @@ const months: string[] = [
   'December',
 ];
 
-export function getDate(date: string): string {
+export function formatDate(date: string): string {
   if (!date) return date;
 
   const splitDate = date.split('-');
