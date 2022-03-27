@@ -56,7 +56,6 @@
     <section class="post-content">
       <p class="description">{meta.description}</p>
       <hr />
-      <Spacer size={32} />
       <svelte:component this={PostContent} />
     </section>
   </article>
