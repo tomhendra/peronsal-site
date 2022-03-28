@@ -3,7 +3,6 @@
   import type {PostData} from '$lib/types';
   import {formatDate} from '$lib/utils';
   import {Image, TagList, Tag} from '$lib/components';
-  import Spacer from './Spacer.svelte';
 
   export let PostContent: SvelteComponent;
   export let meta: PostData;
@@ -46,10 +45,12 @@
           {/each}
         </TagList>
       </div>
-      <figure class="image-wrapper">
-        <Image source={meta.coverImage} alt={meta.alt} ratio="5 / 7" />
-        <figcaption>{meta.caption}</figcaption>
-      </figure>
+      <div class="img-container">
+        <figure class="figure">
+          <Image source={meta.coverImage} alt={meta.alt} ratio="5 / 7" />
+          <figcaption>{meta.caption}</figcaption>
+        </figure>
+      </div>
     </section>
     <section class="post-content">
       <p class="description">{meta.description}</p>
@@ -58,92 +59,99 @@
     </section>
   </article>
 </main>
-<Spacer size={96} />
 
 <style lang="scss">
+  main {
+    padding-bottom: var(--space-24);
+
+    @include mobileAndDown {
+      padding-bottom: var(--space-16);
+    }
+  }
+
   .title-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: var(--space-20);
     padding-bottom: var(--space-20);
 
     @include tabletAndDown {
       grid-template-columns: 1fr;
-      gap: var(--space-16);
     }
 
     @include mobileAndDown {
-      padding-top: var(--space-16);
       padding-bottom: var(--space-16);
     }
   }
 
   .meta {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    align-self: end;
+    padding-top: var(--space-16);
     padding-right: var(--space-16);
+    padding-bottom: var(--space-20);
 
     @include tabletAndDown {
+      align-self: start;
       padding-right: 0;
-      justify-content: flex-start;
+    }
+
+    .date {
+      color: var(--color-primary-heading);
+      font-size: var(--font-size-text-md);
+      font-weight: var(--font-weight-semibold);
+
+      @include mobileAndDown {
+        font-size: var(--font-size-text-sm);
+      }
+    }
+
+    .title {
+      margin-top: var(--space-4);
+
+      @include mobileAndDown {
+        margin-top: var(--space-3);
+      }
+    }
+    /* 
+      TODO: check whether font-size/weight matches any other global typography
+      styles and if so apple class globally for consistency. 
+      consider global subtitle styles if this situation occurs again.
+    */
+    .subtitle {
+      font-size: var(--font-size-text-xl);
+      line-height: var(--line-height-text-xl);
+      font-weight: var(--font-weight-normal);
+      color: var(--color-muted-text);
+      margin-top: 0;
+      margin-bottom: var(--space-12);
+
+      @include mobileAndDown {
+        font-size: var(--font-size-text-lg);
+        line-height: var(--line-height-text-lg);
+        margin-bottom: var(--space-8);
+      }
     }
   }
 
-  .date {
-    color: var(--color-primary-heading);
-    font-size: var(--font-size-text-md);
-    font-weight: var(--font-weight-semibold);
-
-    @include mobileAndDown {
-      font-size: var(--font-size-text-sm);
-    }
-  }
-
-  .title {
-    margin-top: var(--space-4);
-
-    @include mobileAndDown {
-      margin-top: var(--space-3);
-    }
-  }
-  /* 
-    TODO: check whether font-size/weight matches any other global typography
-    styles and if so apple class globally for consistency. 
-    consider global subtitle styles if this situation occurs again.
-  */
-  .subtitle {
-    font-size: var(--font-size-text-xl);
-    line-height: var(--line-height-text-xl);
-    font-weight: var(--font-weight-normal);
-    color: var(--color-muted-text);
-    margin-top: 0;
-    margin-bottom: var(--space-12);
-
-    @include mobileAndDown {
-      font-size: var(--font-size-text-lg);
-      line-height: var(--line-height-text-lg);
-      margin-bottom: var(--space-8);
-    }
-  }
-
-  .image-wrapper {
+  .img-container {
     background-color: var(--color-muted-background);
     padding: var(--space-20) var(--space-16);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-4);
 
     @include mobileAndDown {
       background-color: revert;
       padding: 0;
-      gap: var(--space-3);
     }
+  }
+
+  .figure {
+    max-width: 400px;
+    margin: 0 auto;
 
     figcaption {
-      align-self: flex-start;
+      padding-top: var(--space-4);
+
+      @include mobileAndDown {
+        padding-top: var(--space-3);
+      }
     }
   }
 
@@ -156,10 +164,11 @@
       border: none;
       height: 1px;
       background-color: var(--color-muted-border);
+      margin-bottom: var(--space-12);
     }
-  }
 
-  .description {
-    font-size: var(--font-size-text-xl);
+    .description {
+      font-size: var(--font-size-text-xl);
+    }
   }
 </style>
