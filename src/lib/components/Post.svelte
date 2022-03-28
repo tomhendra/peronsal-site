@@ -35,7 +35,7 @@
         <span class="date">
           {formatDate(meta.date)}
           {#if meta.updated}
-            • Updated on {formatDate(meta.updated)}
+            • Updated {formatDate(meta.updated)}
           {/if}
         </span>
         <h1 class="title">{meta.title}</h1>
@@ -48,11 +48,9 @@
       </div>
       <figure class="image-wrapper">
         <Image source={meta.coverImage} alt={meta.alt} ratio="5 / 7" />
-        <Spacer size={16} />
         <figcaption>{meta.caption}</figcaption>
       </figure>
     </section>
-    <Spacer size={96} />
     <section class="post-content">
       <p class="description">{meta.description}</p>
       <hr />
@@ -66,9 +64,17 @@
   .title-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
 
     @include tabletAndDown {
       grid-template-columns: 1fr;
+      gap: var(--space-16);
+    }
+
+    @include mobileAndDown {
+      padding-top: var(--space-16);
+      padding-bottom: var(--space-16);
     }
   }
 
@@ -76,30 +82,48 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: var(--space-20) 0;
     padding-right: var(--space-16);
 
-    @include mobileAndDown {
+    @include tabletAndDown {
       padding-right: 0;
+      justify-content: flex-start;
     }
+  }
 
-    .date {
-      color: var(--color-primary-heading);
-      font-size: var(--font-size-md);
-      font-weight: var(--font-weight-semibold);
-      padding-bottom: var(--space-4);
+  .date {
+    color: var(--color-primary-heading);
+    font-size: var(--font-size-text-md);
+    font-weight: var(--font-weight-semibold);
 
-      @include mobileAndDown {
-        font-size: var(--font-size-sm);
-      }
+    @include mobileAndDown {
+      font-size: var(--font-size-text-sm);
     }
+  }
 
-    .subtitle {
-      font-size: var(--font-size-text-xl);
-      font-weight: var(--font-weight-normal);
-      color: var(--color-muted-text);
+  .title {
+    margin-top: var(--space-4);
+
+    @include mobileAndDown {
       margin-top: var(--space-3);
-      padding-bottom: var(--space-12);
+    }
+  }
+  /* 
+    TODO: check whether font-size/weight matches any other global typography
+    styles and if so apple class globally for consistency. 
+    consider global subtitle styles if this situation occurs again.
+  */
+  .subtitle {
+    font-size: var(--font-size-text-xl);
+    line-height: var(--line-height-text-xl);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-muted-text);
+    margin-top: 0;
+    margin-bottom: var(--space-12);
+
+    @include mobileAndDown {
+      font-size: var(--font-size-text-lg);
+      line-height: var(--line-height-text-lg);
+      margin-bottom: var(--space-8);
     }
   }
 
@@ -110,6 +134,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: var(--space-4);
+
+    @include mobileAndDown {
+      background-color: revert;
+      padding: 0;
+      gap: var(--space-3);
+    }
 
     figcaption {
       align-self: flex-start;
@@ -121,14 +152,14 @@
     margin-right: auto;
     max-width: var(--container-md);
 
-    .description {
-      font-size: var(--font-size-text-xl);
-    }
-
     hr {
       border: none;
       height: 1px;
       background-color: var(--color-muted-border);
     }
+  }
+
+  .description {
+    font-size: var(--font-size-text-xl);
   }
 </style>

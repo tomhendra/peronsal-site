@@ -51,6 +51,8 @@
 
     .icon-wrapper {
       flex-shrink: 0;
+      align-self: flex-start;
+      padding-top: var(--space-1);
     }
   }
   .title {

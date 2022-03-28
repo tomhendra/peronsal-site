@@ -7,7 +7,8 @@
     font-weight: var(--font-weight-medium);
     color: var(--color-primary-text);
     background-color: var(--color-primary-background);
-    padding: 2px var(--space-2);
     border-radius: var(--radius-full);
+    line-height: 1;
+    padding: var(--space-2) var(--space-3);
   }
 </style>
