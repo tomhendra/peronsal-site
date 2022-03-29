@@ -29,10 +29,17 @@
         roadmap, so expect a bunch of JavaScript-centric content here.
       </p>
       <p>
+        Personally, I am smitten with the Spanish food and culture, and do not
+        miss the grey skies of England at all! When not in front of a screen
+        you'll find me enjoying tapas in a local bar, or at the gym burning
+        calories from the aforementioned.
+      </p>
+      <p>
         If you'd like to chat please feel free to reach out on <a
+          rel="external"
           href="https://twitter.com/tomhendra">Twitter</a
-        >. I am really keen to grow my network and give back to the community in
-        any way I can.
+        >. I am really keen to enhance my network and give back to the community
+        in any which way I can.
       </p>
       <p />
     </section>
@@ -85,6 +92,10 @@
       columns: 1;
       gap: 0;
       max-width: var(--container-md);
+    }
+
+    p {
+      break-inside: avoid;
     }
   }
 </style>

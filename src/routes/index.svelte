@@ -59,16 +59,22 @@
 </div>
 
 <style lang="scss">
-  .header-section {
-    padding: var(--space-24) 0;
+  main {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-16);
 
     @include tabletAndDown {
-      padding: var(--space-20) 0;
+      padding-top: var(--space-20);
     }
 
     @include mobileAndDown {
-      padding: var(--space-16) 0;
+      padding-top: var(--space-16);
+      padding-bottom: var(--space-12);
     }
+  }
+
+  .header-section {
+    padding-bottom: var(--space-16);
   }
 
   .heading-prefix {
@@ -92,7 +98,11 @@
     }
   }
 
-  .posts-section {
-    padding-bottom: var(--space-16);
+  .max-width-container {
+    padding-bottom: var(--space-24);
+
+    @include mobileAndDown {
+      padding-bottom: var(--space-16);
+    }
   }
 </style>
