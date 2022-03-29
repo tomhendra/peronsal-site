@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
   // import {prefetch} from '$app/navigation';
-  // prefetch('/about'); // Loads the about page in the background
+  // prefetch('/about');
   export async function load({fetch}) {
     const res = await fetch(`/api/posts.json`);
     const {posts} = await res.json();
@@ -83,7 +83,7 @@
   }
 
   .subtitle {
-    font-size: var(--font-sixe-text-xl);
+    font-size: var(--font-size-text-xl);
     line-height: var(--line-height-text-xl);
 
     @include mobileAndDown {
