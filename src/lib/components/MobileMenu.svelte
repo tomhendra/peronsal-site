@@ -21,7 +21,7 @@
   </DialogDescription>
   <div class="mobile-menu">
     <nav class="mobile-menu-nav">
-      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/">Posts</a>
       <a class="nav-link" href="/about">About</a>
     </nav>
     <ThemeToggle />

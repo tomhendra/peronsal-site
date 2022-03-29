@@ -4,9 +4,31 @@
   https://drafts.csswg.org/css-env-1/ but it's not ready yet
 */
 
-$mobile: calc(550 / 16) * 1rem;
-$tablet: calc(1100 / 16) * 1rem;
 $laptop: calc(1500 / 16) * 1rem;
+$tablet: calc(1100 / 16) * 1rem;
+$mobile: calc(550 / 16) * 1rem;
+
+// desktop first -- default: desktop monitors, 1501px and upwards
+@mixin laptopAndDown {
+  @media (max-width: $laptop) {
+    @content;
+  }
+}
+@mixin tabletAndDown {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+@mixin tabletOnly {
+  @media (min-width: $mobile) and (max-width: calc($tablet - 0.16rem)) {
+    @content;
+  }
+}
+@mixin mobileAndDown {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
 
 // mobile first -- default: phones from 0px to 549px
 @mixin tabletAndUp {
@@ -21,23 +43,6 @@ $laptop: calc(1500 / 16) * 1rem;
 }
 @mixin desktopAndUp {
   @media (min-width: $laptop) {
-    @content;
-  }
-}
-
-// desktop first -- default: desktop monitors, 1501px and upwards
-@mixin laptopAndDown {
-  @media (max-width: $laptop) {
-    @content;
-  }
-}
-@mixin tabletAndDown {
-  @media (max-width: $tablet) {
-    @content;
-  }
-}
-@mixin mobileAndDown {
-  @media (max-width: $mobile) {
     @content;
   }
 }

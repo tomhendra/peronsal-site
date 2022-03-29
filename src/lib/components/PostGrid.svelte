@@ -18,13 +18,12 @@
 <style lang="scss">
   .posts-grid {
     display: grid;
-    grid-column-gap: var(--space-8);
-    grid-row-gap: var(--space-12);
     grid: auto-flow / 1fr 1fr;
-    margin-bottom: var(--space-16);
+    gap: var(--space-8) var(--space-12);
 
     @include mobileAndDown {
       grid-template-columns: 1fr;
+      gap: var(--space-12);
     }
   }
 </style>

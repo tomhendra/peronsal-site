@@ -9,6 +9,6 @@
     background-color: var(--color-primary-background);
     border-radius: var(--radius-full);
     line-height: 1;
-    padding: var(--space-2) var(--space-3);
+    padding: 6px 10px;
   }
 </style>

@@ -44,24 +44,55 @@
 
 <div class="max-width-container">
   <main>
-    <PostGrid {posts} />
+    <section class="header-section">
+      <span class="heading-prefix">{totalPosts} Articles</span>
+      <h1>Blog</h1>
+      <span class="subtitle">
+        A collection of discoveries from the world of web development.
+      </span>
+    </section>
+    <section class="posts-section">
+      <PostGrid {posts} />
+    </section>
   </main>
+  <Pagination currentPage={1} {totalPosts} />
 </div>
-<Pagination currentPage={1} {totalPosts} />
 
-<!-- SvelteKit offers a slightly less greedy version of preloading, as one of 
-  its anchor options - https://kit.svelte.dev/docs#anchor-options.
+<style lang="scss">
+  .header-section {
+    padding: var(--space-24) 0;
 
-Anchor options are special, SvelteKit-specific attributes you can add to <a>
-   anchor tags. There are three:
+    @include tabletAndDown {
+      padding: var(--space-20) 0;
+    }
 
-<a sveltekit:prefetch> causes the link to begin preloading as soon as the user 
-  hovers, rather than waiting for a click, saving some milliseconds.
+    @include mobileAndDown {
+      padding: var(--space-16) 0;
+    }
+  }
 
-<a rel="external"> signals to SvelteKit that the link in question is not part 
-  of our SvelteKit app, and the router shouldn’t try to handle it.
+  .heading-prefix {
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary-heading);
+  }
 
-<a sveltekit:noscroll> prevents SvelteKit from resetting the scroll position 
-  to the top of the new page. This is usually undesirable on websites, but may 
-  be more intuitive in some app situations.
- -->
+  h1 {
+    margin-top: var(--space-3);
+  }
+
+  .subtitle {
+    font-size: var(--font-sixe-text-xl);
+    line-height: var(--line-height-text-xl);
+
+    @include mobileAndDown {
+      font-size: var(--font-size-text-lg);
+      line-height: var(--line-height-text-lg);
+    }
+  }
+
+  .posts-section {
+    padding-bottom: var(--space-16);
+  }
+</style>

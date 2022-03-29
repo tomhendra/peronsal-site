@@ -9,7 +9,7 @@
       <span>Tom Hendra</span>
     </a>
     <nav>
-      <a href="/">Home</a>
+      <a href="/">Posts</a>
       <a href="/about">About</a>
     </nav>
     <ThemeToggle />
