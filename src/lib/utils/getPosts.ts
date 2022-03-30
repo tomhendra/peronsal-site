@@ -3,7 +3,7 @@ import {getSlugFromPath} from '.';
 
 export async function getPosts({
   offset = 0,
-  limit = 4,
+  limit = 8,
   tag = '',
 }: PostsEndpointOptions = {}): Promise<PostData[]> {
   /*

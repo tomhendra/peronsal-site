@@ -19,11 +19,10 @@
   .posts-grid {
     display: grid;
     grid: auto-flow / 1fr 1fr;
-    gap: var(--space-8) var(--space-12);
+    gap: var(--space-12) var(--space-8);
 
     @include mobileAndDown {
       grid-template-columns: 1fr;
-      gap: var(--space-12);
     }
   }
 </style>

@@ -3,49 +3,49 @@
   export let totalPosts: number;
 
   let pagesAvailable: number;
-  $: pagesAvailable = Math.ceil(totalPosts / 10);
-
-  const isCurrentPage = (page: number): boolean => page == currentPage;
+  $: pagesAvailable = Math.ceil(totalPosts / 8);
 </script>
 
-<nav aria-label="Pagination navigation" class="pagination">
-  <ul>
-    {#each Array.from({length: pagesAvailable}, (_, i) => i + 1) as page}
-      <li>
-        <a href="/posts/page/{page}" aria-current={isCurrentPage(page)}>
-          {#if isCurrentPage(page)}
-            <span class="visually-hidden"> Current page </span>
-          {:else}
-            <span class="visually-hidden"> Go to page </span>
-          {/if}
-          {page}
-        </a>
-      </li>
-    {/each}
-  </ul>
+<nav aria-label="Pagination navigation">
+  {#each Array.from({length: pagesAvailable}, (_, i) => i + 1) as page}
+    <a
+      href="/posts/page/{page}"
+      aria-current={page == currentPage}
+      class="pagination-link"
+    >
+      {#if page == currentPage}
+        <span class="visually-hidden">Current page</span>
+      {:else}
+        <span class="visually-hidden">Go to page</span>
+      {/if}
+      {page}
+    </a>
+  {/each}
 </nav>
 
-<style>
-  .pagination {
+<style lang="scss">
+  nav {
     display: flex;
-    justify-content: center;
   }
 
-  .pagination ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-  }
-
-  .pagination a {
-    color: var(--color-text);
+  .pagination-link {
+    font-size: var(--font-size-text-sm);
     text-decoration: none;
-    padding: var(--space-4);
+    width: var(--space-10);
+    height: var(--space-10);
+    border-radius: var(--radius-default);
+    display: grid;
+    place-content: center;
+
+    &[aria-current='true'] {
+      background: var(--color-primary-background);
+      color: var(--color-primary-text);
+    }
   }
 
-  .pagination a:hover {
-    background-color: var(--color-muted-background);
-    text-decoration: underline;
+  @media (hover: hover) and (pointer: fine) {
+    .pagination-link:hover {
+      border: 1px solid var(--color-primary);
+    }
   }
 </style>

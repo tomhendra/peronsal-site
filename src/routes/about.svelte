@@ -18,21 +18,21 @@
         language, new career, new life.
       </p>
       <p>
-        While bulding WordPress sites to pay the bills, I have been in hot
-        pursuit of my chosen career trajectory ever since; as a professional
-        Developer in the rich and vibrant JavaScript community.
+        While bulding WordPress sites to pay the bills, I have been in pursuit
+        of my chosen career trajectory ever since; as a professional Developer
+        in the rich and vibrant JavaScript community.
       </p>
       <p>
         I have built this blog as a way to share my discoveries with the world
-        while I'm focused on learning new things from the industry's experts. At
-        the moment I'm building with React and Svelte with Node.js next on the
-        roadmap, so expect a bunch of JavaScript-centric content here.
+        while I'm focused on learning new things. At the moment I'm building
+        with React and Svelte with Node.js next on the roadmap, so expect a
+        bunch of JavaScript-centric content here.
       </p>
       <p>
-        Personally, I am smitten with the Spanish food and culture, and do not
-        miss the grey skies of England at all! When not in front of a screen
+        Personally, I am smitten with the Spanish food and culture, and don't
+        miss the grey skies of England one bit! When not in front of a screen
         you'll find me enjoying tapas in a local bar, or at the gym burning
-        calories from the aforementioned.
+        calories accumulated from the aforementioned.
       </p>
       <p>
         If you'd like to chat please feel free to reach out on <a

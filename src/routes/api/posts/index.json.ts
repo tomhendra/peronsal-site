@@ -11,7 +11,7 @@ export const get = async ({url}): Promise<APIResponse> => {
 
     const options: PostsEndpointOptions = {
       offset: parseInt(params.get('offset')) || null,
-      limit: parseInt(params.get('limit')) || 10,
+      limit: parseInt(params.get('limit')) || 8,
     };
 
     const posts = await getPosts({...options});

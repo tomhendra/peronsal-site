@@ -1,10 +1,12 @@
 <script lang="ts">
   export let axis: 'horizontal' | 'vertical' | null = null;
   export let size: number = 0;
-  export let when: {
-    tabletAndDown: number;
-    mobileAndDown: number;
-  };
+  export let when:
+    | {
+        tabletAndDown: number | undefined;
+        mobileAndDown: number | undefined;
+      }
+    | undefined;
   /* 
     adapted for svelte from https://www.joshwcomeau.com/react/modern-spacer-gif/
 
@@ -16,11 +18,11 @@
   let height = axis === 'horizontal' ? 1 : size;
   let width = axis === 'vertical' ? 1 : size;
 
-  let tabletAndDownHeight = axis === 'horizontal' ? 1 : when.tabletAndDown;
-  let tabletAndDownWidth = axis === 'vertical' ? 1 : when.tabletAndDown;
+  let tabletAndDownHeight = axis === 'horizontal' ? 1 : when?.tabletAndDown;
+  let tabletAndDownWidth = axis === 'vertical' ? 1 : when?.tabletAndDown;
 
-  let mobileAndDownWidth = axis === 'vertical' ? 1 : when.mobileAndDown;
-  let mobileAndDownHeight = axis === 'horizontal' ? 1 : when.mobileAndDown;
+  let mobileAndDownWidth = axis === 'vertical' ? 1 : when?.mobileAndDown;
+  let mobileAndDownHeight = axis === 'horizontal' ? 1 : when?.mobileAndDown;
 </script>
 
 <span

@@ -55,7 +55,9 @@
       <PostGrid {posts} />
     </section>
   </main>
-  <Pagination currentPage={1} {totalPosts} />
+  <div class="pagination-wrapper">
+    <Pagination currentPage={1} {totalPosts} />
+  </div>
 </div>
 
 <style lang="scss">
@@ -96,6 +98,13 @@
       font-size: var(--font-size-text-lg);
       line-height: var(--line-height-text-lg);
     }
+  }
+
+  .pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--color-muted-separator);
+    padding-top: var(--space-5);
   }
 
   .max-width-container {
