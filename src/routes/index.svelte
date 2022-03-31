@@ -105,6 +105,10 @@
     justify-content: center;
     border-top: 1px solid var(--color-muted-separator);
     padding-top: var(--space-5);
+
+    @include mobileAndDown {
+      padding-top: var(--space-4);
+    }
   }
 
   .max-width-container {
