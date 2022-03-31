@@ -20,7 +20,11 @@
       <span class="wordmark">Tom Hendra</span>
       <span class="visually-hidden">Tom Hendra logo - Home</span>
     </a>
-    <span>&copy; {new Date().getFullYear()} Tom Hendra</span>
+    <div class="copyright">
+      <span class="copyright-text"
+        >&copy; {new Date().getFullYear()} Tom Hendra</span
+      >
+    </div>
   </div>
 </footer>
 
@@ -36,15 +40,15 @@
   }
 
   .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    justify-items: center;
     padding-top: var(--space-12);
     padding-bottom: var(--space-12);
 
     @include mobileAndDown {
-      flex-direction: column;
+      grid-auto-flow: row;
       gap: var(--space-6);
     }
   }
@@ -53,6 +57,11 @@
     display: flex;
     align-items: center;
     gap: var(--space-6);
+    justify-self: start;
+
+    @include mobileAndDown {
+      justify-self: revert;
+    }
   }
 
   .logo-container {
@@ -68,6 +77,15 @@
 
     .wordmark {
       color: var(--color-heading);
+    }
+  }
+
+  .copyright {
+    font-size: var(--font-size-text-md);
+    justify-self: end;
+
+    @include mobileAndDown {
+      justify-self: revert;
     }
   }
 </style>
