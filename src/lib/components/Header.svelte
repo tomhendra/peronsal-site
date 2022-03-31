@@ -1,12 +1,14 @@
 <script>
   import {ThemeToggle} from '$lib/components';
+  import {TomhendraLogo} from '$lib/components/icons';
 </script>
 
 <header>
   <div class="max-width-container">
     <a class="logo-wrapper" href="/">
-      <img src="/logo.svg" alt="Logo - Home" />
-      <span>Tom Hendra</span>
+      <TomhendraLogo />
+      <span class="wordmark">Tom Hendra</span>
+      <span class="visually-hidden">Tom Hendra logo - Home</span>
     </a>
     <nav>
       <a href="/">Posts</a>
@@ -53,9 +55,9 @@
     align-items: center;
     gap: var(--space-2);
     margin-right: auto;
+  }
 
-    img {
-      width: var(--space-8);
-    }
+  .wordmark {
+    color: var(--color-heading);
   }
 </style>

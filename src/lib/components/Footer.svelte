@@ -1,9 +1,9 @@
 <script>
-  import {Twitter, GitHub} from '$lib/components/icons';
+  import {Twitter, GitHub, TomhendraLogo} from '$lib/components/icons';
 </script>
 
 <footer>
-  <div class="max-width-container">
+  <div class="max-width-container footer-container">
     <div class="social-container">
       <a href="https://twitter.com/tomhendra" target="_blank">
         <Twitter />
@@ -16,8 +16,9 @@
       </a>
     </div>
     <a class="logo-container" href="/">
-      <img src="/logo.svg" alt="Logo - Home" />
-      <span>Tom Hendra</span>
+      <TomhendraLogo />
+      <span class="wordmark">Tom Hendra</span>
+      <span class="visually-hidden">Tom Hendra logo - Home</span>
     </a>
     <span>&copy; {new Date().getFullYear()} Tom Hendra</span>
   </div>
@@ -25,7 +26,7 @@
 
 <style lang="scss">
   footer {
-    background-color: var(--gray-800);
+    background-color: var(--color-background);
     color: var(--gray-400);
 
     a {
@@ -34,7 +35,7 @@
     }
   }
 
-  .max-width-container {
+  .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,15 +60,14 @@
     align-items: center;
     gap: var(--space-2);
     color: var(--gray-400);
-    font-weight: var(--font-weight-semibold);
-
-    img {
-      width: var(--space-8);
-    }
 
     @include mobileAndDown {
       order: -1;
       margin-bottom: var(--space-6);
+    }
+
+    .wordmark {
+      color: var(--color-heading);
     }
   }
 </style>

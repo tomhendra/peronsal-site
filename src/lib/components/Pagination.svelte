@@ -26,6 +26,7 @@
 <style lang="scss">
   nav {
     display: flex;
+    gap: 2px;
   }
 
   .pagination-link {
