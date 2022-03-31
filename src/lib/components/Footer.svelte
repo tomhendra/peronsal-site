@@ -31,6 +31,7 @@
 <style lang="scss">
   footer {
     background-color: var(--color-background);
+    border-top: 1px solid var(--color-muted-separator);
     color: var(--gray-400);
 
     a {

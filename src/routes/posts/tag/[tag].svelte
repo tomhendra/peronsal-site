@@ -1,15 +1,14 @@
 <script context="module" lang="ts">
-  export async function load({fetch}) {
-    const res = await fetch(`/api/posts.json`);
-    const {posts} = await res.json();
+  import {getPosts} from '$lib/utils';
 
-    const count = await fetch(`/api/posts/count.json`);
-    const {total} = await count.json();
+  export async function load({params}) {
+    const {tag} = params;
+    const posts = await getPosts({tag});
 
     return {
       props: {
         posts,
-        totalPosts: total,
+        tag,
       },
     };
   }
@@ -17,19 +16,15 @@
 
 <script lang="ts">
   import type {PostData} from '$lib/types';
-  import {PostGrid, Pagination} from '$lib/components';
+  import {PostGrid} from '$lib/components';
 
-  export let posts: PostData[] = [];
-  export let totalPosts: number;
+  export let posts: PostData[];
+  export let tag: string;
 </script>
 
+<!-- TODO: site-image.png -->
 <svelte:head>
-  <title>Tom Hendra • Blog</title>
-  <meta
-    data-key="description"
-    name="description"
-    content="Blog posts about discoveries in web development."
-  />
+  <title>Blog • Tag: {tag}</title>
   <meta
     property="og:image"
     content="https://tomhendra.dev/images/site-image.png"
@@ -43,19 +38,18 @@
 <div class="max-width-container">
   <main>
     <section class="header-section">
-      <span class="heading-prefix">{totalPosts} Articles</span>
+      <span class="heading-prefix"
+        >{posts.length} {posts.length === 1 ? 'Article' : 'Articles'}</span
+      >
       <h1>Blog</h1>
       <span class="subtitle">
-        A collection of discoveries from the world of web development.
+        All posts about {tag}.
       </span>
     </section>
     <section class="posts-section">
       <PostGrid {posts} />
     </section>
   </main>
-  <div class="pagination-wrapper">
-    <Pagination currentPage={1} {totalPosts} />
-  </div>
 </div>
 
 <style lang="scss">
@@ -95,17 +89,6 @@
     @include mobileAndDown {
       font-size: var(--font-size-text-lg);
       line-height: var(--line-height-text-lg);
-    }
-  }
-
-  .pagination-wrapper {
-    display: flex;
-    justify-content: center;
-    border-top: 1px solid var(--color-muted-separator);
-    padding-top: var(--space-5);
-
-    @include mobileAndDown {
-      padding-top: var(--space-4);
     }
   }
 

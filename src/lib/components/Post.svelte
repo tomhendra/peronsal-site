@@ -41,7 +41,7 @@
         <h2 class="subtitle">{meta.subtitle}</h2>
         <TagList>
           {#each meta.tags as tag}
-            <Tag>{tag}</Tag>
+            <Tag to="/posts/tag/{tag}">{tag}</Tag>
           {/each}
         </TagList>
       </div>
@@ -85,7 +85,7 @@
 
   .meta {
     align-self: end;
-    padding-top: var(--space-16);
+    padding-top: var(--space-20);
     padding-right: var(--space-16);
     padding-bottom: var(--space-20);
 

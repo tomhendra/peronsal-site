@@ -1,35 +1,49 @@
 <script context="module" lang="ts">
+  interface TagMeta {
+    title: string;
+    count: number;
+  }
+
   export async function load({fetch}) {
     const res = await fetch(`/api/posts.json`);
-    const {posts} = await res.json();
+    let {posts} = await res.json();
 
-    const count = await fetch(`/api/posts/count.json`);
-    const {total} = await count.json();
+    let uniqueCategories = {};
+
+    posts.forEach(post => {
+      post.tags.forEach(tag => {
+        if (uniqueCategories.hasOwnProperty(tag)) {
+          uniqueCategories[tag].count += 1;
+        } else {
+          uniqueCategories[tag] = {
+            title: tag,
+            count: 1,
+          };
+        }
+      });
+    });
+
+    const sortedUniqueCategories = Object.values(uniqueCategories).sort(
+      // @ts-ignore
+      (a, b) => a.title > b.title,
+    );
 
     return {
       props: {
-        posts,
-        totalPosts: total,
+        uniqueCategories: sortedUniqueCategories,
       },
     };
   }
 </script>
 
 <script lang="ts">
-  import type {PostData} from '$lib/types';
-  import {PostGrid, Pagination} from '$lib/components';
+  import {TagList, Tag} from '$lib/components';
 
-  export let posts: PostData[] = [];
-  export let totalPosts: number;
+  export let uniqueCategories: TagMeta[];
 </script>
 
 <svelte:head>
-  <title>Tom Hendra • Blog</title>
-  <meta
-    data-key="description"
-    name="description"
-    content="Blog posts about discoveries in web development."
-  />
+  <title>Blog • tags</title>
   <meta
     property="og:image"
     content="https://tomhendra.dev/images/site-image.png"
@@ -43,19 +57,23 @@
 <div class="max-width-container">
   <main>
     <section class="header-section">
-      <span class="heading-prefix">{totalPosts} Articles</span>
-      <h1>Blog</h1>
-      <span class="subtitle">
-        A collection of discoveries from the world of web development.
-      </span>
+      <span class="heading-prefix"
+        >{uniqueCategories.length}
+        {uniqueCategories.length === 1 ? 'Category' : 'Categories'}</span
+      >
+      <h1>All Tags</h1>
+      <span class="subtitle"> All unique tags. </span>
     </section>
-    <section class="posts-section">
-      <PostGrid {posts} />
+    <section class="tags-section">
+      <TagList>
+        {#each uniqueCategories as tag}
+          <Tag to="/posts/tag/{tag.title}">
+            {tag.title} ({tag.count})
+          </Tag>
+        {/each}
+      </TagList>
     </section>
   </main>
-  <div class="pagination-wrapper">
-    <Pagination currentPage={1} {totalPosts} />
-  </div>
 </div>
 
 <style lang="scss">
@@ -95,17 +113,6 @@
     @include mobileAndDown {
       font-size: var(--font-size-text-lg);
       line-height: var(--line-height-text-lg);
-    }
-  }
-
-  .pagination-wrapper {
-    display: flex;
-    justify-content: center;
-    border-top: 1px solid var(--color-muted-separator);
-    padding-top: var(--space-5);
-
-    @include mobileAndDown {
-      padding-top: var(--space-4);
     }
   }
 

@@ -2,7 +2,6 @@
   import ArrowUpRight from './icons/ArrowUpRight.svelte';
   import type {PostData} from '$lib/types';
   import {Image, TagList, Tag} from '$lib/components';
-  import Spacer from './Spacer.svelte';
   import {formatDate} from '$lib/utils';
   export let post: PostData;
 </script>
@@ -29,7 +28,6 @@ Anchor options are special, SvelteKit-specific attributes you can add to <a>
     <Image source={post.coverImage} alt={post.alt} ratio="3 / 2" />
   </a>
   <span class="date">{formatDate(post.date)}</span>
-  <Spacer size={12} />
   <a sveltekit:prefetch class="title-link" href="/posts/{post.slug}">
     <h2 class="title">{post.title}</h2>
     <div class="icon-wrapper">
@@ -40,7 +38,7 @@ Anchor options are special, SvelteKit-specific attributes you can add to <a>
   <h3 class="subtitle">{post.subtitle}</h3>
   <TagList>
     {#each post.tags as tag}
-      <Tag>
+      <Tag to="/posts/tag/{tag}">
         {tag}
       </Tag>
     {/each}
@@ -55,6 +53,7 @@ Anchor options are special, SvelteKit-specific attributes you can add to <a>
     font-weight: var(--font-weight-semibold);
     color: var(--color-primary-text);
     margin-top: var(--space-8);
+    margin-bottom: var(--space-3);
   }
 
   .title-link {
