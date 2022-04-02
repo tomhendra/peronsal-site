@@ -48,12 +48,16 @@ pre[class*='language-'] {
 }
 
 /* Properties specific to inline code */
-:not(pre) > code[class*='language-'] {
-  background: var(--syntax-color-background);
-  color: var(--syntax-color-text);
-  padding: 1.5px;
+// this selector included in the template does not select the element in mdsvex ¯\_(ツ)_/¯
+// :not(pre) > code[class*='language-']
+
+:not(pre) > code {
+  padding: 0.2em 0.3em;
   border-radius: var(--radius-sm);
   white-space: normal;
+  background: var(--syntax-color-background);
+  color: var(--syntax-color-text);
+  font-size: var(--font-size-text-md);
 }
 
 /**
