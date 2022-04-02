@@ -40,18 +40,16 @@ pre[class*='language-'] ::selection {
 }
 
 /* Properties specific to code blocks */
+pre,
 pre[class*='language-'] {
   padding: var(--space-4);
-  margin: var(--space-2) 0;
   overflow: auto;
   border-radius: var(--radius-default);
 }
 
 /* Properties specific to inline code */
-// this selector included in the template does not select the element in mdsvex ¯\_(ツ)_/¯
-// :not(pre) > code[class*='language-']
-
-:not(pre) > code {
+:not(pre) > code,
+:not(pre) > code[class*='language-'] {
   padding: 0.2em 0.3em;
   border-radius: var(--radius-sm);
   white-space: normal;
