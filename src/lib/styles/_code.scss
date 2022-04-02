@@ -1,111 +1,172 @@
-/**
- * What follows is all syntax highlighting, based on the Dracula theme by Zeno Rocha
- */
-
+/* Set the main properties of the code, code blocks, and inline code */
 code[class*='language-'],
 pre[class*='language-'] {
-  color: #f8f8f2;
-  background: none;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  background: var(--syntax-color-background);
+  color: var(--syntax-color-text);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-text-md);
+  direction: ltr;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
+  line-height: var(--line-height-text-md);
+  /* The default is 4, but you could change it if you really, really want to */
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  /* The following properties are also standard */
   -webkit-hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
 }
 
-/* Code blocks */
+/* Optional: What the code looks like when highlighted */
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection,
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection {
+  background: var(--syntax-color-selection);
+  color: inherit;
+}
+
+code[class*='language-']::selection,
+code[class*='language-'] ::selection,
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection {
+  background: var(--syntax-color-selection);
+  color: inherit;
+}
+
+/* Properties specific to code blocks */
 pre[class*='language-'] {
-  padding: 1em;
+  padding: var(--space-4);
+  margin: var(--space-2) 0;
   overflow: auto;
-  border-radius: 0.3em;
+  border-radius: var(--radius-default);
 }
 
-:not(pre) > code[class*='language-'],
-pre[class*='language-'] {
-  background: #282a36;
-}
-
-/* Inline code */
+/* Properties specific to inline code */
 :not(pre) > code[class*='language-'] {
-  padding: 0.1em;
-  border-radius: 0.3em;
+  background: var(--syntax-color-background);
+  color: var(--syntax-color-text);
+  padding: 1.5px;
+  border-radius: var(--radius-sm);
   white-space: normal;
 }
 
+/**
+ * These are the minimum tokens you must style, you can rearrange them and/or style more tokens as you want
+ * The concepts behind these standard tokens, as well as some examples, can be found here: https://prismjs.com/tokens.html
+ */
 .token.comment,
 .token.prolog,
-.token.doctype,
 .token.cdata {
-  color: #6272a4;
+  color: var(--syntax-color-muted-text);
 }
 
-.token.punctuation {
-  color: #f8f8f2;
+.token.punctuation,
+.token.doctype,
+.token.entity {
+  color: var(--syntax-color-text);
 }
 
-.namespace {
-  opacity: 0.7;
+.token.attr-name {
+  color: var(--syntax-color-attr-name);
 }
 
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  color: #ff79c6;
-}
-
-.token.boolean,
-.token.number {
-  color: #bd93f9;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  color: #50fa7b;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-  color: #f8f8f2;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.function,
 .token.class-name {
-  color: #f1fa8c;
+  color: var(--syntax-color-class);
+}
+
+.token.boolean {
+  color: var(--syntax-color-boolean);
+}
+
+.token.constant {
+  color: var(--syntax-color-constant);
+}
+
+.token.number {
+  color: var(--syntax-color-number);
+}
+
+.token.atrule {
+  color: var(--syntax-color-atrule);
 }
 
 .token.keyword {
-  color: #8be9fd;
+  color: var(--syntax-color-keyword);
 }
 
-.token.regex,
+.token.property {
+  color: var(--syntax-color-property);
+}
+
+.token.tag {
+  color: var(--syntax-color-tag);
+}
+
+.token.symbol {
+  color: var(--syntax-color-symbol);
+}
+
+.token.deleted {
+  color: var(--syntax-color-deleted);
+}
+
 .token.important {
-  color: #ffb86c;
+  color: var(--syntax-color-important);
 }
 
-.token.important,
+.token.selector {
+  color: var(--syntax-color-selector);
+}
+
+.token.string {
+  color: var(--syntax-color-string);
+}
+
+.token.char {
+  color: var(--syntax-color-char);
+}
+
+.token.builtin {
+  color: var(--syntax-color-builtin);
+}
+
+.token.inserted {
+  color: var(--syntax-color-inserted);
+}
+
+.token.regex {
+  color: var(--syntax-color-regex);
+}
+
+.token.attr-value {
+  color: var(--syntax-color-attr-value);
+}
+
+.token.variable {
+  color: var(--syntax-color-variable);
+}
+
+.token.operator {
+  color: var(--syntax-color-operator);
+}
+
+.token.function {
+  color: var(--syntax-color-function);
+}
+
+.token.url {
+  color: var(--syntax-color-url);
+}
+
+/* The following rules are pretty similar across themes, but feel free to adjust them */
 .token.bold {
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
 }
 
 .token.italic {
@@ -114,4 +175,102 @@ pre[class*='language-'] {
 
 .token.entity {
   cursor: help;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+/* LANGUAGE-SPECIFIC OVERRIDES */
+/* If you'd like your theme to have overrides for specific languages, here's an example, you can remove it and/or add more overrides */
+
+/* HTML overrides */
+.token.attr-value > .token.punctuation.attr-equals,
+.token.special-attr > .token.attr-value > .token.value.css {
+  color: var(--syntax-color-text);
+}
+
+/* CSS overrides */
+.language-css .token.selector {
+  color: var(--syntax-color-attr-name);
+}
+
+.language-css .token.property {
+  color: var(--syntax-color-text);
+}
+
+.language-css .token.function,
+.language-css .token.url > .token.function {
+  color: unset; // teal color ?
+}
+
+.language-css .token.url > .token.string.url {
+  color: var(--syntax-color-string);
+}
+
+.language-css .token.important,
+.language-css .token.atrule .token.rule {
+  color: var(--syntax-color-important);
+}
+
+/* JS overrides */
+.language-javascript .token.operator {
+  color: var(--syntax-color-property);
+}
+
+.language-javascript
+  .token.template-string
+  > .token.interpolation
+  > .token.interpolation-punctuation.punctuation {
+  color: var(--syntax-color-class);
+}
+
+/* JSON overrides */
+.language-json .token.operator {
+  color: var(--syntax-color-text);
+}
+
+.language-json .token.null.keyword {
+  color: var(--syntax-color-boolean);
+}
+
+/* MD overrides */
+.language-markdown .token.url,
+.language-markdown .token.url > .token.operator,
+.language-markdown .token.url-reference.url > .token.string {
+  color: var(--syntax-color-text);
+}
+
+.language-markdown .token.url > .token.content {
+  color: var(--syntax-color-function);
+}
+
+.language-markdown .token.url > .token.url,
+.language-markdown .token.url-reference.url {
+  color: var(--syntax-color-string);
+}
+
+.language-markdown .token.blockquote.punctuation,
+.language-markdown .token.hr.punctuation {
+  color: var(--syntax-color-muted-text);
+  font-style: italic;
+}
+
+.language-markdown .token.code-snippet {
+  color: var(--syntax-color-string);
+}
+
+.language-markdown .token.bold .token.content {
+  color: var(--syntax-color-attr-name);
+}
+
+.language-markdown .token.italic .token.content {
+  color: var(--syntax-color-property);
+}
+
+.language-markdown .token.strike .token.content,
+.language-markdown .token.strike .token.punctuation,
+.language-markdown .token.list.punctuation,
+.language-markdown .token.title.important > .token.punctuation {
+  color: var(--syntax-color-attr-name);
 }

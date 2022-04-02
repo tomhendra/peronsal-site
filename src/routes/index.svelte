@@ -53,9 +53,11 @@
       <PostGrid {posts} />
     </section>
   </main>
-  <div class="pagination-wrapper">
-    <Pagination currentPage={1} {totalPosts} />
-  </div>
+  {#if totalPosts > 8}
+    <div class="pagination-wrapper">
+      <Pagination currentPage={1} {totalPosts} />
+    </div>
+  {/if}
 </div>
 
 <style lang="scss">

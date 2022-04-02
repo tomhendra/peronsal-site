@@ -1,3 +1,4 @@
+<!-- https://svelte.dev/repl/1cb6b4324bc848a28ff6159299518f90?version=3.35.0 -->
 <script lang="ts">
   export let currentPage: number;
   export let totalPosts: number;
