@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-  <title>{meta.title} • Tom Hendra blog</title>
+  <title>Tom Hendra • {meta.title}</title>
   <meta data-key="description" name="description" content={meta.description} />
   <!--  essential meta tags for fb & twitter -->
   <meta property="og:type" content="article" />

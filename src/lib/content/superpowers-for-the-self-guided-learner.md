@@ -1,38 +1,38 @@
 ---
 title: 'Superpowers for the Self-Guided Learner'
-subtitle: 'lorum ipsum'
+subtitle: 'How to gain the power to learn efficiently.'
 date: '2020-04-14'
 updated: ''
-coverImage: 'bizarre-platypus-2400.png'
-alt: 'Bizarre Platypus #2400'
-caption: 'Photo by Kaushal Moradiya from Pexels'
+coverImage: 'think-about-things-differently.jpeg'
+alt: 'Neon sign with the statement: Think About Things Differently.'
+caption: 'Photo by Photo by Ivan Bertolazzi'
 tags:
   - 'learning'
   - 'self-improvement'
-description: "In 2018 I left my old life behind in the UK, sold everything I owned, and moved
-to Spain with the aim of changing career from procurement professional to
-software developer, by way of full-time self-guided learning."
+description:
+  'Learning is a skill to be learned in itself. This article aims to share the
+  path to become a superpowered learner.'
 ---
 
 In 2018 I left my old life behind in the UK, sold everything I owned, and moved
-to Spain with the aim of changing career from procurement professional to
-software developer, by way of full-time self-guided learning. In that time I
-have taken many online courses, and have recently questioned myself: "How much
-have I **_really learned"?_**
+to Spain with the aim of changing career from Procurement Manager to Web
+Developer, by way of self-guided tuition. In that time I have taken many online
+courses, and have recently questioned myself: "How much have I **_really
+learned"?_**
 
 It's easy to get caught in a tutorial loop. It feels safe and comfortable having
 our hand held, shown what to do, given small challenges to build our confidence.
-But when it comes to applying what I've learned to my own projects, it often
-feels like I've forgotten what to do. So how could this be improved? Can we gain
-some sort of superpower to remember everything that we learn forever? Well, not
-quite, but the next best thing is to become an efficient learner.
+But for me, when it comes to applying what I've learned to my own projects, it
+often feels like I've forgotten what to do. So how could this be improved? Can
+we gain some sort of superpower to remember everything that we learn forever?
+Well, not quite, but the next best thing is to become an efficient learner.
 
 The Udemy course
 [Learning to Learn](https://www.udemy.com/course/learning-to-learn-efficient-learning-zero-to-mastery)
 by Andrei Neagoie, has enlightened me with the realisation that I have been
-learning inefficiently for the past year and a half. Don't get me wrong, I have
-come a long way, but I could have done better. So armed with a set of new
-learning techniques perhaps those superpowers have become a step closer.
+learning inefficiently. Don't get me wrong, I have come a long way, but I could
+have done better. So armed with a set of new learning techniques perhaps those
+superpowers have become a step closer.
 
 Paradoxically, this blog post actually serves to implement a learning technique
 in itself, the Feyman Technique, which I am using to summarise what I have

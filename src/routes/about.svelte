@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>About • Tom Hendra's blog</title>
+  <title>Tom Hendra • About</title>
 </svelte:head>
 
 <div class="max-width-container">
@@ -14,25 +14,24 @@
     <section class="main-section">
       <p>
         In 2018 I quit my procurement job in the UK, sold everything I owned,
-        and moved to Spain to become a freelance web developer. New country, new
+        and moved to Spain to become a freelance Web Developer. New country, new
         language, new career, new life.
       </p>
       <p>
         While bulding WordPress sites to pay the bills, I have been in pursuit
         of my chosen career trajectory ever since; as a professional Developer
-        in the rich and vibrant JavaScript community.
+        within the vast and vibrant JavaScript community.
       </p>
       <p>
         I have built this blog as a way to share my discoveries with the world
         while I'm focused on learning new things. At the moment I'm building
-        with React and Svelte with Node.js next on the roadmap, so expect a
-        bunch of JavaScript-centric content here.
+        with React and Svelte, with Node.js next on the roadmap.
       </p>
       <p>
-        Personally, I am smitten with the Spanish food and culture, and don't
-        miss the grey skies of England one bit! When not in front of a screen
-        you'll find me enjoying tapas in a local bar, or at the gym burning
-        calories accumulated from the aforementioned.
+        On a personal level, I am smitten with Spanish gastronomy, and don't
+        miss the grey skies of England! When I'm not coding you'll find me
+        enjoying tapas at a local bar, or at the gym burning calories
+        accumulated from the aforementioned.
       </p>
       <p>
         If you'd like to chat please feel free to reach out on <a
