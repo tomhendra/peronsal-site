@@ -3,7 +3,7 @@ title: 'React & AWS Amplify with DataStore'
 subtitle: 'Use the AWS Amplify CLI to configure your React app with a Datastore backend for offline functionality.'
 date: '2021-04-30'
 updated: '2022-04-03'
-coverImage: 'remote-cabin-jpeg'
+coverImage: 'remote-cabin'
 alt: 'person sitting in a remote area'
 caption: 'Photo by Felix Mittermeier'
 tags:

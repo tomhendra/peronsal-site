@@ -3,7 +3,7 @@ title: 'Convert Google Fonts to woff2'
 subtitle: 'A guide on how to convert Google fonts to woff2 format with a cli tool.'
 date: '2021-03-19'
 updated: '2022-04-03'
-coverImage: 'coloured-letters.png'
+coverImage: 'coloured-letters.jpeg'
 alt: 'Arrangement of coloured letters'
 caption: 'Photo by Magda Ehlers'
 tags:
