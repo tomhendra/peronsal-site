@@ -1,11 +1,11 @@
 ---
 title: 'How to Set Up Cloudflare with Vercel'
-subtitle: 'lorum ipsum'
+subtitle: 'Use the proxy service from Cloudflare with deployments to Vercel.'
 date: '2020-08-10'
 updated: ''
-coverImage: 'bizarre-platypus-2400.png'
-alt: 'Bizarre Platypus #2400'
-caption: 'Photo by Kaushal Moradiya from Pexels'
+coverImage: 'proxy-provider.jpeg'
+alt: 'Mobile phone with a generic Proxy Provider company logo'
+caption: 'Photo by Ed Webster'
 tags:
   - 'vercel'
   - 'cloudflare'
@@ -14,10 +14,6 @@ description:
 Cloudflare when using the proxy feature which brings the security benefits.
 Here's how to get things running smoothly."
 ---
-
-There are some potential issues with getting Vercel to play nicely with
-Cloudflare when using the proxy feature which brings the security benefits.
-Here's how to get things running smoothly.
 
 This post is an edited version of
 [this blog post](https://levelup.gitconnected.com/how-to-set-up-cloudflare-with-zeit-93daa7d45dd)
