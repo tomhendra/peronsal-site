@@ -3,7 +3,7 @@ title: 'How to Set Up Cloudflare with Vercel'
 subtitle: 'Use the proxy service from Cloudflare with deployments to Vercel.'
 date: '2020-08-10'
 updated: '2022-04-03'
-coverImage: 'proxy-provider.jpeg'
+coverImage: 'proxy-provider'
 alt: 'Mobile phone with a generic Proxy Provider company logo'
 caption: 'Photo by Ed Webster'
 tags:

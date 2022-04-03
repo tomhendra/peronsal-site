@@ -3,7 +3,7 @@ title: 'Superpowers for the Self-Guided Learner'
 subtitle: 'How to gain the power to learn efficiently.'
 date: '2020-04-14'
 updated: '2022-04-02'
-coverImage: 'think-about-things-differently.jpeg'
+coverImage: 'think-about-things-differently'
 alt: 'Neon sign with the statement: Think About Things Differently.'
 caption: 'Photo by Photo by Ivan Bertolazzi'
 tags:

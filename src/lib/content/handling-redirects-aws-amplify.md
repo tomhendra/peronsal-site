@@ -3,7 +3,7 @@ title: 'Redirects with AWS Amplify'
 subtitle: 'How to handle redirects within AWS Amplify.'
 date: '2021-05-21'
 updated: '2022-04-03'
-coverImage: 'compass.jpeg'
+coverImage: 'compass'
 alt: 'a compass being held'
 caption: 'Photo by Valentin Antonucci'
 tags:

@@ -3,7 +3,7 @@ title: 'Exploring Next.js, Emotion & CSS Variable Theming'
 subtitle: 'A styling solution for Next.js using the best parts of other popular solutions.'
 date: '2021-03-20'
 updated: '2022-04-03'
-coverImage: 'color-swatches.jpeg'
+coverImage: 'color-swatches'
 alt: 'different coloured bars'
 caption: 'Photo by Enric Cruz López'
 tags:

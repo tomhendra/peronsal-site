@@ -3,7 +3,7 @@ title: 'React & AWS Amplify with GraphQL'
 subtitle: 'Use the AWS Amplify CLI to configure your React app with a GraphQL back.'
 date: '2021-04-30'
 updated: '2022-04-03'
-coverImage: 'graph-data.jpeg'
+coverImage: 'graph-data'
 alt: 'Abstract graph data visualisation'
 caption: 'Photo by Lucas DC'
 tags:
