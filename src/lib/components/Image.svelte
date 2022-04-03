@@ -3,8 +3,10 @@
   import {image} from 'svelte-cloudinary';
   import {CLOUDINARY_PROJECT_DIR} from '$lib/constants';
 
-  export let source =
+  const placeholder =
     'https://plchldr.co/i/400x200?&bg=959393&fc=ffffff&text=<img />';
+
+  export let source = placeholder;
   export let alt = null;
   export let ratio = null;
   export let width = '100%';
