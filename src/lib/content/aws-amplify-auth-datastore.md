@@ -1,11 +1,11 @@
 ---
-title: 'React & AWS Amplify with DataStore Setup for User Owned Data'
-subtitle: 'lorum ipsum lorum ipsum lorum ipsum lorum ipsum'
+title: 'React & AWS Amplify with DataStore'
+subtitle: 'Use the AWS Amplify CLI to configure your React app with a Datastore backend for offline functionality.'
 date: '2021-04-30'
-updated: '2021-04-30'
-coverImage: 'bizarre-platypus-2400.png'
-alt: 'Bizarre Platypus #2400'
-caption: 'Photo by Kaushal Moradiya from Pexels'
+updated: '2022-04-03'
+coverImage: 'remote-cabin-jpeg'
+alt: 'person sitting in a remote area'
+caption: 'Photo by Felix Mittermeier'
 tags:
   - 'aws'
   - 'auth'
@@ -15,11 +15,7 @@ full stack app powered by Amplify DataStore for easy offline functionality, plus
 authentication and authorization for user-specific data.'
 ---
 
-## Introduction
-
-Get up and running quickly with Create React App and the Amplify CLI to create a
-full stack app powered by Amplify DataStore for easy offline functionality, plus
-authentication and authorization for user-specific data.
+## Steps
 
 1. React frontend via Create React App with TypeScript
 2. Amplify backend configured to use DataStore

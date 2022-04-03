@@ -14,11 +14,10 @@ description:
   path to become a superpowered learner.'
 ---
 
-In 2018 I left my old life behind in the UK, sold everything I owned, and moved
-to Spain with the aim of changing career from Procurement Manager to Web
-Developer, by way of self-guided tuition. In that time I have taken many online
-courses, and have recently questioned myself: "How much have I **_really
-learned"?_**
+Since 2018 I have been in transition of changing career trajectory - from
+Procurement Manager to Web Developer - by way of self-guided tuition. In that
+time I have taken many online courses, and have recently questioned myself: "How
+much have I _really learned"?_
 
 It's easy to get caught in a tutorial loop. It feels safe and comfortable having
 our hand held, shown what to do, given small challenges to build our confidence.

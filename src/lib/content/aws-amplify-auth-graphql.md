@@ -1,11 +1,11 @@
 ---
-title: 'React & AWS Amplify with DataStore Setup for User Owned Data'
-subtitle: 'lorum ipsum'
+title: 'React & AWS Amplify with GraphQL'
+subtitle: 'Use the AWS Amplify CLI to configure your React app with a GraphQL backend.'
 date: '2021-04-30'
-updated: ''
-coverImage: 'bizarre-platypus-2400.png'
-alt: 'Bizarre Platypus #2400'
-caption: 'Photo by Kaushal Moradiya from Pexels'
+updated: '2022-04-03'
+coverImage: graph-data.jpeg'
+alt: 'Abstract graph data visualisation'
+caption: 'Photo by Lucas DC'
 tags:
   - 'aws'
   - 'auth'
@@ -14,10 +14,6 @@ description:
 GraphQL powered full stack app, with authentication and authorization for
 user-specific data.'
 ---
-
-Get up and running quickly with Create React App and the Amplify CLI to create a
-GraphQL powered full stack app, with authentication and authorization for
-user-specific data.
 
 ## Steps
 

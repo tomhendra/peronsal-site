@@ -1,11 +1,11 @@
 ---
 title: 'Redirects with AWS Amplify'
-subtitle: 'lorum ipsum'
+subtitle: 'How to handle redirects within AWS Amplify.'
 date: '2021-05-21'
-updated: ''
-coverImage: 'bizarre-platypus-2400.png'
-alt: 'Bizarre Platypus #2400'
-caption: 'Photo by Kaushal Moradiya from Pexels'
+updated: '2022-04-03'
+coverImage: 'compass.jpeg'
+alt: 'a compass being held'
+caption: 'Photo by Valentin Antonucci'
 tags:
   - 'react'
   - 'aws'
@@ -14,11 +14,11 @@ because browsers and search engines don't receive the status code of 301 / 302
 for a redirect that would usually be sent by a server."
 ---
 
-The common use of client-side routers to handle redirects is not a good idea,
-because browsers and search engines don't receive the status code of 301 / 302
-for a redirect that would usually be sent by a server. This can have a negative
-effect on SEO and alter browser behaviour, so it is a much better idea to ensure
-our redirects happen on the server or CDN and not the client.
+## Introduction
+
+Using client-side routers to handle redirects can have a negative effect on SEO
+and alter browser behaviour, so it is a much better idea to ensure our redirects
+happen on the server or CDN and not the client.
 
 In a React (CRA) AWS Amplify app we need to apply our configurations in the
 three places that a server is used:

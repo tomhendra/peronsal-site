@@ -6,7 +6,7 @@
   <main>
     <section class="header-section">
       <span class="heading-prefix">About</span>
-      <h1>Hola, I'm Tom!</h1>
+      <h1>Hello, I'm Tom!</h1>
       <span class="subtitle">
         I'm a web developer from the UK, based in Salamanca, Spain.
       </span>
@@ -33,16 +33,11 @@
         a local bar, at the gym, or exploring new places.
       </p>
       <p>
-        I am always open to new oppurtunities to learn and grow. I take pride in
-        my work and provide an obsessive attention to detail coupled with a
-        natural gravitation towards the well-designed.
-      </p>
-      <p>
-        If you'd like to chat please do reach out to me on <a
+        I am always open to new oppurtunities to learn and grow. If you'd like
+        to chat please reach out to me on <a
           rel="external"
           href="https://twitter.com/tomhendra">Twitter</a
-        >. I am super keen to enhance my network and give back to the community
-        in any way which I am able to.
+        >. I am super keen to enhance my network and give back to the community.
       </p>
     </section>
   </main>
