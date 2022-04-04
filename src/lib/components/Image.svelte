@@ -19,7 +19,6 @@
 </script>
 
 <img
-  rel="preload"
   use:image={{src, bind: true, lazy: true}}
   {alt}
   style="

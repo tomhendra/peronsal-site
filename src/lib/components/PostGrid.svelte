@@ -1,8 +1,20 @@
 <script lang="ts">
+  import {onMount} from 'svelte';
+  import {prefetch} from '$app/navigation';
+  import {checkPrefersReducedData} from '$lib/utils';
   import {PostPreview} from '$lib/components';
   import type {PostData} from '$lib/types';
 
   export let posts: PostData[];
+
+  onMount(() => {
+    if (!checkPrefersReducedData()) {
+      // TODO: should maybe make this the posts on each page, and not just the most recent five.
+      posts.forEach(post => {
+        prefetch(`/blog/${post.slug}`);
+      });
+    }
+  });
 </script>
 
 <div class="posts-grid">

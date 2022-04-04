@@ -5,14 +5,14 @@
 
 <header>
   <div class="max-width-container">
-    <a class="logo-wrapper" href="/">
+    <a sveltekit:prefetch class="logo-wrapper" href="/">
       <TomhendraLogo />
       <span class="wordmark">Tom Hendra</span>
       <span class="visually-hidden">Tom Hendra logo - Home</span>
     </a>
     <nav>
-      <a href="/">Posts</a>
-      <a href="/about">About</a>
+      <a sveltekit:prefetch href="/">Posts</a>
+      <a sveltekit:prefetch href="/about">About</a>
     </nav>
     <ThemeToggle />
   </div>

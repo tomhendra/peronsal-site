@@ -1,9 +1,10 @@
 <script>
-  import '$lib/styles/global.scss';
   import {onMount} from 'svelte';
-  import {getScrollbarWidth} from '$lib/utils';
+  import {prefetch} from '$app/navigation';
+  import {getScrollbarWidth, checkPrefersReducedData} from '$lib/utils';
   import {MobileMenu, MobileMenuButton, Header, Footer} from '$lib/components';
   import {initialize} from 'svelte-cloudinary';
+  import '$lib/styles/global.scss';
   import {CLOUDINARY_PLUBLIC_ID} from '$lib/constants';
   // https://svelte-cloudinary.vercel.app/#%F0%9F%91%B7-sapper
   initialize({cloud_name: CLOUDINARY_PLUBLIC_ID});
@@ -18,6 +19,11 @@
       '--scrollbar-width',
       scrollbarWidth + 'px',
     );
+
+    if (!checkPrefersReducedData()) {
+      prefetch('/');
+      prefetch('/about');
+    }
   });
 
   let isMobileMenuOpen = false;
