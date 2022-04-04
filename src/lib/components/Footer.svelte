@@ -32,7 +32,7 @@
   footer {
     background-color: var(--color-background);
     border-top: 1px solid var(--color-muted-separator);
-    color: var(--gray-400);
+    color: var(--gray-500);
 
     a {
       text-decoration: none;
@@ -69,7 +69,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    color: var(--gray-400);
+    color: var(--gray-500);
 
     @include mobileAndDown {
       order: -1;
