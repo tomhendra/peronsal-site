@@ -1,8 +1,8 @@
 <script>
   import '$lib/styles/global.scss';
   import {onMount} from 'svelte';
-  import {prefetch} from '$app/navigation';
-  import {getScrollbarWidth, checkPrefersReducedData} from '$lib/utils';
+  // import {prefetch} from '$app/navigation';
+  import {getScrollbarWidth} from '$lib/utils';
   import {MobileMenu, MobileMenuButton, Header, Footer} from '$lib/components';
   import {initialize} from 'svelte-cloudinary';
   import {CLOUDINARY_PLUBLIC_ID} from '$lib/constants';
@@ -19,12 +19,14 @@
       '--scrollbar-width',
       scrollbarWidth + 'px',
     );
-
-    if (!checkPrefersReducedData()) {
-      prefetch('/');
-      prefetch('/about');
-    }
   });
+
+  // onMount(() => {
+  //   if (!checkPrefersReducedData()) {
+  //     prefetch('/');
+  //     prefetch('/about');
+  //   }
+  // });
 
   let isMobileMenuOpen = false;
   const toggleMobileMenu = () => (isMobileMenuOpen = !isMobileMenuOpen);
