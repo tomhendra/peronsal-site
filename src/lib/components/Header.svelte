@@ -1,10 +1,20 @@
 <script>
+  import {onMount} from 'svelte';
+  import {prefetch} from '$app/navigation';
+  import {checkPrefersReducedData} from '$lib/utils';
   import {ThemeToggle} from '$lib/components';
   import {TomhendraLogo} from '$lib/components/icons';
+
+  onMount(() => {
+    if (!checkPrefersReducedData()) {
+      prefetch('/');
+      prefetch('/about');
+    }
+  });
 </script>
 
 <header>
-  <div class="max-width-container">
+  <div class="max-width-container header-container">
     <a sveltekit:prefetch class="logo-wrapper" href="/">
       <TomhendraLogo />
       <span class="wordmark">Tom Hendra</span>
@@ -42,7 +52,7 @@
     }
   }
 
-  .max-width-container {
+  .header-container {
     background-color: var(--color-background);
     display: flex;
     align-items: center;
