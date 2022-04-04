@@ -7,8 +7,8 @@ coverImage: 'graph-data'
 alt: 'Abstract graph data visualisation'
 caption: 'Photo by Lucas DC'
 tags:
-  - 'aws'
-  - 'auth'
+  - 'AWS'
+  - 'Auth'
 description:
   'Get up and running quickly with Create React App and the Amplify CLI to create a
 GraphQL powered full stack app, with authentication and authorization for

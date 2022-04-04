@@ -7,8 +7,8 @@ coverImage: 'remote-cabin'
 alt: 'person sitting in a remote area'
 caption: 'Photo by Felix Mittermeier'
 tags:
-  - 'aws'
-  - 'auth'
+  - 'AWS'
+  - 'Auth'
 description:
   'Get up and running quickly with Create React App and the Amplify CLI to create a
 full stack app powered by Amplify DataStore for easy offline functionality, plus

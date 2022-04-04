@@ -7,8 +7,8 @@ coverImage: 'coloured-letters'
 alt: 'Arrangement of coloured letters'
 caption: 'Photo by Magda Ehlers'
 tags:
-  - 'typography'
-  - 'css'
+  - 'Typography'
+  - 'CSS'
 description: "Google Fonts is a great resource for typefaces. It is a well-established
 platform and the web app is a joy do use. However if we want to self-host the
 fonts we download, which we should do according to Google, the default download 

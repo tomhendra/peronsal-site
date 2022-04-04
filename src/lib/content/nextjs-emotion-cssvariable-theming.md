@@ -7,9 +7,9 @@ coverImage: 'color-swatches'
 alt: 'different coloured bars'
 caption: 'Photo by Enric Cruz López'
 tags:
-  - 'nextjs'
-  - 'emotion'
-  - 'css'
+  - 'Next.js'
+  - 'Emotion'
+  - 'CSS'
 description:
   "The structured theming of Theme UI and the well-considered design system of
 Tailwind, without abstraction from vanilla CSS too much."

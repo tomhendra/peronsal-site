@@ -7,8 +7,8 @@ coverImage: 'proxy-provider'
 alt: 'Mobile phone with a generic Proxy Provider company logo'
 caption: 'Photo by Ed Webster'
 tags:
-  - 'vercel'
-  - 'cloudflare'
+  - 'Vercel'
+  - 'Cloudflare'
 description:
   "There are some potential issues with getting Vercel to play nicely with
 Cloudflare when using the proxy feature which brings the security benefits.
