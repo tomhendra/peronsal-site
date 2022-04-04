@@ -19,7 +19,9 @@
       '--scrollbar-width',
       scrollbarWidth + 'px',
     );
+  });
 
+  onMount(() => {
     if (!checkPrefersReducedData()) {
       prefetch('/');
       prefetch('/about');
