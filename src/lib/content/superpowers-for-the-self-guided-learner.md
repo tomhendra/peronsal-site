@@ -7,8 +7,7 @@ coverImage: 'think-about-things-differently'
 alt: 'Neon sign with the statement: Think About Things Differently.'
 caption: 'Photo by Photo by Ivan Bertolazzi'
 tags:
-  - 'learning'
-  - 'self-improvement'
+  - 'Learning Techniques'
 description:
   'Learning is a skill to be learned in itself. This article aims to share the
   path to become a superpowered learner.'

@@ -7,8 +7,8 @@ coverImage: 'compass'
 alt: 'a compass being held'
 caption: 'Photo by Valentin Antonucci'
 tags:
-  - 'react'
-  - 'aws'
+  - 'React'
+  - 'AWS'
 description: "The common use of client-side routers to handle redirects is not a good idea,
 because browsers and search engines don't receive the status code of 301 / 302
 for a redirect that would usually be sent by a server."
