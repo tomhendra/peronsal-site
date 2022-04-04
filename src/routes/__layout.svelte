@@ -20,10 +20,10 @@
       scrollbarWidth + 'px',
     );
 
-    // if (!checkPrefersReducedData()) {
-    //   prefetch('/');
-    //   prefetch('/about');
-    // }
+    if (!checkPrefersReducedData()) {
+      prefetch('/');
+      prefetch('/about');
+    }
   });
 
   let isMobileMenuOpen = false;
