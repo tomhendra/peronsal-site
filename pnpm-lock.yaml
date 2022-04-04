@@ -21,7 +21,7 @@ specifiers:
   svelte: ^3.46.6
   svelte-check: ^2.4.6
   svelte-cloudinary: ^0.2.5
-  svelte-preprocess: ^4.10.4
+  svelte-preprocess: ^4.10.5
   tslib: ^2.3.1
   typescript: ^4.6.2
 
@@ -48,7 +48,7 @@ devDependencies:
   svelte: 3.46.6
   svelte-check: 2.4.6_5d470640770cfbb88616f61d89dbc118
   svelte-cloudinary: 0.2.5_lodash@4.17.21
-  svelte-preprocess: 4.10.4_017193c6b419ea11721658065c4c789d
+  svelte-preprocess: 4.10.5_017193c6b419ea11721658065c4c789d
   tslib: 2.3.1
   typescript: 4.6.3
 
@@ -1795,7 +1795,7 @@ packages:
       sade: 1.8.1
       source-map: 0.7.3
       svelte: 3.46.6
-      svelte-preprocess: 4.10.4_017193c6b419ea11721658065c4c789d
+      svelte-preprocess: 4.10.5_017193c6b419ea11721658065c4c789d
       typescript: 4.6.3
     transitivePeerDependencies:
       - '@babel/core'
@@ -1827,8 +1827,8 @@ packages:
       svelte: 3.46.6
     dev: true
 
-  /svelte-preprocess/4.10.4_017193c6b419ea11721658065c4c789d:
-    resolution: {integrity: sha512-fuwol0N4UoHsNQolLFbMqWivqcJ9N0vfWO9IuPAiX/5okfoGXURyJ6nECbuEIv0nU3M8Xe2I1ONNje2buk7l6A==}
+  /svelte-preprocess/4.10.5_017193c6b419ea11721658065c4c789d:
+    resolution: {integrity: sha512-VKXPRScCzAZqeBZOGq4LLwtNrAu++mVn7XvQox3eFDV7Ciq0Lg70Q8QWjH9iXF7J+pMlXhPsSFwpCb2E+hoeyA==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
     peerDependencies:

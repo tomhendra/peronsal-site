@@ -13,6 +13,7 @@
 <style lang="scss">
   li {
     margin: 0;
+    list-style: none;
 
     &::marker {
       content: none;
