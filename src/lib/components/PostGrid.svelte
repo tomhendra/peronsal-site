@@ -11,7 +11,7 @@
     if (!checkPrefersReducedData()) {
       // TODO: should maybe make this the posts on each page, and not just the most recent five.
       posts.forEach(post => {
-        prefetch(`/blog/${post.slug}`);
+        prefetch(`/posts/${post.slug}`);
       });
     }
   });
