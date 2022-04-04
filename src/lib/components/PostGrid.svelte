@@ -1,19 +1,19 @@
 <script lang="ts">
-  // import {onMount} from 'svelte';
-  // import {prefetch} from '$app/navigation';
-  // import {checkPrefersReducedData} from '$lib/utils';
+  import {onMount} from 'svelte';
+  import {prefetch} from '$app/navigation';
+  import {checkPrefersReducedData} from '$lib/utils';
   import {PostPreview} from '$lib/components';
   import type {PostData} from '$lib/types';
 
   export let posts: PostData[];
 
-  // onMount(() => {
-  //   if (!checkPrefersReducedData()) {
-  //     posts.forEach(post => {
-  //       prefetch(`/posts/${post.slug}`);
-  //     });
-  //   }
-  // });
+  onMount(() => {
+    if (!checkPrefersReducedData()) {
+      posts.forEach(post => {
+        prefetch(`/posts/${post.slug}`);
+      });
+    }
+  });
 </script>
 
 <div class="posts-grid">
