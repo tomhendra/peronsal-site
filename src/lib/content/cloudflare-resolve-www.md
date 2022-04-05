@@ -28,7 +28,7 @@ When you deploy to Cloudflare Pages, within the Pages section of the Dashboard
 UI CF provides an option to setup a custom domain. During setup, you can choose
 to automatically add the DNS settings. This works great for the base domain, but
 in the DNS section of the dashboard for the website domain, there is a prompt to
-add an A of CNAME record for `www.yourdomain.com`.
+add an A or a CNAME record for `www.yourdomain.com`.
 
 No problem, we add a CNAME record with `www` as the Name, and `yourdomain.com`
 as the Target, but the problem is this will not resolve. If we visit
@@ -51,4 +51,4 @@ Then the settings are:
 - 301 - Permanent Redirect
 - `https://yourdomain.com/$1`
 
-And that is all there is too it!
+And that is all there is to it!
