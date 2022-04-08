@@ -10,7 +10,7 @@ import {
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "New Remix App",
+  title: "Tom Hendra • Personal Site",
   viewport: "width=device-width,initial-scale=1",
 });
 
