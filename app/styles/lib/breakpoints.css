@@ -1,0 +1,53 @@
+/* 
+    CSS var() doesn't work within @media rules. CSS environment variables will
+    correct this, but it's still in draft: https://drafts.csswg.org/css-env-1/ 
+
+    this file exists as a placeholder, with ideal example api use as a reference 
+    for when css env vars are ready in the future. 
+
+    ⚠️ Do not use this file within any LinksFunction until css env vars are
+    ready.
+
+    in the spirit of Remix staying close to the platform, this project uses
+    manually defined media queries. 
+*/
+
+:root {
+  --bp-laptop: calc(1500 / 16) * 1rem; /* 93.75rem */
+  --bp-tablet: calc(1100 / 16) * 1rem; /* 68.75rem */
+  --bp-mobile: calc(550 / 16) * 1rem; /* 34.375rem */
+}
+
+/* example usage
+
+desktop first -- default: desktop monitors, 1501px and upwards
+@media (max-width: env(--bp-laptop)) {
+  laptop and down styles
+}
+
+@media (max-width: env(--bp-tablet)) {
+  tablet and down styles
+}
+
+@media (min-width: env(--bp-mobile)) and (max-width: calc(env(--bp-tablet) - 0.16rem)) {
+  tablet only styles
+}
+
+@media (max-width: env(--bp-mobile)) {
+  mobile and down styles
+}
+
+mobile first -- default: phones from 0px to 549px
+@media (min-width: env(--bp-mobile)) {
+  tablet and up styles
+}
+
+@media (min-width: env(--bp-tablet)) {
+   laptop and up styles
+}
+
+@media (min-width: env(--bp-laptop)) {
+  desktop and up styles
+}
+
+*/

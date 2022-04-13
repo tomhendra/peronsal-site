@@ -1,7 +1,7 @@
 export default function ProjectTwo() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+    <main>
       <h1>Project Two</h1>
-    </div>
+    </main>
   );
 }

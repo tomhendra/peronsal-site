@@ -2,9 +2,20 @@ import { Link } from "@remix-run/react";
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Tom Hendra's Personal Site</h1>
+    <main>
+      <h1>Tom Hendra's Personal Site</h1>
       <Link to="projects">Projects</Link>
-    </div>
+      <ul>
+        <li>
+          <Link to="projects/project-one">Project One</Link>
+        </li>
+        <li>
+          <Link to="projects/project-two">Project Two</Link>
+        </li>
+        <li>
+          <Link to="projects/project-three">Project Three</Link>
+        </li>
+      </ul>
+    </main>
   );
 }

@@ -1,0 +1,406 @@
+:root {
+  --white: hsl(0deg 0% 100%);
+  --black: hsl(0deg 0% 0%);
+
+  --gray-25: hsl(0deg 0% 98.8%);
+  --gray-50: hsl(0deg 0% 98%);
+  --gray-100: hsl(0deg 0% 96.1%);
+  --gray-200: hsl(0deg 0% 89.8%);
+  --gray-300: hsl(0deg 0% 83.9%);
+  --gray-400: hsl(0deg 0% 63.9%);
+  --gray-500: hsl(0deg 0% 45.1%);
+  --gray-600: hsl(0deg 0% 32.2%);
+  --gray-700: hsl(0deg 0% 25.9%);
+  --gray-800: hsl(0deg 0% 16.1%);
+  --gray-900: hsl(0deg 0% 7.8%);
+
+  --error-25: hsl(12deg 100% 99%);
+  --error-50: hsl(5deg 85.7% 97.3%);
+  --error-100: hsl(4deg 93.3% 94.1%);
+  --error-200: hsl(3deg 96.3% 89.4%);
+  --error-300: hsl(4deg 96.1% 80%);
+  --error-400: hsl(4deg 92.5% 68.8%);
+  --error-500: hsl(4deg 86% 58%);
+  --error-600: hsl(4deg 74.3% 48.8%);
+  --error-700: hsl(4deg 76.5% 40%);
+  --error-800: hsl(4deg 71.6% 33.1%);
+  --error-900: hsl(8deg 64.9% 29%);
+
+  --warning-25: hsl(33deg 81.8% 97.8%);
+  --warning-50: hsl(30deg 88.9% 96.5%);
+  --warning-100: hsl(30deg 90.5% 91.8%);
+  --warning-200: hsl(36deg 86% 83.1%);
+  --warning-300: hsl(27deg 88.7% 72.4%);
+  --warning-400: hsl(23deg 87.9% 61%);
+  --warning-500: hsl(21deg 86.6% 53.1%);
+  --warning-600: hsl(17deg 82.1% 48.2%);
+  --warning-700: hsl(13deg 79.6% 40.4%);
+  --warning-800: hsl(11deg 70.9% 33.7%);
+  --warning-900: hsl(11deg 67.6% 27.8%);
+
+  --success-25: hsl(142deg 80% 98%);
+  --success-50: hsl(145deg 81% 95.9%);
+  --success-100: hsl(140deg 80.4% 90%);
+  --success-200: hsl(144deg 78% 80.4%);
+  --success-300: hsl(148deg 74% 66.9%);
+  --success-400: hsl(150deg 66% 51.6%);
+  --success-500: hsl(152deg 82.1% 39.4%);
+  --success-600: hsl(153deg 96.1% 30.4%);
+  --success-700: hsl(155deg 96.8% 24.3%);
+  --success-800: hsl(155deg 90.1% 19.8%);
+  --success-900: hsl(156deg 88.1% 16.5%);
+
+  --moss-25: hsl(90deg 60% 98%);
+  --moss-50: hsl(88deg 61.9% 95.9%);
+  --moss-100: hsl(89deg 56.9% 90%);
+  --moss-200: hsl(89deg 58% 80.4%);
+  --moss-300: hsl(89deg 58.6% 66.9%);
+  --moss-400: hsl(89deg 57.9% 51.6%);
+  --moss-500: hsl(89deg 58.2% 39.4%);
+  --moss-600: hsl(89deg 57.4% 30.4%);
+  --moss-700: hsl(89deg 58.1% 24.3%);
+  --moss-800: hsl(89deg 58.4% 19.8%);
+  --moss-900: hsl(89deg 57.1% 16.5%);
+
+  --green-light-25: hsl(87deg 81.8% 97.8%);
+  --green-light-50: hsl(89deg 92% 95.1%);
+  --green-light-100: hsl(91deg 85.5% 89.2%);
+  --green-light-200: hsl(91deg 84.6% 82.2%);
+  --green-light-300: hsl(92deg 81% 67.1%);
+  --green-light-400: hsl(93deg 73.6% 55.5%);
+  --green-light-500: hsl(94deg 75.2% 44.3%);
+  --green-light-600: hsl(95deg 85.2% 34.5%);
+  --green-light-700: hsl(96deg 78.4% 27.3%);
+  --green-light-800: hsl(96deg 69% 22.7%);
+  --green-light-900: hsl(98deg 61.2% 20.2%);
+
+  --green-25: hsl(142deg 80% 98%);
+  --green-50: hsl(140deg 71.4% 95.9%);
+  --green-100: hsl(139deg 72.5% 90%);
+  --green-200: hsl(142deg 70% 80.4%);
+  --green-300: hsl(146deg 65.7% 66.9%);
+  --green-400: hsl(148deg 57.9% 51.6%);
+  --green-500: hsl(150deg 78.1% 39.4%);
+  --green-600: hsl(151deg 88.4% 30.4%);
+  --green-700: hsl(153deg 87.1% 24.3%);
+  --green-800: hsl(153deg 82.2% 19.8%);
+  --green-900: hsl(154deg 81% 16.5%);
+
+  --teal-25: hsl(165deg 80% 98%);
+  --teal-50: hsl(162deg 76.5% 96.7%);
+  --teal-100: hsl(165deg 85.5% 89.2%);
+  --teal-200: hsl(166deg 83.8% 78.2%);
+  --teal-300: hsl(169deg 75.8% 64.3%);
+  --teal-400: hsl(170deg 65.2% 50.4%);
+  --teal-500: hsl(171deg 79.4% 40%);
+  --teal-600: hsl(173deg 82.6% 31.6%);
+  --teal-700: hsl(173deg 75.9% 26.1%);
+  --teal-800: hsl(174deg 67.6% 21.8%);
+  --teal-900: hsl(174deg 60.8% 19%);
+
+  --cyan-25: hsl(186deg 100% 98%);
+  --cyan-50: hsl(186deg 100% 96.3%);
+  --cyan-100: hsl(186deg 95.9% 90.4%);
+  --cyan-200: hsl(188deg 93.5% 81.8%);
+  --cyan-300: hsl(189deg 92.4% 69%);
+  --cyan-400: hsl(190deg 85.7% 53.3%);
+  --cyan-500: hsl(191deg 94.5% 42.7%);
+  --cyan-600: hsl(194deg 91.4% 36.5%);
+  --cyan-700: hsl(195deg 82.3% 31%);
+  --cyan-800: hsl(196deg 69.6% 27.1%);
+  --cyan-900: hsl(198deg 63.6% 23.7%);
+
+  --blue-light-25: hsl(204deg 100% 98%);
+  --blue-light-50: hsl(204deg 100% 97.1%);
+  --blue-light-100: hsl(204deg 93.8% 93.7%);
+  --blue-light-200: hsl(201deg 97.2% 86.1%);
+  --blue-light-300: hsl(199deg 97% 73.9%);
+  --blue-light-400: hsl(198deg 95.1% 59.6%);
+  --blue-light-500: hsl(199deg 91.1% 48.4%);
+  --blue-light-600: hsl(200deg 100% 39.4%);
+  --blue-light-700: hsl(201deg 97.6% 32.2%);
+  --blue-light-800: hsl(201deg 91.4% 27.5%);
+  --blue-light-900: hsl(202deg 82% 23.9%);
+
+  --blue-25: hsl(210deg 100% 98%);
+  --blue-50: hsl(206deg 100% 96.9%);
+  --blue-100: hsl(209deg 100% 91%);
+  --blue-200: hsl(206deg 100% 84.9%);
+  --blue-300: hsl(206deg 100% 75.9%);
+  --blue-400: hsl(207deg 97.7% 65.9%);
+  --blue-500: hsl(211deg 95.3% 58%);
+  --blue-600: hsl(215deg 87.2% 51%);
+  --blue-700: hsl(218deg 80.3% 45.9%);
+  --blue-800: hsl(220deg 75.1% 37.8%);
+  --blue-900: hsl(218deg 68.4% 31%);
+
+  --blue-dark-25: hsl(222 100% 98%);
+  --blue-dark-50: hsl(221deg 100% 96.9%);
+  --blue-dark-100: hsl(220deg 100% 91%);
+  --blue-dark-200: hsl(220deg 100% 84.9%);
+  --blue-dark-300: hsl(220deg 100% 75.9%);
+  --blue-dark-400: hsl(220deg 100% 66.1%);
+  --blue-dark-500: hsl(220deg 100% 58%);
+  --blue-dark-600: hsl(220deg 87.2% 51%);
+  --blue-dark-700: hsl(220deg 100% 46.1%);
+  --blue-dark-800: hsl(220deg 100% 37.8%);
+  --blue-dark-900: hsl(220deg 100% 31%);
+
+  --indigo-25: hsl(222deg 100% 98%);
+  --indigo-50: hsl(219deg 100% 96.7%);
+  --indigo-100: hsl(221deg 100% 93.9%);
+  --indigo-200: hsl(223deg 96.5% 88.8%);
+  --indigo-300: hsl(224deg 95.7% 81.8%);
+  --indigo-400: hsl(228deg 91% 73.9%);
+  --indigo-500: hsl(233deg 85.9% 66.7%);
+  --indigo-600: hsl(237deg 77.3% 58.6%);
+  --indigo-700: hsl(239deg 60.3% 50.6%);
+  --indigo-800: hsl(238deg 57.3% 41.4%);
+  --indigo-900: hsl(236deg 48.6% 34.3%);
+
+  --violet-25: hsl(252deg 100% 99%);
+  --violet-50: hsl(250deg 100% 97.6%);
+  --violet-100: hsl(249deg 91.3% 95.5%);
+  --violet-200: hsl(251deg 95.2% 91.8%);
+  --violet-300: hsl(252deg 94.7% 85.1%);
+  --violet-400: hsl(254deg 93.4% 76.3%);
+  --violet-500: hsl(257deg 90.7% 66.3%);
+  --violet-600: hsl(261deg 84.2% 57.8%);
+  --violet-700: hsl(262deg 70.8% 50.4%);
+  --violet-800: hsl(262deg 70.2% 42.2%);
+  --violet-900: hsl(262deg 68.5% 34.9%);
+
+  --purple-25: hsl(240deg 100% 99%);
+  --purple-50: hsl(245deg 100% 97.6%);
+  --purple-100: hsl(246deg 91.3% 95.5%);
+  --purple-200: hsl(244deg 95.2% 91.8%);
+  --purple-300: hsl(247deg 97.4% 85.1%);
+  --purple-400: hsl(249deg 93.4% 76.3%);
+  --purple-500: hsl(252deg 91.9% 66.3%);
+  --purple-600: hsl(256deg 85.1% 57.8%);
+  --purple-700: hsl(257deg 72.3% 50.4%);
+  --purple-800: hsl(257deg 71.2% 42.2%);
+  --purple-900: hsl(257deg 68.5% 34.9%);
+
+  --fuchsia-25: hsl(288deg 100% 99%);
+  --fuchsia-50: hsl(289deg 100% 97.8%);
+  --fuchsia-100: hsl(290deg 100% 95.5%);
+  --fuchsia-200: hsl(290deg 95.8% 90.6%);
+  --fuchsia-300: hsl(289deg 95.4% 82.9%);
+  --fuchsia-400: hsl(290deg 92.9% 72.5%);
+  --fuchsia-500: hsl(290deg 86.1% 60.6%);
+  --fuchsia-600: hsl(291deg 71.1% 48.8%);
+  --fuchsia-700: hsl(293deg 74.4% 39.8%);
+  --fuchsia-800: hsl(293deg 71.4% 32.9%);
+  --fuchsia-900: hsl(295deg 66.4% 28%);
+
+  --pink-25: hsl(323deg 80% 98%);
+  --pink-50: hsl(316deg 73.3% 97.1%);
+  --pink-100: hsl(317deg 77.8% 94.7%);
+  --pink-200: hsl(318deg 88.5% 89.8%);
+  --pink-300: hsl(319deg 89.2% 81.8%);
+  --pink-400: hsl(321deg 88.2% 70.2%);
+  --pink-500: hsl(318deg 83.2% 60.4%);
+  --pink-600: hsl(325deg 73% 50.6%);
+  --pink-700: hsl(327deg 80.4% 42%);
+  --pink-800: hsl(328deg 75.6% 35.3%);
+  --pink-900: hsl(328deg 71.6% 30.4%);
+
+  --rose-25: hsl(354deg 100% 98%);
+  --rose-50: hsl(351deg 100% 97.3%);
+  --rose-100: hsl(351deg 100% 94.7%);
+  --rose-200: hsl(349deg 96.1% 90%);
+  --rose-300: hsl(349deg 97.8% 81.8%);
+  --rose-400: hsl(347deg 97.3% 71.4%);
+  --rose-500: hsl(346deg 91.1% 60.2%);
+  --rose-600: hsl(343deg 78.7% 49.8%);
+  --rose-700: hsl(341deg 84.6% 40.8%);
+  --rose-800: hsl(339deg 81.9% 34.7%);
+  --rose-900: hsl(338deg 76.8% 30.4%);
+
+  --orange-dark-25: hsl(24deg 100% 98%);
+  --orange-dark-50: hsl(23deg 100% 96.5%);
+  --orange-dark-100: hsl(24deg 100% 91.8%);
+  --orange-dark-200: hsl(30deg 100% 84.1%);
+  --orange-dark-300: hsl(21deg 100% 70%);
+  --orange-dark-400: hsl(17deg 100% 59%);
+  --orange-dark-500: hsl(15deg 100% 51%);
+  --orange-dark-600: hsl(11deg 95.7% 46.1%);
+  --orange-dark-700: hsl(7deg 93.8% 38%);
+  --orange-dark-800: hsl(5deg 85.3% 32%);
+  --orange-dark-900: hsl(7deg 80.3% 25.9%);
+
+  --orange-25: hsl(33deg 81.8% 97.8%);
+  --orange-50: hsl(30deg 88.9% 96.5%);
+  --orange-100: hsl(30deg 90.5% 91.8%);
+  --orange-200: hsl(36deg 86% 83.1%);
+  --orange-300: hsl(27deg 88.7% 72.4%);
+  --orange-400: hsl(23deg 87.9% 61%);
+  --orange-500: hsl(21deg 86.6% 53.1%);
+  --orange-600: hsl(17deg 82.1% 48.2%);
+  --orange-700: hsl(13deg 79.6% 40.4%);
+  --orange-800: hsl(11deg 70.9% 33.7%);
+  --orange-900: hsl(11deg 67.6% 27.8%);
+
+  --yellow-50: hsl(47deg 100% 88%);
+  --yellow-100: hsl(47deg 100% 83.9%);
+  --yellow-200: hsl(47deg 100% 76.1%);
+  --yellow-300: hsl(47deg 100% 68%);
+  --yellow-400: hsl(47deg 100% 60%);
+  --yellow-500: hsl(47deg 100% 50%);
+  --yellow-600: hsl(47deg 100% 43.9%);
+  --yellow-700: hsl(47deg 100% 36.1%);
+  --yellow-800: hsl(47deg 100% 28%);
+  --yellow-900: hsl(47deg 100% 20%);
+  --yellow-25: hsl(47deg 100% 92%);
+
+  --primary-25: var(--yellow-25);
+  --primary-50: var(--yellow-50);
+  --primary-100: var(--yellow-100);
+  --primary-200: var(--yellow-200);
+  --primary-300: var(--yellow-300);
+  --primary-400: var(--yellow-400);
+  --primary-500: var(--yellow-500);
+  --primary-600: var(--yellow-600);
+  --primary-700: var(--yellow-700);
+  --primary-800: var(--yellow-800);
+  --primary-900: var(--yellow-900);
+
+  --accent-25: var(--blue-25);
+  --accent-50: var(--blue-50);
+  --accent-100: var(--blue-100);
+  --accent-200: var(--blue-200);
+  --accent-300: var(--blue-300);
+  --accent-400: var(--blue-400);
+  --accent-500: var(--blue-500);
+  --accent-600: var(--blue-600);
+  --accent-700: var(--blue-700);
+  --accent-800: var(--blue-800);
+  --accent-900: var(--blue-900);
+}
+
+.light {
+  /* general colors */
+  --color-text: var(--gray-500);
+  --color-heading: var(--gray-900);
+  --color-background: var(--white);
+  --color-overlay: hsl(0deg 0% 75% / 0.5);
+  /* muted colors - faint color for backgrounds, borders, and accents that do 
+     not require high contrast with the background color */
+  --color-muted-text: var(--gray-500);
+  --color-muted-background: var(--gray-50);
+  --color-muted-border: var(--gray-300);
+  --color-muted-separator: var(--gray-200);
+  /* highlight color - background color for highlighting text */
+  --color-highlight: var(--primary-100);
+  /* primary colors - *brand* color for links, buttons, etc. */
+  --color-primary: var(--primary-500);
+  --color-primary-heading: var(--primary-800);
+  --color-primary-text: var(--primary-900);
+  --color-primary-background: var(--primary-50);
+  --color-primary-hover: var(--primary-400);
+  /* accent colors - contrast* color for emphasizing UI */
+  --color-accent: var(--accent-500);
+  --color-accent-text: var(--accent-600);
+  --color-accent-background: var(--accent-50);
+  --color-accent-hover: var(--accent-400);
+  /* status colors */
+  --color-info: var(--accent-500);
+  --color-error: var(--error-500);
+  --color-warning: var(--warning-500);
+  --color-success: var(--success-500);
+  /* general syntax colors */
+  --syntax-color-text: var(--gray-600);
+  --syntax-color-muted-text: var(--gray-400);
+  --syntax-color-background: var(--gray-100);
+  --syntax-color-selection: var(--gray-200);
+  --syntax-color-selection-flash: var(--accent-500);
+  --syntax-color-cursor: var(--accent-500);
+  /* prism.js specific tokens */
+  --syntax-color-attr-name: var(--orange-500);
+  --syntax-color-boolean: var(--orange-500);
+  --syntax-color-constant: var(--orange-500);
+  --syntax-color-number: var(--orange-500);
+  --syntax-color-atrule: var(--orange-500);
+  --syntax-color-class: var(--orange-400);
+  --syntax-color-keyword: var(--fuchsia-500);
+  --syntax-color-property: var(--rose-500);
+  --syntax-color-tag: var(--rose-500);
+  --syntax-color-symbol: var(--rose-500);
+  --syntax-color-deleted: var(--error-600);
+  --syntax-color-important: var(--rose-500);
+  --syntax-color-selector: var(--moss-500);
+  --syntax-color-string: var(--moss-500);
+  --syntax-color-char: var(--moss-500);
+  --syntax-color-builtin: var(--moss-500);
+  --syntax-color-inserted: var(--success-600);
+  --syntax-color-regex: var(--moss-500);
+  --syntax-color-attr-value: var(--moss-500);
+  --syntax-color-variable: var(--blue-light-500);
+  --syntax-color-operator: var(--blue-light-500);
+  --syntax-color-function: var(--blue-light-500);
+  --syntax-color-url: var(--orange-500);
+}
+
+.dark {
+  /* general colors */
+  --color-text: var(--gray-300);
+  --color-heading: var(--gray-25);
+  --color-background: var(--gray-900);
+  --color-overlay: hsl(0deg 0% 80% / 0.5);
+  /* muted colors - faint color for backgrounds, borders, and accents that do 
+     not require high contrast with the background color */
+  --color-muted-text: var(--gray-400);
+  --color-muted-background: var(--gray-800);
+  --color-muted-border: var(--gray-700);
+  --color-muted-separator: var(--gray-800);
+  /* highlight color - background color for highlighting text */
+  --color-highlight: var(--primary-100);
+  /* primary colors - *brand* color for links, buttons, etc. */
+  --color-primary: var(--primary-500);
+  --color-primary-heading: var(--primary-700);
+  --color-primary-text: var(--primary-500);
+  --color-primary-background: var(--primary-900);
+  --color-primary-hover: var(--primary-400);
+  /* accent colors - contrast* color for emphasizing UI */
+  --color-accent: var(--accent-500);
+  --color-accent-text: var(--accent-600);
+  --color-accent-background: var(--accent-50);
+  --color-accent-hover: var(--accent-400);
+  /* status colors */
+  --color-info: var(--accent-500);
+  --color-error: var(--error-500);
+  --color-warning: var(--warning-500);
+  --color-success: var(--success-500);
+  /* general syntax colors */
+  --syntax-color-text: var(--gray-300);
+  --syntax-color-muted-text: var(--gray-500);
+  --syntax-color-background: var(--gray-800);
+  --syntax-color-selection: var(--gray-700);
+  --syntax-color-selection-flash: var(--accent-600);
+  --syntax-color-cursor: var(--accent-600);
+  /* prism.js specific tokens */
+  --syntax-color-attr-name: var(--orange-400);
+  --syntax-color-boolean: var(--orange-400);
+  --syntax-color-constant: var(--orange-400);
+  --syntax-color-number: var(--orange-400);
+  --syntax-color-atrule: var(--orange-400);
+  --syntax-color-class: var(--orange-300);
+  --syntax-color-keyword: var(--fuchsia-400);
+  --syntax-color-property: var(--rose-400);
+  --syntax-color-tag: var(--rose-400);
+  --syntax-color-symbol: var(--rose-400);
+  --syntax-color-deleted: var(--error-500);
+  --syntax-color-important: var(--rose-400);
+  --syntax-color-selector: var(--moss-300);
+  --syntax-color-string: var(--moss-300);
+  --syntax-color-char: var(--moss-300);
+  --syntax-color-builtin: var(--moss-300);
+  --syntax-color-inserted: var(--success-500);
+  --syntax-color-regex: var(--moss-300);
+  --syntax-color-attr-value: var(--moss-300);
+  --syntax-color-variable: var(--blue-light-300);
+  --syntax-color-operator: var(--blue-light-300);
+  --syntax-color-function: var(--blue-light-300);
+  --syntax-color-url: var(--orange-400);
+}
