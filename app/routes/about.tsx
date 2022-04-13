@@ -1,7 +1,7 @@
-export default function Index() {
+export default function About() {
   return (
     <main className="u-max-width-container">
-      <h1>Hello</h1>
+      <h1>About</h1>
     </main>
   );
 }

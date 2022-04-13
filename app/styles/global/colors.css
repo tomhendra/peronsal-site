@@ -254,29 +254,29 @@
   --yellow-900: hsl(47deg 100% 20%);
   --yellow-25: hsl(47deg 100% 92%);
 
-  --primary-25: var(--yellow-25);
-  --primary-50: var(--yellow-50);
-  --primary-100: var(--yellow-100);
-  --primary-200: var(--yellow-200);
-  --primary-300: var(--yellow-300);
-  --primary-400: var(--yellow-400);
-  --primary-500: var(--yellow-500);
-  --primary-600: var(--yellow-600);
-  --primary-700: var(--yellow-700);
-  --primary-800: var(--yellow-800);
-  --primary-900: var(--yellow-900);
+  --primary-25: var(--indigo-25);
+  --primary-50: var(--indigo-50);
+  --primary-100: var(--indigo-100);
+  --primary-200: var(--indigo-200);
+  --primary-300: var(--indigo-300);
+  --primary-400: var(--indigo-400);
+  --primary-500: var(--indigo-500);
+  --primary-600: var(--indigo-600);
+  --primary-700: var(--indigo-700);
+  --primary-800: var(--indigo-800);
+  --primary-900: var(--indigo-900);
 
-  --accent-25: var(--blue-25);
-  --accent-50: var(--blue-50);
-  --accent-100: var(--blue-100);
-  --accent-200: var(--blue-200);
-  --accent-300: var(--blue-300);
-  --accent-400: var(--blue-400);
-  --accent-500: var(--blue-500);
-  --accent-600: var(--blue-600);
-  --accent-700: var(--blue-700);
-  --accent-800: var(--blue-800);
-  --accent-900: var(--blue-900);
+  --accent-25: var(--yellow-25);
+  --accent-50: var(--yellow-50);
+  --accent-100: var(--yellow-100);
+  --accent-200: var(--yellow-200);
+  --accent-300: var(--yellow-300);
+  --accent-400: var(--yellow-400);
+  --accent-500: var(--yellow-500);
+  --accent-600: var(--yellow-600);
+  --accent-700: var(--yellow-700);
+  --accent-800: var(--yellow-800);
+  --accent-900: var(--yellow-900);
 }
 
 .light {

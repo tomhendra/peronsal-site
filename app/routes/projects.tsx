@@ -1,4 +1,4 @@
-import { Link, Outlet } from "@remix-run/react";
+import { Link } from "@remix-run/react";
 import styles from "~/styles/projects.css";
 
 export function links() {
@@ -7,16 +7,19 @@ export function links() {
 
 export default function Projects() {
   return (
-    <main>
-      <div className="breadcrumbs">
-        <span>
-          <Link to="/">Home</Link>
-        </span>
-        <span>
-          <Link to="/projects">Projects</Link>
-        </span>
-      </div>
-      <Outlet />
+    <main className="u-max-width-container">
+      <h1>Projects</h1>
+      <ul>
+        <li>
+          <Link to="projects/project-one">Project One</Link>
+        </li>
+        <li>
+          <Link to="projects/project-two">Project Two</Link>
+        </li>
+        <li>
+          <Link to="projects/project-three">Project Three</Link>
+        </li>
+      </ul>
     </main>
   );
 }

@@ -18,6 +18,7 @@ specifiers:
   prettier: ^2.6.2
   react: ^17.0.2
   react-dom: ^17.0.2
+  react-feather: ^2.0.9
   typescript: ^4.5.5
   wrangler: ^0.0.25
 
@@ -28,6 +29,7 @@ dependencies:
   cross-env: 7.0.3
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  react-feather: 2.0.9_react@17.0.2
 
 devDependencies:
   '@babel/core': 7.17.9
@@ -6479,7 +6481,6 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
-    dev: true
 
   /property-information/6.1.1:
     resolution: {integrity: sha512-hrzC564QIl0r0vy4l6MvRLhafmUowhO/O3KgVSoXIbbA2Sz4j8HGpJc6T2cubRVwMwpdiG/vKGfhT4IixmKN9w==}
@@ -6570,9 +6571,17 @@ packages:
       scheduler: 0.20.2
     dev: false
 
+  /react-feather/2.0.9_react@17.0.2:
+    resolution: {integrity: sha512-yMfCGRkZdXwIs23Zw/zIWCJO3m3tlaUvtHiXlW+3FH7cIT6fiK1iJ7RJWugXq7Fso8ZaQyUm92/GOOHXvkiVUw==}
+    peerDependencies:
+      react: ^16.8.6 || ^17
+    dependencies:
+      prop-types: 15.8.1
+      react: 17.0.2
+    dev: false
+
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-    dev: true
 
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}

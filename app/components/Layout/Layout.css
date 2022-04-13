@@ -1,0 +1,11 @@
+.layout-container {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 80px 1fr 128px;
+}
+
+@media (max-width: 34.375rem) {
+  .layout-container {
+    grid-template-rows: 80px 1fr 248px;
+  }
+}

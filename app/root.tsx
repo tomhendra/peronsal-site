@@ -1,21 +1,23 @@
 import React from "react";
-import type { LinksFunction, MetaFunction } from "@remix-run/cloudflare";
 import {
   Links,
   LiveReload,
   Meta,
-  Outlet,
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
 
-import colors from "~/styles/lib/colors.css";
-import effects from "~/styles/lib/effects.css";
-import global from "~/styles/lib/global.css";
-import reset from "~/styles/lib/reset.css";
-import sizes from "~/styles/lib/sizes.css";
-import typography from "~/styles/lib/typography.css";
-import utils from "~/styles/lib/utils.css";
+import type { LinksFunction, MetaFunction } from "@remix-run/cloudflare";
+
+import global from "~/styles/global/base.css";
+import colors from "~/styles/global/colors.css";
+import effects from "~/styles/global/effects.css";
+import reset from "~/styles/global/reset.css";
+import sizes from "~/styles/global/sizes.css";
+import typography from "~/styles/global/typography.css";
+import utils from "~/styles/global/utils.css";
+
+import Layout, { links as layoutStyles } from "~/components/Layout";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -23,21 +25,20 @@ export const meta: MetaFunction = () => ({
   viewport: "width=device-width,initial-scale=1",
 });
 
-export const links: LinksFunction = () => {
-  return [
-    { rel: "stylesheet", href: colors },
-    { rel: "stylesheet", href: effects },
-    { rel: "stylesheet", href: global },
-    { rel: "stylesheet", href: reset },
-    { rel: "stylesheet", href: sizes },
-    { rel: "stylesheet", href: typography },
-    { rel: "stylesheet", href: utils },
-  ];
-};
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: colors },
+  { rel: "stylesheet", href: effects },
+  { rel: "stylesheet", href: global },
+  { rel: "stylesheet", href: reset },
+  { rel: "stylesheet", href: sizes },
+  { rel: "stylesheet", href: typography },
+  { rel: "stylesheet", href: utils },
+  ...layoutStyles(),
+];
 
 export default function App() {
   /* 
-    vw units target the viewport width excluding the scrollbar. to use vw units
+    vw units define the viewport width excluding the scrollbar. to use vw units
     without potential layout shift, we need to calculate the scrollbar width at 
     the earliest opportunity. 
   */
@@ -59,7 +60,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <Layout />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
