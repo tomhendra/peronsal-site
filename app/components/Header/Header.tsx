@@ -2,10 +2,17 @@ import type { LinksFunction } from "@remix-run/cloudflare";
 import { Link } from "@remix-run/react";
 import styles from "./Header.css";
 import Logo, { links as logoStyles } from "../Logo";
+import ThemeToggle, { links as themeToggleStyles } from "../ThemeToggle";
+import VisuallyHidden, {
+  links as VisuallyHiddenStyles,
+} from "../VisuallyHidden";
 
-export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: styles }, ...logoStyles()];
-};
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: styles },
+  ...logoStyles(),
+  ...themeToggleStyles(),
+  ...VisuallyHiddenStyles(),
+];
 
 export default function Header() {
   return (
@@ -14,13 +21,13 @@ export default function Header() {
         <Link className="logo-container" to="/">
           <Logo />
           <span className="wordmark">Tom Hendra</span>
-          <span className="u-visually-hidden">Tom Hendra logo - Home</span>
+          <VisuallyHidden>Tom Hendra logo - Home</VisuallyHidden>
         </Link>
         <nav>
           <Link to="/projects">Projects</Link>
           <Link to="/about">About</Link>
         </nav>
-        <button>theme</button>
+        <ThemeToggle />
       </div>
     </header>
   );

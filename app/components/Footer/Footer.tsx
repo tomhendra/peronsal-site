@@ -1,11 +1,15 @@
 import type { LinksFunction } from "@remix-run/cloudflare";
 import styles from "./Footer.css";
 import TomhendraLogo, { links as tomhendraLogoStyles } from "../Logo";
+import VisuallyHidden, {
+  links as visuallyHiddenStyles,
+} from "../VisuallyHidden";
 import { GitHub, Twitter } from "react-feather";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
   ...tomhendraLogoStyles(),
+  ...visuallyHiddenStyles(),
 ];
 
 export default function Footer() {
@@ -19,9 +23,9 @@ export default function Footer() {
             rel="noreferrer"
           >
             <Twitter />
-            <span className="u-visually-hidden">
+            <VisuallyHidden>
               Link to Tom Hendra's Twitter Account
-            </span>
+            </VisuallyHidden>
           </a>
           <a
             href="https://github.com/tomhendra"
@@ -29,15 +33,13 @@ export default function Footer() {
             rel="noreferrer"
           >
             <GitHub />
-            <span className="u-visually-hidden">
-              Link to Tom Hendra's GitHub Account
-            </span>
+            <VisuallyHidden>Link to Tom Hendra's GitHub Account</VisuallyHidden>
           </a>
         </div>
         <a className="logo-container" href="/">
           <TomhendraLogo />
           <span className="wordmark">Tom Hendra</span>
-          <span className="u-visually-hidden">Tom Hendra logo - Home</span>
+          <VisuallyHidden>Tom Hendra logo - Home</VisuallyHidden>
         </a>
         <div className="copyright">
           <span className="copyright-text">
