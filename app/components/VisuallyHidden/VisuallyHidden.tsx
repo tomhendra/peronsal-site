@@ -1,7 +1,7 @@
 import type { LinksFunction } from "@remix-run/cloudflare";
 import styles from "./VisuallyHidden.css";
 
-export const links: LinksFunction = () => [{ rel: "stylsheet", href: styles }];
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 interface Props {
   children: React.ReactNode;
