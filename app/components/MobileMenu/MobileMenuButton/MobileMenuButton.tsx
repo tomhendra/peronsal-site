@@ -2,7 +2,7 @@ import type { LinksFunction } from "@remix-run/cloudflare";
 import { Menu } from "react-feather";
 import VisuallyHidden, {
   links as visuallyHiddenStyles,
-} from "../VisuallyHidden";
+} from "~/components/VisuallyHidden";
 import styles from "./MobileMenuButton.css";
 
 export const links: LinksFunction = () => [
@@ -10,15 +10,15 @@ export const links: LinksFunction = () => [
   ...visuallyHiddenStyles(),
 ];
 
-// interface Props {
-//   toggleMobileMenu: () => void;
-// }
+interface Props {
+  onClick: () => void;
+}
 
-export default function MobileMenuButton() {
+export default function MobileMenuButton({ onClick }: Props) {
   return (
-    <button>
+    <button className="mobile-menu-button" onClick={onClick}>
       <Menu />
-      <VisuallyHidden>Open the mobile menu</VisuallyHidden>
+      <VisuallyHidden>Open and close the mobile menu</VisuallyHidden>
     </button>
   );
 }
