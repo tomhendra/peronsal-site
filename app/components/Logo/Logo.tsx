@@ -6,6 +6,7 @@ export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 export default function TomhendraLogo() {
   return (
     <svg
+      className="logo"
       width="24"
       height="24"
       viewBox="0 0 24 24"

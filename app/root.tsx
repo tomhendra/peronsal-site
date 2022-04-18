@@ -1,13 +1,22 @@
 import React from "react";
+import clsx from "clsx";
 import {
   Links,
   LiveReload,
   Meta,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
+import {
+  NonFlashOfWrongThemeEls,
+  ThemeProvider,
+  useTheme,
+  Theme,
+} from "~/utils/theme-provider";
+import { getThemeSession } from "./utils/theme.server";
 
-import type { LinksFunction, MetaFunction } from "@remix-run/cloudflare";
+import Layout, { links as layoutStyles } from "~/components/Layout";
 
 import global from "~/styles/global/base.css";
 import colors from "~/styles/global/colors.css";
@@ -17,7 +26,25 @@ import sizes from "~/styles/global/sizes.css";
 import typography from "~/styles/global/typography.css";
 import utils from "~/styles/global/utils.css";
 
-import Layout, { links as layoutStyles } from "~/components/Layout";
+import type {
+  LinksFunction,
+  MetaFunction,
+  LoaderFunction,
+} from "@remix-run/cloudflare";
+
+export type LoaderData = {
+  theme: Theme | null;
+};
+
+export const loader: LoaderFunction = async ({ request }) => {
+  const themeSession = await getThemeSession(request);
+
+  const data: LoaderData = {
+    theme: themeSession.getTheme(),
+  };
+
+  return data;
+};
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -36,7 +63,7 @@ export const links: LinksFunction = () => [
   ...layoutStyles(),
 ];
 
-export default function App() {
+function App() {
   /* 
     vw units define the viewport width excluding the scrollbar. to use vw units
     without potential layout shift, we need to calculate the scrollbar width at 
@@ -53,11 +80,15 @@ export default function App() {
     );
   }, []);
 
+  const [theme] = useTheme();
+  const data = useLoaderData<LoaderData>();
+
   return (
-    <html lang="en">
+    <html lang="en" className={clsx(theme)}>
       <head>
         <Meta />
         <Links />
+        <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
       </head>
       <body>
         <Layout />
@@ -66,5 +97,14 @@ export default function App() {
         <LiveReload />
       </body>
     </html>
+  );
+}
+
+export default function AppWithProviders() {
+  const data = useLoaderData<LoaderData>();
+  return (
+    <ThemeProvider specifiedTheme={data.theme}>
+      <App />
+    </ThemeProvider>
   );
 }

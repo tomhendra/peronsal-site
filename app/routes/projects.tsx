@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Link, Outlet } from "@remix-run/react";
 import styles from "~/styles/projects.css";
 
 export function links() {
@@ -20,6 +20,7 @@ export default function Projects() {
           <Link to="project-three">Project Three</Link>
         </li>
       </ul>
+      <Outlet />
     </main>
   );
 }

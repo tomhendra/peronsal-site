@@ -1,4 +1,5 @@
 import type { LinksFunction } from "@remix-run/cloudflare";
+import React from "react";
 import { Menu } from "react-feather";
 import VisuallyHidden, {
   links as visuallyHiddenStyles,
@@ -11,14 +12,18 @@ export const links: LinksFunction = () => [
 ];
 
 interface Props {
-  onClick: () => void;
+  toggleMenu: () => void;
 }
 
-export default function MobileMenuButton({ onClick }: Props) {
-  return (
-    <button className="mobile-menu-button" onClick={onClick}>
-      <Menu />
-      <VisuallyHidden>Open and close the mobile menu</VisuallyHidden>
-    </button>
-  );
-}
+const MobileMenuButton = React.forwardRef(
+  ({ toggleMenu }: Props, ref: React.Ref<HTMLButtonElement> | null) => {
+    return (
+      <button ref={ref} onClick={toggleMenu} className="mobile-menu-button">
+        <Menu />
+        <VisuallyHidden>Open and close the mobile menu</VisuallyHidden>
+      </button>
+    );
+  }
+);
+
+export default MobileMenuButton;

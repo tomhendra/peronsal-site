@@ -4,7 +4,6 @@ import type { LinksFunction } from "@remix-run/cloudflare";
 import MobileMenuButton, {
   links as mobileMenuButtonStyles,
 } from "./MobileMenuButton";
-import ThemeToggle, { links as themeToggleStyles } from "../ThemeToggle";
 
 import styles from "./MobileMenu.css";
 import { Link } from "@remix-run/react";
@@ -12,7 +11,6 @@ import { Link } from "@remix-run/react";
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
   ...mobileMenuButtonStyles(),
-  ...themeToggleStyles(),
 ];
 
 export default function MobileMenu() {
@@ -20,9 +18,9 @@ export default function MobileMenu() {
   const toggleMobileMenu = () => setIsOpen(!isOpen);
 
   return (
-    <Dialog.Root>
+    <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
       <Dialog.Trigger asChild>
-        <MobileMenuButton onClick={() => toggleMobileMenu} />
+        <MobileMenuButton toggleMenu={toggleMobileMenu} />
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="mobile-menu-overlay" />
@@ -34,12 +32,12 @@ export default function MobileMenu() {
           <div className="mobile-menu">
             <nav className="mobile-menu-nav">
               <Dialog.Close asChild>
-                <Link className="nav-link" to="/">
+                <Link className="mobile-menu-nav-link" to="/">
                   Home
                 </Link>
               </Dialog.Close>
               <Dialog.Close asChild>
-                <Link className="nav-link" to="/projects">
+                <Link className="mobile-menu-nav-link" to="/projects">
                   Projects
                 </Link>
               </Dialog.Close>
@@ -49,10 +47,9 @@ export default function MobileMenu() {
                 </Link>
               </Dialog.Close>
             </nav>
-            <ThemeToggle />
           </div>
           <Dialog.Close asChild>
-            <MobileMenuButton onClick={() => toggleMobileMenu} />
+            <MobileMenuButton toggleMenu={toggleMobileMenu} />
           </Dialog.Close>
         </Dialog.Content>
       </Dialog.Portal>

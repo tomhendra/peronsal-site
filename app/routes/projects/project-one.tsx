@@ -1,7 +1,7 @@
 export default function ProjectOne() {
   return (
     <main>
-      <h1>Project One</h1>
+      <h2>Project One</h2>
     </main>
   );
 }

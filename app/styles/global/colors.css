@@ -279,7 +279,7 @@
   --accent-900: var(--yellow-900);
 }
 
-.light {
+html.light {
   /* general colors */
   --color-text: var(--gray-500);
   --color-heading: var(--gray-900);
@@ -342,7 +342,7 @@
   --syntax-color-url: var(--orange-500);
 }
 
-.dark {
+html.dark {
   /* general colors */
   --color-text: var(--gray-300);
   --color-heading: var(--gray-25);
