@@ -1,12 +1,14 @@
 import type { LinksFunction } from "@remix-run/cloudflare";
-import styles from "./VisuallyHidden.css";
+import styles from "./visually-hidden.css";
 
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 interface Props {
   children: React.ReactNode;
 }
 
-export default function VisuallyHidden({ children }: Props) {
+function VisuallyHidden({ children }: Props) {
   return <span className="visually-hidden">{children}</span>;
 }
+
+export { links, VisuallyHidden as default };

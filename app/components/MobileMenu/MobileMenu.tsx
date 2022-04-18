@@ -5,15 +5,15 @@ import MobileMenuButton, {
   links as mobileMenuButtonStyles,
 } from "./MobileMenuButton";
 
-import styles from "./MobileMenu.css";
+import styles from "./mobile-menu.css";
 import { Link } from "@remix-run/react";
 
-export const links: LinksFunction = () => [
+const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
   ...mobileMenuButtonStyles(),
 ];
 
-export default function MobileMenu() {
+function MobileMenu() {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleMobileMenu = () => setIsOpen(!isOpen);
 
@@ -56,3 +56,5 @@ export default function MobileMenu() {
     </Dialog.Root>
   );
 }
+
+export { links, MobileMenu as default };

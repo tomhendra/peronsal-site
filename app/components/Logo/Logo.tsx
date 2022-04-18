@@ -1,9 +1,9 @@
 import type { LinksFunction } from "@remix-run/cloudflare";
-import styles from "./Logo.css";
+import styles from "./logo.css";
 
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
-export default function TomhendraLogo() {
+function Logo() {
   return (
     <svg
       className="logo"
@@ -26,3 +26,5 @@ export default function TomhendraLogo() {
     </svg>
   );
 }
+
+export { links, Logo as default };

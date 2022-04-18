@@ -18,13 +18,12 @@ import { getThemeSession } from "./utils/theme.server";
 
 import Layout, { links as layoutStyles } from "~/components/Layout";
 
-import global from "~/styles/global/base.css";
+import typography from "~/styles/global/typography.css";
 import colors from "~/styles/global/colors.css";
+import sizes from "~/styles/global/sizes.css";
 import effects from "~/styles/global/effects.css";
 import reset from "~/styles/global/reset.css";
-import sizes from "~/styles/global/sizes.css";
-import typography from "~/styles/global/typography.css";
-import utils from "~/styles/global/utils.css";
+import base from "~/styles/global/base.css";
 
 import type {
   LinksFunction,
@@ -53,13 +52,12 @@ export const meta: MetaFunction = () => ({
 });
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: colors },
-  { rel: "stylesheet", href: effects },
-  { rel: "stylesheet", href: global },
-  { rel: "stylesheet", href: reset },
-  { rel: "stylesheet", href: sizes },
   { rel: "stylesheet", href: typography },
-  { rel: "stylesheet", href: utils },
+  { rel: "stylesheet", href: colors },
+  { rel: "stylesheet", href: sizes },
+  { rel: "stylesheet", href: effects },
+  { rel: "stylesheet", href: reset },
+  { rel: "stylesheet", href: base },
   ...layoutStyles(),
 ];
 
@@ -100,7 +98,7 @@ function App() {
   );
 }
 
-export default function AppWithProviders() {
+function AppWithProviders() {
   const data = useLoaderData<LoaderData>();
   return (
     <ThemeProvider specifiedTheme={data.theme}>
@@ -108,3 +106,5 @@ export default function AppWithProviders() {
     </ThemeProvider>
   );
 }
+
+export { AppWithProviders as default };

@@ -1,6 +1,6 @@
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import type { LinksFunction } from "@remix-run/cloudflare";
-import styles from "./MobileMenu.css";
+import styles from "./dialog.css";
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 

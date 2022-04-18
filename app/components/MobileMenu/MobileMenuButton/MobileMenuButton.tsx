@@ -4,9 +4,9 @@ import { Menu } from "react-feather";
 import VisuallyHidden, {
   links as visuallyHiddenStyles,
 } from "~/components/VisuallyHidden";
-import styles from "./MobileMenuButton.css";
+import styles from "./Mobile-menu-button.css";
 
-export const links: LinksFunction = () => [
+const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
   ...visuallyHiddenStyles(),
 ];
@@ -26,4 +26,4 @@ const MobileMenuButton = React.forwardRef(
   }
 );
 
-export default MobileMenuButton;
+export { links, MobileMenuButton as default };

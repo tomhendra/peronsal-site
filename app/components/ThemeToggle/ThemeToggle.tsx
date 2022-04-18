@@ -2,11 +2,11 @@ import { useState } from "react";
 import type { LinksFunction } from "@remix-run/cloudflare";
 import { Moon, Sun } from "react-feather";
 import { Theme, useTheme } from "~/utils/theme-provider";
-import styles from "./ThemeToggle.css";
+import styles from "./theme-toggle.css";
 
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
-export default function ThemeToggle() {
+function ThemeToggle() {
   const [theme, setTheme] = useTheme();
 
   const toggleTheme = () => {
@@ -21,3 +21,5 @@ export default function ThemeToggle() {
     </button>
   );
 }
+
+export { links, ThemeToggle as default };

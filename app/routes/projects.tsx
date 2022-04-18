@@ -1,11 +1,11 @@
 import { Link, Outlet } from "@remix-run/react";
 import styles from "~/styles/projects.css";
 
-export function links() {
+function links() {
   return [{ rel: "stylesheet", href: styles }];
 }
 
-export default function Projects() {
+function Projects() {
   return (
     <main className="u-max-width-container">
       <h1>Projects</h1>
@@ -24,3 +24,5 @@ export default function Projects() {
     </main>
   );
 }
+
+export { links, Projects as default };

@@ -4,7 +4,7 @@ import type { ActionFunction } from "@remix-run/cloudflare";
 import { getThemeSession } from "~/utils/theme.server";
 import { isTheme } from "~/utils/theme-provider";
 
-export const action: ActionFunction = async ({ request }) => {
+const action: ActionFunction = async ({ request }) => {
   const themeSession = await getThemeSession(request);
   const requestText = await request.text();
   const form = new URLSearchParams(requestText);
@@ -23,3 +23,5 @@ export const action: ActionFunction = async ({ request }) => {
     { headers: { "Set-Cookie": await themeSession.commit() } }
   );
 };
+
+export { action };
