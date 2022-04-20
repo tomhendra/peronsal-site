@@ -31,7 +31,10 @@ function Button({
   disabled?: boolean;
   children: React.ReactNode;
 }) {
-  const classNames = `btn btn-${size} btn-${variant} ${mood && "btn-" + mood}`;
+  const sizeClass = `btn-${size}`;
+  const variantClass = `btn-${variant}`;
+  const moodClass = mood ? ` btn-${mood}` : "";
+  const classNames = `btn ${sizeClass} ${variantClass}${moodClass}`;
 
   if ((href && disabled) || (to && disabled)) {
     throw new Error(

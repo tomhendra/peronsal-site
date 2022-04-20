@@ -55,6 +55,10 @@
   background-color: var(--color-primary);
 }
 .btn-primary:disabled {
+  /* I am ashamed of this declaration. color is set to --white which doesn't 
+     work in dark mode when button is disabled. color: var(--color-background) 
+     is unsemantic at best and a hack at worst... but that'll do! */
+  color: var(--color-background);
   background-color: var(--color-primary-disabled);
 }
 @media (pointer: fine) and (hover: hover) {
