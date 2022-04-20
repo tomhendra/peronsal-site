@@ -11,6 +11,7 @@
 
     - indigo
     - gray-default
+    - error
   
  */
 :root {
@@ -140,7 +141,7 @@
   --error-700: hsl(4deg 77% 40%);
   --error-800: hsl(4deg 72% 33%);
   --error-900: hsl(8deg 65% 29%);
-  --error-950: hsl(8deg 65% 17%);
+  --error-950: hsl(8deg 65% 15%);
   --error-975: hsl(8deg 65% 10%);
 
   --warning-25: hsl(33deg 82% 98%);
