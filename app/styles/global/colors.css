@@ -2,6 +2,7 @@
   --white: hsl(0deg 0% 100%);
   --black: hsl(0deg 0% 0%);
 
+  --gray-0: hsl(0deg 0% 100%);
   --gray-25: hsl(0deg 0% 98.8%);
   --gray-50: hsl(0deg 0% 98%);
   --gray-100: hsl(0deg 0% 96.1%);
@@ -13,6 +14,7 @@
   --gray-700: hsl(0deg 0% 25.9%);
   --gray-800: hsl(0deg 0% 16.1%);
   --gray-900: hsl(0deg 0% 7.8%);
+  --gray-1000: hsl(0deg 0% 0%);
 
   --error-25: hsl(12deg 100% 99%);
   --error-50: hsl(5deg 85.7% 97.3%);
@@ -280,127 +282,73 @@
 }
 
 html.light {
-  /* general colors */
-  --color-text: var(--gray-500);
   --color-heading: var(--gray-900);
+  --color-text: var(--gray-500);
+  --color-text-hover: var(--gray-600);
+  --color-text-secondary: var(--gray-700);
+  --color-text-secondary-hover: var(--gray-800);
+  --color-text-disabled: var(--gray-300);
   --color-background: var(--white);
-  --color-overlay: hsl(0deg 0% 75% / 0.5);
-  /* muted colors - faint color for backgrounds, borders, and accents that do 
-     not require high contrast with the background color */
-  --color-muted-text: var(--gray-500);
-  --color-muted-background: var(--gray-50);
-  --color-muted-border: var(--gray-300);
-  --color-muted-separator: var(--gray-200);
-  /* highlight color - background color for highlighting text */
+  --color-background-hover: var(--gray-50);
+  --color-background-muted: var(--gray-50);
+  --color-background-disabled: var(--gray-300);
+  --color-border: var(--gray-300);
+  --color-border-disabled: var(--gray-200);
+  --color-divider: var(--gray-200);
   --color-highlight: var(--primary-100);
-  /* primary colors - *brand* color for links, buttons, etc. */
-  --color-primary: var(--primary-500);
+  --color-overlay: hsl(0deg 0% 75% / 0.5);
+
+  --color-primary: var(--primary-600);
+  --color-primary-hover: var(--primary-700);
+  --color-primary-disabled: var(--primary-200);
   --color-primary-heading: var(--primary-800);
-  --color-primary-text: var(--primary-900);
+  --color-primary-text: var(--primary-700);
+  --color-primary-text-hover: var(--primary-800);
+  --color-primary-text-disabled: var(--primary-300);
   --color-primary-background: var(--primary-50);
-  --color-primary-hover: var(--primary-400);
-  /* accent colors - contrast* color for emphasizing UI */
-  --color-accent: var(--accent-500);
-  --color-accent-text: var(--accent-600);
-  --color-accent-background: var(--accent-50);
-  --color-accent-hover: var(--accent-400);
-  /* status colors */
-  --color-info: var(--accent-500);
-  --color-error: var(--error-500);
-  --color-warning: var(--warning-500);
-  --color-success: var(--success-500);
-  /* general syntax colors */
-  --syntax-color-text: var(--gray-600);
-  --syntax-color-muted-text: var(--gray-400);
-  --syntax-color-background: var(--gray-100);
-  --syntax-color-selection: var(--gray-200);
-  --syntax-color-selection-flash: var(--accent-500);
-  --syntax-color-cursor: var(--accent-500);
-  /* prism.js specific tokens */
-  --syntax-color-attr-name: var(--orange-500);
-  --syntax-color-boolean: var(--orange-500);
-  --syntax-color-constant: var(--orange-500);
-  --syntax-color-number: var(--orange-500);
-  --syntax-color-atrule: var(--orange-500);
-  --syntax-color-class: var(--orange-400);
-  --syntax-color-keyword: var(--fuchsia-500);
-  --syntax-color-property: var(--rose-500);
-  --syntax-color-tag: var(--rose-500);
-  --syntax-color-symbol: var(--rose-500);
-  --syntax-color-deleted: var(--error-600);
-  --syntax-color-important: var(--rose-500);
-  --syntax-color-selector: var(--moss-500);
-  --syntax-color-string: var(--moss-500);
-  --syntax-color-char: var(--moss-500);
-  --syntax-color-builtin: var(--moss-500);
-  --syntax-color-inserted: var(--success-600);
-  --syntax-color-regex: var(--moss-500);
-  --syntax-color-attr-value: var(--moss-500);
-  --syntax-color-variable: var(--blue-light-500);
-  --syntax-color-operator: var(--blue-light-500);
-  --syntax-color-function: var(--blue-light-500);
-  --syntax-color-url: var(--orange-500);
+  --color-primary-background-hover: var(--primary-100);
+  --color-primary-background-disabled: var(--primary-25);
+
+  --color-error: var(--error-600);
+  --color-error-hover: var(--error-700);
+  --color-error-disabled: var(--error-200);
+  --color-error-text: var(--error-700);
+  --color-error-text-hover: var(--error-800);
+  --color-error-text-disabled: var(--error-300);
+  --color-error-background: var(--error-50);
+  --color-error-background-hover: var(--error-100);
+  --color-error-background-disabled: var(--error-25);
+  --color-error-border: var(--error-300);
+  --color-error-border-disabled: var(--error-200);
 }
 
 html.dark {
-  /* general colors */
-  --color-text: var(--gray-300);
   --color-heading: var(--gray-25);
+  --color-text: var(--gray-300);
+  --color-text-hover: var(--gray-400); /* new */
+  --color-text-secondary: var(--gray-700); /* new */
+  --color-text-secondary-hover: var(--gray-800); /* new */
+  --color-text-disabled: var(--gray-300); /* new */
   --color-background: var(--gray-900);
+  --color-background-hover: var(--gray-800); /* new */
+  --color-background-muted: var(--gray-800); /* new */
+  --color-background-disabled: var(--gray-700); /* new */
+  --color-border: var(--gray-700);
+  --color-border-disabled: var(--gray-800); /* new */
+  --color-divider: var(--gray-800);
+  --color-highlight: var(--primary-900);
   --color-overlay: hsl(0deg 0% 80% / 0.5);
-  /* muted colors - faint color for backgrounds, borders, and accents that do 
-     not require high contrast with the background color */
-  --color-muted-text: var(--gray-400);
-  --color-muted-background: var(--gray-800);
-  --color-muted-border: var(--gray-700);
-  --color-muted-separator: var(--gray-800);
-  /* highlight color - background color for highlighting text */
-  --color-highlight: var(--primary-100);
-  /* primary colors - *brand* color for links, buttons, etc. */
-  --color-primary: var(--primary-500);
+
+  --color-primary: var(--primary-600);
+  --color-primary-hover: var(--primary-700); /* new */
+  --color-primary-disabled: var(--primary-200); /* new */
   --color-primary-heading: var(--primary-700);
-  --color-primary-text: var(--primary-500);
-  --color-primary-background: var(--primary-900);
-  --color-primary-hover: var(--primary-400);
-  /* accent colors - contrast* color for emphasizing UI */
-  --color-accent: var(--accent-500);
-  --color-accent-text: var(--accent-600);
-  --color-accent-background: var(--accent-50);
-  --color-accent-hover: var(--accent-400);
-  /* status colors */
-  --color-info: var(--accent-500);
-  --color-error: var(--error-500);
-  --color-warning: var(--warning-500);
-  --color-success: var(--success-500);
-  /* general syntax colors */
-  --syntax-color-text: var(--gray-300);
-  --syntax-color-muted-text: var(--gray-500);
-  --syntax-color-background: var(--gray-800);
-  --syntax-color-selection: var(--gray-700);
-  --syntax-color-selection-flash: var(--accent-600);
-  --syntax-color-cursor: var(--accent-600);
-  /* prism.js specific tokens */
-  --syntax-color-attr-name: var(--orange-400);
-  --syntax-color-boolean: var(--orange-400);
-  --syntax-color-constant: var(--orange-400);
-  --syntax-color-number: var(--orange-400);
-  --syntax-color-atrule: var(--orange-400);
-  --syntax-color-class: var(--orange-300);
-  --syntax-color-keyword: var(--fuchsia-400);
-  --syntax-color-property: var(--rose-400);
-  --syntax-color-tag: var(--rose-400);
-  --syntax-color-symbol: var(--rose-400);
-  --syntax-color-deleted: var(--error-500);
-  --syntax-color-important: var(--rose-400);
-  --syntax-color-selector: var(--moss-300);
-  --syntax-color-string: var(--moss-300);
-  --syntax-color-char: var(--moss-300);
-  --syntax-color-builtin: var(--moss-300);
-  --syntax-color-inserted: var(--success-500);
-  --syntax-color-regex: var(--moss-300);
-  --syntax-color-attr-value: var(--moss-300);
-  --syntax-color-variable: var(--blue-light-300);
-  --syntax-color-operator: var(--blue-light-300);
-  --syntax-color-function: var(--blue-light-300);
-  --syntax-color-url: var(--orange-400);
+  --color-primary-text: var(--primary-300);
+  --color-primary-text-hover: var(--primary-800); /* new */
+  --color-primary-text-disabled: var(--primary-300); /* new */
+  --color-primary-background: var(--primary-900); /* new */
+  --color-primary-hover: var(--primary-700); /* new */
+  --color-primary-disabled: var(--primary-800); /* new */
+
+  --color-error: var(--error-600);
 }

@@ -1,0 +1,45 @@
+.hero-section {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-24);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 68.75rem) {
+  .hero-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-title-section {
+  padding-top: var(--space-32);
+  max-width: var(--container-xs);
+}
+
+.hero-location-text {
+  padding-left: var(--space-2);
+  color: var(--color-primary);
+  font-size: var(--font-size-text-md);
+}
+
+.hero-section h1 {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-6);
+  font-size: var(--font-size-display-xl);
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-text-xl);
+}
+
+.hero-image {
+  width: 100%;
+}
+
+.button-group {
+  padding: var(--space-8) 0;
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
