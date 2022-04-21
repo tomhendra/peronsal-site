@@ -21,42 +21,42 @@
 }
 
 /* sizes */
-.btn-sm {
+.btn.sm {
   font-size: var(--font-size-text-sm);
   line-height: 1.2;
   padding: 8px 14px;
 }
 
-.btn-md {
+.btn.md {
   font-size: var(--font-size-text-sm);
   line-height: 1.2;
   padding: 10px 16px;
 }
 
-.btn-lg {
+.btn.lg {
   font-size: var(--font-size-text-md);
   line-height: 1.3;
   padding: 10px 18px;
 }
 
-.btn-xl {
+.btn.xl {
   font-size: var(--font-size-text-md);
   line-height: 1.3;
   padding: 12px 20px;
 }
 
-.btn-xxl {
+.btn.xxl {
   font-size: var(--font-size-text-lg);
   line-height: 1.4;
   padding: 16px 28px;
 }
 
 /* variants */
-.btn-primary {
+.btn.primary {
   color: var(--white);
   background-color: var(--color-primary);
 }
-.btn-primary:disabled {
+.btn.primary:disabled {
   /* I am ashamed of this declaration. color is set to --white which doesn't 
      work in dark mode when button is disabled. color: var(--color-background) 
      is unsemantic at best and a hack at worst... but that'll do! */
@@ -64,153 +64,153 @@
   background-color: var(--color-primary-disabled);
 }
 @media (pointer: fine) and (hover: hover) {
-  .btn-primary:hover {
+  .btn.primary:hover {
     color: var(--white);
     background-color: var(--color-primary-hover);
   }
 }
 
-.btn-secondary {
+.btn.secondary {
   color: var(--color-primary-text);
   background-color: var(--color-primary-background);
 }
-.btn-secondary:disabled {
+.btn.secondary:disabled {
   color: var(--color-primary-text-disabled);
   background-color: var(--color-primary-background-disabled);
 }
 @media (pointer: fine) and (hover: hover) {
-  .btn-secondary:hover {
+  .btn.secondary:hover {
     background-color: var(--color-primary-background-hover);
   }
 }
 
-.btn-secondary-gray {
+.btn.secondary-gray {
   color: var(--color-text-secondary);
   background-color: var(--color-background);
   border-color: var(--color-border);
 }
-.btn-secondary-gray:disabled {
+.btn.secondary-gray:disabled {
   color: var(--color-text-disabled);
   border-color: var(--color-border-disabled);
 }
 @media (pointer: fine) and (hover: hover) {
-  .btn-secondary-gray:hover {
+  .btn.secondary-gray:hover {
     color: var(--color-text-secondary-hover);
     background-color: var(--color-background-hover);
   }
 }
 
-.btn-tertiary,
-.btn-link {
+.btn.tertiary,
+.btn.link {
   color: var(--color-primary-text);
   background-color: var(--color-background);
 }
-.btn-tertiary:disabled,
-.btn-link:disabled {
+.btn.tertiary:disabled,
+.btn.link:disabled {
   color: var(--color-text-disabled);
 }
 @media (pointer: fine) and (hover: hover) {
-  .btn-tertiary:hover {
+  .btn.tertiary:hover {
     background-color: var(--color-primary-background);
   }
-  .btn-link:hover {
+  .btn.link:hover {
     color: var(--color-primary-text-hover);
   }
 }
 
-.btn-tertiary-gray,
-.btn-link-gray {
+.btn.tertiary-gray,
+.btn.link-gray {
   color: var(--color-text);
   background-color: var(--color-background);
 }
-.btn-tertiary-gray:disabled,
-.btn-link-gray:disabled {
+.btn.tertiary-gray:disabled,
+.btn.link-gray:disabled {
   color: var(--color-text-disabled);
 }
 @media (pointer: fine) and (hover: hover) {
-  .btn-tertiary-gray:hover,
-  .btn-link-gray:hover {
+  .btn.tertiary-gray:hover,
+  .btn.link-gray:hover {
     color: var(--color-text-hover);
   }
-  .btn-tertiary-gray:hover {
+  .btn.tertiary-gray:hover {
     /* .btn-link-gray doesn't change background-color on hover with destructive mood */
     background-color: var(--color-background-hover);
   }
 }
 
 /* moods */
-.btn-primary.btn-destructive {
+.btn.primary.destructive {
   background-color: var(--color-error);
 }
-.btn-primary.btn-destructive:disabled {
+.btn.primary.destructive:disabled {
   background-color: var(--color-error-disabled);
 }
 @media (pointer: fine) and (hover: hover) {
-  .btn-primary.btn-destructive:hover {
+  .btn.primary.destructive:hover {
     background-color: var(--color-error-hover);
   }
 }
 
-.btn-secondary.btn-destructive {
+.btn.secondary.destructive {
   color: var(--color-error-text);
   background-color: var(--color-error-background);
 }
-.btn-secondary.btn-destructive:disabled {
+.btn.secondary.destructive:disabled {
   color: var(--color-error-text-disabled);
   background-color: var(--color-error-background-disabled);
 }
 @media (pointer: fine) and (hover: hover) {
-  .btn-secondary.btn-destructive:hover {
+  .btn.secondary.destructive:hover {
     background-color: var(--color-error-background-hover);
   }
 }
 
-.btn-secondary-gray.btn-destructive {
+.btn.secondary-gray.destructive {
   color: var(--color-error-text);
   border-color: var(--color-error-border);
 }
-.btn-secondary-gray.btn-destructive:disabled {
+.btn.secondary-gray.destructive:disabled {
   color: var(--color-error-text-disabled);
   border-color: var(--color-error-border-disabled);
 }
 @media (pointer: fine) and (hover: hover) {
-  .btn-secondary-gray.btn-destructive:hover {
+  .btn.secondary-gray.destructive:hover {
     color: var(--color-error-text-hover);
     background-color: var(--color-error-background-hover);
   }
 }
 
-.btn-tertiary.btn-destructive,
-.btn-tertiary-gray.btn-destructive {
+.btn.tertiary.destructive,
+.btn.tertiary-gray.destructive {
   color: var(--color-error-text);
 }
-.btn-tertiary.btn-destructive:disabled,
-.btn-tertiary-gray.btn-destructive:disabled {
+.btn.tertiary.destructive:disabled,
+.btn.tertiary-gray.destructive:disabled {
   color: var(--color-error-text-disabled);
 }
 @media (pointer: fine) and (hover: hover) {
   /* btn-tertiary doesn't change color on hover with destructive mood */
-  .btn-tertiary-gray.btn-destructive:hover {
+  .btn.tertiary-gray.destructive:hover {
     color: var(--color-error-text-hover);
   }
-  .btn-tertiary.btn-destructive:hover,
-  .btn-tertiary-gray.btn-destructive:hover {
+  .btn.tertiary.destructive:hover,
+  .btn.tertiary-gray.destructive:hover {
     background-color: var(--color-error-background);
   }
 }
 
-.btn-link.btn-destructive,
-.btn-link-gray.btn-destructive {
+.btn.link.destructive,
+.btn.link-gray.destructive {
   color: var(--color-error-text);
   background-color: var(--background);
 }
-.btn-link.btn-destructive:disabled,
-.btn-link-gray.btn-destructive:disabled {
+.btn.link.destructive:disabled,
+.btn.link-gray.destructive:disabled {
   color: var(--color-error-text-disabled);
 }
 @media (pointer: fine) and (hover: hover) {
-  .btn-link.btn-destructive:hover,
-  .btn-link-gray.btn-destructive:hover {
+  .btn.link.destructive:hover,
+  .btn.link-gray.destructive:hover {
     color: var(--color-error-text-hover);
   }
 }

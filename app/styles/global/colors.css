@@ -512,7 +512,7 @@ html.dark {
   --color-overlay: hsl(0deg 0% 80% / 0.5);
 
   --color-primary: var(--primary-700);
-  --color-primary-hover: var(--primary-800);
+  --color-primary-hover: var(--primary-600);
   --color-primary-disabled: var(--primary-950);
   --color-primary-heading: var(--primary-700);
   --color-primary-text: var(--primary-300);

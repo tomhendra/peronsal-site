@@ -1,6 +1,7 @@
 import { Link } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/cloudflare";
 import styles from "./button.css";
+import clsx from "clsx";
 
 const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: styles }];
@@ -31,17 +32,14 @@ function Button({
   disabled?: boolean;
   children: React.ReactNode;
 }) {
-  const sizeClass = `btn-${size}`;
-  const variantClass = `btn-${variant}`;
-  const moodClass = mood ? ` btn-${mood}` : "";
-  const classNames = `btn ${sizeClass} ${variantClass}${moodClass}`;
-
   if ((href && disabled) || (to && disabled)) {
     throw new Error(
       `The disabled property cannot be used alongside the 'href' or 'to' attributes. 
        Disabled is not supported by anchor elements or React Router's Link component.`
     );
   }
+
+  const classNames = clsx("btn", size, variant, mood && mood);
 
   return to ? (
     <Link to={to} className={classNames} {...delegated}>

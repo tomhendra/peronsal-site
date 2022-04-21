@@ -8,11 +8,11 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from "@remix-run/react";
+
 import {
   NonFlashOfWrongThemeEls,
   ThemeProvider,
   useTheme,
-  Theme,
 } from "~/utils/theme-provider";
 import { getThemeSession } from "./utils/theme.server";
 
@@ -30,6 +30,7 @@ import type {
   MetaFunction,
   LoaderFunction,
 } from "@remix-run/cloudflare";
+import type { Theme } from "~/utils/theme-provider";
 
 export type LoaderData = {
   theme: Theme | null;
