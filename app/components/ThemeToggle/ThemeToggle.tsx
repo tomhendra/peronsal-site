@@ -1,8 +1,15 @@
-import { useState } from "react";
-import type { LinksFunction } from "@remix-run/cloudflare";
+/* 
+  Dark mode implementation thanks to Matt Stobbs: 
+  https://www.mattstobbs.com/remix-dark-mode/
+
+  Hopefully this ceremony will become a relic of the past in the future 
+  https://tabatkins.github.io/css-toggle/
+*/
 import { Moon, Sun } from "react-feather";
-import { Theme, useTheme } from "~/utils/theme-provider";
-import styles from "./theme-toggle.css";
+import { Theme, useTheme } from "~/helpers/theme-provider";
+import type { LinksFunction } from "@remix-run/cloudflare";
+
+import styles from "./styles.css";
 
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 

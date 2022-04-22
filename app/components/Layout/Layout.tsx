@@ -1,17 +1,19 @@
 import { Outlet } from "@remix-run/react";
+import Header from "../Header";
+import Footer from "../Footer";
+import MobileMenu from "../MobileMenu";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
-import Header, { links as headerStyles } from "../Header";
-import Footer, { links as footerStyles } from "../Footer";
-import MobileMenu, { links as mobileMenuStyles } from "../MobileMenu";
-
-import styles from "./layout.css";
+import { links as headerLinks } from "../Header";
+import { links as footerLinks } from "../Footer";
+import { links as mobileMenuLinks } from "../MobileMenu";
+import styles from "./styles.css";
 
 const links: LinksFunction = () => [
+  ...headerLinks(),
+  ...footerLinks(),
+  ...mobileMenuLinks(),
   { rel: "stylesheet", href: styles },
-  ...headerStyles(),
-  ...mobileMenuStyles(),
-  ...footerStyles(),
 ];
 
 function Layout() {

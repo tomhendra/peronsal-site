@@ -8,15 +8,20 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from "@remix-run/react";
-
 import {
   NonFlashOfWrongThemeEls,
   ThemeProvider,
   useTheme,
-} from "~/utils/theme-provider";
-import { getThemeSession } from "./utils/theme.server";
-
-import Layout, { links as layoutStyles } from "~/components/Layout";
+} from "~/helpers/theme-provider";
+import { getThemeSession } from "./helpers/theme.server";
+import { setScrollbarWidthAsCustomProperty } from "~/utils";
+import Layout from "~/components/Layout";
+import type {
+  LinksFunction,
+  MetaFunction,
+  LoaderFunction,
+} from "@remix-run/cloudflare";
+import type { Theme } from "~/helpers/theme-provider";
 
 import typography from "~/styles/global/typography.css";
 import colors from "~/styles/global/colors.css";
@@ -24,59 +29,44 @@ import sizes from "~/styles/global/sizes.css";
 import effects from "~/styles/global/effects.css";
 import reset from "~/styles/global/reset.css";
 import base from "~/styles/global/base.css";
+import { links as layoutLinks } from "~/components/Layout";
 
-import type {
-  LinksFunction,
-  MetaFunction,
-  LoaderFunction,
-} from "@remix-run/cloudflare";
-import type { Theme } from "~/utils/theme-provider";
-
-export type LoaderData = {
+type LoaderData = {
   theme: Theme | null;
 };
 
-export const loader: LoaderFunction = async ({ request }) => {
+const loader: LoaderFunction = async ({ request }) => {
   const themeSession = await getThemeSession(request);
-
   const data: LoaderData = {
     theme: themeSession.getTheme(),
   };
-
   return data;
 };
 
-export const meta: MetaFunction = () => ({
+const meta: MetaFunction = () => ({
   charset: "utf-8",
   title: "Tom Hendra • Personal Site",
   viewport: "width=device-width,initial-scale=1",
 });
 
-export const links: LinksFunction = () => [
+const links: LinksFunction = () => [
   { rel: "stylesheet", href: typography },
   { rel: "stylesheet", href: colors },
   { rel: "stylesheet", href: sizes },
   { rel: "stylesheet", href: effects },
   { rel: "stylesheet", href: reset },
   { rel: "stylesheet", href: base },
-  ...layoutStyles(),
+  ...layoutLinks(),
 ];
 
 function App() {
-  /* 
-    vw units define the viewport width excluding the scrollbar. to use vw units
-    without potential layout shift, we need to calculate the scrollbar width at 
-    the earliest opportunity. 
-  */
   React.useEffect((): void => {
-    const viewportWidth = window.innerWidth;
-    const viewportWidthWithoutScrollbar = document.documentElement.clientWidth;
-    const scrollbarWidth = viewportWidth - viewportWidthWithoutScrollbar;
-
-    document.documentElement.style.setProperty(
-      "--scrollbar-width",
-      scrollbarWidth + "px"
-    );
+    /* 
+      vw units define the viewport width excluding the scrollbar. to use vw units
+      without potential layout shift, we need to calculate the scrollbar width at 
+      the earliest opportunity. 
+    */
+    setScrollbarWidthAsCustomProperty();
   }, []);
 
   const [theme] = useTheme();
@@ -108,4 +98,4 @@ function AppWithProviders() {
   );
 }
 
-export { AppWithProviders as default };
+export { loader, type LoaderData, meta, links, AppWithProviders as default };

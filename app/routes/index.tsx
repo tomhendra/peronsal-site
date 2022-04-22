@@ -1,37 +1,37 @@
-import type { LinksFunction } from "@remix-run/cloudflare";
-import IconWrapper, {
-  links as iconWrapperStyles,
-} from "~/components/IconWrapper";
 import { MapPin } from "react-feather";
-import MaxWidthContainer, {
-  links as maxWidthContainerStyles,
-} from "~/components/MaxWidthContainer";
-import Button, { links as buttonStyles } from "~/components/Button";
+import MaxWidthContainer from "~/components/MaxWidthContainer";
+import IconWrapper from "~/components/IconWrapper";
+import Button from "~/components/Button";
+import type { LinksFunction } from "@remix-run/cloudflare";
+
+import { links as maxWidthContainerLinks } from "~/components/MaxWidthContainer";
+import { links as iconWrapperLinks } from "~/components/IconWrapper";
+import { links as buttonLinks } from "~/components/Button";
 import styles from "~/styles/index.css";
 
 const links: LinksFunction = () => [
+  ...maxWidthContainerLinks(),
+  ...iconWrapperLinks(),
+  ...buttonLinks(),
   { rel: "stylesheet", href: styles },
-  ...maxWidthContainerStyles(),
-  ...iconWrapperStyles(),
-  ...buttonStyles(),
 ];
 
 function Index() {
   return (
     <main>
       <MaxWidthContainer>
-        <div className="hero-section">
-          <div className="hero-title-section">
+        <div className="hero">
+          <div className="intro">
             <div>
               <IconWrapper>
                 <MapPin size={12} color="var(--color-primary-text)" />
               </IconWrapper>
-              <span className="hero-location-text">Salamanca</span>
+              <span className="location">Salamanca</span>
             </div>
-            <h1>Hello, I'm Tom</h1>
-            <span className="hero-subtitle">
-              I'm a Front End Developer from the UK based in Spain, who loves to
-              build stuff for the web.
+            <h1 className="title">Hello, I'm Tom</h1>
+            <span className="subtitle">
+              I'm a Developer from the UK based in Spain who loves to build
+              quality user interfaces for the web.
             </span>
             <div className="btn-group">
               <Button href="/projects" size="xl" variant="secondary-gray">
@@ -42,21 +42,21 @@ function Index() {
               </Button>
             </div>
           </div>
-          <div className="hero-image-section">
+          <div className="image-container">
             <img
-              className="hero-image"
-              src="https://placebear.com/560/640"
+              className="image"
+              src="https://picsum.photos/560/640"
               alt="placeholder"
             />
           </div>
         </div>
-        <div className="about-section">
+        <div className="about">
           <h2 id="about">About</h2>
         </div>
-        <div className="projects section">
+        <div className="projects">
           <h2>Projects</h2>
         </div>
-        <div className="contact-section" id="contact">
+        <div className="contact" id="contact">
           <h2>Contact</h2>
         </div>
       </MaxWidthContainer>

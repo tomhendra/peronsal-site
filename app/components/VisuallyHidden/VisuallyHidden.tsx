@@ -1,5 +1,6 @@
 import type { LinksFunction } from "@remix-run/cloudflare";
-import styles from "./visually-hidden.css";
+
+import styles from "./styles.css";
 
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 

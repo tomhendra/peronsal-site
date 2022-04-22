@@ -1,16 +1,15 @@
 import React from "react";
-import * as Dialog from "@radix-ui/react-dialog";
-import type { LinksFunction } from "@remix-run/cloudflare";
-import MobileMenuButton, {
-  links as mobileMenuButtonStyles,
-} from "./MobileMenuButton";
-
-import styles from "./mobile-menu.css";
 import { Link } from "@remix-run/react";
+import * as Dialog from "@radix-ui/react-dialog";
+import MobileMenuButton from "./MobileMenuButton";
+import type { LinksFunction } from "@remix-run/cloudflare";
+
+import { links as mobileMenuButtonLinks } from "./MobileMenuButton";
+import styles from "./styles.css";
 
 const links: LinksFunction = () => [
+  ...mobileMenuButtonLinks(),
   { rel: "stylesheet", href: styles },
-  ...mobileMenuButtonStyles(),
 ];
 
 function MobileMenu() {

@@ -1,5 +1,6 @@
-import { LinksFunction } from "@remix-run/cloudflare";
-import styles from "./icon-wrapper.css";
+import type { LinksFunction } from "@remix-run/cloudflare";
+
+import styles from "./styles.css";
 
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 

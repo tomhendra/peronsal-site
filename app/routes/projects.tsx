@@ -1,13 +1,14 @@
 import { Link, Outlet } from "@remix-run/react";
-import styles from "~/styles/projects.css";
+import MaxWidthContainer from "~/components/MaxWidthContainer";
+import type { LinksFunction } from "@remix-run/cloudflare";
 
-function links() {
-  return [{ rel: "stylesheet", href: styles }];
-}
+import { links as maxWidthContainerLinks } from "~/components/MaxWidthContainer";
+
+const links: LinksFunction = () => [...maxWidthContainerLinks()];
 
 function Projects() {
   return (
-    <main className="u-max-width-container">
+    <MaxWidthContainer>
       <h1>Projects</h1>
       <ul>
         <li>
@@ -21,7 +22,7 @@ function Projects() {
         </li>
       </ul>
       <Outlet />
-    </main>
+    </MaxWidthContainer>
   );
 }
 

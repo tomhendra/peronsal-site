@@ -1,6 +1,6 @@
 import { Link } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/cloudflare";
-import styles from "./button.css";
+import styles from "./styles.css";
 import clsx from "clsx";
 
 const links: LinksFunction = () => {

@@ -1,16 +1,17 @@
-import type { LinksFunction } from "@remix-run/cloudflare";
-import styles from "./footer.css";
-import TomhendraLogo, { links as tomhendraLogoStyles } from "../Logo";
-import VisuallyHidden, {
-  links as visuallyHiddenStyles,
-} from "../VisuallyHidden";
 import { GitHub, Twitter } from "react-feather";
+import TomhendraLogo from "../Logo";
+import VisuallyHidden from "../VisuallyHidden";
 import MaxWidthContainer from "../MaxWidthContainer";
+import type { LinksFunction } from "@remix-run/cloudflare";
+
+import { links as logoLinks } from "~/components/Logo";
+import { links as visuallyHiddenLinks } from "~/components/VisuallyHidden";
+import styles from "./styles.css";
 
 const links: LinksFunction = () => [
+  ...logoLinks(),
+  ...visuallyHiddenLinks(),
   { rel: "stylesheet", href: styles },
-  ...tomhendraLogoStyles(),
-  ...visuallyHiddenStyles(),
 ];
 
 function Footer() {

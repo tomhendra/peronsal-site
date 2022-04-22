@@ -1,6 +1,13 @@
+/* 
+  Dark mode implementation thanks to Matt Stobbs: 
+  https://www.mattstobbs.com/remix-dark-mode/
+
+  Hopefully this ceremony will become a relic of the past in the future 
+  https://tabatkins.github.io/css-toggle/
+*/
 import { createContext, useContext, useEffect, useRef, useState } from "react";
-import type { Dispatch, ReactNode, SetStateAction } from "react";
 import { useFetcher } from "@remix-run/react";
+import type { Dispatch, ReactNode, SetStateAction } from "react";
 
 enum Theme {
   DARK = "dark",

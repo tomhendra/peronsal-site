@@ -1,21 +1,22 @@
-import type { LinksFunction } from "@remix-run/cloudflare";
 import { Link } from "@remix-run/react";
-import styles from "./header.css";
-import Logo, { links as logoStyles } from "../Logo";
-import ThemeToggle, { links as themeToggleStyles } from "../ThemeToggle";
-import VisuallyHidden, {
-  links as VisuallyHiddenStyles,
-} from "../VisuallyHidden";
-import MaxWidthContainer, {
-  links as maxWidthContainerStyles,
-} from "../MaxWidthContainer";
+import Logo from "../Logo";
+import ThemeToggle from "../ThemeToggle";
+import VisuallyHidden from "../VisuallyHidden";
+import MaxWidthContainer from "../MaxWidthContainer";
+import type { LinksFunction } from "@remix-run/cloudflare";
+
+import { links as logoLinks } from "../Logo";
+import { links as themeToggleLinks } from "../ThemeToggle";
+import { links as visuallyHiddenLinks } from "../VisuallyHidden";
+import { links as maxWidthContainerLinks } from "../MaxWidthContainer";
+import styles from "./styles.css";
 
 const links: LinksFunction = () => [
+  ...logoLinks(),
+  ...themeToggleLinks(),
+  ...visuallyHiddenLinks(),
+  ...maxWidthContainerLinks(),
   { rel: "stylesheet", href: styles },
-  ...logoStyles(),
-  ...themeToggleStyles(),
-  ...VisuallyHiddenStyles(),
-  ...maxWidthContainerStyles(),
 ];
 
 function Header() {

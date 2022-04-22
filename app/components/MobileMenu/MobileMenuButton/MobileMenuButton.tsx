@@ -1,14 +1,14 @@
-import type { LinksFunction } from "@remix-run/cloudflare";
 import React from "react";
 import { Menu } from "react-feather";
-import VisuallyHidden, {
-  links as visuallyHiddenStyles,
-} from "~/components/VisuallyHidden";
-import styles from "./Mobile-menu-button.css";
+import VisuallyHidden from "~/components/VisuallyHidden";
+import type { LinksFunction } from "@remix-run/cloudflare";
+
+import { links as visuallyHiddenStyles } from "~/components/VisuallyHidden";
+import styles from "./styles.css";
 
 const links: LinksFunction = () => [
-  { rel: "stylesheet", href: styles },
   ...visuallyHiddenStyles(),
+  { rel: "stylesheet", href: styles },
 ];
 
 interface Props {
@@ -25,5 +25,7 @@ const MobileMenuButton = React.forwardRef(
     );
   }
 );
+
+MobileMenuButton.displayName = "MobileMenuButton";
 
 export { links, MobileMenuButton as default };

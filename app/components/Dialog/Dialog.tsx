@@ -1,8 +1,9 @@
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import type { LinksFunction } from "@remix-run/cloudflare";
-import styles from "./dialog.css";
 
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+import styles from "./styles.css";
+
+const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 interface Props {
   children: React.ReactNode;
@@ -19,6 +20,7 @@ function Content({ children, ...props }: Props) {
   );
 }
 
+export { links };
 export const Dialog = DialogPrimitive.Root;
 export const DialogTrigger = DialogPrimitive.Trigger;
 export const DialogContent = Content;

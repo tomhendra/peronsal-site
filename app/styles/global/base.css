@@ -7,7 +7,6 @@ body {
   /* prevent layout breaks when no soft wrap opportunities are available */
   overflow-wrap: break-word;
   hyphens: auto;
-  /* prefix for Safari */
   -webkit-hyphens: auto;
 }
 

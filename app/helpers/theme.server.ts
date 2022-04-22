@@ -1,6 +1,14 @@
+/* 
+  Dark mode implementation thanks to Matt Stobbs: 
+  https://www.mattstobbs.com/remix-dark-mode/
+
+  Hopefully this ceremony will become a relic of the past in the future 
+  https://tabatkins.github.io/css-toggle/
+*/
 import { createCookieSessionStorage } from "@remix-run/cloudflare";
 
-import { Theme, isTheme } from "./theme-provider";
+import { isTheme } from "./theme-provider";
+import type { Theme } from "./theme-provider";
 
 // TODO: work out secrets for Cloudlare Pages
 // const sessionSecret = process.env(SESSION_SECRET);

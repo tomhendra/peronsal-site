@@ -59,7 +59,7 @@
 .btn.primary:disabled {
   /* I am ashamed of this declaration. color is set to --white which doesn't 
      work in dark mode when button is disabled. color: var(--color-background) 
-     is unsemantic at best and a hack at worst... but that'll do! */
+     is unsemantic at best, and a hack at worst... but that'll do! */
   color: var(--color-background);
   background-color: var(--color-primary-disabled);
 }
@@ -133,7 +133,7 @@
     color: var(--color-text-hover);
   }
   .btn.tertiary-gray:hover {
-    /* .btn-link-gray doesn't change background-color on hover with destructive mood */
+    /* .btn.link-gray doesn't change background-color on hover with destructive mood */
     background-color: var(--color-background-hover);
   }
 }

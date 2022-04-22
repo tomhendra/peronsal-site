@@ -1,4 +1,4 @@
-.hero-section {
+.hero {
   padding-top: var(--space-16);
   padding-bottom: var(--space-24);
   display: grid;
@@ -6,12 +6,12 @@
 }
 
 @media (max-width: 68.75rem) {
-  .hero-section {
+  .hero {
     grid-template-columns: 1fr;
   }
 }
 
-.hero-title-section {
+.hero .intro {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,52 +19,52 @@
   padding-bottom: var(--space-16);
 }
 @media (max-width: 34.375rem) {
-  .hero-title-section {
+  .hero .intro {
     gap: var(--space-4);
   }
 }
 
-.hero-location-text {
+.hero .location {
   padding-left: var(--space-2);
   color: var(--color-primary-text);
   font-size: var(--font-size-text-md);
 }
 
-.hero-section h1 {
+.hero .title {
   margin: 0;
   font-size: var(--font-size-display-xl);
 }
 @media (max-width: 34.375rem) {
-  .hero-section h1 {
+  .hero .title {
     font-size: var(--font-size-display-md);
   }
 }
 
-.hero-subtitle {
+.hero .subtitle {
   max-width: var(--container-xs);
   font-size: var(--font-size-text-xl);
   display: inline-block;
   margin-bottom: var(--space-6);
 }
 @media (max-width: 34.375rem) {
-  .hero-subtitle {
+  .hero .subtitle {
     font-size: var(--font-size-text-lg);
     margin-bottom: var(--space-4);
   }
 }
 
-.hero-image {
+.hero .image {
   width: 100%;
 }
 
-.btn-group {
+.hero .btn-group {
   display: flex;
   gap: var(--space-4);
   align-items: flex-start;
   flex-wrap: wrap;
 }
 @media (max-width: 34.375rem) {
-  .btn-group {
+  .hero .btn-group {
     flex-direction: column;
     align-items: stretch;
   }
