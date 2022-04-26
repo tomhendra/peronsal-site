@@ -4,7 +4,7 @@ import { useStuff } from "./use-stuff-hook";
 import NewComponentChild from "./NewComponentChild";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
-import styles from "./styles.css";
+import styles from "./NewComponent.styles.css";
 
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 

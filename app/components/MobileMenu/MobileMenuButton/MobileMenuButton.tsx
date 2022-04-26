@@ -4,7 +4,7 @@ import VisuallyHidden from "~/components/VisuallyHidden";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
 import { links as visuallyHiddenStyles } from "~/components/VisuallyHidden";
-import styles from "./styles.css";
+import styles from "./MobileMenuButton.styles.css";
 
 const links: LinksFunction = () => [
   ...visuallyHiddenStyles(),

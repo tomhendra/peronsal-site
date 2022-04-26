@@ -12,8 +12,7 @@ import type { Theme } from "./theme-provider";
 
 // TODO: work out secrets for Cloudlare Pages
 // const sessionSecret = process.env(SESSION_SECRET);
-const sessionSecret =
-  "bpCAk9R9zB2CdJ9u9sJeeoTxZTrm59S5ZWyC7vuaUmuEpYPMgJhYPw8kCSSwyaBTN4FwtQfrikaWdaBzXLCnAJa9xqtK2Tx7GgBa89Q2faSorA4wtM5hLs5rYZkX5vzQ";
+const sessionSecret = "bpCAk9R9zB2CdJ9u9sJeeoTxZTrm59S5ZWyC7vuaUmuEpYPMgJhYPw";
 // if (!sessionSecret) {
 //   throw new Error("SESSION_SECRET must be set");
 // }

@@ -467,8 +467,8 @@ html.light {
   --color-border: var(--gray-300);
   --color-border-disabled: var(--gray-200);
   --color-divider: var(--gray-200);
-  --color-highlight: var(--primary-100);
   --color-overlay: hsl(0deg 0% 75% / 0.5);
+  --color-highlight: var(--primary-100);
 
   --color-primary: var(--primary-600);
   --color-primary-hover: var(--primary-700);
@@ -508,8 +508,8 @@ html.dark {
   --color-border: var(--gray-700);
   --color-border-disabled: var(--gray-800);
   --color-divider: var(--gray-800);
-  --color-highlight: var(--primary-900);
   --color-overlay: hsl(0deg 0% 80% / 0.5);
+  --color-highlight: var(--primary-900);
 
   --color-primary: var(--primary-700);
   --color-primary-hover: var(--primary-600);

@@ -5,7 +5,7 @@ import MobileMenuButton from "./MobileMenuButton";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
 import { links as mobileMenuButtonLinks } from "./MobileMenuButton";
-import styles from "./styles.css";
+import styles from "./MobileMenu.styles.css";
 
 const links: LinksFunction = () => [
   ...mobileMenuButtonLinks(),

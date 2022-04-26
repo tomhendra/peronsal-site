@@ -9,7 +9,7 @@ import { Moon, Sun } from "react-feather";
 import { Theme, useTheme } from "~/helpers/theme-provider";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
-import styles from "./styles.css";
+import styles from "./ThemeToggle.styles.css";
 
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 

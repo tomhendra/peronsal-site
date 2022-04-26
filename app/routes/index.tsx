@@ -2,17 +2,20 @@ import { MapPin } from "react-feather";
 import MaxWidthContainer from "~/components/MaxWidthContainer";
 import IconWrapper from "~/components/IconWrapper";
 import Button from "~/components/Button";
+import Image from "~/components/Image";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
 import { links as maxWidthContainerLinks } from "~/components/MaxWidthContainer";
 import { links as iconWrapperLinks } from "~/components/IconWrapper";
 import { links as buttonLinks } from "~/components/Button";
+import { links as imageLinks } from "~/components/Image";
 import styles from "~/styles/index.css";
 
 const links: LinksFunction = () => [
   ...maxWidthContainerLinks(),
   ...iconWrapperLinks(),
   ...buttonLinks(),
+  ...imageLinks(),
   { rel: "stylesheet", href: styles },
 ];
 
@@ -43,10 +46,10 @@ function Index() {
             </div>
           </div>
           <div className="image-container">
-            <img
-              className="image"
+            <Image
               src="https://picsum.photos/560/640"
               alt="placeholder"
+              ratio="3 / 1"
             />
           </div>
         </div>

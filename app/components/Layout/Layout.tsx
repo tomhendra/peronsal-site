@@ -7,7 +7,7 @@ import type { LinksFunction } from "@remix-run/cloudflare";
 import { links as headerLinks } from "../Header";
 import { links as footerLinks } from "../Footer";
 import { links as mobileMenuLinks } from "../MobileMenu";
-import styles from "./styles.css";
+import styles from "./Layout.styles.css";
 
 const links: LinksFunction = () => [
   ...headerLinks(),
