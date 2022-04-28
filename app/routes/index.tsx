@@ -45,13 +45,12 @@ function Index() {
               </Button>
             </div>
           </div>
-          <div className="image-container">
-            <Image
-              src="https://picsum.photos/560/640"
-              alt="placeholder"
-              ratio="3 / 1"
-            />
-          </div>
+          <Image
+            src="personal-site/dev-shot"
+            alt="placeholder"
+            credit="Mohammad Rahmani"
+            ratio="4 / 5"
+          />
         </div>
         <div className="about">
           <h2 id="about">About</h2>

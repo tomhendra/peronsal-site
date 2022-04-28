@@ -3,4 +3,4 @@
   the files in this directory.
 */
 
-export const CLOUD_NAME = "your-cloud-name";
+export const CLOUDINARY_CLOUD_NAME = "tomhendra";

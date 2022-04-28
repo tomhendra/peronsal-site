@@ -7,6 +7,7 @@
 */
 import { Moon, Sun } from "react-feather";
 import { Theme, useTheme } from "~/helpers/theme-provider";
+import VisuallyHidden from "../VisuallyHidden";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
 import styles from "./ThemeToggle.styles.css";
@@ -25,6 +26,7 @@ function ThemeToggle() {
   return (
     <button onClick={toggleTheme} className="theme-toggle-button">
       {theme === Theme.LIGHT ? <Sun /> : <Moon />}
+      <VisuallyHidden>Toggle light and dark mode</VisuallyHidden>
     </button>
   );
 }

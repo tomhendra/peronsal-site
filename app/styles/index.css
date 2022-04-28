@@ -53,10 +53,6 @@
   }
 }
 
-.hero .image {
-  width: 100%;
-}
-
 .hero .btn-group {
   display: flex;
   gap: var(--space-4);
