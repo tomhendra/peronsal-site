@@ -33,7 +33,7 @@
         a local bar, at the gym, or exploring new places.
       </p>
       <p>
-        I am always open to new oppurtunities to learn and grow. If you'd like
+        I am always open to new opportunities to learn and grow. If you'd like
         to chat please reach out to me on <a
           rel="external"
           href="https://twitter.com/tomhendra">Twitter</a

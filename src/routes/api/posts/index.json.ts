@@ -1,7 +1,7 @@
 import type {APIResponse, PostsEndpointOptions} from '$lib/types';
 import {getPosts} from '$lib/utils';
 
-export const get = async ({url}): Promise<APIResponse> => {
+export async function get({url}): Promise<APIResponse> {
   try {
     /*
       These let you add query params to change what's retrieved from the 
@@ -30,4 +30,4 @@ export const get = async ({url}): Promise<APIResponse> => {
       },
     };
   }
-};
+}
