@@ -23,7 +23,7 @@ function Header() {
   return (
     <header className="header">
       <MaxWidthContainer>
-        <div className="header-container">
+        <div className="container">
           <Link className="logo-container" to="/">
             <Logo />
             <span className="wordmark">Tom Hendra</span>

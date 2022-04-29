@@ -42,27 +42,24 @@ function Image({
     "--max-height": maxHeight,
     "--object-fit": objectFit,
   } as React.CSSProperties;
+
+  const imgProps = getImgProps(getImageBuilder(src, alt), {
+    widths: [280, 560, 840, 1100, 1650, 2500, 2100, 3100],
+    sizes: [
+      "(max-width:1023px) 80vw",
+      "(min-width:1024px) and (max-width:1620px) 67vw",
+      "1100px",
+    ],
+    transformations: {
+      background: "rgb:e6e9ee",
+    },
+  });
+
   return (
-    // div wrapper for normal behaviour when Image is a flex / grid child
     <div key={src}>
-      {/* alt comes from getImgProps so safe to ignore a11y warning... */}
+      {/* alt comes from imgProps so safe to ignore a11y warning... */}
       {/* eslint-disable-next-line jsx-a11y/alt-text */}
-      <img
-        className="img"
-        style={styles}
-        title={credit}
-        {...getImgProps(getImageBuilder(src, alt), {
-          widths: [280, 560, 840, 1100, 1650, 2500, 2100, 3100],
-          sizes: [
-            "(max-width:1023px) 80vw",
-            "(min-width:1024px) and (max-width:1620px) 67vw",
-            "1100px",
-          ],
-          transformations: {
-            background: "rgb:e6e9ee",
-          },
-        })}
-      />
+      <img className="img" style={styles} title={credit} {...imgProps} />
     </div>
   );
 }

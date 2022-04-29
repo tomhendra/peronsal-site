@@ -1,13 +1,14 @@
+/* hero section */
 .hero {
   padding-top: var(--space-16);
   padding-bottom: var(--space-24);
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
 @media (max-width: 68.75rem) {
   .hero {
     grid-template-columns: 1fr;
+    padding-bottom: var(--space-16);
   }
 }
 
@@ -30,27 +31,8 @@
   font-size: var(--font-size-text-md);
 }
 
-.hero .title {
+.hero h1 {
   margin: 0;
-  font-size: var(--font-size-display-xl);
-}
-@media (max-width: 34.375rem) {
-  .hero .title {
-    font-size: var(--font-size-display-md);
-  }
-}
-
-.hero .subtitle {
-  max-width: var(--container-xs);
-  font-size: var(--font-size-text-xl);
-  display: inline-block;
-  margin-bottom: var(--space-6);
-}
-@media (max-width: 34.375rem) {
-  .hero .subtitle {
-    font-size: var(--font-size-text-lg);
-    margin-bottom: var(--space-4);
-  }
 }
 
 .hero .btn-group {
@@ -64,4 +46,71 @@
     flex-direction: column;
     align-items: stretch;
   }
+}
+
+/* about section */
+.about {
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  border-bottom: var(--border-1) solid var(--color-divider);
+}
+@media (max-width: 34.375rem) {
+  .about {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+    gap: var(--space-12);
+  }
+}
+@media (max-width: 34.375rem) {
+  .about {
+    border-bottom: none;
+  }
+}
+
+.about .intro {
+  max-width: var(--container-md);
+}
+
+.about .columns {
+  columns: 2;
+  gap: var(--space-16);
+}
+.about .columns p:last-of-type {
+  margin-bottom: 0;
+}
+@media (max-width: 68.75rem) {
+  .about .columns {
+    columns: 1;
+    gap: 0;
+    max-width: var(--container-md);
+  }
+}
+@media (max-width: 34.375rem) {
+  .about .columns {
+    border-top: var(--border-1) solid var(--color-divider);
+    padding-top: var(--space-6);
+    font-size: var(--font-size-text-md);
+    line-height: var(--line-height-text-md);
+  }
+}
+
+.about .title-prefix {
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-heading);
+  display: block;
+  margin-bottom: var(--space-3);
+}
+@media (max-width: 34.375rem) {
+  .about .title-prefix {
+    font-size: var(--font-size-text-sm);
+  }
+}
+
+.about p {
+  break-inside: avoid;
 }

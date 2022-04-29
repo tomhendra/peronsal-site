@@ -23,7 +23,7 @@ function Index() {
   return (
     <main>
       <MaxWidthContainer>
-        <div className="hero">
+        <section className="hero">
           <div className="intro">
             <div>
               <IconWrapper>
@@ -31,11 +31,11 @@ function Index() {
               </IconWrapper>
               <span className="location">Salamanca</span>
             </div>
-            <h1 className="title">Hello, I'm Tom</h1>
-            <span className="subtitle">
-              I'm a Developer from the UK based in Spain who loves to build
+            <h1>Hello, I'm Tom</h1>
+            <p className="subheading">
+              I'm a developer from the UK based in Spain who loves to build
               quality user interfaces for the web.
-            </span>
+            </p>
             <div className="btn-group">
               <Button href="/projects" size="xl" variant="secondary-gray">
                 View Projects
@@ -51,16 +51,47 @@ function Index() {
             credit="Mohammad Rahmani"
             ratio="4 / 5"
           />
-        </div>
-        <div className="about">
-          <h2 id="about">About</h2>
-        </div>
-        <div className="projects">
+        </section>
+        <section className="about" id="about">
+          <div className="intro">
+            <span className="title-prefix">About</span>
+            <h2>My Journey to Becoming a Developer</h2>
+            <p className="subheading">
+              In 2018 I sold everything I owned, quit my job in procurement, and
+              moved to Spain to become a freelance web developer. New country,
+              new language, new career, new life.
+            </p>
+          </div>
+          <div className="columns">
+            <p>
+              While building WordPress sites to pay the bills I have been in
+              pursuit of my chosen career trajectory ever since, as a software
+              developer within the vast and vibrant JavaScript community.
+            </p>
+            <p>
+              I knew coding was the right path for me after struggling with an
+              algorithm challenge for a cash register. The feeling after my
+              solution finally passed the tests was euphoric, and I loved it!
+            </p>
+            <p>
+              I'm building projects with React &amp; Remix, and continuously
+              raising my standards by learning from high quality training
+              resources and other members of the developer community.
+            </p>
+            <p>
+              I now have the skills required to build polished user interfaces
+              with React, and am seeking a permanent role as a frontend
+              developer where I can continue to grow and help a company to
+              achieve their goals.
+            </p>
+          </div>
+        </section>
+        <section className="projects">
           <h2>Projects</h2>
-        </div>
-        <div className="contact" id="contact">
+        </section>
+        <section className="contact" id="contact">
           <h2>Contact</h2>
-        </div>
+        </section>
       </MaxWidthContainer>
     </main>
   );

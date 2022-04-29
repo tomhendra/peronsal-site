@@ -3,7 +3,7 @@
   top: -16px;
   padding-top: 16px;
   background-color: var(--color-background);
-  border-bottom: 1px solid var(--color-divider-muted);
+  border-bottom: var(--border-1) solid var(--color-divider);
 }
 
 .header a {
@@ -22,7 +22,7 @@
   }
 }
 
-.header .header-container {
+.header .container {
   background-color: var(--color-background);
   display: flex;
   align-items: center;
