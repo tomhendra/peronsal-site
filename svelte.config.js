@@ -15,7 +15,7 @@ const config = {
       scss: {
         // Ensures Sass mixins are always available inside component <style>
         // blocks e.g. @include laptopAndUp { /* laptop styles */ }
-        prependData: `@import 'src/lib/styles/breakpoints';`,
+        prependData: `@import 'src/lib/styles/breakpoints.scss';`,
       },
       postcss: {
         plugins: [autoprefixer],
