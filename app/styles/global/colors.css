@@ -514,7 +514,7 @@ html.dark {
   --color-primary: var(--primary-700);
   --color-primary-hover: var(--primary-600);
   --color-primary-disabled: var(--primary-950);
-  --color-primary-heading: var(--primary-700);
+  --color-primary-heading: var(--primary-400);
   --color-primary-text: var(--primary-300);
   --color-primary-text-hover: var(--primary-200);
   --color-primary-text-disabled: var(--primary-800);
