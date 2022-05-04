@@ -12,13 +12,13 @@ function Projects() {
       <h1>Projects</h1>
       <ul>
         <li>
-          <Link to="project-one">Project One</Link>
+          <Link to="blog">Blog</Link>
         </li>
         <li>
-          <Link to="project-two">Project Two</Link>
+          <Link to="nata">Nata</Link>
         </li>
         <li>
-          <Link to="project-three">Project Three</Link>
+          <Link to="tbc">TBC</Link>
         </li>
       </ul>
       <Outlet />

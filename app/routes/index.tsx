@@ -3,12 +3,22 @@ import MaxWidthContainer from "~/components/MaxWidthContainer";
 import IconWrapper from "~/components/IconWrapper";
 import Button from "~/components/Button";
 import Image from "~/components/Image";
+import {
+  Tabs,
+  TabsList,
+  Tab,
+  TabTitle,
+  TabSubtitle,
+  TabLink,
+  TabContent,
+} from "~/components/TabNav";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
 import { links as maxWidthContainerLinks } from "~/components/MaxWidthContainer";
 import { links as iconWrapperLinks } from "~/components/IconWrapper";
 import { links as buttonLinks } from "~/components/Button";
 import { links as imageLinks } from "~/components/Image";
+import { links as TabNavLinks } from "~/components/TabNav";
 import styles from "~/styles/index.css";
 
 const links: LinksFunction = () => [
@@ -16,6 +26,7 @@ const links: LinksFunction = () => [
   ...iconWrapperLinks(),
   ...buttonLinks(),
   ...imageLinks(),
+  ...TabNavLinks(),
   { rel: "stylesheet", href: styles },
 ];
 
@@ -91,11 +102,36 @@ function Index() {
             <span className="prefix">Projects</span>
             <h2>What I Have Been Building</h2>
             <p className="subheading">
-              I love to build things and get excited by learning new
-              technologies.
+              I love to build things using new technologies I have learned.
             </p>
           </div>
-          <div>Fancy projects nav</div>
+          <Tabs defaultValue="blog">
+            <TabsList aria-label="Tab navigation for projects">
+              <Tab value="blog">
+                <TabTitle>Blog</TabTitle>
+                <TabSubtitle>
+                  A blog to share my learnings in the world of software
+                  development.
+                </TabSubtitle>
+                <TabLink to="projects/blog">Project details</TabLink>
+              </Tab>
+              <Tab value="nata">
+                <TabTitle>Nata</TabTitle>
+                <TabSubtitle>
+                  A realtime chat application inspired by Discord.
+                </TabSubtitle>
+                <TabLink to="projects/nata">Project details</TabLink>
+              </Tab>
+              <Tab value="in-progress">
+                <TabTitle>To be confirmed</TabTitle>
+                <TabSubtitle>Placeholder for my next project.</TabSubtitle>
+                <TabLink to="projects/tbc">Project details</TabLink>
+              </Tab>
+            </TabsList>
+            <TabContent value="blog">Blog image link</TabContent>
+            <TabContent value="nata">Nata image link</TabContent>
+            <TabContent value="in-progress">In progress image link</TabContent>
+          </Tabs>
         </section>
         <section className="contact" id="contact">
           <h2>Contact</h2>
