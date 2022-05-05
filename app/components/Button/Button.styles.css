@@ -72,7 +72,7 @@
 
 .btn.secondary {
   color: var(--color-primary-text);
-  background-color: var(--color-primary-background);
+  background-color: var(--color-primary-background-muted);
 }
 .btn.secondary:disabled {
   color: var(--color-primary-text-disabled);
@@ -111,7 +111,7 @@
 }
 @media (pointer: fine) and (hover: hover) {
   .btn.tertiary:hover {
-    background-color: var(--color-primary-background);
+    background-color: var(--color-primary-background-muted);
   }
   .btn.link:hover {
     color: var(--color-primary-text-hover);

@@ -1,0 +1,23 @@
+.social-card a {
+  display: block;
+  text-decoration: none;
+}
+
+.social-card .icon {
+  padding-bottom: var(--space-4);
+}
+
+.social-card .platform {
+  padding-bottom: var(--space-2);
+  color: var(--white);
+  font-size: var(--font-size-text-xl);
+  line-height: var(--line-height-text-xl);
+  font-weight: var(--font-weight-medium);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.social-card .username {
+  color: var(--primary-200);
+}

@@ -7,7 +7,7 @@ import { ArrowRight } from "react-feather";
 
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
-function TabTitle({ children, ...rest }: { children: React.ReactNode }) {
+function TabHeading({ children, ...rest }: { children: React.ReactNode }) {
   return (
     <span className="tab-title" {...rest}>
       {children}
@@ -15,7 +15,7 @@ function TabTitle({ children, ...rest }: { children: React.ReactNode }) {
   );
 }
 
-function TabSubtitle({ children, ...rest }: { children: React.ReactNode }) {
+function TabSubheading({ children, ...rest }: { children: React.ReactNode }) {
   return (
     <span className="tab-subtitle" {...rest}>
       {children}
@@ -102,8 +102,8 @@ export {
   Tabs,
   TabsList,
   Tab,
-  TabTitle,
-  TabSubtitle,
+  TabHeading,
+  TabSubheading,
   TabLink,
   TabContent,
 };

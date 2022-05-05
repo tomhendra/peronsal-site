@@ -30,8 +30,9 @@ function Header() {
             <VisuallyHidden>Tom Hendra logo - Home</VisuallyHidden>
           </Link>
           <nav>
-            <Link to="/#projects">Projects</Link>
             <Link to="/#about">About</Link>
+            <Link to="/#projects">Projects</Link>
+            <Link to="/#contact">Contact</Link>
           </nav>
           <ThemeToggle />
         </div>

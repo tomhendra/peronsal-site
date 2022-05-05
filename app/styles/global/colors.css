@@ -461,8 +461,8 @@ html.light {
   --color-text-secondary-hover: var(--gray-800);
   --color-text-disabled: var(--gray-300);
   --color-background: var(--white);
-  --color-background-hover: var(--gray-50);
   --color-background-muted: var(--gray-50);
+  --color-background-hover: var(--gray-50);
   --color-background-disabled: var(--gray-300);
   --color-border: var(--gray-300);
   --color-border-disabled: var(--gray-200);
@@ -477,7 +477,8 @@ html.light {
   --color-primary-text: var(--primary-700);
   --color-primary-text-hover: var(--primary-800);
   --color-primary-text-disabled: var(--primary-300);
-  --color-primary-background: var(--primary-50);
+  --color-primary-background: var(--primary-800);
+  --color-primary-background-muted: var(--primary-50);
   --color-primary-background-hover: var(--primary-100);
   --color-primary-background-disabled: var(--primary-25);
 
@@ -502,8 +503,8 @@ html.dark {
   --color-text-secondary-hover: var(--gray-50);
   --color-text-disabled: var(--gray-700);
   --color-background: var(--gray-975);
-  --color-background-hover: var(--gray-900);
   --color-background-muted: var(--gray-900);
+  --color-background-hover: var(--gray-900);
   --color-background-disabled: var(--gray-700);
   --color-border: var(--gray-700);
   --color-border-disabled: var(--gray-800);
@@ -518,7 +519,8 @@ html.dark {
   --color-primary-text: var(--primary-300);
   --color-primary-text-hover: var(--primary-200);
   --color-primary-text-disabled: var(--primary-800);
-  --color-primary-background: var(--primary-950);
+  --color-primary-background: var(--primary-900);
+  --color-primary-background-muted: var(--primary-950);
   --color-primary-background-hover: var(--primary-900);
   --color-primary-background-disabled: var(--primary-975);
 

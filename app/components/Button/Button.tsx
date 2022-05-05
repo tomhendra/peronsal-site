@@ -7,16 +7,7 @@ const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: styles }];
 };
 
-function Button({
-  size,
-  variant,
-  mood,
-  href,
-  to,
-  disabled,
-  children,
-  ...delegated // forward className for one-off variants e.g. Xmas / Halloween
-}: {
+interface ButtonProps extends React.HTMLAttributes<any> {
   size: "sm" | "md" | "lg" | "xl" | "xxl";
   variant:
     | "primary"
@@ -31,7 +22,18 @@ function Button({
   to?: string;
   disabled?: boolean;
   children: React.ReactNode;
-}) {
+}
+
+function Button({
+  size,
+  variant,
+  mood,
+  href,
+  to,
+  disabled,
+  children,
+  ...delegated // forward className for one-off variants e.g. Xmas / Halloween
+}: ButtonProps) {
   if ((href && disabled) || (to && disabled)) {
     throw new Error(
       `The disabled property cannot be used alongside the 'href' or 'to' attributes. 

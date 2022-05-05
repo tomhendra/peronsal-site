@@ -1,38 +1,18 @@
-/* shared */
-.prefix {
-  font-size: var(--font-size-text-md);
-  line-height: var(--line-height-text-md);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-primary-heading);
-  display: block;
-  margin-bottom: var(--space-3);
-}
-@media (max-width: 34.375rem) {
-  .prefix {
-    font-size: var(--font-size-text-sm);
-  }
-}
-
-.subheading {
-  font-size: var(--font-size-text-xl);
-  line-height: var(--line-height-text-xl);
-}
-
 /* hero section */
-.hero {
+.hero-layout {
   padding-top: var(--space-16);
   padding-bottom: var(--space-24);
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 @media (max-width: 68.75rem) {
-  .hero {
+  .hero-layout {
     grid-template-columns: 1fr;
     padding-bottom: var(--space-16);
   }
 }
 
-.hero .intro {
+.hero-layout .intro {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,40 +20,40 @@
   padding-bottom: var(--space-16);
 }
 @media (max-width: 34.375rem) {
-  .hero .intro {
+  .hero-layout .intro {
     gap: var(--space-4);
   }
 }
 
-.hero .location {
+.hero-layout .location {
   padding-left: var(--space-2);
   color: var(--color-primary-text);
   font-size: var(--font-size-text-md);
 }
 
-.hero h1 {
+.hero-layout h1 {
   margin: 0;
 }
 
-.hero .subheading {
+.hero-layout h3 {
   max-width: var(--container-xs);
 }
 
-.hero .btn-group {
+.hero-layout .btn-group {
   display: flex;
   gap: var(--space-4);
   align-items: flex-start;
   flex-wrap: wrap;
 }
 @media (max-width: 34.375rem) {
-  .hero .btn-group {
+  .hero-layout .btn-group {
     flex-direction: column;
     align-items: stretch;
   }
 }
 
 /* about section */
-.about {
+.about-layout {
   padding-top: var(--space-24);
   padding-bottom: var(--space-24);
   display: flex;
@@ -82,38 +62,34 @@
   border-bottom: var(--border-1) solid var(--color-divider);
 }
 @media (max-width: 34.375rem) {
-  .about {
+  .about-layout {
     padding-top: var(--space-16);
     padding-bottom: var(--space-16);
     gap: var(--space-12);
   }
 }
 @media (max-width: 34.375rem) {
-  .about {
+  .about-layout {
     border-bottom: none;
   }
 }
 
-.about .intro {
-  max-width: var(--container-md);
-}
-
-.about .columns {
+.about-layout .columns {
   columns: 2;
-  gap: var(--space-16);
+  gap: var(--space-12);
 }
-.about .columns p:last-of-type {
+.about-layout .columns p:last-of-type {
   margin-bottom: 0;
 }
 @media (max-width: 68.75rem) {
-  .about .columns {
+  .about-layout .columns {
     columns: 1;
     gap: 0;
     max-width: var(--container-md);
   }
 }
 @media (max-width: 34.375rem) {
-  .about .columns {
+  .about-layout .columns {
     border-top: var(--border-1) solid var(--color-divider);
     padding-top: var(--space-6);
     font-size: var(--font-size-text-md);
@@ -121,13 +97,12 @@
   }
 }
 
-.about p {
+.about-layout p {
   break-inside: avoid;
 }
 
 /* projects section */
-/* about section */
-.projects {
+.projects-layout {
   padding-top: var(--space-24);
   padding-bottom: var(--space-24);
   display: flex;
@@ -135,9 +110,56 @@
   gap: var(--space-16);
 }
 @media (max-width: 34.375rem) {
-  .projects {
+  .projects-layout {
     padding-top: var(--space-16);
     padding-bottom: var(--space-16);
     gap: var(--space-12);
   }
+}
+
+/* contact section */
+.contact-layout {
+  padding: var(--space-24) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.contact-layout .form-container {
+  display: flex;
+  gap: var(--space-16);
+  align-items: flex-start;
+}
+
+.contact-layout .social-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--space-12) var(--space-8);
+}
+
+.contact-layout .form {
+  flex: 1;
+  background-color: var(--color-background);
+  border-radius: var(--radius-md);
+  padding: var(--space-10) var(--space-12);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-layout .form label {
+  margin-bottom: var(--space-1);
+}
+
+.contact-layout .form input,
+.contact-layout .form textarea {
+  margin-bottom: var(--space-6);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-default);
+  border: var(--border-1) solid var(--color-border);
+}
+
+.contact-layout .form textarea {
+  resize: vertical;
 }
