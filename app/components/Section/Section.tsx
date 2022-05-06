@@ -16,8 +16,13 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className={clsx(primary && "section-bg-primary")}>
-      <MaxWidthContainer>{children}</MaxWidthContainer>
+    <section
+      id={id}
+      className={clsx("section", primary && "section-bg-primary")}
+    >
+      <MaxWidthContainer>
+        <div className="section-layout">{children}</div>
+      </MaxWidthContainer>
     </section>
   );
 }
@@ -34,7 +39,7 @@ function SectionPrefix({
   children: React.ReactNode;
 }) {
   return (
-    <span className={clsx("section-prefix", alt && "-section-prefix-alt")}>
+    <span className={clsx("section-prefix", alt && "section-prefix-alt")}>
       {children}
     </span>
   );
@@ -68,11 +73,6 @@ function SectionSubheading({
   );
 }
 
-// TODO: NEXT --> look at commonality between layouts and abstract from /routes/index.tsx
-function SectionLayout({ children }: { children: React.ReactNode }) {
-  return <div className="section-layout">{children}</div>;
-}
-
 function SectionContent({ children }: { children: React.ReactNode }) {
   return <div className="section-content">{children}</div>;
 }
@@ -80,7 +80,6 @@ function SectionContent({ children }: { children: React.ReactNode }) {
 export {
   links,
   Section,
-  SectionLayout,
   SectionIntro,
   SectionPrefix,
   SectionHeading,

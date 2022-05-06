@@ -1,0 +1,3 @@
+.divider {
+  border-bottom: var(--border-1) solid var(--color-divider);
+}

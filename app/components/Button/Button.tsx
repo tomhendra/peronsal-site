@@ -32,7 +32,7 @@ function Button({
   to,
   disabled,
   children,
-  ...delegated // forward className for one-off variants e.g. Xmas / Halloween
+  ...rest // forward className for one-off variants e.g. Xmas / Halloween
 }: ButtonProps) {
   if ((href && disabled) || (to && disabled)) {
     throw new Error(
@@ -44,15 +44,15 @@ function Button({
   const classNames = clsx("btn", size, variant, mood && mood);
 
   return to ? (
-    <Link to={to} className={classNames} {...delegated}>
+    <Link to={to} className={classNames} {...rest}>
       {children}
     </Link>
   ) : href ? (
-    <a href={href} className={classNames} {...delegated}>
+    <a href={href} className={classNames} {...rest}>
       {children}
     </a>
   ) : (
-    <button className={classNames} disabled={disabled} {...delegated}>
+    <button className={classNames} disabled={disabled} {...rest}>
       {children}
     </button>
   );
