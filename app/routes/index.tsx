@@ -19,7 +19,6 @@ import {
   SectionPrefix,
   SectionHeading,
   SectionSubheading,
-  SectionContent,
 } from "~/components/Section";
 import Divider from "~/components/Divider";
 import type { LinksFunction } from "@remix-run/cloudflare";
@@ -92,31 +91,29 @@ function Index() {
             language, new career, new life.
           </SectionSubheading>
         </SectionIntro>
-        <SectionContent>
-          <div className="columns">
-            <p>
-              While building WordPress sites to pay the bills I have been in
-              pursuit of my chosen career trajectory ever since, as a software
-              developer within the vast and vibrant JavaScript community.
-            </p>
-            <p>
-              I knew coding was the right path for me after struggling with an
-              algorithm challenge for a cash register. The feeling when my
-              solution finally passed the tests was total euphoria, and I loved
-              it!
-            </p>
-            <p>
-              I build web apps with React and continuously elevate my standards
-              by learning from high quality training resources and other members
-              of the developer community.
-            </p>
-            <p>
-              I now have the skills required to create polished user interfaces,
-              and am seeking a permanent role as a frontend developer where I
-              can continue to grow and help my team to achieve their goals.
-            </p>
-          </div>
-        </SectionContent>
+        <div className="columns">
+          <p>
+            While building WordPress sites to pay the bills I have been in
+            pursuit of my chosen career trajectory ever since, as a software
+            developer within the vast and vibrant JavaScript community.
+          </p>
+          <p>
+            I knew coding was the right path for me after struggling with an
+            algorithm challenge for a cash register. The feeling when my
+            solution finally passed the tests was total euphoria, and I loved
+            it!
+          </p>
+          <p>
+            I build web apps with React and continuously elevate my standards by
+            learning from high quality training resources and other members of
+            the developer community.
+          </p>
+          <p>
+            I now have the skills required to create polished user interfaces,
+            and am seeking a permanent role as a frontend developer where I can
+            continue to grow and help my team to achieve their goals.
+          </p>
+        </div>
       </Section>
       <Divider />
       <Section id="projects">

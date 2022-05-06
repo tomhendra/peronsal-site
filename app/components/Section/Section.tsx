@@ -73,10 +73,6 @@ function SectionSubheading({
   );
 }
 
-function SectionContent({ children }: { children: React.ReactNode }) {
-  return <div className="section-content">{children}</div>;
-}
-
 export {
   links,
   Section,
@@ -84,5 +80,4 @@ export {
   SectionPrefix,
   SectionHeading,
   SectionSubheading,
-  SectionContent,
 };
