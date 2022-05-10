@@ -8,7 +8,7 @@ import type { LinksFunction } from "@remix-run/cloudflare";
 import { links as logoLinks } from "~/components/Logo";
 import { links as visuallyHiddenLinks } from "~/components/VisuallyHidden";
 import { links as DividerLinks } from "~/components/Divider";
-import styles from "./Footer.styles.css";
+import styles from "./footer.css";
 
 const links: LinksFunction = () => [
   ...logoLinks(),

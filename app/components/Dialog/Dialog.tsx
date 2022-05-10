@@ -1,7 +1,7 @@
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
-import styles from "./Dialog.styles.css";
+import styles from "./dialog.css";
 
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 

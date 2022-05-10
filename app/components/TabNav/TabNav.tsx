@@ -2,7 +2,7 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 import { Link } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
-import styles from "./TabNav.styles.css";
+import styles from "./tab-nav.css";
 import { ArrowRight } from "react-feather";
 
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];

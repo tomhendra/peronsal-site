@@ -3,7 +3,7 @@ import { setConfig } from "cloudinary-build-url";
 import { CLOUDINARY_CLOUD_NAME } from "./Image.constants";
 import { getImageBuilder, getImgProps } from "./Image.helpers";
 
-import styles from "./Image.styles.css";
+import styles from "./image.css";
 
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 

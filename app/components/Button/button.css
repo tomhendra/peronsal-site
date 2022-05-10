@@ -51,15 +51,15 @@
   padding: 16px 28px;
 }
 
-/* variants */
+/* primary variant */
 .btn.primary {
   color: var(--white);
   background-color: var(--color-primary);
 }
 .btn.primary:disabled {
-  /* I am ashamed of this declaration. color is set to --white which doesn't 
+  /* ftr I am ashamed of this declaration. color is set to --white which doesn't 
      work in dark mode when button is disabled. color: var(--color-background) 
-     is unsemantic at best, and a hack at worst... but that'll do! */
+     is unsemantic at best, and hacky at worst... ¯\_(ツ)_/¯ */
   color: var(--color-background);
   background-color: var(--color-primary-disabled);
 }
@@ -70,6 +70,7 @@
   }
 }
 
+/* secondary  variant */
 .btn.secondary {
   color: var(--color-primary-text);
   background-color: var(--color-primary-background-muted);
@@ -84,6 +85,7 @@
   }
 }
 
+/* secondary-gray variant */
 .btn.secondary-gray {
   color: var(--color-text-secondary);
   background-color: var(--color-background);
@@ -100,6 +102,7 @@
   }
 }
 
+/* tertiary & link variants */
 .btn.tertiary,
 .btn.link {
   color: var(--color-primary-text);
@@ -118,6 +121,7 @@
   }
 }
 
+/* tertiary-gray & link-gray variants */
 .btn.tertiary-gray,
 .btn.link-gray {
   color: var(--color-text);
@@ -133,12 +137,11 @@
     color: var(--color-text-hover);
   }
   .btn.tertiary-gray:hover {
-    /* .btn.link-gray doesn't change background-color on hover with destructive mood */
     background-color: var(--color-background-hover);
   }
 }
 
-/* moods */
+/* primary destructive */
 .btn.primary.destructive {
   background-color: var(--color-error);
 }
@@ -151,6 +154,7 @@
   }
 }
 
+/* secondary destructive */
 .btn.secondary.destructive {
   color: var(--color-error-text);
   background-color: var(--color-error-background);
@@ -165,6 +169,7 @@
   }
 }
 
+/* secondary-gray destructive */
 .btn.secondary-gray.destructive {
   color: var(--color-error-text);
   border-color: var(--color-error-border);
@@ -180,6 +185,7 @@
   }
 }
 
+/* tertiary destructive & tertiary-gray destructive*/
 .btn.tertiary.destructive,
 .btn.tertiary-gray.destructive {
   color: var(--color-error-text);
@@ -199,6 +205,7 @@
   }
 }
 
+/* link destructive & link-gray destructive*/
 .btn.link.destructive,
 .btn.link-gray.destructive {
   color: var(--color-error-text);

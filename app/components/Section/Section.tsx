@@ -2,7 +2,7 @@ import type { LinksFunction } from "@remix-run/cloudflare";
 import clsx from "clsx";
 import MaxWidthContainer from "../MaxWidthContainer";
 
-import styles from "./Section.styles.css";
+import styles from "./section.css";
 
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 

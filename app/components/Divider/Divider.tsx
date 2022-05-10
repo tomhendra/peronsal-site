@@ -2,7 +2,7 @@ import type { LinksFunction } from "@remix-run/cloudflare";
 import MaxWidthContainer from "../MaxWidthContainer";
 
 import { links as MaxWidthContainerLinks } from "../MaxWidthContainer";
-import styles from "./Divider.styles.css";
+import styles from "./divider.css";
 
 const links: LinksFunction = () => [
   ...MaxWidthContainerLinks(),

@@ -10,7 +10,7 @@ import { Theme, useTheme } from "~/helpers/theme-provider";
 import VisuallyHidden from "../VisuallyHidden";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
-import styles from "./ThemeToggle.styles.css";
+import styles from "./theme-toggle.css";
 
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 

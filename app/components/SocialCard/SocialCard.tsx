@@ -1,7 +1,7 @@
 import { ExternalLink } from "react-feather";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
-import styles from "./SocialCard.styles.css";
+import styles from "./social-card.css";
 
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 

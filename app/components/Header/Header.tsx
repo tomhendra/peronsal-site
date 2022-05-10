@@ -9,7 +9,7 @@ import { links as logoLinks } from "../Logo";
 import { links as themeToggleLinks } from "../ThemeToggle";
 import { links as visuallyHiddenLinks } from "../VisuallyHidden";
 import { links as maxWidthContainerLinks } from "../MaxWidthContainer";
-import styles from "./Header.styles.css";
+import styles from "./header.css";
 
 const links: LinksFunction = () => [
   ...logoLinks(),

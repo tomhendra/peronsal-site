@@ -1,6 +1,6 @@
 import type { LinksFunction } from "@remix-run/cloudflare";
 
-import styles from "./MaxWidthContainer.styles.css";
+import styles from "./max-width-container.css";
 
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
