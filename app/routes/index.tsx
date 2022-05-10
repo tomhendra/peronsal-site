@@ -154,7 +154,7 @@ function Index() {
             I'm always open to new opportunities to collaborate.
           </SectionSubheading>
         </SectionIntro>
-        <div className="form-container">
+        <div className="contact-container">
           <div className="social-grid">
             <SocialCard
               icon={<Twitter size={24} color="var(--white)" />}

@@ -28,7 +28,6 @@ import colors from "~/styles/global/colors.css";
 import sizes from "~/styles/global/sizes.css";
 import effects from "~/styles/global/effects.css";
 import reset from "~/styles/global/reset.css";
-import base from "~/styles/global/base.css";
 import { links as layoutLinks } from "~/components/Layout";
 
 type LoaderData = {
@@ -55,7 +54,6 @@ const links: LinksFunction = () => [
   { rel: "stylesheet", href: sizes },
   { rel: "stylesheet", href: effects },
   { rel: "stylesheet", href: reset },
-  { rel: "stylesheet", href: base },
   ...layoutLinks(),
 ];
 

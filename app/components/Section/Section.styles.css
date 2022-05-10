@@ -46,6 +46,12 @@
   line-height: var(--line-height-text-xl);
   font-weight: var(--font-weight-normal);
 }
+@media (max-width: 34.375rem) {
+  .section-subheading {
+    font-size: var(--font-size-text-lg);
+    line-height: var(--line-height-text-lg);
+  }
+}
 
 .section-subheading-alt {
   color: var(--primary-200);

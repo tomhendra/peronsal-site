@@ -6,6 +6,11 @@
 .social-card .icon {
   padding-bottom: var(--space-4);
 }
+@media (max-width: 34.375rem) {
+  .social-card .icon {
+    padding-bottom: var(--space-3);
+  }
+}
 
 .social-card .platform {
   padding-bottom: var(--space-2);
@@ -16,6 +21,14 @@
   display: flex;
   align-items: center;
   gap: 6px;
+}
+@media (max-width: 34.375rem) {
+  .social-card .platform {
+    padding-bottom: var(--space-1);
+    font-size: var(--font-size-text-lfg);
+    line-height: var(--line-height-text-lg);
+    gap: var(--space-1);
+  }
 }
 
 .social-card .username {

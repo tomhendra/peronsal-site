@@ -65,8 +65,3 @@
   display: flex;
   justify-content: space-between;
 }
-/* @media (max-width: 34.375rem) {
-  .footer .copyright {
-    justify-self: revert;
-  }
-} */

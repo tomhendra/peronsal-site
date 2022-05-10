@@ -54,9 +54,16 @@
 }
 
 body {
+  font-family: var(--font-sans);
   font-size: var(--font-size-text-lg);
   line-height: var(--line-height-text-lg);
   font-weight: var(--font-weight-normal);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  /* prevent layout breaks when no soft wrap opportunities are available */
+  overflow-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 a {
@@ -124,7 +131,7 @@ h2,
   .h2 {
     font-size: var(--font-size-display-sm);
     line-height: var(--line-height-display-sm);
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-4);
   }
 }
 
@@ -179,7 +186,6 @@ h5,
 .subheading {
   font-size: var(--font-size-text-xl);
   line-height: var(--line-height-text-xl);
-  margin-bottom: 0;
 }
 
 @media (max-width: 34.375rem) {

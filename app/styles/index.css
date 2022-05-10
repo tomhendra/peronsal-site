@@ -84,23 +84,23 @@
   break-inside: avoid;
 }
 /* projects section */
+/* ¯\_(ツ)_/¯ */
 
 /* contact section */
 
-.form-container {
+.contact-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-16);
   align-items: start;
 }
 @media (max-width: 68.75rem) {
-  .form-container {
+  .contact-container {
     grid-template-columns: 1fr;
   }
 }
 
 .social-grid {
-  flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -108,17 +108,27 @@
 }
 
 .form {
-  flex: 1;
   background-color: var(--color-background);
   border-radius: var(--radius-md);
   padding: var(--space-10) var(--space-12);
   display: flex;
   flex-direction: column;
-  max-width: var(--container-md);
+  max-width: var(--container-sm);
+}
+@media (max-width: 34.375rem) {
+  .form {
+    grid-row-start: 1;
+    padding: var(--space-8) var(--space-4);
+    margin-left: calc(var(--space-4) * -1);
+    margin-right: calc(var(--space-4) * -1);
+    border-radius: revert;
+  }
 }
 
 .form label {
   margin-bottom: var(--space-1);
+  font-size: var(--font-size-text-sm);
+  color: var(--color-text-secondary);
 }
 
 .form input,
@@ -129,6 +139,10 @@
   padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-default);
   border: var(--border-1) solid var(--color-border);
+}
+
+.form input {
+  height: var(--space-12);
 }
 
 .form textarea {

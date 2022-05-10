@@ -519,7 +519,7 @@ html.dark {
   --color-primary-text: var(--primary-300);
   --color-primary-text-hover: var(--primary-200);
   --color-primary-text-disabled: var(--primary-800);
-  --color-primary-background: var(--primary-800);
+  --color-primary-background: var(--primary-900);
   --color-primary-background-muted: var(--primary-950);
   --color-primary-background-hover: var(--primary-900);
   --color-primary-background-disabled: var(--primary-975);

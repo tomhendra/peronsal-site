@@ -74,8 +74,9 @@ h6 {
   overflow-wrap: break-word;
 }
 /*
-  9. Create a root stacking context
+  9. Create a root stacking context & explicit scrollbar to avoid scroll-based layout shifts 
 */
 body {
   isolation: isolate;
+  overflow-y: scroll;
 }
