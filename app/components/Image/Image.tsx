@@ -1,7 +1,7 @@
-import type { LinksFunction } from "@remix-run/cloudflare";
 import { setConfig } from "cloudinary-build-url";
 import { CLOUDINARY_CLOUD_NAME } from "./Image.constants";
 import { getImageBuilder, getImgProps } from "./Image.helpers";
+import type { LinksFunction } from "@remix-run/cloudflare";
 
 import styles from "./image.css";
 
