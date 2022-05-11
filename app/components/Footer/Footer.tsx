@@ -37,9 +37,9 @@ function Footer() {
         <Divider />
         <MaxWidthContainer>
           <div className="copyright-container">
-            <p className="copyright-text">
+            <span className="copyright-text">
               &copy; {new Date().getFullYear()} Tom Hendra
-            </p>
+            </span>
             <Link to="/privacy-policy">Privacy Policy</Link>
           </div>
         </MaxWidthContainer>
