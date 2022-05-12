@@ -1,61 +1,99 @@
 import { Link } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/cloudflare";
-import styles from "./button.css";
 import clsx from "clsx";
+
+import type { LinksFunction } from "@remix-run/cloudflare";
+import type { LinkProps } from "@remix-run/react";
+import styles from "./button.css";
 
 const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: styles }];
 };
 
-interface ButtonProps extends React.HTMLAttributes<any> {
+type BaseProps = {
+  children: React.ReactNode;
+  className?: string;
   size: "sm" | "md" | "lg" | "xl" | "xxl";
   variant:
+    | "unstyled"
     | "primary"
     | "secondary"
     | "secondary-gray"
     | "tertiary"
-    | "tertiary-gray"
-    | "link"
-    | "link-gray";
+    | "tertiary-gray";
   mood?: "destructive";
-  href?: string;
-  to?: string;
-  disabled?: boolean;
-  children: React.ReactNode;
-}
+};
 
-function Button({
-  size,
-  variant,
-  mood,
-  href,
-  to,
-  disabled,
-  children,
-  ...rest // forward className for one-off variants e.g. Xmas / Halloween
-}: ButtonProps) {
-  if ((href && disabled) || (to && disabled)) {
-    throw new Error(
-      `The disabled property cannot be used alongside the 'href' or 'to' attributes. 
-       Disabled is not supported by anchor elements or React Router's Link component.`
+type ButtonAsButton = BaseProps &
+  Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof BaseProps> & {
+    as?: "button";
+  };
+
+type ButtonAsUnstyled = Omit<ButtonAsButton, "as" | "variant"> & {
+  as: "unstyled";
+  variant?: BaseProps["variant"];
+};
+
+type ButtonAsLink = BaseProps &
+  Omit<LinkProps, keyof BaseProps> & {
+    as: "link";
+  };
+
+type ButtonAsExternal = BaseProps &
+  Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof BaseProps> & {
+    as: "externalLink";
+  };
+
+type ButtonProps =
+  | ButtonAsButton
+  | ButtonAsExternal
+  | ButtonAsLink
+  | ButtonAsUnstyled;
+
+function Button(props: ButtonProps) {
+  const { size, variant, mood, className, as, children } = props;
+
+  const allClassNames = clsx(
+    "btn",
+    size,
+    variant,
+    mood && mood,
+    className && className
+  );
+
+  if (as === "link") {
+    const { ...rest } = props;
+    return (
+      <Link className={allClassNames} {...rest}>
+        {children}
+      </Link>
+    );
+  } else if (as === "externalLink") {
+    const { ...rest } = props;
+    return (
+      <a
+        className={allClassNames}
+        target="_blank"
+        rel="noopener noreferrer"
+        {...rest}
+      >
+        {children}
+      </a>
+    );
+  } else if (as === "unstyled") {
+    const { ...rest } = props;
+    return (
+      <button className={`unstyled ${className}`} {...rest}>
+        {children}
+      </button>
+    );
+  } else {
+    const { ...rest } = props;
+    return (
+      <button className={allClassNames} {...rest}>
+        {children}
+      </button>
     );
   }
-
-  const classNames = clsx("btn", size, variant, mood && mood);
-
-  return to ? (
-    <Link to={to} className={classNames} {...rest}>
-      {children}
-    </Link>
-  ) : href ? (
-    <a href={href} className={classNames} {...rest}>
-      {children}
-    </a>
-  ) : (
-    <button className={classNames} disabled={disabled} {...rest}>
-      {children}
-    </button>
-  );
 }
 
 export { links, Button as default };

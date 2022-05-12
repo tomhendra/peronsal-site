@@ -1,29 +1,6 @@
-# Welcome to Remix!
-
-- [Remix Docs](https://remix.run/docs)
-
-## Development
-
-You will be utilizing Wrangler for local development to emulate the Cloudflare runtime. This is already wired up in your package.json as the `dev` script:
-
-```sh
-# start the remix dev server and wrangler
-npm run dev
-```
-
-Open up [http://127.0.0.1:8788](http://127.0.0.1:8788) and you should be ready to go!
-
-## Deployment
-
-Cloudflare Pages are currently only deployable through their Git provider integrations.
-
-If you don't already have an account, then [create a Cloudflare account here](https://dash.cloudflare.com/sign-up/pages) and after verifying your email address with Cloudflare, go to your dashboard and follow the [Cloudflare Pages deployment guide](https://developers.cloudflare.com/pages/framework-guides/deploy-anything).
-
-Configure the "Build command" should be set to `npm run build`, and the "Build output directory" should be set to `public`.
-
 ## Commit Types
 
-Commitlint is unnecessary for this repo, but meaningful commit messages are necessary.
+Commitlint is unnecessary for this repo since I am the only dev, but it is good practice.
 
 - build
 - chore
@@ -37,11 +14,20 @@ Commitlint is unnecessary for this repo, but meaningful commit messages are nece
 - style
 - test
 
-## TODO
+## TODO Now
 
-- Refactor Button component to export `Button` / `Link` / `A` components separately & use proper extended types e.g. `extends React.ButtonHTMLAttributes<HTMLButtonElement>` etc. (there is a bug where using the type attribute on Button causes a type error. See [this blog post](https://fettblog.eu/typescript-react-extending-jsx-elements/) for reference.
-- Remove padding / border-radius (and more?) in Button component `link` styles
-- Replace Header, Mobile, Tab and Footer navigation (and any others) with Link exported from Button component
-- Handle form submissions - See [Remix docs](https://remix.run/docs/en/v1/guides/data-writes) - & investigate whether there is anything specific to Cloudflare Workers to be concerned about.
-- Refactor: Export component links functions as `ComponentNameLinks` for faster imports into routes... since Remix is a compiler it shouldn't make a difference ?!
-- Abstract Hero into a component if there is commonality with project hero section
+- sort our types for Button & Link to extend from `React.HTMLAttributes`
+- feat: Handle form submissions - [Remix docs](https://remix.run/docs/en/v1/guides/data-writes) - & investigate whether there is anything specific to Cloudflare Workers to be concerned about.
+
+## TODO Later
+
+- refactor: Replace Header, Mobile, Tab and Footer navigation (and any others) with Link exported from Button component
+- refactor: Export component links functions as `ComponentNameLinks` for faster imports into routes.
+- refactor: Extract Form into a component.
+- refactor: Abstract Hero into a component, if there is commonality with project hero section
+- refactor: Accessibility sweep
+- feat: Investigate [Cloudflare R2](https://blog.cloudflare.com/r2-open-beta/) + [Imgix](https://imgix.com/) for images because...
+  - [this comment](https://github.com/remix-run/remix/discussions/2905#discussioncomment-2686431) makes sense
+  - I don't like Cloudinary DX very much
+  - I prefer to store everything on Cloudflare's platform and Imgix doesn't host
+  - Testing Imgix examples seems to be faster (check this again)

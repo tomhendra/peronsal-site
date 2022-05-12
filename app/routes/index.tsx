@@ -64,10 +64,15 @@ function Index() {
                 quality user interfaces for the web.
               </SectionSubheading>
               <div className="btn-group">
-                <Button href="/projects" size="xl" variant="secondary-gray">
+                <Button
+                  as="link"
+                  to="/projects"
+                  size="xl"
+                  variant="secondary-gray"
+                >
                   View Projects
                 </Button>
-                <Button to="#contact" size="xl" variant="primary">
+                <Button as="link" to="#contact" size="xl" variant="primary">
                   Get in Touch
                 </Button>
               </div>
@@ -188,7 +193,7 @@ function Index() {
             <input id="email" placeholder="you@company.com" />
             <label htmlFor="message">Message</label>
             <textarea id="message" name="message" rows={5} />
-            <Button size="xl" variant="primary">
+            <Button as="button" size="xl" variant="primary" type="submit">
               Send Message
             </Button>
           </form>

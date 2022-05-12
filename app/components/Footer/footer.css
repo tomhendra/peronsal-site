@@ -61,7 +61,6 @@
 .footer .copyright-container {
   font-size: var(--font-size-text-md);
   padding-top: var(--space-8);
-  align-self: stretch;
   display: flex;
   justify-content: space-between;
 }

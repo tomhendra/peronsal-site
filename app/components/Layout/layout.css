@@ -1,7 +1,7 @@
 .layout-container {
-  min-height: 100%;
   display: grid;
   grid-template-rows: 80px 1fr 319px;
+  min-height: 100%;
 }
 
 @media (max-width: 34.375rem) {

@@ -1,3 +1,7 @@
+.unstyled {
+  all: unset;
+}
+
 /* base styles */
 .btn {
   display: inline-flex;
@@ -10,6 +14,7 @@
   border-radius: var(--radius-default);
   border: var(--border-1) solid transparent;
 }
+.unstyled:focus,
 .btn:focus {
   outline-offset: var(--border-2);
   /* TODO: outline-color & outline-width not respected in FF */
@@ -102,41 +107,31 @@
   }
 }
 
-/* tertiary & link variants */
-.btn.tertiary,
-.btn.link {
+/* tertiary variant */
+.btn.tertiary {
   color: var(--color-primary-text);
   background-color: var(--color-background);
 }
-.btn.tertiary:disabled,
-.btn.link:disabled {
+.btn.tertiary:disabled {
   color: var(--color-text-disabled);
 }
 @media (pointer: fine) and (hover: hover) {
   .btn.tertiary:hover {
     background-color: var(--color-primary-background-muted);
   }
-  .btn.link:hover {
-    color: var(--color-primary-text-hover);
-  }
 }
 
-/* tertiary-gray & link-gray variants */
-.btn.tertiary-gray,
-.btn.link-gray {
+/* tertiary-gray variant */
+.btn.tertiary-gray {
   color: var(--color-text);
   background-color: var(--color-background);
 }
-.btn.tertiary-gray:disabled,
-.btn.link-gray:disabled {
+.btn.tertiary-gray:disabled {
   color: var(--color-text-disabled);
 }
 @media (pointer: fine) and (hover: hover) {
-  .btn.tertiary-gray:hover,
-  .btn.link-gray:hover {
-    color: var(--color-text-hover);
-  }
   .btn.tertiary-gray:hover {
+    color: var(--color-text-hover);
     background-color: var(--color-background-hover);
   }
 }
@@ -202,22 +197,5 @@
   .btn.tertiary.destructive:hover,
   .btn.tertiary-gray.destructive:hover {
     background-color: var(--color-error-background);
-  }
-}
-
-/* link destructive & link-gray destructive*/
-.btn.link.destructive,
-.btn.link-gray.destructive {
-  color: var(--color-error-text);
-  background-color: var(--background);
-}
-.btn.link.destructive:disabled,
-.btn.link-gray.destructive:disabled {
-  color: var(--color-error-text-disabled);
-}
-@media (pointer: fine) and (hover: hover) {
-  .btn.link.destructive:hover,
-  .btn.link-gray.destructive:hover {
-    color: var(--color-error-text-hover);
   }
 }
