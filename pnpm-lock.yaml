@@ -4,7 +4,7 @@ specifiers:
   '@babel/core': ^7.17.10
   '@babel/preset-env': ^7.17.10
   '@cld-apis/types': ^0.1.6
-  '@cloudflare/workers-types': ^3.9.0
+  '@cloudflare/workers-types': ^3.10.0
   '@radix-ui/react-dialog': ^0.1.7
   '@radix-ui/react-tabs': ^0.1.5
   '@remix-run/cloudflare': ^1.4.3
@@ -13,7 +13,7 @@ specifiers:
   '@remix-run/eslint-config': ^1.4.3
   '@remix-run/react': ^1.4.3
   '@types/react': ^17.0.45
-  '@types/react-dom': ^17.0.16
+  '@types/react-dom': ^17.0.17
   cloudinary-build-url: ^0.2.4
   clsx: ^1.1.1
   cross-env: ^7.0.3
@@ -30,8 +30,8 @@ specifiers:
 dependencies:
   '@radix-ui/react-dialog': 0.1.7_569957a51d469c962fcce166a59b9f78
   '@radix-ui/react-tabs': 0.1.5_react@17.0.2
-  '@remix-run/cloudflare': 1.4.3_88793760c36cf607d463271074e33ed0
-  '@remix-run/cloudflare-pages': 1.4.3_88793760c36cf607d463271074e33ed0
+  '@remix-run/cloudflare': 1.4.3_d33ae4a2efb1ce45d8bd2f284475b0bd
+  '@remix-run/cloudflare-pages': 1.4.3_d33ae4a2efb1ce45d8bd2f284475b0bd
   '@remix-run/react': 1.4.3_react-dom@17.0.2+react@17.0.2
   cloudinary-build-url: 0.2.4
   clsx: 1.1.1
@@ -44,11 +44,11 @@ devDependencies:
   '@babel/core': 7.17.10
   '@babel/preset-env': 7.17.10_@babel+core@7.17.10
   '@cld-apis/types': 0.1.6
-  '@cloudflare/workers-types': 3.9.0
+  '@cloudflare/workers-types': 3.10.0
   '@remix-run/dev': 1.4.3_354cd77096219b8be78ccefc4f8a1cc6
   '@remix-run/eslint-config': 1.4.3_c27d1a60c40a02d579a39cc014e61bbe
   '@types/react': 17.0.45
-  '@types/react-dom': 17.0.16
+  '@types/react-dom': 17.0.17
   eslint: 8.15.0
   eslint-config-prettier: 8.5.0_eslint@8.15.0
   npm-run-all: 4.1.5
@@ -1484,8 +1484,8 @@ packages:
       mime: 2.6.0
     dev: false
 
-  /@cloudflare/workers-types/3.9.0:
-    resolution: {integrity: sha512-juyc/T+0QlwB4p7mTPoxS87RlHjceXJdCWwbGAQ5l3dO5xSDymW41wYx6f6LYe51fLccpjibj56UvqKeec2SSw==}
+  /@cloudflare/workers-types/3.10.0:
+    resolution: {integrity: sha512-gn+H5Ps9yV1VYz8FJ08bMfXLW8ubNblRF9Z+m+0ctNMyl3CdoZmUfH1pMTxYE8SMUJbLxuNvpdlZhwLDoGFXaw==}
     dev: true
 
   /@esbuild-plugins/node-modules-polyfill/0.1.4_esbuild@0.14.22:
@@ -1988,25 +1988,25 @@ packages:
       react: 17.0.2
     dev: false
 
-  /@remix-run/cloudflare-pages/1.4.3_88793760c36cf607d463271074e33ed0:
+  /@remix-run/cloudflare-pages/1.4.3_d33ae4a2efb1ce45d8bd2f284475b0bd:
     resolution: {integrity: sha512-8vrkRk/dlzwEBZuP45Kg/6H4wlVoVbJGXQl3a0D2GiEKyH2+1HrfXND+rQVU2B249X5SLgKewLp1uJ1I7pFYRg==}
     peerDependencies:
       '@cloudflare/workers-types': ^3.0.0
     dependencies:
-      '@cloudflare/workers-types': 3.9.0
-      '@remix-run/cloudflare': 1.4.3_88793760c36cf607d463271074e33ed0
+      '@cloudflare/workers-types': 3.10.0
+      '@remix-run/cloudflare': 1.4.3_d33ae4a2efb1ce45d8bd2f284475b0bd
     transitivePeerDependencies:
       - react
       - react-dom
     dev: false
 
-  /@remix-run/cloudflare/1.4.3_88793760c36cf607d463271074e33ed0:
+  /@remix-run/cloudflare/1.4.3_d33ae4a2efb1ce45d8bd2f284475b0bd:
     resolution: {integrity: sha512-MhlHwwYCb2pETFaz7BLcVsuE4Sd5rfyZvnhvSrk8CsQOOTT1kqIXXnLPR/Xenm4zfQoQpOFMWnYoSJ0hhCL7bw==}
     peerDependencies:
       '@cloudflare/workers-types': ^2.0.0 || ^3.0.0
     dependencies:
       '@cloudflare/kv-asset-handler': 0.1.3
-      '@cloudflare/workers-types': 3.9.0
+      '@cloudflare/workers-types': 3.10.0
       '@remix-run/server-runtime': 1.4.3_react-dom@17.0.2+react@17.0.2
     transitivePeerDependencies:
       - react
@@ -2295,8 +2295,8 @@ packages:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
     dev: true
 
-  /@types/react-dom/17.0.16:
-    resolution: {integrity: sha512-DWcXf8EbMrO/gWnQU7Z88Ws/p16qxGpPyjTKTpmBSFKeE+HveVubqGO1CVK7FrwlWD5MuOcvh8gtd0/XO38NdQ==}
+  /@types/react-dom/17.0.17:
+    resolution: {integrity: sha512-VjnqEmqGnasQKV0CWLevqMTXBYG9GbwuE6x3VetERLh0cq2LTptFE73MrQi2S7GkKXCf2GgwItB/melLnxfnsg==}
     dependencies:
       '@types/react': 17.0.45
     dev: true

@@ -21,9 +21,6 @@ Commitlint is unnecessary for this repo since I am the only dev, but it is good 
 
 ## TODO Later
 
-- refactor: Export component links functions as `ComponentNameLinks` for faster imports into routes.
-- refactor: Extract Form into a component.
-- refactor: Abstract Hero into a component, if there is commonality with project hero section
 - refactor: Accessibility sweep
 - feat: Investigate [Cloudflare R2](https://blog.cloudflare.com/r2-open-beta/) + [Imgix](https://imgix.com/) for images because...
   - [this comment](https://github.com/remix-run/remix/discussions/2905#discussioncomment-2686431) makes sense
