@@ -1,0 +1,208 @@
+/* base styles */
+.unstyled {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  border-radius: var(--radius-default);
+  border: var(--border-1) solid transparent;
+}
+.unstyled:focus,
+.btn:focus {
+  outline-offset: var(--border-2);
+  /* TODO: outline-color & outline-width not respected in FF */
+  /* TODO: outline-width not respected in Chrome */
+  outline-width: var(--border-4);
+}
+.unstyled:disabled,
+.btn:disabled {
+  pointer-events: none;
+}
+
+/* sizes */
+.btn.sm {
+  font-size: var(--font-size-text-sm);
+  line-height: 1.2;
+  padding: 8px 14px;
+}
+
+.btn.md {
+  font-size: var(--font-size-text-sm);
+  line-height: 1.2;
+  padding: 10px 16px;
+}
+
+.btn.lg {
+  font-size: var(--font-size-text-md);
+  line-height: 1.3;
+  padding: 10px 18px;
+}
+
+.btn.xl {
+  font-size: var(--font-size-text-md);
+  line-height: 1.3;
+  padding: 12px 20px;
+}
+
+.btn.xxl {
+  font-size: var(--font-size-text-lg);
+  line-height: 1.4;
+  padding: 16px 28px;
+}
+
+/* primary variant */
+.btn.primary {
+  color: var(--white);
+  background-color: var(--color-primary);
+}
+.btn.primary:disabled {
+  /* ftr I am ashamed of this declaration. color is set to --white which doesn't 
+     work in dark mode when button is disabled. color: var(--color-background) 
+     is unsemantic at best, and hacky at worst... ¯\_(ツ)_/¯ */
+  color: var(--color-background);
+  background-color: var(--color-primary-disabled);
+}
+@media (pointer: fine) and (hover: hover) {
+  .btn.primary:hover {
+    color: var(--white);
+    background-color: var(--color-primary-hover);
+  }
+}
+
+/* secondary  variant */
+.btn.secondary {
+  color: var(--color-primary-text);
+  background-color: var(--color-primary-background-muted);
+}
+.btn.secondary:disabled {
+  color: var(--color-primary-text-disabled);
+  background-color: var(--color-primary-background-disabled);
+}
+@media (pointer: fine) and (hover: hover) {
+  .btn.secondary:hover {
+    background-color: var(--color-primary-background-hover);
+  }
+}
+
+/* secondary-gray variant */
+.btn.secondary-gray {
+  color: var(--color-text-secondary);
+  background-color: var(--color-background);
+  border-color: var(--color-border);
+}
+.btn.secondary-gray:disabled {
+  color: var(--color-text-disabled);
+  border-color: var(--color-border-disabled);
+}
+@media (pointer: fine) and (hover: hover) {
+  .btn.secondary-gray:hover {
+    color: var(--color-text-secondary-hover);
+    background-color: var(--color-background-hover);
+  }
+}
+
+/* tertiary variant */
+.btn.tertiary {
+  color: var(--color-primary-text);
+  background-color: var(--color-background);
+}
+.btn.tertiary:disabled {
+  color: var(--color-text-disabled);
+}
+@media (pointer: fine) and (hover: hover) {
+  .btn.tertiary:hover {
+    background-color: var(--color-primary-background-muted);
+  }
+}
+
+/* tertiary-gray variant */
+.btn.tertiary-gray {
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+.btn.tertiary-gray:disabled {
+  color: var(--color-text-disabled);
+}
+@media (pointer: fine) and (hover: hover) {
+  .btn.tertiary-gray:hover {
+    color: var(--color-text-hover);
+    background-color: var(--color-background-hover);
+  }
+}
+
+/* primary destructive */
+.btn.primary.destructive {
+  background-color: var(--color-error);
+}
+.btn.primary.destructive:disabled {
+  background-color: var(--color-error-disabled);
+}
+@media (pointer: fine) and (hover: hover) {
+  .btn.primary.destructive:hover {
+    background-color: var(--color-error-hover);
+  }
+}
+
+/* secondary destructive */
+.btn.secondary.destructive {
+  color: var(--color-error-text);
+  background-color: var(--color-error-background);
+}
+.btn.secondary.destructive:disabled {
+  color: var(--color-error-text-disabled);
+  background-color: var(--color-error-background-disabled);
+}
+@media (pointer: fine) and (hover: hover) {
+  .btn.secondary.destructive:hover {
+    background-color: var(--color-error-background-hover);
+  }
+}
+
+/* secondary-gray destructive */
+.btn.secondary-gray.destructive {
+  color: var(--color-error-text);
+  border-color: var(--color-error-border);
+}
+.btn.secondary-gray.destructive:disabled {
+  color: var(--color-error-text-disabled);
+  border-color: var(--color-error-border-disabled);
+}
+@media (pointer: fine) and (hover: hover) {
+  .btn.secondary-gray.destructive:hover {
+    color: var(--color-error-text-hover);
+    background-color: var(--color-error-background-hover);
+  }
+}
+
+/* tertiary destructive & tertiary-gray destructive*/
+.btn.tertiary.destructive,
+.btn.tertiary-gray.destructive {
+  color: var(--color-error-text);
+}
+.btn.tertiary.destructive:disabled,
+.btn.tertiary-gray.destructive:disabled {
+  color: var(--color-error-text-disabled);
+}
+@media (pointer: fine) and (hover: hover) {
+  /* btn-tertiary doesn't change color on hover with destructive mood */
+  .btn.tertiary-gray.destructive:hover {
+    color: var(--color-error-text-hover);
+  }
+  .btn.tertiary.destructive:hover,
+  .btn.tertiary-gray.destructive:hover {
+    background-color: var(--color-error-background);
+  }
+}

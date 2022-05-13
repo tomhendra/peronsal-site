@@ -1,0 +1,23 @@
+.max-width-container {
+  /* 
+    TODO: revise flow layout to recall why position: relative breaks layout
+    position: relative is included in the course demo for CSS for JS devs but
+    this breaks other positioned elements in the document - Header is sticky
+    and the MobileMenuButton is fixed. 
+    manage the stacking context properly and uncomment to below declaration 
+  
+  position: relative; 
+  */
+  --buffer: var(--space-8);
+  width: min(100%, var(--container-xl));
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--buffer);
+  padding-right: var(--buffer);
+}
+
+@media (max-width: 34.375rem) {
+  .max-width-container {
+    --buffer: var(--space-4);
+  }
+}

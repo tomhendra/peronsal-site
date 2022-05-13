@@ -1,0 +1,21 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.example-container button {
+  all: unset;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  line-height: 1.2;
+  padding: 10px 16px;
+  color: white;
+  background-color: hsl(237deg 77% 59%);
+}

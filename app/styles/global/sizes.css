@@ -1,0 +1,47 @@
+:root {
+  /* --scrollbar-width is defined in /app/root.tsx */
+  --full-width: calc(100vw - var(--scrollbar-width));
+
+  --container-xl: 1280px;
+  --container-lg: 1024px;
+  --container-md: 768px;
+  --container-sm: 640px;
+  --container-xs: 440px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-40: 160px;
+  --space-48: 192px;
+  --space-56: 224px;
+  --space-64: 256px;
+
+  --border-0: 0px;
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-4: 4px;
+  --border-8: 8px;
+
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-default: 8px;
+  --radius-md: 16px;
+  --radius-lg: 32px;
+  --radius-full: 9999px;
+}
+
+@media (pointer: coarse) {
+  :root {
+    --min-tap-size: 44px;
+  }
+}

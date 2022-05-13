@@ -1,0 +1,42 @@
+.header {
+  position: sticky;
+  top: -16px;
+  padding-top: 16px;
+  background-color: var(--color-background);
+  border-bottom: var(--border-1) solid var(--color-divider);
+}
+
+.header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+@media (max-width: 34.375rem) {
+  .header nav {
+    display: none;
+  }
+}
+
+.header .container {
+  background-color: var(--color-background);
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding-top: var(--space-4);
+}
+
+.header .logo-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-right: auto;
+}
+
+.header .wordmark {
+  color: var(--color-heading);
+}

@@ -1,0 +1,15 @@
+.img {
+  display: block;
+  width: var(--width);
+  height: var(--height);
+  max-width: var(--max-width);
+  max-height: var(--max-height);
+  object-fit: var(--object-fit);
+}
+
+@supports (aspect-ratio: 1 / 1) {
+  .img {
+    aspect-ratio: var(--ratio);
+    height: revert;
+  }
+}

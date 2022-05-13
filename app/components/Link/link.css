@@ -1,0 +1,71 @@
+/* TODO: Increase tap target without affecting styles */
+/* base styles */
+.link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+}
+.link:focus {
+  outline-offset: var(--border-2);
+  /* TODO: outline-color & outline-width not respected in FF */
+  /* TODO: outline-width not respected in Chrome */
+  outline-width: var(--border-4);
+}
+
+/* sizes */
+.link.sm {
+  font-size: var(--font-size-text-sm);
+}
+
+.link.md {
+  font-size: var(--font-size-text-sm);
+}
+
+.link.lg {
+  font-size: var(--font-size-text-md);
+}
+
+.link.xl {
+  font-size: var(--font-size-text-md);
+}
+
+.link.xxl {
+  font-size: var(--font-size-text-lg);
+}
+
+/* primary variant */
+.link.primary {
+  color: var(--color-primary-text);
+}
+@media (pointer: fine) and (hover: hover) {
+  .link.link:hover {
+    color: var(--color-primary-text-hover);
+  }
+}
+
+/* gray variant */
+.link.gray {
+  color: var(--color-text);
+}
+@media (pointer: fine) and (hover: hover) {
+  .link.gray:hover {
+    color: var(--color-text-hover);
+  }
+}
+
+/* destructive mood */
+.link.primary.destructive,
+.link.gray.destructive {
+  color: var(--color-error-text);
+}
+
+@media (pointer: fine) and (hover: hover) {
+  .link.primary.destructive:hover,
+  .link.gray.destructive:hover {
+    color: var(--color-error-text-hover);
+  }
+}
