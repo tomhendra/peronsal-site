@@ -10,17 +10,15 @@ const links: LinksFunction = () => {
 };
 
 type BaseProps = {
-  children: React.ReactNode;
-  className?: string;
-  size: "sm" | "md" | "lg" | "xl" | "xxl";
   variant:
-    | "unstyled"
     | "primary"
     | "secondary"
     | "secondary-gray"
     | "tertiary"
     | "tertiary-gray";
+  size: "sm" | "md" | "lg" | "xl" | "xxl";
   mood?: "destructive";
+  children: React.ReactNode;
 };
 
 type ButtonAsButton = BaseProps &
@@ -28,9 +26,11 @@ type ButtonAsButton = BaseProps &
     as?: "button";
   };
 
-type ButtonAsUnstyled = Omit<ButtonAsButton, "as" | "variant"> & {
+type ButtonAsUnstyled = Omit<
+  ButtonAsButton,
+  "variant" | "size" | "mood" | "as"
+> & {
   as: "unstyled";
-  variant?: BaseProps["variant"];
 };
 
 type ButtonAsLink = BaseProps &
@@ -50,24 +50,26 @@ type ButtonProps =
   | ButtonAsUnstyled;
 
 function Button(props: ButtonProps) {
-  const { size, variant, mood, className, as, children } = props;
+  if (props.as === "unstyled") {
+    const { children, ...rest } = props;
+    return (
+      <button className="unstyled" {...rest}>
+        {children}
+      </button>
+    );
+  }
 
-  const allClassNames = clsx(
-    "btn",
-    size,
-    variant,
-    mood && mood,
-    className && className
-  );
+  const { size, variant, mood } = props;
+  const allClassNames = clsx("btn", size, variant, mood && mood);
 
-  if (as === "link") {
+  if (props.as === "link") {
     const { ...rest } = props;
     return (
       <Link className={allClassNames} {...rest}>
-        {children}
+        {props.children}
       </Link>
     );
-  } else if (as === "externalLink") {
+  } else if (props.as === "externalLink") {
     const { ...rest } = props;
     return (
       <a
@@ -76,21 +78,14 @@ function Button(props: ButtonProps) {
         rel="noopener noreferrer"
         {...rest}
       >
-        {children}
+        {props.children}
       </a>
-    );
-  } else if (as === "unstyled") {
-    const { ...rest } = props;
-    return (
-      <button className={`unstyled ${className}`} {...rest}>
-        {children}
-      </button>
     );
   } else {
     const { ...rest } = props;
     return (
       <button className={allClassNames} {...rest}>
-        {children}
+        {props.children}
       </button>
     );
   }

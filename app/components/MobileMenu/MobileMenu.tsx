@@ -1,13 +1,15 @@
 import React from "react";
-import { Link } from "@remix-run/react";
 import * as Dialog from "@radix-ui/react-dialog";
+import Link from "../Link";
 import MobileMenuButton from "./MobileMenuButton";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
+import { links as linkLinks } from "../Link";
 import { links as mobileMenuButtonLinks } from "./MobileMenuButton";
 import styles from "./mobile-menu.css";
 
 const links: LinksFunction = () => [
+  ...linkLinks(),
   ...mobileMenuButtonLinks(),
   { rel: "stylesheet", href: styles },
 ];
@@ -31,17 +33,17 @@ function MobileMenu() {
           <div className="mobile-menu">
             <nav className="mobile-menu-nav">
               <Dialog.Close asChild>
-                <Link className="mobile-menu-nav-link" to="/">
+                <Link variant="gray" size="lg" to="/">
                   Home
                 </Link>
               </Dialog.Close>
               <Dialog.Close asChild>
-                <Link className="mobile-menu-nav-link" to="/projects">
+                <Link variant="gray" size="lg" to="/projects">
                   Projects
                 </Link>
               </Dialog.Close>
               <Dialog.Close asChild>
-                <Link className="mobile-menu-nav-link" to="/about">
+                <Link variant="gray" size="lg" to="/about">
                   About
                 </Link>
               </Dialog.Close>

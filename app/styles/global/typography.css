@@ -81,17 +81,6 @@ body {
   -webkit-hyphens: auto;
 }
 
-a {
-  color: var(--color-text);
-}
-
-@media (pointer: fine) and (hover: hover) {
-  a:hover {
-    color: var(--color-text-hover);
-    text-decoration: none;
-  }
-}
-
 p,
 ol,
 ul {

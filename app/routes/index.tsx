@@ -193,7 +193,7 @@ function Index() {
             <input id="email" placeholder="you@company.com" />
             <label htmlFor="message">Message</label>
             <textarea id="message" name="message" rows={5} />
-            <Button as="button" size="xl" variant="primary" type="submit">
+            <Button size="xl" variant="primary" type="submit">
               Send Message
             </Button>
           </form>

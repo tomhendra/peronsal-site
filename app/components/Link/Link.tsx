@@ -1,39 +1,52 @@
 import { Link as LinkPrimitive } from "@remix-run/react";
+import type { LinkProps } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/cloudflare";
-import styles from "./button.css";
+import styles from "./link.css";
 import clsx from "clsx";
 
 const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: styles }];
 };
 
-interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  size: "sm" | "md" | "lg" | "xl" | "xxl";
-  variant: "primary" | "gray";
+type BaseProps = {
+  size?: "sm" | "md" | "lg" | "xl" | "xxl";
+  variant?: "primary" | "gray";
   mood?: "destructive";
-  href?: string;
-  to?: string;
   children: React.ReactNode;
-}
+};
 
-function Link({ size, variant, mood, href, to, children, ...rest }: LinkProps) {
-  const classNames = clsx("link", size, variant, mood && mood);
+type LinkAsLink = BaseProps &
+  Omit<LinkProps, keyof BaseProps> & {
+    as?: "link";
+  };
 
-  if (to) {
+type LinkAsExternal = BaseProps &
+  Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof BaseProps> & {
+    as: "external";
+  };
+
+function Link(props: LinkAsLink | LinkAsExternal) {
+  const { size, variant, mood } = props;
+  const allClassNames = clsx(
+    "link",
+    size && size,
+    variant && variant,
+    mood && mood
+  );
+
+  if (props.as === "external") {
+    const { children, ...rest } = props;
     return (
-      <LinkPrimitive to={to} className={classNames} {...rest}>
-        {children}
-      </LinkPrimitive>
-    );
-  } else if (href) {
-    return (
-      <a href={href} className={classNames} {...rest}>
+      <a className={allClassNames} {...rest}>
         {children}
       </a>
     );
   } else {
-    throw new Error(
-      'Either the "to" or "href" property must be provided for the Link component.'
+    const { children, ...rest } = props;
+    return (
+      <LinkPrimitive className={allClassNames} {...rest}>
+        {children}
+      </LinkPrimitive>
     );
   }
 }

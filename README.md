@@ -16,12 +16,11 @@ Commitlint is unnecessary for this repo since I am the only dev, but it is good 
 
 ## TODO Now
 
-- sort our types for Button & Link to extend from `React.HTMLAttributes`
+- refactor: Replace ~~Header~~, ~~MobileMenu~~, TabNav(?) and Footer links (and any others) with custom Link component
 - feat: Handle form submissions - [Remix docs](https://remix.run/docs/en/v1/guides/data-writes) - & investigate whether there is anything specific to Cloudflare Workers to be concerned about.
 
 ## TODO Later
 
-- refactor: Replace Header, Mobile, Tab and Footer navigation (and any others) with Link exported from Button component
 - refactor: Export component links functions as `ComponentNameLinks` for faster imports into routes.
 - refactor: Extract Form into a component.
 - refactor: Abstract Hero into a component, if there is commonality with project hero section
