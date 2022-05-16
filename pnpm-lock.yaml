@@ -4,6 +4,7 @@ specifiers:
   '@babel/core': ^7.17.10
   '@babel/preset-env': ^7.17.10
   '@cld-apis/types': ^0.1.6
+  '@cloudflare/pages-plugin-mailchannels': ^0.1.0
   '@cloudflare/workers-types': ^3.9.0
   '@radix-ui/react-dialog': ^0.1.7
   '@radix-ui/react-tabs': ^0.1.5
@@ -28,6 +29,7 @@ specifiers:
   wrangler: ^0.0.25
 
 dependencies:
+  '@cloudflare/pages-plugin-mailchannels': 0.1.0
   '@radix-ui/react-dialog': 0.1.7_569957a51d469c962fcce166a59b9f78
   '@radix-ui/react-tabs': 0.1.5_react@17.0.2
   '@remix-run/cloudflare': 1.4.3_d33ae4a2efb1ce45d8bd2f284475b0bd
@@ -1484,6 +1486,10 @@ packages:
       mime: 2.6.0
     dev: false
 
+  /@cloudflare/pages-plugin-mailchannels/0.1.0:
+    resolution: {integrity: sha512-VSXENKIKMg0g2Q0BXaPSyPx7A7HgMm2Yq5TKuLTMNJCMtCjtZFNJkje/alFWrAYf833exRvSEEPL/z5IKCN01w==}
+    dev: false
+
   /@cloudflare/workers-types/3.10.0:
     resolution: {integrity: sha512-gn+H5Ps9yV1VYz8FJ08bMfXLW8ubNblRF9Z+m+0ctNMyl3CdoZmUfH1pMTxYE8SMUJbLxuNvpdlZhwLDoGFXaw==}
     dev: true
@@ -2839,7 +2845,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001340
+      caniuse-lite: 1.0.30001341
       electron-to-chromium: 1.4.137
       escalade: 3.1.1
       node-releases: 2.0.4
@@ -2971,8 +2977,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite/1.0.30001340:
-    resolution: {integrity: sha512-jUNz+a9blQTQVu4uFcn17uAD8IDizPzQkIKh3LCJfg9BkyIqExYYdyc/ZSlWUSKb8iYiXxKsxbv4zYSvkqjrxw==}
+  /caniuse-lite/1.0.30001341:
+    resolution: {integrity: sha512-2SodVrFFtvGENGCv0ChVJIDQ0KPaS1cg7/qtfMaICgeMolDdo/Z2OD32F0Aq9yl6F4YFwGPBS5AaPqNYiW4PoA==}
     dev: true
 
   /chalk/2.4.2:
