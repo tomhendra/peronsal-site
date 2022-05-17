@@ -16,8 +16,7 @@ Commitlint is unnecessary for this repo since I am the only dev, but it is good 
 
 ## TODO Now
 
-- refactor: Replace ~~Header~~, ~~MobileMenu~~, TabNav(?) and Footer links (and any others) with custom Link component
-- feat: Handle form submissions - [Remix docs](https://remix.run/docs/en/v1/guides/data-writes) - & investigate whether there is anything specific to Cloudflare Workers to be concerned about.
+Cleared the list ✅
 
 ## TODO Later
 

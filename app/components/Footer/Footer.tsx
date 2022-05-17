@@ -1,19 +1,21 @@
-import { Link } from "@remix-run/react";
+import Link from "../Link";
 import TomhendraLogo from "../Logo";
 import VisuallyHidden from "../VisuallyHidden";
 import MaxWidthContainer from "../MaxWidthContainer";
 import Divider from "../Divider";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
-import { links as logoLinks } from "~/components/Logo";
-import { links as visuallyHiddenLinks } from "~/components/VisuallyHidden";
-import { links as DividerLinks } from "~/components/Divider";
+import { links as logoLinks } from "../Logo";
+import { links as visuallyHiddenLinks } from "../VisuallyHidden";
+import { links as dividerLinks } from "../Divider";
+import { links as linkLinks } from "../Link";
 import styles from "./footer.css";
 
 const links: LinksFunction = () => [
   ...logoLinks(),
   ...visuallyHiddenLinks(),
-  ...DividerLinks(),
+  ...dividerLinks(),
+  ...linkLinks(),
   { rel: "stylesheet", href: styles },
 ];
 
@@ -22,16 +24,24 @@ function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <div className="nav-container">
-          <a className="logo-container" href="/">
+          <Link to="/" className="logo-container">
             <TomhendraLogo />
             <span className="wordmark">Tom Hendra</span>
             <VisuallyHidden>Tom Hendra logo - Home</VisuallyHidden>
-          </a>
+          </Link>
           <nav className="footer-nav">
-            <Link to="/">Home</Link>
-            <Link to="/#about">About</Link>
-            <Link to="/#projects">Projects</Link>
-            <Link to="/#contact">Contact</Link>
+            <Link variant="gray" size="md" to="/">
+              Home
+            </Link>
+            <Link variant="gray" size="md" to="/#about">
+              About
+            </Link>
+            <Link variant="gray" size="md" to="/#projects">
+              Projects
+            </Link>
+            <Link variant="gray" size="md" to="/#contact">
+              Contact
+            </Link>
           </nav>
         </div>
         <Divider />
@@ -40,7 +50,9 @@ function Footer() {
             <span className="copyright-text">
               &copy; {new Date().getFullYear()} Tom Hendra
             </span>
-            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/privacy-policy" variant="gray" size="md">
+              Privacy Policy
+            </Link>
           </div>
         </MaxWidthContainer>
       </div>

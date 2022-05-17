@@ -1,5 +1,5 @@
 import * as TabsPrimitive from "@radix-ui/react-tabs";
-import { Link } from "@remix-run/react";
+import Link from "../Link";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
 import styles from "./tab-nav.css";
