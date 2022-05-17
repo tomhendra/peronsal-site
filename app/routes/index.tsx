@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 import { Form, useActionData, useTransition } from "@remix-run/react";
 import { MapPin, Twitter, Linkedin, GitHub, Codepen } from "react-feather";
 import clsx from "clsx";
@@ -6,7 +7,6 @@ import Button from "~/components/Button";
 import Image from "~/components/Image";
 import SocialCard from "~/components/SocialCard";
 import MaxWidthContainer from "~/components/MaxWidthContainer";
-
 import {
   Tabs,
   TabsList,
@@ -24,6 +24,7 @@ import {
   SectionSubheading,
 } from "~/components/Section";
 import Divider from "~/components/Divider";
+import Link from "~/components/Link";
 import type { ActionFunction } from "@remix-run/cloudflare";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
@@ -36,7 +37,6 @@ import { links as SocialCardLinks } from "~/components/SocialCard";
 import { links as SectionLinks } from "~/components/Section";
 import { links as DividerLinks } from "~/components/Divider";
 import styles from "~/styles/index.css";
-import Link from "~/components/Link";
 
 const links: LinksFunction = () => [
   ...maxWidthContainerLinks(),
@@ -51,51 +51,67 @@ const links: LinksFunction = () => [
 ];
 
 export const action: ActionFunction = async ({ request }) => {
-  // https://blog.cloudflare.com/sending-email-from-workers-with-mailchannels/
   const data = await request.formData();
-
   const email = data.get("email");
   const name = data.get("name");
   const message = data.get("message");
 
-  const res = await fetch("https://api.mailchannels.net/tx/v1/send", {
+  const res = await fetch("https://formspree.io/f/xvolddzz", {
     method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      personalizations: [
-        {
-          to: [{ email: "tom.hendra@outlook.com", name: "Tom Hendra" }],
-        },
-      ],
-      from: {
-        email: email,
-        name: name,
-      },
-      subject: `New message from ${name} via tomhendra.com`,
-      content: [
-        {
-          type: "text/plain",
-          value: message,
-        },
-      ],
-    }),
+    body: JSON.stringify({ email, name, message }),
   });
 
   return res.json();
-  // {"next":"/thanks","ok":true}
 };
 
 function Index() {
   const actionData = useActionData();
   const transition = useTransition();
 
-  let state: "idle" | "success" | "error" =
-    actionData?.ok === true ? "success" : actionData?.errors ? "error" : "idle";
+  let state: "idle" | "success" | "error" | "submitting" = transition.submission
+    ? "submitting"
+    : actionData?.ok
+    ? "success"
+    : actionData?.error
+    ? "error"
+    : "idle";
 
-  console.log(state);
+  const formRef = useRef<HTMLFormElement>(null);
+  const nameInputRef = useRef<HTMLInputElement>(null);
+  const emailInputRef = useRef<HTMLInputElement>(null);
+  const successRef = useRef<HTMLHeadingElement>(null);
+  const mounted = useRef<boolean>(false);
+
+  type FormspreeErrorRes = {
+    code: string;
+    field: string;
+    message: string;
+  };
+
+  useEffect(() => {
+    if (state === "error") {
+      const errors = actionData?.errors;
+
+      if (errors.map((error: FormspreeErrorRes) => error.field === "email")) {
+        emailInputRef.current?.focus();
+      }
+    }
+
+    if (state === "idle" && mounted.current) {
+      formRef.current?.reset();
+      nameInputRef.current?.select();
+    }
+
+    if (state === "success") {
+      successRef.current?.focus();
+    }
+
+    mounted.current = true;
+  }, [actionData?.errors, state]);
 
   return (
     <main>
@@ -237,38 +253,78 @@ function Index() {
               url="https://codepen.io/tomhendra"
             />
           </div>
-          <Form
-            method="post"
-            className={clsx("form", state === "success" && "visually-hidden")}
-            aria-hidden={state === "success"}
-          >
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="First name" />
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="you@company.com"
-            />
-            <label htmlFor="message">Message</label>
-            <textarea name="message" id="message" rows={5} />
-            <Button size="xl" variant="primary" type="submit">
-              Send Message
-            </Button>
-            <p>{actionData?.error ? actionData.message : <>&nbsp;</>}</p>
-          </Form>
-          <div
-            // TODO: refactor to prevent layout shift on success
-            className={clsx(
-              "success-message",
-              state !== "success" && "visually-hidden"
-            )}
-            aria-hidden={state !== "success"}
-          >
-            <h2>Thanks for your message!</h2>
-            <p>I will get back to you soon.</p>
-            <Link to=".">Reset</Link>
+          <div className="contact-form-container">
+            <Form
+              replace
+              method="post"
+              className={clsx("form", state === "success" && "visually-hidden")}
+              // className="visually-hidden"
+              aria-hidden={state === "success"}
+              ref={formRef}
+            >
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="First name"
+                ref={nameInputRef}
+                required
+                aria-describedby="contact-error-message"
+                disabled={state === "submitting"}
+              />
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="you@company.com"
+                ref={emailInputRef}
+                required
+                aria-describedby="contact-error-message"
+                disabled={state === "submitting"}
+              />
+              <label htmlFor="message">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                required
+                aria-describedby="contact-error-message"
+                rows={5}
+                maxLength={1000}
+                disabled={state === "submitting"}
+              />
+              <p id="contact-error-message" className="contact-error-message">
+                {state === "error" ? (
+                  `Error: ${actionData.errors.map(
+                    (error: Error) => error.message
+                  )}`
+                ) : (
+                  <>&nbsp;</>
+                )}
+              </p>
+              <Button
+                size="xl"
+                variant="primary"
+                type="submit"
+                disabled={state === "submitting"}
+              >
+                {state === "submitting" ? "Sending..." : "Send"}
+              </Button>
+            </Form>
+            <div
+              className={clsx(
+                "contact-success-message",
+                state !== "success" && "visually-hidden"
+              )}
+              aria-hidden={state !== "success"}
+            >
+              <h2 ref={successRef}>Thanks for your message!</h2>
+              <p>I will be in touch with to you soon.</p>
+              <Link variant="primary" to="/#contact">
+                Reset contact form
+              </Link>
+            </div>
           </div>
         </div>
       </Section>
