@@ -19,7 +19,7 @@ const sessionSecret = "bpCAk9R9zB2CdJ9u9sJeeoTxZTrm59S5ZWyC7vuaUmuEpYPMgJhYPw";
 
 const themeStorage = createCookieSessionStorage({
   cookie: {
-    name: "remix_theme",
+    name: "tomhendradotdev_theme",
     secure: true,
     secrets: [sessionSecret],
     sameSite: "lax",

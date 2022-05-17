@@ -10,7 +10,8 @@
     "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
     "dev": "remix build && run-p dev:*",
     "format": "prettier --write .",
-    "start": "cross-env NODE_ENV=production npm run dev:wrangler"
+    "start": "cross-env NODE_ENV=production npm run dev:wrangler",
+    "nuke": "rm -rf .cache/ node_modules/ functions/ pnpm-lock.yaml public/build/"
   },
   "prettier": {},
   "dependencies": {
@@ -27,8 +28,8 @@
     "react-feather": "^2.0.9"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.10",
-    "@babel/preset-env": "^7.17.10",
+    "@babel/core": "^7.17.12",
+    "@babel/preset-env": "^7.17.12",
     "@cld-apis/types": "^0.1.6",
     "@cloudflare/workers-types": "^3.9.0",
     "@remix-run/dev": "^1.4.3",
