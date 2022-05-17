@@ -58,7 +58,7 @@ export const action: ActionFunction = async ({ request }) => {
   const name = data.get("name");
   const message = data.get("message");
 
-  const res = await fetch("'https://api.mailchannels.net/tx/v1/send'", {
+  const res = await fetch("https://api.mailchannels.net/tx/v1/send", {
     method: "POST",
     headers: {
       Accept: "application/json",
