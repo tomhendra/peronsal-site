@@ -93,7 +93,7 @@ function Index() {
   const transition = useTransition();
 
   let state: "idle" | "success" | "error" =
-    actionData?.ok === true ? "success" : actionData?.error ? "error" : "idle";
+    actionData?.ok === true ? "success" : actionData?.errors ? "error" : "idle";
 
   console.log(state);
 
