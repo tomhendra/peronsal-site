@@ -1,4 +1,4 @@
-import { Form, useActionData } from "@remix-run/react";
+import { Form, useActionData, useTransition } from "@remix-run/react";
 import { MapPin, Twitter, Linkedin, GitHub, Codepen } from "react-feather";
 import clsx from "clsx";
 import IconWrapper from "~/components/IconWrapper";
@@ -51,18 +51,37 @@ const links: LinksFunction = () => [
 ];
 
 export const action: ActionFunction = async ({ request }) => {
+  // https://blog.cloudflare.com/sending-email-from-workers-with-mailchannels/
   const data = await request.formData();
 
   const email = data.get("email");
   const name = data.get("name");
   const message = data.get("message");
 
-  const res = await fetch("https://formspree.io/f/xvolddzz", {
+  const res = await fetch("'https://api.mailchannels.net/tx/v1/send'", {
     method: "POST",
-    body: JSON.stringify({ email, name, message }),
     headers: {
-      "Content-Type": "application/json; charset=utf-8",
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
+    body: JSON.stringify({
+      personalizations: [
+        {
+          to: [{ email: "tom.hendra@outlook.com", name: "Tom Hendra" }],
+        },
+      ],
+      from: {
+        email: email,
+        name: name,
+      },
+      subject: `New message from ${name} via tomhendra.com`,
+      content: [
+        {
+          type: "text/plain",
+          value: message,
+        },
+      ],
+    }),
   });
 
   return res.json();
@@ -71,6 +90,7 @@ export const action: ActionFunction = async ({ request }) => {
 
 function Index() {
   const actionData = useActionData();
+  const transition = useTransition();
 
   let state: "idle" | "success" | "error" =
     actionData?.ok === true ? "success" : actionData?.error ? "error" : "idle";

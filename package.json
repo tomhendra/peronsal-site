@@ -15,7 +15,6 @@
   },
   "prettier": {},
   "dependencies": {
-    "@cloudflare/pages-plugin-mailchannels": "^0.1.0",
     "@radix-ui/react-dialog": "^0.1.7",
     "@radix-ui/react-tabs": "^0.1.5",
     "@remix-run/cloudflare": "^1.4.3",
@@ -29,8 +28,8 @@
     "react-feather": "^2.0.9"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.10",
-    "@babel/preset-env": "^7.17.10",
+    "@babel/core": "^7.17.12",
+    "@babel/preset-env": "^7.17.12",
     "@cld-apis/types": "^0.1.6",
     "@cloudflare/workers-types": "^3.9.0",
     "@remix-run/dev": "^1.4.3",
