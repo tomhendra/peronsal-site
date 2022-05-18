@@ -1,8 +1,7 @@
-.icon-wrapper {
+.feature-icon {
   background-color: var(--color-highlight);
   display: inline-grid;
   place-content: center;
   border-radius: 100%;
-  height: var(--space-6);
-  width: var(--space-6);
+  padding: var(--padding);
 }

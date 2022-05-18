@@ -187,18 +187,6 @@ h5,
   }
 }
 
-.subheading {
-  font-size: var(--font-size-text-xl);
-  line-height: var(--line-height-text-xl);
-}
-
-@media (max-width: 34.375rem) {
-  .subheading {
-    font-size: var(--font-size-text-lg);
-    line-height: var(--line-height-text-lg);
-  }
-}
-
 pre,
 code {
   font-family: var(--font-mono);

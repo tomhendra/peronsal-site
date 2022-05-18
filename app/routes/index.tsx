@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import { Form, useActionData, useTransition } from "@remix-run/react";
 import { MapPin, Twitter, Linkedin, GitHub, Codepen } from "react-feather";
 import clsx from "clsx";
-import IconWrapper from "~/components/IconWrapper";
+import FeatureIcon from "~/components/FeatureIcon";
 import Button from "~/components/Button";
 import Image from "~/components/Image";
 import SocialCard from "~/components/SocialCard";
@@ -29,7 +29,7 @@ import type { ActionFunction } from "@remix-run/cloudflare";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
 import { links as maxWidthContainerLinks } from "~/components/MaxWidthContainer";
-import { links as iconWrapperLinks } from "~/components/IconWrapper";
+import { links as featureIconLinks } from "~/components/FeatureIcon";
 import { links as buttonLinks } from "~/components/Button";
 import { links as imageLinks } from "~/components/Image";
 import { links as TabNavLinks } from "~/components/TabNav";
@@ -40,7 +40,7 @@ import styles from "~/styles/index.css";
 
 const links: LinksFunction = () => [
   ...maxWidthContainerLinks(),
-  ...iconWrapperLinks(),
+  ...featureIconLinks(),
   ...buttonLinks(),
   ...imageLinks(),
   ...TabNavLinks(),
@@ -120,9 +120,9 @@ function Index() {
           <div className="hero-layout">
             <div className="intro">
               <div>
-                <IconWrapper>
+                <FeatureIcon padding="6px">
                   <MapPin size={12} color="var(--color-primary-text)" />
-                </IconWrapper>
+                </FeatureIcon>
                 <span className="location">Salamanca</span>
               </div>
               <h1>Hello, I'm Tom</h1>
@@ -209,7 +209,7 @@ function Index() {
             <Tab value="nata">
               <TabHeading>Nata</TabHeading>
               <TabSubheading>
-                A realtime chat application inspired by Discord.
+                A chat application inspired by Discord.
               </TabSubheading>
               <TabLink to="projects/nata">Project details</TabLink>
             </Tab>
