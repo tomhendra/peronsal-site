@@ -23,38 +23,33 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="nav-container">
-          <Link to="/" className="logo-container">
-            <TomhendraLogo />
-            <span className="wordmark">Tom Hendra</span>
-            <VisuallyHidden>Tom Hendra logo - Home</VisuallyHidden>
-          </Link>
-          <nav className="footer-nav">
-            <Link variant="gray" size="md" to="/">
-              Home
-            </Link>
-            <Link variant="gray" size="md" to="/#about">
-              About
-            </Link>
-            <Link variant="gray" size="md" to="/#projects">
-              Projects
-            </Link>
-            <Link variant="gray" size="md" to="/#contact">
-              Contact
-            </Link>
-          </nav>
-        </div>
-        <Divider />
         <MaxWidthContainer>
-          <div className="copyright-container">
-            <span className="copyright-text">
-              &copy; {new Date().getFullYear()} Tom Hendra
-            </span>
-            <Link to="/privacy-policy" variant="gray" size="md">
-              Privacy Policy
+          <div className="nav-container">
+            <Link to="/" className="logo-container">
+              <TomhendraLogo />
+              <span className="wordmark">Tom Hendra</span>
+              <VisuallyHidden>Tom Hendra logo - Home</VisuallyHidden>
             </Link>
+            <nav className="footer-nav">
+              <Link variant="gray" size="md" to="/">
+                Home
+              </Link>
+              <Link variant="gray" size="md" to="/#about">
+                About
+              </Link>
+              <Link variant="gray" size="md" to="/#projects">
+                Projects
+              </Link>
+              <Link variant="gray" size="md" to="/#contact">
+                Contact
+              </Link>
+            </nav>
           </div>
         </MaxWidthContainer>
+        <Divider />
+        <span className="copyright">
+          &copy; {new Date().getFullYear()} Tom Hendra
+        </span>
       </div>
     </footer>
   );

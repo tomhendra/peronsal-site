@@ -133,7 +133,7 @@ function Index() {
               <div className="btn-group">
                 <Button
                   as="link"
-                  to="/projects"
+                  to="#projects"
                   size="xl"
                   variant="secondary-gray"
                 >
@@ -214,8 +214,24 @@ function Index() {
               <TabLink to="projects/nata">Project details</TabLink>
             </Tab>
           </TabsList>
-          <TabContent value="blog">Blog image link</TabContent>
-          <TabContent value="nata">Nata image link</TabContent>
+          <TabContent value="blog">
+            <Link to="projects/blog">
+              <img
+                alt="placeholder"
+                src="https://via.placeholder.com/1080x492?text=Blog"
+                style={{ width: "1080px", height: "492px", objectFit: "cover" }}
+              />
+            </Link>
+          </TabContent>
+          <TabContent value="nata">
+            <Link to="projects/nata">
+              <img
+                alt="placeholder"
+                src="https://via.placeholder.com/1080x492?text=Nata"
+                style={{ width: "1080px", height: "492px", objectFit: "cover" }}
+              />
+            </Link>
+          </TabContent>
         </Tabs>
       </Section>
       <Section id="contact" primary>
