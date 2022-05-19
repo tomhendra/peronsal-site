@@ -158,9 +158,9 @@ function Index() {
           <SectionPrefix>About</SectionPrefix>
           <SectionHeading>My Journey to Becoming a Developer</SectionHeading>
           <SectionSubheading>
-            In 2018 I sold everything I owned, quit my job in procurement, and
-            moved to Spain to become a freelance web developer. New country, new
-            language, new career, new life.
+            A few years ago I sold everything I owned, quit my job in
+            procurement, and moved to Spain to become a freelance web developer.
+            New country, new language, new career, new life.
           </SectionSubheading>
         </SectionIntro>
         <div className="columns">
