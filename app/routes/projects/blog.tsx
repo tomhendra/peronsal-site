@@ -1,20 +1,19 @@
 import { Check } from "react-feather";
 import MaxWidthContainer from "~/components/MaxWidthContainer";
 import Button from "~/components/Button";
-import { Section, SectionPrefix } from "~/components/Section";
 import FeatureIcon from "~/components/FeatureIcon";
 import Tech from "~/components/Tech";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
+import { links as maxWidthContainerLinks } from "~/components/MaxWidthContainer";
 import { links as buttonLinks } from "~/components/Button";
-import { links as sectionLinks } from "~/components/Section";
 import { links as featureIconLinks } from "~/components/FeatureIcon";
 import { links as techLinks } from "~/components/Tech";
 import styles from "~/styles/projects.css";
 
 const links: LinksFunction = () => [
+  ...maxWidthContainerLinks(),
   ...buttonLinks(),
-  ...sectionLinks(),
   ...featureIconLinks(),
   ...techLinks(),
   { rel: "stylesheet", href: styles },
@@ -27,11 +26,11 @@ function Blog() {
         <MaxWidthContainer>
           <div className="hero-layout">
             <div className="hero-intro">
-              <SectionPrefix>Projects</SectionPrefix>
+              <span className="section-prefix">Projects</span>
               <h1>Blog</h1>
               <div className="hero-intro-content">
                 <h3 className="subheading">
-                  A blog for all my thoughts and ideas.
+                  A place for my thoughts and ideas.
                 </h3>
                 <ul className="features-list">
                   <li>
@@ -106,18 +105,23 @@ function Blog() {
           </div>
         </MaxWidthContainer>
       </section>
-      <Section>
-        <div className="tech-stack">
-          <p className="heading">Technologies used</p>
-          <div className="list">
-            <Tech name="Svelte" />
-            <Tech name="Sass" />
-            <Tech name="Markdown" />
-            <Tech name="Cloudinary" />
-            <Tech name="Cloudflare Pages" />
+      <section>
+        <MaxWidthContainer>
+          <div className="tech-stack">
+            <p className="heading">Technologies used</p>
+            <div className="list">
+              <Tech name="Svelte" />
+              <Tech name="Sass" />
+              <Tech name="Markdown" />
+              <Tech name="Cloudinary" />
+              <Tech name="Cloudflare Pages" />
+            </div>
           </div>
-        </div>
-      </Section>
+        </MaxWidthContainer>
+      </section>
+      <section id="analysis">
+        <div className="analysis-layout">Purpose</div>
+      </section>
     </main>
   );
 }

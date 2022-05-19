@@ -1,18 +1,15 @@
 import MaxWidthContainer from "~/components/MaxWidthContainer";
 import Button from "~/components/Button";
-import { SectionPrefix } from "~/components/Section";
 import FeatureIcon from "~/components/FeatureIcon";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
 import { links as buttonLinks } from "~/components/Button";
-import { links as sectionLinks } from "~/components/Section";
 import { links as featureIconLinks } from "~/components/FeatureIcon";
 import styles from "~/styles/projects.css";
 import { CheckCircle } from "react-feather";
 
 const links: LinksFunction = () => [
   ...buttonLinks(),
-  ...sectionLinks(),
   ...featureIconLinks(),
   { rel: "stylesheet", href: styles },
 ];
@@ -24,7 +21,7 @@ function Blog() {
         <MaxWidthContainer>
           <div className="hero-layout">
             <div className="hero-intro">
-              <SectionPrefix>Projects</SectionPrefix>
+              <span className="section-prefix">Projects</span>
               <h1>Nata</h1>
               <div className="hero-intro-content">
                 <h3 className="subheading">
