@@ -1,19 +1,22 @@
+import { Check } from "react-feather";
 import MaxWidthContainer from "~/components/MaxWidthContainer";
 import Button from "~/components/Button";
 import { Section, SectionPrefix } from "~/components/Section";
 import FeatureIcon from "~/components/FeatureIcon";
+import Tech from "~/components/Tech";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
 import { links as buttonLinks } from "~/components/Button";
 import { links as sectionLinks } from "~/components/Section";
 import { links as featureIconLinks } from "~/components/FeatureIcon";
+import { links as techLinks } from "~/components/Tech";
 import styles from "~/styles/projects.css";
-import { Check } from "react-feather";
 
 const links: LinksFunction = () => [
   ...buttonLinks(),
   ...sectionLinks(),
   ...featureIconLinks(),
+  ...techLinks(),
   { rel: "stylesheet", href: styles },
 ];
 
@@ -84,7 +87,7 @@ function Blog() {
                     size="xl"
                     variant="primary"
                   >
-                    View Live
+                    Live Site
                   </Button>
                 </div>
               </div>
@@ -103,13 +106,16 @@ function Blog() {
           </div>
         </MaxWidthContainer>
       </section>
-      <Section id="stack">
+      <Section>
         <div className="tech-stack">
-          <p>SvelteKit</p>
-          <p>Sass</p>
-          <p>MdSvex</p>
-          <p>Cloudinary</p>
-          <p>Cloudflare Pages</p>
+          <p className="heading">Technologies used</p>
+          <div className="list">
+            <Tech name="Svelte" />
+            <Tech name="Sass" />
+            <Tech name="Markdown" />
+            <Tech name="Cloudinary" />
+            <Tech name="Cloudflare Pages" />
+          </div>
         </div>
       </Section>
     </main>
