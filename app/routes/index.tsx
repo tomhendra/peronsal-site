@@ -160,26 +160,26 @@ function Index() {
             </div>
             <div className="columns">
               <p>
-                While building WordPress sites to pay the bills I have been in
+                While shipping WordPress sites to pay the bills I have been in
                 pursuit of my chosen career trajectory ever since, as a software
                 developer within the vast and vibrant JavaScript community.
               </p>
               <p>
-                I knew coding was the right path for me after struggling with an
-                algorithm challenge for a cash register. The feeling when my
-                solution finally passed the tests was total euphoria, and I
-                loved it!
+                I knew learning to code was the right path for me after
+                struggling with an algorithm challenge for a cash register. The
+                feeling when my solution finally passed the tests was total
+                euphoria!
               </p>
               <p>
                 I build web apps with JavaScript frameworks and continuously
-                elevate my standards by learning from high quality training
-                resources and other members of the developer community.
+                raise my standards by learning from high quality training
+                resources and listening to other members of the developer
+                community.
               </p>
               <p>
-                I have the skills required to create polished user interfaces,
-                and am now seeking a permanent role as a frontend developer
-                where I can continue to grow and help my team to achieve their
-                goals.
+                I have the skills required to create polished user interfaces
+                and am seeking a permanent role as a frontend developer where I
+                can continue to grow and help my team to achieve their goals.
               </p>
             </div>
           </div>
@@ -191,10 +191,10 @@ function Index() {
           <div className="section-layout">
             <div className="section-intro">
               <span className="section-prefix">Projects</span>
-              <h2 className="section-heading">What I Have Been Building</h2>
+              <h2 className="section-heading">I Have Been Shipping</h2>
               <h3 className="section-subheading">
-                I love to build things using new technologies I have learned
-                about.
+                I love to build projects with the new technologies I have
+                learned about.
               </h3>
             </div>
             <Tabs defaultValue="blog">
@@ -210,7 +210,7 @@ function Index() {
                 <Tab value="nata">
                   <TabHeading>Nata</TabHeading>
                   <TabSubheading>
-                    A chat application inspired by Discord.
+                    A realtime chat application inspired by Discord.
                   </TabSubheading>
                   <TabLink to="projects/nata">Project details</TabLink>
                 </Tab>
@@ -252,7 +252,7 @@ function Index() {
               <span className="section-prefix alt">Contact</span>
               <h2 className="section-heading alt">Let's Work Together</h2>
               <h3 className="section-subheading alt">
-                I'm always open to new opportunities to collaborate.
+                I'm always open to new collaboration opportunities.
               </h3>
             </div>
             <div className="contact-container">

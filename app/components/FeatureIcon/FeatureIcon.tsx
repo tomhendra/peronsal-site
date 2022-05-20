@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
 import styles from "./feature-icon.css";
@@ -5,9 +6,9 @@ import styles from "./feature-icon.css";
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 type BaseProps = {
+  color?: string;
   padding?: string;
-  outerPadding?: string;
-  double?: boolean;
+  className?: string;
   children: React.ReactNode;
 };
 
@@ -15,42 +16,21 @@ type FeatureIconProps = BaseProps &
   Omit<React.HTMLAttributes<HTMLDivElement>, keyof BaseProps>;
 
 function FeatureIcon({
-  outerPadding = "var(--space-2)",
+  color = "var(--color-highlight)",
   padding = "var(--space-2)",
-  double = false,
+  className,
   children,
   ...rest
 }: FeatureIconProps) {
-  if (double) {
-    return (
-      <div
-        className="feature-icon-outer-wrapper"
-        style={
-          {
-            "--outer-padding": outerPadding,
-          } as React.CSSProperties
-        }
-        {...rest}
-      >
-        <div
-          className="feature-icon-wrapper"
-          style={{ "--padding": padding } as React.CSSProperties}
-        >
-          {children}
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <div
-        className="feature-icon-wrapper"
-        style={{ "--padding": padding } as React.CSSProperties}
-        {...rest}
-      >
-        {children}
-      </div>
-    );
-  }
+  return (
+    <div
+      className={clsx("feature-icon-wrapper", className && className)}
+      style={{ "--color": color, "--padding": padding } as React.CSSProperties}
+      {...rest}
+    >
+      {children}
+    </div>
+  );
 }
 
 export { links, FeatureIcon as default };
