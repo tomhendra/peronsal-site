@@ -1,4 +1,4 @@
-import { Check } from "react-feather";
+import { Check, Target } from "react-feather";
 import MaxWidthContainer from "~/components/MaxWidthContainer";
 import Button from "~/components/Button";
 import FeatureIcon from "~/components/FeatureIcon";
@@ -70,7 +70,7 @@ function Blog() {
                     </span>
                   </li>
                 </ul>
-                <p>Designed and developed by myself.</p>
+                <p>Design and development by myself.</p>
                 <div className="btn-group">
                   <Button
                     as="externalLink"
@@ -107,20 +107,55 @@ function Blog() {
       </section>
       <section>
         <MaxWidthContainer>
-          <div className="tech-stack">
-            <p className="heading">Technologies used</p>
-            <div className="list">
-              <Tech name="Svelte" />
-              <Tech name="Sass" />
-              <Tech name="Markdown" />
-              <Tech name="Cloudinary" />
-              <Tech name="Cloudflare Pages" />
+          <div className="tech-stack-layout">
+            <div className="tech-stack">
+              <p className="heading">Technologies used</p>
+              <div className="list">
+                <Tech name="Svelte" />
+                <Tech name="Sass" />
+                <Tech name="Markdown" />
+                <Tech name="Cloudinary" />
+                <Tech name="Cloudflare Pages" />
+              </div>
             </div>
           </div>
         </MaxWidthContainer>
       </section>
-      <section id="analysis">
-        <div className="analysis-layout">Purpose</div>
+      <section>
+        <MaxWidthContainer>
+          <div className="analysis-section-layout">
+            <div className="analysis-item">
+              <div className="content">
+                <FeatureIcon double style={{ marginLeft: "-6px" }}>
+                  <Target color="var(--color-primary-text)" />
+                </FeatureIcon>
+                <h2 className="title">Purpose &amp; Goal</h2>
+                <p>
+                  Why did you build this project? Why is it important to you?
+                </p>
+                <p>
+                  What was the expected outcome of the project? What were the
+                  initial designs?
+                </p>
+                <p>
+                  Any other preliminary planning that you did which helps build
+                  a narrative
+                </p>
+              </div>
+              <div className="img-wrapper">
+                <img
+                  alt="placeholder"
+                  src="https://via.placeholder.com/768x512?text=Img"
+                  style={{
+                    width: "768px",
+                    height: "512px",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </MaxWidthContainer>
       </section>
     </main>
   );

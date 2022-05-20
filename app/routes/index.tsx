@@ -144,7 +144,7 @@ function Index() {
           </div>
         </MaxWidthContainer>
       </section>
-      <section id="about" className="section">
+      <section id="about">
         <MaxWidthContainer>
           <div className="section-layout">
             <div className="section-intro">
@@ -171,29 +171,30 @@ function Index() {
                 loved it!
               </p>
               <p>
-                I build web apps with React and continuously elevate my
-                standards by learning from high quality training resources and
-                other members of the developer community.
+                I build web apps with JavaScript frameworks and continuously
+                elevate my standards by learning from high quality training
+                resources and other members of the developer community.
               </p>
               <p>
-                I now have the skills required to create polished user
-                interfaces, and am seeking a permanent role as a frontend
-                developer where I can continue to grow and help my team to
-                achieve their goals.
+                I have the skills required to create polished user interfaces,
+                and am now seeking a permanent role as a frontend developer
+                where I can continue to grow and help my team to achieve their
+                goals.
               </p>
             </div>
           </div>
         </MaxWidthContainer>
       </section>
       <Divider />
-      <section id="projects" className="section">
+      <section id="projects">
         <MaxWidthContainer>
           <div className="section-layout">
             <div className="section-intro">
               <span className="section-prefix">Projects</span>
               <h2 className="section-heading">What I Have Been Building</h2>
               <h3 className="section-subheading">
-                I love to build things using new technologies I have learned.
+                I love to build things using new technologies I have learned
+                about.
               </h3>
             </div>
             <Tabs defaultValue="blog">
@@ -201,7 +202,7 @@ function Index() {
                 <Tab value="blog">
                   <TabHeading>Blog</TabHeading>
                   <TabSubheading>
-                    A blog to share my learnings in the world of software
+                    A blog to share my learnings with the world of software
                     development.
                   </TabSubheading>
                   <TabLink to="projects/blog">Project details</TabLink>
@@ -244,7 +245,7 @@ function Index() {
           </div>
         </MaxWidthContainer>
       </section>
-      <section id="contact" className="section section-bg-primary">
+      <section id="contact" className="section-bg-primary">
         <MaxWidthContainer>
           <div className="section-layout">
             <div className="section-intro">

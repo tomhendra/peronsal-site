@@ -85,7 +85,7 @@ p,
 ol,
 ul {
   max-width: 60ch;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 @media (max-width: 34.375rem) {
   p,
