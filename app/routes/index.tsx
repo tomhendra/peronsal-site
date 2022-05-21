@@ -161,24 +161,24 @@ function Index() {
             <div className="columns">
               <p>
                 While shipping WordPress sites to pay the bills I have been in
-                pursuit of my chosen career trajectory ever since, as a software
+                pursuit of my chosen career trajectory ever since; as a software
                 developer within the vast and vibrant JavaScript community.
               </p>
               <p>
                 I knew learning to code was the right path for me after
                 struggling with an algorithm challenge for a cash register. The
-                feeling when my solution finally passed the tests was total
+                feeling when my solution finally passed the tests was absolute
                 euphoria!
               </p>
               <p>
-                I build web apps with JavaScript frameworks and continuously
-                raise my standards by learning from high quality training
+                I build web apps with modern JavaScript frameworks and
+                continuously raise my standards by learning from high quality
                 resources and listening to other members of the developer
                 community.
               </p>
               <p>
                 I have the skills required to create polished user interfaces
-                and am seeking a permanent role as a frontend developer where I
+                and am seeking a permanent role as a frontend developer, where I
                 can continue to grow and help my team to achieve their goals.
               </p>
             </div>
@@ -191,7 +191,7 @@ function Index() {
           <div className="section-layout">
             <div className="section-intro">
               <span className="section-prefix">Projects</span>
-              <h2 className="section-heading">I Have Been Shipping</h2>
+              <h2 className="section-heading">I Have Been Building</h2>
               <h3 className="section-subheading">
                 I love to build projects with the new technologies I have
                 learned about.
@@ -202,7 +202,7 @@ function Index() {
                 <Tab value="blog">
                   <TabHeading>Blog</TabHeading>
                   <TabSubheading>
-                    A blog to share my learnings with the world of software
+                    A place to share my learnings with the world of software
                     development.
                   </TabSubheading>
                   <TabLink to="projects/blog">Project details</TabLink>
