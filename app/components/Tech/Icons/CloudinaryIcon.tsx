@@ -1,4 +1,4 @@
-function Cloudinary({ size = 44, ...rest }) {
+function CloudinaryIcon({ size = 44, ...rest }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -28,4 +28,4 @@ function Cloudinary({ size = 44, ...rest }) {
   );
 }
 
-export { Cloudinary as default };
+export { CloudinaryIcon as default };

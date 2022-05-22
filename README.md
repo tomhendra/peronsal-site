@@ -17,7 +17,7 @@ Commitlint is unnecessary for this repo since I am the only dev, but it is good 
 ## TODO
 
 The cookie for dark mode appears to have stopped being saved - fix it!
-? useFetcher changes perhaps since this was broken before ¯\_(ツ)\_/¯
+? useFetcher changes perhaps since this was broken before ?
 
 Uncaught (in promise) Error: No matches found
 at invariant2 (invariant.js:13:11)

@@ -1,4 +1,4 @@
-function Svelte({ size = 44, ...rest }) {
+function SvelteIcon({ size = 44, ...rest }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,4 +20,4 @@ function Svelte({ size = 44, ...rest }) {
   );
 }
 
-export { Svelte as default };
+export { SvelteIcon as default };

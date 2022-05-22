@@ -160,7 +160,7 @@ function Index() {
             </div>
             <div className="columns">
               <p>
-                While shipping WordPress sites to pay the bills I have been in
+                While shipping WordPress sites to pay the bills, I have been in
                 pursuit of my chosen career trajectory ever since; as a software
                 developer within the vast and vibrant JavaScript community.
               </p>
@@ -193,12 +193,18 @@ function Index() {
               <span className="section-prefix">Projects</span>
               <h2 className="section-heading">I Have Been Building</h2>
               <h3 className="section-subheading">
-                I love to build projects with the new technologies I have
-                learned about.
+                I love to build projects with technologies I have learned about.
               </h3>
             </div>
-            <Tabs defaultValue="blog">
+            <Tabs defaultValue="nata">
               <TabsList aria-label="Tab navigation for projects">
+                <Tab value="nata">
+                  <TabHeading>Nata</TabHeading>
+                  <TabSubheading>
+                    A realtime chat application inspired by Discord.
+                  </TabSubheading>
+                  <TabLink to="projects/nata">Project details</TabLink>
+                </Tab>
                 <Tab value="blog">
                   <TabHeading>Blog</TabHeading>
                   <TabSubheading>
@@ -207,19 +213,12 @@ function Index() {
                   </TabSubheading>
                   <TabLink to="projects/blog">Project details</TabLink>
                 </Tab>
-                <Tab value="nata">
-                  <TabHeading>Nata</TabHeading>
-                  <TabSubheading>
-                    A realtime chat application inspired by Discord.
-                  </TabSubheading>
-                  <TabLink to="projects/nata">Project details</TabLink>
-                </Tab>
               </TabsList>
-              <TabContent value="blog">
-                <Link to="projects/blog">
+              <TabContent value="nata">
+                <Link to="projects/nata">
                   <img
                     alt="placeholder"
-                    src="https://via.placeholder.com/1080x492?text=Blog"
+                    src="https://via.placeholder.com/1080x492?text=Nata"
                     style={{
                       width: "1080px",
                       height: "492px",
@@ -228,11 +227,11 @@ function Index() {
                   />
                 </Link>
               </TabContent>
-              <TabContent value="nata">
-                <Link to="projects/nata">
+              <TabContent value="blog">
+                <Link to="projects/blog">
                   <img
                     alt="placeholder"
-                    src="https://via.placeholder.com/1080x492?text=Nata"
+                    src="https://via.placeholder.com/1080x492?text=Blog"
                     style={{
                       width: "1080px",
                       height: "492px",
@@ -252,7 +251,7 @@ function Index() {
               <span className="section-prefix alt">Contact</span>
               <h2 className="section-heading alt">Let's Work Together</h2>
               <h3 className="section-subheading alt">
-                I'm always open to new collaboration opportunities.
+                I'm always happy to make new connections.
               </h3>
             </div>
             <div className="contact-container">

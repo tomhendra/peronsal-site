@@ -1,5 +1,5 @@
 import MaxWidthContainer from "~/components/MaxWidthContainer";
-import { Check, Eye, Target, TrendingUp, Users } from "react-feather";
+import { CheckCircle, Eye, Target, TrendingUp, Users } from "react-feather";
 import Button from "~/components/Button";
 import FeatureIcon from "~/components/FeatureIcon";
 import Tech from "~/components/Tech";
@@ -36,7 +36,7 @@ function Blog() {
                   <li>
                     <span className="feature">
                       <FeatureIcon>
-                        <Check
+                        <CheckCircle
                           size={14}
                           strokeWidth={3}
                           color="var(--color-primary-text)"
@@ -48,7 +48,7 @@ function Blog() {
                   <li>
                     <span className="feature">
                       <FeatureIcon>
-                        <Check
+                        <CheckCircle
                           size={14}
                           strokeWidth={3}
                           color="var(--color-primary-text)"
@@ -60,17 +60,19 @@ function Blog() {
                   <li>
                     <span className="feature">
                       <FeatureIcon>
-                        <Check
+                        <CheckCircle
                           size={14}
                           strokeWidth={3}
                           color="var(--color-primary-text)"
                         />
                       </FeatureIcon>
-                      Site theme code syntax highlighting
+                      Code syntax highlighting in custom colours
                     </span>
                   </li>
                 </ul>
-                <p>My role in this project was designer and developer.</p>
+                <p>
+                  My role in this project was as the designer and the developer.
+                </p>
                 <div className="btn-group">
                   <Button
                     as="externalLink"
@@ -190,7 +192,7 @@ function Blog() {
                   <li>
                     <span className="feature">
                       <FeatureIcon>
-                        <Check
+                        <CheckCircle
                           size={14}
                           strokeWidth={3}
                           color="var(--color-primary-text)"
@@ -202,7 +204,7 @@ function Blog() {
                   <li>
                     <span className="feature">
                       <FeatureIcon>
-                        <Check
+                        <CheckCircle
                           size={14}
                           strokeWidth={3}
                           color="var(--color-primary-text)"
@@ -214,7 +216,7 @@ function Blog() {
                   <li>
                     <span className="feature">
                       <FeatureIcon>
-                        <Check
+                        <CheckCircle
                           size={14}
                           strokeWidth={3}
                           color="var(--color-primary-text)"
@@ -227,7 +229,7 @@ function Blog() {
                   <li>
                     <span className="feature">
                       <FeatureIcon>
-                        <Check
+                        <CheckCircle
                           size={14}
                           strokeWidth={3}
                           color="var(--color-primary-text)"

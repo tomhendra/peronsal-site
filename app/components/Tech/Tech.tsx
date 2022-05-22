@@ -1,31 +1,55 @@
-import Svelte from "./Icons/Svelte";
-import Sass from "./Icons/Sass";
+import SvelteIcon from "./Icons/SvelteIcon";
+import SassIcon from "./Icons/SassIcon";
+import CloudflarePagesIcon from "./Icons/CloudflarePagesIcon";
+import CloudinaryIcon from "./Icons/CloudinaryIcon";
+import CssIcon from "./Icons/CssIcon";
+import MarkdownIcon from "./Icons/MarkdownIcon";
+import ReactIcon from "./Icons/ReactIcon";
+import RemixIcon from "./Icons/RemixIcon";
+import SupabaseIcon from "./Icons/SupabaseIcon";
+import TypeScriptIcon from "./Icons/TypeScriptIcon";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
 import styles from "./tech.css";
-import CloudflarePages from "./Icons/CloudflarePages";
-import Cloudinary from "./Icons/Cloudinary";
-import Markdown from "./Icons/Markdown";
-
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 type TechProps = {
-  name: "Cloudflare Pages" | "Cloudinary" | "Markdown" | "Sass" | "Svelte";
+  name:
+    | "Cloudflare Pages"
+    | "Cloudinary"
+    | "CSS"
+    | "Markdown"
+    | "React"
+    | "Remix"
+    | "Sass"
+    | "Supabase"
+    | "Svelte"
+    | "TypeScript";
 };
 
 function Tech({ name }: TechProps) {
   return (
     <span className="tech-container">
       {name === "Cloudflare Pages" ? (
-        <CloudflarePages />
+        <CloudflarePagesIcon />
       ) : name === "Cloudinary" ? (
-        <Cloudinary />
+        <CloudinaryIcon />
+      ) : name === "CSS" ? (
+        <CssIcon />
       ) : name === "Markdown" ? (
-        <Markdown />
+        <MarkdownIcon />
+      ) : name === "React" ? (
+        <ReactIcon />
+      ) : name === "Remix" ? (
+        <RemixIcon />
       ) : name === "Sass" ? (
-        <Sass />
+        <SassIcon />
+      ) : name === "Supabase" ? (
+        <SupabaseIcon />
       ) : name === "Svelte" ? (
-        <Svelte />
+        <SvelteIcon />
+      ) : name === "TypeScript" ? (
+        <TypeScriptIcon />
       ) : null}
       <p className="title">{name}</p>
     </span>

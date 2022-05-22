@@ -1,4 +1,4 @@
-function CloudflarePages({ size = 44, ...rest }) {
+function CloudflarePagesIcon({ size = 44, ...rest }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -33,4 +33,4 @@ function CloudflarePages({ size = 44, ...rest }) {
   );
 }
 
-export { CloudflarePages as default };
+export { CloudflarePagesIcon as default };
