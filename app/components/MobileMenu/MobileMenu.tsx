@@ -26,11 +26,11 @@ function MobileMenu() {
       <Dialog.Portal>
         <Dialog.Overlay className="mobile-menu-overlay" />
         <Dialog.Content>
-          <Dialog.Title>Mobile Menu</Dialog.Title>
+          <Dialog.Title>Menu</Dialog.Title>
           <Dialog.Description>
-            Navigate to another part of the website, or toggle the colour theme.
+            Navigate to another part of the website.
           </Dialog.Description>
-          <div className="mobile-menu">
+          <div className="mobile-menu-content">
             <nav className="mobile-menu-nav">
               <Dialog.Close asChild>
                 <Link variant="gray" size="lg" to="/">
@@ -38,13 +38,18 @@ function MobileMenu() {
                 </Link>
               </Dialog.Close>
               <Dialog.Close asChild>
-                <Link variant="gray" size="lg" to="/projects">
+                <Link variant="gray" size="lg" to="/#projects">
                   Projects
                 </Link>
               </Dialog.Close>
               <Dialog.Close asChild>
-                <Link variant="gray" size="lg" to="/about">
+                <Link variant="gray" size="lg" to="/#about">
                   About
+                </Link>
+              </Dialog.Close>
+              <Dialog.Close asChild>
+                <Link variant="gray" size="lg" to="/#contact">
+                  Contact
                 </Link>
               </Dialog.Close>
             </nav>

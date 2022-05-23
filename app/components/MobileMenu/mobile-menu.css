@@ -4,8 +4,13 @@
   background-color: var(--color-overlay);
   backdrop-filter: var(--blur-sm);
 }
+@media (prefers-reduced-motion: no-preference) {
+  .mobile-menu-overlay {
+    animation: show 250ms ease-out;
+  }
+}
 
-.mobile-menu {
+.mobile-menu-content {
   position: fixed;
   top: 0;
   right: var(--space-24);
@@ -16,6 +21,12 @@
   gap: var(--space-8);
   background-color: var(--color-background);
   padding: var(--space-24) var(--space-8);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .mobile-menu-content {
+    will-change: transform;
+    animation: slide-in 250ms ease-out both;
+  }
 }
 
 .mobile-menu-nav {

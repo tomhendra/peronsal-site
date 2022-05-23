@@ -208,8 +208,7 @@ function Index() {
                 <Tab value="blog">
                   <TabHeading>Blog</TabHeading>
                   <TabSubheading>
-                    A place to share my learnings with the world of software
-                    development.
+                    A place to share my discoveries with the world.
                   </TabSubheading>
                   <TabLink to="projects/blog">Project details</TabLink>
                 </Tab>

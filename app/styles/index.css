@@ -123,16 +123,16 @@
 }
 
 .contact-form-container > * {
-  transition: all 0.3s cubic-bezier(0.5, 0, 0.5, 1);
+  transition: opacity 0.3s, transform 0.3s;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
   transition-delay: 0.3s;
-  transition-property: opacity, transform;
 }
 
 .contact-form-container > *[aria-hidden="true"] {
   pointer-events: none;
-  transition-delay: 0s;
   opacity: 0;
   transform: scale(0.8);
+  transition-delay: 0s; /*on;y being applied while [aria-hidden="true"] */
 }
 
 .form {
