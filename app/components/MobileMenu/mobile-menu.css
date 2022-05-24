@@ -6,7 +6,13 @@
 }
 @media (prefers-reduced-motion: no-preference) {
   .mobile-menu-overlay {
-    animation: show 250ms ease-out;
+    will-change: transform;
+  }
+  .mobile-menu-overlay[data-state="open"] {
+    animation: show 500ms ease-out forwards;
+  }
+  .mobile-menu-overlay[data-state="closed"] {
+    animation: hide 250ms ease-in forwards;
   }
 }
 
@@ -25,7 +31,12 @@
 @media (prefers-reduced-motion: no-preference) {
   .mobile-menu-content {
     will-change: transform;
-    animation: slide-in 250ms ease-out both;
+  }
+  .mobile-menu-content[data-state="open"] {
+    animation: slide-in-left 500ms ease-out forwards;
+  }
+  .mobile-menu-content[data-state="closed"] {
+    animation: slide-out-left 250ms ease-in forwards;
   }
 }
 
