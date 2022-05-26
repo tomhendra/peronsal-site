@@ -25,17 +25,6 @@
   backdrop-filter: var(--blur-sm);
   z-index: 1;
 }
-@media (prefers-reduced-motion: no-preference) {
-  .mobile-menu-overlay {
-    will-change: transform;
-  }
-  .mobile-menu-overlay[data-state="open"] {
-    animation: show 500ms ease-out forwards;
-  }
-  .mobile-menu-overlay[data-state="closed"] {
-    animation: hide 250ms ease-in forwards;
-  }
-}
 
 .mobile-menu-content {
   position: fixed;
@@ -50,15 +39,29 @@
   padding: var(--space-24) var(--space-8);
   z-index: 2;
 }
+
 @media (prefers-reduced-motion: no-preference) {
+  .mobile-menu-overlay {
+    will-change: opacity;
+  }
+
   .mobile-menu-content {
     will-change: transform;
   }
+
+  .mobile-menu-overlay[data-state="open"] {
+    animation: show 1000ms ease-out both;
+  }
   .mobile-menu-content[data-state="open"] {
-    animation: slide-in-left 500ms ease-out forwards;
+    animation: slide-in-left 400ms ease-out both;
+    animation-delay: 250ms;
+  }
+
+  .mobile-menu-overlay[data-state="closed"] {
+    animation: hide 250ms ease-in both;
   }
   .mobile-menu-content[data-state="closed"] {
-    animation: slide-out-left 250ms ease-in forwards;
+    animation: slide-out-left 250ms ease-in both;
   }
 }
 

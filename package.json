@@ -28,8 +28,8 @@
     "react-feather": "^2.0.9"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.0",
-    "@babel/preset-env": "^7.18.0",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
     "@cld-apis/types": "^0.1.6",
     "@cloudflare/workers-types": "^3.11.0",
     "@remix-run/dev": "^1.5.1",

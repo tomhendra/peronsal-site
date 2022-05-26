@@ -16,16 +16,16 @@ const links: LinksFunction = () => [
 ];
 
 function MobileMenu() {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const toggleMobileMenu = () => setIsOpen(!isOpen);
 
   return (
     <Dialog.Root open={isOpen} onOpenChange={toggleMobileMenu}>
       <Dialog.Trigger asChild>
-        <span className="mobile-menu-button">
+        <button className="mobile-menu-button" onClick={toggleMobileMenu}>
           <Menu />
           <VisuallyHidden>Open and close the mobile menu</VisuallyHidden>
-        </span>
+        </button>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="mobile-menu-overlay" />
