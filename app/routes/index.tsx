@@ -136,10 +136,9 @@ function Index() {
               </div>
             </div>
             <Image
-              src="personal-site/dev-shot"
-              alt="placeholder"
-              credit="Mohammad Rahmani"
-              ratio="4 / 5"
+              src="personal-site/tom-headshot"
+              alt="A portrait photo of Tom"
+              credit="María Valverde"
             />
           </div>
         </MaxWidthContainer>
@@ -228,14 +227,11 @@ function Index() {
               </TabContent>
               <TabContent value="blog">
                 <Link to="projects/blog">
-                  <img
-                    alt="placeholder"
-                    src="https://via.placeholder.com/1080x492?text=Blog"
-                    style={{
-                      width: "1080px",
-                      height: "492px",
-                      objectFit: "cover",
-                    }}
+                  <Image
+                    src="personal-site/blog-mockup-desktop-01"
+                    alt="Screen shot of blog design"
+                    credit="Untitled UI"
+                    objectFit="cover"
                   />
                 </Link>
               </TabContent>
