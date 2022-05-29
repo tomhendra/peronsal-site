@@ -2,4 +2,4 @@
   Color themes, breakpoints, public
   keys, and other app-wide constants.
 */
-export const CONSTANT = "constant";
+export const CLOUDINARY_CLOUD_NAME = "tomhendra";

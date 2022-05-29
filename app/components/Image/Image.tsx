@@ -1,5 +1,5 @@
 import { setConfig } from "cloudinary-build-url";
-import { CLOUDINARY_CLOUD_NAME } from "./Image.constants";
+import { CLOUDINARY_CLOUD_NAME } from "~/constants";
 import { getImageBuilder, getImgProps } from "./Image.helpers";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
@@ -25,14 +25,14 @@ interface Props {
 
 function Image({
   src = "https://picsum.photos/400/200",
-  alt,
+  alt = "",
   credit,
   ratio,
   width = "100%",
   height = "auto",
   maxWidth,
   maxHeight,
-  objectFit = "cover",
+  objectFit = "",
 }: Props) {
   const styles = {
     "--ratio": ratio,

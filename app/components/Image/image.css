@@ -4,12 +4,12 @@
   height: var(--height);
   max-width: var(--max-width);
   max-height: var(--max-height);
-  object-fit: var(--object-fit);
+  object-fit: cover;
+  object-position: 0% 0%;
 }
 
 @supports (aspect-ratio: 1 / 1) {
   .img {
     aspect-ratio: var(--ratio);
-    height: revert;
   }
 }

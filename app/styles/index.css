@@ -83,8 +83,24 @@
 .columns p {
   break-inside: avoid;
 }
+
 /* projects section */
-/* ¯\_(ツ)_/¯ */
+.tab-img {
+  display: block;
+  width: 100%;
+  height: 430px;
+  min-width: 343px; /* mobile width */
+  min-height: 228px; /* mobile height */
+  object-fit: cover;
+  object-position: 0% 0%;
+}
+
+@supports (aspect-ratio: 1 / 1) {
+  .tab-img {
+    height: revert;
+    aspect-ratio: 26 / 21;
+  }
+}
 
 /* contact section */
 .contact-container {
@@ -132,7 +148,7 @@
   pointer-events: none;
   opacity: 0;
   transform: scale(0.8);
-  transition-delay: 0s; /*on;y being applied while [aria-hidden="true"] */
+  transition-delay: 0s; /*only being applied while [aria-hidden="true"] */
 }
 
 .form {

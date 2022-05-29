@@ -18,6 +18,7 @@ import {
   TabLink,
   TabContent,
 } from "~/components/TabNav";
+import { getImageBuilder, getImgProps } from "~/helpers/image.helpers";
 import type { ActionFunction } from "@remix-run/cloudflare";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
@@ -118,8 +119,8 @@ function Index() {
               </div>
               <h1>Hello, I'm Tom</h1>
               <h3 className="section-subheading">
-                I'm a developer from the UK based in Spain who loves to build
-                quality user interfaces for the web.
+                I'm a web developer from the UK who loves to build quality user
+                interfaces for the web.
               </h3>
               <div className="btn-group">
                 <Button
@@ -138,7 +139,8 @@ function Index() {
             <Image
               src="personal-site/tom-headshot"
               alt="A portrait photo of Tom"
-              credit="María Valverde"
+              credit="María Teresa Valverde Calvo"
+              ratio="4 / 5"
             />
           </div>
         </MaxWidthContainer>
@@ -149,12 +151,12 @@ function Index() {
             <div className="section-intro">
               <span className="section-prefix">About</span>
               <h2 className="section-heading">
-                My Journey to Becoming a Developer
+                My journey to becoming a developer
               </h2>
               <h3 className="section-subheading">
                 In 2018 I sold everything I owned, quit my job in procurement,
-                and moved to Spain to become a freelance web developer. New
-                country, new language, new career, new life.
+                and moved to Spain to become a developer. New country, new
+                language, new career, new life.
               </h3>
             </div>
             <div className="columns">
@@ -170,8 +172,8 @@ function Index() {
                 euphoria!
               </p>
               <p>
-                I build web apps with modern JavaScript frameworks and
-                continuously raise my standards by learning from high quality
+                I build web apps with modern JavaScript frameworks, and
+                continuously raise my standards by learning from quality
                 resources and listening to other members of the developer
                 community.
               </p>
@@ -190,7 +192,7 @@ function Index() {
           <div className="section-layout">
             <div className="section-intro">
               <span className="section-prefix">Projects</span>
-              <h2 className="section-heading">I Have Been Building</h2>
+              <h2 className="section-heading">I have been shipping</h2>
               <h3 className="section-subheading">
                 I love to build projects with technologies I have learned about.
               </h3>
@@ -227,11 +229,29 @@ function Index() {
               </TabContent>
               <TabContent value="blog">
                 <Link to="projects/blog">
-                  <Image
-                    src="personal-site/blog-mockup-desktop-01"
-                    alt="Screen shot of blog design"
-                    credit="Untitled UI"
-                    objectFit="cover"
+                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                  <img
+                    className="tab-img"
+                    title="Untitled UI"
+                    width="530px"
+                    height="430px"
+                    {...getImgProps(
+                      getImageBuilder(
+                        "personal-site/blog-mockup-desktop-01",
+                        "Screen shot of blog desktop design - preview"
+                      ),
+                      {
+                        widths: [280, 560, 840, 1100, 1650, 2500, 2100, 3100],
+                        sizes: [
+                          "(max-width:1023px) 80vw",
+                          "(min-width:1024px) and (max-width:1620px) 67vw",
+                          "1100px",
+                        ],
+                        transformations: {
+                          background: "rgb:e6e9ee",
+                        },
+                      }
+                    )}
                   />
                 </Link>
               </TabContent>
@@ -244,9 +264,9 @@ function Index() {
           <div className="section-layout">
             <div className="section-intro">
               <span className="section-prefix alt">Contact</span>
-              <h2 className="section-heading alt">Let's Work Together</h2>
+              <h2 className="section-heading alt">Let's connect</h2>
               <h3 className="section-subheading alt">
-                I'm always happy to make new connections.
+                I'm always happy to enhance my circle.
               </h3>
             </div>
             <div className="contact-container">
@@ -348,7 +368,7 @@ function Index() {
                   aria-hidden={state !== "success"}
                 >
                   <h2 ref={successRef}>Thanks for your message!</h2>
-                  <p>I will be in touch with to you soon.</p>
+                  <p>I will be in touch with to you very soon.</p>
                   <Link variant="primary" to="/#contact">
                     Reset contact form
                   </Link>
