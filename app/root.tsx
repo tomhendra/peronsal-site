@@ -23,13 +23,13 @@ import type {
 } from "@remix-run/cloudflare";
 import type { Theme } from "~/helpers/theme-provider";
 
+import reset from "~/styles/global/reset.css";
 import typography from "~/styles/global/typography.css";
-import colors from "~/styles/global/colors.css";
 import sizes from "~/styles/global/sizes.css";
+import colors from "~/styles/global/colors.css";
 import effects from "~/styles/global/effects.css";
 import animations from "~/styles/global/animations.css";
 import utils from "~/styles/global/utils.css";
-import reset from "~/styles/global/reset.css";
 import { links as layoutLinks } from "~/components/Layout";
 
 type LoaderData = {
@@ -51,12 +51,12 @@ const meta: MetaFunction = () => ({
 });
 
 const links: LinksFunction = () => [
+  { rel: "stylesheet", href: reset },
   { rel: "stylesheet", href: typography },
-  { rel: "stylesheet", href: colors },
   { rel: "stylesheet", href: sizes },
+  { rel: "stylesheet", href: colors },
   { rel: "stylesheet", href: effects },
   { rel: "stylesheet", href: animations },
-  { rel: "stylesheet", href: reset },
   { rel: "stylesheet", href: utils },
   ...layoutLinks(),
 ];

@@ -1,16 +1,45 @@
-:root {
-  --shadow-xs: 0px 1px 2px rgba(16, 24, 40, 0.05);
-  --shadow-sm: 0px 1px 2px rgba(16, 24, 40, 0.06),
-    0px 1px 3px rgba(16, 24, 40, 0.1);
-  --shadow-md: 0px 2px 4px rgba(16, 24, 40, 0.06),
-    0px 4px 8px rgba(16, 24, 40, 0.1);
-  --shadow-lg: 0px 4px 6px rgba(16, 24, 40, 0.03),
-    0px 12px 16px rgba(16, 24, 40, 0.08);
-  --shadow-xl: 0px 8px 8px rgba(16, 24, 40, 0.03),
-    0px 20px 24px rgba(16, 24, 40, 0.08);
-  --shadow-2xl: 0px 24px 48px rgba(16, 24, 40, 0.18);
-  --shadow-3xl: 0px 32px 64px rgba(16, 24, 40, 0.14);
+/* 
+--shadow-color is used as a parameter of the hsl function so that the shadow 
+colour can be defined based on the background colour of where it is being used, 
+but we can't rely on inheritance for functions that need to be re-calculated so 
+the shadow custom properties with hsl functions can't be defined on :root.
 
+That’s because each property value is computed once per element, and then the 
+computed value is inherited. By defining our function at the document root, we 
+don’t make the entire function available to descendants — only the computed 
+result of the function.
+
+That makes sense if you frame it in terms of the cascading --shadow-color 
+parameter. Like any inherited CSS property, it is available to descendants but 
+not ancestors. The value we set on a nested element is not available to a 
+function we defined on the html root ancestor. 
+
+In order to make the hsl function re-calculate on any element, we can make it 
+available to elements with a given selector.
+
+.shadow { --shadow-sm: 0.5px 1px 1px hsl(var(--shadow-color) / 0.7); ...etc}
+
+or make the function available to elements nested inside a given selector  
+.shadow * { --shadow-sm: 0.5px 1px 1px hsl(var(--shadow-color) / 0.7); ...etc} 
+
+or make the function available to siblings following a given selector 
+.shadow ~ * { --shadow-sm: 0.5px 1px 1px hsl(var(--shadow-color) / 0.7); ...etc} 
+
+source: https://www.smashingmagazine.com/2019/07/css-custom-properties-cascade/
+*/
+.shadow {
+  --shadow-sm: 0.5px 1px 1px hsl(var(--shadow-color) / 0.7);
+  --shadow-md: 1px 2px 2px hsl(var(--shadow-color) / 0.333),
+    2px 4px 4px hsl(var(--shadow-color) / 0.333),
+    3px 6px 6px hsl(var(--shadow-color) / 0.333);
+  --shadow-lg: 1px 2px 2px hsl(var(--shadow-color) / 0.2),
+    2px 4px 4px hsl(var(--shadow-color) / 0.2),
+    4px 8px 8px hsl(var(--shadow-color) / 0.2),
+    8px 16px 16px hsl(var(--shadow-color) / 0.2),
+    16px 32px 32px hsl(var(--shadow-color) / 0.2);
+}
+
+:root {
   --blur-sm: blur(8px);
   --blur-md: blur(16px);
   --blur-lg: blur(24px);

@@ -231,7 +231,7 @@ function Index() {
                 <Link to="projects/blog">
                   {/* eslint-disable-next-line jsx-a11y/alt-text */}
                   <img
-                    className="tab-img"
+                    className="tab-img shadow"
                     title="Untitled UI"
                     width="530px"
                     height="430px"
