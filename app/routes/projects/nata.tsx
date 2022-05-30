@@ -115,6 +115,7 @@ function Nata() {
               <div className="list">
                 <Tech name="Remix" />
                 <Tech name="React" />
+                <Tech name="React Router" />
                 <Tech name="TypeScript" />
                 <Tech name="CSS" />
                 <Tech name="Supabase" />

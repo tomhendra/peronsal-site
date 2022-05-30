@@ -5,6 +5,7 @@ import CloudinaryIcon from "./Icons/CloudinaryIcon";
 import CssIcon from "./Icons/CssIcon";
 import MarkdownIcon from "./Icons/MarkdownIcon";
 import ReactIcon from "./Icons/ReactIcon";
+import ReactRouterIcon from "./Icons/ReactRouterIcon";
 import RemixIcon from "./Icons/RemixIcon";
 import SupabaseIcon from "./Icons/SupabaseIcon";
 import TypeScriptIcon from "./Icons/TypeScriptIcon";
@@ -20,6 +21,7 @@ type TechProps = {
     | "CSS"
     | "Markdown"
     | "React"
+    | "React Router"
     | "Remix"
     | "Sass"
     | "Supabase"
@@ -40,6 +42,8 @@ function Tech({ name }: TechProps) {
         <MarkdownIcon />
       ) : name === "React" ? (
         <ReactIcon />
+      ) : name === "React Router" ? (
+        <ReactRouterIcon />
       ) : name === "Remix" ? (
         <RemixIcon />
       ) : name === "Sass" ? (
