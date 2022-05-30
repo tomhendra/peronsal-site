@@ -2,8 +2,16 @@
   position: sticky;
   top: -16px;
   padding-top: 16px;
-  background-color: var(--color-background);
+  background-color: hsl(var(--color-background-hsl) / 0.95);
   border-bottom: var(--border-1) solid var(--color-divider);
+}
+
+@supports (backdrop-filter: var(--blur-md)) {
+  .header {
+    background-color: hsl(var(--color-background-hsl) / 0.5);
+    backdrop-filter: var(--blur-md);
+    -webkit-backdrop-filter: var(--blur-md);
+  }
 }
 
 .header a {
@@ -23,7 +31,7 @@
 }
 
 .header .container {
-  background-color: var(--color-background);
+  background-color: inherit;
   display: flex;
   align-items: center;
   gap: var(--space-8);

@@ -14,7 +14,7 @@
 
 .social-card .platform {
   padding-bottom: var(--space-2);
-  color: var(--white);
+  color: hsl(var(--white));
   font-size: var(--font-size-text-xl);
   line-height: var(--line-height-text-xl);
   font-weight: var(--font-weight-medium);
@@ -32,5 +32,5 @@
 }
 
 .social-card .username {
-  color: var(--primary-200);
+  color: hsl(var(--primary-200));
 }

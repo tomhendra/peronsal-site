@@ -227,7 +227,7 @@
   margin-bottom: var(--space-3);
 }
 .section-prefix.alt {
-  color: var(--primary-200);
+  color: hsl(var(--primary-200));
 }
 @media (max-width: 34.375rem) {
   .section-prefix {
@@ -236,7 +236,7 @@
 }
 
 .section-heading.alt {
-  color: var(--white);
+  color: hsl(var(--white));
 }
 
 .section-subheading {
@@ -253,5 +253,5 @@
 }
 
 .section-subheading.alt {
-  color: var(--primary-200);
+  color: hsl(var(--primary-200));
 }

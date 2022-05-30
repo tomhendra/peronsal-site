@@ -272,25 +272,25 @@ function Index() {
             <div className="contact-container">
               <div className="social-grid">
                 <SocialCard
-                  icon={<Twitter size={24} color="var(--white)" />}
+                  icon={<Twitter size={24} color="hsl(var(--white))" />}
                   platform="Twitter"
                   username="@tomhendra"
                   url="https://twitter.com/tomhendra"
                 />
                 <SocialCard
-                  icon={<Linkedin size={24} color="var(--white)" />}
+                  icon={<Linkedin size={24} color="hsl(var(--white))" />}
                   platform="LinkedIn"
                   username="tom-hendra"
                   url="https://www.linkedin.com/in/tom-hendra/"
                 />
                 <SocialCard
-                  icon={<GitHub size={24} color="var(--white)" />}
+                  icon={<GitHub size={24} color="hsl(var(--white))" />}
                   platform="GitHub"
                   username="tomhendra"
                   url="https://github.com/tomhendra"
                 />
                 <SocialCard
-                  icon={<Codepen size={24} color="var(--white)" />}
+                  icon={<Codepen size={24} color="hsl(var(--white))" />}
                   platform="CodePen"
                   username="tomhendra"
                   url="https://codepen.io/tomhendra"
