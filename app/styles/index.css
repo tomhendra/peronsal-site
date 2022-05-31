@@ -130,6 +130,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: var(--space-12) var(--space-8);
+  justify-items: start;
 }
 
 .contact-form-container {

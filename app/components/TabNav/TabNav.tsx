@@ -1,11 +1,15 @@
 import * as TabsPrimitive from "@radix-ui/react-tabs";
-import Link from "../Link";
+import { ArrowRight } from "react-feather";
+import Link from "~/components/Link";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
+import { links as linkLinks } from "~/components/Link";
 import styles from "./tab-nav.css";
-import { ArrowRight } from "react-feather";
 
-const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+const links: LinksFunction = () => [
+  ...linkLinks(),
+  { rel: "stylesheet", href: styles },
+];
 
 function TabHeading({ children, ...rest }: { children: React.ReactNode }) {
   return (

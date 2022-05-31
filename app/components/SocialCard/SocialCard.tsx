@@ -1,9 +1,14 @@
 import { ExternalLink } from "react-feather";
+import Link from "~/components/Link";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
+import { links as linkLinks } from "~/components/Link";
 import styles from "./social-card.css";
 
-const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+const links: LinksFunction = () => [
+  ...linkLinks(),
+  { rel: "stylesheet", href: styles },
+];
 
 function SocialLink({
   className,
@@ -15,9 +20,9 @@ function SocialLink({
   children: React.ReactNode;
 }) {
   return (
-    <a className={className} href={href} target="_blank" rel="noreferrer">
+    <Link as="external" href={href} className={className}>
       {children}
-    </a>
+    </Link>
   );
 }
 

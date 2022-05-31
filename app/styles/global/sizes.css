@@ -39,9 +39,3 @@
   --radius-lg: 32px;
   --radius-full: 9999px;
 }
-
-@media (pointer: coarse) {
-  :root {
-    --min-tap-size: 44px;
-  }
-}

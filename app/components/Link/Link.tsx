@@ -12,6 +12,7 @@ type BaseProps = {
   size?: "sm" | "md" | "lg";
   variant?: "primary" | "gray";
   mood?: "destructive";
+  className?: string;
   children: React.ReactNode;
 };
 
@@ -26,25 +27,27 @@ type LinkAsExternal = BaseProps &
   };
 
 function Link(props: LinkAsLink | LinkAsExternal) {
-  const { size, variant, mood } = props;
+  const { size, variant, mood, className } = props;
   const allClassNames = clsx(
     "link",
+    "click-target-helper",
+    className && className,
     size && size,
     variant && variant,
     mood && mood
   );
 
   if (props.as === "external") {
-    const { children, ...rest } = props;
+    const { children, className, ...rest } = props;
     return (
-      <a className={allClassNames} {...rest}>
+      <a className={clsx(allClassNames, className)} {...rest}>
         {children}
       </a>
     );
   } else {
-    const { children, ...rest } = props;
+    const { children, className, ...rest } = props;
     return (
-      <LinkPrimitive className={allClassNames} {...rest}>
+      <LinkPrimitive className={clsx(allClassNames, className)} {...rest}>
         {children}
       </LinkPrimitive>
     );

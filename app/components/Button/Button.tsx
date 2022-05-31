@@ -18,6 +18,7 @@ type BaseProps = {
     | "tertiary-gray";
   size: "sm" | "md" | "lg" | "xl" | "xxl";
   mood?: "destructive";
+  className?: string;
   children: React.ReactNode;
 };
 
@@ -51,29 +52,38 @@ type ButtonProps =
 
 function Button(props: ButtonProps) {
   if (props.as === "unstyled") {
-    const { children, ...rest } = props;
+    const { className, children, ...rest } = props;
     return (
-      <button className="unstyled" {...rest}>
+      <button
+        className={clsx("unstyled", "click-target-helper", className)}
+        {...rest}
+      >
         {children}
       </button>
     );
   }
 
   const { size, variant, mood } = props;
-  const allClassNames = clsx("btn", size, variant, mood && mood);
+  const allClassNames = clsx(
+    "btn",
+    "click-target-helper",
+    size,
+    variant,
+    mood && mood
+  );
 
   if (props.as === "link") {
-    const { ...rest } = props;
+    const { className, ...rest } = props;
     return (
-      <Link className={allClassNames} {...rest}>
+      <Link className={clsx(allClassNames, className)} {...rest}>
         {props.children}
       </Link>
     );
   } else if (props.as === "externalLink") {
-    const { ...rest } = props;
+    const { className, ...rest } = props;
     return (
       <a
-        className={allClassNames}
+        className={clsx(allClassNames, className)}
         target="_blank"
         rel="noopener noreferrer"
         {...rest}
@@ -82,9 +92,9 @@ function Button(props: ButtonProps) {
       </a>
     );
   } else {
-    const { ...rest } = props;
+    const { className, ...rest } = props;
     return (
-      <button className={allClassNames} {...rest}>
+      <button className={clsx(allClassNames, className)} {...rest}>
         {props.children}
       </button>
     );
