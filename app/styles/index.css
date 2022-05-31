@@ -94,8 +94,15 @@
   min-height: 228px; /* mobile height */
   object-fit: cover;
   object-position: 0% 0%;
-  --shadow-color: var(--gray-300);
   box-shadow: var(--shadow-lg);
+}
+
+.light .tab-img.shadow {
+  --shadow-color: var(--gray-300);
+}
+
+.dark .tab-img.shadow {
+  --shadow-color: var(--gray-975);
 }
 
 @supports (aspect-ratio: 1 / 1) {

@@ -460,6 +460,8 @@ html.light {
   --color-text-secondary: hsl(var(--gray-700));
   --color-text-secondary-hover: hsl(var(--gray-800));
   --color-text-disabled: hsl(var(--gray-300));
+  --color-text-selection: hsl(var(--white));
+  --color-background-selection: hsl(var(--accent-700));
   --color-background-hsl: var(--white);
   --color-background: hsl(var(--color-background-hsl));
   --color-background-muted: hsl(var(--gray-50));
@@ -503,6 +505,8 @@ html.dark {
   --color-text-secondary: hsl(var(--gray-100));
   --color-text-secondary-hover: hsl(var(--gray-50));
   --color-text-disabled: hsl(var(--gray-700));
+  --color-text-selection: hsl(var(--white));
+  --color-background-selection: hsl(var(--accent-700));
   --color-background-hsl: var(--gray-975);
   --color-background: hsl(var(--color-background-hsl));
   --color-background-muted: hsl(var(--gray-900));

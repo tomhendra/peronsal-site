@@ -21,6 +21,9 @@
   background-color: var(--color-background-muted);
   padding: var(--space-12);
   padding-right: 0;
+  /* prevents the image shadow from bleeding outside the container. since this
+    component is only used in one place here is ok to place overflow: hidden  */
+  overflow: hidden;
 }
 
 .tab {

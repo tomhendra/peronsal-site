@@ -2,7 +2,7 @@
 --shadow-color is used as a parameter of the hsl function so that the shadow 
 colour can be defined based on the background colour of where it is being used, 
 but we can't rely on inheritance for functions that need to be re-calculated so 
-the shadow custom properties with hsl functions can't be defined on :root.
+the shadow custom properties with their hsl functions can't be defined on :root.
 
 That’s because each property value is computed once per element, and then the 
 computed value is inherited. By defining our function at the document root, we 
@@ -47,73 +47,73 @@ source: https://www.smashingmagazine.com/2019/07/css-custom-properties-cascade/
 
   --gradient-gray-600-conic: conic-gradient(
     from 259.08deg at 50% 50%,
-    var(--gray-600) 0deg,
-    var(--gray-500) 360deg
+    hsl(var(--gray-600)) 0deg,
+    hsl(var(--gray-500)) 360deg
   );
   --gradient-gray-600-500-90deg: linear-gradient(
     90deg,
-    var(--gray-600) 0%,
-    var(--gray-500) 100%
+    hsl(var(--gray-600)) 0%,
+    hsl(var(--gray-500)) 100%
   );
   --gradient-gray-700-600-45deg: linear-gradient(
     45deg,
-    var(--gray-700) 0%,
-    var(--gray-600) 100%
+    hsl(var(--gray-700)) 0%,
+    hsl(var(--gray-600)) 100%
   );
   --gradient-gray-800-600-45deg: linear-gradient(
     45deg,
-    var(--gray-800) 0%,
-    var(--gray-600) 100%
+    hsl(var(--gray-800)) 0%,
+    hsl(var(--gray-600)) 100%
   );
   --gradient-gray-800-600-90deg: linear-gradient(
     63.44deg,
-    var(--gray-800) 16.72%,
-    var(--gray-600) 83.39%
+    hsl(var(--gray-800)) 16.72%,
+    hsl(var(--gray-600)) 83.39%
   );
   --gradient-gray-800-700-27deg: linear-gradient(
     26.57deg,
-    var(--gray-800) 8.33%,
-    var(--gray-700) 91.67%
+    hsl(var(--gray-800)) 8.33%,
+    hsl(var(--gray-700)) 91.67%
   );
   --gradient-gray-900-600-45deg: linear-gradient(
     45deg,
-    var(--gray-900) 0%,
-    var(--gray-600) 100%
+    hsl(var(--gray-900)) 0%,
+    hsl(var(--gray-600)) 100%
   );
 
   --gradient-primary-600-conic: conic-gradient(
     from 259.08deg at 50% 50%,
-    var(--primary-600) 0deg,
-    var(--primary-500) 360deg
+    hsl(var(--primary-600)) 0deg,
+    hsl(var(--primary-500)) 360deg
   );
   --gradient-primary-600-500-90deg: linear-gradient(
     90deg,
-    var(--primary-600) 0%,
-    var(--primary-500) 100%
+    hsl(var(--primary-600)) 0%,
+    hsl(var(--primary-500)) 100%
   );
   --gradient-primary-700-600-45deg: linear-gradient(
     45deg,
-    var(--primary-700) 0%,
-    var(--primary-600) 100%
+    hsl(var(--primary-700)) 0%,
+    hsl(var(--primary-600)) 100%
   );
   --gradient-primary-800-600-45deg: linear-gradient(
     45deg,
-    var(--primary-800) 0%,
-    var(--primary-600) 100%
+    hsl(var(--primary-800)) 0%,
+    hsl(var(--primary-600)) 100%
   );
   --gradient-primary-800-600-90deg: linear-gradient(
     63.44deg,
-    var(--primary-800) 16.72%,
-    var(--primary-600) 83.39%
+    hsl(var(--primary-800)) 16.72%,
+    hsl(var(--primary-600)) 83.39%
   );
   --gradient-primary-800-700-27deg: linear-gradient(
     26.57deg,
-    var(--primary-800) 8.33%,
-    var(--primary-700) 91.67%
+    hsl(var(--primary-800)) 8.33%,
+    hsl(var(--primary-700)) 91.67%
   );
   --gradient-primary-900-600-45deg: linear-gradient(
     45deg,
-    var(--primary-900) 0%,
-    var(--primary-600) 100%
+    hsl(var(--primary-900)) 0%,
+    hsl(var(--primary-600)) 100%
   );
 }

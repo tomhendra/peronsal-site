@@ -201,11 +201,16 @@ figcaption {
 }
 
 /* 
-  manually apply variable font axis and use `<em>` tag rather than rely on 
-  browser synthesis for `font-style: italic;`
+manually apply variable font axis and use `<em>` tag rather than rely on 
+browser synthesis for `font-style: italic;`
 */
 em {
   font-style: normal;
   /* equivalent to font-variation-settings: "slnt" -10; */
   font-style: oblique -10deg;
+}
+
+::selection {
+  color: var(--color-text-selection);
+  background-color: var(--color-background-selection);
 }
