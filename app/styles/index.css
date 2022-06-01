@@ -139,6 +139,16 @@
   padding: var(--space-10) var(--space-12);
   min-height: 576px;
   max-width: var(--container-sm);
+  transform: translateY(0px);
+  /* TODO improve shadow */
+  filter: drop-shadow(1px 2px 4px hsl(0deg 0% 0% / 0.2));
+  transition: filter 300ms, transform 300ms;
+  will-change: transform;
+}
+.contact-form-container:focus-within {
+  transform: translateY(-4px);
+  /* TODO improve shadow */
+  filter: drop-shadow(2px 4px 16px hsl(0deg 0% 0% / 0.2));
 }
 @media (max-width: 34.375rem) {
   .contact-form-container {

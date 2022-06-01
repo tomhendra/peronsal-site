@@ -1,5 +1,5 @@
 /* 
-  ⚠️ Warning: colors 950 & 975 were created by GitHub Copilot! 🤯
+  !⚠️ colors 950 & 975 were created by GitHub Copilot 🤯!
 
   The colours come from Untitled UI. 950 & 975 were required as dark mode 
   equivalents to 50 and 25, which became clear when building a button component.
@@ -472,6 +472,7 @@ html.light {
   --color-divider: hsl(var(--gray-200));
   --color-overlay: 0deg 0% 75% / 0.5;
   --color-highlight: hsl(var(--primary-100));
+  --color-outline: hsl(var(--accent-700));
   --color-scrollbar-thumb: hsl(var(--gray-400));
   --color-scrollbar-thumb-hover: hsl(var(--gray-500));
   --color-scrollbar-track: var(--color-background);
@@ -520,6 +521,7 @@ html.dark {
   --color-divider: hsl(var(--gray-800));
   --color-overlay: 0deg 0% 80% / 0.5;
   --color-highlight: hsl(var(--primary-900));
+  --color-outline: hsl(var(--accent-400));
   --color-scrollbar-thumb: hsl(var(--gray-600));
   --color-scrollbar-thumb-hover: hsl(var(--gray-500));
   --color-scrollbar-track: var(--color-background);

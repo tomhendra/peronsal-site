@@ -1,13 +1,14 @@
 import type { LinksFunction } from "@remix-run/cloudflare";
+import clsx from "clsx";
 
 import styles from "./logo.css";
 
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
-function Logo() {
+function Logo({ className }: { className?: string }) {
   return (
     <svg
-      className="logo"
+      className={clsx("logo", className && className)}
       width="24"
       height="24"
       viewBox="0 0 24 24"

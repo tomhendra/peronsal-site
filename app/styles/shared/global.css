@@ -3,16 +3,21 @@
   background-color: var(--color-background-selection);
 }
 
-/*
- create an explicit scroll-bar to avoid CLS (Cumulative Layout Shift) 
-*/
+a,
+input,
+select,
+area,
+textarea,
+button {
+  outline-color: var(--color-outline);
+}
+
+/* create an explicit scroll-bar to avoid CLS (Cumulative Layout Shift) */
 body {
   overflow-y: scroll;
 }
 
-/*
-  10. apply scrollbar styles consistent with theme for devices larger than mobile
-*/
+/* apply scrollbar styles consistent with theme for devices larger than mobil */
 @media (min-width: 34.375rem) {
   body {
     /* https://caniuse.com/?search=scrollbar-width */

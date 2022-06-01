@@ -10,7 +10,7 @@ import { createCookieSessionStorage } from "@remix-run/cloudflare";
 import { isTheme } from "./theme-provider";
 import type { Theme } from "./theme-provider";
 
-// TODO: work out secrets for Cloudlare Pages
+// TODO: work out secrets for Cloudflare Pages
 // const sessionSecret = process.env(SESSION_SECRET);
 const sessionSecret = "bpCAk9R9zB2CdJ9u9sJeeoTxZTrm59S5ZWyC7vuaUmuEpYPMgJhYPw";
 // if (!sessionSecret) {

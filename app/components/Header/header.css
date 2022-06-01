@@ -50,6 +50,17 @@
   margin-right: auto;
 }
 
+@media (pointer: fine) and (hover: hover) {
+  .header .logo-container svg {
+    will-change: transform;
+    transition: transform 400ms;
+  }
+  .header .logo-container:hover svg {
+    transform: translateY(-2px);
+    transition: transform 200ms;
+  }
+}
+
 .header .wordmark {
   color: var(--color-heading);
 }
