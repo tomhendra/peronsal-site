@@ -472,6 +472,9 @@ html.light {
   --color-divider: hsl(var(--gray-200));
   --color-overlay: 0deg 0% 75% / 0.5;
   --color-highlight: hsl(var(--primary-100));
+  --color-scrollbar-thumb: hsl(var(--gray-400));
+  --color-scrollbar-thumb-hover: hsl(var(--gray-500));
+  --color-scrollbar-track: var(--color-background);
 
   --color-primary: hsl(var(--primary-600));
   --color-primary-hover: hsl(var(--primary-700));
@@ -517,6 +520,9 @@ html.dark {
   --color-divider: hsl(var(--gray-800));
   --color-overlay: 0deg 0% 80% / 0.5;
   --color-highlight: hsl(var(--primary-900));
+  --color-scrollbar-thumb: hsl(var(--gray-600));
+  --color-scrollbar-thumb-hover: hsl(var(--gray-500));
+  --color-scrollbar-track: var(--color-background);
 
   --color-primary: hsl(var(--primary-700));
   --color-primary-hover: hsl(var(--primary-600));

@@ -369,9 +369,14 @@ function Index() {
                 >
                   <h2 ref={successRef}>Thanks for your message!</h2>
                   <p>I will be in touch with to you very soon.</p>
-                  <Link variant="primary" to="/#contact">
+                  <Button
+                    as="link"
+                    variant="secondary-gray"
+                    size="md"
+                    to="/#contact"
+                  >
                     Reset contact form
-                  </Link>
+                  </Button>
                 </div>
               </div>
             </div>

@@ -209,8 +209,3 @@ em {
   /* equivalent to font-variation-settings: "slnt" -10; */
   font-style: oblique -10deg;
 }
-
-::selection {
-  color: var(--color-text-selection);
-  background-color: var(--color-background-selection);
-}
