@@ -53,11 +53,10 @@
 @media (pointer: fine) and (hover: hover) {
   .header .logo-container svg {
     will-change: transform;
-    transition: transform 400ms;
+    /* transition: transform 400ms; */
   }
   .header .logo-container:hover svg {
-    transform: translateY(-2px);
-    transition: transform 200ms;
+    animation: wobble 700ms ease-in;
   }
 }
 

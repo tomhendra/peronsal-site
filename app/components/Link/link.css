@@ -7,6 +7,12 @@
   cursor: pointer;
   font-weight: var(--font-weight-medium);
   text-decoration: none;
+  transition: color 400ms;
+}
+@media (pointer: fine) and (hover: hover) {
+  .link:hover {
+    transition: color 150ms;
+  }
 }
 
 /* sizes */

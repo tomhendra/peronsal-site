@@ -20,6 +20,12 @@
   text-decoration: none;
   border-radius: var(--radius-default);
   border: var(--border-1) solid transparent;
+  transition: background-color 400ms;
+}
+@media (pointer: fine) and (hover: hover) {
+  .btn:hover {
+    transition: background-color 150ms;
+  }
 }
 
 .unstyled:disabled,
