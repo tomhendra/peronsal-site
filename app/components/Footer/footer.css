@@ -50,6 +50,15 @@
   }
 }
 
+@media (pointer: fine) and (hover: hover) {
+  .footer .logo-container svg {
+    will-change: transform;
+  }
+  .footer .logo-container:hover svg {
+    animation: wobble-y 700ms ease-out;
+  }
+}
+
 .footer .wordmark {
   color: var(--color-heading);
 }

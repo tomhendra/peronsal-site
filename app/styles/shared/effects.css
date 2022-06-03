@@ -117,9 +117,3 @@ source: https://www.smashingmagazine.com/2019/07/css-custom-properties-cascade/
     hsl(var(--primary-600)) 100%
   );
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
