@@ -27,6 +27,10 @@
   outline-color: var(--color-outline);
 }
 
+.tab-content[data-state="active"] * {
+  animation: show 400ms;
+}
+
 .tab {
   background-color: var(--color-background);
   border: none;
