@@ -1,17 +1,29 @@
+/*
+    fill-mode: both;
+    animation: breath 2000ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 0s;
+
+    every property can be used in shorthand apart from animation-delay, because
+    it could be confused with duration value.
+*/
+
 @keyframes show {
-  0% {
+  from {
     opacity: 0;
   }
-  100% {
+  to {
     opacity: 1;
   }
 }
 
 @keyframes hide {
-  0% {
+  from {
     opacity: 1;
   }
-  100% {
+  to {
     opacity: 0;
   }
 }
@@ -31,6 +43,15 @@
   }
   to {
     transform: translateX(-100%);
+  }
+}
+
+@keyframes float-in-from-right {
+  from {
+    transform: translateX(6px);
+  }
+  to {
+    transform: translateX(0%);
   }
 }
 

@@ -27,8 +27,13 @@
   outline-color: var(--color-outline);
 }
 
-.tab-content[data-state="active"] * {
-  animation: show 400ms;
+@media (prefers-reduced-motion: no-preference) {
+  .tab-content {
+    will-change: opacity, transform;
+  }
+  .tab-content[data-state="active"] * {
+    animation: show 400ms both, float-in-from-right 400ms ease-out both;
+  }
 }
 
 .tab {
