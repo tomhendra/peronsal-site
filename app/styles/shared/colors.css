@@ -466,6 +466,7 @@ html.light {
   --color-background: hsl(var(--color-background-hsl));
   --color-background-muted: hsl(var(--gray-50));
   --color-background-hover: hsl(var(--gray-50));
+  --color-background-highlight: hsl(var(--gray-100));
   --color-background-disabled: hsl(var(--gray-300));
   --color-border: hsl(var(--gray-300));
   --color-border-disabled: hsl(var(--gray-200));
@@ -515,6 +516,7 @@ html.dark {
   --color-background: hsl(var(--color-background-hsl));
   --color-background-muted: hsl(var(--gray-900));
   --color-background-hover: hsl(var(--gray-900));
+  --color-background-highlight: hsl(var(--gray-800));
   --color-background-disabled: hsl(var(--gray-700));
   --color-border: hsl(var(--gray-700));
   --color-border-disabled: hsl(var(--gray-800));

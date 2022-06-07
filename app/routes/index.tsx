@@ -296,7 +296,7 @@ function Index() {
                   url="https://codepen.io/tomhendra"
                 />
               </div>
-              <div className="contact-form-container">
+              <div className="contact-form-container shadow">
                 <Form
                   replace
                   method="post"

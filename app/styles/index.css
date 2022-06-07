@@ -85,7 +85,7 @@
 }
 
 /* projects section */
-.tab-img.shadow {
+.tab-img {
   display: block;
   border-radius: 1px;
   width: 100%;
@@ -94,15 +94,8 @@
   min-height: 228px; /* mobile height */
   object-fit: cover;
   object-position: 0% 0%;
-  box-shadow: var(--shadow-lg);
-}
-
-.light .tab-img.shadow {
-  --shadow-color: var(--gray-300);
-}
-
-.dark .tab-img.shadow {
-  --shadow-color: var(--gray-975);
+  /* --shadow-color is defined in parent... .tab-content */
+  box-shadow: var(--shadow-md);
 }
 
 @supports (aspect-ratio: 1 / 1) {
@@ -133,6 +126,12 @@
   justify-items: start;
 }
 
+.light .contact-container {
+  --shadow-color: 238deg 65% 23%;
+}
+.dark .contact-container {
+  --shadow-color: 236deg 62% 18%;
+}
 .contact-form-container {
   background-color: var(--color-background);
   border-radius: var(--radius-md);
@@ -140,15 +139,14 @@
   min-height: 576px;
   max-width: var(--container-sm);
   transform: translateY(0px);
-  /* TODO improve shadow */
-  filter: drop-shadow(1px 2px 4px hsl(0deg 0% 0% / 0.2));
-  transition: filter 300ms, transform 300ms;
+  box-shadow: var(--shadow-md);
+  transition: filter 500ms, transform 500ms, box-shadow 500ms;
   will-change: transform;
 }
 .contact-form-container:focus-within {
+  transition: filter 250ms, transform 250ms, box-shadow 250ms;
   transform: translateY(-4px);
-  /* TODO improve shadow */
-  filter: drop-shadow(2px 4px 16px hsl(0deg 0% 0% / 0.2));
+  box-shadow: var(--shadow-lg);
 }
 @media (max-width: 34.375rem) {
   .contact-form-container {

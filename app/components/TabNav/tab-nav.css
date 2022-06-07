@@ -27,6 +27,13 @@
   outline-color: var(--color-outline);
 }
 
+.light .tab-content {
+  --shadow-color: 210deg 5% 62%;
+}
+.dark .tab-content {
+  --shadow-color: 220deg 68% 2%;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .tab-content {
     will-change: opacity, transform;
@@ -43,14 +50,14 @@
   flex-direction: column;
   text-align: left;
   padding: var(--space-4) var(--space-6);
-  border-left: var(--border-4) solid var(--color-background);
+  border-left: var(--border-4) solid var(--color-background-highlight);
   user-select: none;
+  transition: border-color 200ms;
 }
 
 @media (pointer: fine) and (hover: hover) {
   .tab:hover {
     background-color: var(--color-background-hover);
-    border-color: var(--color-background-hover);
   }
 }
 

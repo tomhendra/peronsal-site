@@ -22,6 +22,9 @@
   border: var(--border-1) solid transparent;
   transition: background-color 400ms;
 }
+.btn:focus {
+  transition: background-color 150ms;
+}
 @media (pointer: fine) and (hover: hover) {
   .btn:hover {
     transition: background-color 150ms;
@@ -37,9 +40,9 @@
   .unstyled,
   .btn {
     /*
-      when the interaction is made obvious we can use 
-     -webkit-tap-highlight-color: transparent; 
-     to prevent the nasty-looking tap highlight from showing.
+      when the interaction is made more obvious than the default, we can use 
+     -webkit-tap-highlight-color: transparent; to prevent the nasty-looking tap 
+     highlight from showing.
     */
     user-select: none; /* prevent mobile text selection */
   }
