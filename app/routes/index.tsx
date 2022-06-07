@@ -163,19 +163,17 @@ function Index() {
               <p>
                 While shipping WordPress sites to pay the bills, I have been in
                 pursuit of my chosen career trajectory ever since; as a software
-                developer within the vast and vibrant JavaScript community.
+                developer focused on building apps with JavaScript.
               </p>
               <p>
-                I knew learning to code was the right path for me after
-                struggling with an algorithm challenge for a cash register. The
-                feeling when my solution finally passed the tests was absolute
-                euphoria!
+                I knew coding was right for me after struggling with an
+                algorithm problem for a cash register. The feeling of euphoria
+                when my solution finally passed the tests was incredible!
               </p>
               <p>
-                I build web apps with modern JavaScript frameworks, and
-                continuously raise my standards by learning from quality
-                resources and listening to other members of the developer
-                community.
+                I build web apps with modern frameworks, and continuously raise
+                my standards by learning from high quality resources and
+                listening to other members of the community.
               </p>
               <p>
                 I have the skills required to create polished user interfaces
@@ -194,7 +192,7 @@ function Index() {
               <span className="section-prefix">Projects</span>
               <h2 className="section-heading">I have been shipping</h2>
               <h3 className="section-subheading">
-                I love to build projects with technologies I have learned about.
+                I love to build using the new technologies I learn about.
               </h3>
             </div>
             <Tabs defaultValue="nata">
@@ -266,7 +264,7 @@ function Index() {
               <span className="section-prefix alt">Contact</span>
               <h2 className="section-heading alt">Let's connect</h2>
               <h3 className="section-subheading alt">
-                I'm always happy to enhance my circle.
+                I'm always happy to make new connections.
               </h3>
             </div>
             <div className="contact-container">

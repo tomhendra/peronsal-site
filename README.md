@@ -1,18 +1,19 @@
 ## Commit Types
 
-Commitlint is unnecessary for this repo since I am the only dev, but it is good practice.
+Commitlint is unnecessary for this projects since I am the only dev, but it is
+good practice.
 
-- build
-- chore
-- ci
-- docs
-- feat
-- fix
-- perf
-- refactor
-- revert
-- style
-- test
+• build
+• chore
+• ci
+• docs
+• feat
+• fix
+• perf
+• refactor
+• revert
+• style
+• test
 
 ## TODO
 
@@ -42,32 +43,36 @@ Commitlint is unnecessary for this repo since I am the only dev, but it is good 
   <img class="photo regular" />
 </div>
 
-2. weird-shaped border radius for pfp https://9elements.github.io/fancy-border-radius/
+2. darkening filter on pfp for dark mode
 
-3. button glow effect on hover for primary variant
+3. weird-shaped pfp with animated clip-path (treasure trove)
 
-4. make the form sending experience amazing a la https://tobiasahlin.com/blog/meaningful-motion-w-action-driven-animation/
+4. button glow effect on hover for primary variant
+   https://codepen.io/tomhendra/pen/Yzeawwo
 
-5. --shadow-color is currently being defined where it is used based on the background using https://www.joshwcomeau.com/ shadow-palette/. figure out calc functions based on colour palettes.
+5. Link alt color on hover for primary variant
+   https://codepen.io/tomhendra/pen/VwQGdmq
 
-6. Toggling dark mode throws an error to console -
-   useFetcher perhaps since this was broken before ?
+6. make the form sending experience amazing a la
+   https://tobiasahlin.com/blog/meaningful-motion-w-action-driven-animation/
 
-Uncaught (in promise) Error: No matches found
-at invariant2 (invariant.js:13:11)
-at Object.send (transition.js:203:11)
-at Object.submit (components.js:807:25)
-_at theme-provider.tsx:115:29_
-at invokePassiveEffectCreate (react-dom.development.js:23487:20)
-at HTMLUnknownElement.callCallback2 (react-dom.development.js:3945:14)
-at Object.invokeGuardedCallbackDev (react-dom.development.js:3994:16)
-at invokeGuardedCallback (react-dom.development.js:4056:31)
-at flushPassiveEffectsImpl (react-dom.development.js:23574:9)
-at unstable_runWithPriority (scheduler.development.js:468:12)
+7. --shadow-color is currently being defined where it is used based on the
+   background using https://www.joshwcomeau.com/ shadow-palette/. figure out
+   calc functions based on colour palettes.
 
-7. mobile menu toggle is broken. `style="pointer-events: none;"` is being appended
-   to the <body> tag but not removed on dialog close. maybe an error with the button?
-   if too time consuming, move to headless UI & ensure tab component works too.
+8. Toggling dark mode throws an error to console. useFetcher fixed yet ?
+   check implementation of dark mode:
+   • https://github.com/remix-run/remix/tree/main/examples/dark-mode
+   • https://www.mattstobbs.com/remix-dark-mode/
+   • https://www.joshwcomeau.com/react/dark-mode/
 
-8. button background-color transition when leaving hover state is being affected
-   by theme toggle. `filter: brightness(110%)` is more performant - consider refactoring.
+9. mobile menu toggle is broken. `style="pointer-events: none;"` is being
+   appended to the <body> tag but not removed on dialog close. maybe an error
+   with the button? also focus outline is visible on mobile. try a different
+   component in Radix or move to headless UI & ensure tab component works.
+
+10. button background-color transition when leaving hover state is being
+    affected by theme toggle. `filter: brightness(110%)` is more performant.
+    consider refactoring.
+
+11. consult Remix Discord for gotchyas re smooth scrolling on route transitions.
