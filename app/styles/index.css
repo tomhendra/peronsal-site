@@ -89,9 +89,7 @@
   display: block;
   border-radius: 1px;
   width: 100%;
-  height: 430px;
-  min-width: 343px; /* mobile width */
-  min-height: 228px; /* mobile height */
+  height: 860px;
   object-fit: cover;
   object-position: 0% 0%;
   /* --shadow-color is defined in parent... .tab-content */

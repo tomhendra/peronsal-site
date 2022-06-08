@@ -105,6 +105,24 @@ function Index() {
     mounted.current = true;
   }, [actionData?.errors, state]);
 
+  const imgProps = getImgProps(
+    getImageBuilder(
+      "personal-site/blog-mockup-desktop-01",
+      "Screen shot of blog desktop design - preview"
+    ),
+    {
+      widths: [280, 560, 840, 1100, 1650, 2500, 2100, 3100],
+      sizes: [
+        "(max-width:1023px) 80vw",
+        "(min-width:1024px) and (max-width:1620px) 67vw",
+        "1100px",
+      ],
+      transformations: {
+        background: "rgb:e6e9ee",
+      },
+    }
+  );
+
   return (
     <main>
       <section id="hero">
@@ -137,8 +155,8 @@ function Index() {
               </div>
             </div>
             <Image
-              src="personal-site/tom-headshot"
-              alt="A portrait photo of Tom"
+              src="personal-site/tom-website-hero-hq"
+              alt="A portrait photo of Tom Hendra"
               credit="María Teresa Valverde Calvo"
               ratio="4 / 5"
             />
@@ -195,14 +213,14 @@ function Index() {
                 I love to build using the new technologies I learn about.
               </h3>
             </div>
-            <Tabs defaultValue="nata">
+            <Tabs defaultValue="yak">
               <TabsList aria-label="Tab navigation for projects">
-                <Tab value="nata">
-                  <TabHeading>Nata</TabHeading>
+                <Tab value="yak">
+                  <TabHeading>yak</TabHeading>
                   <TabSubheading>
                     A realtime chat application inspired by Discord.
                   </TabSubheading>
-                  <TabLink to="projects/nata">Project details</TabLink>
+                  <TabLink to="projects/yak">Project details</TabLink>
                 </Tab>
                 <Tab value="blog">
                   <TabHeading>Blog</TabHeading>
@@ -212,11 +230,11 @@ function Index() {
                   <TabLink to="projects/blog">Project details</TabLink>
                 </Tab>
               </TabsList>
-              <TabContent value="nata">
-                <Link to="projects/nata">
+              <TabContent value="yak">
+                <Link to="projects/yak">
                   <img
                     alt="placeholder"
-                    src="https://via.placeholder.com/1080x492?text=Nata"
+                    src="https://via.placeholder.com/1080x492?text=Yak"
                     style={{
                       width: "1080px",
                       height: "492px",
@@ -231,25 +249,7 @@ function Index() {
                   <img
                     className="tab-img shadow"
                     title="Untitled UI"
-                    width="530px"
-                    height="430px"
-                    {...getImgProps(
-                      getImageBuilder(
-                        "personal-site/blog-mockup-desktop-01",
-                        "Screen shot of blog desktop design - preview"
-                      ),
-                      {
-                        widths: [280, 560, 840, 1100, 1650, 2500, 2100, 3100],
-                        sizes: [
-                          "(max-width:1023px) 80vw",
-                          "(min-width:1024px) and (max-width:1620px) 67vw",
-                          "1100px",
-                        ],
-                        transformations: {
-                          background: "rgb:e6e9ee",
-                        },
-                      }
-                    )}
+                    {...imgProps}
                   />
                 </Link>
               </TabContent>

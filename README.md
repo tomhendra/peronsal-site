@@ -1,7 +1,7 @@
 ## Commit Types
 
-Commitlint is unnecessary for this projects since I am the only dev, but it is
-good practice.
+commitlint is unnecessary for this project, but it is still good to label
+commits with meaningful categories.
 
 • build
 • chore
@@ -25,7 +25,7 @@ good practice.
   .wrapper {
     position: relative;
   }
-  .photo {
+  .pfp {
     position: relative;
   }
   .blurry {
@@ -39,8 +39,8 @@ good practice.
 </style>
 
 <div class="wrapper">
-  <img class="photo blurry" />
-  <img class="photo regular" />
+  <img class="pfp blurry" />
+  <img class="pfp regular" />
 </div>
 
 2. darkening filter on pfp for dark mode
@@ -48,19 +48,19 @@ good practice.
 3. weird-shaped pfp with animated clip-path (treasure trove)
 
 4. button glow effect on hover for primary variant
-   https://codepen.io/tomhendra/pen/Yzeawwo
+   • https://codepen.io/tomhendra/pen/Yzeawwo
 
 5. Link alt color on hover for primary variant
-   https://codepen.io/tomhendra/pen/VwQGdmq
+   • https://codepen.io/tomhendra/pen/VwQGdmq
 
-6. make the form sending experience amazing a la
-   https://tobiasahlin.com/blog/meaningful-motion-w-action-driven-animation/
+6. make the form sending experience amazing
+   • https://tobiasahlin.com/blog/meaningful-motion-w-action-driven-animation/
 
-7. --shadow-color is currently being defined where it is used based on the
-   background using https://www.joshwcomeau.com/ shadow-palette/. figure out
-   calc functions based on colour palettes.
+7. `--shadow-color` is currently being defined where it is used based on the
+   background using. figure out calc functions based on colour palettes.
+   • https://www.joshwcomeau.com/css/introducing-shadow-palette-generator/
 
-8. Toggling dark mode throws an error to console. useFetcher fixed yet ?
+8. Toggling dark mode throws an error to the console. useFetcher fixed yet ?
    check implementation of dark mode:
    • https://github.com/remix-run/remix/tree/main/examples/dark-mode
    • https://www.mattstobbs.com/remix-dark-mode/
@@ -68,11 +68,15 @@ good practice.
 
 9. mobile menu toggle is broken. `style="pointer-events: none;"` is being
    appended to the <body> tag but not removed on dialog close. maybe an error
-   with the button? also focus outline is visible on mobile. try a different
-   component in Radix or move to headless UI & ensure tab component works.
+   with the button? also focus outline is visible on mobile and looks nasty.
+   • check implementation
+   • https://github.com/radix-ui/design-system/blob/master/components/Sheet.tsx
+   • if no good, move to headless UI & ensure tab component works.
 
 10. button background-color transition when leaving hover state is being
     affected by theme toggle. `filter: brightness(110%)` is more performant.
     consider refactoring.
 
 11. consult Remix Discord for gotchyas re smooth scrolling on route transitions.
+
+12. improve the dark / light mode toggle interaction with animations.
