@@ -52,6 +52,16 @@
   }
 }
 
+.hero-img {
+  margin-left: auto;
+}
+@media (max-width: 68.75rem) {
+  .hero-img {
+    margin-left: revert;
+    margin-right: auto;
+  }
+}
+
 /* about section */
 .columns {
   columns: 2;
@@ -86,20 +96,14 @@
 
 /* projects section */
 .tab-img {
-  display: block;
-  border-radius: 1px;
-  width: 100%;
-  height: 860px;
-  object-fit: cover;
-  object-position: 0% 0%;
   /* --shadow-color is defined in parent... .tab-content */
   box-shadow: var(--shadow-md);
+  object-position: 0% 0%;
 }
-
-@supports (aspect-ratio: 1 / 1) {
+@media (max-width: 34.375rem) {
   .tab-img {
-    height: revert;
-    aspect-ratio: 26 / 21;
+    width: 342px;
+    height: 228px;
   }
 }
 

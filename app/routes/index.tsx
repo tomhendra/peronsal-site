@@ -18,7 +18,6 @@ import {
   TabLink,
   TabContent,
 } from "~/components/TabNav";
-import { getImageBuilder, getImgProps } from "~/helpers/image.helpers";
 import type { ActionFunction } from "@remix-run/cloudflare";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
@@ -105,24 +104,6 @@ function Index() {
     mounted.current = true;
   }, [actionData?.errors, state]);
 
-  const imgProps = getImgProps(
-    getImageBuilder(
-      "personal-site/blog-mockup-desktop-01",
-      "Screen shot of blog desktop design - preview"
-    ),
-    {
-      widths: [280, 560, 840, 1100, 1650, 2500, 2100, 3100],
-      sizes: [
-        "(max-width:1023px) 80vw",
-        "(min-width:1024px) and (max-width:1620px) 67vw",
-        "1100px",
-      ],
-      transformations: {
-        background: "rgb:e6e9ee",
-      },
-    }
-  );
-
   return (
     <main>
       <section id="hero">
@@ -137,7 +118,7 @@ function Index() {
               </div>
               <h1>Hello, I'm Tom</h1>
               <h3 className="section-subheading">
-                I'm a web developer from the UK who loves to build quality user
+                I'm a developer from the UK who loves to build quality user
                 interfaces for the web.
               </h3>
               <div className="btn-group">
@@ -154,12 +135,26 @@ function Index() {
                 </Button>
               </div>
             </div>
-            <Image
-              src="personal-site/tom-website-hero-hq"
-              alt="A portrait photo of Tom Hendra"
-              credit="María Teresa Valverde Calvo"
-              ratio="4 / 5"
-            />
+            <div>
+              <Image
+                className="hero-img"
+                src="tom-website-hero"
+                alt="A portrait photo of Tom Hendra"
+                title="Photo by María Teresa Valverde Calvo"
+                width={560}
+                height={640}
+                widths={[280, 560, 840, 1100, 1650, 2500, 2100, 3100]}
+                sizes={[
+                  "(max-width:34.375rem) 80vw",
+                  "(max-width:68.75rem) 70vw",
+                  "(max-width:93.75rem) 60vw",
+                  "1100px",
+                ]}
+                transformations={{
+                  background: "rgb:e6e9ee",
+                }}
+              />
+            </div>
           </div>
         </MaxWidthContainer>
       </section>
@@ -179,22 +174,23 @@ function Index() {
             </div>
             <div className="columns">
               <p>
-                While shipping WordPress sites to pay the bills, I have been in
+                While shipping WordPress sites to pay the bills I have been in
                 pursuit of my chosen career trajectory ever since; as a software
-                developer focused on building apps with JavaScript.
+                developer focused on the JavaScript ecosystem.
               </p>
               <p>
                 I knew coding was right for me after struggling with an
-                algorithm problem for a cash register. The feeling of euphoria
-                when my solution finally passed the tests was incredible!
+                algorithm problem for a cash register. The euphoria after my
+                solution finally passed the tests was exhilarating, and I was
+                smitten!
               </p>
               <p>
-                I build web apps with modern frameworks, and continuously raise
-                my standards by learning from high quality resources and
-                listening to other members of the community.
+                I build web apps with modern frameworks and continuously raise
+                my standards by learning from high quality resources and other
+                members of the developer community.
               </p>
               <p>
-                I have the skills required to create polished user interfaces
+                I have the necessary skills to build polished user interfaces
                 and am seeking a permanent role as a frontend developer, where I
                 can continue to grow and help my team to achieve their goals.
               </p>
@@ -210,17 +206,17 @@ function Index() {
               <span className="section-prefix">Projects</span>
               <h2 className="section-heading">I have been shipping</h2>
               <h3 className="section-subheading">
-                I love to build using the new technologies I learn about.
+                I like to build out ideas using the new skills that I acquire.
               </h3>
             </div>
-            <Tabs defaultValue="yak">
+            <Tabs defaultValue="yakk">
               <TabsList aria-label="Tab navigation for projects">
-                <Tab value="yak">
-                  <TabHeading>yak</TabHeading>
+                <Tab value="yakk">
+                  <TabHeading>Yakk</TabHeading>
                   <TabSubheading>
                     A realtime chat application inspired by Discord.
                   </TabSubheading>
-                  <TabLink to="projects/yak">Project details</TabLink>
+                  <TabLink to="projects/yakk">Project details</TabLink>
                 </Tab>
                 <Tab value="blog">
                   <TabHeading>Blog</TabHeading>
@@ -230,26 +226,29 @@ function Index() {
                   <TabLink to="projects/blog">Project details</TabLink>
                 </Tab>
               </TabsList>
-              <TabContent value="yak">
-                <Link to="projects/yak">
+              <TabContent value="yakk">
+                <Link to="projects/yakk">
                   <img
+                    className="tab-img shadow"
+                    src="https://via.placeholder.com/530x429?text=Yakk"
                     alt="placeholder"
-                    src="https://via.placeholder.com/1080x492?text=Yak"
-                    style={{
-                      width: "1080px",
-                      height: "492px",
-                      objectFit: "cover",
-                    }}
+                    loading="lazy"
+                    width="530"
+                    height="429"
                   />
                 </Link>
               </TabContent>
               <TabContent value="blog">
                 <Link to="projects/blog">
-                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                  <img
+                  <Image
                     className="tab-img shadow"
-                    title="Untitled UI"
-                    {...imgProps}
+                    src="blog-mockup-desktop-01"
+                    alt="Preview of project"
+                    loading="lazy"
+                    width={530}
+                    height={429}
+                    widths={[342, 684, 1026, 530, 1060, 1590]}
+                    sizes={["(max-width:34.375rem) 342px", "530px"]}
                   />
                 </Link>
               </TabContent>
@@ -264,7 +263,7 @@ function Index() {
               <span className="section-prefix alt">Contact</span>
               <h2 className="section-heading alt">Let's connect</h2>
               <h3 className="section-subheading alt">
-                I'm always happy to make new connections.
+                I'm always open to new opportunities.
               </h3>
             </div>
             <div className="contact-container">

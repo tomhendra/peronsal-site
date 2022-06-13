@@ -6,7 +6,8 @@
   border-bottom: var(--border-1) solid var(--color-divider);
   /* 
     based on html { isolation: isolate } stacking context we set z-index: 1
-    here to avoid elements with positioned layout from overlapping 
+    here to avoid elements further down the tree with positioned layout from 
+    overlapping 
   */
   z-index: 1;
 }

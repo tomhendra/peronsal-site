@@ -1,9 +1,11 @@
 import { setConfig } from "cloudinary-build-url";
-import { CLOUDINARY_CLOUD_NAME } from "~/constants";
+import { CLOUDINARY_CLOUD_NAME, CLOUDINARY_FOLDER_NAME } from "~/constants";
 import { getImageBuilder, getImgProps } from "./Image.helpers";
 import type { LinksFunction } from "@remix-run/cloudflare";
+import type { TransformerOption } from "@cld-apis/types";
 
 import styles from "./image.css";
+import clsx from "clsx";
 
 const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
@@ -11,57 +13,70 @@ setConfig({
   cloudName: CLOUDINARY_CLOUD_NAME,
 });
 
-interface Props {
+type BaseProps = {
   src: string;
   alt: string;
-  credit: string;
-  ratio?: string;
-  width?: string;
-  height?: string;
-  maxWidth?: string;
-  maxHeight?: string;
-  objectFit?: string;
-}
+  width: number;
+  height: number;
+  widths: number[];
+  sizes: string[];
+  transformations?: TransformerOption;
+  className?: string;
+};
+
+type ImgProps = BaseProps &
+  Omit<React.ImgHTMLAttributes<HTMLImageElement>, keyof BaseProps>;
 
 function Image({
-  src = "https://picsum.photos/400/200",
-  alt = "",
-  credit,
-  ratio,
-  width = "100%",
-  height = "auto",
-  maxWidth,
-  maxHeight,
-  objectFit = "",
-}: Props) {
-  const styles = {
-    "--ratio": ratio,
-    "--width": width,
-    "--height": height,
-    "--max-width": maxWidth,
-    "--max-height": maxHeight,
-    "--object-fit": objectFit,
-  } as React.CSSProperties;
+  src,
+  alt,
+  width,
+  height,
+  widths,
+  sizes,
+  transformations,
+  className,
+}: ImgProps) {
+  const url = CLOUDINARY_FOLDER_NAME + "/" + src;
 
-  const imgProps = getImgProps(getImageBuilder(src, alt), {
-    widths: [280, 560, 840, 1100, 1650, 2500, 2100, 3100],
-    sizes: [
-      "(max-width:1023px) 80vw",
-      "(min-width:1024px) and (max-width:1620px) 67vw",
-      "1100px",
-    ],
-    transformations: {
-      background: "rgb:e6e9ee",
-    },
+  const imgProps = getImgProps(getImageBuilder(url), {
+    widths,
+    sizes,
+    transformations,
   });
 
   return (
-    <div key={src}>
-      {/* alt comes from imgProps so safe to ignore a11y warning... */}
-      {/* eslint-disable-next-line jsx-a11y/alt-text */}
-      <img className="img" style={styles} title={credit} {...imgProps} />
-    </div>
+    <img
+      className={clsx("img", className && className)}
+      key={src}
+      alt={alt}
+      width={width}
+      height={height}
+      {...imgProps}
+    />
   );
 }
 
 export { links, Image as default };
+/*
+example usage 
+
+<Image
+  className="hero-img"
+  src="tom-website-hero"
+  alt="A portrait photo of Tom Hendra"
+  title="Photo by James Hopper"
+  width={560}
+  height={640}
+  widths={[280, 560, 840, 1100, 1650, 2500, 2100, 3100]}
+  sizes={[
+    "(max-width:34.375rem) 80vw", // if the viewport is 550px or less (mobile), the width of the slot the image will fill is 440px
+    "(max-width:68.75rem) 70vw", // if the viewport is 1100px or less (tablet), the width of the slot the image will fill is 770px
+    "(max-width:93.75rem) 60vw", // if the viewport is 1500px or less (laptop), the width of the slot the image will fill is 900px
+    "1100px", // default that is chosen when none of the media conditions are true: the width of the slot the image will fill is 1100px
+  ]}
+  transformations={{
+    background: "rgb:e6e9ee",
+  }}
+/>
+*/
