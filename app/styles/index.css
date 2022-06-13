@@ -61,6 +61,13 @@
     margin-right: auto;
   }
 }
+@media (max-width: 34.675rem) {
+  .hero-img {
+    width: 100%;
+    height: 240px;
+    object-position: 50% 0%;
+  }
+}
 
 /* about section */
 .columns {
@@ -95,6 +102,32 @@
 }
 
 /* projects section */
+.tab-img-container {
+  background-color: var(--color-background-muted);
+  padding: var(--space-12);
+  padding-right: 0;
+  /* prevents the image shadow from bleeding outside the container. since this
+    component is only used in one place here is ok to place overflow: hidden  */
+  overflow: hidden;
+}
+@media (max-width: 68.75rem) {
+  .tab-img-container {
+    padding-right: var(--space-12);
+  }
+}
+@media (max-width: 34.375rem) {
+  .tab-img-container {
+    padding: var(--space-4);
+  }
+}
+
+.light .tab-img-container {
+  --shadow-color: 210deg 5% 62%;
+}
+.dark .tab-img-container {
+  --shadow-color: 220deg 68% 2%;
+}
+
 .tab-img {
   /* --shadow-color is defined in parent... .tab-content */
   box-shadow: var(--shadow-md);

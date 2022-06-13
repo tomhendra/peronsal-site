@@ -18,20 +18,7 @@
 
 .tab-content {
   flex: 1;
-  background-color: var(--color-background-muted);
-  padding: var(--space-12);
-  padding-right: 0;
-  /* prevents the image shadow from bleeding outside the container. since this
-    component is only used in one place here is ok to place overflow: hidden  */
-  overflow: hidden;
   outline-color: var(--color-outline);
-}
-
-.light .tab-content {
-  --shadow-color: 210deg 5% 62%;
-}
-.dark .tab-content {
-  --shadow-color: 220deg 68% 2%;
 }
 
 @media (prefers-reduced-motion: no-preference) {

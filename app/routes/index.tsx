@@ -143,16 +143,8 @@ function Index() {
                 title="Photo by María Teresa Valverde Calvo"
                 width={560}
                 height={640}
-                widths={[280, 560, 840, 1100, 1650, 2500, 2100, 3100]}
-                sizes={[
-                  "(max-width:34.375rem) 80vw",
-                  "(max-width:68.75rem) 70vw",
-                  "(max-width:93.75rem) 60vw",
-                  "1100px",
-                ]}
-                transformations={{
-                  background: "rgb:e6e9ee",
-                }}
+                widths={[360, 720, 1080, 560, 1120, 1680]}
+                sizes={["(max-width:34.375rem) 360", "560px"]}
               />
             </div>
           </div>
@@ -227,30 +219,34 @@ function Index() {
                 </Tab>
               </TabsList>
               <TabContent value="yakk">
-                <Link to="projects/yakk">
-                  <img
-                    className="tab-img shadow"
-                    src="https://via.placeholder.com/530x429?text=Yakk"
-                    alt="placeholder"
-                    loading="lazy"
-                    width="530"
-                    height="429"
-                  />
-                </Link>
+                <div className="tab-img-container">
+                  <Link to="projects/yakk">
+                    <img
+                      className="tab-img shadow"
+                      src="https://via.placeholder.com/530x429?text=Yakk"
+                      alt="placeholder"
+                      loading="lazy"
+                      width="530"
+                      height="429"
+                    />
+                  </Link>
+                </div>
               </TabContent>
               <TabContent value="blog">
-                <Link to="projects/blog">
-                  <Image
-                    className="tab-img shadow"
-                    src="blog-mockup-desktop-01"
-                    alt="Preview of project"
-                    loading="lazy"
-                    width={530}
-                    height={429}
-                    widths={[342, 684, 1026, 530, 1060, 1590]}
-                    sizes={["(max-width:34.375rem) 342px", "530px"]}
-                  />
-                </Link>
+                <div className="tab-img-container">
+                  <Link to="projects/blog">
+                    <Image
+                      className="tab-img shadow"
+                      src="blog-mockup-desktop-01"
+                      alt="Preview of project"
+                      loading="lazy"
+                      width={530}
+                      height={429}
+                      widths={[342, 684, 1026, 530, 1060, 1590]}
+                      sizes={["(max-width:34.375rem) 342px", "530px"]}
+                    />
+                  </Link>
+                </div>
               </TabContent>
             </Tabs>
           </div>
