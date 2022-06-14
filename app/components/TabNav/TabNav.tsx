@@ -5,23 +5,26 @@ import type { LinksFunction } from "@remix-run/cloudflare";
 
 import { links as linkLinks } from "~/components/Link";
 import styles from "./tab-nav.css";
+import clsx from "clsx";
 
 const links: LinksFunction = () => [
   ...linkLinks(),
   { rel: "stylesheet", href: styles },
 ];
 
-function TabHeading({ children, ...rest }: { children: React.ReactNode }) {
+type BaseProps = { children: React.ReactNode; className?: string };
+
+function TabHeading({ children, className, ...rest }: BaseProps) {
   return (
-    <span className="tab-title" {...rest}>
+    <span className={clsx("tab-title", className && className)} {...rest}>
       {children}
     </span>
   );
 }
 
-function TabSubheading({ children, ...rest }: { children: React.ReactNode }) {
+function TabSubheading({ children, className, ...rest }: BaseProps) {
   return (
-    <span className="tab-subtitle" {...rest}>
+    <span className={clsx("tab-subtitle", className && className)} {...rest}>
       {children}
     </span>
   );
@@ -30,13 +33,15 @@ function TabSubheading({ children, ...rest }: { children: React.ReactNode }) {
 function TabLink({
   to,
   children,
+  className,
   ...rest
-}: {
-  to: string;
-  children: React.ReactNode;
-}) {
+}: BaseProps & { to: string }) {
   return (
-    <Link to={to} className="tab-link" {...rest}>
+    <Link
+      to={to}
+      className={clsx("tab-link", className && className)}
+      {...rest}
+    >
       {children}
       <ArrowRight size={20} color="var(--color-primary-text)" />
     </Link>
@@ -46,16 +51,14 @@ function TabLink({
 function Tabs({
   defaultValue,
   children,
+  className,
   ...rest
-}: {
-  defaultValue: string;
-  children: React.ReactNode;
-}) {
+}: BaseProps & { defaultValue: string }) {
   return (
     <TabsPrimitive.Root
       defaultValue={defaultValue}
       orientation="vertical"
-      className="tabs"
+      className={clsx("tabs", className && className)}
       {...rest}
     >
       {children}
@@ -63,9 +66,12 @@ function Tabs({
   );
 }
 
-function TabsList({ children, ...rest }: { children: React.ReactNode }) {
+function TabsList({ children, className, ...rest }: BaseProps) {
   return (
-    <TabsPrimitive.List className="tab-list" {...rest}>
+    <TabsPrimitive.List
+      className={clsx("tab-list", className && className)}
+      {...rest}
+    >
       {children}
     </TabsPrimitive.List>
   );
@@ -74,13 +80,15 @@ function TabsList({ children, ...rest }: { children: React.ReactNode }) {
 function Tab({
   value,
   children,
+  className,
   ...rest
-}: {
-  value: string;
-  children: React.ReactNode;
-}) {
+}: BaseProps & { value: string }) {
   return (
-    <TabsPrimitive.Trigger value={value} {...rest} className="tab">
+    <TabsPrimitive.Trigger
+      value={value}
+      {...rest}
+      className={clsx("tab", className && className)}
+    >
       {children}
     </TabsPrimitive.Trigger>
   );
@@ -90,10 +98,7 @@ function TabContent({
   value,
   children,
   ...rest
-}: {
-  value: string;
-  children: React.ReactNode;
-}) {
+}: BaseProps & { value: string }) {
   return (
     <TabsPrimitive.Content value={value} className="tab-content" {...rest}>
       {children}

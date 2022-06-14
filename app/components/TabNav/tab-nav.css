@@ -20,13 +20,9 @@
   flex: 1;
   outline-color: var(--color-outline);
 }
-
-@media (prefers-reduced-motion: no-preference) {
+@media (max-width: 68.75rem) {
   .tab-content {
-    will-change: opacity, transform;
-  }
-  .tab-content[data-state="active"] * {
-    animation: show 400ms both, float-in-from-right 400ms ease-out both;
+    justify-self: start;
   }
 }
 

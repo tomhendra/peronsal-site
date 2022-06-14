@@ -218,21 +218,23 @@ function Index() {
                   <TabLink to="projects/blog">Project details</TabLink>
                 </Tab>
               </TabsList>
-              <TabContent value="yakk">
+              <TabContent value="yakk" className="tab-content">
                 <div className="tab-img-container">
                   <Link to="projects/yakk">
-                    <img
+                    <Image
                       className="tab-img shadow"
-                      src="https://via.placeholder.com/530x429?text=Yakk"
-                      alt="placeholder"
+                      src="blog-mockup-desktop-01"
+                      alt="Preview of project"
                       loading="lazy"
-                      width="530"
-                      height="429"
+                      width={530}
+                      height={429}
+                      widths={[342, 684, 1026, 530, 1060, 1590]}
+                      sizes={["(max-width:34.375rem) 342px", "530px"]}
                     />
                   </Link>
                 </div>
               </TabContent>
-              <TabContent value="blog">
+              <TabContent value="blog" className="tab-content">
                 <div className="tab-img-container">
                   <Link to="projects/blog">
                     <Image

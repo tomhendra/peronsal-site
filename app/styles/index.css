@@ -102,12 +102,20 @@
 }
 
 /* projects section */
+@media (prefers-reduced-motion: no-preference) {
+  .tab-content .tab-img {
+    will-change: opacity, transform;
+  }
+  .tab-content[data-state="active"] .tab-img {
+    animation: show 400ms both, float-in-from-right 400ms ease-out both;
+  }
+}
+
 .tab-img-container {
   background-color: var(--color-background-muted);
   padding: var(--space-12);
   padding-right: 0;
-  /* prevents the image shadow from bleeding outside the container. since this
-    component is only used in one place here is ok to place overflow: hidden  */
+  /* prevents the image shadow from bleeding outside the container */
   overflow: hidden;
 }
 @media (max-width: 68.75rem) {
