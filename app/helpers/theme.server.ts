@@ -1,30 +1,28 @@
 /* 
-  Dark mode implementation thanks to Matt Stobbs: 
-  https://www.mattstobbs.com/remix-dark-mode/
+  Dark mode implementation as per example in Remix repo
+  https://github.com/remix-run/remix/tree/main/examples/dark-mode
 
   Hopefully this ceremony will become a relic of the past in the future 
   https://tabatkins.github.io/css-toggle/
 */
+
 import { createCookieSessionStorage } from "@remix-run/cloudflare";
 
 import { isTheme } from "./theme-provider";
 import type { Theme } from "./theme-provider";
 
-// TODO: work out secrets for Cloudflare Pages
-// const sessionSecret = process.env(SESSION_SECRET);
-const sessionSecret = "bpCAk9R9zB2CdJ9u9sJeeoTxZTrm59S5ZWyC7vuaUmuEpYPMgJhYPw";
-// if (!sessionSecret) {
-//   throw new Error("SESSION_SECRET must be set");
-// }
+// Make use to set the environment variable SESSION_SECRET before running the code
+// TODO work out env variables with Cloudflare Pages
+// const sessionSecret = process.env.SESSION_SECRET ?? "DEFAULT_SECRET";
+const sessionSecret = "DEFAULT_SECRET";
 
 const themeStorage = createCookieSessionStorage({
   cookie: {
-    name: "tomhendradotdev_theme",
+    name: "tomhendra_website_theme",
     secure: true,
     secrets: [sessionSecret],
     sameSite: "lax",
     path: "/",
-    expires: new Date("2083-01-03"),
     httpOnly: true,
   },
 });

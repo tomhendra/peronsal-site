@@ -15,71 +15,30 @@ commits with meaningful categories.
 • style
 • test
 
-## TODO
+## Bugs
 
-1. add blur effect to pfp
-<style>
-  body {
-    overflow: hidden;
-  }
-  .wrapper {
-    position: relative;
-  }
-  .pfp {
-    position: relative;
-  }
-  .blurry {
-    position: absolute;
-    filter: blur(40px);
-    transform: scale(1.3) translateX(10%) rotate(30deg);
-  }
-  .regular {
-    filter: drop-shadow(0px 0px 25px hsl(0deg 0% 0% / 0.3));
-  }
-</style>
+1. on mobile menu toggle `style="pointer-events: none;"` is being
+   appended to the <body> tag but not removed on dialog close. maybe an error
+   with the button? also focus outline is visible on mobile and looks nasty.
+   check implementation & if no good, move to headless UI BUT ensure tab
+   component works correctly.
+   • https://github.com/radix-ui/design-system/blob/master/components/Sheet.tsx
 
-<div class="wrapper">
-  <img class="pfp blurry" />
-  <img class="pfp regular" />
-</div>
+2. button background-color transition when leaving hover state is being
+   affected by theme toggle. `filter: brightness(110%)` is more performant.
+   consider refactoring.
 
-2. darkening filter on pfp for dark mode
+   • https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color
 
-3. weird-shaped pfp with animated clip-path (treasure trove)
+## Enhancements
 
-4. button glow effect on hover for primary variant
-   • https://codepen.io/tomhendra/pen/Yzeawwo
-
-5. Link alt color on hover for primary variant
-   • https://codepen.io/tomhendra/pen/VwQGdmq
-
-6. make the form sending experience amazing
+1. make the form sending experience amazing
    • https://tobiasahlin.com/blog/meaningful-motion-w-action-driven-animation/
 
-7. `--shadow-color` is currently being defined where it is used based on the
+2. make the the dark / light mode toggle interaction amazing.
+
+3. `--shadow-color` is currently being defined where it is used based on the
    background using. figure out calc functions based on colour palettes.
    • https://www.joshwcomeau.com/css/introducing-shadow-palette-generator/
 
-8. Toggling dark mode throws an error to the console. useFetcher fixed yet ?
-   check implementation of dark mode:
-   • https://github.com/remix-run/remix/tree/main/examples/dark-mode
-   • https://www.mattstobbs.com/remix-dark-mode/
-   • https://www.joshwcomeau.com/react/dark-mode/
-
-9. mobile menu toggle is broken. `style="pointer-events: none;"` is being
-   appended to the <body> tag but not removed on dialog close. maybe an error
-   with the button? also focus outline is visible on mobile and looks nasty.
-   • check implementation
-   • https://github.com/radix-ui/design-system/blob/master/components/Sheet.tsx
-   • if no good, move to headless UI & ensure tab component works.
-
-10. button background-color transition when leaving hover state is being
-    affected by theme toggle. `filter: brightness(110%)` is more performant.
-    consider refactoring.
-
-11. consult Remix Discord for gotchyas re smooth scrolling on route transitions.
-
-12. improve the dark / light mode toggle interaction with animations.
-
-13. add theme color for Safari 
-    • https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color
+4. add theme color for Safari

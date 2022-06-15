@@ -1,10 +1,11 @@
 /* 
-  Dark mode implementation thanks to Matt Stobbs: 
-  https://www.mattstobbs.com/remix-dark-mode/
+  Dark mode implementation as per example in Remix repo
+  https://github.com/remix-run/remix/tree/main/examples/dark-mode
 
   Hopefully this ceremony will become a relic of the past in the future 
   https://tabatkins.github.io/css-toggle/
 */
+
 import { Moon, Sun } from "react-feather";
 import { Theme, useTheme } from "~/helpers/theme-provider";
 import VisuallyHidden from "../VisuallyHidden";

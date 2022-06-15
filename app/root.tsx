@@ -9,7 +9,8 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 import {
-  NonFlashOfWrongThemeEls,
+  ThemeBody,
+  ThemeHead,
   ThemeProvider,
   useTheme,
 } from "~/helpers/theme-provider";
@@ -39,9 +40,11 @@ type LoaderData = {
 
 const loader: LoaderFunction = async ({ request }) => {
   const themeSession = await getThemeSession(request);
+
   const data: LoaderData = {
     theme: themeSession.getTheme(),
   };
+
   return data;
 };
 
@@ -73,18 +76,19 @@ function App() {
     setScrollbarWidthAsCustomProperty();
   }, []);
 
-  const [theme] = useTheme();
   const data = useLoaderData<LoaderData>();
+  const [theme] = useTheme();
 
   return (
     <html lang="en" className={clsx(theme)}>
       <head>
         <Meta />
         <Links />
-        <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
+        <ThemeHead ssrTheme={Boolean(data.theme)} />
       </head>
       <body>
         <Layout />
+        <ThemeBody ssrTheme={Boolean(data.theme)} />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
@@ -95,6 +99,7 @@ function App() {
 
 function AppWithProviders() {
   const data = useLoaderData<LoaderData>();
+
   return (
     <ThemeProvider specifiedTheme={data.theme}>
       <App />
