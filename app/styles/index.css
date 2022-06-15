@@ -102,15 +102,6 @@
 }
 
 /* projects section */
-@media (prefers-reduced-motion: no-preference) {
-  .tab-content .tab-img {
-    will-change: opacity, transform;
-  }
-  .tab-content[data-state="active"] .tab-img {
-    animation: show 400ms both, float-in-from-right 400ms ease-out both;
-  }
-}
-
 .tab-img-container {
   background-color: var(--color-background-muted);
   padding: var(--space-12);
@@ -145,6 +136,19 @@
   .tab-img {
     width: 342px;
     height: 228px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tab-img {
+    will-change: opacity, transform;
+  }
+  /* 
+    .tab-content comes from the component CSS file
+    and the data attribute comers from Radix UI to select the active tab 
+  */
+  .tab-content[data-state="active"] .tab-img {
+    animation: show 400ms both, float-in-from-right 400ms ease-out both;
   }
 }
 

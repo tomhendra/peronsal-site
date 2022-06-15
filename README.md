@@ -80,3 +80,6 @@ commits with meaningful categories.
 11. consult Remix Discord for gotchyas re smooth scrolling on route transitions.
 
 12. improve the dark / light mode toggle interaction with animations.
+
+13. add theme color for Safari 
+    • https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color

@@ -234,7 +234,7 @@ function Index() {
                   </Link>
                 </div>
               </TabContent>
-              <TabContent value="blog" className="tab-content">
+              <TabContent value="blog">
                 <div className="tab-img-container">
                   <Link to="projects/blog">
                     <Image
