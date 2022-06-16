@@ -12,7 +12,7 @@ specifiers:
   '@remix-run/dev': ^1.6.0
   '@remix-run/eslint-config': ^1.6.0
   '@remix-run/react': ^1.6.0
-  '@types/react': ^17.0.45
+  '@types/react': ^17.0.46
   '@types/react-dom': ^17.0.17
   cloudinary-build-url: ^0.2.4
   clsx: ^1.1.1
@@ -20,7 +20,7 @@ specifiers:
   eslint: ^8.17.0
   eslint-config-prettier: ^8.5.0
   npm-run-all: ^4.1.5
-  prettier: ^2.7.0
+  prettier: ^2.7.1
   react: ^17.0.2
   react-dom: ^17.0.2
   react-feather: ^2.0.10
@@ -28,7 +28,7 @@ specifiers:
   wrangler: ^0.0.25
 
 dependencies:
-  '@radix-ui/react-dialog': 0.1.7_569957a51d469c962fcce166a59b9f78
+  '@radix-ui/react-dialog': 0.1.7_73874ab7bdf343139abe853750771719
   '@radix-ui/react-tabs': 0.1.5_react@17.0.2
   '@remix-run/cloudflare': 1.6.0_9bc002c4dcc864040d7ecad047d30d75
   '@remix-run/cloudflare-pages': 1.6.0_9bc002c4dcc864040d7ecad047d30d75
@@ -47,12 +47,12 @@ devDependencies:
   '@cloudflare/workers-types': 3.12.0
   '@remix-run/dev': 1.6.0_react-dom@17.0.2+react@17.0.2
   '@remix-run/eslint-config': 1.6.0_37df61f2550b0bbfbd5113964dbdd35d
-  '@types/react': 17.0.45
+  '@types/react': 17.0.46
   '@types/react-dom': 17.0.17
   eslint: 8.17.0
   eslint-config-prettier: 8.5.0_eslint@8.17.0
   npm-run-all: 4.1.5
-  prettier: 2.7.0
+  prettier: 2.7.1
   typescript: 4.7.3
   wrangler: 0.0.25
 
@@ -1715,7 +1715,7 @@ packages:
       react: 17.0.2
     dev: false
 
-  /@radix-ui/react-dialog/0.1.7_569957a51d469c962fcce166a59b9f78:
+  /@radix-ui/react-dialog/0.1.7_73874ab7bdf343139abe853750771719:
     resolution: {integrity: sha512-jXt8srGhHBRvEr9jhEAiwwJzWCWZoGRJ030aC9ja/gkRJbZdy0iD3FwXf+Ff4RtsZyLUMHW7VUwFOlz3Ixe1Vw==}
     peerDependencies:
       react: ^16.8 || ^17.0
@@ -1737,7 +1737,7 @@ packages:
       aria-hidden: 1.1.3
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      react-remove-scroll: 2.5.3_3df41e700a554c2356b362be396a0af4
+      react-remove-scroll: 2.5.3_8b4bf30df26f470d2d4de6eff5bfade0
     transitivePeerDependencies:
       - '@types/react'
     dev: false
@@ -2218,11 +2218,11 @@ packages:
   /@types/react-dom/17.0.17:
     resolution: {integrity: sha512-VjnqEmqGnasQKV0CWLevqMTXBYG9GbwuE6x3VetERLh0cq2LTptFE73MrQi2S7GkKXCf2GgwItB/melLnxfnsg==}
     dependencies:
-      '@types/react': 17.0.45
+      '@types/react': 17.0.46
     dev: true
 
-  /@types/react/17.0.45:
-    resolution: {integrity: sha512-YfhQ22Lah2e3CHPsb93tRwIGNiSwkuz1/blk4e6QrWS0jQzCSNbGLtOEYhPg02W0yGTTmpajp7dCTbBAMN3qsg==}
+  /@types/react/17.0.46:
+    resolution: {integrity: sha512-zNAJVEO9dBEQLPa/OuedGfx92/UlD+1rNxSv2qVWUQZ+orEtLUWFgZ08xfyI9TAZLnmWzZDtssAsgtbXT7Ew0g==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -6718,8 +6718,8 @@ packages:
     hasBin: true
     dev: true
 
-  /prettier/2.7.0:
-    resolution: {integrity: sha512-nwoX4GMFgxoPC6diHvSwmK/4yU8FFH3V8XWtLQrbj4IBsK2pkYhG4kf/ljF/haaZ/aii+wNJqISrCDPgxGWDVQ==}
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -6855,7 +6855,7 @@ packages:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
     dev: true
 
-  /react-remove-scroll-bar/2.3.1_3df41e700a554c2356b362be396a0af4:
+  /react-remove-scroll-bar/2.3.1_8b4bf30df26f470d2d4de6eff5bfade0:
     resolution: {integrity: sha512-IvGX3mJclEF7+hga8APZczve1UyGMkMG+tjS0o/U1iLgvZRpjFAQEUBJ4JETfvbNlfNnZnoDyWJCICkA15Mghg==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -6865,13 +6865,13 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@types/react': 17.0.45
+      '@types/react': 17.0.46
       react: 17.0.2
-      react-style-singleton: 2.2.0_3df41e700a554c2356b362be396a0af4
+      react-style-singleton: 2.2.0_8b4bf30df26f470d2d4de6eff5bfade0
       tslib: 2.4.0
     dev: false
 
-  /react-remove-scroll/2.5.3_3df41e700a554c2356b362be396a0af4:
+  /react-remove-scroll/2.5.3_8b4bf30df26f470d2d4de6eff5bfade0:
     resolution: {integrity: sha512-NQ1bXrxKrnK5pFo/GhLkXeo3CrK5steI+5L+jynwwIemvZyfXqaL0L5BzwJd7CSwNCU723DZaccvjuyOdoy3Xw==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -6881,13 +6881,13 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@types/react': 17.0.45
+      '@types/react': 17.0.46
       react: 17.0.2
-      react-remove-scroll-bar: 2.3.1_3df41e700a554c2356b362be396a0af4
-      react-style-singleton: 2.2.0_3df41e700a554c2356b362be396a0af4
+      react-remove-scroll-bar: 2.3.1_8b4bf30df26f470d2d4de6eff5bfade0
+      react-style-singleton: 2.2.0_8b4bf30df26f470d2d4de6eff5bfade0
       tslib: 2.4.0
-      use-callback-ref: 1.3.0_3df41e700a554c2356b362be396a0af4
-      use-sidecar: 1.1.2_3df41e700a554c2356b362be396a0af4
+      use-callback-ref: 1.3.0_8b4bf30df26f470d2d4de6eff5bfade0
+      use-sidecar: 1.1.2_8b4bf30df26f470d2d4de6eff5bfade0
     dev: false
 
   /react-router-dom/6.3.0_react-dom@17.0.2+react@17.0.2:
@@ -6909,7 +6909,7 @@ packages:
       history: 5.3.0
       react: 17.0.2
 
-  /react-style-singleton/2.2.0_3df41e700a554c2356b362be396a0af4:
+  /react-style-singleton/2.2.0_8b4bf30df26f470d2d4de6eff5bfade0:
     resolution: {integrity: sha512-nK7mN92DMYZEu3cQcAhfwE48NpzO5RpxjG4okbSqRRbfal9Pk+fG2RdQXTMp+f6all1hB9LIJSt+j7dCYrU11g==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -6919,7 +6919,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@types/react': 17.0.45
+      '@types/react': 17.0.46
       get-nonce: 1.0.1
       invariant: 2.2.4
       react: 17.0.2
@@ -8073,7 +8073,7 @@ packages:
     deprecated: Please see https://github.com/lydell/urix#deprecated
     dev: true
 
-  /use-callback-ref/1.3.0_3df41e700a554c2356b362be396a0af4:
+  /use-callback-ref/1.3.0_8b4bf30df26f470d2d4de6eff5bfade0:
     resolution: {integrity: sha512-3FT9PRuRdbB9HfXhEq35u4oZkvpJ5kuYbpqhCfmiZyReuRgpnhDlbr2ZEnnuS0RrJAPn6l23xjFg9kpDM+Ms7w==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -8083,12 +8083,12 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@types/react': 17.0.45
+      '@types/react': 17.0.46
       react: 17.0.2
       tslib: 2.4.0
     dev: false
 
-  /use-sidecar/1.1.2_3df41e700a554c2356b362be396a0af4:
+  /use-sidecar/1.1.2_8b4bf30df26f470d2d4de6eff5bfade0:
     resolution: {integrity: sha512-epTbsLuzZ7lPClpz2TyryBfztm7m+28DlEv2ZCQ3MDr5ssiwyOwGH/e5F9CkfWjJ1t4clvI58yF822/GUkjjhw==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -8098,7 +8098,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@types/react': 17.0.45
+      '@types/react': 17.0.46
       detect-node-es: 1.1.0
       react: 17.0.2
       tslib: 2.4.0

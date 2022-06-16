@@ -56,7 +56,7 @@
     will-change: transform;
   }
   .header .logo-container:hover svg {
-    animation: wobble-y 700ms ease-out;
+    animation: wobble-y 700ms ease-out both;
   }
 }
 
