@@ -1,7 +1,7 @@
 import React from "react";
-import * as DialogPrimitive from "@radix-ui/react-Dialog";
+import { Dialog, Transition } from "@headlessui/react";
 import Link from "../Link";
-import { Menu } from "react-feather";
+import { Menu, X } from "react-feather";
 import VisuallyHidden from "~/components/VisuallyHidden";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
@@ -15,93 +15,89 @@ const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
 ];
 
-type SheetProps = React.ComponentProps<typeof DialogPrimitive.Root>;
-
-export function Sheet({ children, ...props }: SheetProps) {
-  return (
-    <DialogPrimitive.Root {...props}>
-      <DialogPrimitive.Overlay className="mobile-menu-overlay" />
-      {children}
-    </DialogPrimitive.Root>
-  );
-}
-
-type DialogContentPrimitiveProps = React.ComponentProps<
-  typeof DialogPrimitive.Content
->;
-
-const SheetContent = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Content>,
-  DialogContentPrimitiveProps
->(({ children, ...props }, forwardedRef) => (
-  <DialogPrimitive.Content
-    className="mobile-menu-content"
-    {...props}
-    ref={forwardedRef}
-  >
-    {children}
-  </DialogPrimitive.Content>
-));
-
-SheetContent.displayName = "SheetContent";
-
-export { SheetContent };
-export const SheetTrigger = DialogPrimitive.Trigger;
-export const SheetClose = DialogPrimitive.Close;
-export const SheetTitle = DialogPrimitive.Title;
-export const SheetDescription = DialogPrimitive.Description;
-
 function MobileMenu() {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const toggleMobileMenu = () => setIsOpen(!isOpen);
+  let [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const closeMenu = () => setIsOpen(false);
+  const openMenu = () => setIsOpen(true);
 
   return (
-    <DialogPrimitive.Root open={isOpen} onOpenChange={toggleMobileMenu}>
-      <DialogPrimitive.Trigger asChild>
-        <button className="mobile-menu-button" onClick={toggleMobileMenu}>
+    <>
+      {!isOpen && (
+        <button
+          className="mobile-menu-button click-target-helper"
+          onClick={openMenu}
+        >
           <Menu />
-          <VisuallyHidden>Open and close the mobile menu</VisuallyHidden>
+          <VisuallyHidden>Open the mobile menu</VisuallyHidden>
         </button>
-      </DialogPrimitive.Trigger>
-      <DialogPrimitive.Overlay className="mobile-menu-overlay" />
-      <DialogPrimitive.Content className="mobile-menu-content">
-        <VisuallyHidden>
-          <DialogPrimitive.Title>Menu</DialogPrimitive.Title>
-          <DialogPrimitive.Description>
-            Navigate to another part of the website.
-          </DialogPrimitive.Description>
-        </VisuallyHidden>
-        <nav className="mobile-menu-nav">
-          <Link variant="gray" size="lg" to="/" onClick={toggleMobileMenu}>
-            Home
-          </Link>
-          <Link
-            variant="gray"
-            size="lg"
-            to="/#projects"
-            onClick={toggleMobileMenu}
+      )}
+
+      <Transition show={isOpen}>
+        <Dialog onClose={closeMenu}>
+          <Transition.Child
+            enter="mobile-menu-overlay-enter"
+            enterFrom="mobile-menu-overlay-enter-from"
+            enterTo="mobile-menu-overlay-enter-to"
+            leave="mobile-menu-overlay-leave"
+            leaveFrom="mobile-menu-overlay-leave-from"
+            leaveTo="mobile-menu-overlay-leave-to"
           >
-            Projects
-          </Link>
-          <Link
-            variant="gray"
-            size="lg"
-            to="/#about"
-            onClick={toggleMobileMenu}
+            <div className="mobile-menu-overlay" />
+          </Transition.Child>
+          <Transition.Child
+            enter="mobile-menu-content-enter"
+            enterFrom="mobile-menu-content-enter-from"
+            enterTo="mobile-menu-content-enter-to"
+            leave="mobile-menu-content-leave"
+            leaveFrom="mobile-menu-content-leave-from"
+            leaveTo="mobile-menu-content-leave-to"
           >
-            About
-          </Link>
-          <Link
-            variant="gray"
-            size="lg"
-            to="/#contact"
-            onClick={toggleMobileMenu}
-          >
-            Contact
-          </Link>
-        </nav>
-      </DialogPrimitive.Content>
-    </DialogPrimitive.Root>
+            <Dialog.Panel className="mobile-menu-content" aria-hidden="true">
+              <VisuallyHidden>
+                <Dialog.Title>Menu</Dialog.Title>
+                <Dialog.Description>
+                  Navigate to another part of the website.
+                </Dialog.Description>
+              </VisuallyHidden>
+              <nav className="mobile-menu-nav">
+                <Link variant="gray" size="lg" to="/" onClick={closeMenu}>
+                  Home
+                </Link>
+                <Link
+                  variant="gray"
+                  size="lg"
+                  to="/#projects"
+                  onClick={closeMenu}
+                >
+                  Projects
+                </Link>
+                <Link variant="gray" size="lg" to="/#about" onClick={closeMenu}>
+                  About
+                </Link>
+                <Link
+                  variant="gray"
+                  size="lg"
+                  to="/#contact"
+                  onClick={closeMenu}
+                >
+                  Contact
+                </Link>
+              </nav>
+            </Dialog.Panel>
+            {/* info: the close button only appears to work as a child of 
+              Dialog.Panel, which is not explicitly mentioned in the docs. we 
+              cannot toggle state on one button outside of Dialog.Panel */}
+            <button
+              className="mobile-menu-button click-target-helper"
+              onClick={closeMenu}
+            >
+              <X />
+              <VisuallyHidden>Close the mobile menu</VisuallyHidden>
+            </button>
+          </Transition.Child>
+        </Dialog>
+      </Transition>
+    </>
   );
 }
 
