@@ -1,8 +1,9 @@
 import React from "react";
-import { Dialog, Transition } from "@headlessui/react";
+import { DialogOverlay, DialogContent } from "@reach/dialog";
 import Link from "../Link";
 import { Menu, X } from "react-feather";
 import VisuallyHidden from "~/components/VisuallyHidden";
+import { motion, AnimatePresence } from "framer-motion";
 import type { LinksFunction } from "@remix-run/cloudflare";
 
 import { links as linkLinks } from "../Link";
@@ -17,87 +18,71 @@ const links: LinksFunction = () => [
 
 function MobileMenu() {
   let [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const closeMenu = () => setIsOpen(false);
-  const openMenu = () => setIsOpen(true);
+  const close = () => setIsOpen(false);
+  const open = () => setIsOpen(true);
+  // todo - mess around with animations in framer-motion! :D
+  const MotionDialogOverlay = motion(DialogOverlay);
+  const MotionDialogContent = motion(DialogContent);
 
   return (
-    <>
+    <AnimatePresence>
       {!isOpen && (
         <button
           className="mobile-menu-button click-target-helper"
-          onClick={openMenu}
+          onClick={open}
         >
-          <Menu />
           <VisuallyHidden>Open the mobile menu</VisuallyHidden>
+          <Menu aria-hidden />
         </button>
       )}
-
-      <Transition show={isOpen}>
-        <Dialog onClose={closeMenu}>
-          <Transition.Child
-            enter="mobile-menu-overlay-enter"
-            enterFrom="mobile-menu-overlay-enter-from"
-            enterTo="mobile-menu-overlay-enter-to"
-            leave="mobile-menu-overlay-leave"
-            leaveFrom="mobile-menu-overlay-leave-from"
-            leaveTo="mobile-menu-overlay-leave-to"
+      {isOpen && (
+        <MotionDialogOverlay
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          isOpen={isOpen}
+          onDismiss={close}
+          aria-labelledby="mobile-menu-title"
+          aria-describedby="mobile-menu-description"
+        >
+          <MotionDialogContent
+            initial={{ x: "-100%" }}
+            animate={{ x: "0%" }}
+            exit={{ x: "-100%" }}
+            transition={{ min: 0, max: 100, bounceDamping: 9 }}
+            aria-label="Mobile menu"
           >
-            <div className="mobile-menu-overlay" />
-          </Transition.Child>
-          <Transition.Child
-            enter="mobile-menu-content-enter"
-            enterFrom="mobile-menu-content-enter-from"
-            enterTo="mobile-menu-content-enter-to"
-            leave="mobile-menu-content-leave"
-            leaveFrom="mobile-menu-content-leave-from"
-            leaveTo="mobile-menu-content-leave-to"
+            <VisuallyHidden>
+              <h2 id="mobile-menu-title">Mobile Menu</h2>
+              <p id="mobile-menu-description">
+                Navigate to another part of the website.
+              </p>
+            </VisuallyHidden>
+            <nav className="mobile-menu-nav">
+              <Link variant="gray" size="lg" to="/" onClick={close}>
+                Home
+              </Link>
+              <Link variant="gray" size="lg" to="/#projects" onClick={close}>
+                Projects
+              </Link>
+              <Link variant="gray" size="lg" to="/#about" onClick={close}>
+                About
+              </Link>
+              <Link variant="gray" size="lg" to="/#contact" onClick={close}>
+                Contact
+              </Link>
+            </nav>
+          </MotionDialogContent>
+          <motion.button
+            className="mobile-menu-button click-target-helper"
+            onClick={close}
           >
-            <Dialog.Panel className="mobile-menu-content" aria-hidden="true">
-              <VisuallyHidden>
-                <Dialog.Title>Menu</Dialog.Title>
-                <Dialog.Description>
-                  Navigate to another part of the website.
-                </Dialog.Description>
-              </VisuallyHidden>
-              <nav className="mobile-menu-nav">
-                <Link variant="gray" size="lg" to="/" onClick={closeMenu}>
-                  Home
-                </Link>
-                <Link
-                  variant="gray"
-                  size="lg"
-                  to="/#projects"
-                  onClick={closeMenu}
-                >
-                  Projects
-                </Link>
-                <Link variant="gray" size="lg" to="/#about" onClick={closeMenu}>
-                  About
-                </Link>
-                <Link
-                  variant="gray"
-                  size="lg"
-                  to="/#contact"
-                  onClick={closeMenu}
-                >
-                  Contact
-                </Link>
-              </nav>
-            </Dialog.Panel>
-            {/* info: the close button only appears to work as a child of 
-              Dialog.Panel, which is not explicitly mentioned in the docs. we 
-              cannot toggle state on one button outside of Dialog.Panel */}
-            <button
-              className="mobile-menu-button click-target-helper"
-              onClick={closeMenu}
-            >
-              <X />
-              <VisuallyHidden>Close the mobile menu</VisuallyHidden>
-            </button>
-          </Transition.Child>
-        </Dialog>
-      </Transition>
-    </>
+            <X />
+            <VisuallyHidden>Close the mobile menu</VisuallyHidden>
+          </motion.button>
+        </MotionDialogOverlay>
+      )}
+    </AnimatePresence>
   );
 }
 

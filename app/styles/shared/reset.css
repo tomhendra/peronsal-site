@@ -79,3 +79,10 @@ h6 {
 body {
   isolation: isolate;
 }
+
+/*
+10. disable Reach UI styles dependency
+*/
+html {
+  --reach-dialog: 1;
+}
