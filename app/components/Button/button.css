@@ -20,14 +20,15 @@
   text-decoration: none;
   border-radius: var(--radius-default);
   border: var(--border-1) solid transparent;
-  transition: background-color 400ms;
+  transition: filter 400ms;
 }
 .btn:focus {
-  transition: background-color 150ms;
+  transition: filter 150ms;
 }
 @media (pointer: fine) and (hover: hover) {
   .btn:hover {
-    transition: background-color 150ms;
+    transition: filter150ms;
+    filter: brightness(90%);
   }
 }
 
