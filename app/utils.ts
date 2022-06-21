@@ -15,14 +15,14 @@ export function setScrollbarWidthAsCustomProperty() {
   const scrollbarWidth = viewportWidth - viewportWidthWithoutScrollbar;
 
   document.documentElement.style.setProperty(
-    "--scrollbar-width",
-    scrollbarWidth + "px"
+    '--scrollbar-width',
+    scrollbarWidth + 'px',
   );
 }
 
 export function getPrefersReducedMotion() {
   const mediaQueryList = window.matchMedia(
-    "(prefers-reduced-motion: no-preference)"
+    '(prefers-reduced-motion: no-preference)',
   );
   const prefersReducedMotion = !mediaQueryList.matches;
   return prefersReducedMotion;

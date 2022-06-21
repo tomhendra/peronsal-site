@@ -6,13 +6,13 @@
   https://tabatkins.github.io/css-toggle/
 */
 
-import { Moon, Sun } from "react-feather";
-import { Theme, useTheme } from "~/helpers/theme-provider";
-import VisuallyHidden from "../VisuallyHidden";
-import Button from "~/components/Button";
-import type { LinksFunction } from "@remix-run/cloudflare";
+import {Moon, Sun} from 'react-feather';
+import {Theme, useTheme} from '~/helpers/theme-provider';
+import VisuallyHidden from '../VisuallyHidden';
+import Button from '~/components/Button';
+import type {LinksFunction} from '@remix-run/cloudflare';
 
-import { links as buttonLinks } from "~/components/Button";
+import {links as buttonLinks} from '~/components/Button';
 
 const links: LinksFunction = () => [...buttonLinks()];
 
@@ -20,8 +20,8 @@ function ThemeToggle() {
   const [theme, setTheme] = useTheme();
 
   const toggleTheme = () => {
-    setTheme((prevTheme) =>
-      prevTheme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
+    setTheme(prevTheme =>
+      prevTheme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT,
     );
   };
 
@@ -33,4 +33,4 @@ function ThemeToggle() {
   );
 }
 
-export { links, ThemeToggle as default };
+export {links, ThemeToggle as default};

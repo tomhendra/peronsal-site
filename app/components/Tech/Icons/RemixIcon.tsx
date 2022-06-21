@@ -1,4 +1,4 @@
-function RemixIcon({ size = 44, ...rest }) {
+function RemixIcon({size = 44, ...rest}) {
   return (
     <svg
       width={size}
@@ -28,4 +28,4 @@ function RemixIcon({ size = 44, ...rest }) {
   );
 }
 
-export { RemixIcon as default };
+export {RemixIcon as default};

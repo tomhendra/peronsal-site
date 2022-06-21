@@ -1,13 +1,13 @@
-import { ExternalLink } from "react-feather";
-import Link from "~/components/Link";
-import type { LinksFunction } from "@remix-run/cloudflare";
+import {ExternalLink} from 'react-feather';
+import Link from '~/components/Link';
+import type {LinksFunction} from '@remix-run/cloudflare';
 
-import { links as linkLinks } from "~/components/Link";
-import styles from "./social-card.css";
+import {links as linkLinks} from '~/components/Link';
+import styles from './social-card.css';
 
 const links: LinksFunction = () => [
   ...linkLinks(),
-  { rel: "stylesheet", href: styles },
+  {rel: 'stylesheet', href: styles},
 ];
 
 function SocialLink({
@@ -52,4 +52,4 @@ function SocialCard({
   );
 }
 
-export { links, SocialCard as default };
+export {links, SocialCard as default};

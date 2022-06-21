@@ -1,4 +1,4 @@
-function SupabaseIcon({ size = 44, ...rest }) {
+function SupabaseIcon({size = 44, ...rest}) {
   return (
     <svg
       width={size}
@@ -49,4 +49,4 @@ function SupabaseIcon({ size = 44, ...rest }) {
   );
 }
 
-export { SupabaseIcon as default };
+export {SupabaseIcon as default};

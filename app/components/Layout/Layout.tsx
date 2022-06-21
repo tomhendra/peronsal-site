@@ -1,19 +1,19 @@
-import { Outlet } from "@remix-run/react";
-import Header from "../Header";
-import Footer from "../Footer";
-import MobileMenu from "../MobileMenu";
-import type { LinksFunction } from "@remix-run/cloudflare";
+import {Outlet} from '@remix-run/react';
+import Header from '../Header';
+import Footer from '../Footer';
+import MobileMenu from '../MobileMenu';
+import type {LinksFunction} from '@remix-run/cloudflare';
 
-import { links as headerLinks } from "../Header";
-import { links as footerLinks } from "../Footer";
-import { links as mobileMenuLinks } from "../MobileMenu";
-import styles from "./layout.css";
+import {links as headerLinks} from '../Header';
+import {links as footerLinks} from '../Footer';
+import {links as mobileMenuLinks} from '../MobileMenu';
+import styles from './layout.css';
 
 const links: LinksFunction = () => [
   ...headerLinks(),
   ...footerLinks(),
   ...mobileMenuLinks(),
-  { rel: "stylesheet", href: styles },
+  {rel: 'stylesheet', href: styles},
 ];
 
 function Layout() {
@@ -27,4 +27,4 @@ function Layout() {
   );
 }
 
-export { links, Layout as default };
+export {links, Layout as default};

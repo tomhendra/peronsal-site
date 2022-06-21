@@ -147,7 +147,7 @@
     .tab-content comes from the component CSS file
     and the data attribute comers from Radix UI to select the active tab 
   */
-  .tab-content[data-state="active"] .tab-img {
+  .tab-content[data-state='active'] .tab-img {
     animation: show 400ms both, float-in-from-right 400ms ease-out both;
   }
 }
@@ -210,7 +210,7 @@
   transition-delay: 0.3s;
 }
 
-.contact-form-container > *[aria-hidden="true"] {
+.contact-form-container > *[aria-hidden='true'] {
   pointer-events: none;
   opacity: 0;
   transform: scale(0.8);

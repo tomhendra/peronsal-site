@@ -1,9 +1,9 @@
-import clsx from "clsx";
-import type { LinksFunction } from "@remix-run/cloudflare";
+import clsx from 'clsx';
+import type {LinksFunction} from '@remix-run/cloudflare';
 
-import styles from "./feature-icon.css";
+import styles from './feature-icon.css';
 
-const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+const links: LinksFunction = () => [{rel: 'stylesheet', href: styles}];
 
 type BaseProps = {
   color?: string;
@@ -16,16 +16,16 @@ type FeatureIconProps = BaseProps &
   Omit<React.HTMLAttributes<HTMLDivElement>, keyof BaseProps>;
 
 function FeatureIcon({
-  color = "var(--color-highlight)",
-  padding = "var(--space-2)",
+  color = 'var(--color-highlight)',
+  padding = 'var(--space-2)',
   className,
   children,
   ...rest
 }: FeatureIconProps) {
   return (
     <div
-      className={clsx("feature-icon-wrapper", className && className)}
-      style={{ "--color": color, "--padding": padding } as React.CSSProperties}
+      className={clsx('feature-icon-wrapper', className && className)}
+      style={{'--color': color, '--padding': padding} as React.CSSProperties}
       {...rest}
     >
       {children}
@@ -33,4 +33,4 @@ function FeatureIcon({
   );
 }
 
-export { links, FeatureIcon as default };
+export {links, FeatureIcon as default};

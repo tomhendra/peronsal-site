@@ -1,12 +1,12 @@
-import type { LinksFunction } from "@remix-run/cloudflare";
-import MaxWidthContainer from "../MaxWidthContainer";
+import type {LinksFunction} from '@remix-run/cloudflare';
+import MaxWidthContainer from '../MaxWidthContainer';
 
-import { links as MaxWidthContainerLinks } from "../MaxWidthContainer";
-import styles from "./divider.css";
+import {links as MaxWidthContainerLinks} from '../MaxWidthContainer';
+import styles from './divider.css';
 
 const links: LinksFunction = () => [
   ...MaxWidthContainerLinks(),
-  { rel: "stylesheet", href: styles },
+  {rel: 'stylesheet', href: styles},
 ];
 
 function Divider() {
@@ -17,4 +17,4 @@ function Divider() {
   );
 }
 
-export { links, Divider as default };
+export {links, Divider as default};

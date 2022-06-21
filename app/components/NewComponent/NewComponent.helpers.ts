@@ -7,4 +7,4 @@ function someHelperFn(message: string): string {
   return message;
 }
 
-export { someHelperFn };
+export {someHelperFn};

@@ -1,2 +1,2 @@
-export * from "./FeatureIcon";
-export { default } from "./FeatureIcon";
+export * from './FeatureIcon';
+export {default} from './FeatureIcon';

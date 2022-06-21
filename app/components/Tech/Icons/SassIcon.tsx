@@ -1,4 +1,4 @@
-function SassIcon({ size = 44, ...rest }) {
+function SassIcon({size = 44, ...rest}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,4 +16,4 @@ function SassIcon({ size = 44, ...rest }) {
   );
 }
 
-export { SassIcon as default };
+export {SassIcon as default};

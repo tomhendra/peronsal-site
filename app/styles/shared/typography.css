@@ -1,26 +1,26 @@
 @font-face {
-  font-family: "Inter";
-  src: url("/fonts/inter-variable.woff2") format("woff2-variations");
+  font-family: 'Inter';
+  src: url('/fonts/inter-variable.woff2') format('woff2-variations');
   font-weight: 100 900;
   font-style: oblique -10deg 0deg;
   font-display: fallback;
 }
 
 @font-face {
-  font-family: "Source Code Pro";
-  src: url("/fonts/source-code-pro-variable.woff2") format("woff2-variations");
+  font-family: 'Source Code Pro';
+  src: url('/fonts/source-code-pro-variable.woff2') format('woff2-variations');
   font-weight: 200 900;
   font-display: fallback;
 }
 
 :root {
   /* https://systemfontstack.com/ */
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, avenir next, avenir,
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, avenir next, avenir,
     segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   --font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
     Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol;
-  --font-mono: "Source Code Pro", Menlo, Consolas, Monaco, Liberation Mono,
+  --font-mono: 'Source Code Pro', Menlo, Consolas, Monaco, Liberation Mono,
     Lucida Console, monospace;
 
   --font-size-text-xs: calc(12 / 16 * 1rem);

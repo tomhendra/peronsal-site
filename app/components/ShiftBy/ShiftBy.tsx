@@ -2,7 +2,7 @@ function ShiftBy({
   x = 0,
   y = 0,
   children,
-  as = "div",
+  as = 'div',
   style = {},
   ...delegated
 }: {
@@ -14,10 +14,10 @@ function ShiftBy({
 }) {
   const Element = as;
   return (
-    <Element style={{ transform: `translate(${x}px, ${y}px)` }} {...delegated}>
+    <Element style={{transform: `translate(${x}px, ${y}px)`}} {...delegated}>
       {children}
     </Element>
   );
 }
 
-export { ShiftBy as default };
+export {ShiftBy as default};

@@ -1,4 +1,4 @@
-function MarkdownIcon({ size = 44, ...rest }) {
+function MarkdownIcon({size = 44, ...rest}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,4 +21,4 @@ function MarkdownIcon({ size = 44, ...rest }) {
   );
 }
 
-export { MarkdownIcon as default };
+export {MarkdownIcon as default};

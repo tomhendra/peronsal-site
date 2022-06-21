@@ -1,22 +1,22 @@
-import MaxWidthContainer from "~/components/MaxWidthContainer";
-import { CheckCircle, Eye, Target, TrendingUp, Users } from "react-feather";
-import Button from "~/components/Button";
-import FeatureIcon from "~/components/FeatureIcon";
-import Tech from "~/components/Tech";
-import type { LinksFunction } from "@remix-run/cloudflare";
+import MaxWidthContainer from '~/components/MaxWidthContainer';
+import {CheckCircle, Eye, Target, TrendingUp, Users} from 'react-feather';
+import Button from '~/components/Button';
+import FeatureIcon from '~/components/FeatureIcon';
+import Tech from '~/components/Tech';
+import type {LinksFunction} from '@remix-run/cloudflare';
 
-import { links as maxWidthContainerLinks } from "~/components/MaxWidthContainer";
-import { links as buttonLinks } from "~/components/Button";
-import { links as featureIconLinks } from "~/components/FeatureIcon";
-import { links as techLinks } from "~/components/Tech";
-import styles from "~/styles/projects.css";
+import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
+import {links as buttonLinks} from '~/components/Button';
+import {links as featureIconLinks} from '~/components/FeatureIcon';
+import {links as techLinks} from '~/components/Tech';
+import styles from '~/styles/projects.css';
 
 const links: LinksFunction = () => [
   ...maxWidthContainerLinks(),
   ...buttonLinks(),
   ...featureIconLinks(),
   ...techLinks(),
-  { rel: "stylesheet", href: styles },
+  {rel: 'stylesheet', href: styles},
 ];
 
 function Blog() {
@@ -98,9 +98,9 @@ function Blog() {
                 alt="placeholder"
                 src="https://via.placeholder.com/1024x492?text=Blog"
                 style={{
-                  width: "1080px",
-                  height: "492px",
-                  objectFit: "cover",
+                  width: '1080px',
+                  height: '492px',
+                  objectFit: 'cover',
                 }}
               />
             </div>
@@ -154,9 +154,9 @@ function Blog() {
                   alt="placeholder"
                   src="https://via.placeholder.com/768x512?text=Img"
                   style={{
-                    width: "768px",
-                    height: "512px",
-                    objectFit: "cover",
+                    width: '768px',
+                    height: '512px',
+                    objectFit: 'cover',
                   }}
                 />
               </div>
@@ -167,9 +167,9 @@ function Blog() {
                   alt="placeholder"
                   src="https://via.placeholder.com/768x512?text=Img"
                   style={{
-                    width: "768px",
-                    height: "512px",
-                    objectFit: "cover",
+                    width: '768px',
+                    height: '512px',
+                    objectFit: 'cover',
                   }}
                 />
               </div>
@@ -235,7 +235,7 @@ function Blog() {
                           color="var(--color-primary-text)"
                         />
                       </FeatureIcon>
-                      Anything else you're proud of!{" "}
+                      Anything else you're proud of!{' '}
                     </span>
                   </li>
                 </ul>
@@ -280,9 +280,9 @@ function Blog() {
                   alt="placeholder"
                   src="https://via.placeholder.com/768x512?text=Img"
                   style={{
-                    width: "768px",
-                    height: "512px",
-                    objectFit: "cover",
+                    width: '768px',
+                    height: '512px',
+                    objectFit: 'cover',
                   }}
                 />
               </div>
@@ -293,9 +293,9 @@ function Blog() {
                   alt="placeholder"
                   src="https://via.placeholder.com/768x512?text=Img"
                   style={{
-                    width: "768px",
-                    height: "512px",
-                    objectFit: "cover",
+                    width: '768px',
+                    height: '512px',
+                    objectFit: 'cover',
                   }}
                 />
               </div>
@@ -342,4 +342,4 @@ function Blog() {
   );
 }
 
-export { links, Blog as default };
+export {links, Blog as default};

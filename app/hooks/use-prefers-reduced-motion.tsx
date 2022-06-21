@@ -1,7 +1,7 @@
 // https://www.joshwcomeau.com/react/prefers-reduced-motion/#the-hook
-import React from "react";
+import React from 'react';
 
-const QUERY = "(prefers-reduced-motion: no-preference)";
+const QUERY = '(prefers-reduced-motion: no-preference)';
 
 function usePrefersReducedMotion() {
   // Default to no-animations, since we don't know what the
@@ -15,9 +15,9 @@ function usePrefersReducedMotion() {
     const listener = (event: any) => {
       setPrefersReducedMotion(!event.matches);
     };
-    mediaQueryList.addEventListener("change", listener);
+    mediaQueryList.addEventListener('change', listener);
     return () => {
-      mediaQueryList.removeEventListener("change", listener);
+      mediaQueryList.removeEventListener('change', listener);
     };
   }, []);
   return prefersReducedMotion;

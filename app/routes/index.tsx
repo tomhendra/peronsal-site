@@ -1,14 +1,14 @@
-import { useRef, useEffect } from "react";
-import { Form, useActionData, useTransition } from "@remix-run/react";
-import { MapPin, Twitter, Linkedin, GitHub, Codepen } from "react-feather";
-import clsx from "clsx";
-import FeatureIcon from "~/components/FeatureIcon";
-import Button from "~/components/Button";
-import Image from "~/components/Image";
-import SocialCard from "~/components/SocialCard";
-import MaxWidthContainer from "~/components/MaxWidthContainer";
-import Divider from "~/components/Divider";
-import Link from "~/components/Link";
+import {useRef, useEffect} from 'react';
+import {Form, useActionData, useTransition} from '@remix-run/react';
+import {MapPin, Twitter, Linkedin, GitHub, Codepen} from 'react-feather';
+import clsx from 'clsx';
+import FeatureIcon from '~/components/FeatureIcon';
+import Button from '~/components/Button';
+import Image from '~/components/Image';
+import SocialCard from '~/components/SocialCard';
+import MaxWidthContainer from '~/components/MaxWidthContainer';
+import Divider from '~/components/Divider';
+import Link from '~/components/Link';
 import {
   Tabs,
   TabsList,
@@ -17,18 +17,18 @@ import {
   TabSubheading,
   TabLink,
   TabContent,
-} from "~/components/TabNav";
-import type { ActionFunction } from "@remix-run/cloudflare";
-import type { LinksFunction } from "@remix-run/cloudflare";
+} from '~/components/TabNav';
+import type {ActionFunction} from '@remix-run/cloudflare';
+import type {LinksFunction} from '@remix-run/cloudflare';
 
-import { links as maxWidthContainerLinks } from "~/components/MaxWidthContainer";
-import { links as featureIconLinks } from "~/components/FeatureIcon";
-import { links as buttonLinks } from "~/components/Button";
-import { links as imageLinks } from "~/components/Image";
-import { links as tabNavLinks } from "~/components/TabNav";
-import { links as socialCardLinks } from "~/components/SocialCard";
-import { links as dividerLinks } from "~/components/Divider";
-import styles from "~/styles/index.css";
+import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
+import {links as featureIconLinks} from '~/components/FeatureIcon';
+import {links as buttonLinks} from '~/components/Button';
+import {links as imageLinks} from '~/components/Image';
+import {links as tabNavLinks} from '~/components/TabNav';
+import {links as socialCardLinks} from '~/components/SocialCard';
+import {links as dividerLinks} from '~/components/Divider';
+import styles from '~/styles/index.css';
 
 const links: LinksFunction = () => [
   ...maxWidthContainerLinks(),
@@ -38,22 +38,22 @@ const links: LinksFunction = () => [
   ...tabNavLinks(),
   ...socialCardLinks(),
   ...dividerLinks(),
-  { rel: "stylesheet", href: styles },
+  {rel: 'stylesheet', href: styles},
 ];
 
-export const action: ActionFunction = async ({ request }) => {
+export const action: ActionFunction = async ({request}) => {
   const data = await request.formData();
-  const email = data.get("email");
-  const name = data.get("name");
-  const message = data.get("message");
+  const email = data.get('email');
+  const name = data.get('name');
+  const message = data.get('message');
 
-  const res = await fetch("https://formspree.io/f/xvolddzz", {
-    method: "POST",
+  const res = await fetch('https://formspree.io/f/xvolddzz', {
+    method: 'POST',
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ email, name, message }),
+    body: JSON.stringify({email, name, message}),
   });
 
   return res.json();
@@ -63,13 +63,13 @@ function Index() {
   const actionData = useActionData();
   const transition = useTransition();
 
-  let state: "idle" | "success" | "error" | "submitting" = transition.submission
-    ? "submitting"
+  let state: 'idle' | 'success' | 'error' | 'submitting' = transition.submission
+    ? 'submitting'
     : actionData?.ok
-    ? "success"
+    ? 'success'
     : actionData?.error
-    ? "error"
-    : "idle";
+    ? 'error'
+    : 'idle';
 
   const formRef = useRef<HTMLFormElement>(null);
   const nameInputRef = useRef<HTMLInputElement>(null);
@@ -84,20 +84,20 @@ function Index() {
   };
 
   useEffect(() => {
-    if (state === "error") {
+    if (state === 'error') {
       const errors = actionData?.errors;
 
-      if (errors.map((error: FormspreeErrorRes) => error.field === "email")) {
+      if (errors.map((error: FormspreeErrorRes) => error.field === 'email')) {
         emailInputRef.current?.focus();
       }
     }
 
-    if (state === "idle" && mounted.current) {
+    if (state === 'idle' && mounted.current) {
       formRef.current?.reset();
       nameInputRef.current?.select();
     }
 
-    if (state === "success") {
+    if (state === 'success') {
       successRef.current?.focus();
     }
 
@@ -144,7 +144,7 @@ function Index() {
                 width={560}
                 height={640}
                 widths={[360, 720, 1080, 560, 1120, 1680]}
-                sizes={["(max-width:34.375rem) 360", "560px"]}
+                sizes={['(max-width:34.375rem) 360', '560px']}
               />
             </div>
           </div>
@@ -229,7 +229,7 @@ function Index() {
                       width={530}
                       height={429}
                       widths={[342, 684, 1026, 530, 1060, 1590]}
-                      sizes={["(max-width:34.375rem) 342px", "530px"]}
+                      sizes={['(max-width:34.375rem) 342px', '530px']}
                     />
                   </Link>
                 </div>
@@ -245,7 +245,7 @@ function Index() {
                       width={530}
                       height={429}
                       widths={[342, 684, 1026, 530, 1060, 1590]}
-                      sizes={["(max-width:34.375rem) 342px", "530px"]}
+                      sizes={['(max-width:34.375rem) 342px', '530px']}
                     />
                   </Link>
                 </div>
@@ -296,10 +296,10 @@ function Index() {
                   replace
                   method="post"
                   className={clsx(
-                    "form",
-                    state === "success" && "visually-hidden"
+                    'form',
+                    state === 'success' && 'visually-hidden',
                   )}
-                  aria-hidden={state === "success"}
+                  aria-hidden={state === 'success'}
                   ref={formRef}
                 >
                   <label htmlFor="name">Name</label>
@@ -311,7 +311,7 @@ function Index() {
                     ref={nameInputRef}
                     required
                     aria-describedby="contact-error-message"
-                    disabled={state === "submitting"}
+                    disabled={state === 'submitting'}
                   />
                   <label htmlFor="email">Email</label>
                   <input
@@ -322,7 +322,7 @@ function Index() {
                     ref={emailInputRef}
                     required
                     aria-describedby="contact-error-message"
-                    disabled={state === "submitting"}
+                    disabled={state === 'submitting'}
                   />
                   <label htmlFor="message">Message</label>
                   <textarea
@@ -332,15 +332,15 @@ function Index() {
                     aria-describedby="contact-error-message"
                     rows={5}
                     maxLength={1000}
-                    disabled={state === "submitting"}
+                    disabled={state === 'submitting'}
                   />
                   <p
                     id="contact-error-message"
                     className="contact-error-message"
                   >
-                    {state === "error" ? (
+                    {state === 'error' ? (
                       `Error: ${actionData.errors.map(
-                        (error: Error) => error.message
+                        (error: Error) => error.message,
                       )}`
                     ) : (
                       <>&nbsp;</>
@@ -350,17 +350,17 @@ function Index() {
                     size="xl"
                     variant="primary"
                     type="submit"
-                    disabled={state === "submitting"}
+                    disabled={state === 'submitting'}
                   >
-                    {state === "submitting" ? "Sending..." : "Send"}
+                    {state === 'submitting' ? 'Sending...' : 'Send'}
                   </Button>
                 </Form>
                 <div
                   className={clsx(
-                    "contact-success-message",
-                    state !== "success" && "visually-hidden"
+                    'contact-success-message',
+                    state !== 'success' && 'visually-hidden',
                   )}
-                  aria-hidden={state !== "success"}
+                  aria-hidden={state !== 'success'}
                 >
                   <h2 ref={successRef}>Thanks for your message!</h2>
                   <p>I will be in touch with to you very soon.</p>
@@ -382,4 +382,4 @@ function Index() {
   );
 }
 
-export { links, Index as default };
+export {links, Index as default};

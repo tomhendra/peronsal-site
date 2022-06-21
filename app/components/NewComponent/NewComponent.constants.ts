@@ -3,4 +3,4 @@
   the files in this directory.
 */
 
-export const TITLE = "Counter";
+export const TITLE = 'Counter';

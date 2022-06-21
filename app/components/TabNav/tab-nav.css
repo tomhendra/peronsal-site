@@ -44,7 +44,7 @@
   }
 }
 
-.tab[data-state="active"] {
+.tab[data-state='active'] {
   border-color: var(--color-primary);
 }
 

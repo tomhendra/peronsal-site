@@ -1,4 +1,4 @@
-function CssIcon({ size = 44, ...rest }) {
+function CssIcon({size = 44, ...rest}) {
   return (
     <svg
       width={size}
@@ -36,4 +36,4 @@ function CssIcon({ size = 44, ...rest }) {
   );
 }
 
-export { CssIcon as default };
+export {CssIcon as default};

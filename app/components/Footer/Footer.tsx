@@ -1,22 +1,22 @@
-import Link from "../Link";
-import TomhendraLogo from "../Logo";
-import VisuallyHidden from "../VisuallyHidden";
-import MaxWidthContainer from "../MaxWidthContainer";
-import Divider from "../Divider";
-import type { LinksFunction } from "@remix-run/cloudflare";
+import Link from '../Link';
+import TomhendraLogo from '../Logo';
+import VisuallyHidden from '../VisuallyHidden';
+import MaxWidthContainer from '../MaxWidthContainer';
+import Divider from '../Divider';
+import type {LinksFunction} from '@remix-run/cloudflare';
 
-import { links as logoLinks } from "../Logo";
-import { links as visuallyHiddenLinks } from "../VisuallyHidden";
-import { links as dividerLinks } from "../Divider";
-import { links as linkLinks } from "../Link";
-import styles from "./footer.css";
+import {links as logoLinks} from '../Logo';
+import {links as visuallyHiddenLinks} from '../VisuallyHidden';
+import {links as dividerLinks} from '../Divider';
+import {links as linkLinks} from '../Link';
+import styles from './footer.css';
 
 const links: LinksFunction = () => [
   ...logoLinks(),
   ...visuallyHiddenLinks(),
   ...dividerLinks(),
   ...linkLinks(),
-  { rel: "stylesheet", href: styles },
+  {rel: 'stylesheet', href: styles},
 ];
 
 function Footer() {
@@ -55,4 +55,4 @@ function Footer() {
   );
 }
 
-export { links, Footer as default };
+export {links, Footer as default};

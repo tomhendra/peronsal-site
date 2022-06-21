@@ -1,4 +1,4 @@
-function ReactIcon({ size = 44, ...rest }) {
+function ReactIcon({size = 44, ...rest}) {
   return (
     <svg
       width={size}
@@ -27,4 +27,4 @@ function ReactIcon({ size = 44, ...rest }) {
   );
 }
 
-export { ReactIcon as default };
+export {ReactIcon as default};

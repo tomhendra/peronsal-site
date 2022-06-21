@@ -1,4 +1,4 @@
-function ReactRouterIcon({ size = 44, ...rest }) {
+function ReactRouterIcon({size = 44, ...rest}) {
   return (
     <svg
       width={size}
@@ -24,4 +24,4 @@ function ReactRouterIcon({ size = 44, ...rest }) {
   );
 }
 
-export { ReactRouterIcon as default };
+export {ReactRouterIcon as default};

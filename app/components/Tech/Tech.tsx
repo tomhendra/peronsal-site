@@ -1,58 +1,58 @@
-import SvelteIcon from "./Icons/SvelteIcon";
-import SassIcon from "./Icons/SassIcon";
-import CloudflarePagesIcon from "./Icons/CloudflarePagesIcon";
-import CloudinaryIcon from "./Icons/CloudinaryIcon";
-import CssIcon from "./Icons/CssIcon";
-import MarkdownIcon from "./Icons/MarkdownIcon";
-import ReactIcon from "./Icons/ReactIcon";
-import ReactRouterIcon from "./Icons/ReactRouterIcon";
-import RemixIcon from "./Icons/RemixIcon";
-import SupabaseIcon from "./Icons/SupabaseIcon";
-import TypeScriptIcon from "./Icons/TypeScriptIcon";
-import type { LinksFunction } from "@remix-run/cloudflare";
+import SvelteIcon from './Icons/SvelteIcon';
+import SassIcon from './Icons/SassIcon';
+import CloudflarePagesIcon from './Icons/CloudflarePagesIcon';
+import CloudinaryIcon from './Icons/CloudinaryIcon';
+import CssIcon from './Icons/CssIcon';
+import MarkdownIcon from './Icons/MarkdownIcon';
+import ReactIcon from './Icons/ReactIcon';
+import ReactRouterIcon from './Icons/ReactRouterIcon';
+import RemixIcon from './Icons/RemixIcon';
+import SupabaseIcon from './Icons/SupabaseIcon';
+import TypeScriptIcon from './Icons/TypeScriptIcon';
+import type {LinksFunction} from '@remix-run/cloudflare';
 
-import styles from "./tech.css";
-const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+import styles from './tech.css';
+const links: LinksFunction = () => [{rel: 'stylesheet', href: styles}];
 
 type TechProps = {
   name:
-    | "Cloudflare Pages"
-    | "Cloudinary"
-    | "CSS"
-    | "Markdown"
-    | "React"
-    | "React Router"
-    | "Remix"
-    | "Sass"
-    | "Supabase"
-    | "Svelte"
-    | "TypeScript";
+    | 'Cloudflare Pages'
+    | 'Cloudinary'
+    | 'CSS'
+    | 'Markdown'
+    | 'React'
+    | 'React Router'
+    | 'Remix'
+    | 'Sass'
+    | 'Supabase'
+    | 'Svelte'
+    | 'TypeScript';
 };
 
-function Tech({ name }: TechProps) {
+function Tech({name}: TechProps) {
   return (
     <span className="tech-container">
-      {name === "Cloudflare Pages" ? (
+      {name === 'Cloudflare Pages' ? (
         <CloudflarePagesIcon />
-      ) : name === "Cloudinary" ? (
+      ) : name === 'Cloudinary' ? (
         <CloudinaryIcon />
-      ) : name === "CSS" ? (
+      ) : name === 'CSS' ? (
         <CssIcon />
-      ) : name === "Markdown" ? (
+      ) : name === 'Markdown' ? (
         <MarkdownIcon />
-      ) : name === "React" ? (
+      ) : name === 'React' ? (
         <ReactIcon />
-      ) : name === "React Router" ? (
+      ) : name === 'React Router' ? (
         <ReactRouterIcon />
-      ) : name === "Remix" ? (
+      ) : name === 'Remix' ? (
         <RemixIcon />
-      ) : name === "Sass" ? (
+      ) : name === 'Sass' ? (
         <SassIcon />
-      ) : name === "Supabase" ? (
+      ) : name === 'Supabase' ? (
         <SupabaseIcon />
-      ) : name === "Svelte" ? (
+      ) : name === 'Svelte' ? (
         <SvelteIcon />
-      ) : name === "TypeScript" ? (
+      ) : name === 'TypeScript' ? (
         <TypeScriptIcon />
       ) : null}
       <p className="title">{name}</p>
@@ -60,4 +60,4 @@ function Tech({ name }: TechProps) {
   );
 }
 
-export { links, Tech as default };
+export {links, Tech as default};

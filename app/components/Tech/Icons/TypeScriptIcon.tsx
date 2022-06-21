@@ -1,4 +1,4 @@
-function TypeScriptIcon({ size = 44, ...rest }) {
+function TypeScriptIcon({size = 44, ...rest}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -22,4 +22,4 @@ function TypeScriptIcon({ size = 44, ...rest }) {
   );
 }
 
-export { TypeScriptIcon as default };
+export {TypeScriptIcon as default};
