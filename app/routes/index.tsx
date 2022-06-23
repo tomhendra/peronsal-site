@@ -168,18 +168,18 @@ function Index() {
               <p>
                 While shipping WordPress sites to pay the bills I have been in
                 pursuit of my chosen career trajectory ever since; as a software
-                developer focused on the JavaScript ecosystem.
+                developer focused within the JavaScript ecosystem.
               </p>
               <p>
-                I knew coding was right for me after struggling with an
+                I knew I had made the right choice after struggling with an
                 algorithm problem for a cash register. The euphoria after my
                 solution finally passed the tests was exhilarating, and I was
-                smitten!
+                hooked!
               </p>
               <p>
                 I build web apps with modern frameworks and continuously raise
-                my standards by learning from high quality resources and other
-                members of the developer community.
+                my standards by learning from high quality resources and my
+                network of smart folks in the developer community.
               </p>
               <p>
                 I have the necessary skills to build polished user interfaces
@@ -198,22 +198,20 @@ function Index() {
               <span className="section-prefix">Projects</span>
               <h2 className="section-heading">I have been shipping</h2>
               <h3 className="section-subheading">
-                I like to build out ideas using the new skills that I acquire.
+                I like to build stuff using skills that I acquire on my journey.
               </h3>
             </div>
             <Tabs defaultValue="yakk">
               <TabsList aria-label="Tab navigation for projects">
                 <Tab value="yakk">
                   <TabHeading>Yakk</TabHeading>
-                  <TabSubheading>
-                    A realtime chat application inspired by Discord.
-                  </TabSubheading>
+                  <TabSubheading>A realtime chat application.</TabSubheading>
                   <TabLink to="projects/yakk">Project details</TabLink>
                 </Tab>
                 <Tab value="blog">
                   <TabHeading>Blog</TabHeading>
                   <TabSubheading>
-                    A place to share my discoveries with the world.
+                    Thoughts, discoveries and guides.
                   </TabSubheading>
                   <TabLink to="projects/blog">Project details</TabLink>
                 </Tab>
@@ -223,7 +221,7 @@ function Index() {
                   <Link to="projects/yakk">
                     <Image
                       className="tab-img shadow"
-                      src="blog-mockup-desktop-01"
+                      src="yakk-mockup-desktop-01-3x"
                       alt="Preview of project"
                       loading="lazy"
                       width={530}
@@ -239,7 +237,7 @@ function Index() {
                   <Link to="projects/blog">
                     <Image
                       className="tab-img shadow"
-                      src="blog-mockup-desktop-01"
+                      src="blog-mockup-desktop-01-3x"
                       alt="Preview of project"
                       loading="lazy"
                       width={530}
