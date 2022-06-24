@@ -17,7 +17,7 @@ specifiers:
   cross-env: ^7.0.3
   eslint: ^8.18.0
   eslint-config-prettier: ^8.5.0
-  framer-motion: ^6.3.13
+  framer-motion: ^6.3.15
   npm-run-all: ^4.1.5
   prettier: ^2.7.1
   react: ^17.0.2
@@ -35,7 +35,7 @@ dependencies:
   cloudinary-build-url: 0.2.4
   clsx: 1.1.1
   cross-env: 7.0.3
-  framer-motion: 6.3.13_sfoxds7t5ydpegc3knd667wn6m
+  framer-motion: 6.3.15_sfoxds7t5ydpegc3knd667wn6m
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-feather: 2.0.10_react@17.0.2
@@ -4529,8 +4529,8 @@ packages:
       map-cache: 0.2.2
     dev: true
 
-  /framer-motion/6.3.13_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-z6UIxENuqa9bh/xE1fit7IUT+07TKSp81TE+C0DDBe9ly4bdEafpZUbcDZxNiN6UBU5hYdEY7rKhk+X1JlIkhg==}
+  /framer-motion/6.3.15_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-tqyEaYfr+7p3rnMcMzdVxWoHLsAfpz7bk6xZljndSEfafQ0BfwlZ/CeFZkEETRFr16w/LxfDKBVhinU66ucDYw==}
     peerDependencies:
       react: '>=16.8 || ^17.0.0 || ^18.0.0'
       react-dom: '>=16.8 || ^17.0.0 || ^18.0.0'
