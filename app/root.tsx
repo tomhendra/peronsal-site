@@ -55,6 +55,48 @@ const meta: MetaFunction = () => ({
 });
 
 const links: LinksFunction = () => [
+  // where svg is supported https://caniuse.com/link-icon-svg
+  {rel: 'icon', href: '/images/favicon.svg', type: 'svg+xml'},
+  // all browsers
+  {
+    rel: 'icon',
+    href: '/images/favicon-32x32.png',
+    sizes: '32x32',
+    type: 'image/png',
+  },
+  {
+    rel: 'icon',
+    href: '/images/favicon-16x16.png',
+    sizes: '16x16',
+    type: 'image/png',
+  },
+  // Google & Android
+  {
+    rel: 'icon',
+    href: '/images/favicon-48x48.png',
+    sizes: '48x48',
+    type: 'image/png',
+  },
+  {
+    rel: 'icon',
+    href: '/images/favicon-192x192.png',
+    sizes: '192x192',
+    type: 'image/png',
+  },
+  // iPad
+  {
+    rel: 'apple-touch-icon',
+    href: '/images/favicon-167x167.png',
+    sizes: '167x167',
+    type: 'image/png',
+  },
+  // iPhone
+  {
+    rel: 'apple-touch-icon',
+    href: '/images/favicon-180x180.png',
+    sizes: '180x180',
+    type: 'image/png',
+  },
   {rel: 'stylesheet', href: reset},
   {rel: 'stylesheet', href: typography},
   {rel: 'stylesheet', href: sizes},
