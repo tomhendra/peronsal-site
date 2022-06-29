@@ -55,106 +55,32 @@ const meta: MetaFunction = () => ({
 });
 
 const links: LinksFunction = () => [
-  // all browsers
-  // svg support: https://caniuse.com/link-icon-svg
   {
     rel: 'icon',
-    href: '/images/favicon-light.svg',
-    type: 'svg+xml',
-    media: '(prefers-color-scheme: light)',
+    href: '/images/favicon.ico',
+    sizes: 'any',
   },
   {
     rel: 'icon',
+    href: '/images/favicon.svg',
+    type: 'image/svg+xml',
+  },
+  // {
+  //   rel: 'icon',
+  //   href: '/images/favicon-light.svg',
+  //   type: 'svg+xml',
+  //   media: '(prefers-color-scheme: light)',
+  // },
+  // {
+  //   rel: 'icon',
+  //   href: '/images/favicon-dark.svg',
+  //   type: 'image/svg+xml',
+  //   media: '(prefers-color-scheme: dark)',
+  // },
+  {
+    rel: 'mask-icon',
     href: '/images/favicon-dark.svg',
-    type: 'svg+xml',
-    media: '(prefers-color-scheme: dark)',
-  },
-  {
-    rel: 'icon',
-    href: '/images/favicon-light-32x32.png',
-    sizes: '32x32',
-    type: 'image/png',
-    media: '(prefers-color-scheme: light)',
-  },
-  {
-    rel: 'icon',
-    href: '/images/favicon-dark-32x32.png',
-    sizes: '32x32',
-    type: 'image/png',
-    media: '(prefers-color-scheme: dark)',
-  },
-  {
-    rel: 'icon',
-    href: '/images/favicon-light-16x16.png',
-    sizes: '16x16',
-    type: 'image/png',
-    media: '(prefers-color-scheme: light)',
-  },
-  {
-    rel: 'icon',
-    href: '/images/favicon-dark-16x16.png',
-    sizes: '16x16',
-    type: 'image/png',
-    media: '(prefers-color-scheme: dark)',
-  },
-  // Google & Android
-  {
-    rel: 'icon',
-    href: '/images/favicon-light-48x48.png',
-    sizes: '48x48',
-    type: 'image/png',
-    media: '(prefers-color-scheme: light)',
-  },
-  {
-    rel: 'icon',
-    href: '/images/favicon-dark-48x48.png',
-    sizes: '48x48',
-    type: 'image/png',
-    media: '(prefers-color-scheme: dark)',
-  },
-  {
-    rel: 'icon',
-    href: '/images/favicon-light-192x192.png',
-    sizes: '192x192',
-    type: 'image/png',
-    media: '(prefers-color-scheme: light)',
-  },
-  {
-    rel: 'icon',
-    href: '/images/favicon-dark-192x192.png',
-    sizes: '192x192',
-    type: 'image/png',
-    media: '(prefers-color-scheme: dark)',
-  },
-  // iPad
-  {
-    rel: 'apple-touch-icon',
-    href: '/images/favicon-light-167x167.png',
-    sizes: '167x167',
-    type: 'image/png',
-    media: '(prefers-color-scheme: light)',
-  },
-  {
-    rel: 'apple-touch-icon',
-    href: '/images/favicon-dark-167x167.png',
-    sizes: '167x167',
-    type: 'image/png',
-    media: '(prefers-color-scheme: dark)',
-  },
-  // iPhone
-  {
-    rel: 'apple-touch-icon',
-    href: '/images/favicon-light-180x180.png',
-    sizes: '180x180',
-    type: 'image/png',
-    media: '(prefers-color-scheme: light)',
-  },
-  {
-    rel: 'apple-touch-icon',
-    href: '/images/favicon-dark-180x180.png',
-    sizes: '180x180',
-    type: 'image/png',
-    media: '(prefers-color-scheme: dark)',
+    color: '#000000',
   },
   {rel: 'stylesheet', href: reset},
   {rel: 'stylesheet', href: typography},
