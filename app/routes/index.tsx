@@ -117,10 +117,10 @@ function Index() {
                 <span className="location">Salamanca</span>
               </div>
               <h1>Hello, I'm Tom</h1>
-              <h3 className="section-subheading">
+              <h2 className="section-subheading">
                 I'm a developer from the UK who loves to build quality user
                 interfaces for the web.
-              </h3>
+              </h2>
               <div className="btn-group">
                 <Button
                   as="link"
@@ -360,13 +360,21 @@ function Index() {
                   )}
                   aria-hidden={state !== 'success'}
                 >
-                  <h2 ref={successRef}>Thanks for your message!</h2>
-                  <p>I will be in touch with to you very soon.</p>
+                  {/* TODO: tabIndex={-1} is req'd to pass lighthouse audit, but 
+                  animating the success message would be much better with 
+                  Framer Motion */}
+                  <h2 tabIndex={state !== 'success' ? -1 : 0} ref={successRef}>
+                    Thanks for your message!
+                  </h2>
+                  <p tabIndex={state !== 'success' ? -1 : 0}>
+                    I will be in touch with to you very soon.
+                  </p>
                   <Button
                     as="link"
                     variant="secondary-gray"
                     size="md"
                     to="/#contact"
+                    tabIndex={state !== 'success' ? -1 : 0}
                   >
                     Reset contact form
                   </Button>
