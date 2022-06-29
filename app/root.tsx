@@ -55,32 +55,33 @@ const meta: MetaFunction = () => ({
 });
 
 const links: LinksFunction = () => [
+  /* favicon.ico for browsers that don't support svg yet (Safari)
+   https://caniuse.com/link-icon-svg */
   {
     rel: 'icon',
     href: '/images/favicon.ico',
     sizes: 'any',
   },
+  /* light and dark versions are needed for Chrome, possibly due to SSR ?
+     https://html.spec.whatwg.org/multipage/semantics.html#processing-the-media-attribute:attr-link-media */
+  {
+    rel: 'icon',
+    href: '/images/favicon-light-mode.svg',
+    type: 'svg+xml',
+    media: '(prefers-color-scheme: light)',
+  },
+  {
+    rel: 'icon',
+    href: '/images/favicon-dark-mode.svg',
+    type: 'image/svg+xml',
+    media: '(prefers-color-scheme: dark)',
+  },
+  /* favicon.svg has the adaptive color styles inline within the markup,
+    which works in Firefox but not in Chrome */
   {
     rel: 'icon',
     href: '/images/favicon.svg',
     type: 'image/svg+xml',
-  },
-  // {
-  //   rel: 'icon',
-  //   href: '/images/favicon-light.svg',
-  //   type: 'svg+xml',
-  //   media: '(prefers-color-scheme: light)',
-  // },
-  // {
-  //   rel: 'icon',
-  //   href: '/images/favicon-dark.svg',
-  //   type: 'image/svg+xml',
-  //   media: '(prefers-color-scheme: dark)',
-  // },
-  {
-    rel: 'mask-icon',
-    href: '/images/favicon-dark.svg',
-    color: '#000000',
   },
   {rel: 'stylesheet', href: reset},
   {rel: 'stylesheet', href: typography},
