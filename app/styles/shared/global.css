@@ -17,6 +17,11 @@ body {
   overflow-y: scroll;
 }
 
+/* darken images in dark mode with filter defined in colors.css .dark {...} */
+img:not([src*='.svg']) {
+  filter: var(--image-filter);
+}
+
 /* apply scrollbar styles consistent with theme for devices larger than mobile.
 On mobile devices, the scrollbar doesn't take up any space; the thumb floats 
 above the content. And it's fairly inobtrusive. If our goal is to create a 

@@ -15,6 +15,9 @@
 
  */
 :root {
+  /* https://drafts.csswg.org/css-color-adjust-1/ */
+  color-scheme: light dark;
+
   --white: 0deg 0% 100%;
   --black: 0deg 0% 0%;
 
@@ -504,6 +507,8 @@ html.light {
 }
 
 html.dark {
+  --image-filter: grayscale(12%);
+
   --color-heading: hsl(var(--gray-25));
   --color-text: hsl(var(--gray-300));
   --color-text-hover: hsl(var(--gray-200));
