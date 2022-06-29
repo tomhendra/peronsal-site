@@ -1,12 +1,12 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <style>
   path {
-    fill: black;
+    fill: hsl(220deg 55% 8% / 100%);
   }
 
   @media (prefers-color-scheme: dark) {
     path {
-      fill: white;
+      fill: hsl(240deg 20% 99% / 100%);
     }
   }
 </style>

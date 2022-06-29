@@ -55,19 +55,12 @@ const meta: MetaFunction = () => ({
 });
 
 const links: LinksFunction = () => [
-  /* favicon.ico for browsers that don't support svg yet (Safari)
-   https://caniuse.com/link-icon-svg */
-  {
-    rel: 'icon',
-    href: '/images/favicon.ico',
-    sizes: 'any',
-  },
   /* light and dark versions are needed for Chrome, possibly due to SSR ?
-     https://html.spec.whatwg.org/multipage/semantics.html#processing-the-media-attribute:attr-link-media */
+    order of <link rel="icon"> statements matters */
   {
     rel: 'icon',
     href: '/images/favicon-light-mode.svg',
-    type: 'svg+xml',
+    type: 'image/svg+xml',
     media: '(prefers-color-scheme: light)',
   },
   {
@@ -77,11 +70,18 @@ const links: LinksFunction = () => [
     media: '(prefers-color-scheme: dark)',
   },
   /* favicon.svg has the adaptive color styles inline within the markup,
-    which works in Firefox but not in Chrome */
+    which works in Firefox but not in Chrome. */
   {
     rel: 'icon',
     href: '/images/favicon.svg',
     type: 'image/svg+xml',
+  },
+  /* favicon.ico for browsers that don't support svg yet (Safari)
+    https://caniuse.com/link-icon-svg */
+  {
+    rel: 'icon',
+    href: '/images/favicon.ico',
+    sizes: 'any',
   },
   {rel: 'stylesheet', href: reset},
   {rel: 'stylesheet', href: typography},
