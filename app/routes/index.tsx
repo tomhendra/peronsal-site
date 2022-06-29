@@ -360,8 +360,8 @@ function Index() {
                   )}
                   aria-hidden={state !== 'success'}
                 >
-                  {/* TODO: tabIndex={-1} is req'd to pass lighthouse audit, but 
-                  animating the success message would be much better with 
+                  {/* TODO: tabIndex={-1} is req'd to pass lighthouse audit, 
+                  but animating the success message would be much better with 
                   Framer Motion */}
                   <h2 tabIndex={state !== 'success' ? -1 : 0} ref={successRef}>
                     Thanks for your message!

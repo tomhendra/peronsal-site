@@ -51,6 +51,7 @@ const loader: LoaderFunction = async ({request}) => {
 const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title: 'Tom Hendra • Personal Site',
+  description: 'Personal site for Tom Hendra, Web Developer.',
   viewport: 'width=device-width,initial-scale=1',
 });
 
