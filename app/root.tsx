@@ -67,8 +67,10 @@ const meta: MetaFunction = () => ({
 });
 
 const links: LinksFunction = () => [
-  /* light and dark versions are needed for Chrome, possibly due to SSR ?
-    order of <link rel="icon"> statements matters. */
+  /* light and dark versions are needed for Chrome. Inline adaptive color styles  
+    within SVG markup do not work with Remix, despite the advice on web.dev.
+    The order of <link rel="icon"> statements matters. Listing the .ico first
+    causes Chrome to use it, again contrary to web.dev advice! */
   {
     rel: 'icon',
     href: '/images/favicon-light-mode.svg',
@@ -81,18 +83,20 @@ const links: LinksFunction = () => [
     type: 'image/svg+xml',
     media: '(prefers-color-scheme: dark)',
   },
-  /* favicon.svg has the adaptive color styles inline within the markup,
-    which works in Firefox but not in Chrome. this needs to come after the 
-    light / dark variants to as to be selected by Firefox. */
+  /* favicon.svg has inline adaptive color styles within the SVG markup,
+    which works in Firefox but not in Chrome. This needs to come after the 
+    light / dark variants to be requested by Firefox, since the last compatible 
+    statement wins if the browser implements web standards correctly (only 
+    Firefox does so) */
   {
     rel: 'icon',
     href: '/images/favicon.svg',
     type: 'image/svg+xml',
   },
-  /* favicon.ico for browsers that don't support svg yet (Safari)
-    https://caniuse.com/link-icon-svg. Many guides advise for this to be 
-    specified first, and that sizes="any" prevents Chrome from selecting the ico, 
-    however I have found neither to prevent Chrome from selecting favicon.ico */
+  /* favicon.ico is for browsers that don't support SVG yet (Safari)
+    https://caniuse.com/link-icon-svg. Many guides advise for this statement to 
+    come first, and that sizes="any" prevents Chrome from selecting favicon.ico, 
+    however I have found neither to prevent Chrome from requesting it! */
   {
     rel: 'icon',
     href: '/images/favicon.ico',
