@@ -3,7 +3,8 @@ import {CheckCircle, Eye, Target, TrendingUp, Users} from 'react-feather';
 import Button from '~/components/Button';
 import FeatureIcon from '~/components/FeatureIcon';
 import Tech from '~/components/Tech';
-import type {LinksFunction} from '@remix-run/cloudflare';
+import {getSeo} from '~/helpers/seo';
+import type {LinksFunction, MetaFunction} from '@remix-run/cloudflare';
 
 import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import {links as buttonLinks} from '~/components/Button';
@@ -11,13 +12,23 @@ import {links as featureIconLinks} from '~/components/FeatureIcon';
 import {links as techLinks} from '~/components/Tech';
 import styles from '~/styles/projects.css';
 
+const [seoMeta, seoLinks] = getSeo({
+  title: 'Projects: Yakk',
+  description: 'A realtime chat application built with Remix and Supabase.',
+});
+
 const links: LinksFunction = () => [
+  ...seoLinks,
   ...maxWidthContainerLinks(),
   ...buttonLinks(),
   ...featureIconLinks(),
   ...techLinks(),
   {rel: 'stylesheet', href: styles},
 ];
+
+const meta: MetaFunction = () => ({
+  ...seoMeta,
+});
 
 function Nata() {
   return (
@@ -344,4 +355,4 @@ function Nata() {
   );
 }
 
-export {links, Nata as default};
+export {links, meta, Nata as default};

@@ -1,23 +1,35 @@
-import MaxWidthContainer from '~/components/MaxWidthContainer';
+import type {LinksFunction, MetaFunction} from '@remix-run/cloudflare';
 import {CheckCircle, Eye, Target, TrendingUp, Users} from 'react-feather';
 import Button from '~/components/Button';
 import FeatureIcon from '~/components/FeatureIcon';
+import MaxWidthContainer from '~/components/MaxWidthContainer';
 import Tech from '~/components/Tech';
-import type {LinksFunction} from '@remix-run/cloudflare';
+import {getSeo} from '~/helpers/seo';
 
-import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import {links as buttonLinks} from '~/components/Button';
 import {links as featureIconLinks} from '~/components/FeatureIcon';
+import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import {links as techLinks} from '~/components/Tech';
 import styles from '~/styles/projects.css';
 
+const [seoMeta, seoLinks] = getSeo({
+  title: 'Projects: Blog',
+  description:
+    'A developer blog built with Remix and markdown deployed to the Cloudflare platform.',
+});
+
 const links: LinksFunction = () => [
+  ...seoLinks,
   ...maxWidthContainerLinks(),
   ...buttonLinks(),
   ...featureIconLinks(),
   ...techLinks(),
   {rel: 'stylesheet', href: styles},
 ];
+
+const meta: MetaFunction = () => ({
+  ...seoMeta,
+});
 
 function Blog() {
   return (
@@ -342,4 +354,4 @@ function Blog() {
   );
 }
 
-export {links, Blog as default};
+export {links, meta, Blog as default};

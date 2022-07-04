@@ -23,6 +23,7 @@ specifiers:
   react: ^17.0.2
   react-dom: ^17.0.2
   react-feather: ^2.0.10
+  remix-seo: ^0.1.0
   typescript: ^4.7.4
   wrangler: ^0.0.25
 
@@ -39,6 +40,7 @@ dependencies:
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-feather: 2.0.10_react@17.0.2
+  remix-seo: 0.1.0_@remix-run+react@1.6.3
 
 devDependencies:
   '@cld-apis/types': 0.1.6
@@ -5418,6 +5420,10 @@ packages:
       object.assign: 4.1.2
     dev: true
 
+  /just-merge/3.0.1:
+    resolution: {integrity: sha512-NAwyt7KvIhHFRkLNlwor8cMs//ni72uBNL5Eev4WF/6v2xgEyWglv+z7V5EtW9jKYxbYCvt9EwsLeVlpHCEOCA==}
+    dev: false
+
   /keyv/4.3.1:
     resolution: {integrity: sha512-nwP7AQOxFzELXsNq3zCx/oh81zu4DHWwCE6W9RaeHb7OHO0JpmKS8n801ovVQC7PTsZDWtPA5j1QY+/WWtARYg==}
     dependencies:
@@ -7187,6 +7193,16 @@ packages:
       mdast-util-to-hast: 11.3.0
       unified: 10.1.2
     dev: true
+
+  /remix-seo/0.1.0_@remix-run+react@1.6.3:
+    resolution: {integrity: sha512-Dr51sNdOIjAqE62Xc7D2prNAowzudwB3fU1Lr9IxM2vUWGu+gdPIoo8duNA+qg+FYAuFJJJk11skJXD8+8p4pw==}
+    peerDependencies:
+      '@remix-run/react': '>=1.0.0'
+      remix: '>=1.0.0'
+    dependencies:
+      '@remix-run/react': 1.6.3_sfoxds7t5ydpegc3knd667wn6m
+      just-merge: 3.0.1
+    dev: false
 
   /repeat-element/1.1.4:
     resolution: {integrity: sha512-LFiNfRcSu7KK3evMyYOuCzv3L10TW7yC1G2/+StMjK8Y6Vqd2MG7r/Qjw4ghtuCOjFvlnms/iMmLqpvW/ES/WQ==}

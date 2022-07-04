@@ -1,5 +1,3 @@
-import React from 'react';
-import clsx from 'clsx';
 import {
   Links,
   LiveReload,
@@ -8,31 +6,35 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from '@remix-run/react';
+import clsx from 'clsx';
+import React from 'react';
+import Layout from '~/components/Layout';
+import {getSeo} from '~/helpers/seo';
 import {
   ThemeBody,
   ThemeHead,
   ThemeProvider,
   useTheme,
 } from '~/helpers/theme-provider';
-import {getThemeSession} from './helpers/theme.server';
 import {setScrollbarWidthAsCustomProperty} from '~/utils';
-import Layout from '~/components/Layout';
+import {getThemeSession} from './helpers/theme.server';
+
 import type {
   LinksFunction,
-  MetaFunction,
   LoaderFunction,
+  MetaFunction,
 } from '@remix-run/cloudflare';
 import type {Theme} from '~/helpers/theme-provider';
 
-import reset from '~/styles/shared/reset.css';
-import typography from '~/styles/shared/typography.css';
-import sizes from '~/styles/shared/sizes.css';
-import colors from '~/styles/shared/colors.css';
-import global from '~/styles/shared/global.css';
-import effects from '~/styles/shared/effects.css';
-import animations from '~/styles/shared/animations.css';
-import utils from '~/styles/shared/utils.css';
 import {links as layoutLinks} from '~/components/Layout';
+import animations from '~/styles/shared/animations.css';
+import colors from '~/styles/shared/colors.css';
+import effects from '~/styles/shared/effects.css';
+import global from '~/styles/shared/global.css';
+import reset from '~/styles/shared/reset.css';
+import sizes from '~/styles/shared/sizes.css';
+import typography from '~/styles/shared/typography.css';
+import utils from '~/styles/shared/utils.css';
 
 type LoaderData = {
   theme: Theme | null;
@@ -48,10 +50,11 @@ const loader: LoaderFunction = async ({request}) => {
   return data;
 };
 
+const [seoMeta, seoLinks] = getSeo();
+
 const meta: MetaFunction = () => ({
+  ...seoMeta,
   charset: 'utf-8',
-  title: 'Tom Hendra • Personal Site',
-  description: 'Personal site for Tom Hendra, Web Developer.',
   viewport: 'width=device-width,initial-scale=1',
   // css vars do not work here for content :(
   themeColorDark: {
@@ -67,6 +70,7 @@ const meta: MetaFunction = () => ({
 });
 
 const links: LinksFunction = () => [
+  ...seoLinks,
   /* light and dark versions are needed for Chrome. Inline adaptive color styles  
     within SVG markup do not work with Remix, despite the advice on web.dev.
     The order of <link rel="icon"> statements matters. Listing the .ico first
