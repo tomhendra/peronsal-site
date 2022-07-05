@@ -16,6 +16,9 @@ const [seoMeta, seoLinks] = getSeo({
   title: 'Projects: Blog',
   description:
     'A developer blog built with Remix and markdown deployed to the Cloudflare platform.',
+  openGraph: {
+    /* todo og date for project */
+  },
 });
 
 const links: LinksFunction = () => [
