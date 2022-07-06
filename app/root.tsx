@@ -119,11 +119,6 @@ const links: LinksFunction = () => [
 
 function App() {
   React.useEffect((): void => {
-    /* 
-      vw units define the viewport width excluding the scrollbar. to use vw units
-      without potential layout shift, we need to calculate the scrollbar width at 
-      the earliest opportunity. 
-    */
     setScrollbarWidthAsCustomProperty();
   }, []);
 

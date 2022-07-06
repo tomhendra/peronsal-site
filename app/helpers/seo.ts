@@ -3,11 +3,11 @@ import {initSeo} from 'remix-seo';
 export const {getSeo, getSeoMeta, getSeoLinks} = initSeo({
   title: 'Hello',
   titleTemplate: '%s | Tom Hendra',
-  description: 'Software developer for the web.',
+  description: 'Front end developer.',
   openGraph: {
     siteName: "Tom Hendra's personal website",
     title: 'Tom Hendra',
-    description: 'Software developer for the web.',
+    description: 'Front end developer.',
     type: 'website',
     url: 'https://tomhendra.com',
     images: [
@@ -24,12 +24,13 @@ export const {getSeo, getSeoMeta, getSeoLinks} = initSeo({
   },
   twitter: {
     card: 'summary_large_image',
+    creator: '@tomhendra',
     image: {
       url: 'https://res.cloudinary.com/tomhendra/image/upload/v1657051757/personal-site/open-graph-twitter-summary-large.png',
       alt: 'Tom Hendra summary card - a stylised cute robot logo with introduction: Tom Hendra, Frontend Developer, @tomhendra tomhendra.com',
     },
     site: '@tomhendra',
     title: 'Tom Hendra',
-    description: 'Software developer for the web.',
+    description: 'Front end developer.',
   },
 });
