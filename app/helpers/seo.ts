@@ -25,7 +25,7 @@ export const {getSeo, getSeoMeta, getSeoLinks} = initSeo({
   twitter: {
     card: 'summary_large_image',
     image: {
-      url: 'https://res.cloudinary.com/tomhendra/image/upload/v1657101258/personal-site/open-graph-twitter-card-summary-large.png',
+      url: 'https://res.cloudinary.com/tomhendra/image/upload/v1657112058/personal-site/open-graph-card.png',
       alt: 'Tom Hendra twitter summary card featuring a stylised cute robot logo with an introduction: Tom Hendra, Frontend developer, @tomhendra, tomhendra.com',
     },
     site: '@tomhendra',
