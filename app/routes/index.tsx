@@ -1,33 +1,32 @@
-import {useRef, useEffect} from 'react';
+import type {ActionFunction, LinksFunction} from '@remix-run/cloudflare';
 import {Form, useActionData, useTransition} from '@remix-run/react';
-import {MapPin, Twitter, Linkedin, GitHub, Codepen} from 'react-feather';
 import clsx from 'clsx';
-import FeatureIcon from '~/components/FeatureIcon';
+import {useEffect, useRef} from 'react';
+import {Codepen, GitHub, Linkedin, MapPin, Twitter} from 'react-feather';
 import Button from '~/components/Button';
-import Image from '~/components/Image';
-import SocialCard from '~/components/SocialCard';
-import MaxWidthContainer from '~/components/MaxWidthContainer';
 import Divider from '~/components/Divider';
+import FeatureIcon from '~/components/FeatureIcon';
+import Image from '~/components/Image';
 import Link from '~/components/Link';
+import MaxWidthContainer from '~/components/MaxWidthContainer';
+import SocialCard from '~/components/SocialCard';
 import {
+  Tab,
+  TabContent,
+  TabHeading,
+  TabLink,
   Tabs,
   TabsList,
-  Tab,
-  TabHeading,
   TabSubheading,
-  TabLink,
-  TabContent,
 } from '~/components/TabNav';
-import type {ActionFunction} from '@remix-run/cloudflare';
-import type {LinksFunction} from '@remix-run/cloudflare';
 
-import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
-import {links as featureIconLinks} from '~/components/FeatureIcon';
 import {links as buttonLinks} from '~/components/Button';
-import {links as imageLinks} from '~/components/Image';
-import {links as tabNavLinks} from '~/components/TabNav';
-import {links as socialCardLinks} from '~/components/SocialCard';
 import {links as dividerLinks} from '~/components/Divider';
+import {links as featureIconLinks} from '~/components/FeatureIcon';
+import {links as imageLinks} from '~/components/Image';
+import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
+import {links as socialCardLinks} from '~/components/SocialCard';
+import {links as tabNavLinks} from '~/components/TabNav';
 import styles from '~/styles/index.css';
 
 const links: LinksFunction = () => [

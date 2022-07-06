@@ -24,14 +24,8 @@ export const {getSeo, getSeoMeta, getSeoLinks} = initSeo({
   },
   twitter: {
     card: 'summary_large_image',
-    image: {
-      url: 'https://res.cloudinary.com/tomhendra/image/upload/v1657112058/personal-site/open-graph-card.png',
-      alt: 'Tom Hendra twitter summary card featuring a stylised cute robot logo with an introduction: Tom Hendra, Frontend developer, @tomhendra, tomhendra.com',
-    },
     site: '@tomhendra',
     title: 'Tom Hendra',
     description: 'Frontend developer building for the web.',
   },
 });
-
-// 2049 x 1068
