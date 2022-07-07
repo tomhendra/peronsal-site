@@ -1,6 +1,6 @@
 .layout-container {
   display: grid;
-  grid-template-rows: 80px 1fr 319px;
+  grid-template-rows: 80px 1fr 247px;
   min-height: 100%;
 }
 

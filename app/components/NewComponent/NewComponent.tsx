@@ -1,12 +1,12 @@
-import * as CONSTANTS from "./NewComponent.constants";
-import { someHelperFn } from "./NewComponent.helpers";
-import { useStuff } from "./use-stuff-hook";
-import NewComponentChild from "./NewComponentChild";
-import type { LinksFunction } from "@remix-run/cloudflare";
+import * as CONSTANTS from './NewComponent.constants';
+import {someHelperFn} from './NewComponent.helpers';
+import {useStuff} from './use-stuff-hook';
+import NewComponentChild from './NewComponentChild';
+import type {LinksFunction} from '@remix-run/cloudflare';
 
-import styles from "./new-component.css";
+import styles from './new-component.css';
 
-const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+const links: LinksFunction = () => [{rel: 'stylesheet', href: styles}];
 
 function NewComponent() {
   const title = someHelperFn(CONSTANTS.TITLE);
@@ -21,4 +21,4 @@ function NewComponent() {
   );
 }
 
-export { links, NewComponent as default };
+export {links, NewComponent as default};

@@ -1,9 +1,5 @@
-.social-card a {
-  display: block;
-  text-decoration: none;
-}
-
 .social-card .icon {
+  justify-content: start; /* override default on link */
   padding-bottom: var(--space-4);
 }
 @media (max-width: 34.375rem) {
@@ -14,14 +10,20 @@
 
 .social-card .platform {
   padding-bottom: var(--space-2);
-  color: var(--white);
+  color: hsl(var(--white));
   font-size: var(--font-size-text-xl);
   line-height: var(--line-height-text-xl);
   font-weight: var(--font-weight-medium);
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 6px;
 }
+
+.social-card .platform:hover {
+  color: hsl(var(--white));
+}
+
 @media (max-width: 34.375rem) {
   .social-card .platform {
     padding-bottom: var(--space-1);
@@ -31,6 +33,8 @@
   }
 }
 
-.social-card .username {
-  color: var(--primary-200);
+.social-card .username,
+.social-card .username:hover {
+  color: hsl(var(--primary-200));
+  justify-content: start; /* override default on link */
 }

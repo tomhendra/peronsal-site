@@ -1,19 +1,18 @@
-/* TODO: Increase tap target without affecting styles */
 /* base styles */
 .link {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  position: relative; /* required for .click-target-helper */
+  display: grid;
+  place-content: center;
   gap: var(--space-2);
   cursor: pointer;
   font-weight: var(--font-weight-medium);
   text-decoration: none;
+  transition: color 400ms;
 }
-.link:focus {
-  outline-offset: var(--border-2);
-  /* TODO: outline-color & outline-width not respected in FF */
-  /* TODO: outline-width not respected in Chrome */
-  outline-width: var(--border-4);
+@media (pointer: fine) and (hover: hover) {
+  .link:hover {
+    transition: color 150ms;
+  }
 }
 
 /* sizes */
@@ -22,18 +21,10 @@
 }
 
 .link.md {
-  font-size: var(--font-size-text-sm);
+  font-size: var(--font-size-text-md);
 }
 
 .link.lg {
-  font-size: var(--font-size-text-md);
-}
-
-.link.xl {
-  font-size: var(--font-size-text-md);
-}
-
-.link.xxl {
   font-size: var(--font-size-text-lg);
 }
 

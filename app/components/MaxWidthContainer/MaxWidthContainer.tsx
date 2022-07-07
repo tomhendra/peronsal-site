@@ -1,15 +1,10 @@
-import type { LinksFunction } from "@remix-run/cloudflare";
+import type {LinksFunction} from '@remix-run/cloudflare';
 
-import styles from "./max-width-container.css";
+import styles from './max-width-container.css';
 
-const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+const links: LinksFunction = () => [{rel: 'stylesheet', href: styles}];
 
-function MaxWidthContainer({
-  children,
-  ...rest
-}: {
-  children: React.ReactNode;
-}) {
+function MaxWidthContainer({children, ...rest}: {children: React.ReactNode}) {
   return (
     <div className="max-width-container" {...rest}>
       {children}
@@ -17,4 +12,4 @@ function MaxWidthContainer({
   );
 }
 
-export { links, MaxWidthContainer as default };
+export {links, MaxWidthContainer as default};

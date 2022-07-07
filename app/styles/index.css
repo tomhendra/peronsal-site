@@ -35,7 +35,7 @@
   margin: 0;
 }
 
-.hero-layout h3 {
+.hero-layout .section-subheading {
   max-width: var(--container-xs);
 }
 
@@ -52,12 +52,29 @@
   }
 }
 
+.hero-img {
+  margin-left: auto;
+}
+@media (max-width: 68.75rem) {
+  .hero-img {
+    margin-left: revert;
+    margin-right: auto;
+  }
+}
+@media (max-width: 34.675rem) {
+  .hero-img {
+    width: 100%;
+    height: 240px;
+    object-position: 50% 0%;
+  }
+}
+
 /* about section */
 .columns {
   columns: 2;
   gap: var(--space-12);
 }
-.columns :nth-of-type(2n) {
+.columns p:nth-of-type(2n) {
   margin-bottom: 0;
 }
 @media (max-width: 68.75rem) {
@@ -66,10 +83,10 @@
     gap: 0;
     max-width: var(--container-md);
   }
-  .columns :nth-of-type(2n) {
-    margin-bottom: revert;
+  .columns p:nth-of-type(2n) {
+    margin-bottom: var(--space-8);
   }
-  .columns :last-of-type {
+  .columns p:last-of-type {
     margin-bottom: 0;
   }
 }
@@ -83,8 +100,57 @@
 .columns p {
   break-inside: avoid;
 }
+
 /* projects section */
-/* ¯\_(ツ)_/¯ */
+.tab-img-container {
+  background-color: var(--color-background-muted);
+  padding: var(--space-12);
+  padding-right: 0;
+  /* prevents the image shadow from bleeding outside the container */
+  overflow: hidden;
+}
+@media (max-width: 68.75rem) {
+  .tab-img-container {
+    padding-right: var(--space-12);
+  }
+}
+@media (max-width: 34.375rem) {
+  .tab-img-container {
+    padding: var(--space-4);
+  }
+}
+
+.light .tab-img-container {
+  --shadow-color: 210deg 5% 62%;
+}
+.dark .tab-img-container {
+  --shadow-color: 220deg 68% 2%;
+}
+
+.tab-img {
+  /* --shadow-color is defined in parent... .tab-content */
+  box-shadow: var(--shadow-md);
+  object-position: 0% 0%;
+}
+@media (max-width: 34.375rem) {
+  .tab-img {
+    width: 342px;
+    height: 228px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tab-img {
+    will-change: opacity, transform;
+  }
+  /* 
+    .tab-content comes from the component CSS file
+    and the data attribute comers from Radix UI to select the active tab 
+  */
+  .tab-content[data-state='active'] .tab-img {
+    animation: show 400ms both, float-in-from-right 400ms ease-out both;
+  }
+}
 
 /* contact section */
 .contact-container {
@@ -104,23 +170,62 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: var(--space-12) var(--space-8);
+  justify-items: start;
 }
 
-.form {
+.light .contact-container {
+  --shadow-color: 238deg 65% 23%;
+}
+.dark .contact-container {
+  --shadow-color: 236deg 62% 18%;
+}
+.contact-form-container {
   background-color: var(--color-background);
   border-radius: var(--radius-md);
   padding: var(--space-10) var(--space-12);
-  display: flex;
-  flex-direction: column;
+  min-height: 576px;
   max-width: var(--container-sm);
+  transform: translateY(0px);
+  box-shadow: var(--shadow-md);
+  transition: filter 500ms, transform 500ms, box-shadow 500ms;
+  will-change: transform;
+}
+.contact-form-container:focus-within {
+  transition: filter 250ms, transform 250ms, box-shadow 250ms;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 @media (max-width: 34.375rem) {
-  .form {
-    grid-row-start: 1;
+  .contact-form-container {
     padding: var(--space-8) var(--space-4);
     margin-left: calc(var(--space-4) * -1);
     margin-right: calc(var(--space-4) * -1);
     border-radius: revert;
+  }
+}
+
+.contact-form-container > * {
+  transition: opacity 0.3s, transform 0.3s;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  transition-delay: 0.3s;
+}
+
+.contact-form-container > *[aria-hidden='true'] {
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.8);
+  transition-delay: 0s; /*only being applied while [aria-hidden="true"] */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--container-sm);
+  margin: 0;
+}
+@media (max-width: 34.375rem) {
+  .form {
+    grid-row-start: 1;
   }
 }
 
@@ -148,13 +253,78 @@
   resize: vertical;
 }
 
-.visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
+.contact-success-message {
+  padding-top: var(--space-12);
+}
+
+.contact-error-message {
+  margin-bottom: var(--space-4);
+  color: var(--color-error-text);
+}
+
+/* shared */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.section-layout {
+  padding: var(--space-24) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+@media (max-width: 34.375rem) {
+  .section-layout {
+    padding: var(--space-16) 0;
+    gap: var(--space-12);
+  }
+}
+
+.section-bg-primary {
+  background-color: var(--color-primary-background);
+}
+
+.section-intro {
+  max-width: var(--container-md);
+}
+
+.section-prefix {
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-heading);
+  display: block;
+  margin-bottom: var(--space-3);
+}
+.section-prefix.alt {
+  color: hsl(var(--primary-200));
+}
+@media (max-width: 34.375rem) {
+  .section-prefix {
+    font-size: var(--font-size-text-sm);
+  }
+}
+
+.section-heading.alt {
+  color: hsl(var(--white));
+}
+
+.section-subheading {
+  color: var(--color-text);
+  font-size: var(--font-size-text-xl);
+  line-height: var(--line-height-text-xl);
+  font-weight: var(--font-weight-normal);
+}
+
+@media (max-width: 34.375rem) {
+  .section-subheading {
+    font-size: var(--font-size-text-lg);
+    line-height: var(--line-height-text-lg);
+  }
+}
+
+.section-subheading.alt {
+  color: hsl(var(--primary-200));
 }

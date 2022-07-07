@@ -3,4 +3,4 @@
   the files in this directory.
 */
 
-export const CLOUDINARY_CLOUD_NAME = "tomhendra";
+export const CLOUDINARY_CLOUD_NAME = 'tomhendra';

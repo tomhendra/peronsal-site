@@ -1,2 +1,2 @@
-export * from "./TabNav";
-export { default } from "./TabNav";
+export * from './TabNav';
+export {default} from './TabNav';

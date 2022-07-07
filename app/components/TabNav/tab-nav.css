@@ -18,9 +18,12 @@
 
 .tab-content {
   flex: 1;
-  background-color: var(--color-background-muted);
-  padding: var(--space-12);
-  padding-right: 0;
+  outline-color: var(--color-outline);
+}
+@media (max-width: 68.75rem) {
+  .tab-content {
+    justify-self: start;
+  }
 }
 
 .tab {
@@ -30,18 +33,18 @@
   flex-direction: column;
   text-align: left;
   padding: var(--space-4) var(--space-6);
-  border-left: var(--border-4) solid var(--color-background);
+  border-left: var(--border-4) solid var(--color-background-highlight);
   user-select: none;
+  transition: border-color 200ms;
 }
 
 @media (pointer: fine) and (hover: hover) {
   .tab:hover {
     background-color: var(--color-background-hover);
-    border-color: var(--color-background-hover);
   }
 }
 
-.tab[data-state="active"] {
+.tab[data-state='active'] {
   border-color: var(--color-primary);
 }
 

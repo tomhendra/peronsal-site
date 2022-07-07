@@ -4,8 +4,8 @@
   this directory).
 */
 
-function NewComponentChild({ count }: { count: number }) {
+function NewComponentChild({count}: {count: number}) {
   return <span>The count is {count}</span>;
 }
 
-export { NewComponentChild as default };
+export {NewComponentChild as default};

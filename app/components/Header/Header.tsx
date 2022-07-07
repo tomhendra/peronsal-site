@@ -1,16 +1,16 @@
-import Link from "../Link";
-import Logo from "../Logo";
-import ThemeToggle from "../ThemeToggle";
-import VisuallyHidden from "../VisuallyHidden";
-import MaxWidthContainer from "../MaxWidthContainer";
-import type { LinksFunction } from "@remix-run/cloudflare";
+import Link from '../Link';
+import Logo from '../Logo';
+import ThemeToggle from '../ThemeToggle';
+import VisuallyHidden from '../VisuallyHidden';
+import MaxWidthContainer from '../MaxWidthContainer';
+import type {LinksFunction} from '@remix-run/cloudflare';
 
-import { links as linksLinks } from "../Link";
-import { links as logoLinks } from "../Logo";
-import { links as themeToggleLinks } from "../ThemeToggle";
-import { links as visuallyHiddenLinks } from "../VisuallyHidden";
-import { links as maxWidthContainerLinks } from "../MaxWidthContainer";
-import styles from "./header.css";
+import {links as linksLinks} from '../Link';
+import {links as logoLinks} from '../Logo';
+import {links as themeToggleLinks} from '../ThemeToggle';
+import {links as visuallyHiddenLinks} from '../VisuallyHidden';
+import {links as maxWidthContainerLinks} from '../MaxWidthContainer';
+import styles from './header.css';
 
 const links: LinksFunction = () => [
   ...linksLinks(),
@@ -18,7 +18,7 @@ const links: LinksFunction = () => [
   ...themeToggleLinks(),
   ...visuallyHiddenLinks(),
   ...maxWidthContainerLinks(),
-  { rel: "stylesheet", href: styles },
+  {rel: 'stylesheet', href: styles},
 ];
 
 function Header() {
@@ -49,4 +49,4 @@ function Header() {
   );
 }
 
-export { links, Header as default };
+export {links, Header as default};

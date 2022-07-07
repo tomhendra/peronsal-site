@@ -1,2 +1,2 @@
-export * from "./SocialCard";
-export { default } from "./SocialCard";
+export * from './SocialCard';
+export {default} from './SocialCard';

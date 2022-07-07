@@ -1,2 +1,2 @@
-export * from "./NewComponent";
-export { default } from "./NewComponent";
+export * from './NewComponent';
+export {default} from './NewComponent';
