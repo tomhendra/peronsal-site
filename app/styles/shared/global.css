@@ -1,0 +1,52 @@
+::selection {
+  color: var(--color-text-selection);
+  background-color: var(--color-background-selection);
+}
+
+a,
+input,
+select,
+area,
+textarea,
+button {
+  outline-color: var(--color-outline);
+}
+
+/* create an explicit scroll-bar to avoid CLS (Cumulative Layout Shift) */
+body {
+  overflow-y: scroll;
+}
+
+/* darken images in dark mode with filter defined in colors.css .dark {...} */
+img:not([src*='.svg']) {
+  filter: var(--image-filter);
+}
+
+/* apply scrollbar styles consistent with theme for devices larger than mobile.
+On mobile devices, the scrollbar doesn't take up any space; the thumb floats 
+above the content. And it's fairly inobtrusive. If our goal is to create a 
+well-blended scrollbar, our custom CSS might do more harm than good! 
+*/
+@media (min-width: 34.375rem) {
+  body {
+    /* https://caniuse.com/?search=scrollbar-width */
+    /* https://caniuse.com/?search=scrollbar-color */
+    scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-track);
+    scrollbar-width: thin;
+  }
+
+  ::-webkit-scrollbar {
+    background-color: var(--color-scrollbar-track);
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-scrollbar-thumb);
+    border-radius: 1000px;
+    /* We can't use padding to increase the space around the thumb, but we can 
+    fake it with a border that matches the track color. */
+    border: 2px solid var(--color-scrollbar-track);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-scrollbar-thumb-hover);
+  }
+}

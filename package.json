@@ -1,0 +1,66 @@
+{
+  "name": "remix-template-cloudflare-pages",
+  "private": true,
+  "description": "",
+  "license": "",
+  "sideEffects": false,
+  "scripts": {
+    "build": "remix build",
+    "dev:remix": "remix watch",
+    "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
+    "dev": "remix build && run-p dev:*",
+    "format": "prettier --write .",
+    "start": "cross-env NODE_ENV=production npm run dev:wrangler",
+    "nuke": "rm -rf .cache/ node_modules/ functions/ pnpm-lock.yaml public/build/"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "bracketSameLine": false,
+    "bracketSpacing": false,
+    "embeddedLanguageFormatting": "auto",
+    "htmlWhitespaceSensitivity": "css",
+    "insertPragma": false,
+    "jsxSingleQuote": false,
+    "printWidth": 80,
+    "proseWrap": "always",
+    "quoteProps": "as-needed",
+    "requirePragma": false,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "useTabs": false
+  },
+  "dependencies": {
+    "@radix-ui/react-tabs": "^0.1.5",
+    "@reach/dialog": "^0.17.0",
+    "@remix-run/cloudflare": "^1.6.3",
+    "@remix-run/cloudflare-pages": "^1.6.3",
+    "@remix-run/react": "^1.6.3",
+    "cloudinary-build-url": "^0.2.4",
+    "clsx": "^1.2.1",
+    "cross-env": "^7.0.3",
+    "framer-motion": "^6.4.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-feather": "^2.0.10",
+    "remix-seo": "^0.1.0"
+  },
+  "devDependencies": {
+    "@cld-apis/types": "^0.1.6",
+    "@cloudflare/workers-types": "^3.14.0",
+    "@remix-run/dev": "^1.6.3",
+    "@remix-run/eslint-config": "^1.6.3",
+    "@types/react": "^17.0.47",
+    "@types/react-dom": "^17.0.17",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4",
+    "wrangler": "^0.0.25"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
