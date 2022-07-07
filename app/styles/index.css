@@ -35,7 +35,7 @@
   margin: 0;
 }
 
-.hero-layout h3 {
+.hero-layout .section-subheading {
   max-width: var(--container-xs);
 }
 
@@ -316,8 +316,8 @@
   font-size: var(--font-size-text-xl);
   line-height: var(--line-height-text-xl);
   font-weight: var(--font-weight-normal);
-  max-width: var(--container-xs);
 }
+
 @media (max-width: 34.375rem) {
   .section-subheading {
     font-size: var(--font-size-text-lg);
