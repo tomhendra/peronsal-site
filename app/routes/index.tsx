@@ -2,10 +2,11 @@ import type {LinksFunction, LoaderFunction} from '@remix-run/cloudflare';
 import {useLoaderData} from '@remix-run/react';
 import {MapPin} from 'react-feather';
 import Button from '~/components/Button';
+import Link from '~/components/Link';
 import FeatureIcon from '~/components/FeatureIcon';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
 import {getAllMarkdownAttributes} from '~/helpers/github-md.server';
-import type {PostAttributes} from '~/types';
+import type {Attributes} from '~/types';
 
 import {links as buttonLinks} from '~/components/Button';
 import {links as featureIconLinks} from '~/components/FeatureIcon';
@@ -29,45 +30,39 @@ function Index() {
 
   return (
     <main>
-      <section id="hero">
+      <section>
         <MaxWidthContainer>
           <div className="hero-layout">
             <div className="intro">
-              <div>
-                <FeatureIcon padding="6px">
-                  <MapPin size={12} color="var(--color-primary-text)" />
-                </FeatureIcon>
-                <span className="location">Salamanca</span>
-              </div>
-              <h1>Hello, I'm Tom</h1>
+              <p className="count">{`${data.length} Articles`}</p>
+              <h1>Tom's Blog</h1>
               <h2 className="section-subheading">
-                I'm a frontend developer from the UK who loves to build quality
-                user interfaces for the web.
+                Discoveries from the world of web development.
               </h2>
-              <div className="btn-group">
-                <Button
-                  as="link"
-                  to="#projects"
-                  size="xl"
-                  variant="secondary-gray"
-                >
-                  View Projects
-                </Button>
-                <Button as="link" to="#contact" size="xl" variant="primary">
-                  Get in Touch
-                </Button>
-              </div>
             </div>
           </div>
         </MaxWidthContainer>
       </section>
       <section>
         <MaxWidthContainer>
-          <ul>
-            {data.map((post: PostAttributes) => {
-              return <li key={post.sha}>{post.title}</li>;
+          <div className="article-preview-grid">
+            {data.map((article: Attributes) => {
+              return (
+                <div className="article-preview" key={article.sha}>
+                  <p>{article.date}</p>
+                  <Link to={`articles/${article.slug}`}>
+                    <h3>{article.title}</h3>
+                  </Link>
+                  <p>{article.subtitle}</p>
+                  <ul>
+                    {article.tags.map(tag => (
+                      <li key={tag}>{tag}</li>
+                    ))}
+                  </ul>
+                </div>
+              );
             })}
-          </ul>
+          </div>
         </MaxWidthContainer>
       </section>
     </main>

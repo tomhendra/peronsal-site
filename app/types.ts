@@ -3,13 +3,14 @@ export type File = {
   sha: string;
 };
 
-export type PostPaths = {
+export type FilePaths = {
   files: Array<File>;
   sha: string;
 };
 
-export type PostAttributes = {
+export type Attributes = {
   sha: string;
+  slug: string;
   date: Date;
   updated: Date;
   title: string;
@@ -18,7 +19,7 @@ export type PostAttributes = {
   tags: Array<string>;
 };
 
-export type Post = {
-  attributes: PostAttributes;
+export type Article = {
+  attributes: Attributes;
   html: string;
 };

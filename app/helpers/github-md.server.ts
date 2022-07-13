@@ -1,8 +1,8 @@
-import type {PostPaths, Post} from '~/types';
+import type {FilePaths, Article} from '~/types';
 
 const repo = 'https://github-md.com/tomhendra/blog-content/main';
 
-export async function getMarkdownPaths(): Promise<PostPaths | undefined> {
+export async function getMarkdownPaths(): Promise<FilePaths | undefined> {
   const response = await fetch(repo);
   if (!response.ok || response.status !== 200) {
     if (response.status === 404) {
@@ -15,7 +15,9 @@ export async function getMarkdownPaths(): Promise<PostPaths | undefined> {
   return response.json();
 }
 
-export async function getMarkdownFile(path: string): Promise<Post | undefined> {
+export async function getMarkdownFile(
+  path: string,
+): Promise<Article | undefined> {
   const response = await fetch(repo + '/' + path);
   if (!response.ok || response.status !== 200) {
     if (response.status === 404) {
@@ -31,10 +33,14 @@ export async function getMarkdownFile(path: string): Promise<Post | undefined> {
 export async function getAllMarkdownFiles() {
   const paths = await getMarkdownPaths();
   const posts = paths?.files.map(async file => {
-    const markdown = await getMarkdownFile(file.path);
+    const {path, sha} = file;
+    const slug = path.substring(0, path.lastIndexOf('.'));
+    const markdown = await getMarkdownFile(path);
+
     return {
       attributes: {
-        sha: file.sha,
+        sha,
+        slug,
         ...markdown?.attributes,
       },
       html: markdown?.html,
