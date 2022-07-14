@@ -1,9 +1,6 @@
 import type {LinksFunction, LoaderFunction} from '@remix-run/cloudflare';
 import {useLoaderData} from '@remix-run/react';
-import {MapPin} from 'react-feather';
-import Button from '~/components/Button';
 import Link from '~/components/Link';
-import FeatureIcon from '~/components/FeatureIcon';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
 import {getAllMarkdownAttributes} from '~/helpers/github-md.server';
 import type {Attributes} from '~/types';
