@@ -32,14 +32,11 @@ function Header() {
             <VisuallyHidden>Tom Hendra logo - Home</VisuallyHidden>
           </Link>
           <nav>
-            <Link to="/#about" size="lg" variant="gray">
-              About
+            <Link to="/" size="lg" variant="white">
+              Latest
             </Link>
-            <Link to="/#projects" size="lg" variant="gray">
-              Projects
-            </Link>
-            <Link to="/#contact" size="lg" variant="gray">
-              Contact
+            <Link to="/posts" size="lg" variant="white">
+              Posts
             </Link>
           </nav>
           <ThemeToggle />

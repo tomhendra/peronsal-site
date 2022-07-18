@@ -99,7 +99,7 @@
   }
 }
 
-/* secondary  variant */
+/* secondary variant */
 .btn.secondary {
   color: var(--color-primary-text);
   background-color: var(--color-primary-background-muted);

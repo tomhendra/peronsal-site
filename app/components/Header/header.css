@@ -2,27 +2,13 @@
   position: sticky;
   top: -16px;
   padding-top: 16px;
-  background-color: hsl(var(--color-background-hsl) / 0.95);
-  border-bottom: var(--border-1) solid var(--color-divider);
+  background-color: var(--color-primary-background);
   /* 
     based on html { isolation: isolate } stacking context we set z-index: 1
     here to avoid elements further down the tree with positioned layout from 
     overlapping 
   */
   z-index: 1;
-}
-
-@supports (backdrop-filter: var(--blur-md)) {
-  .header {
-    background-color: hsl(var(--color-background-hsl) / 0.5);
-    backdrop-filter: var(--blur-md);
-    -webkit-backdrop-filter: var(--blur-md);
-  }
-}
-
-.header a {
-  text-decoration: none;
-  color: inherit;
 }
 
 .header nav {
@@ -61,5 +47,12 @@
 }
 
 .header .wordmark {
-  color: var(--color-heading);
+  color: var(--color-white);
+}
+
+/* this selects the svg in ThemeToggle. it is here because ThemeToggle doesn't 
+currently have a style sheet, and it is not worth creating one just for one 
+declaration considering it would mean an extra http request! */
+.header svg {
+  color: var(--color-white);
 }

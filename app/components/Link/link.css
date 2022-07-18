@@ -33,7 +33,7 @@
   color: var(--color-primary-text);
 }
 @media (pointer: fine) and (hover: hover) {
-  .link.link:hover {
+  .link.primary:hover {
     color: var(--color-primary-text-hover);
   }
 }
@@ -45,6 +45,16 @@
 @media (pointer: fine) and (hover: hover) {
   .link.gray:hover {
     color: var(--color-text-hover);
+  }
+}
+
+/* white variant */
+.link.white {
+  color: var(--color-white);
+}
+@media (pointer: fine) and (hover: hover) {
+  .link.white:hover {
+    color: var(--color-white-hover);
   }
 }
 

@@ -1,3 +1,11 @@
 .divider {
-  border-bottom: var(--border-1) solid var(--color-divider);
+  border-bottom: var(--border-1) solid;
+}
+
+.grey {
+  border-color: var(--color-divider);
+}
+
+.primary {
+  border-color: var(--color-primary-divider);
 }

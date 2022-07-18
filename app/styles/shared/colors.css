@@ -35,6 +35,62 @@
   --gray-default-950: 220deg 50% 9%;
   --gray-default-975: 220deg 55% 8%;
 
+  --primary-default-25: 264 100% 99%;
+  --primary-default-50: 264 100% 98%;
+  --primary-default-100: 267 100% 96%;
+  --primary-default-200: 268 95% 92%;
+  --primary-default-300: 265 89% 86%;
+  --primary-default-400: 262 85% 77%;
+  --primary-default-500: 260 77% 70%;
+  --primary-default-600: 259 63% 59%;
+  --primary-default-700: 258 54% 52%;
+  --primary-default-800: 256 48% 42%;
+  --primary-default-900: 254 45% 34%;
+  --primary-default-950: 254 43% 19%;
+  --primary-default-975: 254 45% 11%;
+
+  --error-25: 12deg 100% 99%;
+  --error-50: 5deg 86% 97%;
+  --error-100: 4deg 93% 94%;
+  --error-200: 3deg 96% 89%;
+  --error-300: 4deg 96% 80%;
+  --error-400: 4deg 93% 69%;
+  --error-500: 4deg 86% 58%;
+  --error-600: 4deg 74% 49%;
+  --error-700: 4deg 77% 40%;
+  --error-800: 4deg 72% 33%;
+  --error-900: 8deg 65% 29%;
+  --error-950: 8deg 65% 15%;
+  --error-975: 8deg 65% 10%;
+
+  --warning-25: 33deg 82% 98%;
+  --warning-50: 30deg 89% 97%;
+  --warning-100: 30deg 91% 92%;
+  --warning-200: 36deg 86% 83%;
+  --warning-300: 27deg 89% 72%;
+  --warning-400: 23deg 88% 61%;
+  --warning-500: 21deg 87% 53%;
+  --warning-600: 17deg 82% 48%;
+  --warning-700: 13deg 80% 40%;
+  --warning-800: 11deg 71% 34%;
+  --warning-900: 11deg 68% 28%;
+  --warning-950: 11deg 68% 20%;
+  --warning-975: 11deg 68% 16%;
+
+  --success-25: 142deg 80% 98%;
+  --success-50: 145deg 81% 96%;
+  --success-100: 140deg 80% 90%;
+  --success-200: 144deg 78% 80%;
+  --success-300: 148deg 74% 67%;
+  --success-400: 150deg 66% 52%;
+  --success-500: 152deg 82% 39%;
+  --success-600: 153deg 96% 30%;
+  --success-700: 155deg 97% 24%;
+  --success-800: 155deg 90% 20%;
+  --success-900: 156deg 88% 17%;
+  --success-950: 156deg 88% 9%;
+  --success-975: 156deg 88% 6%;
+
   --gray-blue-25: 240deg 20% 99%;
   --gray-blue-50: 225deg 40% 98%;
   --gray-blue-100: 229deg 36% 94%;
@@ -132,48 +188,6 @@
   --gray-warm-900: 24deg 10% 10%;
   --gray-warm-950: 24deg 10% 8%;
   --gray-warm-975: 24deg 10% 7%;
-
-  --error-25: 12deg 100% 99%;
-  --error-50: 5deg 86% 97%;
-  --error-100: 4deg 93% 94%;
-  --error-200: 3deg 96% 89%;
-  --error-300: 4deg 96% 80%;
-  --error-400: 4deg 93% 69%;
-  --error-500: 4deg 86% 58%;
-  --error-600: 4deg 74% 49%;
-  --error-700: 4deg 77% 40%;
-  --error-800: 4deg 72% 33%;
-  --error-900: 8deg 65% 29%;
-  --error-950: 8deg 65% 15%;
-  --error-975: 8deg 65% 10%;
-
-  --warning-25: 33deg 82% 98%;
-  --warning-50: 30deg 89% 97%;
-  --warning-100: 30deg 91% 92%;
-  --warning-200: 36deg 86% 83%;
-  --warning-300: 27deg 89% 72%;
-  --warning-400: 23deg 88% 61%;
-  --warning-500: 21deg 87% 53%;
-  --warning-600: 17deg 82% 48%;
-  --warning-700: 13deg 80% 40%;
-  --warning-800: 11deg 71% 34%;
-  --warning-900: 11deg 68% 28%;
-  --warning-950: 11deg 68% 20%;
-  --warning-975: 11deg 68% 16%;
-
-  --success-25: 142deg 80% 98%;
-  --success-50: 145deg 81% 96%;
-  --success-100: 140deg 80% 90%;
-  --success-200: 144deg 78% 80%;
-  --success-300: 148deg 74% 67%;
-  --success-400: 150deg 66% 52%;
-  --success-500: 152deg 82% 39%;
-  --success-600: 153deg 96% 30%;
-  --success-700: 155deg 97% 24%;
-  --success-800: 155deg 90% 20%;
-  --success-900: 156deg 88% 17%;
-  --success-950: 156deg 88% 9%;
-  --success-975: 156deg 88% 6%;
 
   --moss-25: 90deg 60% 98%;
   --moss-50: 88deg 62% 96%;
@@ -427,19 +441,19 @@
   --gray-950: var(--gray-default-950);
   --gray-975: var(--gray-default-975);
 
-  --primary-25: var(--indigo-25);
-  --primary-50: var(--indigo-50);
-  --primary-100: var(--indigo-100);
-  --primary-200: var(--indigo-200);
-  --primary-300: var(--indigo-300);
-  --primary-400: var(--indigo-400);
-  --primary-500: var(--indigo-500);
-  --primary-600: var(--indigo-600);
-  --primary-700: var(--indigo-700);
-  --primary-800: var(--indigo-800);
-  --primary-900: var(--indigo-900);
-  --primary-950: var(--indigo-950);
-  --primary-975: var(--indigo-975);
+  --primary-25: var(--primary-default-25);
+  --primary-50: var(--primary-default-50);
+  --primary-100: var(--primary-default-100);
+  --primary-200: var(--primary-default-200);
+  --primary-300: var(--primary-default-300);
+  --primary-400: var(--primary-default-400);
+  --primary-500: var(--primary-default-500);
+  --primary-600: var(--primary-default-600);
+  --primary-700: var(--primary-default-700);
+  --primary-800: var(--primary-default-800);
+  --primary-900: var(--primary-default-900);
+  --primary-950: var(--primary-default-950);
+  --primary-975: var(--primary-default-975);
 
   --accent-25: var(--pink-25);
   --accent-50: var(--pink-50);
@@ -457,6 +471,9 @@
 }
 
 html.light {
+  --color-white: hsl(var(--white));
+  --color-white-hover: hsl(var(--gray-200));
+
   --color-heading: hsl(var(--gray-900));
   --color-text: hsl(var(--gray-500));
   --color-text-hover: hsl(var(--gray-600));
@@ -492,6 +509,7 @@ html.light {
   --color-primary-background-muted: hsl(var(--primary-50));
   --color-primary-background-hover: hsl(var(--primary-100));
   --color-primary-background-disabled: hsl(var(--primary-25));
+  --color-primary-divider: hsl(var(--primary-600));
 
   --color-error: hsl(var(--error-600));
   --color-error-hover: hsl(var(--error-700));
@@ -507,6 +525,8 @@ html.light {
 }
 
 html.dark {
+  --color-white: hsl(var(--white));
+  --color-white-hover: hsl(var(--gray-200));
   --image-filter: grayscale(12%);
 
   --color-heading: hsl(var(--gray-25));
@@ -544,6 +564,7 @@ html.dark {
   --color-primary-background-muted: hsl(var(--primary-950));
   --color-primary-background-hover: hsl(var(--primary-900));
   --color-primary-background-disabled: hsl(var(--primary-975));
+  --color-primary-divider: hsl(var(--primary-700));
 
   --color-error: hsl(var(--error-700));
   --color-error-hover: hsl(var(--error-800));

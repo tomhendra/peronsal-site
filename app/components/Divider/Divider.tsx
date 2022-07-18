@@ -1,4 +1,5 @@
 import type {LinksFunction} from '@remix-run/cloudflare';
+import clsx from 'clsx';
 import MaxWidthContainer from '../MaxWidthContainer';
 
 import {links as MaxWidthContainerLinks} from '../MaxWidthContainer';
@@ -9,10 +10,14 @@ const links: LinksFunction = () => [
   {rel: 'stylesheet', href: styles},
 ];
 
-function Divider() {
+type Props = {
+  variant?: 'grey' | 'primary';
+};
+
+function Divider({variant = 'grey'}: Props) {
   return (
     <MaxWidthContainer>
-      <div className="divider" />
+      <div className={clsx('divider', variant)} />
     </MaxWidthContainer>
   );
 }

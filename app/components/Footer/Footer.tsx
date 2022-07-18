@@ -31,22 +31,16 @@ function Footer() {
               <VisuallyHidden>Tom Hendra logo - Home</VisuallyHidden>
             </Link>
             <nav className="footer-nav">
-              <Link variant="gray" size="md" to="/">
-                Home
+              <Link to="/" size="md" className="footer-link">
+                Latest
               </Link>
-              <Link variant="gray" size="md" to="/#about">
-                About
-              </Link>
-              <Link variant="gray" size="md" to="/#projects">
-                Projects
-              </Link>
-              <Link variant="gray" size="md" to="/#contact">
-                Contact
+              <Link to="/posts" size="md" className="footer-link">
+                Posts
               </Link>
             </nav>
           </div>
         </MaxWidthContainer>
-        <Divider />
+        <Divider variant="primary" />
         <span className="copyright">
           &copy; {new Date().getFullYear()} Tom Hendra
         </span>

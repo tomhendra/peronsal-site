@@ -10,7 +10,7 @@ const links: LinksFunction = () => {
 
 type BaseProps = {
   size?: 'sm' | 'md' | 'lg';
-  variant?: 'primary' | 'gray';
+  variant?: 'primary' | 'gray' | 'white';
   mood?: 'destructive';
   className?: string;
   children: React.ReactNode;
