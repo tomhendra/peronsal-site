@@ -31,10 +31,10 @@ function Footer() {
               <VisuallyHidden>Tom Hendra logo - Home</VisuallyHidden>
             </Link>
             <nav className="footer-nav">
-              <Link to="/" size="md" className="footer-link">
+              <Link to="/" size="md" variant="primary-alt">
                 Latest
               </Link>
-              <Link to="/posts" size="md" className="footer-link">
+              <Link to="/posts" size="md" variant="primary-alt">
                 Posts
               </Link>
             </nav>

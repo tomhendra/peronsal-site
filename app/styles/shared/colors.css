@@ -505,6 +505,8 @@ html.light {
   --color-primary-text: hsl(var(--primary-700));
   --color-primary-text-hover: hsl(var(--primary-800));
   --color-primary-text-disabled: hsl(var(--primary-300));
+  --color-primary-text-alt: hsl(var(--primary-200));
+  --color-primary-text-alt-hover: hsl(var(--primary-50));
   --color-primary-background: hsl(var(--primary-800));
   --color-primary-background-muted: hsl(var(--primary-50));
   --color-primary-background-hover: hsl(var(--primary-100));

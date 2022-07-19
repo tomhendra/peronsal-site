@@ -35,17 +35,6 @@
   justify-content: center;
 }
 
-/* passed as className since this is a one off colour for links not used 
-   anywhere else. Another Link variant with additional css var is overkill */
-.link.footer-link {
-  color: hsl(var(--primary-200));
-}
-@media (pointer: fine) and (hover: hover) {
-  .link.footer-link:hover {
-    color: hsl(var(--primary-50));
-  }
-}
-
 .footer .logo-container {
   display: flex;
   justify-content: center;

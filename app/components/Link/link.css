@@ -38,6 +38,16 @@
   }
 }
 
+/* primary alternative variant */
+.link.primary-alt {
+  color: var(--color-primary-text-alt);
+}
+@media (pointer: fine) and (hover: hover) {
+  .link.primary-alt:hover {
+    color: var(--color-primary-text-alt-hover);
+  }
+}
+
 /* gray variant */
 .link.gray {
   color: var(--color-text);
