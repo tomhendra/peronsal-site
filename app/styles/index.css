@@ -1,42 +1,64 @@
 /* hero section */
+.hero-section {
+  background-color: var(--color-primary-background);
+}
+
 .hero-layout {
-  padding-top: var(--space-16);
+  padding-top: var(--space-24);
   padding-bottom: var(--space-24);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 @media (max-width: 68.75rem) {
   .hero-layout {
-    grid-template-columns: 1fr;
-    padding-bottom: var(--space-16);
+    padding-top: var(--space-16);
   }
-}
-
-.hero-layout .intro {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: var(--space-6);
-  padding-bottom: var(--space-16);
 }
 @media (max-width: 34.375rem) {
-  .hero-layout .intro {
-    gap: var(--space-4);
+  .hero-layout {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-32);
   }
 }
 
-.hero-layout .count {
-  padding-left: var(--space-2);
-  color: var(--color-primary-text);
-  font-size: var(--font-size-text-md);
-}
-
-.hero-layout h1 {
+.article-count {
   margin: 0;
+  line-height: 1.2;
+  color: var(--color-primary-text-alt);
+  font-size: var(--font-size-text-md);
+  font-weight: var(--font-weight-semibold);
+  padding-bottom: var(--space-3);
+}
+@media (max-width: 34.375rem) {
+  .article-count {
+    font-size: var(--font-size-text-sm);
+  }
 }
 
-.hero-layout .section-subheading {
-  max-width: var(--container-xs);
+.hero-heading {
+  margin: 0;
+  line-height: 1.2;
+  color: var(--color-white);
+  font-size: var(--font-size-display-lg);
+  padding-bottom: var(--space-6);
+}
+@media (max-width: 34.375rem) {
+  .hero-heading {
+    font-size: var(--font-size-display-md);
+    padding-bottom: var(--space-4);
+  }
+}
+.hero-subheading {
+  color: var(--color-primary-text-alt);
+  font-size: var(--font-size-text-xl);
+  line-height: var(--line-height-text-xl);
+  font-weight: var(--font-weight-normal);
+  max-width: var(--container-md);
+}
+
+@media (max-width: 34.375rem) {
+  .hero-subheading {
+    font-size: var(--font-size-text-lg);
+    line-height: var(--line-height-text-lg);
+  }
 }
 
 /* article preview grid */
@@ -52,64 +74,4 @@
   html {
     scroll-behavior: smooth;
   }
-}
-
-.section-layout {
-  padding: var(--space-24) 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-16);
-}
-@media (max-width: 34.375rem) {
-  .section-layout {
-    padding: var(--space-16) 0;
-    gap: var(--space-12);
-  }
-}
-
-.section-bg-primary {
-  background-color: var(--color-primary-background);
-}
-
-.section-intro {
-  max-width: var(--container-md);
-}
-
-.section-prefix {
-  font-size: var(--font-size-text-md);
-  line-height: var(--line-height-text-md);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-primary-heading);
-  display: block;
-  margin-bottom: var(--space-3);
-}
-.section-prefix.alt {
-  color: hsl(var(--primary-200));
-}
-@media (max-width: 34.375rem) {
-  .section-prefix {
-    font-size: var(--font-size-text-sm);
-  }
-}
-
-.section-heading.alt {
-  color: hsl(var(--white));
-}
-
-.section-subheading {
-  color: var(--color-text);
-  font-size: var(--font-size-text-xl);
-  line-height: var(--line-height-text-xl);
-  font-weight: var(--font-weight-normal);
-}
-
-@media (max-width: 34.375rem) {
-  .section-subheading {
-    font-size: var(--font-size-text-lg);
-    line-height: var(--line-height-text-lg);
-  }
-}
-
-.section-subheading.alt {
-  color: hsl(var(--primary-200));
 }
