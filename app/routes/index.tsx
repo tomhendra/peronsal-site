@@ -31,7 +31,7 @@ function Index() {
         <MaxWidthContainer>
           <div className="hero-layout">
             <div className="hero-content">
-              <p className="article-count">{`${data.length} Articles`}</p>
+              <p className="hero-article-count">{`${data.length} Articles`}</p>
               <h1 className="hero-heading">Tom's Blog</h1>
               <h2 className="hero-subheading">
                 Discoveries from the world of web development.
