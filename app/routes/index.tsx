@@ -1,6 +1,5 @@
 import type {LinksFunction, LoaderFunction} from '@remix-run/cloudflare';
-import {useLoaderData} from '@remix-run/react';
-import Link from '~/components/Link';
+import {Link, useLoaderData} from '@remix-run/react';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
 import {getAllMarkdownAttributes} from '~/helpers/github-md.server';
 import type {Attributes} from '~/types';
@@ -9,6 +8,7 @@ import {links as buttonLinks} from '~/components/Button';
 import {links as featureIconLinks} from '~/components/FeatureIcon';
 import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import styles from '~/styles/index.css';
+import {ArrowUpRight} from 'react-feather';
 
 const links: LinksFunction = () => [
   ...maxWidthContainerLinks(),
@@ -45,18 +45,29 @@ function Index() {
           <div className="article-preview-grid">
             {data.map((article: Attributes) => {
               return (
-                <div className="article-preview" key={article.sha}>
-                  <p>{article.date}</p>
-                  <Link to={`articles/${article.slug}`}>
-                    <h3>{article.title}</h3>
+                <article key={article.sha}>
+                  <Link
+                    className="article-link"
+                    to={`articles/${article.slug}`}
+                  >
+                    <p className="article-date">{article.date}</p>
+                    <div className="article-heading">
+                      <h3 className="article-title">{article.title}</h3>
+                      <ArrowUpRight
+                        className="article-heading-icon"
+                        color="var(--color-heading)"
+                      />
+                    </div>
+                    <p className="article-subtitle">{article.subtitle}</p>
                   </Link>
-                  <p>{article.subtitle}</p>
-                  <ul>
+                  <ul className="article-tag-list">
                     {article.tags.map(tag => (
-                      <li key={tag}>{tag}</li>
+                      <li className="article-tag" key={tag}>
+                        {tag}
+                      </li>
                     ))}
                   </ul>
-                </div>
+                </article>
               );
             })}
           </div>
