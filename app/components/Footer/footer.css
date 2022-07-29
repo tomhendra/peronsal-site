@@ -6,13 +6,13 @@
 .footer .footer-container {
   display: flex;
   flex-direction: column;
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-10);
+  padding-block-start: var(--space-16);
+  padding-block-end: var(--space-10);
 }
 
 @media (max-width: 34.375rem) {
   .footer .footer-container {
-    padding-top: var(--space-12);
+    padding-block-start: var(--space-12);
   }
 }
 
@@ -21,11 +21,11 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-8);
-  padding-bottom: var(--space-16);
+  padding-block-end: var(--space-16);
 }
 @media (max-width: 34.375rem) {
   .footer .nav-container {
-    padding-bottom: var(--space-12);
+    padding-block-end: var(--space-12);
   }
 }
 
@@ -46,7 +46,7 @@
 @media (max-width: 34.375rem) {
   .footer .logo-container {
     order: -1;
-    margin-bottom: var(--space-6);
+    margin-block-end: var(--space-6);
   }
 }
 
@@ -66,6 +66,6 @@
 .footer .copyright {
   display: block;
   text-align: center;
-  padding-top: var(--space-8);
+  padding-block-start: var(--space-8);
   font-size: var(--font-size-text-md);
 }

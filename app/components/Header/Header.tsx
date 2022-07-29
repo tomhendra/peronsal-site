@@ -33,10 +33,7 @@ function Header() {
           </Link>
           <nav>
             <Link to="/" size="lg" variant="white">
-              Latest
-            </Link>
-            <Link to="/posts" size="lg" variant="white">
-              Posts
+              Articles
             </Link>
           </nav>
           <ThemeToggle />

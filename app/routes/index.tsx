@@ -4,16 +4,12 @@ import MaxWidthContainer from '~/components/MaxWidthContainer';
 import {getAllMarkdownAttributes} from '~/helpers/github-md.server';
 import type {Attributes} from '~/types';
 
-import {links as buttonLinks} from '~/components/Button';
-import {links as featureIconLinks} from '~/components/FeatureIcon';
 import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import styles from '~/styles/index.css';
 import {ArrowUpRight} from 'react-feather';
 
 const links: LinksFunction = () => [
   ...maxWidthContainerLinks(),
-  ...featureIconLinks(),
-  ...buttonLinks(),
   {rel: 'stylesheet', href: styles},
 ];
 
@@ -30,13 +26,11 @@ function Index() {
       <section className="hero-section">
         <MaxWidthContainer>
           <div className="hero-layout">
-            <div className="hero-content">
-              <p className="hero-article-count">{`${data.length} Articles`}</p>
-              <h1 className="hero-heading">Tom's Blog</h1>
-              <h2 className="hero-subheading">
-                Discoveries from the world of web development.
-              </h2>
-            </div>
+            <p className="hero-prefix">{`${data.length} Articles`}</p>
+            <h1 className="hero-heading">Tom's Blog</h1>
+            <h2 className="hero-subheading">
+              Discoveries from the world of web development.
+            </h2>
           </div>
         </MaxWidthContainer>
       </section>

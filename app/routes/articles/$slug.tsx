@@ -1,7 +1,17 @@
-import type {LoaderFunction} from '@remix-run/cloudflare';
+import type {LinksFunction, LoaderFunction} from '@remix-run/cloudflare';
 import {useLoaderData} from '@remix-run/react';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
 import {getMarkdownFile} from '~/helpers/github-md.server';
+// import ReactMarkdown from 'react-markdown';
+
+import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
+import styles from '~/styles/article.css';
+import type {Attributes} from '~/types';
+
+const links: LinksFunction = () => [
+  ...maxWidthContainerLinks(),
+  {rel: 'stylesheet', href: styles},
+];
 
 const loader: LoaderFunction = async ({params}) => {
   const {slug} = params;
@@ -14,20 +24,37 @@ const loader: LoaderFunction = async ({params}) => {
   return markdown;
 };
 
+type Data = {
+  html: string;
+  attributes: Attributes;
+};
+
 function Article() {
-  const {html, attributes} = useLoaderData();
+  const data = useLoaderData();
+  const {html, attributes} = data as Data;
 
   return (
-    <section>
-      <MaxWidthContainer>
-        <h1>{attributes.title}</h1>
-        <p>{attributes.date}</p>
-        <section>
+    <main>
+      <section className="hero-section">
+        <MaxWidthContainer>
+          <div className="hero-layout">
+            <p className="hero-prefix">Posts</p>
+            <h1 className="hero-heading">{attributes.title}</h1>
+            <h2 className="hero-subheading">{attributes.subtitle}</h2>
+            <p className="hero-date">{attributes.date}</p>
+          </div>
+        </MaxWidthContainer>
+      </section>
+      <section>
+        <div className="article-max-width-container">
+          <p className="article-description">{attributes.description}</p>
+          <div className="article-divider" />
+          {/* <ReactMarkdown>{html}</ReactMarkdown> */}
           <div dangerouslySetInnerHTML={{__html: html}} />
-        </section>
-      </MaxWidthContainer>
-    </section>
+        </div>
+      </section>
+    </main>
   );
 }
 
-export {loader, Article as default};
+export {links, loader, Article as default};

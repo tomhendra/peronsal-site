@@ -19,7 +19,7 @@
   }
 }
 
-.hero-article-count {
+.hero-prefix {
   margin: 0;
   line-height: 1.2;
   color: var(--color-primary-text-alt);
@@ -28,7 +28,7 @@
   padding-block-end: var(--space-3);
 }
 @media (max-width: 34.375rem) {
-  .hero-article-count {
+  .hero-prefix {
     font-size: var(--font-size-text-sm);
   }
 }
@@ -52,6 +52,7 @@
   line-height: var(--line-height-text-xl);
   font-weight: var(--font-weight-normal);
   max-width: var(--container-md);
+  margin: 0;
 }
 
 @media (max-width: 34.375rem) {
@@ -87,7 +88,7 @@
     will-change: transform;
   }
   .article-link:hover .article-heading-icon {
-    animation: wobble-x 700ms ease-out both;
+    animation: wobble-north-east 700ms ease-out both;
   }
 }
 

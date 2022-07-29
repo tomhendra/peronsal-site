@@ -32,10 +32,7 @@ function Footer() {
             </Link>
             <nav className="footer-nav">
               <Link to="/" size="md" variant="primary-alt">
-                Latest
-              </Link>
-              <Link to="/posts" size="md" variant="primary-alt">
-                Posts
+                Articles
               </Link>
             </nav>
           </div>

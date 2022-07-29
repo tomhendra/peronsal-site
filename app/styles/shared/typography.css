@@ -85,13 +85,13 @@ p,
 ol,
 ul {
   max-width: 60ch;
-  margin-bottom: var(--space-6);
+  margin-block-end: var(--space-6);
 }
 @media (max-width: 34.375rem) {
   p,
   ol,
   ul {
-    margin-bottom: var(--space-5);
+    margin-block-end: var(--space-5);
   }
 }
 
@@ -111,14 +111,14 @@ h1,
   line-height: var(--line-height-display-xl);
   letter-spacing: var(--letter-spacing-tight);
   font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-6);
+  margin-block-end: var(--space-6);
 }
 @media (max-width: 34.375rem) {
   h1,
   .h1 {
     font-size: var(--font-size-display-md);
     line-height: var(--line-height-display-md);
-    margin-bottom: var(--space-4);
+    margin-block-end: var(--space-4);
   }
 }
 
@@ -128,14 +128,14 @@ h2,
   line-height: var(--line-height-display-md);
   letter-spacing: var(--letter-spacing-tight);
   font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-5);
+  margin-block-end: var(--space-5);
 }
 @media (max-width: 34.375rem) {
   h2,
   .h2 {
     font-size: var(--font-size-display-sm);
     line-height: var(--line-height-display-sm);
-    margin-bottom: var(--space-4);
+    margin-block-end: var(--space-4);
   }
 }
 
@@ -144,14 +144,14 @@ h3,
   font-size: var(--font-size-text-xl);
   line-height: var(--line-height-text-xl);
   font-weight: var(--font-weight-medium);
-  margin-bottom: var(--space-2);
+  margin-block-end: var(--space-2);
 }
 @media (max-width: 34.375rem) {
   h3,
   .h3 {
     font-size: var(--font-size-text-lg);
     line-height: var(--line-height-text-lg);
-    margin-bottom: var(--space-1);
+    margin-block-end: var(--space-1);
   }
 }
 
@@ -160,14 +160,14 @@ h4,
   font-size: var(--font-size-text-lg);
   line-height: var(--line-height-text-lg);
   font-weight: var(--font-weight-medium);
-  margin-bottom: var(--space-2);
+  margin-block-end: var(--space-2);
 }
 @media (max-width: 34.375rem) {
   h4,
   .h4 {
     font-size: var(--font-size-text-md);
     line-height: var(--line-height-text-md);
-    margin-bottom: var(--space-1);
+    margin-block-end: var(--space-1);
   }
 }
 
@@ -176,14 +176,14 @@ h5,
   font-size: var(--font-size-text-md);
   line-height: var(--font-size-text-md);
   font-weight: var(--font-weight-medium);
-  margin-bottom: var(--space-2);
+  margin-block-end: var(--space-2);
 }
 @media (max-width: 34.375rem) {
   h5,
   .h5 {
     font-size: var(--font-size-text-sm);
     line-height: var(--font-size-text-sm);
-    margin-bottom: var(--space-1);
+    margin-block-end: var(--space-1);
   }
 }
 
@@ -192,8 +192,8 @@ code {
   font-family: var(--font-mono);
   font-size: var(--font-size-text-sm);
   font-weight: var(--font-weight-medium);
-  margin-top: var(--space-8);
-  margin-bottom: var(--space-12);
+  margin-block-start: var(--space-8);
+  margin-block-end: var(--space-12);
 }
 
 figcaption {

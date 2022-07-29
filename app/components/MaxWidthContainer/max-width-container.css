@@ -1,11 +1,9 @@
 .max-width-container {
-  position: relative;
   --buffer: var(--space-8);
+  position: relative;
   width: min(100%, var(--container-xl));
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--buffer);
-  padding-right: var(--buffer);
+  margin-inline: auto;
+  padding-inline: var(--buffer);
 }
 
 @media (max-width: 34.375rem) {
