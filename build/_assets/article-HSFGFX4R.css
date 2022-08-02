@@ -34,8 +34,18 @@
 }
 
 .hero-heading {
+  margin: 0;
+  line-height: 1.2;
   color: var(--color-white);
+  font-size: var(--font-size-display-lg);
+  padding-block-end: var(--space-6);
   max-width: var(--container-lg);
+}
+@media (max-width: 34.375rem) {
+  .hero-heading {
+    font-size: var(--font-size-display-md);
+    padding-block-end: var(--space-4);
+  }
 }
 
 .hero-subheading {

@@ -1,3 +1,7 @@
+import type React from 'react';
+
+export type Children = React.ReactNode;
+
 export type File = {
   path: 'string';
   sha: string;
@@ -8,7 +12,7 @@ export type FilePaths = {
   sha: string;
 };
 
-export type Attributes = {
+export type MarkdownAttributes = {
   sha: string;
   slug: string;
   date: Date;
@@ -19,7 +23,7 @@ export type Attributes = {
   tags: Array<string>;
 };
 
-export type Article = {
-  attributes: Attributes;
+export type Markdown = {
+  attributes: MarkdownAttributes;
   html: string;
 };

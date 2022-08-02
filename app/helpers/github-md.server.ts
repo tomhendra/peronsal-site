@@ -1,4 +1,4 @@
-import type {FilePaths, Article} from '~/types';
+import type {FilePaths, Markdown} from '~/types';
 
 const repo = 'https://github-md.com/tomhendra/blog-content/main';
 
@@ -17,7 +17,7 @@ export async function getMarkdownPaths(): Promise<FilePaths | undefined> {
 
 export async function getMarkdownFile(
   path: string,
-): Promise<Article | undefined> {
+): Promise<Markdown | undefined> {
   const response = await fetch(repo + '/' + path);
   if (!response.ok || response.status !== 200) {
     if (response.status === 404) {

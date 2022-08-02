@@ -90,9 +90,6 @@
   .article-link:hover .article-heading-icon {
     animation: wobble-north-east 700ms ease-out both;
   }
-  .article-link:hover .article-title {
-    text-decoration: underline;
-  }
 }
 
 .article-date {
@@ -110,7 +107,6 @@
 .article-title {
   font-size: var(--font-size-display-xs);
   font-weight: var(--font-weight-semibold);
-  margin-block-start: 0;
   margin-block-end: var(--space-3);
 }
 

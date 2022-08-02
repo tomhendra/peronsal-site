@@ -1,20 +1,24 @@
-import type {LinksFunction, LoaderFunction} from '@remix-run/cloudflare';
+import type {LinksFunction, LoaderArgs} from '@remix-run/cloudflare';
 import {useLoaderData} from '@remix-run/react';
+import parse, {
+  domToReact,
+  Element,
+  type HTMLReactParserOptions,
+} from 'html-react-parser';
+import React from 'react';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
 import {getMarkdownFile} from '~/helpers/github-md.server';
-// import ReactMarkdown from 'react-markdown';
 
 import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import styles from '~/styles/article.css';
-import type {Attributes} from '~/types';
 
 const links: LinksFunction = () => [
   ...maxWidthContainerLinks(),
   {rel: 'stylesheet', href: styles},
 ];
 
-const loader: LoaderFunction = async ({params}) => {
-  const {slug} = params;
+async function loader(args: LoaderArgs) {
+  const {slug} = args.params;
   const markdown = await getMarkdownFile(`${slug}.md`);
 
   if (!markdown) {
@@ -22,16 +26,29 @@ const loader: LoaderFunction = async ({params}) => {
   }
 
   return markdown;
+}
+
+const components: {[index: string]: React.ReactNode} = {
+  // pre: CodeBlock,
+  // code: Code,
+  // img: Image,
+  // blockquote: Blockquote,
 };
 
-type Data = {
-  html: string;
-  attributes: Attributes;
+const options: HTMLReactParserOptions = {
+  replace: domNode => {
+    if (!(domNode instanceof Element)) return;
+
+    if (Object.hasOwn(components, domNode.name)) {
+      const Component = components[domNode.name] as keyof JSX.IntrinsicElements;
+      return <Component>{domToReact(domNode.children, options)}</Component>;
+    }
+  },
 };
 
 function Article() {
-  const data = useLoaderData();
-  const {html, attributes} = data as Data;
+  const data = useLoaderData<typeof loader>();
+  const {html, attributes} = data;
 
   return (
     <main>
@@ -48,9 +65,8 @@ function Article() {
       <section>
         <div className="article-max-width-container">
           <p className="article-description">{attributes.description}</p>
-          <div className="article-divider" />
-          {/* <ReactMarkdown>{html}</ReactMarkdown> */}
-          <div dangerouslySetInnerHTML={{__html: html}} />
+          <hr className="article-divider" />
+          {parse(html, options)}
         </div>
       </section>
     </main>

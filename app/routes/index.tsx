@@ -2,7 +2,7 @@ import type {LinksFunction, LoaderFunction} from '@remix-run/cloudflare';
 import {Link, useLoaderData} from '@remix-run/react';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
 import {getAllMarkdownAttributes} from '~/helpers/github-md.server';
-import type {Attributes} from '~/types';
+import type {MarkdownAttributes} from '~/types';
 
 import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import styles from '~/styles/index.css';
@@ -37,9 +37,9 @@ function Index() {
       <section>
         <MaxWidthContainer>
           <div className="article-preview-grid">
-            {data.map((article: Attributes) => {
+            {data.map((article: MarkdownAttributes) => {
               return (
-                <article key={article.sha}>
+                <div key={article.sha}>
                   <Link
                     className="article-link"
                     to={`articles/${article.slug}`}
@@ -61,7 +61,7 @@ function Index() {
                       </li>
                     ))}
                   </ul>
-                </article>
+                </div>
               );
             })}
           </div>
