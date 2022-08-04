@@ -7,13 +7,16 @@ import parse, {
 } from 'html-react-parser';
 import React from 'react';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
+import CodeBlock from '~/components/CodeBlock';
 import {getMarkdownFile} from '~/helpers/github-md.server';
 
 import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
+import {links as codeBlockLinks} from '~/components/CodeBlock';
 import styles from '~/styles/article.css';
 
 const links: LinksFunction = () => [
   ...maxWidthContainerLinks(),
+  ...codeBlockLinks(),
   {rel: 'stylesheet', href: styles},
 ];
 
@@ -29,7 +32,7 @@ async function loader(args: LoaderArgs) {
 }
 
 const components: {[index: string]: React.ReactNode} = {
-  // pre: CodeBlock,
+  pre: CodeBlock,
   // code: Code,
   // img: Image,
   // blockquote: Blockquote,

@@ -20,6 +20,15 @@
   margin-block-end: 0;
   margin-inline-start: 0;
   margin-inline-end: 0;
+  /* 
+    the max-width hack is here because something strange is going on with Remix. 
+    the pre & code elements even with overflow-x: auto set are still causing
+    ancestor elements to be rendered wider than the viewport width. This should 
+    not be happening and this layout has been implemented in Svelte in the same 
+    manner without issue.
+    TODO: Ask about this in both Discords for Remix & CSS for JS Devs
+  */
+  max-width: calc(100vw - var(--scrollbar-width));
 }
 /*
   3. Allow percentage-based heights in the application
