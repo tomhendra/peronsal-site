@@ -5,6 +5,12 @@ import styles from './code-block.css';
 
 const links: LinksFunction = () => [{rel: 'stylesheet', href: styles}];
 
+function Pre({children}: {children: React.ReactNode}) {
+  if (!children) throw Error('Pre: children is required');
+
+  return <pre className="code-block-pre">{children}</pre>;
+}
+
 function CodeBlock({
   children,
   className,
@@ -29,4 +35,4 @@ function CodeBlock({
   );
 }
 
-export {links, CodeBlock as default};
+export {links, Pre, CodeBlock};

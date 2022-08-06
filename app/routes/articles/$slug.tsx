@@ -6,12 +6,12 @@ import parse, {
   Element,
   type HTMLReactParserOptions,
 } from 'html-react-parser';
+import {CodeBlock, Pre} from '~/components/CodeBlock';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
-import CodeBlock from '~/components/CodeBlock';
 import {getMarkdownFile} from '~/helpers/github-md.server';
 
-import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import {links as codeBlockLinks} from '~/components/CodeBlock';
+import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import styles from '~/styles/article.css';
 
 const links: LinksFunction = () => [
@@ -36,19 +36,18 @@ const options: HTMLReactParserOptions = {
     if (!(domNode instanceof Element)) return;
 
     if (domNode?.name === 'pre') {
-      return (
-        <pre style={{position: 'relative'}}>
-          {domToReact(domNode?.children, options)}
-        </pre>
-      );
+      return <Pre>{domToReact(domNode?.children, options)}</Pre>;
     }
-
+    /*
+       Highlight.js adds 'hljs language-*' to the class of the dom node where * 
+       is the language. We check this to distinguish from inline code elements 
+       which have no class name by default.
+     */
     if (
       domNode?.name === 'code' &&
       domNode?.attribs?.class?.startsWith('hljs language-')
     ) {
       const props = attributesToProps(domNode?.attribs);
-
       return (
         <CodeBlock {...props}>
           {domToReact(domNode?.children, options)}

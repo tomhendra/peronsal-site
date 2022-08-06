@@ -1,30 +1,35 @@
+.code-block-pre {
+  position: relative;
+  margin-block: var(--space-12);
+  /* buffer comes from MaxWidthWrapper */
+  margin-inline: calc(var(--buffer) * -1);
+  padding-inline: var(--space-8);
+  padding-block-start: var(--space-8);
+  border-radius: var(--radius-default);
+  color: var(--color-syntax-text);
+  background: var(--color-syntax-background);
+  font-weight: var(--font-weight-medium);
+}
+
 .code-block-lang {
+  --padding: var(--space-2);
   position: absolute;
   display: block;
   top: 0;
-  right: 0;
+  right: calc(var(--buffer) - var(--padding));
   font-family: var(--font-sans);
   font-size: var(--font-size-text-md);
   line-height: 1;
   transform: translateY(-100%);
   background: var(--color-syntax-background);
-  padding: var(--space-2);
+  padding: var(--padding);
   border-radius: var(--radius-default) var(--radius-default) 0 0;
 }
 
 pre code.hljs {
-  margin-block: var(--space-12);
-  margin-inline: calc(var(--buffer) * -1);
   display: block;
   overflow-x: auto;
-  padding: var(--space-8);
-}
-
-.hljs {
-  color: var(--color-syntax-text);
-  background: var(--color-syntax-background);
-  border-radius: var(--radius-default);
-  font-weight: var(--font-weight-medium);
+  padding-block-end: var(--space-8);
 }
 
 .hljs-doctag,
@@ -114,11 +119,13 @@ pre code.hljs {
   background-color: var(--color-syntax-markup-deleted-background);
 }
 
+/*  purposely ignored 
 .hljs-char.escape_,
 .hljs-link,
 .hljs-params,
 .hljs-property,
 .hljs-punctuation,
 .hljs-tag {
-  /* purposely ignored */
+  ...
 }
+*/
