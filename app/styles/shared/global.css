@@ -38,6 +38,7 @@ well-blended scrollbar, our custom CSS might do more harm than good!
   ::-webkit-scrollbar {
     background-color: var(--color-scrollbar-track);
     width: 10px;
+    height: 10px;
   }
   ::-webkit-scrollbar-thumb {
     background-color: var(--color-scrollbar-thumb);

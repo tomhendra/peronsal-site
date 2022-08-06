@@ -205,12 +205,6 @@ a {
   }
 }
 
-pre,
-code {
-  margin-block-start: var(--space-8);
-  margin-block-end: var(--space-12);
-}
-
 figcaption {
   font-size: var(--font-size-text-sm);
 }

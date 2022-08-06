@@ -1,11 +1,11 @@
 import type {LinksFunction, LoaderArgs} from '@remix-run/cloudflare';
 import {useLoaderData} from '@remix-run/react';
 import parse, {
+  attributesToProps,
   domToReact,
   Element,
   type HTMLReactParserOptions,
 } from 'html-react-parser';
-import React from 'react';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
 import CodeBlock from '~/components/CodeBlock';
 import {getMarkdownFile} from '~/helpers/github-md.server';
@@ -31,20 +31,29 @@ async function loader(args: LoaderArgs) {
   return markdown;
 }
 
-const components: {[index: string]: React.ReactNode} = {
-  pre: CodeBlock,
-  // code: Code,
-  // img: Image,
-  // blockquote: Blockquote,
-};
-
 const options: HTMLReactParserOptions = {
   replace: domNode => {
     if (!(domNode instanceof Element)) return;
 
-    if (Object.hasOwn(components, domNode.name)) {
-      const Component = components[domNode.name] as keyof JSX.IntrinsicElements;
-      return <Component>{domToReact(domNode.children, options)}</Component>;
+    if (domNode?.name === 'pre') {
+      return (
+        <pre style={{position: 'relative'}}>
+          {domToReact(domNode?.children, options)}
+        </pre>
+      );
+    }
+
+    if (
+      domNode?.name === 'code' &&
+      domNode?.attribs?.class?.startsWith('hljs language-')
+    ) {
+      const props = attributesToProps(domNode?.attribs);
+
+      return (
+        <CodeBlock {...props}>
+          {domToReact(domNode?.children, options)}
+        </CodeBlock>
+      );
     }
   },
 };

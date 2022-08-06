@@ -498,7 +498,7 @@ html.light {
   --color-outline: hsl(var(--accent-700));
   --color-scrollbar-thumb: hsl(var(--gray-400));
   --color-scrollbar-thumb-hover: hsl(var(--gray-500));
-  --color-scrollbar-track: var(--color-background);
+  --color-scrollbar-track: var(--color-background-muted);
 
   --color-primary: hsl(var(--primary-600));
   --color-primary-hover: hsl(var(--primary-700));
@@ -527,36 +527,24 @@ html.light {
   --color-error-border: hsl(var(--error-300));
   --color-error-border-disabled: hsl(var(--error-200));
 
-  --syntax-color-text: hsl(var(--gray-600));
-  --syntax-color-muted-text: hsl(var(--gray-400));
-  --syntax-color-background: hsl(var(--gray-100));
-  --syntax-color-selection: hsl(var(--gray-200));
-  --syntax-color-selection-flash: hsl(var(--accent-500));
-  --syntax-color-cursor: hsl(var(--accent-500));
-  /* prism.js specific tokens */
-  --syntax-color-attr-name: hsl(var(--orange-500));
-  --syntax-color-boolean: hsl(var(--orange-500));
-  --syntax-color-constant: hsl(var(--orange-500));
-  --syntax-color-number: hsl(var(--orange-500));
-  --syntax-color-atrule: hsl(var(--orange-500));
-  --syntax-color-class: hsl(var(--orange-400));
-  --syntax-color-keyword: hsl(var(--fuchsia-500));
-  --syntax-color-property: hsl(var(--rose-500));
-  --syntax-color-tag: hsl(var(--rose-500));
-  --syntax-color-symbol: hsl(var(--rose-500));
-  --syntax-color-deleted: hsl(var(--error-600));
-  --syntax-color-important: hsl(var(--rose-500));
-  --syntax-color-selector: hsl(var(--moss-500));
-  --syntax-color-string: hsl(var(--moss-500));
-  --syntax-color-char: hsl(var(--moss-500));
-  --syntax-color-builtin: hsl(var(--moss-500));
-  --syntax-color-inserted: hsl(var(--success-600));
-  --syntax-color-regex: hsl(var(--moss-500));
-  --syntax-color-attr-value: hsl(var(--moss-500));
-  --syntax-color-variable: hsl(var(--blue-light-500));
-  --syntax-color-operator: hsl(var(--blue-light-500));
-  --syntax-color-function: hsl(var(--blue-light-500));
-  --syntax-color-url: hsl(var(--orange-500));
+  --color-syntax-text: hsl(var(--gray-800));
+  --color-syntax-background: var(--color-background-muted);
+  --color-syntax-keyword: hsl(var(--error-600));
+  --color-syntax-entity: hsl(var(--primary-700));
+  --color-syntax-constant: hsl(var(--blue-700));
+  --color-syntax-string: hsl(var(--blue-950));
+  --color-syntax-variable: hsl(var(--orange-500));
+  --color-syntax-comment: hsl(var(--gray-500));
+  --color-syntax-entity-tag: hsl(var(--green-600));
+  --color-syntax-storage-modifier-import: hsl(var(--gray-800));
+  --color-syntax-markup-heading: hsl(var(--blue-700));
+  --color-syntax-markup-list: hsl(var(--yellow-800));
+  --color-syntax-markup-italic: hsl(var(--gray-800));
+  --color-syntax-markup-bold: hsl(var(--gray-800));
+  --color-syntax-markup-inserted-text: hsl(var(--green-600));
+  --color-syntax-markup-inserted-background: hsl(var(--green-50));
+  --color-syntax-markup-deleted-text: hsl(var(--error-700));
+  --color-syntax-markup-deleted-background: hsl(var(--error-50));
 }
 
 html.dark {
@@ -588,7 +576,7 @@ html.dark {
   --color-outline: hsl(var(--accent-400));
   --color-scrollbar-thumb: hsl(var(--gray-600));
   --color-scrollbar-thumb-hover: hsl(var(--gray-500));
-  --color-scrollbar-track: var(--color-background);
+  --color-scrollbar-track: var(--color-background-muted);
 
   --color-primary: hsl(var(--primary-700));
   --color-primary-hover: hsl(var(--primary-600));
@@ -617,34 +605,22 @@ html.dark {
   --color-error-border: hsl(var(--error-900));
   --color-error-border-disabled: hsl(var(--error-950));
 
-  --syntax-color-text: hsl(var(--gray-300));
-  --syntax-color-muted-text: hsl(var(--gray-500));
-  --syntax-color-background: hsl(var(--gray-800));
-  --syntax-color-selection: hsl(var(--gray-700));
-  --syntax-color-selection-flash: hsl(var(--accent-600));
-  --syntax-color-cursor: hsl(var(--accent-600));
-  /* prism.js specific tokens */
-  --syntax-color-attr-name: hsl(var(--orange-400));
-  --syntax-color-boolean: hsl(var(--orange-400));
-  --syntax-color-constant: hsl(var(--orange-400));
-  --syntax-color-number: hsl(var(--orange-400));
-  --syntax-color-atrule: hsl(var(--orange-400));
-  --syntax-color-class: hsl(var(--orange-300));
-  --syntax-color-keyword: hsl(var(--fuchsia-400));
-  --syntax-color-property: hsl(var(--rose-400));
-  --syntax-color-tag: hsl(var(--rose-400));
-  --syntax-color-symbol: hsl(var(--rose-400));
-  --syntax-color-deleted: hsl(var(--error-500));
-  --syntax-color-important: hsl(var(--rose-400));
-  --syntax-color-selector: hsl(var(--moss-300));
-  --syntax-color-string: hsl(var(--moss-300));
-  --syntax-color-char: hsl(var(--moss-300));
-  --syntax-color-builtin: hsl(var(--moss-300));
-  --syntax-color-inserted: hsl(var(--success-500));
-  --syntax-color-regex: hsl(var(--moss-300));
-  --syntax-color-attr-value: hsl(var(--moss-300));
-  --syntax-color-variable: hsl(var(--blue-light-300));
-  --syntax-color-operator: hsl(var(--blue-light-300));
-  --syntax-color-function: hsl(var(--blue-light-300));
-  --syntax-color-url: hsl(var(--orange-400));
+  --color-syntax-text: hsl(var(--gray-100));
+  --color-syntax-background: var(--color-background-muted);
+  --color-syntax-keyword: hsl(var(--error-400));
+  --color-syntax-entity: hsl(var(--primary-300));
+  --color-syntax-constant: hsl(var(--blue-300));
+  --color-syntax-string: hsl(var(--blue-200));
+  --color-syntax-variable: hsl(var(--orange-300));
+  --color-syntax-comment: hsl(var(--gray-400));
+  --color-syntax-entity-tag: hsl(var(--green-light-300));
+  --color-syntax-storage-modifier-import: hsl(var(--gray-100));
+  --color-syntax-markup-heading: hsl(var(--blue-dark-400));
+  --color-syntax-markup-list: hsl(var(--yellow-300));
+  --color-syntax-markup-italic: hsl(var(--gray-100));
+  --color-syntax-markup-bold: hsl(var(--gray-100));
+  --color-syntax-markup-inserted-text: hsl(var(--green-light-200));
+  --color-syntax-markup-inserted-background: hsl(var(--green-light-800));
+  --color-syntax-markup-deleted-text: hsl(var(--error-100));
+  --color-syntax-markup-deleted-background: hsl(var(--error-800));
 }
