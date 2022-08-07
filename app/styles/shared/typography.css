@@ -196,12 +196,13 @@ h5,
 }
 
 a {
-  color: var(--color-text);
+  color: var(--color-primary-text);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
 }
 @media (pointer: fine) and (hover: hover) {
   a:hover {
-    text-decoration: none;
-    color: var(--color-primary-text);
+    text-decoration: revert;
   }
 }
 
@@ -209,6 +210,10 @@ figcaption {
   font-size: var(--font-size-text-sm);
 }
 
+pre,
+code {
+  font-family: var(--font-mono);
+}
 /* 
 manually apply variable font axis and use `<em>` tag rather than rely on 
 browser synthesis for `font-style: italic;`

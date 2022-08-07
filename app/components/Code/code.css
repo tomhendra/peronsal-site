@@ -8,21 +8,21 @@
   border-radius: var(--radius-default);
   color: var(--color-syntax-text);
   background: var(--color-syntax-background);
-  font-weight: var(--font-weight-medium);
 }
 
 .code-block-lang {
-  --padding: var(--space-2);
   position: absolute;
   display: block;
   top: 0;
-  right: calc(var(--buffer) - var(--padding));
+  right: var(--space-12);
   font-family: var(--font-sans);
   font-size: var(--font-size-text-md);
   line-height: 1;
   transform: translateY(-100%);
   background: var(--color-syntax-background);
-  padding: var(--padding);
+  color: var(--color-syntax-comment);
+  padding-block: var(--space-2);
+  padding-inline: var(--space-3);
   border-radius: var(--radius-default) var(--radius-default) 0 0;
 }
 
@@ -106,7 +106,7 @@ pre code.hljs {
 
 .hljs-strong {
   color: var(--color-syntax-markup-bold);
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
 }
 
 .hljs-addition {
@@ -129,3 +129,11 @@ pre code.hljs {
   ...
 }
 */
+
+.inline-code {
+  background-color: var(--color-syntax-background-inline);
+  color: var(--color-syntax-text-inline);
+  padding-block: 1.5px;
+  padding-inline: 4px;
+  border-radius: var(--radius-sm);
+}

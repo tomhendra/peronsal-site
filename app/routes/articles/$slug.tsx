@@ -6,11 +6,11 @@ import parse, {
   Element,
   type HTMLReactParserOptions,
 } from 'html-react-parser';
-import {CodeBlock, Pre} from '~/components/CodeBlock';
+import {CodeBlock, Pre, Code} from '~/components/Code';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
 import {getMarkdownFile} from '~/helpers/github-md.server';
 
-import {links as codeBlockLinks} from '~/components/CodeBlock';
+import {links as codeBlockLinks} from '~/components/Code';
 import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import styles from '~/styles/article.css';
 
@@ -39,20 +39,24 @@ const options: HTMLReactParserOptions = {
       return <Pre>{domToReact(domNode?.children, options)}</Pre>;
     }
     /*
-       Highlight.js adds 'hljs language-*' to the class of the dom node where * 
-       is the language. We check this to distinguish from inline code elements 
-       which have no class name by default.
+       for code blocks, Highlight.js adds 'hljs language-<lang>' to the class 
+       name of <code> elements and wraps them in a <pre> element.
+       Inline code elements have no class name assigned by default.
+       We exploit this behaviour to differentiate between the two.
      */
-    if (
-      domNode?.name === 'code' &&
-      domNode?.attribs?.class?.startsWith('hljs language-')
-    ) {
+    const isCodeBlock = domNode?.attribs?.class?.startsWith('hljs language-');
+
+    if (domNode?.name === 'code' && isCodeBlock) {
       const props = attributesToProps(domNode?.attribs);
       return (
         <CodeBlock {...props}>
           {domToReact(domNode?.children, options)}
         </CodeBlock>
       );
+    }
+
+    if (domNode?.name === 'code' && !isCodeBlock) {
+      return <Code>{domToReact(domNode?.children, options)}</Code>;
     }
   },
 };

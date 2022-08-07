@@ -483,7 +483,7 @@ html.light {
   --color-text-secondary-hover: hsl(var(--gray-800));
   --color-text-disabled: hsl(var(--gray-300));
   --color-text-selection: hsl(var(--white));
-  --color-background-selection: hsl(var(--accent-700));
+  --color-background-selection: hsl(var(--primary-700));
   --color-background-hsl: var(--white);
   --color-background: hsl(var(--color-background-hsl));
   --color-background-muted: hsl(var(--gray-50));
@@ -528,7 +528,9 @@ html.light {
   --color-error-border-disabled: hsl(var(--error-200));
 
   --color-syntax-text: hsl(var(--gray-800));
+  --color-syntax-text-inline: hsl(var(--gray-600));
   --color-syntax-background: var(--color-background-muted);
+  --color-syntax-background-inline: hsl(var(--gray-100));
   --color-syntax-keyword: hsl(var(--error-600));
   --color-syntax-entity: hsl(var(--primary-700));
   --color-syntax-constant: hsl(var(--blue-700));
@@ -561,7 +563,7 @@ html.dark {
   --color-text-secondary-hover: hsl(var(--gray-50));
   --color-text-disabled: hsl(var(--gray-700));
   --color-text-selection: hsl(var(--white));
-  --color-background-selection: hsl(var(--accent-700));
+  --color-background-selection: hsl(var(--primary-700));
   --color-background-hsl: var(--gray-975);
   --color-background: hsl(var(--color-background-hsl));
   --color-background-muted: hsl(var(--gray-900));
@@ -606,7 +608,9 @@ html.dark {
   --color-error-border-disabled: hsl(var(--error-950));
 
   --color-syntax-text: hsl(var(--gray-100));
+  --color-syntax-text-inline: hsl(var(--gray-200));
   --color-syntax-background: var(--color-background-muted);
+  --color-syntax-background-inline: hsl(var(--gray-800));
   --color-syntax-keyword: hsl(var(--error-400));
   --color-syntax-entity: hsl(var(--primary-300));
   --color-syntax-constant: hsl(var(--blue-300));
