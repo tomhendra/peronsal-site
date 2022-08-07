@@ -195,17 +195,6 @@ h5,
   }
 }
 
-a {
-  color: var(--color-primary-text);
-  text-decoration: none;
-  font-weight: var(--font-weight-medium);
-}
-@media (pointer: fine) and (hover: hover) {
-  a:hover {
-    text-decoration: revert;
-  }
-}
-
 figcaption {
   font-size: var(--font-size-text-sm);
 }

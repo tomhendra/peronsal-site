@@ -7,15 +7,18 @@ import parse, {
   type HTMLReactParserOptions,
 } from 'html-react-parser';
 import {CodeBlock, Pre, Code} from '~/components/Code';
+import Image from '~/components/Image';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
 import {getMarkdownFile} from '~/helpers/github-md.server';
 
 import {links as codeBlockLinks} from '~/components/Code';
+import {links as imageLinks} from '~/components/Image';
 import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import styles from '~/styles/article.css';
 
 const links: LinksFunction = () => [
   ...maxWidthContainerLinks(),
+  ...imageLinks(),
   ...codeBlockLinks(),
   {rel: 'stylesheet', href: styles},
 ];
@@ -34,6 +37,16 @@ async function loader(args: LoaderArgs) {
 const options: HTMLReactParserOptions = {
   replace: domNode => {
     if (!(domNode instanceof Element)) return;
+
+    if (domNode.name === 'a') {
+      const props = attributesToProps(domNode?.attribs);
+      const {href, ...rest} = props;
+      return (
+        <a className="article-link" href={href} {...rest}>
+          {domToReact(domNode?.children, options)}
+        </a>
+      );
+    }
 
     if (domNode?.name === 'pre') {
       return <Pre>{domToReact(domNode?.children, options)}</Pre>;
@@ -57,6 +70,31 @@ const options: HTMLReactParserOptions = {
 
     if (domNode?.name === 'code' && !isCodeBlock) {
       return <Code>{domToReact(domNode?.children, options)}</Code>;
+    }
+
+    if (domNode?.name === 'img') {
+      const props = attributesToProps(domNode?.attribs);
+      const {src, alt, title, ...rest} = props;
+      return (
+        <Image
+          src={src}
+          alt={alt}
+          title={title}
+          width={720}
+          height={640}
+          widths={[375, 750, 1125, 768, 1536, 2304, 720, 1440, 2160]}
+          sizes={[
+            '(max-width:34.375rem) 80vw',
+            '(max-width:68.75rem) 70vw',
+            '(max-width:93.75rem) 60vw',
+            '1440px',
+          ]}
+          transformations={{
+            background: 'rgb:e6e9ee',
+          }}
+          {...rest}
+        />
+      );
     }
   },
 };

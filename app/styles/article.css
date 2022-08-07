@@ -89,3 +89,14 @@
   border: 1px solid var(--color-divider);
   margin-block-end: var(--space-12);
 }
+
+.article-link {
+  color: var(--color-primary-text);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+}
+@media (pointer: fine) and (hover: hover) {
+  .article-link:hover {
+    text-decoration: revert;
+  }
+}
