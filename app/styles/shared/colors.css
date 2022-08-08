@@ -535,7 +535,7 @@ html.light {
   --color-syntax-entity: hsl(var(--primary-700));
   --color-syntax-constant: hsl(var(--blue-700));
   --color-syntax-string: hsl(var(--blue-950));
-  --color-syntax-variable: hsl(var(--orange-500));
+  --color-syntax-variable: hsl(var(--orange-700));
   --color-syntax-comment: hsl(var(--gray-500));
   --color-syntax-entity-tag: hsl(var(--green-600));
   --color-syntax-storage-modifier-import: hsl(var(--gray-800));
