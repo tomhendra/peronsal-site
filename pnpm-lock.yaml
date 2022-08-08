@@ -2026,7 +2026,7 @@ packages:
       eslint-import-resolver-node: 0.3.6
       eslint-import-resolver-typescript: 2.7.1_jatgrcxl4x7ywe7ak6cnjca2ae
       eslint-plugin-import: 2.26.0_7cokhqzw3zmsbwxwh7sdzavr6q
-      eslint-plugin-jest: 26.7.0_bqjo633dpfdihlvg5bmomzewvm
+      eslint-plugin-jest: 26.8.0_bqjo633dpfdihlvg5bmomzewvm
       eslint-plugin-jest-dom: 4.0.2_eslint@8.21.0
       eslint-plugin-jsx-a11y: 6.6.1_eslint@8.21.0
       eslint-plugin-node: 11.1.0_eslint@8.21.0
@@ -3194,8 +3194,8 @@ packages:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
     dev: true
 
-  /deasync/0.1.27:
-    resolution: {integrity: sha512-aCt6M9Ilkvs8TKIchmibUpNe/QSp9UNQL6YkvVraAce/SFFZCvYw3lQevl6MlUDn8Xr4QD4wYTerWH22yn+ODQ==}
+  /deasync/0.1.28:
+    resolution: {integrity: sha512-QqLF6inIDwiATrfROIyQtwOQxjZuek13WRYZ7donU5wJPLoP67MnYxA6QtqdvdBy2mMqv5m3UefBVdJjvevOYg==}
     engines: {node: '>=0.11.0'}
     requiresBuild: true
     dependencies:
@@ -4042,8 +4042,8 @@ packages:
       requireindex: 1.2.0
     dev: true
 
-  /eslint-plugin-jest/26.7.0_bqjo633dpfdihlvg5bmomzewvm:
-    resolution: {integrity: sha512-/YNitdfG3o3cC6juZziAdkk6nfJt01jXVfj4AgaYVLs7bupHzRDL5K+eipdzhDXtQsiqaX1TzfwSuRlEgeln1A==}
+  /eslint-plugin-jest/26.8.0_bqjo633dpfdihlvg5bmomzewvm:
+    resolution: {integrity: sha512-IyGhk+PpDgIA99OBPHo+l2aTtt8yAeB1IgPwXOQZSzi8ag/t1MsLZBN2MKL1sj6ahlkaxbkhlm7ll+NPcMcjaQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^5.0.0
@@ -5525,8 +5525,8 @@ packages:
       object.assign: 4.1.3
     dev: true
 
-  /just-merge/3.0.1:
-    resolution: {integrity: sha512-NAwyt7KvIhHFRkLNlwor8cMs//ni72uBNL5Eev4WF/6v2xgEyWglv+z7V5EtW9jKYxbYCvt9EwsLeVlpHCEOCA==}
+  /just-merge/3.1.0:
+    resolution: {integrity: sha512-m3t8nOPbf34CMOryvK9aj4OfbcNBp9vGF34Tl4gsRhA+6guBD6T2niqz43/jhvGiVN2yUFdCh5bGSyYZptoi0Q==}
     dev: false
 
   /keyv/4.3.3:
@@ -7252,7 +7252,7 @@ packages:
       remix: '>=1.0.0'
     dependencies:
       '@remix-run/react': 1.6.7_sfoxds7t5ydpegc3knd667wn6m
-      just-merge: 3.0.1
+      just-merge: 3.1.0
       remix: 1.6.7
     dev: false
 
@@ -8463,7 +8463,7 @@ packages:
       unist-util-visit: 4.1.0
       vfile: 5.3.4
     optionalDependencies:
-      deasync: 0.1.27
+      deasync: 0.1.28
     transitivePeerDependencies:
       - supports-color
     dev: true
