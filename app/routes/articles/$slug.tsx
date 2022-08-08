@@ -119,7 +119,7 @@ const options: HTMLReactParserOptions = {
           alt={alt}
           title={title}
           width={720}
-          height={640}
+          height={480}
           widths={[375, 750, 1125, 768, 1536, 2304, 720, 1440, 2160]}
           sizes={[
             '(max-width:34.375rem) 80vw',

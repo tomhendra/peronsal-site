@@ -29,7 +29,7 @@ function Index() {
             <p className="hero-prefix">{`${data.length} Articles`}</p>
             <h1 className="hero-heading">Tom's Blog</h1>
             <h2 className="hero-subheading">
-              Discoveries from the world of web development.
+              A technical blog for developers.
             </h2>
           </div>
         </MaxWidthContainer>
