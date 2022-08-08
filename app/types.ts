@@ -20,6 +20,7 @@ export type MarkdownAttributes = {
   title: string;
   subtitle: string;
   description: string;
+  og_image: string;
   tags: Array<string>;
 };
 

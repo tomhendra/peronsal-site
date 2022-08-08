@@ -1,4 +1,8 @@
-import type {LinksFunction, LoaderArgs} from '@remix-run/cloudflare';
+import type {
+  LinksFunction,
+  LoaderArgs,
+  MetaFunction,
+} from '@remix-run/cloudflare';
 import {useLoaderData} from '@remix-run/react';
 import parse, {
   attributesToProps,
@@ -10,11 +14,45 @@ import {CodeBlock, Pre, Code} from '~/components/Code';
 import Image from '~/components/Image';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
 import {getMarkdownFile} from '~/helpers/github-md.server';
+import {getSeoMeta} from '~/helpers/seo';
 
 import {links as codeBlockLinks} from '~/components/Code';
 import {links as imageLinks} from '~/components/Image';
 import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import styles from '~/styles/article.css';
+
+const meta: MetaFunction = ({data, params}) => {
+  let seoMeta = getSeoMeta({
+    title: data.attributes.title,
+    description: data.attributes.description,
+    openGraph: {
+      siteName: 'Tom Hendra',
+      title: data.attributes.title,
+      description: data.attributes.description,
+      type: 'website',
+      url: `https://tomhendra.dev/${params.slug}`,
+      images: [
+        {
+          url: data.attributes?.og_image,
+          secureUrl: data.attributes?.og_image,
+          alt: `Stylised cute robot logo with the article title: ${data.attributes.title}, @tomhendra and tomhendra.dev`,
+          height: 1920,
+          width: 3840,
+          type: 'image/png',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@tomhendra',
+      title: data.attributes.title,
+      description: data.attributes.description,
+    },
+  });
+  return {
+    ...seoMeta,
+  };
+};
 
 const links: LinksFunction = () => [
   ...maxWidthContainerLinks(),
@@ -52,8 +90,8 @@ const options: HTMLReactParserOptions = {
       return <Pre>{domToReact(domNode?.children, options)}</Pre>;
     }
     /*
-       for code blocks, Highlight.js adds 'hljs language-<lang>' to the class 
-       name of <code> elements and wraps them in a <pre> element.
+       for code blocks, Highlight.js prepends 'hljs language-<lang>' to the 
+       class name of <code> elements and wraps them in a <pre> element.
        Inline code elements have no class name assigned by default.
        We exploit this behaviour to differentiate between the two.
      */
@@ -87,7 +125,7 @@ const options: HTMLReactParserOptions = {
             '(max-width:34.375rem) 80vw',
             '(max-width:68.75rem) 70vw',
             '(max-width:93.75rem) 60vw',
-            '1440px',
+            '720px',
           ]}
           transformations={{
             background: 'rgb:e6e9ee',
@@ -126,4 +164,4 @@ function Article() {
   );
 }
 
-export {links, loader, Article as default};
+export {meta, links, loader, Article as default};

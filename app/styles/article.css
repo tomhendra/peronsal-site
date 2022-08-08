@@ -97,6 +97,6 @@
 }
 @media (pointer: fine) and (hover: hover) {
   .article-link:hover {
-    text-decoration: revert;
+    text-decoration: underline;
   }
 }

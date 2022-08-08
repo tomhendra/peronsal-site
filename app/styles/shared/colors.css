@@ -608,7 +608,7 @@ html.dark {
   --color-error-border-disabled: hsl(var(--error-950));
 
   --color-syntax-text: hsl(var(--gray-100));
-  --color-syntax-text-inline: hsl(var(--gray-200));
+  --color-syntax-text-inline: hsl(var(--gray-100));
   --color-syntax-background: var(--color-background-muted);
   --color-syntax-background-inline: hsl(var(--gray-800));
   --color-syntax-keyword: hsl(var(--error-400));
