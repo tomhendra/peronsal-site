@@ -17,7 +17,7 @@ const [seoMeta, seoLinks] = getSeo({
   description:
     'A developer blog built with Remix and markdown deployed to the Cloudflare platform.',
   openGraph: {
-    /* todo og date for project */
+    /* todo og data for project */
   },
 });
 

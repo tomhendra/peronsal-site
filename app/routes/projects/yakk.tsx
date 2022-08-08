@@ -16,7 +16,7 @@ const [seoMeta, seoLinks] = getSeo({
   title: 'Projects: Yakk',
   description: 'A realtime chat application built with Remix and Supabase.',
   openGraph: {
-    /* todo og date for project */
+    /* todo og data for project */
   },
 });
 

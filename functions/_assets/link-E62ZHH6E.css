@@ -1,0 +1,62 @@
+/* base styles */
+.link {
+  position: relative; /* required for .click-target-helper */
+  display: grid;
+  place-content: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition: color 400ms;
+}
+@media (pointer: fine) and (hover: hover) {
+  .link:hover {
+    transition: color 150ms;
+  }
+}
+
+/* sizes */
+.link.sm {
+  font-size: var(--font-size-text-sm);
+}
+
+.link.md {
+  font-size: var(--font-size-text-md);
+}
+
+.link.lg {
+  font-size: var(--font-size-text-lg);
+}
+
+/* primary variant */
+.link.primary {
+  color: var(--color-primary-text);
+}
+@media (pointer: fine) and (hover: hover) {
+  .link.link:hover {
+    color: var(--color-primary-text-hover);
+  }
+}
+
+/* gray variant */
+.link.gray {
+  color: var(--color-text);
+}
+@media (pointer: fine) and (hover: hover) {
+  .link.gray:hover {
+    color: var(--color-text-hover);
+  }
+}
+
+/* destructive mood */
+.link.primary.destructive,
+.link.gray.destructive {
+  color: var(--color-error-text);
+}
+
+@media (pointer: fine) and (hover: hover) {
+  .link.primary.destructive:hover,
+  .link.gray.destructive:hover {
+    color: var(--color-error-text-hover);
+  }
+}
