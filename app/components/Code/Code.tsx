@@ -30,7 +30,9 @@ function CodeBlock({
   return (
     <>
       <span className="code-block-lang">{lang}</span>
-      <code className={className}>{children}</code>
+      <code className={className} tabIndex={0}>
+        {children}
+      </code>
     </>
   );
 }

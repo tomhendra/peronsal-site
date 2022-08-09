@@ -27,6 +27,10 @@
   border-radius: var(--radius-default) var(--radius-default) 0 0;
 }
 
+.code-block-lang code {
+  outline-color: var(--color-outline);
+}
+
 pre code.hljs {
   display: block;
   overflow-x: auto;
