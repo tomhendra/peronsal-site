@@ -63,14 +63,8 @@ function MobileMenu() {
                 <Link variant="gray" size="lg" to="/" onClick={close}>
                   Home
                 </Link>
-                <Link variant="gray" size="lg" to="/#projects" onClick={close}>
-                  Projects
-                </Link>
-                <Link variant="gray" size="lg" to="/#about" onClick={close}>
-                  About
-                </Link>
-                <Link variant="gray" size="lg" to="/#contact" onClick={close}>
-                  Contact
+                <Link variant="gray" size="lg" to="/articles" onClick={close}>
+                  Articles
                 </Link>
               </nav>
             </MotionDialogContent>
