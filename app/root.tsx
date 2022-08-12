@@ -53,7 +53,6 @@ const loader: LoaderFunction = async ({request}) => {
 const [seoMeta, seoLinks] = getSeo();
 
 const meta: MetaFunction = () => ({
-  ...seoMeta,
   charset: 'utf-8',
   viewport: 'width=device-width,initial-scale=1',
   // css vars do not work here for content :(
@@ -67,6 +66,7 @@ const meta: MetaFunction = () => ({
     content: 'hsl(0deg 0% 100% / 100%)',
     media: '(prefers-color-scheme: light)',
   },
+  ...seoMeta,
 });
 
 const links: LinksFunction = () => [

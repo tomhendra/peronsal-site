@@ -137,7 +137,7 @@ function Index() {
             <div>
               <Image
                 className="hero-img"
-                src="tom-website-hero"
+                src="tom-website-hero-hq"
                 alt="A portrait photo of Tom Hendra"
                 title="Photo by María Teresa Valverde Calvo"
                 width={560}
@@ -158,16 +158,16 @@ function Index() {
                 My journey to becoming a developer
               </h2>
               <h3 className="section-subheading">
-                In 2018 I sold everything I owned, quit my job in procurement,
-                and moved to Spain to become a developer. New country, new
+                In 2018 I sold everything I owned, quit my procurement job, and
+                moved to Spain to become a web developer. New country, new
                 language, new career, new life.
               </h3>
             </div>
             <div className="columns">
               <p>
-                While shipping WordPress sites to pay the bills I have been in
-                pursuit of my chosen career trajectory ever since; as a software
-                developer focused within the JavaScript ecosystem.
+                After starting out by building no-code websites I became curious
+                about how the web worked. This led me down a rabbit hole and
+                ultimately to the decision that I wanted to learn how to code.
               </p>
               <p>
                 I knew I had made the right choice after struggling with an
@@ -176,14 +176,14 @@ function Index() {
                 hooked!
               </p>
               <p>
-                I build web apps with modern frameworks and continuously raise
-                my standards by learning from high quality resources and my
-                network of smart folks in the developer community.
+                I now build web apps with JavaScript frameworks and continuously
+                raise my standards by learning from high quality resources and
+                the many smart folks within the developer community.
               </p>
               <p>
                 I have the necessary skills to build polished user interfaces
                 and am seeking a permanent role as a frontend developer, where I
-                can continue to grow and help my team to achieve their goals.
+                can continue to grow and help a team to achieve their goals.
               </p>
             </div>
           </div>
@@ -195,32 +195,33 @@ function Index() {
           <div className="section-layout">
             <div className="section-intro">
               <span className="section-prefix">Projects</span>
-              <h2 className="section-heading">I have been shipping</h2>
+              <h2 className="section-heading">What I have been shipping</h2>
               <h3 className="section-subheading">
-                I like to build stuff using skills that I acquire on my journey.
+                I like to build stuff using the skills that I acquire on my
+                journey.
               </h3>
             </div>
-            <Tabs defaultValue="yakk">
+            <Tabs defaultValue="blog">
               <TabsList aria-label="Tab navigation for projects">
+                <Tab value="blog">
+                  <TabHeading>Blog</TabHeading>
+                  <TabSubheading>
+                    A technical blog for developers.
+                  </TabSubheading>
+                  <TabLink to="projects/blog">Project details</TabLink>
+                </Tab>
                 <Tab value="yakk">
                   <TabHeading>Yakk</TabHeading>
                   <TabSubheading>A realtime chat application.</TabSubheading>
                   <TabLink to="projects/yakk">Project details</TabLink>
                 </Tab>
-                <Tab value="blog">
-                  <TabHeading>Blog</TabHeading>
-                  <TabSubheading>
-                    Thoughts, discoveries and guides.
-                  </TabSubheading>
-                  <TabLink to="projects/blog">Project details</TabLink>
-                </Tab>
               </TabsList>
-              <TabContent value="yakk" className="tab-content">
+              <TabContent value="blog">
                 <div className="tab-img-container">
-                  <Link to="projects/yakk">
+                  <Link to="projects/blog">
                     <Image
                       className="tab-img shadow"
-                      src="yakk-mockup-desktop-01-3x"
+                      src="blog-mockup-desktop-01-3x"
                       alt="Preview of project"
                       loading="lazy"
                       width={530}
@@ -231,12 +232,12 @@ function Index() {
                   </Link>
                 </div>
               </TabContent>
-              <TabContent value="blog">
+              <TabContent value="yakk" className="tab-content">
                 <div className="tab-img-container">
-                  <Link to="projects/blog">
+                  <Link to="projects/yakk">
                     <Image
                       className="tab-img shadow"
-                      src="blog-mockup-desktop-01-3x"
+                      src="yakk-mockup-desktop-01-3x"
                       alt="Preview of project"
                       loading="lazy"
                       width={530}
@@ -258,7 +259,7 @@ function Index() {
               <span className="section-prefix alt">Contact</span>
               <h2 className="section-heading alt">Let's connect</h2>
               <h3 className="section-subheading alt">
-                I'm always open to new opportunities.
+                I'm always happy to make new connections.
               </h3>
             </div>
             <div className="contact-container">

@@ -44,9 +44,7 @@ function Blog() {
               <span className="section-prefix">Projects</span>
               <h1>Blog</h1>
               <div className="hero-intro-content">
-                <h3 className="subheading">
-                  A place for my thoughts and ideas.
-                </h3>
+                <h3 className="subheading">A technical blog for developers.</h3>
                 <ul className="features-list">
                   <li>
                     <span className="feature">
@@ -57,7 +55,7 @@ function Blog() {
                           color="var(--color-primary-text)"
                         />
                       </FeatureIcon>
-                      Optimised cloud image delivery
+                      Markdown parsed from GitHub to Cloudflare CDN
                     </span>
                   </li>
                   <li>
@@ -69,7 +67,7 @@ function Blog() {
                           color="var(--color-primary-text)"
                         />
                       </FeatureIcon>
-                      Filter posts by category
+                      Optimised image delivery with Cloudinary
                     </span>
                   </li>
                   <li>
@@ -81,13 +79,10 @@ function Blog() {
                           color="var(--color-primary-text)"
                         />
                       </FeatureIcon>
-                      Code syntax highlighting in custom colours
+                      Dark mode respective of system preference
                     </span>
                   </li>
                 </ul>
-                <p>
-                  My role in this project was as the designer and the developer.
-                </p>
                 <div className="btn-group">
                   <Button
                     as="externalLink"
@@ -128,8 +123,9 @@ function Blog() {
             <div className="tech-stack">
               <p className="heading">Technologies used</p>
               <div className="list">
-                <Tech name="Svelte" />
-                <Tech name="Sass" />
+                <Tech name="Remix" />
+                <Tech name="TypeScript" />
+                <Tech name="CSS" />
                 <Tech name="Markdown" />
                 <Tech name="Cloudinary" />
                 <Tech name="Cloudflare Pages" />
@@ -153,15 +149,23 @@ function Blog() {
                 </FeatureIcon>
                 <h2 className="title">Purpose &amp; Goal</h2>
                 <p>
-                  Why did you build this project? Why is it important to you?
+                  The project was created so that I have a place on the internet
+                  where I can create content while retaining full control of the
+                  platform on which it is authored.
                 </p>
                 <p>
-                  What was the expected outcome of the project? What were the
-                  initial designs?
+                  The expected outcome was to build a fast, attractive website
+                  with good SEO, with a focus on sharing code that I write to
+                  solve my problems which could in turn help other developers to
+                  solve theirs.
                 </p>
                 <p>
-                  Any other preliminary planning that you did which helps build
-                  a narrative
+                  I wanted to author content in markdown but keep the files
+                  separate from the source code. This separation of concerns
+                  would make queries and modifications straightforward as the
+                  data scales. The website <em>and</em> the data also had to be
+                  delivered from the edge, so the experience is fast for all
+                  users worldwide.
                 </p>
               </div>
               <div className="content">
@@ -199,72 +203,48 @@ function Blog() {
                 </FeatureIcon>
                 <h2 className="title">Spotlight</h2>
                 <p>
-                  What is the “killer feature” of your project? What feature
-                  does it have that took the most work, or was the most
-                  technically impressive? Some possible examples:
-                </p>
-                <ul className="features-list">
-                  <li>
-                    <span className="feature">
-                      <FeatureIcon>
-                        <CheckCircle
-                          size={14}
-                          strokeWidth={3}
-                          color="var(--color-primary-text)"
-                        />
-                      </FeatureIcon>
-                      User authentication
-                    </span>
-                  </li>
-                  <li>
-                    <span className="feature">
-                      <FeatureIcon>
-                        <CheckCircle
-                          size={14}
-                          strokeWidth={3}
-                          color="var(--color-primary-text)"
-                        />
-                      </FeatureIcon>
-                      A feed of items fetched from a database
-                    </span>
-                  </li>
-                  <li>
-                    <span className="feature">
-                      <FeatureIcon>
-                        <CheckCircle
-                          size={14}
-                          strokeWidth={3}
-                          color="var(--color-primary-text)"
-                        />
-                      </FeatureIcon>
-                      A particularly tricky UI element (eg. autocomplete,
-                      calendar, drag-and-drop)
-                    </span>
-                  </li>
-                  <li>
-                    <span className="feature">
-                      <FeatureIcon>
-                        <CheckCircle
-                          size={14}
-                          strokeWidth={3}
-                          color="var(--color-primary-text)"
-                        />
-                      </FeatureIcon>
-                      Anything else you're proud of!{' '}
-                    </span>
-                  </li>
-                </ul>
-                <p>
-                  What were the technical hurdles that got in your way? Any
-                  major problems you hit during development?
+                  The markdown is parsed into an HTML string from a GitHub repo
+                  which contains only <code>.md</code> files, and is cached to
+                  Cloudflare's CDN with SWR for 2 days and revalidation every 5
+                  minutes. This is achieved with{' '}
+                  <a href="https://github.com/jacob-ebey/github-md">
+                    <code>github-md</code>
+                  </a>{' '}
+                  which uses the GitHub API and Cloudflare Workers under the
+                  hood. The HTML string is then fetched by a Remix app deployed
+                  to the same CDN, converted into React elements on the backend
+                  with{' '}
+                  <a href="https://github.com/remarkablemark/html-react-parser#readme">
+                    <code>html-react-parser</code>,
+                  </a>{' '}
+                  before being server-side rendered by Remix.
                 </p>
                 <p>
-                  How did you solve those problems? What was the solution? Go
-                  deep here, and write with a developer in mind. How did you
-                  solve those problems? What was the solution? Go deep here, and
-                  write with a developer in mind.How did you solve those
-                  problems? What was the solution? Go deep here, and write with
-                  a developer in mind.How did you solve those problems?
+                  One challenge I faced was how to display the code language
+                  within the article code blocks. The only language identifier
+                  in the HTML string provided by <code>github-md</code> is
+                  within the Highlight.js class names{' '}
+                  <a href="https://github.com/jacob-ebey/github-md/blob/main/src/index.ts#L394">
+                    added to <code>&lt;code&gt;</code> elements
+                  </a>
+                  . Since <code>github-md</code> doesn't expose an API to
+                  control its behaviour, I needed to extract the language from
+                  those class names.
+                </p>
+                <p>
+                  <code>html-react-parser</code> has a feature to replace
+                  elements, and can convert DOM attributes to React props while
+                  doing so. I looked for code DOM nodes which had a class name
+                  starting with <code>hljs language-</code>, and if found,
+                  converted the class attribute to a React prop, replaced the
+                  code element with a custom React component, and passed along
+                  the prop.
+                </p>
+                <p>
+                  From there I used the JavaScript built-in slice method on the
+                  destructured <code>className</code> prop value to grab the
+                  language and display it in a <code>&lt;span&gt;</code> next to
+                  the code element.
                 </p>
               </div>
             </div>
@@ -280,14 +260,17 @@ function Blog() {
                 </FeatureIcon>
                 <h2 className="title">Current Status</h2>
                 <p>
-                  This section is optional. If the project is actively being
-                  used by real people, talk a little bit about the current
-                  status, who uses it, why they use it, what they say to you
-                  about it, stuff like that.
+                  The blog is currently live, and gets 16.5K total requests per
+                  month, with 1.5K unique visitors. By far the biggest user base
+                  is in the USA, around 6 times more than 2nd country on the
+                  list which is Germany. This is closely followed by Singapore,
+                  the UK and Australia.
                 </p>
                 <p>
-                  If the project was contrived specifically for the portfolio,
-                  omit this section.
+                  My goal is to improve the quality and quantity of the content
+                  I write, and I have a long list of new features that I intend
+                  to add to the project over time. The biggest feature is to
+                  have a Spanish language version of every post.
                 </p>
               </div>
               <div className="content">
@@ -325,28 +308,37 @@ function Blog() {
                 </FeatureIcon>
                 <h2 className="title">Lessons Learned</h2>
                 <p>
-                  What did you learn doing this project? Feel free to list
-                  multiple things. Also feel free to cover non-technical
-                  lessons. It's great to talk about how you learned to use an
-                  advanced feature of a framework or library, but it's just as
-                  valuable to talk about project-management experience, or
-                  things you learned about shipping projects.
+                  The choice to use <code>github-md</code> was a good one, and
+                  definitely saved time compared to tackling the GitHub API and
+                  Cloudflare Workers myself. But I would have liked some control
+                  over the parsing of the markdown, especially having seen the
+                  parts I wanted to hook into within the source code.
                 </p>
                 <p>
-                  If you used a framework or other libraries/tools, was it a
-                  good choice? How did it help? In which ways was it
-                  insufficient?
+                  Remix was a joy to use, and the ethos of building upon web
+                  standards and existing APIs resonates with me greatly. It
+                  feels like a good fit for edge computing, with projects like
+                  Cloudflare Workers and Deno using V8 isolates running at the
+                  edge and incorporating modified browser APIs into their
+                  codebase.
                 </p>
                 <p>
-                  Is your project accessible? What did you learn about
-                  accessibility, while building this project? Describing how you
-                  tested your project using keyboard navigation or a screen-
-                  reader can make for a really compelling story!
+                  The project is fully accessible with a 100 score on
+                  Lighthouse. However while testing keyboard navigation, I
+                  noticed that code blocks with a scrollbar on the X axis were
+                  not focusable in Chrome or Safari. Since the blog is highly
+                  oriented towards sharing code, I chose to add{' '}
+                  <code>tabIndex={0}</code> to all code block elements to
+                  resolve the issue.
                 </p>
                 <p>
-                  How has this affected the work you've done since then? Real
-                  examples of how this project built your knowledge for future
-                  projects is fantastic.
+                  Building this project has uncovered a hunger to learn to code
+                  for the backend, as I would have liked the confidence to fork{' '}
+                  <code>github-md</code> and tweak it to my liking. And I was
+                  reminded that Lighthouse cannot be solely relied upon for
+                  a11y. It is important to test our websites and apps using
+                  keyboard navigation and screen readers to uncover issues that
+                  a11y tools might not identify.
                 </p>
               </div>
             </div>

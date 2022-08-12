@@ -190,6 +190,8 @@ h5,
 pre,
 code {
   font-family: var(--font-mono);
+  font-size: var(--font-size-text-sm);
+  font-weight: var(--font-weight-medium);
 }
 
 code {
