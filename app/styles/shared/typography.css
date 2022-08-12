@@ -190,10 +190,14 @@ h5,
 pre,
 code {
   font-family: var(--font-mono);
-  font-size: var(--font-size-text-sm);
-  font-weight: var(--font-weight-medium);
-  margin-top: var(--space-8);
-  margin-bottom: var(--space-12);
+}
+
+code {
+  background-color: var(--color-syntax-background-inline);
+  color: var(--color-syntax-text-inline);
+  padding-block: 1.5px;
+  padding-inline: 4px;
+  border-radius: var(--radius-sm);
 }
 
 figcaption {

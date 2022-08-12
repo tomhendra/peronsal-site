@@ -59,6 +59,7 @@
   gap: var(--space-4);
   align-items: flex-start;
   flex-wrap: wrap;
+  margin-block-start: var(--space-6);
 }
 @media (max-width: 34.375rem) {
   .hero-intro-content .btn-group {
