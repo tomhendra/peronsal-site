@@ -68,7 +68,7 @@
   }
 }
 
-.hero-img-wrapper {
+.image-wrapper {
   --offset: var(--space-16);
   position: relative;
   overflow: hidden;
@@ -80,7 +80,7 @@
   position: absolute;
   top: 0;
   left: var(--space-16);
-  object-position: 0% 0%;
+  object-position: 10% 0%;
 }
 
 .hero-img-mobile {

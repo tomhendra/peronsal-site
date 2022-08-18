@@ -68,26 +68,14 @@
   }
 }
 
-.hero-img-wrapper {
-  --offset: var(--space-16);
+.image-wrapper {
   position: relative;
-  overflow: hidden;
-  margin-inline-start: var(--offset);
-  margin-inline-end: calc(-1 * var(--offset));
 }
 
 .hero-img-desktop {
   position: absolute;
   top: 0;
-  left: var(--space-16);
-  object-position: 0% 0%;
-}
-
-.hero-img-mobile {
-  position: absolute;
-  top: var(--space-16);
   left: 0;
-  object-position: 0% 0%;
 }
 
 /* teck stack */
