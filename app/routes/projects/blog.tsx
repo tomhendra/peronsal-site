@@ -19,7 +19,7 @@ const [seoMeta, seoLinks] = getSeo({
   description:
     'A developer blog built with Remix and markdown deployed to the Cloudflare platform.',
   openGraph: {
-    /* todo og date for project */
+    /* todo og data for project */
   },
 });
 
@@ -229,38 +229,40 @@ function Blog() {
                   which contains only <code>.md</code> files, and is cached to
                   Cloudflare's CDN with SWR for 2 days and revalidation every 5
                   minutes. This is achieved with{' '}
-                  <a href="https://github.com/jacob-ebey/github-md">
-                    <code>github-md</code>
+                  <a
+                    href="https://github.com/jacob-ebey/github-md"
+                    className="analysis-link click-target-helper"
+                  >
+                    github-md
                   </a>{' '}
                   which uses the GitHub API and Cloudflare Workers under the
                   hood. The HTML string is then fetched by a Remix app deployed
                   to the same CDN, converted into React elements on the backend
                   with{' '}
-                  <a href="https://github.com/remarkablemark/html-react-parser#readme">
-                    <code>html-react-parser</code>,
+                  <a
+                    href="https://github.com/remarkablemark/html-react-parser#readme"
+                    className="analysis-link click-target-helper"
+                  >
+                    html-react-parser
                   </a>{' '}
                   before being server-side rendered by Remix.
                 </p>
                 <p>
                   One challenge I faced was how to display the code language
                   within the article code blocks. The only language identifier
-                  in the HTML string provided by <code>github-md</code> is
-                  within the Highlight.js class names{' '}
-                  <a href="https://github.com/jacob-ebey/github-md/blob/main/src/index.ts#L394">
-                    added to <code>&lt;code&gt;</code> elements
-                  </a>
-                  . Since <code>github-md</code> doesn't expose an API to
-                  control its behaviour, I needed to extract the language from
-                  those class names.
+                  in the HTML string provided by github-md is within the
+                  Highlight.js class names added to <code>&lt;code&gt;</code>{' '}
+                  elements. Since github-md doesn't expose an API to control its
+                  behaviour, I needed to extract the language from those class
+                  names.
                 </p>
                 <p>
-                  <code>html-react-parser</code> has a feature to replace
-                  elements, and can convert DOM attributes to React props while
-                  doing so. I looked for code DOM nodes which had a class name
-                  starting with <code>hljs language-</code>, and if found,
-                  converted the class attribute to a React prop, replaced the
-                  code element with a custom React component, and passed along
-                  the prop.
+                  html-react-parser has a feature to replace elements, and can
+                  convert DOM attributes to React props while doing so. I looked
+                  for code DOM nodes which had a class name starting with{' '}
+                  <code>hljs language-</code>, and if found, converted the class
+                  attribute to a React prop, replaced the code element with a
+                  custom React component, and passed along the prop.
                 </p>
                 <p>
                   From there I used the JavaScript built-in slice method on the
@@ -330,11 +332,11 @@ function Blog() {
                 </FeatureIcon>
                 <h2 className="title">Lessons Learned</h2>
                 <p>
-                  The choice to use <code>github-md</code> was a good one, and
-                  definitely saved time compared to tackling the GitHub API and
-                  Cloudflare Workers myself. But I would have liked some control
-                  over the parsing of the markdown, especially having seen the
-                  parts I wanted to hook into within the source code.
+                  The choice to use github-md was a good one, and definitely
+                  saved time compared to tackling the GitHub API and Cloudflare
+                  Workers myself. But I would have liked some control over the
+                  parsing of the markdown, especially having seen the parts I
+                  wanted to hook into within the source code.
                 </p>
                 <p>
                   Remix was a joy to use, and the ethos of building upon web
@@ -354,13 +356,13 @@ function Blog() {
                   resolve the issue.
                 </p>
                 <p>
-                  Building this project has uncovered a hunger to learn to code
-                  for the backend, as I would have liked the confidence to fork{' '}
-                  <code>github-md</code> and tweak it to my liking. And I was
-                  reminded that Lighthouse cannot be solely relied upon for
-                  a11y. It is important to test our websites and apps using
-                  keyboard navigation and screen readers to uncover issues that
-                  a11y tools might not identify.
+                  Building this project has uncovered an objective to learn to
+                  code for the backend, as I would have liked the confidence to
+                  fork github-md and tweak it to my liking. And I was reminded
+                  that Lighthouse cannot be solely relied upon for a11y. It is
+                  important to test our websites and apps using keyboard
+                  navigation and screen readers to uncover issues that a11y
+                  tools might not identify.
                 </p>
               </div>
             </div>

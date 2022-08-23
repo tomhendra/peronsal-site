@@ -167,13 +167,13 @@ function Index() {
               <p>
                 After starting out by building no-code websites I became curious
                 about how the web worked. This led me down a rabbit hole and
-                ultimately to the decision that I wanted to learn how to code.
+                ultimately to the objective of learning how to code.
               </p>
               <p>
-                I knew I had made the right choice after struggling with an
+                I knew I had made the right decision after struggling with an
                 algorithm problem for a cash register. The euphoria after my
-                solution finally passed the tests was exhilarating, and I was
-                hooked!
+                solution finally passed the tests was exhilarating, and I loved
+                it!
               </p>
               <p>
                 I now build web apps with JavaScript frameworks and continuously
