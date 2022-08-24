@@ -339,12 +339,14 @@ function Blog() {
                   wanted to hook into within the source code.
                 </p>
                 <p>
-                  Remix was a joy to use, and the ethos of building upon web
+                  Remix was great to use, and the ethos of building upon web
                   standards and existing APIs resonates with me greatly. It
-                  feels like a good fit for edge computing, with projects like
-                  Cloudflare Workers and Deno using V8 isolates running at the
-                  edge and incorporating modified browser APIs into their
-                  codebase.
+                  feels like a good fit for edge computing with the likes of
+                  Deno and Cloudflare Workers following a similar path. However
+                  the performance of the dev server was poor on my Intel MacBook
+                  Pro and I missed Hot Module Replacement. I know the Remix team
+                  intends to implement HMR at some point, which will hopefully
+                  also resolve the perf issue.
                 </p>
                 <p>
                   The project is fully accessible with a 100 score on
