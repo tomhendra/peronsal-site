@@ -97,7 +97,6 @@
   font-weight: var(--font-weight-medium);
   color: var(--color-primary-text);
   box-shadow: 0px 0px 0px var(--color-primary-text);
-  transition: box-shadow 400ms, color 400ms;
 }
 
 .article-link:visited {
@@ -106,8 +105,8 @@
 
 @media (pointer: fine) and (hover: hover) {
   .article-link:hover {
-    transition: box-shadow 150ms, color 150ms;
     color: var(--color-primary-text-hover);
-    box-shadow: 0px 2px 0px var(--color-primary-text);
+    box-shadow: 0px 2px 0px var(--color-primary-text-hover);
+    transition: color 200ms ease 0s, box-shadow 200ms ease 0s;
   }
 }
