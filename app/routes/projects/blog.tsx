@@ -339,14 +339,15 @@ function Blog() {
                   wanted to hook into within the source code.
                 </p>
                 <p>
-                  Remix was great to use, and the ethos of building upon web
-                  standards and existing APIs resonates with me greatly. It
-                  feels like a good fit for edge computing with the likes of
-                  Deno and Cloudflare Workers following a similar path. However
-                  the performance of the dev server was poor on my Intel MacBook
-                  Pro and I missed Hot Module Replacement. I know the Remix team
-                  intends to implement HMR at some point, which will hopefully
-                  also resolve the perf issue.
+                  The Remix ethos of building upon web standards and existing
+                  APIs resonates with me greatly. It feels like a good fit for
+                  edge computing with the likes of Deno and Cloudflare Workers
+                  following a similar path. But the performance of the dev
+                  server was poor and I missed Hot Module Replacement. I know
+                  the Remix team intends to implement HMR at some point, but
+                  until then I will be using Vite for building web apps. Losing
+                  state to Live Reload every time a style tweak is made is a
+                  deal breaker for me.
                 </p>
                 <p>
                   The project is fully accessible with a 100 score on
@@ -358,10 +359,10 @@ function Blog() {
                   resolve the issue.
                 </p>
                 <p>
-                  Building this project has uncovered an objective to learn to
-                  code for the backend, as I would have liked the confidence to
-                  fork github-md and tweak it to my liking. And I was reminded
-                  that Lighthouse cannot be solely relied upon for a11y. It is
+                  Building this project has uncovered a desire to learn to code
+                  for the backend, as I would have liked the confidence to fork
+                  github-md and tweak it to my liking. And I was reminded that
+                  Lighthouse cannot be solely relied upon for a11y. It is
                   important to test our websites and apps using keyboard
                   navigation and screen readers to uncover issues that a11y
                   tools might not identify.

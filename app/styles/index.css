@@ -245,6 +245,11 @@
   border: var(--border-1) solid var(--color-border);
 }
 
+.form input::placeholder,
+.form textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
 .form input {
   height: var(--space-12);
 }

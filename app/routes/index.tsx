@@ -181,9 +181,10 @@ function Index() {
                 the many smart folks within the developer community.
               </p>
               <p>
-                I have the necessary skills to build polished user interfaces
-                and am seeking a permanent role as a frontend developer, where I
-                can continue to grow and help a team to achieve their goals.
+                I have gained the necessary skills to build polished user
+                interfaces and am seeking a permanent role as a frontend
+                developer, where I can continue to grow and help a team to
+                achieve their goals.
               </p>
             </div>
           </div>
