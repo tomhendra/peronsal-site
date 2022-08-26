@@ -91,12 +91,23 @@
 }
 
 .article-link {
-  color: var(--color-primary-text);
+  position: relative; /* required for .click-target-helper */
+  cursor: pointer;
   text-decoration: none;
   font-weight: var(--font-weight-medium);
+  color: var(--color-primary-text);
+  box-shadow: 0px 0px 0px var(--color-primary-text);
+  transition: box-shadow 400ms, color 400ms;
 }
+
+.article-link:visited {
+  color: var(--color-primary-text);
+}
+
 @media (pointer: fine) and (hover: hover) {
   .article-link:hover {
-    text-decoration: underline;
+    transition: box-shadow 150ms, color 150ms;
+    color: var(--color-primary-text-hover);
+    box-shadow: 0px 2px 0px var(--color-primary-text);
   }
 }

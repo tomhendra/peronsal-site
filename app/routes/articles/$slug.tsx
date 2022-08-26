@@ -80,7 +80,7 @@ const options: HTMLReactParserOptions = {
       const props = attributesToProps(domNode?.attribs);
       const {href, ...rest} = props;
       return (
-        <a className="article-link" href={href} {...rest}>
+        <a className="article-link click-target-helper" href={href} {...rest}>
           {domToReact(domNode?.children, options)}
         </a>
       );

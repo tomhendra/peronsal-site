@@ -202,6 +202,8 @@ figcaption {
 pre,
 code {
   font-family: var(--font-mono);
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
 }
 /* 
 manually apply variable font axis and use `<em>` tag rather than rely on 
