@@ -221,7 +221,7 @@ function Index() {
                   <Link to="projects/blog">
                     <Image
                       className="tab-img shadow"
-                      src="blog-mockup-desktop-01-3x"
+                      src="blog-desktop-mockup-01-3x"
                       alt="Preview of project"
                       loading="lazy"
                       width={530}
@@ -237,7 +237,7 @@ function Index() {
                   <Link to="projects/yakk">
                     <Image
                       className="tab-img shadow"
-                      src="yakk-mockup-desktop-01-3x"
+                      src="yakk-desktop-mockup-01-3x"
                       alt="Preview of project"
                       loading="lazy"
                       width={530}

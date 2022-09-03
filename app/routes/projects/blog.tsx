@@ -109,7 +109,7 @@ function Blog() {
             <div className="hero-img-wrapper">
               <Image
                 className="hero-img-desktop"
-                src="blog-mockup-desktop-01-3x"
+                src="blog-desktop-mockup-01-3x"
                 alt="A screen shot of the blog project for desktop"
                 width={1064}
                 height={682}
@@ -123,7 +123,7 @@ function Blog() {
               />
               <Image
                 className="hero-img-mobile"
-                src="blog-mockup-mobile-with-device-01-3x"
+                src="blog-mobile-mockup-01-3x"
                 alt="An iPhone mockup showing a screen shot of the blog project for mobile"
                 width={314}
                 height={640}
