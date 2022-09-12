@@ -1,13 +1,9 @@
 import {setConfig} from 'cloudinary-build-url';
 import {CLOUDINARY_CLOUD_NAME, CLOUDINARY_FOLDER_NAME} from '~/constants';
 import {getImageBuilder, getImgProps} from './Image.helpers';
-import type {LinksFunction} from '@remix-run/cloudflare';
 import type {TransformerOption} from '@cld-apis/types';
 
-import styles from './image.css';
 import clsx from 'clsx';
-
-const links: LinksFunction = () => [{rel: 'stylesheet', href: styles}];
 
 setConfig({
   cloudName: CLOUDINARY_CLOUD_NAME,
@@ -57,7 +53,7 @@ function Image({
   );
 }
 
-export {links, Image as default};
+export {Image as default};
 /*
 example usage 
 

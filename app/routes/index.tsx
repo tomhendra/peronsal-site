@@ -23,7 +23,6 @@ import {
 import {links as buttonLinks} from '~/components/Button';
 import {links as dividerLinks} from '~/components/Divider';
 import {links as featureIconLinks} from '~/components/FeatureIcon';
-import {links as imageLinks} from '~/components/Image';
 import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import {links as socialCardLinks} from '~/components/SocialCard';
 import {links as tabNavLinks} from '~/components/TabNav';
@@ -33,7 +32,6 @@ const links: LinksFunction = () => [
   ...maxWidthContainerLinks(),
   ...featureIconLinks(),
   ...buttonLinks(),
-  ...imageLinks(),
   ...tabNavLinks(),
   ...socialCardLinks(),
   ...dividerLinks(),

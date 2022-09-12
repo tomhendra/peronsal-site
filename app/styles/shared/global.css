@@ -17,6 +17,12 @@ body {
   overflow-y: scroll;
 }
 
+img {
+  display: block;
+  object-fit: cover;
+  border-radius: 1px;
+}
+
 /* darken images in dark mode with filter defined in colors.css .dark {...} */
 img:not([src*='.svg']) {
   filter: var(--image-filter);
