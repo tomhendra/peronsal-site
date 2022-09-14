@@ -1,6 +1,6 @@
 import {setConfig} from 'cloudinary-build-url';
 import {CLOUDINARY_CLOUD_NAME, CLOUDINARY_FOLDER_NAME} from '~/constants';
-import {getImageBuilder, getImgProps} from './Image.helpers';
+import {getImageBuilder, getImgProps} from '../../helpers/Image.helpers';
 import type {TransformerOption} from '@cld-apis/types';
 
 import clsx from 'clsx';

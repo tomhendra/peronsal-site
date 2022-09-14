@@ -11,7 +11,6 @@ import {links as buttonLinks} from '~/components/Button';
 import {links as featureIconLinks} from '~/components/FeatureIcon';
 import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import {links as techLinks} from '~/components/Tech';
-import {links as imageLinks} from '~/components/Image';
 import styles from '~/styles/projects.css';
 
 const [seoMeta, seoLinks] = getSeo({
@@ -29,7 +28,6 @@ const links: LinksFunction = () => [
   ...buttonLinks(),
   ...featureIconLinks(),
   ...techLinks(),
-  ...imageLinks(),
   {rel: 'stylesheet', href: styles},
 ];
 
