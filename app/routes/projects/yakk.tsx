@@ -110,7 +110,7 @@ function Nata() {
             <div>
               <img
                 alt="placeholder"
-                src="https://via.placeholder.com/1024x492?text=Nata"
+                src="https://via.placeholder.com/1024x492?text=Yakk"
                 style={{
                   width: '1080px',
                   height: '492px',

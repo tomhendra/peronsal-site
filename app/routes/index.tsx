@@ -3,10 +3,10 @@ import {Form, useActionData, useTransition} from '@remix-run/react';
 import clsx from 'clsx';
 import {useEffect, useRef} from 'react';
 import {Codepen, GitHub, Linkedin, MapPin, Twitter} from 'react-feather';
+import {getSrc, getSrcSet} from '~/helpers/images';
 import Button from '~/components/Button';
 import Divider from '~/components/Divider';
 import FeatureIcon from '~/components/FeatureIcon';
-import Image from '~/components/Image';
 import Link from '~/components/Link';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
 import SocialCard from '~/components/SocialCard';
@@ -27,6 +27,7 @@ import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import {links as socialCardLinks} from '~/components/SocialCard';
 import {links as tabNavLinks} from '~/components/TabNav';
 import styles from '~/styles/index.css';
+import {useTheme} from '~/helpers/theme-provider';
 
 const links: LinksFunction = () => [
   ...maxWidthContainerLinks(),
@@ -57,6 +58,9 @@ export const action: ActionFunction = async ({request}) => {
 };
 
 function Index() {
+  const [theme] = useTheme();
+  console.log(theme);
+
   const actionData = useActionData();
   const transition = useTransition();
 
@@ -133,16 +137,38 @@ function Index() {
               </div>
             </div>
             <div>
-              <Image
-                className="hero-img"
-                src="tom-website-hero-hq"
-                alt="A portrait photo of Tom Hendra"
-                title="Photo by María Teresa Valverde Calvo"
-                width={560}
-                height={640}
-                widths={[360, 720, 1080, 560, 1120, 1680]}
-                sizes={['(max-width:34.375rem) 360', '560px']}
-              />
+              <picture>
+                <source
+                  width={343}
+                  height={240}
+                  media="(max-width: 34.375rem)"
+                  srcSet={getSrcSet('tom-website-hero-hq', {
+                    devicePixelRatios: [1, 2, 3],
+                    widths: [360, 720, 1080],
+                    // TODO: crop with Cloudinary opts rather than CSS
+                  })}
+                />
+                <source
+                  width={560}
+                  height={640}
+                  media="(max-width: 68.75rem)"
+                  srcSet={getSrcSet('tom-website-hero-hq', {
+                    devicePixelRatios: [1, 2, 3],
+                    widths: [560, 1120, 1680],
+                  })}
+                />
+                <img
+                  className="hero-img"
+                  alt="A portrait of Tom Hendra"
+                  width={560}
+                  height={640}
+                  src={getSrc('tom-website-hero-hq', {width: 1120})}
+                  // srcSet={getSrcSet('tom-website-hero-hq', {
+                  //   widths: [360, 720, 1080, 560, 1120, 1680],
+                  // })}
+                  // sizes="(max-width:34.375rem) 360px, 560px"
+                />
+              </picture>
             </div>
           </div>
         </MaxWidthContainer>
@@ -217,7 +243,7 @@ function Index() {
               <TabContent value="blog">
                 <div className="tab-img-container">
                   <Link to="projects/blog">
-                    <Image
+                    {/* <Image
                       className="tab-img shadow"
                       src="blog-desktop-mockup-01-3x"
                       alt="Preview of project"
@@ -226,14 +252,14 @@ function Index() {
                       height={429}
                       widths={[342, 684, 1026, 530, 1060, 1590]}
                       sizes={['(max-width:34.375rem) 342px', '530px']}
-                    />
+                    /> */}
                   </Link>
                 </div>
               </TabContent>
               <TabContent value="yakk" className="tab-content">
                 <div className="tab-img-container">
                   <Link to="projects/yakk">
-                    <Image
+                    {/* <Image
                       className="tab-img shadow"
                       src="yakk-desktop-mockup-01-3x"
                       alt="Preview of project"
@@ -242,7 +268,7 @@ function Index() {
                       height={429}
                       widths={[342, 684, 1026, 530, 1060, 1590]}
                       sizes={['(max-width:34.375rem) 342px', '530px']}
-                    />
+                    /> */}
                   </Link>
                 </div>
               </TabContent>

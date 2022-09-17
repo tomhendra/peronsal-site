@@ -4,7 +4,6 @@ import Button from '~/components/Button';
 import FeatureIcon from '~/components/FeatureIcon';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
 import Tech from '~/components/Tech';
-import Image from '~/components/Image';
 import {getSeo} from '~/helpers/seo';
 
 import {links as buttonLinks} from '~/components/Button';
@@ -105,33 +104,14 @@ function Blog() {
               </div>
             </div>
             <div className="hero-img-wrapper">
-              <Image
-                className="hero-img-desktop"
-                src="blog-desktop-mockup-01-3x"
-                alt="A screen shot of the blog project for desktop"
-                width={1064}
-                height={682}
-                widths={[280, 560, 840, 1100, 1650, 2500, 2100, 3100]}
-                sizes={[
-                  '(max-width:34.375rem) 80vw', // if the viewport is 550px or less (mobile), the width of the slot the image will fill is 440px
-                  '(max-width:68.75rem) 70vw', // if the viewport is 1100px or less (tablet), the width of the slot the image will fill is 770px
-                  '(max-width:93.75rem) 60vw', // if the viewport is 1500px or less (laptop), the width of the slot the image will fill is 900px
-                  '1100px', // default that is chosen when none of the media conditions are true: the width of the slot the image will fill is 1100px
-                ]}
-              />
-              <Image
-                className="hero-img-mobile"
-                src="blog-mobile-mockup-01-3x"
-                alt="An iPhone mockup showing a screen shot of the blog project for mobile"
-                width={314}
-                height={640}
-                widths={[280, 560, 840, 1100, 1650, 2500, 2100, 3100]}
-                sizes={[
-                  '(max-width:34.375rem) 80vw', // if the viewport is 550px or less (mobile), the width of the slot the image will fill is 440px
-                  '(max-width:68.75rem) 70vw', // if the viewport is 1100px or less (tablet), the width of the slot the image will fill is 770px
-                  '(max-width:93.75rem) 60vw', // if the viewport is 1500px or less (laptop), the width of the slot the image will fill is 900px
-                  '1100px', // default that is chosen when none of the media conditions are true: the width of the slot the image will fill is 1100px
-                ]}
+              <img
+                alt="placeholder"
+                src="https://via.placeholder.com/1024x492?text=Blog"
+                style={{
+                  width: '1080px',
+                  height: '492px',
+                  objectFit: 'cover',
+                }}
               />
             </div>
           </div>
