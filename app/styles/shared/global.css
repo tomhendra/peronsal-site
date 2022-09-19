@@ -17,9 +17,16 @@ body {
   overflow-y: scroll;
 }
 
+/* prevent overflow */
+img,
+embed,
+object,
+video {
+  max-width: 100%;
+}
+
 img {
   display: block;
-  max-width: 100%;
   border-radius: 1px;
   object-fit: cover;
 }
