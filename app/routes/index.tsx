@@ -139,7 +139,6 @@ function Index() {
             </div>
             <picture className="hero-img">
               <source
-                // mobile and down (max 550px)
                 media="(max-width: 34.375rem)"
                 srcSet={getSrcSet('tom-website-hero-hq', {
                   widths: [375, 550, 750, 1125, 1650],
