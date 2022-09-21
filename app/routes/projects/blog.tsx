@@ -5,19 +5,21 @@ import FeatureIcon from '~/components/FeatureIcon';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
 import Tech from '~/components/Tech';
 import {getSeo} from '~/helpers/seo';
+import {useTheme} from '~/helpers/theme-provider';
 
 import {links as buttonLinks} from '~/components/Button';
 import {links as featureIconLinks} from '~/components/FeatureIcon';
 import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import {links as techLinks} from '~/components/Tech';
 import styles from '~/styles/projects.css';
+import {getSrc, getSrcSet} from '~/helpers/images';
 
 const [seoMeta, seoLinks] = getSeo({
   title: 'Projects: Blog',
   description:
     'A developer blog built with Remix and markdown deployed to the Cloudflare platform.',
   openGraph: {
-    /* todo og data for project */
+    // TODO og data for project
   },
 });
 
@@ -35,6 +37,7 @@ const meta: MetaFunction = () => ({
 });
 
 function Blog() {
+  const [theme] = useTheme();
   return (
     <main>
       <section id="hero">
@@ -103,17 +106,46 @@ function Blog() {
                 </div>
               </div>
             </div>
-            <div className="hero-img-wrapper">
-              <img
-                alt="placeholder"
-                src="https://via.placeholder.com/1024x492?text=Blog"
-                style={{
-                  width: '1080px',
-                  height: '492px',
-                  objectFit: 'cover',
-                }}
+            <picture>
+              <source
+                media="(max-width: 34.375rem)"
+                srcSet={getSrcSet(
+                  theme === 'light'
+                    ? 'project-blog-01-small'
+                    : 'project-blog-dark-01-small',
+                  {
+                    devicePixelRatios: [1, 2, 3],
+                    widths: [284, 568, 852],
+                  },
+                )}
+                width={284}
+                height={360}
               />
-            </div>
+              <img
+                alt="Demonstration of project mocked up on a device."
+                className="project-hero-img"
+                loading="eager"
+                srcSet={getSrcSet(
+                  theme === 'light'
+                    ? 'project-blog-01'
+                    : 'project-blog-dark-01',
+                  {
+                    devicePixelRatios: [1, 2, 3],
+                    widths: [573, 1146, 1719],
+                  },
+                )}
+                src={getSrc(
+                  theme === 'light'
+                    ? 'project-blog-01'
+                    : 'project-blog-dark-01',
+                  {
+                    width: 1146,
+                  },
+                )}
+                width={573}
+                height={615}
+              />
+            </picture>
           </div>
         </MaxWidthContainer>
       </section>
@@ -169,28 +201,88 @@ function Blog() {
                 </p>
               </div>
               <div className="content">
-                <img
-                  alt="placeholder"
-                  src="https://via.placeholder.com/768x512?text=Img"
-                  style={{
-                    width: '768px',
-                    height: '512px',
-                    objectFit: 'cover',
-                  }}
-                />
+                <picture className="img-wrapper right">
+                  <source
+                    media="(max-width: 34.375rem)"
+                    srcSet={getSrcSet(
+                      theme === 'light'
+                        ? 'project-blog-02-small'
+                        : 'project-blog-dark-02-small',
+                      {
+                        devicePixelRatios: [1, 2, 3],
+                        widths: [284, 568, 852],
+                      },
+                    )}
+                    width={284}
+                    height={360}
+                  />
+                  <img
+                    alt="Demonstration of project mocked up on a device."
+                    loading="lazy"
+                    srcSet={getSrcSet(
+                      theme === 'light'
+                        ? 'project-blog-02'
+                        : 'project-blog-dark-02',
+                      {
+                        devicePixelRatios: [1, 2, 3],
+                        widths: [630, 1260, 1890],
+                      },
+                    )}
+                    src={getSrc(
+                      theme === 'light'
+                        ? 'project-blog-02'
+                        : 'project-blog-dark-02',
+                      {
+                        width: 630,
+                      },
+                    )}
+                    width={630}
+                    height={470}
+                  />
+                </picture>
               </div>
             </div>
             <div className="analysis-item">
               <div className="content">
-                <img
-                  alt="placeholder"
-                  src="https://via.placeholder.com/768x512?text=Img"
-                  style={{
-                    width: '768px',
-                    height: '512px',
-                    objectFit: 'cover',
-                  }}
-                />
+                <picture className="img-wrapper left">
+                  <source
+                    media="(max-width: 34.375rem)"
+                    srcSet={getSrcSet(
+                      theme === 'light'
+                        ? 'project-blog-03-small'
+                        : 'project-blog-dark-03-small',
+                      {
+                        devicePixelRatios: [1, 2, 3],
+                        widths: [284, 568, 852],
+                      },
+                    )}
+                    width={284}
+                    height={360}
+                  />
+                  <img
+                    alt="Demonstration of project mocked up on a device."
+                    loading="lazy"
+                    srcSet={getSrcSet(
+                      theme === 'light'
+                        ? 'project-blog-03'
+                        : 'project-blog-dark-03',
+                      {
+                        devicePixelRatios: [1, 2, 3],
+                        widths: [630, 1260, 1890],
+                      },
+                    )}
+                    src={getSrc(
+                      theme === 'light'
+                        ? 'project-blog-03'
+                        : 'project-blog-dark-03',
+                      {
+                        width: 630,
+                      },
+                    )}
+                    width={630}
+                    height={470}
+                  />
+                </picture>
               </div>
               <div className="content">
                 <FeatureIcon
@@ -203,50 +295,46 @@ function Blog() {
                 </FeatureIcon>
                 <h2 className="title">Spotlight</h2>
                 <p>
-                  The markdown is parsed into an HTML string from a GitHub repo
-                  which contains only <code>.md</code> files, and is cached to
-                  Cloudflare's CDN with SWR for 2 days and revalidation every 5
-                  minutes. This is achieved with{' '}
+                  Markdown files are parsed from a GitHub repo into HTML strings
+                  which are then cached to Cloudflare's CDN with SWR for 2 days
+                  and revalidation every 5 minutes. This is achieved with the
+                  GitHub API and Cloudflare Workers via{' '}
                   <a
                     href="https://github.com/jacob-ebey/github-md"
                     className="analysis-link click-target-helper"
                   >
                     github-md
-                  </a>{' '}
-                  which uses the GitHub API and Cloudflare Workers under the
-                  hood. The HTML string is then fetched by a Remix app deployed
-                  to the same CDN, converted into React elements on the backend
+                  </a>
+                  .
+                </p>
+                <p>
+                  The HTML strings are then fetched by a Remix app deployed to
+                  the same CDN, converted into React elements on the backend
                   with{' '}
                   <a
                     href="https://github.com/remarkablemark/html-react-parser#readme"
                     className="analysis-link click-target-helper"
                   >
                     html-react-parser
-                  </a>{' '}
-                  before being server-side rendered by Remix.
+                  </a>
+                  , and server-side rendered by Remix.
                 </p>
                 <p>
-                  One challenge I faced was how to display the code language
-                  within the article code blocks. The only language identifier
-                  in the HTML string provided by github-md is within the
-                  Highlight.js class names added to <code>&lt;code&gt;</code>{' '}
-                  elements. Since github-md doesn't expose an API to control its
-                  behaviour, I needed to extract the language from those class
-                  names.
+                  One challenge was how to display the code language within the
+                  article code blocks. The only language identifier was within
+                  the Highlight.js class names added to{' '}
+                  <code>&lt;code&gt;</code> elements during parsing. Since
+                  github-md doesn't expose an API to control its behaviour, I
+                  needed to extract those class names from the HTML string.
                 </p>
                 <p>
-                  html-react-parser has a feature to replace elements, and can
-                  convert DOM attributes to React props while doing so. I looked
-                  for code DOM nodes which had a class name starting with{' '}
-                  <code>hljs language-</code>, and if found, converted the class
-                  attribute to a React prop, replaced the code element with a
-                  custom React component, and passed along the prop.
-                </p>
-                <p>
-                  From there I used the JavaScript built-in slice method on the
-                  destructured <code>className</code> prop value to grab the
-                  language and display it in a <code>&lt;span&gt;</code> next to
-                  the code element.
+                  While replacing DOM nodes with React elements,
+                  html-react-parser can convert DOM attributes to React props.
+                  So I looked for any <code>class</code> starting with{' '}
+                  <code>hljs language-</code>, converted it to a React prop,
+                  passed it to a custom <code>&lt;Code&gt;</code> component, and
+                  grabbed the language with the <code>slice</code> method from
+                  the destructured <code>className</code> prop.
                 </p>
               </div>
             </div>
@@ -276,28 +364,88 @@ function Blog() {
                 </p>
               </div>
               <div className="content">
-                <img
-                  alt="placeholder"
-                  src="https://via.placeholder.com/768x512?text=Img"
-                  style={{
-                    width: '768px',
-                    height: '512px',
-                    objectFit: 'cover',
-                  }}
-                />
+                <picture className="img-wrapper right">
+                  <source
+                    media="(max-width: 34.375rem)"
+                    srcSet={getSrcSet(
+                      theme === 'light'
+                        ? 'project-blog-04-small'
+                        : 'project-blog-dark-04-small',
+                      {
+                        devicePixelRatios: [1, 2, 3],
+                        widths: [284, 568, 852],
+                      },
+                    )}
+                    width={284}
+                    height={360}
+                  />
+                  <img
+                    alt="Demonstration of project mocked up on a device."
+                    loading="lazy"
+                    srcSet={getSrcSet(
+                      theme === 'light'
+                        ? 'project-blog-04'
+                        : 'project-blog-dark-04',
+                      {
+                        devicePixelRatios: [1, 2, 3],
+                        widths: [630, 1260, 1890],
+                      },
+                    )}
+                    src={getSrc(
+                      theme === 'light'
+                        ? 'project-blog-04'
+                        : 'project-blog-dark-04',
+                      {
+                        width: 630,
+                      },
+                    )}
+                    width={630}
+                    height={470}
+                  />
+                </picture>
               </div>
             </div>
             <div className="analysis-item">
               <div className="content">
-                <img
-                  alt="placeholder"
-                  src="https://via.placeholder.com/768x512?text=Img"
-                  style={{
-                    width: '768px',
-                    height: '512px',
-                    objectFit: 'cover',
-                  }}
-                />
+                <picture className="img-wrapper left">
+                  <source
+                    media="(max-width: 34.375rem)"
+                    srcSet={getSrcSet(
+                      theme === 'light'
+                        ? 'project-blog-05-small'
+                        : 'project-blog-dark-05-small',
+                      {
+                        devicePixelRatios: [1, 2, 3],
+                        widths: [284, 568, 852],
+                      },
+                    )}
+                    width={284}
+                    height={360}
+                  />
+                  <img
+                    alt="Demonstration of project mocked up on a device."
+                    loading="lazy"
+                    srcSet={getSrcSet(
+                      theme === 'light'
+                        ? 'project-blog-05'
+                        : 'project-blog-dark-05',
+                      {
+                        devicePixelRatios: [1, 2, 3],
+                        widths: [630, 1260, 1890],
+                      },
+                    )}
+                    src={getSrc(
+                      theme === 'light'
+                        ? 'project-blog-05'
+                        : 'project-blog-dark-05',
+                      {
+                        width: 630,
+                      },
+                    )}
+                    width={630}
+                    height={470}
+                  />
+                </picture>
               </div>
               <div className="content">
                 <FeatureIcon
@@ -310,40 +458,33 @@ function Blog() {
                 </FeatureIcon>
                 <h2 className="title">Lessons Learned</h2>
                 <p>
-                  The choice to use github-md was a good one, and definitely
-                  saved time compared to tackling the GitHub API and Cloudflare
-                  Workers myself. But I would have liked some control over the
-                  parsing of the markdown, especially having seen the parts I
-                  wanted to hook into within the source code.
+                  It was convenient to use github-md rather than the GitHub API
+                  and Cloudflare Workers directly, but I would have liked some
+                  control over the parsing of the markdown, especially having
+                  seen the parts I wanted to hook into within the source code.
                 </p>
                 <p>
-                  The Remix ethos of building upon web standards and existing
-                  APIs resonates with me greatly. It feels like a good fit for
-                  edge computing with the likes of Deno and Cloudflare Workers
-                  following a similar path. But the performance of the dev
-                  server was poor and I missed Hot Module Replacement. I know
-                  the Remix team intends to implement HMR at some point, but
-                  until then I will be using Vite for building web apps. Losing
-                  state to Live Reload every time a style tweak is made is a
-                  deal breaker for me.
+                  The Remix ethos of building upon web standard APIs resonates
+                  with me greatly, and is good fit for edge computing with the
+                  likes of Deno and Cloudflare Workers following a similar path.
+                  But the dev server performance was poor and without Hot Module
+                  Replacement.
                 </p>
                 <p>
-                  The project is fully accessible with a 100 score on
-                  Lighthouse. However while testing keyboard navigation, I
-                  noticed that code blocks with a scrollbar on the X axis were
-                  not focusable in Chrome or Safari. Since the blog is highly
-                  oriented towards sharing code, I chose to add{' '}
-                  <code>tabIndex={0}</code> to all code block elements to
-                  resolve the issue.
+                  While addressing accessibility issues, I noticed that code
+                  blocks with a scrollbar on the X axis were not keyboard
+                  focusable in Chrome or Safari. Adding{' '}
+                  <code>tabIndex={0}</code> to all <code>&lt;Code&gt;</code>{' '}
+                  elements resolved the issue, and considering the importance of
+                  code blocks in the project didn't feel too heavy-handed.
                 </p>
                 <p>
-                  Building this project has uncovered a desire to learn to code
-                  for the backend, as I would have liked the confidence to fork
-                  github-md and tweak it to my liking. And I was reminded that
-                  Lighthouse cannot be solely relied upon for a11y. It is
-                  important to test our websites and apps using keyboard
-                  navigation and screen readers to uncover issues that a11y
-                  tools might not identify.
+                  In summary; I lacked the confidence to fork github-md and
+                  modify it so intend to learn to code for the back end. Until
+                  Remix supports HMR I would favour Vite or Next.js. And I was
+                  reminded of the importance of testing keyboard navigation and
+                  screen readers to uncover issues that a11y tools might not
+                  identify.
                 </p>
               </div>
             </div>

@@ -141,15 +141,16 @@ function Index() {
               <source
                 media="(max-width: 34.375rem)"
                 srcSet={getSrcSet('tom-website-hero-hq', {
-                  widths: [375, 550, 750, 1125, 1650],
+                  widths: [375, 550, 760, 1125, 1650],
+                  // TODO: look into cropping via Cloudinary API rather than CSS
                 })}
-                sizes="(max-width: 34.375rem) 95vw"
                 width={343}
                 height={240}
               />
               <img
-                className="hero-img"
                 alt="A portrait of Tom Hendra"
+                className="hero-img image-filter"
+                loading="eager"
                 srcSet={getSrcSet('tom-website-hero-hq', {
                   devicePixelRatios: [1, 2, 3],
                   widths: [560, 1120, 1680],
@@ -232,32 +233,89 @@ function Index() {
               <TabContent value="blog">
                 <div className="tab-img-container">
                   <Link to="projects/blog">
-                    {/* <Image
-                      className="tab-img shadow"
-                      src="blog-desktop-mockup-01-3x"
-                      alt="Preview of project"
-                      loading="lazy"
-                      width={530}
-                      height={429}
-                      widths={[342, 684, 1026, 530, 1060, 1590]}
-                      sizes={['(max-width:34.375rem) 342px', '530px']}
-                    /> */}
+                    <picture>
+                      <source
+                        media="(max-width: 34.375rem)"
+                        srcSet={getSrcSet(
+                          theme === 'light'
+                            ? 'project-blog-01-small'
+                            : 'project-blog-dark-01-small',
+                          {
+                            devicePixelRatios: [1, 2, 3],
+                            widths: [375, 750, 1125],
+                          },
+                        )}
+                        width={375}
+                        height={360}
+                      />
+                      <img
+                        alt="Preview of blog project"
+                        className="tab-img shadow"
+                        loading="lazy"
+                        srcSet={getSrcSet(
+                          theme === 'light'
+                            ? 'project-blog-preview'
+                            : 'project-blog-preview-dark',
+                          {
+                            devicePixelRatios: [1, 2, 3],
+                            widths: [528, 1056, 1584],
+                          },
+                        )}
+                        src={getSrc(
+                          theme === 'light'
+                            ? 'project-blog-preview'
+                            : 'project-blog-preview-dark',
+                          {width: 1056},
+                        )}
+                        width={531}
+                        height={433}
+                      />
+                    </picture>
                   </Link>
                 </div>
               </TabContent>
               <TabContent value="yakk" className="tab-content">
                 <div className="tab-img-container">
                   <Link to="projects/yakk">
-                    {/* <Image
-                      className="tab-img shadow"
-                      src="yakk-desktop-mockup-01-3x"
-                      alt="Preview of project"
-                      loading="lazy"
-                      width={530}
-                      height={429}
-                      widths={[342, 684, 1026, 530, 1060, 1590]}
-                      sizes={['(max-width:34.375rem) 342px', '530px']}
-                    /> */}
+                    <picture>
+                      <source
+                        media="(max-width: 34.375rem)"
+                        srcSet={getSrcSet(
+                          theme === 'light'
+                            ? // TODO Yakk mobile image
+                              'project-blog-01-small'
+                            : 'project-blog-dark-01-small',
+                          {
+                            devicePixelRatios: [1, 2, 3],
+                            widths: [375, 750, 1125],
+                          },
+                        )}
+                        width={375}
+                        height={360}
+                      />
+                      <img
+                        alt="Preview of Yakk project"
+                        className="tab-img shadow"
+                        loading="lazy"
+                        srcSet={getSrcSet(
+                          theme === 'light'
+                            ? 'project-yakk-preview'
+                            : 'project-yakk-preview-dark',
+                          {
+                            devicePixelRatios: [1, 2, 3],
+                            widths: [528, 1056, 1584],
+                          },
+                        )}
+                        src={getSrc(
+                          theme === 'light'
+                            ? 'project-yakk-preview'
+                            : 'project-yakk-preview-dark',
+                          {width: 1056},
+                        )}
+                        width={531}
+                        height={433}
+                      />
+                    </picture>
                   </Link>
                 </div>
               </TabContent>
@@ -272,7 +330,7 @@ function Index() {
               <span className="section-prefix alt">Contact</span>
               <h2 className="section-heading alt">Let's connect</h2>
               <h3 className="section-subheading alt">
-                I'm always happy to make new connections.
+                I'd be delighted to hear from you.
               </h3>
             </div>
             <div className="contact-container">

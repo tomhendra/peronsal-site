@@ -41,7 +41,7 @@ function Nata() {
           <div className="hero-layout">
             <div className="hero-intro">
               <span className="section-prefix">Projects</span>
-              <h1>Nata</h1>
+              <h1>Yakk</h1>
               <div className="hero-intro-content">
                 <h3 className="subheading">
                   A chat application inspired by Discord.
@@ -90,7 +90,7 @@ function Nata() {
                 <div className="btn-group">
                   <Button
                     as="externalLink"
-                    href="https://github.com/tomhendra/blog"
+                    href="https://github.com/tomhendra/yakk"
                     size="xl"
                     variant="secondary-gray"
                   >
@@ -98,7 +98,7 @@ function Nata() {
                   </Button>
                   <Button
                     as="externalLink"
-                    href="https://tomhendra.dev"
+                    href="https://duckduckgo.com"
                     size="xl"
                     variant="primary"
                   >
@@ -261,11 +261,7 @@ function Nata() {
                 </p>
                 <p>
                   How did you solve those problems? What was the solution? Go
-                  deep here, and write with a developer in mind. How did you
-                  solve those problems? What was the solution? Go deep here, and
-                  write with a developer in mind.How did you solve those
-                  problems? What was the solution? Go deep here, and write with
-                  a developer in mind.How did you solve those problems?
+                  deep here, and write with a developer in mind.
                 </p>
               </div>
             </div>

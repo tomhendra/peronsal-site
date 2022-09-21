@@ -21,19 +21,16 @@ body {
 img,
 embed,
 object,
-video {
-  max-width: 100%;
+video,
+iframe {
+  max-inline-size: 100%;
+  block-size: auto;
 }
 
 img {
   display: block;
   border-radius: 1px;
   object-fit: cover;
-}
-
-/* darken images in dark mode with filter defined in colors.css .dark {...} */
-img:not([src*='.svg']) {
-  filter: var(--image-filter);
 }
 
 /* apply scrollbar styles consistent with theme for devices larger than mobile.
