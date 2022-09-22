@@ -7,7 +7,7 @@ export const {getSeo, getSeoMeta, getSeoLinks} = initSeo({
   openGraph: {
     siteName: "Tom Hendra's personal website",
     title: 'Tom Hendra',
-    description: 'Frontend developer building for the web.',
+    description: 'Front-end developer building for the web.',
     type: 'website',
     url: 'https://tomhendra.com',
     images: [

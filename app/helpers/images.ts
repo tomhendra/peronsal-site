@@ -1,6 +1,5 @@
 import type {TransformerOption} from '@cld-apis/types';
-import {buildImageUrl} from 'cloudinary-build-url';
-import {setConfig} from 'cloudinary-build-url';
+import {buildImageUrl, setConfig} from 'cloudinary-build-url';
 import {CLOUDINARY_CLOUD_NAME, CLOUDINARY_DIR_NAME} from '~/constants';
 
 setConfig({

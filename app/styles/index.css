@@ -128,23 +128,26 @@
   --shadow-color: 220deg 68% 2%;
 }
 
+/* 
 .tab-img {
-  /* filter: drop-shadow(2px 4px 8px hsl(0deg 0% 0% / 0.4)); */
-  /* TODO swap out Radix UI tabs for Reach UI! 
-    filter is not being applied here, but if we move the declaration to inside the 
-    data-selector, the shadow is applied and then disappears as the data attributes
-    are updated by the Radix UI package. Something here is funky. The Radix 
-    dialog had odd behaviour that I couldn't work around, so I replaced it with
-    Reach and all was well. It makes sense that Reach UI would be a better fit
-    for Remix since it is built by the same team. */
-}
+  filter: drop-shadow(2px 4px 8px hsl(0deg 0% 0% / 0.4));
+  
+  TODO swap out Radix UI tabs for Reach UI! 
+  filter is not being applied here, but if we move the declaration to inside the 
+  data-selector, the shadow is applied and then disappears as the data attributes
+  are updated by the Radix UI package. Something here is funky. The Radix 
+  dialog had odd behaviour that I couldn't work around, so I replaced it with
+  Reach and all was well. It makes sense that Reach UI would be a better fit
+  for Remix since it is built by the same team. 
+} 
 
-/* @media (max-width: 34.375rem) {
+ @media (max-width: 34.375rem) {
   .tab-img {
     width: 342px;
     height: 228px;
   }
-} */
+} 
+*/
 
 @media (prefers-reduced-motion: no-preference) {
   .tab-img {

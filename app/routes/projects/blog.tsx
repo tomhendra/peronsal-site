@@ -11,15 +11,16 @@ import {links as buttonLinks} from '~/components/Button';
 import {links as featureIconLinks} from '~/components/FeatureIcon';
 import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import {links as techLinks} from '~/components/Tech';
-import styles from '~/styles/projects.css';
 import {getSrc, getSrcSet} from '~/helpers/images';
+import styles from '~/styles/projects.css';
+// import Link from '~/components/Link';
 
 const [seoMeta, seoLinks] = getSeo({
   title: 'Projects: Blog',
   description:
-    'A developer blog built with Remix and markdown deployed to the Cloudflare platform.',
+    'A technical blog built with Remix and markdown files parsed from GitHub.',
   openGraph: {
-    // TODO og data for project
+    // TODO og data
   },
 });
 
@@ -40,17 +41,19 @@ function Blog() {
   const [theme] = useTheme();
   return (
     <main>
-      <section id="hero">
+      <section>
         <MaxWidthContainer>
-          <div className="hero-layout">
-            <div className="hero-intro">
-              <span className="section-prefix">Projects</span>
+          <div className="project-hero">
+            <div className="project-hero__intro">
+              <span className="project-hero__prefix">Projects</span>
               <h1>Blog</h1>
-              <div className="hero-intro-content">
-                <h3 className="subheading">A technical blog for developers.</h3>
-                <ul className="features-list">
+              <div className="project-hero__content">
+                <h3 className="project-hero__subheading">
+                  A technical blog for developers.
+                </h3>
+                <ul className="project-hero__features-list">
                   <li>
-                    <span className="feature">
+                    <span className="project-hero__feature">
                       <FeatureIcon>
                         <CheckCircle
                           size={14}
@@ -62,7 +65,7 @@ function Blog() {
                     </span>
                   </li>
                   <li>
-                    <span className="feature">
+                    <span className="project-hero__feature">
                       <FeatureIcon>
                         <CheckCircle
                           size={14}
@@ -74,7 +77,7 @@ function Blog() {
                     </span>
                   </li>
                   <li>
-                    <span className="feature">
+                    <span className="project-hero__feature">
                       <FeatureIcon>
                         <CheckCircle
                           size={14}
@@ -82,11 +85,11 @@ function Blog() {
                           color="var(--color-primary-text)"
                         />
                       </FeatureIcon>
-                      Dark mode respective of system preferences
+                      Advanced dark mode using cookies
                     </span>
                   </li>
                 </ul>
-                <div className="btn-group">
+                <div className="project-hero__btn-group">
                   <Button
                     as="externalLink"
                     href="https://github.com/tomhendra/blog"
@@ -106,61 +109,62 @@ function Blog() {
                 </div>
               </div>
             </div>
-            <picture>
-              <source
-                media="(max-width: 34.375rem)"
-                srcSet={getSrcSet(
-                  theme === 'light'
-                    ? 'project-blog-01-small'
-                    : 'project-blog-dark-01-small',
-                  {
-                    devicePixelRatios: [1, 2, 3],
-                    widths: [284, 568, 852],
-                  },
-                )}
-                width={284}
-                height={360}
-              />
-              <img
-                alt="Demonstration of project mocked up on a device."
-                className="project-hero-img"
-                loading="eager"
-                srcSet={getSrcSet(
-                  theme === 'light'
-                    ? 'project-blog-01'
-                    : 'project-blog-dark-01',
-                  {
-                    devicePixelRatios: [1, 2, 3],
-                    widths: [573, 1146, 1719],
-                  },
-                )}
-                src={getSrc(
-                  theme === 'light'
-                    ? 'project-blog-01'
-                    : 'project-blog-dark-01',
-                  {
-                    width: 1146,
-                  },
-                )}
-                width={573}
-                height={615}
-              />
-            </picture>
+            <div className="project-hero__img-wrapper">
+              <picture>
+                <source
+                  media="(max-width: 34.375rem)"
+                  srcSet={getSrcSet(
+                    theme === 'light'
+                      ? 'project-blog-01-small'
+                      : 'project-blog-dark-01-small',
+                    {
+                      devicePixelRatios: [1, 2, 3],
+                      widths: [284, 568, 852],
+                    },
+                  )}
+                  width={284}
+                  height={360}
+                />
+                <img
+                  alt="Demonstration of project mocked up on a device."
+                  className="project-hero__img"
+                  loading="eager"
+                  srcSet={getSrcSet(
+                    theme === 'light'
+                      ? 'project-blog-01'
+                      : 'project-blog-dark-01',
+                    {
+                      devicePixelRatios: [1, 2, 3],
+                      widths: [573, 1146, 1719],
+                    },
+                  )}
+                  src={getSrc(
+                    theme === 'light'
+                      ? 'project-blog-01'
+                      : 'project-blog-dark-01',
+                    {
+                      width: 1146,
+                    },
+                  )}
+                  width={573}
+                  height={615}
+                />
+              </picture>
+            </div>
           </div>
         </MaxWidthContainer>
       </section>
       <section>
         <MaxWidthContainer>
-          <div className="tech-stack-layout">
-            <div className="tech-stack">
-              <p className="heading">Technologies used</p>
-              <div className="list">
+          <div className="tech-stack">
+            <div className="tech-stack__container">
+              <p className="tech-stack__heading">Technologies used</p>
+              <div className="tech-stack__list">
                 <Tech name="Remix" />
                 <Tech name="TypeScript" />
                 <Tech name="CSS" />
                 <Tech name="Markdown" />
                 <Tech name="Cloudinary" />
-                <Tech name="Cloudflare Pages" />
               </div>
             </div>
           </div>
@@ -168,9 +172,9 @@ function Blog() {
       </section>
       <section>
         <MaxWidthContainer>
-          <div className="analysis-section-layout">
-            <div className="analysis-item">
-              <div className="content">
+          <div className="project-analysis">
+            <div className="project-analysis__container">
+              <div className="project-analysis__content project-analysis__content--text">
                 <FeatureIcon
                   color="var(--color-primary-background-muted)"
                   className="visually-align-left-6"
@@ -179,7 +183,7 @@ function Blog() {
                     <Target color="var(--color-primary-text)" />
                   </FeatureIcon>
                 </FeatureIcon>
-                <h2 className="title">Purpose &amp; Goal</h2>
+                <h2 className="project-analysis__title">Purpose &amp; Goal</h2>
                 <p>
                   The project was created so that I have a place on the internet
                   where I can create content while retaining full control of the
@@ -193,98 +197,103 @@ function Blog() {
                 </p>
                 <p>
                   I wanted to author content in markdown but keep the files
-                  separate from the source code. This separation of concerns
-                  would make queries and modifications straightforward as the
-                  data scales. The website <em>and</em> the data also had to be
-                  delivered from the edge, so the experience is fast for all
-                  users worldwide.
+                  separate from the source code to make queries and
+                  modifications straightforward as the data scales. Both website{' '}
+                  <em>and</em> data also had to be delivered from the edge to
+                  make the experience is fast for all users worldwide.
                 </p>
               </div>
-              <div className="content">
-                <picture className="img-wrapper right">
-                  <source
-                    media="(max-width: 34.375rem)"
-                    srcSet={getSrcSet(
-                      theme === 'light'
-                        ? 'project-blog-02-small'
-                        : 'project-blog-dark-02-small',
-                      {
-                        devicePixelRatios: [1, 2, 3],
-                        widths: [284, 568, 852],
-                      },
-                    )}
-                    width={284}
-                    height={360}
-                  />
-                  <img
-                    alt="Demonstration of project mocked up on a device."
-                    loading="lazy"
-                    srcSet={getSrcSet(
-                      theme === 'light'
-                        ? 'project-blog-02'
-                        : 'project-blog-dark-02',
-                      {
-                        devicePixelRatios: [1, 2, 3],
-                        widths: [630, 1260, 1890],
-                      },
-                    )}
-                    src={getSrc(
-                      theme === 'light'
-                        ? 'project-blog-02'
-                        : 'project-blog-dark-02',
-                      {
-                        width: 630,
-                      },
-                    )}
-                    width={630}
-                    height={470}
-                  />
-                </picture>
+              <div className="project-analysis__content project-analysis__content--img">
+                <div className="project-analysis__img-wrapper project-analysis__img-wrapper--right">
+                  <picture>
+                    <source
+                      media="(max-width: 34.375rem)"
+                      srcSet={getSrcSet(
+                        theme === 'light'
+                          ? 'project-blog-02-small'
+                          : 'project-blog-dark-02-small',
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [284, 568, 852],
+                        },
+                      )}
+                      width={284}
+                      height={360}
+                    />
+                    <img
+                      alt="Demonstration of project mocked up on a device."
+                      className="project-analysis__img project-analysis__img--right"
+                      loading="lazy"
+                      srcSet={getSrcSet(
+                        theme === 'light'
+                          ? 'project-blog-02'
+                          : 'project-blog-dark-02',
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [630, 1260, 1890],
+                        },
+                      )}
+                      src={getSrc(
+                        theme === 'light'
+                          ? 'project-blog-02'
+                          : 'project-blog-dark-02',
+                        {
+                          width: 630,
+                        },
+                      )}
+                      width={630}
+                      height={470}
+                    />
+                  </picture>
+                </div>
               </div>
             </div>
-            <div className="analysis-item">
-              <div className="content">
-                <picture className="img-wrapper left">
-                  <source
-                    media="(max-width: 34.375rem)"
-                    srcSet={getSrcSet(
-                      theme === 'light'
-                        ? 'project-blog-03-small'
-                        : 'project-blog-dark-03-small',
-                      {
-                        devicePixelRatios: [1, 2, 3],
-                        widths: [284, 568, 852],
-                      },
-                    )}
-                    width={284}
-                    height={360}
-                  />
-                  <img
-                    alt="Demonstration of project mocked up on a device."
-                    loading="lazy"
-                    srcSet={getSrcSet(
-                      theme === 'light'
-                        ? 'project-blog-03'
-                        : 'project-blog-dark-03',
-                      {
-                        devicePixelRatios: [1, 2, 3],
-                        widths: [630, 1260, 1890],
-                      },
-                    )}
-                    src={getSrc(
-                      theme === 'light'
-                        ? 'project-blog-03'
-                        : 'project-blog-dark-03',
-                      {
-                        width: 630,
-                      },
-                    )}
-                    width={630}
-                    height={470}
-                  />
-                </picture>
+            <div className="project-analysis__container">
+              <div className="project-analysis__content project-analysis__content--img">
+                <div className="project-analysis__img-wrapper project-analysis__img-wrapper--left">
+                  <picture>
+                    <source
+                      media="(max-width: 34.375rem)"
+                      srcSet={getSrcSet(
+                        theme === 'light'
+                          ? 'project-blog-03-small'
+                          : 'project-blog-dark-03-small',
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [284, 568, 852],
+                        },
+                      )}
+                      width={284}
+                      height={360}
+                    />
+                    <img
+                      alt="Demonstration of project mocked up on a device."
+                      className="project-analysis__img project-analysis__img--left"
+                      loading="lazy"
+                      srcSet={getSrcSet(
+                        theme === 'light'
+                          ? 'project-blog-03'
+                          : 'project-blog-dark-03',
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [630, 1260, 1890],
+                        },
+                      )}
+                      src={getSrc(
+                        theme === 'light'
+                          ? 'project-blog-03'
+                          : 'project-blog-dark-03',
+                        {
+                          width: 630,
+                        },
+                      )}
+                      width={630}
+                      height={470}
+                    />
+                  </picture>
+                </div>
               </div>
-              <div className="content">
+              <div className="project-analysis__content project-analysis__content--text">
                 <FeatureIcon
                   color="var(--color-primary-background-muted)"
                   className="visually-align-left-6"
@@ -293,15 +302,23 @@ function Blog() {
                     <Eye color="var(--color-primary-text)" />
                   </FeatureIcon>
                 </FeatureIcon>
-                <h2 className="title">Spotlight</h2>
+                <h2 className="project-analysis__title">Spotlight</h2>
                 <p>
                   Markdown files are parsed from a GitHub repo into HTML strings
                   which are then cached to Cloudflare's CDN with SWR for 2 days
                   and revalidation every 5 minutes. This is achieved with the
                   GitHub API and Cloudflare Workers via{' '}
+                  {/* <Link
+                    variant="primary"
+                    className="project-analysis__link-test"
+                    as="external"
+                    href="https://github.com/jacob-ebey/github-md"
+                  >
+                    github-md
+                  </Link>{' '} */}
                   <a
                     href="https://github.com/jacob-ebey/github-md"
-                    className="analysis-link click-target-helper"
+                    className="project-analysis__link click-target-helper"
                   >
                     github-md
                   </a>
@@ -313,19 +330,19 @@ function Blog() {
                   with{' '}
                   <a
                     href="https://github.com/remarkablemark/html-react-parser#readme"
-                    className="analysis-link click-target-helper"
+                    className="project-analysis__link click-target-helper"
                   >
                     html-react-parser
                   </a>
                   , and server-side rendered by Remix.
                 </p>
                 <p>
-                  One challenge was how to display the code language within the
-                  article code blocks. The only language identifier was within
-                  the Highlight.js class names added to{' '}
+                  One challenge faced was how to display the language for the
+                  code blocks. The only identifier in the HTML strings was
+                  within the Highlight.js class names added to{' '}
                   <code>&lt;code&gt;</code> elements during parsing. Since
                   github-md doesn't expose an API to control its behaviour, I
-                  needed to extract those class names from the HTML string.
+                  needed to extract those class names.
                 </p>
                 <p>
                   While replacing DOM nodes with React elements,
@@ -338,8 +355,8 @@ function Blog() {
                 </p>
               </div>
             </div>
-            <div className="analysis-item">
-              <div className="content">
+            <div className="project-analysis__container">
+              <div className="project-analysis__content project-analysis__content--text">
                 <FeatureIcon
                   color="var(--color-primary-background-muted)"
                   className="visually-align-left-6"
@@ -348,13 +365,13 @@ function Blog() {
                     <Users color="var(--color-primary-text)" />
                   </FeatureIcon>
                 </FeatureIcon>
-                <h2 className="title">Current Status</h2>
+                <h2 className="project-analysis__title">Current Status</h2>
                 <p>
-                  The blog is currently live, and gets 16.5K total requests per
-                  month, with 1.5K unique visitors. By far the biggest user base
-                  is in the USA, around 6 times more than 2nd country on the
-                  list which is Germany. This is closely followed by Singapore,
-                  the UK and Australia.
+                  The blog is currently live and receives 16.5K total requests
+                  per month, with 1.5K unique visitors. By far the biggest user
+                  base is in the USA, around 6 times more than second country
+                  which is Germany, which is closely followed by Singapore, the
+                  UK and Australia.
                 </p>
                 <p>
                   My goal is to improve the quality and quantity of the content
@@ -363,91 +380,97 @@ function Blog() {
                   have a Spanish language version of every post.
                 </p>
               </div>
-              <div className="content">
-                <picture className="img-wrapper right">
-                  <source
-                    media="(max-width: 34.375rem)"
-                    srcSet={getSrcSet(
-                      theme === 'light'
-                        ? 'project-blog-04-small'
-                        : 'project-blog-dark-04-small',
-                      {
-                        devicePixelRatios: [1, 2, 3],
-                        widths: [284, 568, 852],
-                      },
-                    )}
-                    width={284}
-                    height={360}
-                  />
-                  <img
-                    alt="Demonstration of project mocked up on a device."
-                    loading="lazy"
-                    srcSet={getSrcSet(
-                      theme === 'light'
-                        ? 'project-blog-04'
-                        : 'project-blog-dark-04',
-                      {
-                        devicePixelRatios: [1, 2, 3],
-                        widths: [630, 1260, 1890],
-                      },
-                    )}
-                    src={getSrc(
-                      theme === 'light'
-                        ? 'project-blog-04'
-                        : 'project-blog-dark-04',
-                      {
-                        width: 630,
-                      },
-                    )}
-                    width={630}
-                    height={470}
-                  />
-                </picture>
+              <div className="project-analysis__content project-analysis__content--img">
+                <div className="project-analysis__img-wrapper project-analysis__img-wrapper--right">
+                  <picture>
+                    <source
+                      media="(max-width: 34.375rem)"
+                      srcSet={getSrcSet(
+                        theme === 'light'
+                          ? 'project-blog-04-small'
+                          : 'project-blog-dark-04-small',
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [284, 568, 852],
+                        },
+                      )}
+                      width={284}
+                      height={360}
+                    />
+                    <img
+                      alt="Demonstration of project mocked up on a device."
+                      className="project-analysis__img project-analysis__img--right"
+                      loading="lazy"
+                      srcSet={getSrcSet(
+                        theme === 'light'
+                          ? 'project-blog-04'
+                          : 'project-blog-dark-04',
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [630, 1260, 1890],
+                        },
+                      )}
+                      src={getSrc(
+                        theme === 'light'
+                          ? 'project-blog-04'
+                          : 'project-blog-dark-04',
+                        {
+                          width: 630,
+                        },
+                      )}
+                      width={630}
+                      height={470}
+                    />
+                  </picture>
+                </div>
               </div>
             </div>
-            <div className="analysis-item">
-              <div className="content">
-                <picture className="img-wrapper left">
-                  <source
-                    media="(max-width: 34.375rem)"
-                    srcSet={getSrcSet(
-                      theme === 'light'
-                        ? 'project-blog-05-small'
-                        : 'project-blog-dark-05-small',
-                      {
-                        devicePixelRatios: [1, 2, 3],
-                        widths: [284, 568, 852],
-                      },
-                    )}
-                    width={284}
-                    height={360}
-                  />
-                  <img
-                    alt="Demonstration of project mocked up on a device."
-                    loading="lazy"
-                    srcSet={getSrcSet(
-                      theme === 'light'
-                        ? 'project-blog-05'
-                        : 'project-blog-dark-05',
-                      {
-                        devicePixelRatios: [1, 2, 3],
-                        widths: [630, 1260, 1890],
-                      },
-                    )}
-                    src={getSrc(
-                      theme === 'light'
-                        ? 'project-blog-05'
-                        : 'project-blog-dark-05',
-                      {
-                        width: 630,
-                      },
-                    )}
-                    width={630}
-                    height={470}
-                  />
-                </picture>
+            <div className="project-analysis__container">
+              <div className="project-analysis__content project-analysis__content--img">
+                <div className="project-analysis__img-wrapper project-analysis__img-wrapper--left project-analysis__img-wrapper--final">
+                  <picture>
+                    <source
+                      media="(max-width: 34.375rem)"
+                      srcSet={getSrcSet(
+                        theme === 'light'
+                          ? 'project-blog-05-small'
+                          : 'project-blog-dark-05-small',
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [284, 568, 852],
+                        },
+                      )}
+                      width={284}
+                      height={360}
+                    />
+                    <img
+                      alt="Demonstration of project mocked up on a device."
+                      className="project-analysis__img project-analysis__img--left"
+                      loading="lazy"
+                      srcSet={getSrcSet(
+                        theme === 'light'
+                          ? 'project-blog-05'
+                          : 'project-blog-dark-05',
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [630, 1260, 1890],
+                        },
+                      )}
+                      src={getSrc(
+                        theme === 'light'
+                          ? 'project-blog-05'
+                          : 'project-blog-dark-05',
+                        {
+                          width: 630,
+                        },
+                      )}
+                      width={630}
+                      height={470}
+                    />
+                  </picture>
+                </div>
               </div>
-              <div className="content">
+              <div className="project-analysis__content project-analysis__content--text">
                 <FeatureIcon
                   color="var(--color-primary-background-muted)"
                   className="visually-align-left-6"
@@ -456,7 +479,7 @@ function Blog() {
                     <TrendingUp color="var(--color-primary-text)" />
                   </FeatureIcon>
                 </FeatureIcon>
-                <h2 className="title">Lessons Learned</h2>
+                <h2 className="project-analysis__title">Lessons Learned</h2>
                 <p>
                   It was convenient to use github-md rather than the GitHub API
                   and Cloudflare Workers directly, but I would have liked some
@@ -465,9 +488,9 @@ function Blog() {
                 </p>
                 <p>
                   The Remix ethos of building upon web standard APIs resonates
-                  with me greatly, and is good fit for edge computing with the
+                  with me greatly, and is a good fit for edge computing with the
                   likes of Deno and Cloudflare Workers following a similar path.
-                  But the dev server performance was poor and without Hot Module
+                  But the dev server performance was poor and has no Hot Module
                   Replacement.
                 </p>
                 <p>
@@ -476,15 +499,15 @@ function Blog() {
                   focusable in Chrome or Safari. Adding{' '}
                   <code>tabIndex={0}</code> to all <code>&lt;Code&gt;</code>{' '}
                   elements resolved the issue, and considering the importance of
-                  code blocks in the project didn't feel too heavy-handed.
+                  code examples in the project, didn't feel too heavy-handed.
                 </p>
                 <p>
-                  In summary; I lacked the confidence to fork github-md and
-                  modify it so intend to learn to code for the back end. Until
-                  Remix supports HMR I would favour Vite or Next.js. And I was
-                  reminded of the importance of testing keyboard navigation and
-                  screen readers to uncover issues that a11y tools might not
-                  identify.
+                  Building this project has improved my back-end knowledge by
+                  poking around in the github-md repo, I've become better at
+                  editing CSS in Chrome to avoid Remix's slow Live Reloading,
+                  and have witnessed first-hand how important testing keyboard
+                  navigation and screen readers is to uncover issues that
+                  accessibility tools may not identify.
                 </p>
               </div>
             </div>
