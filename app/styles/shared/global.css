@@ -17,9 +17,19 @@ body {
   overflow-y: scroll;
 }
 
-/* darken images in dark mode with filter defined in colors.css .dark {...} */
-img:not([src*='.svg']) {
-  filter: var(--image-filter);
+/* prevent overflow */
+img,
+embed,
+object,
+video,
+iframe {
+  max-inline-size: 100%;
+}
+
+img {
+  display: block;
+  border-radius: 1px;
+  object-fit: cover;
 }
 
 /* apply scrollbar styles consistent with theme for devices larger than mobile.

@@ -60,7 +60,7 @@ function ThemeProvider({
   });
 
   const persistTheme = useFetcher();
-  // TODO: remove this when persistTheme is memoized properly
+  // TODO remove this when persistTheme is memoized properly
   const persistThemeRef = useRef(persistTheme);
   useEffect(() => {
     persistThemeRef.current = persistTheme;

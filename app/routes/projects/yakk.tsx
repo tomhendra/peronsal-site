@@ -5,18 +5,20 @@ import FeatureIcon from '~/components/FeatureIcon';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
 import Tech from '~/components/Tech';
 import {getSeo} from '~/helpers/seo';
+import {useTheme} from '~/helpers/theme-provider';
 
 import {links as buttonLinks} from '~/components/Button';
 import {links as featureIconLinks} from '~/components/FeatureIcon';
 import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import {links as techLinks} from '~/components/Tech';
+import {getSrc, getSrcSet} from '~/helpers/images';
 import styles from '~/styles/projects.css';
 
 const [seoMeta, seoLinks] = getSeo({
   title: 'Projects: Yakk',
   description: 'A realtime chat application built with Remix and Supabase.',
   openGraph: {
-    /* todo og data for project */
+    // TODO og data
   },
 });
 
@@ -33,22 +35,23 @@ const meta: MetaFunction = () => ({
   ...seoMeta,
 });
 
-function Nata() {
+function Yakk() {
+  const [theme] = useTheme();
   return (
     <main>
-      <section id="hero">
+      <section>
         <MaxWidthContainer>
-          <div className="hero-layout">
-            <div className="hero-intro">
-              <span className="section-prefix">Projects</span>
-              <h1>Nata</h1>
-              <div className="hero-intro-content">
-                <h3 className="subheading">
-                  A chat application inspired by Discord.
+          <div className="project-hero">
+            <div className="project-hero__intro">
+              <span className="project-hero__prefix">Projects</span>
+              <h1>Yakk</h1>
+              <div className="project-hero__content">
+                <h3 className="project-hero__subheading">
+                  A chat application inspired by Slack and Discord.
                 </h3>
-                <ul className="features-list">
+                <ul className="project-hero__features-list">
                   <li>
-                    <span className="feature">
+                    <span className="project-hero__feature">
                       <FeatureIcon>
                         <CheckCircle
                           size={14}
@@ -60,7 +63,7 @@ function Nata() {
                     </span>
                   </li>
                   <li>
-                    <span className="feature">
+                    <span className="project-hero__feature">
                       <FeatureIcon>
                         <CheckCircle
                           size={14}
@@ -72,7 +75,7 @@ function Nata() {
                     </span>
                   </li>
                   <li>
-                    <span className="feature">
+                    <span className="project-hero__feature">
                       <FeatureIcon>
                         <CheckCircle
                           size={14}
@@ -85,65 +88,90 @@ function Nata() {
                   </li>
                 </ul>
                 <p>
-                  My role in this project was as the designer and the developer.
+                  This project is currently in progress. A full analysis will
+                  follow when the MVP is launched soon.
                 </p>
-                <div className="btn-group">
+                <div className="project-hero__btn-group">
                   <Button
                     as="externalLink"
-                    href="https://github.com/tomhendra/blog"
+                    href="https://github.com/tomhendra/yakk"
                     size="xl"
                     variant="secondary-gray"
                   >
                     Source Code
                   </Button>
                   <Button
-                    as="externalLink"
-                    href="https://tomhendra.dev"
+                    // as="externalLink"
+                    href="https://duckduckgo.com"
                     size="xl"
                     variant="primary"
+                    disabled={true}
                   >
-                    Live Site
+                    Live Site in progress
                   </Button>
                 </div>
               </div>
             </div>
-            <div>
-              <img
-                alt="placeholder"
-                src="https://via.placeholder.com/1024x492?text=Nata"
-                style={{
-                  width: '1080px',
-                  height: '492px',
-                  objectFit: 'cover',
-                }}
-              />
+            <div className="project-hero__img-wrapper">
+              <picture>
+                <source
+                  media="(max-width: 34.375rem)"
+                  srcSet={getSrcSet(
+                    `project-yakk-small-01${theme === 'dark' ? '-dark' : ''}`,
+                    {
+                      devicePixelRatios: [1, 2, 3],
+                      widths: [284, 568, 852],
+                    },
+                  )}
+                  width={284}
+                  height={360}
+                />
+                <img
+                  alt="Demonstration of project mocked up on a device."
+                  className="project-hero__img"
+                  loading="eager"
+                  srcSet={getSrcSet(
+                    `project-yakk-01${theme === 'dark' ? '-dark' : ''}`,
+                    {
+                      devicePixelRatios: [1, 2, 3],
+                      widths: [573, 1146, 1719],
+                    },
+                  )}
+                  src={getSrc(
+                    `project-yakk-01${theme === 'dark' ? '-dark' : ''}`,
+                    {
+                      width: 1146,
+                    },
+                  )}
+                  width={573}
+                  height={615}
+                />
+              </picture>
             </div>
           </div>
         </MaxWidthContainer>
       </section>
       <section>
         <MaxWidthContainer>
-          <div className="tech-stack-layout">
-            <div className="tech-stack">
-              <p className="heading">Technologies used</p>
-              <div className="list">
-                <Tech name="Remix" />
+          <div className="tech-stack">
+            <div className="tech-stack__container">
+              <p className="tech-stack__heading">Technologies used</p>
+              <div className="tech-stack__list">
                 <Tech name="React" />
                 <Tech name="React Router" />
                 <Tech name="TypeScript" />
                 <Tech name="CSS" />
                 <Tech name="Supabase" />
-                <Tech name="Cloudflare Pages" />
               </div>
             </div>
           </div>
         </MaxWidthContainer>
       </section>
-      <section>
+      {/* <section>
         <MaxWidthContainer>
-          <div className="analysis-section-layout">
-            <div className="analysis-item">
-              <div className="content">
+          <div className="project-analysis">
+            <div className="project-analysis__container">
+              <div className="project-analysis__content project-analysis__content--text">
                 <FeatureIcon
                   color="var(--color-primary-background-muted)"
                   className="visually-align-left-6"
@@ -152,7 +180,7 @@ function Nata() {
                     <Target color="var(--color-primary-text)" />
                   </FeatureIcon>
                 </FeatureIcon>
-                <h2 className="title">Purpose &amp; Goal</h2>
+                <h2 className="project-analysis__title">Purpose &amp; Goal</h2>
                 <p>
                   Why did you build this project? Why is it important to you?
                 </p>
@@ -165,31 +193,85 @@ function Nata() {
                   a narrative
                 </p>
               </div>
-              <div className="content">
-                <img
-                  alt="placeholder"
-                  src="https://via.placeholder.com/768x512?text=Img"
-                  style={{
-                    width: '768px',
-                    height: '512px',
-                    objectFit: 'cover',
-                  }}
-                />
+              <div className="project-analysis__content project-analysis__content--img">
+                <div className="project-analysis__img-wrapper project-analysis__img-wrapper--right">
+                  <picture>
+                    <source
+                      media="(max-width: 34.375rem)"
+                      srcSet={getSrcSet(
+                        `project-yakk-small-02${theme === 'dark' ? '-dark' : ''}`,
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [284, 568, 852],
+                        },
+                      )}
+                      width={284}
+                      height={360}
+                    />
+                    <img
+                      alt="Demonstration of project mocked up on a device."
+                      className="project-analysis__img project-analysis__img--right"
+                      loading="lazy"
+                      srcSet={getSrcSet(
+                        `projecct-yakk-02${theme === 'dark' ? '-dark' : ''}`,
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [630, 1260, 1890],
+                        },
+                      )}
+                      src={getSrc(
+                        `project-yakk-02${theme === 'dark' ? '-dark' : ''}`,
+                        {
+                          width: 630,
+                        },
+                      )}
+                      width={630}
+                      height={470}
+                    />
+                  </picture>
+                </div>
               </div>
             </div>
-            <div className="analysis-item">
-              <div className="content">
-                <img
-                  alt="placeholder"
-                  src="https://via.placeholder.com/768x512?text=Img"
-                  style={{
-                    width: '768px',
-                    height: '512px',
-                    objectFit: 'cover',
-                  }}
-                />
+            <div className="project-analysis__container">
+              <div className="project-analysis__content project-analysis__content--img">
+                <div className="project-analysis__img-wrapper project-analysis__img-wrapper--left">
+                  <picture>
+                    <source
+                      media="(max-width: 34.375rem)"
+                      srcSet={getSrcSet(
+                        `project-yakk-small-03${theme === 'dark' ? '-dark' : ''}`,
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [284, 568, 852],
+                        },
+                      )}
+                      width={284}
+                      height={360}
+                    />
+                    <img
+                      alt="Demonstration of project mocked up on a device."
+                      className="project-analysis__img project-analysis__img--left"
+                      loading="lazy"
+                      srcSet={getSrcSet(
+                        `project-yakk-03${theme === 'dark' ? '-dark' : ''}`,
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [630, 1260, 1890],
+                        },
+                      )}
+                      src={getSrc(
+                        `project-yakk-03${theme === 'dark' ? '-dark' : ''}`,
+                        {
+                          width: 630,
+                        },
+                      )}
+                      width={630}
+                      height={470}
+                    />
+                  </picture>
+                </div>
               </div>
-              <div className="content">
+              <div className="project-analysis__content project-analysis__content--text">
                 <FeatureIcon
                   color="var(--color-primary-background-muted)"
                   className="visually-align-left-6"
@@ -198,62 +280,20 @@ function Nata() {
                     <Eye color="var(--color-primary-text)" />
                   </FeatureIcon>
                 </FeatureIcon>
-                <h2 className="title">Spotlight</h2>
+                <h2 className="project-analysis__title">Spotlight</h2>
                 <p>
                   What is the “killer feature” of your project? What feature
                   does it have that took the most work, or was the most
                   technically impressive? Some possible examples:
                 </p>
                 <ul className="features-list">
+                  <li>User authentication</li>
+                  <li>A feed of items fetched from a database</li>
                   <li>
-                    <span className="feature">
-                      <FeatureIcon>
-                        <CheckCircle
-                          size={14}
-                          strokeWidth={3}
-                          color="var(--color-primary-text)"
-                        />
-                      </FeatureIcon>
-                      User authentication
-                    </span>
+                    A particularly tricky UI element (eg. autocomplete,
+                    calendar, drag-and-drop)
                   </li>
-                  <li>
-                    <span className="feature">
-                      <FeatureIcon>
-                        <CheckCircle
-                          size={14}
-                          strokeWidth={3}
-                          color="var(--color-primary-text)"
-                        />
-                      </FeatureIcon>
-                      A feed of items fetched from a database
-                    </span>
-                  </li>
-                  <li>
-                    <span className="feature">
-                      <FeatureIcon>
-                        <CheckCircle
-                          size={14}
-                          strokeWidth={3}
-                          color="var(--color-primary-text)"
-                        />
-                      </FeatureIcon>
-                      A particularly tricky UI element (eg. autocomplete,
-                      calendar, drag-and-drop)
-                    </span>
-                  </li>
-                  <li>
-                    <span className="feature">
-                      <FeatureIcon>
-                        <CheckCircle
-                          size={14}
-                          strokeWidth={3}
-                          color="var(--color-primary-text)"
-                        />
-                      </FeatureIcon>
-                      Anything else you're proud of!{' '}
-                    </span>
-                  </li>
+                  <li>Anything else you're proud of! </li>
                 </ul>
                 <p>
                   What were the technical hurdles that got in your way? Any
@@ -261,16 +301,12 @@ function Nata() {
                 </p>
                 <p>
                   How did you solve those problems? What was the solution? Go
-                  deep here, and write with a developer in mind. How did you
-                  solve those problems? What was the solution? Go deep here, and
-                  write with a developer in mind.How did you solve those
-                  problems? What was the solution? Go deep here, and write with
-                  a developer in mind.How did you solve those problems?
+                  deep here, and write with a developer in mind.
                 </p>
               </div>
             </div>
-            <div className="analysis-item">
-              <div className="content">
+            <div className="project-analysis__container">
+              <div className="project-analysis__content project-analysis__content--text">
                 <FeatureIcon
                   color="var(--color-primary-background-muted)"
                   className="visually-align-left-6"
@@ -279,7 +315,7 @@ function Nata() {
                     <Users color="var(--color-primary-text)" />
                   </FeatureIcon>
                 </FeatureIcon>
-                <h2 className="title">Current Status</h2>
+                <h2 className="project-analysis__title">Current Status</h2>
                 <p>
                   This section is optional. If the project is actively being
                   used by real people, talk a little bit about the current
@@ -291,31 +327,85 @@ function Nata() {
                   omit this section.
                 </p>
               </div>
-              <div className="content">
-                <img
-                  alt="placeholder"
-                  src="https://via.placeholder.com/768x512?text=Img"
-                  style={{
-                    width: '768px',
-                    height: '512px',
-                    objectFit: 'cover',
-                  }}
-                />
+              <div className="project-analysis__content project-analysis__content--img">
+                <div className="project-analysis__img-wrapper project-analysis__img-wrapper--right">
+                  <picture>
+                    <source
+                      media="(max-width: 34.375rem)"
+                      srcSet={getSrcSet(
+                        `project-yakk-small-04${theme === 'dark' ? '-dark' : ''}`,
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [284, 568, 852],
+                        },
+                      )}
+                      width={284}
+                      height={360}
+                    />
+                    <img
+                      alt="Demonstration of project mocked up on a device."
+                      className="project-analysis__img project-analysis__img--right"
+                      loading="lazy"
+                      srcSet={getSrcSet(
+                        `project-yakk-04${theme === 'dark' ? '-dark' : ''}`,
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [630, 1260, 1890],
+                        },
+                      )}
+                      src={getSrc(
+                        `project-yakk-04${theme === 'dark' ? '-dark' : ''}`,
+                        {
+                          width: 630,
+                        },
+                      )}
+                      width={630}
+                      height={470}
+                    />
+                  </picture>
+                </div>
               </div>
             </div>
-            <div className="analysis-item">
-              <div className="content">
-                <img
-                  alt="placeholder"
-                  src="https://via.placeholder.com/768x512?text=Img"
-                  style={{
-                    width: '768px',
-                    height: '512px',
-                    objectFit: 'cover',
-                  }}
-                />
+            <div className="project-analysis__container">
+              <div className="project-analysis__content project-analysis__content--img">
+                <div className="project-analysis__img-wrapper project-analysis__img-wrapper--left project-analysis__img-wrapper--final">
+                  <picture>
+                    <source
+                      media="(max-width: 34.375rem)"
+                      srcSet={getSrcSet(
+                        `project-yakk-small-05${theme === 'dark' ? '-dark' : ''}`,
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [284, 568, 852],
+                        },
+                      )}
+                      width={284}
+                      height={360}
+                    />
+                    <img
+                      alt="Demonstration of project mocked up on a device."
+                      className="project-analysis__img project-analysis__img--left"
+                      loading="lazy"
+                      srcSet={getSrcSet(
+                        `project-yakk-05${theme === 'dark' ? '-dark' : ''}`,
+                        {
+                          devicePixelRatios: [1, 2, 3],
+                          widths: [630, 1260, 1890],
+                        },
+                      )}
+                      src={getSrc(
+                        `project-yakk-05${theme === 'dark' ? '-dark' : ''}`,
+                        {
+                          width: 630,
+                        },
+                      )}
+                      width={630}
+                      height={470}
+                    />
+                  </picture>
+                </div>
               </div>
-              <div className="content">
+              <div className="project-analysis__content project-analysis__content--text">
                 <FeatureIcon
                   color="var(--color-primary-background-muted)"
                   className="visually-align-left-6"
@@ -324,7 +414,7 @@ function Nata() {
                     <TrendingUp color="var(--color-primary-text)" />
                   </FeatureIcon>
                 </FeatureIcon>
-                <h2 className="title">Lessons Learned</h2>
+                <h2 className="project-analysis__title">Lessons Learned</h2>
                 <p>
                   What did you learn doing this project? Feel free to list
                   multiple things. Also feel free to cover non-technical
@@ -353,9 +443,9 @@ function Nata() {
             </div>
           </div>
         </MaxWidthContainer>
-      </section>
+      </section> */}
     </main>
   );
 }
 
-export {links, meta, Nata as default};
+export {links, meta, Yakk as default};

@@ -45,3 +45,8 @@
     bottom: var(--inset-by);
   }
 }
+
+/* darken images in dark mode with filter defined in colors.css .dark {...} */
+.image-filter {
+  filter: var(--image-filter);
+}

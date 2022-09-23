@@ -6,7 +6,6 @@ import {Codepen, GitHub, Linkedin, MapPin, Twitter} from 'react-feather';
 import Button from '~/components/Button';
 import Divider from '~/components/Divider';
 import FeatureIcon from '~/components/FeatureIcon';
-import Image from '~/components/Image';
 import Link from '~/components/Link';
 import MaxWidthContainer from '~/components/MaxWidthContainer';
 import SocialCard from '~/components/SocialCard';
@@ -19,21 +18,21 @@ import {
   TabsList,
   TabSubheading,
 } from '~/components/TabNav';
+import {getSrc, getSrcSet} from '~/helpers/images';
 
 import {links as buttonLinks} from '~/components/Button';
 import {links as dividerLinks} from '~/components/Divider';
 import {links as featureIconLinks} from '~/components/FeatureIcon';
-import {links as imageLinks} from '~/components/Image';
 import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import {links as socialCardLinks} from '~/components/SocialCard';
 import {links as tabNavLinks} from '~/components/TabNav';
+import {useTheme} from '~/helpers/theme-provider';
 import styles from '~/styles/index.css';
 
 const links: LinksFunction = () => [
   ...maxWidthContainerLinks(),
   ...featureIconLinks(),
   ...buttonLinks(),
-  ...imageLinks(),
   ...tabNavLinks(),
   ...socialCardLinks(),
   ...dividerLinks(),
@@ -59,6 +58,8 @@ export const action: ActionFunction = async ({request}) => {
 };
 
 function Index() {
+  const [theme] = useTheme();
+
   const actionData = useActionData();
   const transition = useTransition();
 
@@ -134,18 +135,28 @@ function Index() {
                 </Button>
               </div>
             </div>
-            <div>
-              <Image
-                className="hero-img"
-                src="tom-website-hero-hq"
-                alt="A portrait photo of Tom Hendra"
-                title="Photo by María Teresa Valverde Calvo"
+            <picture className="hero-img">
+              <source
+                media="(max-width: 34.375rem)"
+                srcSet={getSrcSet('tom-website-hero-hq', {
+                  widths: [375, 550, 760, 1125, 1650],
+                })}
+                width={343}
+                height={240}
+              />
+              <img
+                alt="A portrait of Tom Hendra"
+                className="hero-img image-filter"
+                loading="eager"
+                srcSet={getSrcSet('tom-website-hero-hq', {
+                  devicePixelRatios: [1, 2, 3],
+                  widths: [560, 1120, 1680],
+                })}
+                src={getSrc('tom-website-hero-hq', {width: 1120})}
                 width={560}
                 height={640}
-                widths={[360, 720, 1080, 560, 1120, 1680]}
-                sizes={['(max-width:34.375rem) 360', '560px']}
               />
-            </div>
+            </picture>
           </div>
         </MaxWidthContainer>
       </section>
@@ -167,13 +178,13 @@ function Index() {
               <p>
                 After starting out by building no-code websites I became curious
                 about how the web worked. This led me down a rabbit hole and
-                ultimately to the decision that I wanted to learn how to code.
+                ultimately to the objective of learning how to code.
               </p>
               <p>
-                I knew I had made the right choice after struggling with an
+                I knew I had made the right decision after struggling with an
                 algorithm problem for a cash register. The euphoria after my
-                solution finally passed the tests was exhilarating, and I was
-                hooked!
+                solution finally passed the tests was exhilarating, and I loved
+                it!
               </p>
               <p>
                 I now build web apps with JavaScript frameworks and continuously
@@ -181,9 +192,9 @@ function Index() {
                 the many smart folks within the developer community.
               </p>
               <p>
-                I have the necessary skills to build polished user interfaces
-                and am seeking a permanent role as a frontend developer, where I
-                can continue to grow and help a team to achieve their goals.
+                I have gained the necessary skills to build polished user
+                interfaces and am seeking a role as a frontend developer, where
+                I can continue to grow and help a team to achieve their goals.
               </p>
             </div>
           </div>
@@ -195,10 +206,9 @@ function Index() {
           <div className="section-layout">
             <div className="section-intro">
               <span className="section-prefix">Projects</span>
-              <h2 className="section-heading">What I have been shipping</h2>
+              <h2 className="section-heading">What I have been building</h2>
               <h3 className="section-subheading">
-                I like to build stuff using the skills that I acquire on my
-                journey.
+                I like to build stuff to consolidate my skills.
               </h3>
             </div>
             <Tabs defaultValue="blog">
@@ -219,32 +229,130 @@ function Index() {
               <TabContent value="blog">
                 <div className="tab-img-container">
                   <Link to="projects/blog">
-                    <Image
-                      className="tab-img shadow"
-                      src="blog-mockup-desktop-01-3x"
-                      alt="Preview of project"
-                      loading="lazy"
-                      width={530}
-                      height={429}
-                      widths={[342, 684, 1026, 530, 1060, 1590]}
-                      sizes={['(max-width:34.375rem) 342px', '530px']}
-                    />
+                    <picture>
+                      <source
+                        media="(max-width: 34.375rem) and (prefers-color-scheme: light)"
+                        srcSet={getSrcSet(
+                          theme === 'dark'
+                            ? 'project-blog-small-01-dark'
+                            : 'project-blog-small-01',
+                          {
+                            devicePixelRatios: [1, 2, 3],
+                            widths: [375, 750, 1125],
+                          },
+                        )}
+                        width={375}
+                        height={360}
+                      />
+                      <source
+                        media="(max-width: 34.375rem) and (prefers-color-scheme: dark)"
+                        srcSet={getSrcSet(
+                          theme === 'light'
+                            ? 'project-blog-small-01'
+                            : 'project-blog-small-01-dark',
+                          {
+                            devicePixelRatios: [1, 2, 3],
+                            widths: [375, 750, 1125],
+                          },
+                        )}
+                        width={375}
+                        height={360}
+                      />
+                      <source
+                        media="(min-width: 34.376rem) and (prefers-color-scheme: light)"
+                        srcSet={getSrcSet(
+                          theme === 'dark'
+                            ? 'project-preview-blog-dark'
+                            : 'project-preview-blog',
+                          {
+                            devicePixelRatios: [1, 2, 3],
+                            widths: [528, 1056, 1584],
+                          },
+                        )}
+                        width={531}
+                        height={433}
+                      />
+                      <source
+                        media="(min-width: 34.376rem) and (prefers-color-scheme: dark)"
+                        srcSet={getSrcSet(
+                          theme === 'light'
+                            ? 'project-preview-blog'
+                            : 'project-preview-blog-dark',
+                          {
+                            devicePixelRatios: [1, 2, 3],
+                            widths: [528, 1056, 1584],
+                          },
+                        )}
+                        width={531}
+                        height={433}
+                      />
+                      <img
+                        alt="Preview of blog project"
+                        className="tab-img shadow"
+                        loading="lazy"
+                        srcSet={getSrcSet(
+                          theme === 'light'
+                            ? 'project-preview-blog'
+                            : 'project-preview-blog-dark',
+                          {
+                            devicePixelRatios: [1, 2, 3],
+                            widths: [528, 1056, 1584],
+                          },
+                        )}
+                        src={getSrc(
+                          !theme || theme === 'light'
+                            ? 'project-preview-blog'
+                            : 'project-preview-blog-dark',
+                          {width: 1056},
+                        )}
+                        width={531}
+                        height={433}
+                      />
+                    </picture>
                   </Link>
                 </div>
               </TabContent>
               <TabContent value="yakk" className="tab-content">
                 <div className="tab-img-container">
                   <Link to="projects/yakk">
-                    <Image
-                      className="tab-img shadow"
-                      src="yakk-mockup-desktop-01-3x"
-                      alt="Preview of project"
-                      loading="lazy"
-                      width={530}
-                      height={429}
-                      widths={[342, 684, 1026, 530, 1060, 1590]}
-                      sizes={['(max-width:34.375rem) 342px', '530px']}
-                    />
+                    <picture>
+                      <source
+                        media="(max-width: 34.375rem)"
+                        srcSet={getSrcSet(
+                          theme === 'light'
+                            ? 'project-yakk-01-small'
+                            : 'project-blog-dark-01-small',
+                          {
+                            devicePixelRatios: [1, 2, 3],
+                            widths: [375, 750, 1125],
+                          },
+                        )}
+                        width={375}
+                        height={360}
+                      />
+                      <img
+                        alt="Preview of Yakk project"
+                        className="tab-img shadow"
+                        loading="lazy"
+                        srcSet={getSrcSet(
+                          theme === 'light'
+                            ? 'project-preview-yakk'
+                            : 'project-preview-yakk-dark',
+                          {
+                            devicePixelRatios: [1, 2, 3],
+                            widths: [528, 1056, 1584],
+                          },
+                        )}
+                        src={getSrc(
+                          theme === 'light'
+                            ? 'project-preview-yakk'
+                            : 'project-preview-yakk-dark',
+                          {width: 1056},
+                        )}
+                        width={531}
+                        height={433}
+                      />
+                    </picture>
                   </Link>
                 </div>
               </TabContent>
@@ -259,7 +367,7 @@ function Index() {
               <span className="section-prefix alt">Contact</span>
               <h2 className="section-heading alt">Let's connect</h2>
               <h3 className="section-subheading alt">
-                I'm always happy to make new connections.
+                I'd be delighted to hear from you.
               </h3>
             </div>
             <div className="contact-container">

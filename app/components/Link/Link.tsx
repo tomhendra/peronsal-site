@@ -27,12 +27,12 @@ type LinkAsExternal = BaseProps &
   };
 
 function Link(props: LinkAsLink | LinkAsExternal) {
-  const {size, variant, mood} = props;
+  const {variant = 'gray', size, mood} = props;
   const allClassNames = clsx(
     'link',
     'click-target-helper',
+    variant,
     size && size,
-    variant && variant,
     mood && mood,
   );
 
