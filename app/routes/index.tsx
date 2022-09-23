@@ -59,8 +59,6 @@ export const action: ActionFunction = async ({request}) => {
 
 function Index() {
   const [theme] = useTheme();
-  // TODO cleanup console.log()
-  console.log(theme);
 
   const actionData = useActionData();
   const transition = useTransition();
@@ -179,9 +177,10 @@ function Index() {
             </div>
             <div className="columns">
               <p>
-                After starting out by building no-code websites I became curious
-                about how the web worked. This led me down a rabbit hole and
-                ultimately to the objective of learning how to code.
+                After starting out by building no-code websites for a while, I
+                became curious about how the web worked. This led me down a
+                rabbit hole and ultimately to the objective of learning how to
+                code.
               </p>
               <p>
                 I knew I had made the right decision after struggling with an
