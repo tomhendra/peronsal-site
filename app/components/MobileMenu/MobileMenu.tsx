@@ -20,7 +20,6 @@ function MobileMenu() {
   let [isOpen, setIsOpen] = React.useState<boolean>(false);
   const close = () => setIsOpen(false);
   const open = () => setIsOpen(true);
-  // todo - mess around with animations in framer-motion! :D
   const MotionDialogOverlay = motion(DialogOverlay);
   const MotionDialogContent = motion(DialogContent);
 

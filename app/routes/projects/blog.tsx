@@ -114,9 +114,7 @@ function Blog() {
                 <source
                   media="(max-width: 34.375rem)"
                   srcSet={getSrcSet(
-                    theme === 'light'
-                      ? 'project-blog-01-small'
-                      : 'project-blog-dark-01-small',
+                    `project-blog-small-01${theme === 'dark' ? '-dark' : ''}`,
                     {
                       devicePixelRatios: [1, 2, 3],
                       widths: [284, 568, 852],
@@ -130,18 +128,14 @@ function Blog() {
                   className="project-hero__img"
                   loading="eager"
                   srcSet={getSrcSet(
-                    theme === 'light'
-                      ? 'project-blog-01'
-                      : 'project-blog-dark-01',
+                    `project-blog-01${theme === 'dark' ? '-dark' : ''}`,
                     {
                       devicePixelRatios: [1, 2, 3],
                       widths: [573, 1146, 1719],
                     },
                   )}
                   src={getSrc(
-                    theme === 'light'
-                      ? 'project-blog-01'
-                      : 'project-blog-dark-01',
+                    `project-blog-01${theme === 'dark' ? '-dark' : ''}`,
                     {
                       width: 1146,
                     },
@@ -186,21 +180,21 @@ function Blog() {
                 <h2 className="project-analysis__title">Purpose &amp; Goal</h2>
                 <p>
                   The project was created so that I have a place on the internet
-                  where I can create content while retaining full control of the
-                  platform on which it is authored.
+                  to share content while retaining full control of the platform
+                  on which it is authored.
                 </p>
                 <p>
                   The expected outcome was to build a fast, attractive website
-                  with good SEO, with a focus on sharing code that I write to
-                  solve my problems which could in turn help other developers to
-                  solve theirs.
+                  with good SEO, with a focus on sharing solutions to my
+                  problems which could in turn help other developers to solve
+                  theirs.
                 </p>
                 <p>
                   I wanted to author content in markdown but keep the files
                   separate from the source code to make queries and
                   modifications straightforward as the data scales. Both website{' '}
                   <em>and</em> data also had to be delivered from the edge to
-                  make the experience is fast for all users worldwide.
+                  make the experience fast for all users worldwide.
                 </p>
               </div>
               <div className="project-analysis__content project-analysis__content--img">
@@ -209,9 +203,9 @@ function Blog() {
                     <source
                       media="(max-width: 34.375rem)"
                       srcSet={getSrcSet(
-                        theme === 'light'
-                          ? 'project-blog-02-small'
-                          : 'project-blog-dark-02-small',
+                        `project-blog-small-01${
+                          theme === 'dark' ? '-dark' : ''
+                        }`,
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [284, 568, 852],
@@ -225,21 +219,15 @@ function Blog() {
                       className="project-analysis__img project-analysis__img--right"
                       loading="lazy"
                       srcSet={getSrcSet(
-                        theme === 'light'
-                          ? 'project-blog-02'
-                          : 'project-blog-dark-02',
+                        `project-blog-02${theme === 'dark' ? '-dark' : ''}`,
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [630, 1260, 1890],
                         },
                       )}
                       src={getSrc(
-                        theme === 'light'
-                          ? 'project-blog-02'
-                          : 'project-blog-dark-02',
-                        {
-                          width: 630,
-                        },
+                        `project-blog-02${theme === 'dark' ? '-dark' : ''}`,
+                        {width: 630},
                       )}
                       width={630}
                       height={470}
@@ -255,9 +243,9 @@ function Blog() {
                     <source
                       media="(max-width: 34.375rem)"
                       srcSet={getSrcSet(
-                        theme === 'light'
-                          ? 'project-blog-03-small'
-                          : 'project-blog-dark-03-small',
+                        `project-blog-small-03${
+                          theme === 'dark' ? '-dark' : ''
+                        }`,
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [284, 568, 852],
@@ -271,18 +259,14 @@ function Blog() {
                       className="project-analysis__img project-analysis__img--left"
                       loading="lazy"
                       srcSet={getSrcSet(
-                        theme === 'light'
-                          ? 'project-blog-03'
-                          : 'project-blog-dark-03',
+                        `project-blog-03${theme === 'dark' ? '-dark' : ''}`,
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [630, 1260, 1890],
                         },
                       )}
                       src={getSrc(
-                        theme === 'light'
-                          ? 'project-blog-03'
-                          : 'project-blog-dark-03',
+                        `project-blog-03${theme === 'dark' ? '-dark' : ''}`,
                         {
                           width: 630,
                         },
@@ -337,9 +321,9 @@ function Blog() {
                   , and server-side rendered by Remix.
                 </p>
                 <p>
-                  One challenge faced was how to display the language for the
-                  code blocks. The only identifier in the HTML strings was
-                  within the Highlight.js class names added to{' '}
+                  One challenge I faced was how to display the code block
+                  language. The only identifier in the HTML strings was within
+                  the Highlight.js class names added to{' '}
                   <code>&lt;code&gt;</code> elements during parsing. Since
                   github-md doesn't expose an API to control its behaviour, I
                   needed to extract those class names.
@@ -348,10 +332,10 @@ function Blog() {
                   While replacing DOM nodes with React elements,
                   html-react-parser can convert DOM attributes to React props.
                   So I looked for any <code>class</code> starting with{' '}
-                  <code>hljs language-</code>, converted it to a React prop,
-                  passed it to a custom <code>&lt;Code&gt;</code> component, and
-                  grabbed the language with the <code>slice</code> method from
-                  the destructured <code>className</code> prop.
+                  <code>hljs language-</code>, converted them to a React props,
+                  passed them to a custom <code>&lt;Code&gt;</code> component,
+                  then grabbed the language with the <code>slice</code> method
+                  from the destructured <code>className</code> prop.
                 </p>
               </div>
             </div>
@@ -369,7 +353,7 @@ function Blog() {
                 <p>
                   The blog is currently live and receives 16.5K total requests
                   per month, with 1.5K unique visitors. By far the biggest user
-                  base is in the USA, around 6 times more than second country
+                  base is in the USA, around 6 times more than next country
                   which is Germany, which is closely followed by Singapore, the
                   UK and Australia.
                 </p>
@@ -386,9 +370,9 @@ function Blog() {
                     <source
                       media="(max-width: 34.375rem)"
                       srcSet={getSrcSet(
-                        theme === 'light'
-                          ? 'project-blog-04-small'
-                          : 'project-blog-dark-04-small',
+                        `project-blog-small-04${
+                          theme === 'dark' ? '-dark' : ''
+                        }`,
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [284, 568, 852],
@@ -402,18 +386,14 @@ function Blog() {
                       className="project-analysis__img project-analysis__img--right"
                       loading="lazy"
                       srcSet={getSrcSet(
-                        theme === 'light'
-                          ? 'project-blog-04'
-                          : 'project-blog-dark-04',
+                        `project-blog-04${theme === 'dark' ? '-dark' : ''}`,
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [630, 1260, 1890],
                         },
                       )}
                       src={getSrc(
-                        theme === 'light'
-                          ? 'project-blog-04'
-                          : 'project-blog-dark-04',
+                        `project-blog-04${theme === 'dark' ? '-dark' : ''}`,
                         {
                           width: 630,
                         },
@@ -448,18 +428,14 @@ function Blog() {
                       className="project-analysis__img project-analysis__img--left"
                       loading="lazy"
                       srcSet={getSrcSet(
-                        theme === 'light'
-                          ? 'project-blog-05'
-                          : 'project-blog-dark-05',
+                        `project-blog-05${theme === 'dark' ? '-dark' : ''}`,
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [630, 1260, 1890],
                         },
                       )}
                       src={getSrc(
-                        theme === 'light'
-                          ? 'project-blog-05'
-                          : 'project-blog-dark-05',
+                        `project-blog-05${theme === 'dark' ? '-dark' : ''}`,
                         {
                           width: 630,
                         },

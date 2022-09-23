@@ -17,12 +17,14 @@
 }
 
 .tab-content {
+  background-color: var(--color-background-muted);
   flex: 1;
   outline-color: var(--color-outline);
 }
 @media (max-width: 68.75rem) {
   .tab-content {
-    justify-self: start;
+    display: flex;
+    justify-content: flex-end;
   }
 }
 

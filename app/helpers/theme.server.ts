@@ -12,7 +12,6 @@ import {isTheme} from './theme-provider';
 import type {Theme} from './theme-provider';
 
 // Make use to set the environment variable SESSION_SECRET before running the code
-// TODO work out env variables with Cloudflare Pages
 // const sessionSecret = process.env.SESSION_SECRET ?? "DEFAULT_SECRET";
 const sessionSecret = 'DEFAULT_SECRET';
 

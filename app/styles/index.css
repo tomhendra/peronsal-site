@@ -104,7 +104,6 @@
 
 /* projects section */
 .tab-img-container {
-  background-color: var(--color-background-muted);
   padding: var(--space-12);
   padding-inline-end: 0;
   overflow: hidden; /* prevent shadow from bleeding */
@@ -131,8 +130,7 @@
 /* 
 .tab-img {
   filter: drop-shadow(2px 4px 8px hsl(0deg 0% 0% / 0.4));
-  
-  TODO swap out Radix UI tabs for Reach UI! 
+  ! Error to fix
   filter is not being applied here, but if we move the declaration to inside the 
   data-selector, the shadow is applied and then disappears as the data attributes
   are updated by the Radix UI package. Something here is funky. The Radix 
@@ -148,6 +146,10 @@
   }
 } 
 */
+
+.tab-img {
+  object-position: top left;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .tab-img {

@@ -140,7 +140,6 @@ function Index() {
                 media="(max-width: 34.375rem)"
                 srcSet={getSrcSet('tom-website-hero-hq', {
                   widths: [375, 550, 760, 1125, 1650],
-                  // TODO: look into cropping via Cloudinary API rather than CSS
                 })}
                 width={343}
                 height={240}
@@ -177,10 +176,9 @@ function Index() {
             </div>
             <div className="columns">
               <p>
-                After starting out by building no-code websites for a while, I
-                became curious about how the web worked. This led me down a
-                rabbit hole and ultimately to the objective of learning how to
-                code.
+                After starting out by building no-code websites I became curious
+                about how the web worked. This led me down a rabbit hole and
+                ultimately to the objective of learning how to code.
               </p>
               <p>
                 I knew I had made the right decision after struggling with an
@@ -208,10 +206,9 @@ function Index() {
           <div className="section-layout">
             <div className="section-intro">
               <span className="section-prefix">Projects</span>
-              <h2 className="section-heading">What I have been shipping</h2>
+              <h2 className="section-heading">What I have been building</h2>
               <h3 className="section-subheading">
-                I like to build stuff using the skills that I acquire on my
-                journey.
+                I like to build stuff to consolidate my skills.
               </h3>
             </div>
             <Tabs defaultValue="blog">
@@ -234,11 +231,11 @@ function Index() {
                   <Link to="projects/blog">
                     <picture>
                       <source
-                        media="(max-width: 34.375rem)"
+                        media="(max-width: 34.375rem) and (prefers-color-scheme: light)"
                         srcSet={getSrcSet(
-                          theme === 'light'
-                            ? 'project-blog-01-small'
-                            : 'project-blog-dark-01-small',
+                          theme === 'dark'
+                            ? 'project-blog-small-01-dark'
+                            : 'project-blog-small-01',
                           {
                             devicePixelRatios: [1, 2, 3],
                             widths: [375, 750, 1125],
@@ -247,23 +244,65 @@ function Index() {
                         width={375}
                         height={360}
                       />
+                      <source
+                        media="(max-width: 34.375rem) and (prefers-color-scheme: dark)"
+                        srcSet={getSrcSet(
+                          theme === 'light'
+                            ? 'project-blog-small-01'
+                            : 'project-blog-small-01-dark',
+                          {
+                            devicePixelRatios: [1, 2, 3],
+                            widths: [375, 750, 1125],
+                          },
+                        )}
+                        width={375}
+                        height={360}
+                      />
+                      <source
+                        media="(min-width: 34.376rem) and (prefers-color-scheme: light)"
+                        srcSet={getSrcSet(
+                          theme === 'dark'
+                            ? 'project-preview-blog-dark'
+                            : 'project-preview-blog',
+                          {
+                            devicePixelRatios: [1, 2, 3],
+                            widths: [528, 1056, 1584],
+                          },
+                        )}
+                        width={531}
+                        height={433}
+                      />
+                      <source
+                        media="(min-width: 34.376rem) and (prefers-color-scheme: dark)"
+                        srcSet={getSrcSet(
+                          theme === 'light'
+                            ? 'project-preview-blog'
+                            : 'project-preview-blog-dark',
+                          {
+                            devicePixelRatios: [1, 2, 3],
+                            widths: [528, 1056, 1584],
+                          },
+                        )}
+                        width={531}
+                        height={433}
+                      />
                       <img
                         alt="Preview of blog project"
                         className="tab-img shadow"
                         loading="lazy"
                         srcSet={getSrcSet(
                           theme === 'light'
-                            ? 'project-blog-preview'
-                            : 'project-blog-preview-dark',
+                            ? 'project-preview-blog'
+                            : 'project-preview-blog-dark',
                           {
                             devicePixelRatios: [1, 2, 3],
                             widths: [528, 1056, 1584],
                           },
                         )}
                         src={getSrc(
-                          theme === 'light'
-                            ? 'project-blog-preview'
-                            : 'project-blog-preview-dark',
+                          !theme || theme === 'light'
+                            ? 'project-preview-blog'
+                            : 'project-preview-blog-dark',
                           {width: 1056},
                         )}
                         width={531}
@@ -281,8 +320,7 @@ function Index() {
                         media="(max-width: 34.375rem)"
                         srcSet={getSrcSet(
                           theme === 'light'
-                            ? // TODO Yakk mobile image
-                              'project-blog-01-small'
+                            ? 'project-yakk-01-small'
                             : 'project-blog-dark-01-small',
                           {
                             devicePixelRatios: [1, 2, 3],
@@ -298,8 +336,8 @@ function Index() {
                         loading="lazy"
                         srcSet={getSrcSet(
                           theme === 'light'
-                            ? 'project-yakk-preview'
-                            : 'project-yakk-preview-dark',
+                            ? 'project-preview-yakk'
+                            : 'project-preview-yakk-dark',
                           {
                             devicePixelRatios: [1, 2, 3],
                             widths: [528, 1056, 1584],
@@ -307,8 +345,8 @@ function Index() {
                         )}
                         src={getSrc(
                           theme === 'light'
-                            ? 'project-yakk-preview'
-                            : 'project-yakk-preview-dark',
+                            ? 'project-preview-yakk'
+                            : 'project-preview-yakk-dark',
                           {width: 1056},
                         )}
                         width={531}

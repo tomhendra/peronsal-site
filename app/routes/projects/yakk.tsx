@@ -13,7 +13,6 @@ import {links as maxWidthContainerLinks} from '~/components/MaxWidthContainer';
 import {links as techLinks} from '~/components/Tech';
 import {getSrc, getSrcSet} from '~/helpers/images';
 import styles from '~/styles/projects.css';
-// import Link from '~/components/Link';
 
 const [seoMeta, seoLinks] = getSeo({
   title: 'Projects: Yakk',
@@ -48,7 +47,7 @@ function Yakk() {
               <h1>Yakk</h1>
               <div className="project-hero__content">
                 <h3 className="project-hero__subheading">
-                  A chat application inspired by Discord.
+                  A chat application inspired by Slack and Discord.
                 </h3>
                 <ul className="project-hero__features-list">
                   <li>
@@ -88,6 +87,10 @@ function Yakk() {
                     </span>
                   </li>
                 </ul>
+                <p>
+                  This project is currently in progress. A full analysis will
+                  follow when the MVP is launched soon.
+                </p>
                 <div className="project-hero__btn-group">
                   <Button
                     as="externalLink"
@@ -98,12 +101,13 @@ function Yakk() {
                     Source Code
                   </Button>
                   <Button
-                    as="externalLink"
+                    // as="externalLink"
                     href="https://duckduckgo.com"
                     size="xl"
                     variant="primary"
+                    disabled={true}
                   >
-                    Live Site
+                    Live Site in progress
                   </Button>
                 </div>
               </div>
@@ -113,9 +117,7 @@ function Yakk() {
                 <source
                   media="(max-width: 34.375rem)"
                   srcSet={getSrcSet(
-                    theme === 'light'
-                      ? 'project-blog-01-small'
-                      : 'project-blog-dark-01-small',
+                    `project-yakk-small-01${theme === 'dark' ? '-dark' : ''}`,
                     {
                       devicePixelRatios: [1, 2, 3],
                       widths: [284, 568, 852],
@@ -129,18 +131,14 @@ function Yakk() {
                   className="project-hero__img"
                   loading="eager"
                   srcSet={getSrcSet(
-                    theme === 'light'
-                      ? 'project-blog-01'
-                      : 'project-blog-dark-01',
+                    `project-yakk-01${theme === 'dark' ? '-dark' : ''}`,
                     {
                       devicePixelRatios: [1, 2, 3],
                       widths: [573, 1146, 1719],
                     },
                   )}
                   src={getSrc(
-                    theme === 'light'
-                      ? 'project-blog-01'
-                      : 'project-blog-dark-01',
+                    `project-yakk-01${theme === 'dark' ? '-dark' : ''}`,
                     {
                       width: 1146,
                     },
@@ -169,7 +167,7 @@ function Yakk() {
           </div>
         </MaxWidthContainer>
       </section>
-      <section>
+      {/* <section>
         <MaxWidthContainer>
           <div className="project-analysis">
             <div className="project-analysis__container">
@@ -201,9 +199,7 @@ function Yakk() {
                     <source
                       media="(max-width: 34.375rem)"
                       srcSet={getSrcSet(
-                        theme === 'light'
-                          ? 'project-blog-02-small'
-                          : 'project-blog-dark-02-small',
+                        `project-yakk-small-02${theme === 'dark' ? '-dark' : ''}`,
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [284, 568, 852],
@@ -217,18 +213,14 @@ function Yakk() {
                       className="project-analysis__img project-analysis__img--right"
                       loading="lazy"
                       srcSet={getSrcSet(
-                        theme === 'light'
-                          ? 'project-blog-02'
-                          : 'project-blog-dark-02',
+                        `projecct-yakk-02${theme === 'dark' ? '-dark' : ''}`,
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [630, 1260, 1890],
                         },
                       )}
                       src={getSrc(
-                        theme === 'light'
-                          ? 'project-blog-02'
-                          : 'project-blog-dark-02',
+                        `project-yakk-02${theme === 'dark' ? '-dark' : ''}`,
                         {
                           width: 630,
                         },
@@ -247,9 +239,7 @@ function Yakk() {
                     <source
                       media="(max-width: 34.375rem)"
                       srcSet={getSrcSet(
-                        theme === 'light'
-                          ? 'project-blog-03-small'
-                          : 'project-blog-dark-03-small',
+                        `project-yakk-small-03${theme === 'dark' ? '-dark' : ''}`,
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [284, 568, 852],
@@ -263,18 +253,14 @@ function Yakk() {
                       className="project-analysis__img project-analysis__img--left"
                       loading="lazy"
                       srcSet={getSrcSet(
-                        theme === 'light'
-                          ? 'project-blog-03'
-                          : 'project-blog-dark-03',
+                        `project-yakk-03${theme === 'dark' ? '-dark' : ''}`,
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [630, 1260, 1890],
                         },
                       )}
                       src={getSrc(
-                        theme === 'light'
-                          ? 'project-blog-03'
-                          : 'project-blog-dark-03',
+                        `project-yakk-03${theme === 'dark' ? '-dark' : ''}`,
                         {
                           width: 630,
                         },
@@ -347,9 +333,7 @@ function Yakk() {
                     <source
                       media="(max-width: 34.375rem)"
                       srcSet={getSrcSet(
-                        theme === 'light'
-                          ? 'project-blog-04-small'
-                          : 'project-blog-dark-04-small',
+                        `project-yakk-small-04${theme === 'dark' ? '-dark' : ''}`,
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [284, 568, 852],
@@ -363,18 +347,14 @@ function Yakk() {
                       className="project-analysis__img project-analysis__img--right"
                       loading="lazy"
                       srcSet={getSrcSet(
-                        theme === 'light'
-                          ? 'project-blog-04'
-                          : 'project-blog-dark-04',
+                        `project-yakk-04${theme === 'dark' ? '-dark' : ''}`,
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [630, 1260, 1890],
                         },
                       )}
                       src={getSrc(
-                        theme === 'light'
-                          ? 'project-blog-04'
-                          : 'project-blog-dark-04',
+                        `project-yakk-04${theme === 'dark' ? '-dark' : ''}`,
                         {
                           width: 630,
                         },
@@ -393,9 +373,7 @@ function Yakk() {
                     <source
                       media="(max-width: 34.375rem)"
                       srcSet={getSrcSet(
-                        theme === 'light'
-                          ? 'project-blog-05-small'
-                          : 'project-blog-dark-05-small',
+                        `project-yakk-small-05${theme === 'dark' ? '-dark' : ''}`,
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [284, 568, 852],
@@ -409,18 +387,14 @@ function Yakk() {
                       className="project-analysis__img project-analysis__img--left"
                       loading="lazy"
                       srcSet={getSrcSet(
-                        theme === 'light'
-                          ? 'project-blog-05'
-                          : 'project-blog-dark-05',
+                        `project-yakk-05${theme === 'dark' ? '-dark' : ''}`,
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [630, 1260, 1890],
                         },
                       )}
                       src={getSrc(
-                        theme === 'light'
-                          ? 'project-blog-05'
-                          : 'project-blog-dark-05',
+                        `project-yakk-05${theme === 'dark' ? '-dark' : ''}`,
                         {
                           width: 630,
                         },
@@ -469,7 +443,7 @@ function Yakk() {
             </div>
           </div>
         </MaxWidthContainer>
-      </section>
+      </section> */}
     </main>
   );
 }
