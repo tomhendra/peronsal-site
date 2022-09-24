@@ -193,7 +193,7 @@ function Index() {
               </p>
               <p>
                 I have gained the necessary skills to build polished user
-                interfaces and am seeking a role as a frontend developer, where
+                interfaces and am seeking a role as a front-end developer, where
                 I can continue to grow and help a team to achieve their goals.
               </p>
             </div>
@@ -206,9 +206,9 @@ function Index() {
           <div className="section-layout">
             <div className="section-intro">
               <span className="section-prefix">Projects</span>
-              <h2 className="section-heading">What I have been building</h2>
+              <h2 className="section-heading">What I have been shipping</h2>
               <h3 className="section-subheading">
-                I like to build stuff to consolidate my skills.
+                I build projects for fun and to consolidate my knowledge.
               </h3>
             </div>
             <Tabs defaultValue="blog">

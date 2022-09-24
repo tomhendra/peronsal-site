@@ -61,7 +61,7 @@ function Blog() {
                           color="var(--color-primary-text)"
                         />
                       </FeatureIcon>
-                      Markdown parsed from GitHub to Cloudflare CDN
+                      Markdown content parsed with the GitHub API
                     </span>
                   </li>
                   <li>
@@ -73,7 +73,7 @@ function Blog() {
                           color="var(--color-primary-text)"
                         />
                       </FeatureIcon>
-                      Optimised image delivery with Cloudinary
+                      Both website and data delivered from the edge
                     </span>
                   </li>
                   <li>
@@ -332,7 +332,7 @@ function Blog() {
                   While replacing DOM nodes with React elements,
                   html-react-parser can convert DOM attributes to React props.
                   So I looked for any <code>class</code> starting with{' '}
-                  <code>hljs language-</code>, converted them to a React props,
+                  <code>hljs language-</code>, converted them to React props,
                   passed them to a custom <code>&lt;Code&gt;</code> component,
                   then grabbed the language with the <code>slice</code> method
                   from the destructured <code>className</code> prop.
@@ -360,8 +360,8 @@ function Blog() {
                 <p>
                   My goal is to improve the quality and quantity of the content
                   I write, and I have a long list of new features that I intend
-                  to add to the project over time. The biggest feature is to
-                  have a Spanish language version of every post.
+                  to add to the project over time. The biggest challenge is to
+                  have a Spanish language version.
                 </p>
               </div>
               <div className="project-analysis__content project-analysis__content--img">
