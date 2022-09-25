@@ -413,8 +413,8 @@ function Blog() {
                       media="(max-width: 34.375rem)"
                       srcSet={getSrcSet(
                         theme === 'light'
-                          ? 'project-blog-05-small'
-                          : 'project-blog-dark-05-small',
+                          ? 'project-blog-small-05'
+                          : 'project-blog-small-05-dark',
                         {
                           devicePixelRatios: [1, 2, 3],
                           widths: [284, 568, 852],

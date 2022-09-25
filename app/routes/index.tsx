@@ -320,8 +320,8 @@ function Index() {
                         media="(max-width: 34.375rem)"
                         srcSet={getSrcSet(
                           theme === 'light'
-                            ? 'project-yakk-01-small'
-                            : 'project-blog-dark-01-small',
+                            ? 'project-yakk-small-01'
+                            : 'project-yakk-small-01-dark',
                           {
                             devicePixelRatios: [1, 2, 3],
                             widths: [375, 750, 1125],
