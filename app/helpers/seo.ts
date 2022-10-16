@@ -1,9 +1,8 @@
 import {initSeo} from 'remix-seo';
 
 export const {getSeo, getSeoMeta, getSeoLinks} = initSeo({
-  title: 'Hello',
-  titleTemplate: '%s | Tom Hendra',
-  description: 'Frontend developer building for the web.',
+  title: 'Tom Hendra',
+  description: 'Front-end developer building for the web.',
   openGraph: {
     siteName: "Tom Hendra's personal website",
     title: 'Tom Hendra',
