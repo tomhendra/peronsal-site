@@ -118,7 +118,7 @@ function Index() {
               </div>
               <h1>Hello, I'm Tom</h1>
               <h2 className="section-subheading">
-                I'm a developer from the UK who loves to build quality user
+                I'm a developer from the UK who loves to build high quality user
                 interfaces for the web.
               </h2>
               <div className="btn-group">
