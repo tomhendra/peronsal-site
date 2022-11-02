@@ -26,7 +26,7 @@ specifiers:
   react-feather: ^2.0.10
   remix-seo: ^0.1.0
   typescript: ^4.8.4
-  wrangler: ^2.1.13
+  wrangler: ^2.1.15
 
 dependencies:
   '@radix-ui/react-tabs': 1.0.1_sfoxds7t5ydpegc3knd667wn6m
@@ -37,7 +37,7 @@ dependencies:
   cloudinary-build-url: 0.2.4
   clsx: 1.2.1
   cross-env: 7.0.3
-  framer-motion: 7.6.1_sfoxds7t5ydpegc3knd667wn6m
+  framer-motion: 7.6.4_sfoxds7t5ydpegc3knd667wn6m
   html-react-parser: 3.0.4_react@17.0.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -56,7 +56,7 @@ devDependencies:
   npm-run-all: 4.1.5
   prettier: 2.7.1
   typescript: 4.8.4
-  wrangler: 2.1.13
+  wrangler: 2.1.15
 
 packages:
 
@@ -1472,8 +1472,8 @@ packages:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: true
 
-  /@humanwhocodes/config-array/0.11.6:
-    resolution: {integrity: sha512-jJr+hPTJYKyDILJfhNSHsjiwXYf26Flsz8DvNndOsHs5pwSnpGUEy8yzF0JYhCEvTDdV2vuOK5tt8BVhwO5/hg==}
+  /@humanwhocodes/config-array/0.11.7:
+    resolution: {integrity: sha512-kBbPWzN8oVMLb0hOUYXhmxggL/1cJE6ydvjDIGi9EnAGUyA7cLVKQg+d/Dsm+KZwx2czGHrCmMVLiyg8s5JPKw==}
     engines: {node: '>=10.10.0'}
     dependencies:
       '@humanwhocodes/object-schema': 1.2.1
@@ -2227,7 +2227,7 @@ packages:
   /@types/better-sqlite3/7.6.2:
     resolution: {integrity: sha512-RgmaapusqTq6IMAr4McMyAsC6RshYTCjXCnzwVV59WctUxC8bNPyUfT9t5F81lKcU41lLurhjqjoMHfauzfqGg==}
     dependencies:
-      '@types/node': 18.11.7
+      '@types/node': 18.11.9
     dev: true
 
   /@types/cacheable-request/6.0.2:
@@ -2320,6 +2320,10 @@ packages:
 
   /@types/node/18.11.7:
     resolution: {integrity: sha512-LhFTglglr63mNXUSRYD8A+ZAIu5sFqNJ4Y2fPuY7UlrySJH87rRRlhtVmMHplmfk5WkoJGmDjE9oiTfyX94CpQ==}
+    dev: true
+
+  /@types/node/18.11.9:
+    resolution: {integrity: sha512-CRpX21/kGdzjOpFsZSkcrXMGIBWMGNIHXXBVFSH+ggkftxg+XYP20TESbh+zFvFj3EQOl5byk0HTRn1IL6hbqg==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -2522,11 +2526,6 @@ packages:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       acorn: 8.8.1
-    dev: true
-
-  /acorn-walk/8.2.0:
-    resolution: {integrity: sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==}
-    engines: {node: '>=0.4.0'}
     dev: true
 
   /acorn-walk/8.2.0:
@@ -4710,8 +4709,8 @@ packages:
       map-cache: 0.2.2
     dev: true
 
-  /framer-motion/7.6.1_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-8US03IWJKrLoSb81l5OahNzB9Sv7Jo1RhIwUoTG/25BRUdO9lOqq/klsdZqNmNG0ua9IEJJQ8hkYpETJ4N6VSw==}
+  /framer-motion/7.6.4_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-Ac3Bl9M45fS8A0ibOUnYMSCfjaCrFfWT0uh0/MZVm/DGWcr5IsRRinWRiVGABA9RGJgn4THehqcn235JVQkucQ==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -8854,8 +8853,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /wrangler/2.1.13:
-    resolution: {integrity: sha512-FWarJ9pBaXOU/wj3BoLo1Azi4VvadD0PfDIYfvY9hoKVyPMSr4dpPNUGgtMhsVuDp7K9mdixnmGEJxR7pbs3kQ==}
+  /wrangler/2.1.15:
+    resolution: {integrity: sha512-5iqtFNo+zbu1FTnQQU/1Y+WWxIEuPIy71fe0uvqqFl0pSlkAtZJ+ufw8UYVxf2Mprw4ia4mSDdhV+hHpZO1sLQ==}
     engines: {node: '>=16.13.0'}
     hasBin: true
     dependencies:
@@ -8873,7 +8872,7 @@ packages:
       path-to-regexp: 6.2.1
       selfsigned: 2.1.1
       source-map: 0.7.4
-      xxhash-wasm: 1.0.1
+      xxhash-wasm: 1.0.2
     optionalDependencies:
       fsevents: 2.3.2
     transitivePeerDependencies:
@@ -8970,8 +8969,8 @@ packages:
     engines: {node: '>=0.4'}
     dev: true
 
-  /xxhash-wasm/1.0.1:
-    resolution: {integrity: sha512-Lc9CTvDrH2vRoiaUzz25q7lRaviMhz90pkx6YxR9EPYtF99yOJnv2cB+CQ0hp/TLoqrUsk8z/W2EN31T568Azw==}
+  /xxhash-wasm/1.0.2:
+    resolution: {integrity: sha512-ibF0Or+FivM9lNrg+HGJfVX8WJqgo+kCLDc4vx6xMeTce7Aj+DLttKbxxRR/gNLSAelRc1omAPlJ77N/Jem07A==}
     dev: true
 
   /yallist/3.1.1:
