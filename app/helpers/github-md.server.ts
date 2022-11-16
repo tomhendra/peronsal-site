@@ -8,7 +8,7 @@ export async function getMarkdownPaths(): Promise<FilePaths | undefined> {
     if (response.status === 404) {
       return undefined; // not found
     }
-    throw Error(
+    throw new Error(
       `Fetching Markdown file paths from GitHub failed with ${response.status}: ${response.statusText}`,
     );
   }
@@ -23,7 +23,7 @@ export async function getMarkdownFile(
     if (response.status === 404) {
       return undefined; // not found
     }
-    throw Error(
+    throw new Error(
       `Fetching Markdown file from GitHub failed with ${response.status}: ${response.statusText}`,
     );
   }

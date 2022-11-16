@@ -136,7 +136,7 @@ const options: HTMLReactParserOptions = {
     }
   },
 };
-
+  
 function Article() {
   const data = useLoaderData<typeof loader>();
   const {html, attributes} = data;

@@ -15,8 +15,8 @@ export type FilePaths = {
 export type MarkdownAttributes = {
   sha: string;
   slug: string;
-  date: Date;
-  updated: Date;
+  date: string;
+  updated: string;
   title: string;
   subtitle: string;
   description: string;
