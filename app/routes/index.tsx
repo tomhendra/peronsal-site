@@ -188,12 +188,12 @@ function Index() {
               </p>
               <p>
                 I now build web apps with JavaScript frameworks and continuously
-                raise my standards by learning from high quality resources and
+                raise my standards by learning from high-quality resources and
                 the many smart folks within the developer community.
               </p>
               <p>
                 I have gained the necessary skills to build polished user
-                interfaces and am seeking a role as a front-end developer, where
+                interfaces and am seeking a role as a software developer, where
                 I can continue to grow and help a team to achieve their goals.
               </p>
             </div>

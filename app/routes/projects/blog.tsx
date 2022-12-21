@@ -289,7 +289,7 @@ function Blog() {
                 <h2 className="project-analysis__title">Spotlight</h2>
                 <p>
                   Markdown files are parsed from a GitHub repo into HTML strings
-                  which are then cached to Cloudflare's CDN with SWR for 2 days
+                  which are then cached to Cloudflare's network with SWR for 2 days
                   and revalidation every 5 minutes. This is achieved with the
                   GitHub API and Cloudflare Workers via{' '}
                   {/* <Link
@@ -310,7 +310,7 @@ function Blog() {
                 </p>
                 <p>
                   The HTML strings are then fetched by a Remix app deployed to
-                  the same CDN, converted into React elements on the backend
+                  the same network, converted into React elements on the backend
                   with{' '}
                   <a
                     href="https://github.com/remarkablemark/html-react-parser#readme"
