@@ -1,0 +1,136 @@
+/* 
+--shadow-color is used as a parameter of the hsl function so that the shadow 
+colour can be defined based on the background colour of where it is being used, 
+but we can't rely on inheritance for functions that need to be re-calculated so 
+the shadow custom properties with their hsl functions can't be defined on :root.
+
+That’s because each property value is computed once per element, and then the 
+computed value is inherited. By defining our function at the document root, we 
+don’t make the entire function available to descendants — only the computed 
+result of the function.
+
+That makes sense if you frame it in terms of the cascading --shadow-color 
+parameter. Like any inherited CSS property, it is available to descendants but 
+not ancestors. The value we set on a nested element is not available to a 
+function we defined on the html root ancestor. 
+
+In order to make the hsl function re-calculate on any element, we can make it 
+available to elements with a given selector.
+
+.shadow { --shadow-sm: 0.5px 1px 1px hsl(var(--shadow-color) / 0.7); ...etc}
+
+or make the function available to elements nested inside a given selector  
+.shadow * { --shadow-sm: 0.5px 1px 1px hsl(var(--shadow-color) / 0.7); ...etc} 
+
+or make the function available to siblings following a given selector 
+.shadow ~ * { --shadow-sm: 0.5px 1px 1px hsl(var(--shadow-color) / 0.7); ...etc} 
+
+And in order for the hsl function to have access to the --shadow-color value, 
+we define --shadow-color on a suitable ancestor.
+
+.parent { --shadow-color: 210deg 5% 62%; }
+.child { box-shadow: var(--shadow-sm); }
+---
+<div className="parent>
+  <div className="child shadow">I have a shadow</div>
+</div>
+
+source: https://www.smashingmagazine.com/2019/07/css-custom-properties-cascade/
+*/
+.shadow {
+  --shadow-sm: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+    1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-md: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+  --shadow-lg: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
+    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
+    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
+    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
+    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
+    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
+    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+}
+
+:root {
+  --blur-xs: blur(3px);
+  --blur-sm: blur(8px);
+  --blur-md: blur(16px);
+  --blur-lg: blur(24px);
+  --blur-xl: blur(40px);
+
+  --gradient-gray-600-conic: conic-gradient(
+    from 259.08deg at 50% 50%,
+    hsl(var(--gray-600)) 0deg,
+    hsl(var(--gray-500)) 360deg
+  );
+  --gradient-gray-600-500-90deg: linear-gradient(
+    90deg,
+    hsl(var(--gray-600)) 0%,
+    hsl(var(--gray-500)) 100%
+  );
+  --gradient-gray-700-600-45deg: linear-gradient(
+    45deg,
+    hsl(var(--gray-700)) 0%,
+    hsl(var(--gray-600)) 100%
+  );
+  --gradient-gray-800-600-45deg: linear-gradient(
+    45deg,
+    hsl(var(--gray-800)) 0%,
+    hsl(var(--gray-600)) 100%
+  );
+  --gradient-gray-800-600-90deg: linear-gradient(
+    63.44deg,
+    hsl(var(--gray-800)) 16.72%,
+    hsl(var(--gray-600)) 83.39%
+  );
+  --gradient-gray-800-700-27deg: linear-gradient(
+    26.57deg,
+    hsl(var(--gray-800)) 8.33%,
+    hsl(var(--gray-700)) 91.67%
+  );
+  --gradient-gray-900-600-45deg: linear-gradient(
+    45deg,
+    hsl(var(--gray-900)) 0%,
+    hsl(var(--gray-600)) 100%
+  );
+
+  --gradient-primary-600-conic: conic-gradient(
+    from 259.08deg at 50% 50%,
+    hsl(var(--primary-600)) 0deg,
+    hsl(var(--primary-500)) 360deg
+  );
+  --gradient-primary-600-500-90deg: linear-gradient(
+    90deg,
+    hsl(var(--primary-600)) 0%,
+    hsl(var(--primary-500)) 100%
+  );
+  --gradient-primary-700-600-45deg: linear-gradient(
+    45deg,
+    hsl(var(--primary-700)) 0%,
+    hsl(var(--primary-600)) 100%
+  );
+  --gradient-primary-800-600-45deg: linear-gradient(
+    45deg,
+    hsl(var(--primary-800)) 0%,
+    hsl(var(--primary-600)) 100%
+  );
+  --gradient-primary-800-600-90deg: linear-gradient(
+    63.44deg,
+    hsl(var(--primary-800)) 16.72%,
+    hsl(var(--primary-600)) 83.39%
+  );
+  --gradient-primary-800-700-27deg: linear-gradient(
+    26.57deg,
+    hsl(var(--primary-800)) 8.33%,
+    hsl(var(--primary-700)) 91.67%
+  );
+  --gradient-primary-900-600-45deg: linear-gradient(
+    45deg,
+    hsl(var(--primary-900)) 0%,
+    hsl(var(--primary-600)) 100%
+  );
+}
