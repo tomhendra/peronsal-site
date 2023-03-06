@@ -1,3 +1,3 @@
-## Personal site
+## Remix version
 
-My space on the internet and experimentation playground for shiny new things.
+The version of my personal site that helped me get my first software development job.
