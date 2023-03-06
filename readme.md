@@ -1,3 +1,3 @@
 ## Blog
 
-The Remix version of my blog using Github-md to parse content from separate repo.
+The Remix version of my blog using github-md to parse content from separate repo.
