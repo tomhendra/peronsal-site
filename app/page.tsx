@@ -1,8 +1,8 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import Image from 'next/image';
+import { Inter } from 'next/font/google';
+import styles from './page.module.css';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
@@ -55,7 +55,7 @@ export default function Home() {
           <h2 className={inter.className}>
             Docs <span>-&gt;</span>
           </h2>
-          <p className={inter.className}>
+          <p className="text-3xl font-bold">
             Find in-depth information about Next.js features and API.
           </p>
         </a>
@@ -87,5 +87,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
