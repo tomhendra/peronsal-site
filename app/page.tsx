@@ -1,72 +1,60 @@
-import Image from 'next/image';
-import { Inter } from 'next/font/google';
-import styles from './page.module.css';
+import { demos } from '@/lib/demos';
 import Link from 'next/link';
 
-const inter = Inter({ subsets: ['latin'] });
-
-export default function Home() {
+export default function Page() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <Link href="/blog">Blog</Link>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className="text-3xl font-bold">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+    /*
+    <header>Nav goes here</header>
+    <main>
+      <h1>Hello</h1>
+      <p>
+        I am Tom, a UK-native software developer currently building React and
+        React Native apps at Wembley Studios in Salamanca, Spain.
+      </p>
+      <p>
+        I&apos;m interested in user experience and motion. Find me on Twitter.
+      </p>
+      <div>Writing...</div>
     </main>
+    */
+    <div className="space-y-6">
+      <div className="space-y-8 text-white">
+        {demos
+          .filter((section) =>
+            section.items.some((x) => typeof x.isDisabled === 'undefined'),
+          )
+          .map((section) => {
+            return (
+              <div key={section.name} className="space-y-3">
+                <div className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+                  {section.name}
+                </div>
+
+                <div className="grid grid-cols-2 gap-5">
+                  {section.items
+                    .filter((item) => !item.isDisabled)
+                    .map((item) => {
+                      return (
+                        <Link
+                          href={`/${item.slug}`}
+                          key={item.name}
+                          className="block space-y-1.5 rounded-lg border border-white/10 px-4 py-3 hover:border-white/20"
+                        >
+                          <div>{item.name}</div>
+
+                          {item.description ? (
+                            <div className="line-clamp-3 text-sm text-zinc-400">
+                              {item.description}
+                            </div>
+                          ) : null}
+                        </Link>
+                      );
+                    })}
+                </div>
+              </div>
+            );
+          })}
+      </div>
+    </div>
   );
 }
