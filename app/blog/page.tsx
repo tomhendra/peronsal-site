@@ -1,8 +1,8 @@
 export const metadata = {
-  title: 'Blog',
-  description: 'Writing by Tom Hendra',
+  title: 'Tom Hendra | Blog',
+  description: 'Read blog posts by Tom Hendra',
 };
 
-export function generateStaticParams() {
-  return [{ slug: 'learn-next-js' }];
+export default function Blog() {
+  return <h1>Blog</h1>;
 }
