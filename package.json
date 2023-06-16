@@ -6,7 +6,11 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier \"**/*.+(js|jsx|json|yml|yaml|ts|tsx|md|gql|graphql|mdx|svelte)\"",
+    "format:write": "pnpm format --write",
+    "format:check": "pnpm format --list-different",
+    "validate": "npm-run-all --parallel lint format:check build"
   },
   "dependencies": {
     "@types/node": "18.16.3",
@@ -21,5 +25,13 @@
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.8"
   }
 }
