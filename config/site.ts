@@ -10,7 +10,7 @@ export const siteConfig = {
     },
     {
       title: "Writing",
-      href: "/writing",
+      href: "/posts",
     },
   ],
   links: {
