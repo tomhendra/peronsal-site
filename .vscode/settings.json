@@ -1,4 +1,6 @@
 {
+  "typescript.tsdk": "../../node_modules/.pnpm/typescript@4.9.5/node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
   "emmet.excludeLanguages": [],
   "emmet.includeLanguages": {
     "markdown": "html",
@@ -36,6 +38,9 @@
     "typescriptreact"
   ],
   "cssVariables.lookupFiles": ["**/*.css", "**/*.scss"],
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
