@@ -5,33 +5,36 @@ import Card from '../components/Card.astro';
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+		<h1><span class="text-gradient">Tom Hendra</span></h1>
+		<p class="introduction">
+			I am a software developer from the UK based in Salamanca, Spain. I am interested in performance, user experience, motion and 3D.
 		</p>
+		<h2>Featured writing</h2>
 		<ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"
-				title="Documentation"
+				title="Something performance"
 				body="Learn how Astro works and explore the official API docs."
 			/>
 			<Card
 				href="https://astro.build/integrations/"
-				title="Integrations"
+				title="Something user experience"
 				body="Supercharge your project with new frameworks and libraries."
 			/>
 			<Card
 				href="https://astro.build/themes/"
-				title="Themes"
+				title="Something motion"
 				body="Explore a galaxy of community-built starter themes."
 			/>
 			<Card
 				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
+				title="Something 3D"
+				body="Come say hi to our amazing Discord community."
 			/>
 		</ul>
+		<h2>
+			Contact
+		</h2>
 	</main>
 </Layout>
 
@@ -53,7 +56,7 @@ import Card from '../components/Card.astro';
 		background-size: 400%;
 		background-position: 0%;
 	}
-	.instructions {
+	.introduction {
 		line-height: 1.6;
 		margin: 1rem 0;
 		border: 1px solid rgba(var(--accent), 25%);
@@ -61,7 +64,7 @@ import Card from '../components/Card.astro';
 		padding: 1rem;
 		border-radius: 0.4rem;
 	}
-	.instructions code {
+	.introduction code {
 		font-size: 0.875em;
 		font-weight: bold;
 		background: rgba(var(--accent), 12%);
@@ -69,7 +72,7 @@ import Card from '../components/Card.astro';
 		border-radius: 4px;
 		padding: 0.3em 0.45em;
 	}
-	.instructions strong {
+	.introduction strong {
 		color: rgb(var(--accent));
 	}
 	.link-card-grid {
