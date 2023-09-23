@@ -1,52 +1,20 @@
 {
-  // "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "emmet.excludeLanguages": [],
-  "emmet.includeLanguages": {
-    "markdown": "html",
-    "javascript": "javascriptreact",
-    "typescript": "typescriptreact"
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, pnpm-lock.yaml",
+    "*.js": "${capture}.js.map, ${capture}.d.ts, ${capture}.d.ts.map",
+    "*.ts": "$(capture).test.ts, $(capture).test.tsx, $(capture).test.node.ts, $(capture).test.node.tsx, $(capture).test.web.ts, $(capture).test.web.tsx, ${capture}.web.tsx, ${capture}.web.jsx",
+    "*.tsx": "$(capture).test.ts, $(capture).test.tsx, $(capture).test.node.ts, $(capture).test.node.tsx, $(capture).test.web.ts, $(capture).test.web.tsx, ${capture}.web.tsx, ${capture}.web.jsx"
   },
-  "emmet.showSuggestionsAsSnippets": true,
-  "emmet.triggerExpansionOnTab": true,
-  "files.exclude": {
-    "**/*.js.map": {
-      "when": "$(basename)"
-    }
-  },
-  "html.autoClosingTags": true,
-  "javascript.autoClosingTags": true,
-  "javascript.suggest.completeFunctionCalls": true,
-  "typescript.suggest.completeFunctionCalls": true,
-  "javascript.suggest.autoImports": true,
-  "search.exclude": {
-    "**/coverage": true,
-    "**/node_modules": true
-  },
-  "typescript.autoClosingTags": true,
-  "typescript.suggest.autoImports": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.codeActionsOnSave": { "source.fixAll": true },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "javascript.format.enable": false,
-  "javascript.validate.enable": true,
-  "typescript.format.enable": false,
-  "typescript.validate.enable": true,
-  "eslint.probe": [
+  "eslint.validate": [
     "javascript",
     "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+    "astro", // Enable .astro
+    "typescript", // Enable .ts
+    "typescriptreact" // Enable .tsx
+  ]
 }

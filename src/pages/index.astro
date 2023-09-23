@@ -1,5 +1,6 @@
 ---
-
+import '@/styles/reset.css'
+import '@/styles/globals.css'
 ---
 
 <html lang="en">
@@ -11,10 +12,44 @@
     <title>Tom Hendra</title>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog">Blog</a>
-    <h1>Tom Hendra</h1>
-    <p>My blog</p>
+    <div class="container">
+      <header>
+        <img src="/logo-light.svg" width="30px" height="30px" />
+        <span class="pixelate">Tom Hendra</span>
+      </header>
+      <main>
+        <p>React Native dev</p>
+        <p class="subtitle">Site under construction ⚒️</p>
+        <a href="https://twitter.com/tomhendra" class="subtitle">@tomhendra</a>
+      </main>
+    </div>
   </body>
 </html>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 1rem;
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    padding-top: 4rem;
+    flex: 1;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subtitle {
+    font-size: 0.875rem;
+  }
+</style>
