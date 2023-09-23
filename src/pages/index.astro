@@ -13,16 +13,43 @@ import '@/styles/globals.css'
   </head>
   <body>
     <div class="container">
-      <h1 class="pixelate">Tom Hendra</h1>
-      <p>Hello</p>
+      <header>
+        <img src="/logo-light.svg" width="30px" height="30px" />
+        <span class="pixelate">Tom Hendra</span>
+      </header>
+      <main>
+        <p>React Native dev</p>
+        <p class="subtitle">Site under construction ⚒️</p>
+        <a href="https://twitter.com/tomhendra" class="subtitle">@tomhendra</a>
+      </main>
     </div>
   </body>
 </html>
 
 <style>
+  header {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 1rem;
+  }
+
   .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    padding-top: 4rem;
+    flex: 1;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .subtitle {
+    font-size: 0.875rem;
   }
 </style>

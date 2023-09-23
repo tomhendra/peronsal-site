@@ -1,8 +1,8 @@
 module.exports = {
-  // type check TypeScript files
+  // type check TS|TSX files
   '**/*.+(ts|tsx)': () => 'tsc -p tsconfig.json --noEmit',
-  // type check Astro files
-  '**/*.+(astro)': () => 'astro check',
+  // type check Astro files with @astrojs/check
+  '**/*.astro': () => 'astro check',
   // lint & format
   '**/*.(ts|tsx|js|astro|mdx)': (filenames) => [
     `eslint ${filenames.join(' ')}`,
