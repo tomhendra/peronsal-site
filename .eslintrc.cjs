@@ -18,14 +18,10 @@ module.exports = {
       version: '16.0',
     },
   },
+  globals: {
+    ThemeProvider: 'readonly', // 'readonly' or 'writable' depending on your use case
+  },
   overrides: [
-    // https://typescript-eslint.io/linting/troubleshooting/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
-    {
-      files: ['*.ts', '*.mts', '*.cts', '*.tsx', '*.astro'],
-      rules: {
-        'no-undef': 'off',
-      },
-    },
     {
       files: ['*.astro'],
       parser: 'astro-eslint-parser',
@@ -51,20 +47,19 @@ module.exports = {
       files: ['*.d.ts'],
       rules: {
         '@typescript-eslint/triple-slash-reference': 'off',
+        'no-var': 'off',
       },
     },
     {
       files: ['*.tsx'],
       parser: '@typescript-eslint/parser',
-      plugins: ['react', '@typescript-eslint'],
+      plugins: ['@typescript-eslint'],
       parserOptions: {
         tsconfigRootDir: __dirname,
         project: ['./tsconfig.json'],
       },
       extends: [
         'eslint:recommended',
-        'plugin:react/recommended',
-        'plugin:react/jsx-runtime',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
       ],
