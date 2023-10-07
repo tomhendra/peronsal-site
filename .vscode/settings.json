@@ -14,7 +14,12 @@
   // "javascript.validate.enable": true,
   // "typescript.format.enable": false,
   // "typescript.validate.enable": true,
-  "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -30,5 +35,17 @@
   },
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
-  }
+  },
+  "cssvar.files": [
+    "./node_modules/open-props/open-props.min.css",
+    // if you have an alternative path to where your styles are located
+    // you can add it in this array of files
+    "assets/styles/variables.css"
+  ],
+
+  // Do not ignore node_modules css files, which is ignored by default
+  "cssvar.ignore": [],
+
+  // add support for autocomplete in JS or JS like files
+  "cssvar.extensions": ["css", "postcss", "jsx", "tsx"]
 }

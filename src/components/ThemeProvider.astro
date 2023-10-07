@@ -7,6 +7,7 @@ import Icon from './Icon.astro'
   window.ThemeProvider = (() => {
     const userPref =
       typeof localStorage !== 'undefined' && localStorage.getItem('theme')
+
     const systemPref = window.matchMedia('(prefers-color-scheme: light)')
       .matches
       ? 'light'
@@ -21,14 +22,15 @@ import Icon from './Icon.astro'
       updatePickers(theme = userPref ?? 'system') {
         document.querySelectorAll('theme-select').forEach((picker) => {
           const select = picker.querySelector('select')
-          if (select) {
-            select.value = theme
-          }
+          if (select) select.value = theme
+
           /** @type {HTMLTemplateElement | null} */
-          const tmpl = document.querySelector(`#theme-icons`)
-          const newIcon = tmpl && tmpl.content.querySelector('.' + theme)
+          const themeIcons = document.querySelector(`#theme-icons`)
+          const newIcon = themeIcons?.content.querySelector('.' + theme)
+
           if (newIcon) {
             const oldIcon = picker.querySelector('svg.label-icon')
+
             if (oldIcon) {
               oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes)
             }

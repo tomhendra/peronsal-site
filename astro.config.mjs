@@ -1,6 +1,10 @@
 import { defineConfig } from 'astro/config'
+import mdx from '@astrojs/mdx'
+
+import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
 export default defineConfig({
-  // your configuration options here...
+  site: 'https://tomhendra.dev',
+  integrations: [mdx(), sitemap()],
 })

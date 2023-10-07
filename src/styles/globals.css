@@ -1,4 +1,26 @@
-:root {
+@import 'open-props/style';
+@import 'open-props/normalize';
+
+@custom-media --OSdark (prefers-color-scheme: dark);
+@custom-media --OSlight (prefers-color-scheme: light);
+
+@custom-media --motionOK (prefers-reduced-motion: no-preference);
+@custom-media --motionNotOK (prefers-reduced-motion: reduce);
+
+html {
+  background: white;
+  color: var(--gray-8);
+}
+
+@media (--OSdark) {
+  html {
+    background: var(--gray-9);
+    color: var(--gray-1);
+  }
+}
+
+/* shadcn/ui vars
+html {
   [data-theme='light'] {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -60,4 +82,4 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
-}
+} */
