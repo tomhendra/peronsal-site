@@ -1,51 +1,18 @@
 {
-  "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.patterns": {
-    "package.json": "package-lock.json, pnpm-lock.yaml",
-    "*.js": "${capture}.js.map, ${capture}.d.ts, ${capture}.d.ts.map",
-    "*.ts": "$(capture).test.ts, $(capture).test.tsx, $(capture).test.node.ts, $(capture).test.node.tsx, $(capture).test.web.ts, $(capture).test.web.tsx, ${capture}.web.tsx, ${capture}.web.jsx",
-    "*.tsx": "$(capture).test.ts, $(capture).test.tsx, $(capture).test.node.ts, $(capture).test.node.tsx, $(capture).test.web.ts, $(capture).test.web.tsx, ${capture}.web.tsx, ${capture}.web.jsx"
-  },
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "editor.codeActionsOnSave": { "source.fixAll": true },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  // "javascript.format.enable": false,
-  // "javascript.validate.enable": true,
-  // "typescript.format.enable": false,
-  // "typescript.validate.enable": true,
-  "eslint.probe": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "astro", // Enable .astro
-    "typescript", // Enable .ts
-    "typescriptreact" // Enable .tsx
-  ],
+  "deno.enable": true,
+  "deno.lint": true,
+  "editor.defaultFormatter": "denoland.vscode-deno",
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "denoland.vscode-deno"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "denoland.vscode-deno"
   },
-  "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
   },
-  "cssvar.files": [
-    "./node_modules/open-props/open-props.min.css",
-    // if you have an alternative path to where your styles are located
-    // you can add it in this array of files
-    "assets/styles/variables.css"
-  ],
-
-  // Do not ignore node_modules css files, which is ignored by default
-  "cssvar.ignore": [],
-
-  // add support for autocomplete in JS or JS like files
-  "cssvar.extensions": ["css", "postcss", "jsx", "tsx"]
+  "[javascript]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "editor.formatOnSave": true
 }
