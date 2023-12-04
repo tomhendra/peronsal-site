@@ -6,8 +6,8 @@ import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $index from "./routes/index.tsx";
-import * as $words_post_ from "./routes/words/[post].tsx";
-import * as $words_index from "./routes/words/index.tsx";
+import * as $writing_post_ from "./routes/writing/[post].tsx";
+import * as $writing_index from "./routes/writing/index.tsx";
 
 import { type Manifest } from "$fresh/server.ts";
 
@@ -17,8 +17,8 @@ const manifest = {
     "./routes/_app.tsx": $_app,
     "./routes/api/joke.ts": $api_joke,
     "./routes/index.tsx": $index,
-    "./routes/words/[post].tsx": $words_post_,
-    "./routes/words/index.tsx": $words_index,
+    "./routes/writing/[post].tsx": $writing_post_,
+    "./routes/writing/index.tsx": $writing_index,
   },
   islands: {},
   baseUrl: import.meta.url,

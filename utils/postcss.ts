@@ -53,9 +53,9 @@ export async function buildStyles() {
   const result = await postcss(config.plugins)
     .process(css, {
       from: "./static/index.css",
-      to: "./static/style.css",
+      to: "./static/styles.css",
     });
 
-  Deno.writeTextFile("./static/style.css", result.css);
+  Deno.writeTextFile("./static/styles.css", result.css);
   console.log("styles updated");
 }

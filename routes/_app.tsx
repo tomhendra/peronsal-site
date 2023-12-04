@@ -9,9 +9,9 @@ export default function App({ Component }: AppProps) {
         <title>Tom Hendra</title>
         <meta
           name="description"
-          content="Software developer building apps with React Native in Salamanca, Spain."
+          content="Builder of React Native apps in Salamanca, Spain."
         />
-        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="./styles.css" />
       </head>
       <body>
         <Component />
