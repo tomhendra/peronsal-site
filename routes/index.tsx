@@ -1,3 +1,5 @@
+import { Button } from "../components/index.ts";
+
 export default function Home() {
   return (
     <div class="px-4 py-8 mx-auto">
@@ -11,6 +13,7 @@ export default function Home() {
         />
         <h1 class="text-4xl font-bold">Tom Hendra</h1>
         <p class="my-4">🔨 Site under construction</p>
+        <Button>Button</Button>
       </div>
     </div>
   );

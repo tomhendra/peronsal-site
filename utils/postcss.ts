@@ -1,15 +1,15 @@
+import { debounce } from "$std/async/mod.ts";
 import postcss from "https://deno.land/x/postcss@8.4.16/mod.js";
-import cssNesting from "https://esm.sh/postcss-nesting";
+import { CustomMedia } from "https://esm.sh/open-props/src/media";
 import customMediaPlugin from "https://esm.sh/postcss-custom-media@8.x.x";
-import mqRanges from "https://esm.sh/postcss-media-minmax";
-import inlineImports from "https://esm.sh/postcss-import@15.0.1";
-import importUrl from "https://esm.sh/postcss-import-url@7.1.0";
 import importGlob from "https://esm.sh/postcss-import-ext-glob@2.1.1";
+import importUrl from "https://esm.sh/postcss-import-url@7.1.0";
+import inlineImports from "https://esm.sh/postcss-import@15.0.1";
+import jitProps from "https://esm.sh/postcss-jit-props@1.0.8";
+import mqRanges from "https://esm.sh/postcss-media-minmax";
+import cssNesting from "https://esm.sh/postcss-nesting";
 import cssnano from "npm:cssnano";
 import OpenProps from "open-props";
-import jitProps from "https://esm.sh/postcss-jit-props@1.0.8";
-import { debounce } from "$std/async/mod.ts";
-import { CustomMedia } from "https://esm.sh/open-props/src/media";
 
 const config = {
   plugins: [
@@ -48,8 +48,6 @@ export async function watchAndBuildStyles() {
 }
 
 export async function buildStyles() {
-  console.log("buildStyles called.....");
-
   const css = await Deno.readTextFile("./styles/index.css");
 
   const result = await postcss(config.plugins)
