@@ -91,7 +91,7 @@ html {
   border-color: #6b7280;
 }
 .bg-white {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 .flex {
   display: flex;
@@ -122,5 +122,5 @@ html {
   border-radius: 0.25rem;
 }
 .hover\:bg-gray-200:hover {
-  background-color: #e5e7eb;
+  background-color: #e5e7ec;
 }

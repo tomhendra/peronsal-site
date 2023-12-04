@@ -11,7 +11,7 @@ export default function App({ Component }: AppProps) {
           name="description"
           content="Software developer building apps with React Native in Salamanca, Spain."
         />
-        <link rel="stylesheet" href="/styles.css" />
+        <link rel="stylesheet" href="./style.css" />
       </head>
       <body>
         <Component />
