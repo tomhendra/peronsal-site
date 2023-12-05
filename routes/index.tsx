@@ -1,9 +1,10 @@
-import { Intro } from "../components/index.ts";
+import { Container, Header, Intro } from "../components/index.ts";
 
 export default function Home() {
   return (
-    <div>
+    <Container>
+      <Header />
       <Intro />
-    </div>
+    </Container>
   );
 }

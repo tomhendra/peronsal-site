@@ -1,39 +1,6 @@
-.container {
-  max-width: calc(35.5rem + 2rem * 2);
-  margin: 0 auto;
-  padding-inline: 2rem;
-  padding-block-start: 6rem;
-}
-
-.header {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  padding-block-end: 1rem;
-}
-
-.logo {
-  height: 32px;
-  width: 32px;
-
-  @media (min-width: 568px) {
-    height: 52px;
-    width: 52px;
-  }
-}
-
-.title {
-  font-size: 2.8rem;
-  font-variation-settings: 'wght' 600;
-  line-height: 1;
-  
-  @media (min-width: 568px) {
-    font-size: 4.3rem;
-  }
-}
-
 .intro {
   font-size: 1.2rem;
+  text-wrap: balance;
 
   @media (min-width: 568px) {
     font-size: 1.4rem;

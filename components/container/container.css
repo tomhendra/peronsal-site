@@ -1,0 +1,6 @@
+.container {
+  max-width: calc(35.5rem + 2rem * 2);
+  margin: 0 auto;
+  padding-inline: 2rem;
+  padding-block-start: 6rem;
+}
