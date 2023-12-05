@@ -5,9 +5,10 @@ export function Intro() {
     <div class="container">
       <div class="header">
         <img
+          class="logo"
           src="/images/logo.svg"
-          width="50"
-          height="50"
+          width="52"
+          height="52"
           alt="the Tom Hendra logo: an abstract butterfly signifying change"
         />
         <h1 class="title">Tom Hendra.</h1>
