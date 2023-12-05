@@ -1,47 +1,13 @@
 <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="90" cy="90" r="90" fill="#FCFCFD"/>
-<rect x="81.5" y="64.5" width="8.5" height="8.5" fill="#0D0F1C"/>
-<rect x="107" y="64.5" width="8.5" height="8.5" fill="#0D0F1C"/>
-<rect x="47.5" y="22" width="25.5" height="8.5" fill="#0D0F1C"/>
-<rect x="73" y="30.5" width="8.5" height="8.5" fill="#0D0F1C"/>
-<rect x="47.5" y="98.5" width="8.5" height="8.5" fill="#0D0F1C"/>
-<rect x="124" y="98.5" width="8.5" height="8.5" fill="#0D0F1C"/>
-<rect x="56" y="98.5" width="68" height="8.5" fill="#4E5BA6"/>
-<rect x="47.5" y="47.5" width="17" height="51" fill="#717BBC"/>
-<rect x="64.5" y="56" width="8.5" height="34" fill="#B3B8DB"/>
-<rect x="64.5" y="47.5" width="68" height="8.5" fill="#B3B8DB"/>
-<rect x="73" y="56" width="51" height="8.5" fill="#D5D9EB"/>
-<rect x="115.5" y="64.5" width="8.5" height="25.5" fill="#D5D9EB"/>
-<rect x="73" y="64.5" width="8.5" height="25.5" fill="#F8F9FC"/>
-<rect x="81.5" y="73" width="8.5" height="17" fill="#F8F9FC"/>
-<rect x="107" y="73" width="8.5" height="17" fill="#F8F9FC"/>
-<rect x="90" y="81.5" width="17" height="8.5" fill="#F8F9FC"/>
-<rect x="90" y="64.5" width="17" height="8.5" fill="#F8F9FC"/>
-<rect x="90" y="73" width="17" height="8.5" fill="#F8F9FC"/>
-<rect x="64.5" y="90" width="68" height="8.5" fill="#B3B8DB"/>
-<rect x="73" y="124" width="42.5" height="8.5" fill="#B3B8DB"/>
-<rect x="73" y="107" width="8.5" height="17" fill="#B3B8DB"/>
-<rect x="107" y="132.5" width="8.5" height="17" fill="#B3B8DB"/>
-<rect x="124" y="56" width="8.5" height="34" fill="#B3B8DB"/>
-<rect x="81.5" y="107" width="8.5" height="8.5" fill="#717BBC"/>
-<rect x="90" y="115.5" width="8.5" height="8.5" fill="#717BBC"/>
-<rect x="98.5" y="107" width="8.5" height="8.5" fill="#717BBC"/>
-<rect x="107" y="115.5" width="8.5" height="8.5" fill="#717BBC"/>
-<rect x="64.5" y="149.5" width="42.5" height="8.5" transform="rotate(-90 64.5 149.5)" fill="#4E5BA6"/>
-<rect x="98.5" y="115.5" width="8.5" height="8.5" fill="#293056"/>
-<rect x="107" y="107" width="8.5" height="8.5" fill="#293056"/>
-<rect x="81.5" y="115.5" width="8.5" height="8.5" fill="#293056"/>
-<rect x="90" y="107" width="8.5" height="8.5" fill="#293056"/>
-<rect x="115.5" y="107" width="8.5" height="42.5" fill="#0D0F1C"/>
-<rect x="56" y="107" width="8.5" height="42.5" fill="#0D0F1C"/>
-<rect x="81.5" y="132.5" width="17" height="8.5" fill="#0D0F1C"/>
-<rect x="64.5" y="149.5" width="8.5" height="8.5" fill="#0D0F1C"/>
-<rect x="56" y="149.5" width="8.5" height="8.5" fill="#0D0F1C"/>
-<rect x="73" y="132.5" width="8.5" height="17" fill="#0D0F1C"/>
-<rect x="98.5" y="132.5" width="8.5" height="17" fill="#0D0F1C"/>
-<rect x="107" y="149.5" width="8.5" height="8.5" fill="#0D0F1C"/>
-<rect x="98.5" y="149.5" width="8.5" height="8.5" fill="#0D0F1C"/>
-<rect x="39" y="47.5" width="8.5" height="51" fill="#0D0F1C"/>
-<rect x="132.5" y="47.5" width="8.5" height="51" fill="#0D0F1C"/>
-<rect x="47.5" y="39" width="85" height="8.5" fill="#0D0F1C"/>
+<g clip-path="url(#clip0_7657_9778)">
+<path d="M90 45C90 20.1472 110.147 0 135 0V0C159.853 0 180 20.1472 180 45V45C180 69.8528 159.853 90 135 90H90V45Z" fill="#FFE0DB"/>
+<path d="M0 45C0 20.1472 20.1472 0 45 0V0C69.8528 0 90 20.1472 90 45V90H45C20.1472 90 0 69.8528 0 45V45Z" fill="#FF5C41"/>
+<path d="M0 135C0 110.147 20.1472 90 45 90H90V135C90 159.853 69.8528 180 45 180V180C20.1472 180 0 159.853 0 135V135Z" fill="#FFB5A8"/>
+<path d="M90 90H135C159.853 90 180 110.147 180 135V135C180 159.853 159.853 180 135 180V180C110.147 180 90 159.853 90 135V90Z" fill="#FF8975"/>
+</g>
+<defs>
+<clipPath id="clip0_7657_9778">
+<rect width="180" height="180" fill="white"/>
+</clipPath>
+</defs>
 </svg>
