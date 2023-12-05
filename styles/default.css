@@ -8,6 +8,8 @@ html {
 
 body {
   font-variation-settings: 'wght' 400, 'ital' 1;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 h1 {

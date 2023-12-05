@@ -1,6 +1,7 @@
 
 @import 'fonts.css';
 @import 'reset.css';
+@import 'themes.css';
 @import 'default.css';
 
-@import '../components/button/button.css';
+@import '../components/index.css';

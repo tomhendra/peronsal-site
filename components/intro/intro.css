@@ -1,0 +1,26 @@
+.container {
+  max-width: calc(35.5rem + 2rem * 2);
+  margin: 0 auto;
+  padding-inline: 2rem;
+  padding-block-start: 6rem;
+}
+
+.header {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.title {
+  font-variation-settings: 'wght' 600;
+  font-size: 4.5rem;
+}
+
+.intro {
+  font-size: 1.4rem;
+}
+
+.highlight {
+  color: var(--primary);
+  font-variation-settings: 'wght' 500;
+}
