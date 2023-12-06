@@ -16,7 +16,8 @@ export function Intro() {
         >
           tomhendra
         </Link>
-      </Highlight>.
+        .
+      </Highlight>
     </p>
   );
 }
