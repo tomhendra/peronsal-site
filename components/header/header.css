@@ -2,17 +2,27 @@
   display: flex;
   gap: 0.75rem;
   padding-block-end: 1rem;
+  align-items: center;
 }
 
 .logo {
-  height: 40px;
-  width: 40px;
+  height: 24px;
+  width: 24px;
+
+  @media (min-width: 568px) {
+    height: 40px;
+    width: 40px;
+  }
 }
 
 .title {
-  font-size: 3.2rem;
+  font-size: 2rem;
   font-variation-settings: 'wght' 600;
   line-height: 0.75;
   margin-right: auto;
+
+  @media (min-width: 568px) {
+    font-size: 3.2rem;
+  }
 
 }
