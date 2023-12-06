@@ -1,0 +1,14 @@
+.ghost-button {
+  display: grid;
+  place-content: center;
+  padding: 8px;
+  border: none; 
+  background-color: transparent; 
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.ghost-button:hover {
+  background-color: var(--accent);
+}

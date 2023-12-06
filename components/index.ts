@@ -3,3 +3,7 @@ export * from "./container/container.tsx";
 export * from "./header/header.tsx";
 export * from "./highlight/highlight.tsx";
 export * from "./link/link.tsx";
+export * from "./button/button.tsx";
+export * from "./icons/lucide-sun.tsx";
+export * from "./icons/lucide-moon.tsx";
+export * from "./icons/lucide-monitor-check.tsx";

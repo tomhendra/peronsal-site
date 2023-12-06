@@ -8,7 +8,7 @@ import * as $api_joke from "./routes/api/joke.ts";
 import * as $index from "./routes/index.tsx";
 import * as $writing_post_ from "./routes/writing/[post].tsx";
 import * as $writing_index from "./routes/writing/index.tsx";
-
+import * as $dark_mode from "./islands/dark-mode.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -20,7 +20,9 @@ const manifest = {
     "./routes/writing/[post].tsx": $writing_post_,
     "./routes/writing/index.tsx": $writing_index,
   },
-  islands: {},
+  islands: {
+    "./islands/dark-mode.tsx": $dark_mode,
+  },
   baseUrl: import.meta.url,
 } satisfies Manifest;
 

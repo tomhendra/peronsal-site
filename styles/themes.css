@@ -1,4 +1,6 @@
-html {
+[data-theme="light"] {
+  color-scheme: light;
+
   --background: hsl(41deg 42% 93%);
   --foreground: hsl(36deg 6% 16%);
   --card: hsl(41deg 42% 93%);
@@ -8,7 +10,7 @@ html {
   --primary: hsl(9deg 100% 63%);
   --primary-foreground: hsl(9deg 100% 99%);
   --secondary: hsl(41deg 42% 88%);
-  --secondary-foreground: hsl(36deg 6% 22%)
+  --secondary-foreground: hsl(36deg 6% 22%);
   --accent:  hsl(41deg 42% 88%);
   --accent-foreground: hsl(36deg 6% 22%)
   --muted:  hsl(41deg 42% 88%);
@@ -18,8 +20,11 @@ html {
   --border: hsl(41deg 42% 80%);
   --input: hsl(41deg 42% 80%);
   --ring: hsl(36deg 6% 22%);
+}
 
-  .dark {
+[data-theme="dark"] {
+  color-scheme: dark;
+
   --background: hsl(36deg 6% 16%);
   --foreground: hsl(41deg 42% 93%);
   --card: hsl(36deg 6% 16%);
@@ -39,5 +44,5 @@ html {
   --border: hsl(33deg 6% 36%);
   --input: hsl(33deg 6% 36%);
   --ring: hsl(41deg 42% 93%);
-  }
 }
+
