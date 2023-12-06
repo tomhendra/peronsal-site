@@ -1,7 +1,6 @@
 .header {
   display: flex;
-  gap: 1rem;
-  align-items: center;
+  gap: 0.75rem;
   padding-block-end: 1rem;
 }
 
@@ -10,17 +9,17 @@
   width: 32px;
 
   @media (min-width: 568px) {
-    height: 58px;
-    width: 58px;
+    height: 48px;
+    width: 48px;
   }
 }
 
 .title {
-  font-size: 2.8rem;
+  font-size: 2.75rem;
   font-variation-settings: 'wght' 600;
-  line-height: 1;
+  line-height: 0.75;
   
   @media (min-width: 568px) {
-    font-size: 4.85rem;
+    font-size: 4.8rem;
   }
 }

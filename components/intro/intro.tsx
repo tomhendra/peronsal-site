@@ -1,13 +1,22 @@
+import { Highlight, Link } from "../index.ts";
+
 export function Intro() {
   return (
     <p class="intro">
-      Builder of <span class="highlight">React Native</span>{" "}
-      apps at Wembley Studios in{" "}
-      <span class="highlight">Salamanca</span>, Spain. Norwich,{" "}
-      <span class="highlight">England native</span>. UX and animation lover.
-      Immersed in local food culture or the gaming world when not coding. Hola
+      Builder of <Highlight>React Native</Highlight> apps at Wembley Studios in
       {" "}
-      <span class="highlight">@tomhendra</span>.
+      <Highlight>Salamanca</Highlight>, Spain. Norwich,{" "}
+      <Highlight>England native</Highlight>. UX and animation lover. Immersed in
+      local food culture or the gaming world when not coding. Hola @
+      <Highlight>
+        <Link
+          href="https://x.com/tomhendra"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          tomhendra
+        </Link>
+      </Highlight>.
     </p>
   );
 }
