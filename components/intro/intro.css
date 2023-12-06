@@ -6,8 +6,3 @@
     font-size: 1.4rem;
   }
 }
-
-.highlight {
-  color: var(--primary);
-  font-variation-settings: 'wght' 500;
-}
