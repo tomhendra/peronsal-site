@@ -1,13 +1,1 @@
-<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_7657_9778)">
-<path d="M90 45C90 20.1472 110.147 0 135 0V0C159.853 0 180 20.1472 180 45V45C180 69.8528 159.853 90 135 90H90V45Z" fill="#FFE0DB"/>
-<path d="M0 45C0 20.1472 20.1472 0 45 0V0C69.8528 0 90 20.1472 90 45V90H45C20.1472 90 0 69.8528 0 45V45Z" fill="#FF5C41"/>
-<path d="M0 135C0 110.147 20.1472 90 45 90H90V135C90 159.853 69.8528 180 45 180V180C20.1472 180 0 159.853 0 135V135Z" fill="#FFB5A8"/>
-<path d="M90 90H135C159.853 90 180 110.147 180 135V135C180 159.853 159.853 180 135 180V180C110.147 180 90 159.853 90 135V90Z" fill="#FF8975"/>
-</g>
-<defs>
-<clipPath id="clip0_7657_9778">
-<rect width="180" height="180" fill="white"/>
-</clipPath>
-</defs>
-</svg>
+<svg width="180" height="180" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M90 45c0-24.853 20.147-45 45-45s45 20.147 45 45-20.147 45-45 45H90V45Z" fill="#FFE0DB"/><path d="M0 45C0 20.147 20.147 0 45 0s45 20.147 45 45v45H45C20.147 90 0 69.853 0 45Z" fill="#FF5C41"/><path d="M0 135c0-24.853 20.147-45 45-45h45v45c0 24.853-20.147 45-45 45S0 159.853 0 135Z" fill="#FFB5A8"/><path d="M90 90h45c24.853 0 45 20.147 45 45s-20.147 45-45 45-45-20.147-45-45V90Z" fill="#FF8975"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h180v180H0z"/></clipPath></defs></svg>
