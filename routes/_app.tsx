@@ -11,6 +11,18 @@ export default function App({ Component }: AppProps) {
           name="description"
           content="Builder of React Native apps in Salamanca, Spain."
         />
+        <meta
+          name="theme-color"
+          content="#FBF9F4"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content="#2C2A27"
+          media="(prefers-color-scheme: dark)"
+        >
+        </meta>
+        <meta name="color-scheme" content="dark light" />
         <link rel="stylesheet" href="./styles.css" />
       </head>
       <body>
