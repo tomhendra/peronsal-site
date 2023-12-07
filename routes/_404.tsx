@@ -1,4 +1,5 @@
 import { Head } from "$fresh/runtime.ts";
+import { Container, Header, Link } from "../components/index.ts";
 
 export default function Error404() {
   return (
@@ -6,19 +7,13 @@ export default function Error404() {
       <Head>
         <title>404 - Page not found</title>
       </Head>
-      <div>
-        <img
-          src="/images/logo.svg"
-          width="128"
-          height="128"
-          alt="Tom Hendra logo: cute robot"
-        />
-        <h1>404 - Page not found</h1>
+      <Container>
+        <Header>404</Header>
         <p>
-          The page you were looking for doesn't exist.
+          The page you were looking for doesn't exist.{" "}
+          <Link href="/">Go back home</Link>
         </p>
-        <a href="/">Go back home</a>
-      </div>
+      </Container>
     </>
   );
 }
