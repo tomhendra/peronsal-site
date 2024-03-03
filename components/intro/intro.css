@@ -1,9 +1,0 @@
-.intro {
-  font-size: 1.2rem;
-  text-wrap: balance;
-  line-height: 2.3rem;
-
-  @media (min-width: 568px) {
-    font-size: 1.4rem;
-  }
-}
