@@ -11,15 +11,10 @@
     /* Strictness */
     "strict": true,
     "noUncheckedIndexedAccess": true,
-    /* If transpiling with TypeScript: */
-    "module": "NodeNext",
-    "outDir": "dist",
-    "sourceMap": true,
-    /* If your code runs in the DOM: */
-    "lib": ["es2022", "dom", "dom.iterable"],
-    /* ??? */
+    /* If NOT transpiling with TypeScript: */
+    "module": "preserve",
     "noEmit": true,
-    "jsx": "react-jsx",
-    "include": ["src"]
+    /* If your code runs in the DOM: */
+    "lib": ["es2022", "dom", "dom.iterable"]
   }
 }
