@@ -56,9 +56,16 @@ h6 {
 @font-face {
   font-family: "Roboto Mono";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 600;
   src: local("Roboto Mono"),
-    url("/fonts/RobotoMono-Regular.ttf") format("truetype");
+    url("/fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: 400 600;
+  src: url("/fonts/RobotoMono-Italic-VariableFont_wght.ttf") format("truetype");
 }
 
 /* colour theme */
@@ -159,8 +166,13 @@ p {
 }
 
 /* components */
+.header {
+  font-weight: 600;
+}
+
 .link {
   display: inline-block;
+  font-weight: 500;
   position: relative;
   text-decoration: none;
   color: inherit;
