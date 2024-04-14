@@ -63,10 +63,26 @@ h6 {
 
 /* colour theme */
 :root {
+  /*
+  https://caniuse.com/?search=light-dark()
+  color-scheme: light dark;
+  --primary: #646cff;
+  --background: light-dark(#fcfcfd, #0d0f1c);
+  --foreground: light-dark(#0d0f1c, #fcfcfd);
+  */
+
   --primary: #646cff;
   --background: #0d0f1c;
   --foreground: #fcfcfd;
 }
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #646cff;
+    --background: #0d0f1c;
+    --foreground: #fcfcfd;
+  }
+} */
 
 /* defaults */
 :root {
@@ -74,7 +90,6 @@ h6 {
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
   color: var(--foreground);
   background-color: var(--background);
 }
