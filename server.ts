@@ -13,18 +13,26 @@ const fastify = Fastify({
 // Serve static files from the 'dist' directory
 await fastify.register(fastifyStatic, {
   root: join(__dirname, 'dist'),
-  prefix: '/',
+  prefix: '/'
 })
 
-// Handle all routes by serving index.html
+// Handle all routes by serving index.html (for SPA)
 fastify.setNotFoundHandler((request, reply) => {
   reply.sendFile('index.html')
 })
 
 // Run the server!
-try {
-  await fastify.listen({ port: 3000, host: '0.0.0.0' })
-} catch (err) {
-  fastify.log.error(err)
-  process.exit(1)
+const start = async () => {
+  try {
+    const port = parseInt(process.env.PORT || '3000', 10)
+    const host = process.env.HOST || '0.0.0.0'
+
+    await fastify.listen({ port, host })
+    console.log(`Server is now listening on ${fastify.server.address()}`)
+  } catch (err) {
+    fastify.log.error(err)
+    process.exit(1)
+  }
 }
+
+start()

@@ -1,26 +1,43 @@
-# Use an official Node runtime as the parent image
-FROM node:20
+# Build stage
+FROM node:20-alpine AS builder
 
 # Install pnpm
 RUN npm install -g pnpm
 
-# Set the working directory in the container to /app
+# Set the working directory
 WORKDIR /app
 
-# Copy package.json and pnpm-lock.yaml to the working directory
+# Copy package files
 COPY package.json pnpm-lock.yaml ./
 
-# Install any needed packages specified in package.json
+# Install dependencies
 RUN pnpm install --frozen-lockfile
 
-# Bundle app source inside the docker image
+# Copy source files
 COPY . .
 
 # Build the app
 RUN pnpm run build
 
-# Make port 3000 available to the world outside this container
+# Production stage
+FROM node:20-alpine
+
+# Set the working directory
+WORKDIR /app
+
+# Copy built assets from builder stage
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/server.ts ./
+
+# Install production dependencies
+COPY package.json pnpm-lock.yaml ./
+RUN npm install -g pnpm && pnpm install --prod --frozen-lockfile
+
+# Install ts-node for running TypeScript directly
+RUN npm install -g ts-node
+
+# Expose the port the app runs on
 EXPOSE 3000
 
-# Define the command to run your app using CMD which defines your runtime
-CMD [ "node", "--loader", "ts-node/esm", "server.ts" ]
+# Start the app
+CMD ["node", "--loader", "ts-node/esm", "server.ts"]
