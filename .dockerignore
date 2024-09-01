@@ -8,6 +8,10 @@ pnpm-debug.log*
 node_modules
 .pnpm-store
 
+# Production build
+dist
+dist-ssr
+
 # Local env files
 *.local
 .env
@@ -34,18 +38,5 @@ node_modules
 # OS generated files
 Thumbs.db
 
-# Git related
-.git
-.gitignore
-
 # Optional: Fly.io specific (if you want to ignore local Fly.io files)
 .fly
-
-# Don't ignore these essential files
-!package.json
-!pnpm-lock.yaml
-!tsconfig.json
-!vite.config.ts
-!server.ts
-!src
-!public

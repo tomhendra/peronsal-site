@@ -1,25 +1,49 @@
-FROM node:20-alpine
+# syntax = docker/dockerfile:1
 
+# Adjust NODE_VERSION as desired
+ARG NODE_VERSION=20.16.0
+FROM node:${NODE_VERSION}-slim as base
+
+LABEL fly_launch_runtime="Vite"
+
+# Vite app lives here
 WORKDIR /app
 
-# Copy package files
-COPY package.json pnpm-lock.yaml ./
+# Set production environment
+ENV NODE_ENV="production"
 
 # Install pnpm
-RUN npm install -g pnpm
+ARG PNPM_VERSION=9.9.0
+RUN npm install -g pnpm@$PNPM_VERSION
 
-# Install all dependencies (including devDependencies)
-RUN pnpm install --frozen-lockfile
 
-# Copy the rest of the application
-COPY . .
+# Throw-away build stage to reduce size of final image
+FROM base as build
 
-# Build the application
+# Install packages needed to build node modules
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3
+
+# Install node modules
+COPY --link package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile --prod=false
+
+# Copy application code
+COPY --link . .
+
+# Build application
 RUN pnpm run build
 
-# Remove devDependencies
+# Remove development dependencies
 RUN pnpm prune --prod
 
-ENV NODE_ENV=production
-EXPOSE 3000
-CMD ["node", "--max-old-space-size=200", "server.js"]
+
+# Final stage for app image
+FROM nginx
+
+# Copy built application
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Start the server by default, this can be overwritten at runtime
+EXPOSE 80
+CMD [ "/usr/sbin/nginx", "-g", "daemon off;" ]
