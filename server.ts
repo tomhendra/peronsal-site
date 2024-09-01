@@ -24,10 +24,10 @@ fastify.setNotFoundHandler((request, reply) => {
 // Run the server!
 const start = async () => {
   try {
-    const port = Number.parseInt(process.env.PORT || '3000', 10)
-    const host = process.env.HOST || '0.0.0.0'
-
-    await fastify.listen({ port, host })
+    await fastify.listen({
+      port: Number.parseInt(process.env.PORT || '3000'),
+      host: '0.0.0.0'
+    })
     console.log(`Server is now listening on ${fastify.server.address()}`)
   } catch (err) {
     fastify.log.error(err)
