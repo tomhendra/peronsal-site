@@ -15,4 +15,4 @@ COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/pnpm-lock.yaml ./pnpm-lock.yaml
 RUN npm install -g pnpm && pnpm install --prod --frozen-lockfile
 EXPOSE 3000
-CMD ["node", "--experimental-specifier-resolution=node", "dist/server.js"]
+CMD ["node", "dist/server.js"]

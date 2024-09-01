@@ -4,7 +4,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "start": "node --experimental-specifier-resolution=node dist/server.js"
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "fastify": "^4.23.0",
