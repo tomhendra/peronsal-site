@@ -1,6 +1,6 @@
 import tseslint from 'typescript-eslint'
 import eslint from '@eslint/js'
-import prettier from 'eslint-config-prettier'
+import eslintConfigPrettier from 'eslint-config-prettier'
 
 export default [
   eslint.configs.recommended,
@@ -20,5 +20,5 @@ export default [
   {
     ignores: ['dist'],
   },
-  prettier,
+  eslintConfigPrettier,
 ]
