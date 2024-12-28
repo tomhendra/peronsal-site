@@ -36,7 +36,7 @@ RUN pnpm run build
 
 # Remove development dependencies
 ENV HUSKY=0
-RUN pnpm prune --prod
+pnpm prune --prod --no-optional --ignore-scripts
 
 
 # Final stage for app image
