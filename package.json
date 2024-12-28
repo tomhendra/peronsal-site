@@ -12,7 +12,7 @@
     "format:fix": "pnpm format --write \"**/*.+(js|jsx|ts|tsx|md)\"",
     "format:check": "pnpm format --list-different",
     "validate": "pnpm run \"/^(lint|format:check)$/\"",
-    "postinstall": "pnpx husky",
+    "postinstall": "pnpm husky",
     "clean:node_modules": "rm -rf node_modules"
   },
   "lint-staged": {
