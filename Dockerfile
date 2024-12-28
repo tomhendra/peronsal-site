@@ -35,6 +35,7 @@ COPY . .
 RUN pnpm run build
 
 # Remove development dependencies
+ENV HUSKY=0
 RUN pnpm prune --prod
 
 
