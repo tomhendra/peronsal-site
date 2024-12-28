@@ -10,7 +10,7 @@
     "lint:fix": "pnpm lint --fix",
     "prettier": "prettier --ignore-path .gitignore \"/**/*.+(js|json|ts|tsx|md)\"",
     "format": "pnpm prettier --write",
-    "format:check": "yarn prettier --list-different",
+    "format:check": "pnpm prettier --list-different",
     "validate": "pnpm run-p lint format:check type:check",
     "postinstall": "pnpm husky"
   },
