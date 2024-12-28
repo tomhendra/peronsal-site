@@ -1,15 +1,17 @@
 {
   "type": "module",
+  "private": true,
+  "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
     "build": "tsc && vite build"
   },
   "devDependencies": {
-    "@flydotio/dockerfile": "^0.5.8",
-    "vite": "^4.4.5"
+    "@flydotio/dockerfile": "^0.5.9",
+    "vite": "^6.0.6"
   },
   "dependencies": {
-    "typescript": "^5.5.4"
+    "typescript": "^5.7.2"
   }
 }
