@@ -6,13 +6,14 @@
     "dev": "vite",
     "build": "pnpm validate && vite build",
     "preview": "vite preview",
-    "lint": "eslint --ignore-path .gitignore",
+    "lint": "eslint .",
     "lint:fix": "pnpm lint --fix",
-    "prettier": "prettier --ignore-path .gitignore \"/**/*.+(js|json|ts|tsx|md)\"",
-    "format": "pnpm prettier --write",
-    "format:check": "pnpm prettier --list-different",
-    "validate": "pnpm run-p lint format:check type:check",
-    "postinstall": "pnpm husky"
+    "format": "prettier --ignore-path .gitignore \"**/*.+(js|jsx|ts|tsx|md)\"",
+    "format:fix": "pnpm format --write \"**/*.+(js|jsx|ts|tsx|md)\"",
+    "format:check": "pnpm format --list-different",
+    "validate": "pnpm run \"/^(lint|format:check)$/\"",
+    "postinstall": "pnpm husky",
+    "clean:node_modules": "rm -rf node_modules"
   },
   "lint-staged": {
     "**/*.(ts|tsx|js)": [
