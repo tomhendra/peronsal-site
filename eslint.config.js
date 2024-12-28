@@ -1,29 +1,24 @@
 import tseslint from 'typescript-eslint'
-import eslintConfigPrettier from 'eslint-config-prettier'
+import eslint from '@eslint/js'
+import prettier from 'eslint-config-prettier'
 
-export default tseslint.config(
+export default [
+  eslint.configs.recommended,
+  ...tseslint.configs.recommended,
   {
     files: ['**/*.ts', '**/*.tsx'],
-    extends: [
-      'eslint:recommended',
-      ...tseslint.configs.recommended,
-      eslintConfigPrettier,
-    ],
     languageOptions: {
-      ecmaVersion: 2020,
-      sourceType: 'module',
       parser: tseslint.parser,
       parserOptions: {
-        project: './tsconfig.json',
-        tsconfigRootDir: import.meta.dirname,
+        project: true,
       },
     },
-    env: {
-      browser: true,
-      es2020: true,
+    plugins: {
+      '@typescript-eslint': tseslint.plugin,
     },
   },
   {
-    ignores: ['dist', '.eslintrc.cjs'],
-  }
-)
+    ignores: ['dist'],
+  },
+  prettier,
+]
